@@ -315,7 +315,7 @@ title="Print to PDF"
 <span id="lecture-5"></span><h1>Lecture 5: Why water moves beneath the surface<a class="headerlink" href="#lecture-5-why-water-moves-beneath-the-surface" title="Permalink to this headline">#</a></h1>
 <p>Inherent to the idea of a groundwater system is the idea that groundwater moves from a point of recharge to a point of discharge.
 If the total volume stored is a function of the porosity, then we can ask ourselves what controls how groundwater moves from one point to another point?</p>
-<p>This was first explored in the 1850s by Henri D’Arcy, a French civil engineer, who set up a pipe filled with sand and played around with how fast water moved through the pipe.</p>
+<p>This was first explored in the 1850s by <strong>Henri D’Arcy</strong>, a French civil engineer, who set up a pipe filled with sand and played around with how fast water moved through the pipe.</p>
 <figure class="margin-caption align-default" id="darcy-pipe">
 <a class="reference internal image-reference" href="../../_images/figure12.png"><img alt="../../_images/figure12.png" src="../../_images/figure12.png" style="width: 70%;" /></a>
 <figcaption>
@@ -325,18 +325,29 @@ If the total volume stored is a function of the porosity, then we can ask oursel
 <p>Here the pipe (length <span class="math notranslate nohighlight">\(l\)</span> and cross-sectional area <span class="math notranslate nohighlight">\(A\)</span>) was put at various angles to the horizontal
 (determined by <span class="math notranslate nohighlight">\(\Delta h\)</span> – or the height difference between one end of the pipe to the other end of the pipe)
 and the flow rate, <span class="math notranslate nohighlight">\(Q\)</span>, was measured (in units of volume-per-time).</p>
+<p>Specifically, we will call <span class="math notranslate nohighlight">\(\frac{\Delta h}{\Delta l}\)</span> – that is the change in height over a distance along the pipe - the <strong>hydraulic gradient</strong>.</p>
 <figure class="margin-caption align-default" id="hyd-grad">
 <img alt="../../_images/figure21.jpeg" src="../../_images/figure21.jpeg" />
 <figcaption>
-<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Plot of <span class="math notranslate nohighlight">\(Q\)</span> against <span class="math notranslate nohighlight">\(-\dv{h}{t}\)</span>. The gradient gives <span class="math notranslate nohighlight">\(K\)</span>, the hydraulic conductivity.</span><a class="headerlink" href="#hyd-grad" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Plot of Flow Rate <span class="math notranslate nohighlight">\((Q)\)</span> against <span class="math notranslate nohighlight">\(-\dv{h}{l}\)</span>. The gradient gives <span class="math notranslate nohighlight">\(K\)</span>, the hydraulic conductivity.</span><a class="headerlink" href="#hyd-grad" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Specifically, we will call <span class="math notranslate nohighlight">\(\frac{\Delta h}{\Delta l}\)</span> – that is the change in height over a distance along the pipe - the <strong>hydraulic gradient</strong>.</p>
 <p>What Darcy found was that <span class="math notranslate nohighlight">\(Q\)</span> is proportional to <span class="math notranslate nohighlight">\(\Delta h\)</span> and inversely proportional to <span class="math notranslate nohighlight">\(l\)</span>.
 That is the steeper the pipe is held, the larger the volumetric flow rate, and the longer the pipe is the lower the volumetric flow rate.
 He also found that <span class="math notranslate nohighlight">\(Q\)</span> is proportional to <span class="math notranslate nohighlight">\(A\)</span>, that is the larger the pipe, the larger the flow rate.
-When he filled the pipe with different material, he found that the slope (in a plot of <span class="math notranslate nohighlight">\(Q\)</span> versus) changed.
+When he filled the pipe with different material, he found that the slope (in a plot of <span class="math notranslate nohighlight">\(Q\)</span> versus <span class="math notranslate nohighlight">\(\frac{\Delta h}{\Delta l}\)</span>, <a class="reference internal" href="#hyd-grad"><span class="std std-numref">Fig. 20</span></a>) changed.
 He called this slope <span class="math notranslate nohighlight">\(K\)</span> and called it <strong>hydraulic conductivity</strong>.</p>
+<p>Therefore, <span class="math notranslate nohighlight">\(Q \propto - A \frac{\Delta h}{\Delta l}\)</span>, which we can turn into an equation using <span class="math notranslate nohighlight">\(K\)</span>:  <span class="math notranslate nohighlight">\(Q = - K A \frac{\Delta h}{\Delta l}\)</span>.
+Or more generally:</p>
+<div class="math notranslate nohighlight" id="equation-darcys-law">
+<span class="eqno">(5)<a class="headerlink" href="#equation-darcys-law" title="Permalink to this equation">#</a></span>\[Q = -KA \dv{h}{l}\]</div>
+<p>which is known as <strong>Darcy’s law</strong>.
+Note that often you will see <span class="math notranslate nohighlight">\(q\)</span> rather than <span class="math notranslate nohighlight">\(Q\)</span> used where <span class="math notranslate nohighlight">\(q\)</span> is specific discharge, or ‘Darcy velocity’ and is the flow rate (<span class="math notranslate nohighlight">\(Q\)</span>) divided by the area (<span class="math notranslate nohighlight">\(A\)</span>):</p>
+<div class="math notranslate nohighlight" id="equation-darcys-vel">
+<span class="eqno">(6)<a class="headerlink" href="#equation-darcys-vel" title="Permalink to this equation">#</a></span>\[q = \frac{Q}{A}\]</div>
+<p>Let’s learn more about this <strong>hydraulic conductivity</strong> – <span class="math notranslate nohighlight">\(K\)</span>.
+We can derive that the units are length-per-time, or often <span class="math notranslate nohighlight">\(\mathrm{m \ s^{-1}}\)</span>.
+Studies of actual groundwater systems have shown that it can range over 12 orders of magnitude in various materials below the subsurface (<a class="reference internal" href="#fluxes"><span class="std std-numref">Fig. 21</span></a>).</p>
 <figure class="margin-caption align-default" id="fluxes">
 <img alt="../../_images/figure3.jpg" src="../../_images/figure3.jpg" />
 <figcaption>
@@ -348,17 +359,6 @@ Values are grouped into hydrolithogic categories that are typical for regioonal-
 The geometric meanis shown as a red square with <span class="math notranslate nohighlight">\(1\sigma\)</span> standard deviation for each hydrolithogic category is also shown.</span><a class="headerlink" href="#fluxes" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Therefore, <span class="math notranslate nohighlight">\(Q \propto - A \frac{\Delta h}{\Delta l}\)</span>, which we can turn into an equation using <span class="math notranslate nohighlight">\(K\)</span>:  <span class="math notranslate nohighlight">\(Q = - K A \frac{\Delta h}{\Delta l}\)</span>.
-Or more generally:</p>
-<div class="math notranslate nohighlight" id="equation-darcys-law">
-<span class="eqno">(5)<a class="headerlink" href="#equation-darcys-law" title="Permalink to this equation">#</a></span>\[Q = -KA \dv{h}{l}\]</div>
-<p>which is known as <strong>Darcy’s law</strong>.
-Note that often you will see <span class="math notranslate nohighlight">\(q\)</span> rather than <span class="math notranslate nohighlight">\(Q\)</span> used where <span class="math notranslate nohighlight">\(q\)</span> is specific discharge, or ‘Darcy velocity’ and is the flow rate (<span class="math notranslate nohighlight">\(Q\)</span>) divided by the area (<span class="math notranslate nohighlight">\(A\)</span>):</p>
-<div class="math notranslate nohighlight" id="equation-darcys-vel">
-<span class="eqno">(6)<a class="headerlink" href="#equation-darcys-vel" title="Permalink to this equation">#</a></span>\[q = \frac{Q}{A}\]</div>
-<p>Let’s learn more about this <strong>hydraulic conductivity</strong> – <span class="math notranslate nohighlight">\(K\)</span>.
-We can derive that the units are length-per-time, or often <span class="math notranslate nohighlight">\(\mathrm{m \ s^{-1}}\)</span>.
-Studies of actual groundwater systems have shown that it can range over 12 orders of magnitude in various materials below the subsurface.</p>
 <p>In general, hydraulic conductivity is a function of both the medium (what groundwater flows through)
 and the fluid that is going through the medium (usually water, in the case of groundwater).
 <span class="math notranslate nohighlight">\(K\)</span> is:</p>
@@ -430,7 +430,7 @@ This just means that fundamental properties of the rock/soil/sand have a massive
 What comes out of Darcy’s law is that the hydraulic gradient, that is <span class="math notranslate nohighlight">\(\frac{\Delta h}{\Delta l}\)</span> drives the flow of water through the pipe, or in case of the real world, the groundwater system.
 The porous medium (the grains of sand, or sides of the minerals in the rock) resist the flow, providing frictional resistance to the movement of water.
 The average groundwater velocity is given by <span class="math notranslate nohighlight">\(v = \frac{q}{n}\)</span> where <span class="math notranslate nohighlight">\(q\)</span> is the specific discharge (<span class="math notranslate nohighlight">\(\frac{Q}{A}\)</span>) and <span class="math notranslate nohighlight">\(n\)</span> is the average porosity.
-The average groundwater velocity (<span class="math notranslate nohighlight">\(v\)</span>) is always greater than the specific discharge (remember that porosity is a percentage of void space in the rock!).</p>
+The average groundwater velocity <span class="math notranslate nohighlight">\((v)\)</span> is always greater than the specific discharge (remember that porosity is a percentage of void space in the rock!).</p>
 <p>We can now think about how this might look in the real world.</p>
 <figure class="margin-caption align-default" id="hydraulic-head">
 <img alt="../../_images/figure8.png" src="../../_images/figure8.png" />

@@ -5,5 +5,5 @@ As we all know, there is a vast shortage of potable water today.
 Understanding how to remove salt from the vast reservoir of water in the oceans (termed desalination) remains a major challenge in environmental engineering.
 In the meantime, we are left to tap freshwater resources and 30% of the freshwater on the planet is groundwater.
 Groundwater refers to the water stored in soils and rocks beneath the surface.
-Groundwater has a long residence time in the subsurface.
+Groundwater has a long **{term}`residence time`** in the subsurface.
 In these lectures we will cover the importance of groundwater, and how and why water moves through rock in the subsurface.
