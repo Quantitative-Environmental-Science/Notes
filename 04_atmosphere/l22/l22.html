@@ -1,0 +1,564 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Lecture 22: Aerosols &#8212; Quantitative Environmental Science</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams"]}, "tex": {"packages": ["base", "physics", "ams"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Quantitative Environmental Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Quantitative Environmental Science
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Earth's Energy Balance
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../00_energybalance/l2/l2.html">
+   Lecture 2: Where does the energy come from on Earth?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../00_energybalance/l3/l3.html">
+   Lecture 3: The Carbon Cycle
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Groundwater Hydrology
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../01_groundwater/intro/intro.html">
+   Introduction to Groundwater
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../01_groundwater/l4/l4.html">
+   Lecture 4: Groundwater Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../01_groundwater/l5/l5.html">
+   Lecture 5: Why water moves beneath the surface
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../01_groundwater/l6/l6.html">
+   Lecture 6: How we measure and understand water movement
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../01_groundwater/l7/l7.html">
+   Lecture 7: Groundwater challenges and sustainable groundwater
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../reference/glossary.html">
+   Glossary
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/04_atmosphere/l22/l22.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-atmospheric-particles">
+   Introduction to atmospheric particles
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#size-distribution-of-atmospheric-aerosols">
+   Size distribution of atmospheric aerosols
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#formation-processes-and-sources">
+   Formation processes and sources
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#formation-processes-and-processes-affecting-size-distribution">
+     Formation processes and processes affecting size distribution
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Lecture 22: Aerosols</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-atmospheric-particles">
+   Introduction to atmospheric particles
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#size-distribution-of-atmospheric-aerosols">
+   Size distribution of atmospheric aerosols
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#formation-processes-and-sources">
+   Formation processes and sources
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#formation-processes-and-processes-affecting-size-distribution">
+     Formation processes and processes affecting size distribution
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-22-aerosols">
+<span id="lecture-22"></span><h1>Lecture 22: Aerosols<a class="headerlink" href="#lecture-22-aerosols" title="Permalink to this headline">#</a></h1>
+<p class="rubric">Formation, growth, composition, and removal processes</p>
+<blockquote class="highlights">
+<div><p>Key Points:</p>
+<ul class="simple">
+<li><p>The atmosphere contains numerous aerosol particles covering a size range of <span class="math notranslate nohighlight">\(1-2 \ \mathrm{nm}\)</span> up to <span class="math notranslate nohighlight">\(\gt 100 \ \mathrm{\mu m}\)</span> diameter and containing a variety of chemical constituents. Particle distribution is divided into a nucleation, an Aitken, an accumulation, and a coarse mode.</p></li>
+<li><p>Primary particles are directly emitted into the atmosphere. Secondary particles are formed in the atmosphere from gaseous precursors through nucleation.</p></li>
+<li><p>Primary sources of particles and their gaseous precursors can be natural or anthropogenic.</p></li>
+<li><p>Particles are removed from the atmosphere through dry and wet deposition.</p></li>
+<li><p>Aerosol chemical composition varies widely depending on the sources and location. Main components are nitrate, sulphate, chloride, ammonium, sodium, potassium, calcium, and organic material.</p></li>
+<li><p>Heterogeneous reactions occur on the surface or in the condensed phase of aerosol particles. This leads to the chemical conversion of trace gases and their removal. The rate of this process is usually expressed in terms of the uptake coefficient, <span class="math notranslate nohighlight">\(\gamma\)</span>, defined in terms of kinetic theory of gases.</p></li>
+</ul>
+</div></blockquote>
+<section id="introduction-to-atmospheric-particles">
+<span id="atmosphere-particles-intro"></span><h2>Introduction to atmospheric particles<a class="headerlink" href="#introduction-to-atmospheric-particles" title="Permalink to this headline">#</a></h2>
+<p>The atmosphere also contains a wide variety of microscopic particulate material, known as the atmospheric aerosol or particulate matter (PM).
+The aerosol plays an important role in both the physics and chemistry of the atmosphere.</p>
+<p>Atmospheric aerosol particles may be liquid, solid or multiphase.
+In the stratosphere the aerosol consists predominantly of sulphuric acid droplets formed by oxidation of sulphur gases (<span class="math notranslate nohighlight">\(\mathrm{SO_2}\)</span> and OCS).
+In the troposphere the aerosol is much more complex.</p>
+<p>Aerosol particles are absorbing and/or scattering short wave radiation and are therefore directly influencing the radiative balance of the atmosphere.
+The intensity of light scattering or absorption is strongly dependent on the size and chemical composition of particles.</p>
+<p>Aerosols are also involved in the formation of clouds - the water droplets that comprise clouds always condense on certain pre-existing aerosols called cloud condensation nuclei.
+Particle size and chemical composition are key parameters, which determine whether an aerosol particle is an efficient nucleus for cloud droplet formation.
+These aerosol particle-cloud interactions lead to a complex feedback system influencing the hydrological cycle.</p>
+<p>Both processes, light absorption/scattering and could formation, are not very well understood on a global level and are one on the main uncertainties associated with studies predicting the future climate.
+The uncertainty is mainly due to the large variability in the physical and chemical properties of aerosol particles, as well as their temporal and spatial distributions.</p>
+<p>Aerosols also provide a sink for traces gases.
+The reactions of gaseous compounds at the surface or within the condensed phase of aerosol particles are called heterogeneous reactions.</p>
+<p>Particles are involved in health impacts caused by air pollution.
+Aerosol particles <span class="math notranslate nohighlight">\(\lt 10 \ \mathrm{\mu m}\)</span>, which penetrate into the lung (larger particles are deposited in the nose and mouth), have been shown to correlate with increasing rates of respiratory and cardio-vascular diseases in epidemiological studies.
+The particle properties causing these health effects are not well understood, but particle size and the chemical composition (e.g., transition metals, oxidizing organic components) are likely responsible for the observed particle toxicity.</p>
+</section>
+<section id="size-distribution-of-atmospheric-aerosols">
+<span id="section-label"></span><h2>Size distribution of atmospheric aerosols<a class="headerlink" href="#size-distribution-of-atmospheric-aerosols" title="Permalink to this headline">#</a></h2>
+<p>The size of atmospheric particles ranges from <span class="math notranslate nohighlight">\(\lt 1-2 \ \mathrm{nm}\)</span> to <span class="math notranslate nohighlight">\(\gt 100 \ \mathrm{\mu m}\)</span> diameter.
+A typical distribution as a function of size is shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">aerosol_sizes</span></code>.
+The distribution is usually divided into the nucleation mode (<span class="math notranslate nohighlight">\(\lt 10 \ \mathrm{nm}\)</span>), the Aitken mode (<span class="math notranslate nohighlight">\(\gt 100 \ \mathrm{nm}\)</span>), the accumulation mode (from <span class="math notranslate nohighlight">\(100 \ \mathrm{nm}\)</span> to <span class="math notranslate nohighlight">\(1-2 \ \mathrm{\mu m}\)</span>, and the coarse mode (<span class="math notranslate nohighlight">\(\gt 1-2 \ \mathrm{\mu m}\)</span>).</p>
+<p>The maximum in the particle concentration generally lies in the nucleation mode size range when particles are measured in number per unit volume of air.
+The nucleation mode particles, although numerous, contribute very little to the aerosol mass.</p>
+<p>The maximum in surface area, which is the important parameter for light scattering and for many heterogeneous reaction rates, usually lies in the so-called ‘accumulation’ mode.
+The maximum in volume/mass of particles per unit volume of air lies in the accumulation/coarse fraction.</p>
+<p>The total particle number concentration varies greatly in the troposphere with <span class="math notranslate nohighlight">\(\lt 20 \ \mathrm{cm}^{-3}\)</span> for the polar regions and <span class="math notranslate nohighlight">\(\gt 10^5 \ \mathrm{cm}^{-3}\)</span> for an urban aerosol.
+The total number concentration decreases strongly with altitude and at altitudes of <span class="math notranslate nohighlight">\(3-5 \ \mathrm{km}\)</span> typical concentration of about <span class="math notranslate nohighlight">\(100 \ \mathrm{particles} \, \mathrm{cm^{-3}}\)</span> are found.</p>
+<figure class="margin-caption align-default" id="aerosol-sizes">
+<img alt="../../_images/figure1.jpg" src="../../_images/figure1.jpg" />
+<figcaption>
+<p><span class="caption-text">Typical size distribution of the tropospheric aerosol.</span><a class="headerlink" href="#aerosol-sizes" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="formation-processes-and-sources">
+<h2>Formation processes and sources<a class="headerlink" href="#formation-processes-and-sources" title="Permalink to this headline">#</a></h2>
+<section id="formation-processes-and-processes-affecting-size-distribution">
+<h3>Formation processes and processes affecting size distribution<a class="headerlink" href="#formation-processes-and-processes-affecting-size-distribution" title="Permalink to this headline">#</a></h3>
+<p>Formation processes of aerosols are highly variable in time and space, which is one of the main reasons why the influence and interactions of particles with other parts of the climate system are so difficult to account for in atmospheric chemistry and climate models.</p>
+<p>Particles in the coarse mode are usually produced mechanically by weathering and wind erosion processes or through bubble bursting over the ocean. Direct anthropogenic emissions contribute to coarse mode particles through traffic and industrial processes.</p>
+<p>In the smallest size fraction (nucleation mode), particle formation arises via homogeneous nucleation,
+which is the formation of new particles through gas-to-particle conversion processes.
+Particle nucleation is frequently observed over land mainly in remote areas but also over the ocean.
+Chemical compounds forming the initial clusters of atmospheric nucleation particles are not well characterized
+but water and sulphuric acid, ammonium, amines, and highly oxygenated organic molecules (HOMs) are most likely important in forming the initial nucleation clusters.
+Organic compounds are thought to condense onto the initial H2O - H2SO4 clusters,
+i.e., being responsible for the initial growth of the clusters into stable particles of a few <span class="math notranslate nohighlight">\(\mathrm{nm}\)</span> in size (see <code class="xref std std-numref docutils literal notranslate"><span class="pre">size_evolution</span></code>).</p>
+<figure class="margin-caption align-default" id="size-evolution">
+<img alt="../../_images/figure27.png" src="../../_images/figure27.png" />
+<figcaption>
+<p><span class="caption-text">Typical evolution of particle size distribution after a particle nucleation event (Beijing 2—7 October 2013).
+White dashed curve represents the mean diameter.
+From Guo et al 2014, Lee et al 2019.</span><a class="headerlink" href="#size-evolution" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The high initial number concentration of particles with <span class="math notranslate nohighlight">\(d &lt; 10 \ \mathrm{nm}\)</span> are rapidly reduced through coagulation,
+resulting in aerosol lifetimes of the order of minutes for these smallest particles.
+The nucleation mode particles, although numerous, contribute very little to the aerosol surface or mass.</p>
+<p>The coagulation rate of particles with size 1 and 2 is given by</p>
+<div class="math notranslate nohighlight">
+\[    \dv{N}{t} = -K_{1,2}N_1N_2\]</div>
+<div class="math notranslate nohighlight">
+\[    K_{1,2} = \pi(d_1 + d_2)(D_1 + D_2)\]</div>
+<p>where <span class="math notranslate nohighlight">\(K_{1,2}\)</span> is the coagulation coefficient, <span class="math notranslate nohighlight">\(D\)</span> is the diffusion constant, and <span class="math notranslate nohighlight">\(d\)</span> is the particle diameter.</p>
+<table class="colwidths-given table" id="coagulation-coefs">
+<caption><span class="caption-text">Coagulation coefficients for particles of different sizes (<span class="math notranslate nohighlight">\(K_{1,2} \times 10^{-10} \ \mathrm{cm}^3 \ \mathrm{s}^{-1}\)</span>) under standard conditions.</span><a class="headerlink" href="#coagulation-coefs" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 18%" />
+<col style="width: 18%" />
+<col style="width: 18%" />
+<col style="width: 18%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head stub"><p><span class="math notranslate nohighlight">\(d_1 \ (\mathrm{\mu m})\)</span> \ <span class="math notranslate nohighlight">\(d_2 \ (\mathrm{\mu m})\)</span></p></th>
+<th class="head"><p>0.01</p></th>
+<th class="head"><p>0.1</p></th>
+<th class="head"><p>1.0</p></th>
+<th class="head"><p>10.0</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><th class="stub"><p>0.01</p></th>
+<td><p>67</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>0.1</p></th>
+<td><p>180</p></td>
+<td><p>8.6</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>1.0</p></th>
+<td><p>1700</p></td>
+<td><p>24</p></td>
+<td><p>3.5</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>10.0</p></th>
+<td><p>16000</p></td>
+<td><p>220</p></td>
+<td><p>10.3</p></td>
+<td><p>3.0</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./04_atmosphere/l22"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By the QES Committee<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

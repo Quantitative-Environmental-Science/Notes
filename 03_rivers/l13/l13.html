@@ -1,0 +1,641 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Lecture 13: Surface water, flooding and impact of climate change &#8212; Quantitative Environmental Science</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams"]}, "tex": {"packages": ["base", "physics", "ams"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Quantitative Environmental Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Quantitative Environmental Science
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Earth's Energy Balance
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../00_energybalance/l2/l2.html">
+   Lecture 2: Where does the energy come from on Earth?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../00_energybalance/l3/l3.html">
+   Lecture 3: The Carbon Cycle
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Groundwater Hydrology
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../01_groundwater/intro/intro.html">
+   Introduction to Groundwater
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../01_groundwater/l4/l4.html">
+   Lecture 4: Groundwater Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../01_groundwater/l5/l5.html">
+   Lecture 5: Why water moves beneath the surface
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../01_groundwater/l6/l6.html">
+   Lecture 6: How we measure and understand water movement
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../01_groundwater/l7/l7.html">
+   Lecture 7: Groundwater challenges and sustainable groundwater
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../reference/glossary.html">
+   Glossary
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/03_rivers/l13/l13.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rainfall-and-drainage-systems">
+   Rainfall and drainage systems
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modelling-run-off">
+   Modelling run-off
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#infiltration">
+   Infiltration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiple-drainage-zones">
+   Multiple Drainage Zones
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Lecture 13: Surface water, flooding and impact of climate change</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rainfall-and-drainage-systems">
+   Rainfall and drainage systems
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modelling-run-off">
+   Modelling run-off
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#infiltration">
+   Infiltration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiple-drainage-zones">
+   Multiple Drainage Zones
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-13-surface-water-flooding-and-impact-of-climate-change">
+<span id="lecture-13"></span><h1>Lecture 13: Surface water, flooding and impact of climate change<a class="headerlink" href="#lecture-13-surface-water-flooding-and-impact-of-climate-change" title="Permalink to this headline">#</a></h1>
+<figure class="margin-caption align-default" id="loss-events">
+<img alt="../../_images/figure15.png" src="../../_images/figure15.png" />
+<figcaption>
+<p><span class="caption-text">Illustration of the number of major loss events by natural processes,
+illustrating the very large proportion of such events associated with flooding.</span><a class="headerlink" href="#loss-events" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Intense floods often lead to severe damage to property, land and infrastructure and they are becoming one of the main destructive consequences of the more intense rainfall which is a characteristic of global warming coupled with rapid land development which has not maintained adequate water drainage pathways, leading to undercapacity and flooding.
+Heavy rainfall events have been building up over time owing to the higher atmospheric temperatures and the associated capacity for the air to carry more moisture.</p>
+<figure class="margin-caption align-default" id="water-capacity">
+<img alt="../../_images/figure23.png" src="../../_images/figure23.png" />
+<figcaption>
+<p><span class="caption-text">Plot of the water carrying capacity of air at <span class="math notranslate nohighlight">\(100 \ \%\)</span> humidity, as a function of temperature.</span><a class="headerlink" href="#water-capacity" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="margin-caption align-default" id="heavy-rain-land">
+<img alt="../../_images/figure35.png" src="../../_images/figure35.png" />
+<figcaption>
+<p><span class="caption-text">The area of land subjected to heavy rain events every year in the US over time.</span><a class="headerlink" href="#heavy-rain-land" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="margin-caption align-default" id="rain-anom">
+<img alt="../../_images/figure44.png" src="../../_images/figure44.png" />
+<figcaption>
+<p><span class="caption-text">The rainfall anomoly in the US by year.</span><a class="headerlink" href="#rain-anom" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In the above charts, <code class="xref std std-numref docutils literal notranslate"><span class="pre">water_capacity</span></code> illustrate the mass of water which can be carried in air with 100% humidity as a function of the temperature,
+while <code class="xref std std-numref docutils literal notranslate"><span class="pre">heavy_rain_land</span></code> shows the increase in land area subject to heavy rainfall events in the US over the past 90 years.
+<code class="xref std std-numref docutils literal notranslate"><span class="pre">rain_anom</span></code> illustrates the annual rainfall relative to the average in the US again over the past 90 years.
+There is a clear trend towards heavier more intense rain and also of increasing annual rainfall.</p>
+<p>Rainfall provides the source for much of the flooding inshore, and occurs when the drainage system is unable to accommodate the water flux associated with rain.
+However, sea level rise will also lead to flooding of near coastal areas, and the two maps below illustrate some predictions of those areas of East Anglia and London which may be submerged by 2100 AD with sea level rise predicted by some climate forecasts.</p>
+<figure class="margin-caption align-default" id="ea-flooding">
+<img alt="../../_images/figure55.png" src="../../_images/figure55.png" />
+</figure>
+<figure class="margin-caption align-default" id="london-flooding">
+<img alt="../../_images/figure63.png" src="../../_images/figure63.png" />
+<figcaption>
+<p><span class="caption-text">Flooding in East Anglia and London associated with some predictions of sea level rise in the latter part of the present century.</span><a class="headerlink" href="#london-flooding" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="rainfall-and-drainage-systems">
+<h2>Rainfall and drainage systems<a class="headerlink" href="#rainfall-and-drainage-systems" title="Permalink to this headline">#</a></h2>
+<p>Rainfall typically accumulates on the ground and disperses through three pathways.
+First the rain may run over the land surface downhill towards drainage channels, a process we will call surface run-off, <span class="math notranslate nohighlight">\(S\)</span>, with a flux per unit area.
+Second the rain may infiltrate into the ground, flowing into the subsurface aquifers, a process we label with a flux, <span class="math notranslate nohighlight">\(D\)</span>, per unit area.
+Third, some rainfall is taken up by crops and then returned to the atmosphere by the process of evapotranspiration, with a flux, <span class="math notranslate nohighlight">\(T\)</span>, per unit area of the land.
+The controls on these three fluxes are associated with the type of vegetation, the slope of the land and the type of soil which will be more or less permeable, and hence will regulate the flux of water into the ground.
+If the surface run-off if too large, then this may lead to overspilling of drainage gullies and channels, and a flood may develop.</p>
+<p>Eventually, the drainage and surface run off may reach a river where the flow is localised and moves downstream.
+If the flow exceeds the river capacity, the flow will overtop the river banks and flood to the flanks of the river, possibly spreading over the flood plain.</p>
+<figure class="margin-caption align-default" id="catchment-schematic">
+<img alt="../../_images/figure74.png" src="../../_images/figure74.png" />
+<figcaption>
+<p><span class="caption-text">A schmatic showing the flow of water through a watershed scale system.</span><a class="headerlink" href="#catchment-schematic" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Typically, the upstream topography of the land determines the boundaries between different drainage basins,
+along lines of maximum elevation known as the watershed.
+An example of the Missouri and Mississippi river watersheds in the US is shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">US_river_basins</span></code>.</p>
+<figure class="margin-caption align-default" id="us-river-basins">
+<img alt="../../_images/figure81.png" src="../../_images/figure81.png" />
+<figcaption>
+<p><span class="caption-text">Map showing the watersheds that flow into the Missouri (in yellow) and Mississippi rivers.</span><a class="headerlink" href="#us-river-basins" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>For illustration, <code class="xref std std-numref docutils literal notranslate"><span class="pre">missouri_flood</span></code> shows a fascinating image of the flooding of the Missouri River taken from satellite to illustrate the flood plain adjacent to the river</p>
+<figure class="margin-caption align-default" id="missouri-flood">
+<img alt="../../_images/figure10.png" src="../../_images/figure10.png" />
+<figcaption>
+<p><span class="caption-text">Left, a stretch of the Missouri river during normal flow. Right, the same stretch of river during a flood.</span><a class="headerlink" href="#missouri-flood" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>To set the scene for modelling runoff, it is important to assess the volume flux involved in different types of rain event.
+Light rain may lead to <span class="math notranslate nohighlight">\(0.1 \ \mathrm{mm \ hour^{-1}}\)</span>; moderate rain <span class="math notranslate nohighlight">\(1 \ \mathrm{mm \ hour^{-1}}\)</span> and heavy rain may be <span class="math notranslate nohighlight">\(10 \ \mathrm{mm \ hour^{-1}}\)</span>.
+If a river has a catchment area of <span class="math notranslate nohighlight">\(100 \times 100 \ \mathrm{km}\)</span>, corresponding to <span class="math notranslate nohighlight">\(1010 \ \mathrm{m}^2\)</span> then the volume of rain which falls in 1 hour may range from <span class="math notranslate nohighlight">\(107 – 109 \ \mathrm{m}^3\)</span>.
+The surface run-off and some of the drainage fraction of this volume will flow into the river.
+If the rain fall were to flow directly into the river, it would require a flow rate capacity of about <span class="math notranslate nohighlight">\(3 \times 10^3 - 3 \times 10^5 \ \mathrm{m^3s^{-1}}\)</span>.
+A large river may have a width of <span class="math notranslate nohighlight">\(1000 \ \mathrm{m}\)</span> and depth of <span class="math notranslate nohighlight">\(10 \ \mathrm{m}\)</span>, and so the smaller flux could be carried down the river at a speed of about <span class="math notranslate nohighlight">\(0.3 \ \mathrm{m s^{-1}}\)</span> but the larger rainfall event would require a flow rate of <span class="math notranslate nohighlight">\(30 \ \mathrm{m s^{-1}}\)</span> if the rain directly entered the river.
+Fortunately the drainage system is large and leads to very significant delays in the rain fall reaching the river, as we will now explore.
+This delay is key to preventing flooding in many cases.</p>
+</section>
+<section id="modelling-run-off">
+<h2>Modelling run-off<a class="headerlink" href="#modelling-run-off" title="Permalink to this headline">#</a></h2>
+<p>If we are to model fluid flows, we need to assess the dominant controls on the dynamics.
+With water flowing downhill on the land surface, the down-slope force of gravity is balanced by either the inertia of the fluid or the friction force from the ground on the fluid.
+The inertia represents the force required to speed up or slow down the flow; as fluid moves over the land, it may change direction for example, over some length scale <span class="math notranslate nohighlight">\(h\)</span> comparable to the depth of the flow, and this requires a time <span class="math notranslate nohighlight">\(\frac{L}{u}\)</span>, so the effective change in momentum divided by the time is</p>
+<div class="math notranslate nohighlight" id="equation-runoff-balance">
+<span class="eqno">()<a class="headerlink" href="#equation-runoff-balance" title="Permalink to this equation">#</a></span>\[\frac{d (\rho u)}{dt} \sim r \frac{u^2}{h}\]</div>
+<p>With a rough base, this continually changing direction of travel leads to a turbulent drag of the form <span class="math notranslate nohighlight">\(c r \frac{u^2}{h}\)</span> where <span class="math notranslate nohighlight">\(c\)</span> is the drag coefficient and <span class="math notranslate nohighlight">\(h\)</span> the depth of the flow.
+Moody has published tables for the drag as a function of the roughness of the bed, but a representative value for <span class="math notranslate nohighlight">\(c\)</span> may be 0.004.</p>
+<p>If the gravity force down-slope is <span class="math notranslate nohighlight">\(\rho g \sin(\theta)\)</span> for a slope of angle <span class="math notranslate nohighlight">\(\theta\)</span> then the flow speed will be of order</p>
+<div class="math notranslate nohighlight" id="equation-gravity-speed">
+<span class="eqno">()<a class="headerlink" href="#equation-gravity-speed" title="Permalink to this equation">#</a></span>\[U = \sqrt{\frac{gh}{c} \sin(\theta)}\]</div>
+<p>and the flux will be</p>
+<div class="math notranslate nohighlight" id="equation-gravity-flux">
+<span class="eqno">()<a class="headerlink" href="#equation-gravity-flux" title="Permalink to this equation">#</a></span>\[q = hU\]</div>
+<p>In contrast, for a very thin film, the viscous force from the ground will dominate the flow, and this has the form</p>
+<div class="math notranslate nohighlight" id="equation-viscous-force">
+<span class="eqno">()<a class="headerlink" href="#equation-viscous-force" title="Permalink to this equation">#</a></span>\[\mu = \frac{u}{h^2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mu\)</span> is the dynamic viscosity of the fluid, and again <span class="math notranslate nohighlight">\(h\)</span> is the depth of the flow.
+Matching this with the gravity force downslope we find</p>
+<div class="math notranslate nohighlight" id="equation-viscous-grav-balance">
+<span class="eqno">()<a class="headerlink" href="#equation-viscous-grav-balance" title="Permalink to this equation">#</a></span>\[U = g \rho \sin(\theta) \frac{h^2}{2\mu}\]</div>
+<p>With a flux</p>
+<div class="math notranslate nohighlight" id="equation-thin-film-flow">
+<span class="eqno">()<a class="headerlink" href="#equation-thin-film-flow" title="Permalink to this equation">#</a></span>\[q = g \rho \sin(\theta) \frac{h^3}{6\mu} \]</div>
+<p>Taking the ratio of the inertial and viscous forces, we find that the ratio is given by</p>
+<div class="math notranslate nohighlight" id="equation-reynolds-derivation">
+<span class="eqno">()<a class="headerlink" href="#equation-reynolds-derivation" title="Permalink to this equation">#</a></span>\[\mathrm{Re} = \frac{\rho u h}{\mu}\]</div>
+<p>and this is known as the Reynolds number.
+If <span class="math notranslate nohighlight">\(\mathrm{Re}\)</span> is large it implies that the flow is dominated by the inertia.
+This corresponds to deep or fast flow.
+Shallower slow flow is more likely to have low Reynolds number and be controlled by the viscous drag.
+To estimate the transition point we can find the flux for which the depth of the current is comparable in the inertia dominated and viscous dominated flow (see problem sheet).</p>
+<p>Surface run off in mild rain fall is likely to follow the slow viscous drag, but as the flow increases there may be a transition to the inertial flow regime.</p>
+<p>The above models are highly idealised, and on real terrain, the ground may be irregular, so that there is an effective depth of water which connects the surface water and then a smaller depth which regulates the flow over the surface.
+However, given the irregularities of the terrain typical in many catchments, it is helpful to develop an averaged description of the run-off flow from a localised area of the catchment, and then we can add these together as shown in the figure of the multiple drainage zones which flow into the main river.
+We therefore work with an integrated picture of the volume of surface water, and relate this to the run-off flow with a phenomenological model in which we denote the runoff from an area as being <span class="math notranslate nohighlight">\(kW(t)\)</span> per unit area, where <span class="math notranslate nohighlight">\(W(t)\)</span> is the volume of surface water per unit area. The parameter <span class="math notranslate nohighlight">\(k\)</span> will increase with the angle of slope, and could be related to the viscous or inertial laws <a class="reference internal" href="#equation-gravity-flux">()</a> or <a class="reference internal" href="#equation-thin-film-flow">()</a> for the flux in principle, but would need to account for the roughness of the surface, the vegetation and the detailed friction.
+For the present illustrative models, we keep <span class="math notranslate nohighlight">\(k\)</span> a constant (see problem set).</p>
+<figure class="margin-caption align-default" id="north-catchments">
+<img alt="../../_images/figure111.png" src="../../_images/figure111.png" />
+<figcaption>
+<p><span class="caption-text">A map of different watersheds around Huddersfield.</span><a class="headerlink" href="#north-catchments" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If <span class="math notranslate nohighlight">\(W\)</span> increases in one zone, the run-off into the river from this zone will increase, and so we expect <span class="math notranslate nohighlight">\(W\)</span> to vary according to the relation</p>
+<div class="math notranslate nohighlight" id="equation-flow-sum">
+<span class="eqno">()<a class="headerlink" href="#equation-flow-sum" title="Permalink to this equation">#</a></span>\[\frac{dW}{dt} = R – kW – I - T\]</div>
+<p>where <span class="math notranslate nohighlight">\(R\)</span> is the rainfall rate and <span class="math notranslate nohighlight">\(kW\)</span> is the run-off rate which we assume is linear in the value of <span class="math notranslate nohighlight">\(W\)</span>, the surface water storage in this zone.
+This model will apply for relatively small surface water levels.
+We expect that the water flows from the surface into a network of small drainage channels which then coalesce into larger channels, and eventually flow into a tributary.
+The simple parameterisation is designed to capture the flow over the surface in a simple fashion including the roughness of the surface, the slope and the vegetation.
+In the problems we explore a nonlinear flux law, but the simple model provides a useful framework for interpreting how a simple drainage system operates.</p>
+<p>In equation <a class="reference internal" href="#equation-flow-sum">()</a>, <span class="math notranslate nohighlight">\(I\)</span> is the drainage rate into the ground in this sub catchment zone.
+<span class="math notranslate nohighlight">\(T\)</span> represents the process of evapotranspiration, which leads to the rain water being turned back into vapour through the vegetation.
+In heavily vegetated zones this is a significant factor; the vegetation also impacts the value of <span class="math notranslate nohighlight">\(k\)</span>, the surface run-off rate, since it requires a deeper level of surface water before it runs off.
+In the model solutions below we neglect <span class="math notranslate nohighlight">\(T\)</span> but can readily include these in the model, provided we have a relation between T and the rain fall.</p>
+<p>If the drainage rate is also small then we can approximate equation <a class="reference internal" href="#equation-flow-sum">()</a> by the equation</p>
+<div class="math notranslate nohighlight" id="equation-flow-approx">
+<span class="eqno">()<a class="headerlink" href="#equation-flow-approx" title="Permalink to this equation">#</a></span>\[\frac{dW}{dt} + kW = R\]</div>
+<p>This can be expressed in the form</p>
+<div class="math notranslate nohighlight" id="equation-flow-approx-sln">
+<span class="eqno">()<a class="headerlink" href="#equation-flow-approx-sln" title="Permalink to this equation">#</a></span>\[\frac{d}{dt} ( W e^{kt} ) = R e^{kt}\]</div>
+<p>and so in general we can write the solution for <span class="math notranslate nohighlight">\(W(t)\)</span> in the form</p>
+<div class="math notranslate nohighlight" id="equation-w-of-time">
+<span class="eqno">()<a class="headerlink" href="#equation-w-of-time" title="Permalink to this equation">#</a></span>\[W(t) = W(0) e^{-kt} + e^{-kt} \int R(t) e^{kt} dt\]</div>
+<p>If the rain rate is constant in time then, for <span class="math notranslate nohighlight">\(0&lt;t&lt;T\)</span> then for <span class="math notranslate nohighlight">\(t&lt;T\)</span> we have solution</p>
+<div class="math notranslate nohighlight" id="equation-rain-step-sln">
+<span class="eqno">()<a class="headerlink" href="#equation-rain-step-sln" title="Permalink to this equation">#</a></span>\[W(t) = W(0) e^{-kt} + R(t) \frac{ 1 - e^{-kt}}{k}\]</div>
+<p>If the rain then stops for <span class="math notranslate nohighlight">\(t&gt;T\)</span>, then the surface water has the form for <span class="math notranslate nohighlight">\(t&gt;T\)</span></p>
+<div class="math notranslate nohighlight" id="equation-no-rain-sln">
+<span class="eqno">()<a class="headerlink" href="#equation-no-rain-sln" title="Permalink to this equation">#</a></span>\[W(t) = W(T) e^{-k(t-T)}\]</div>
+<p>And in this expression <span class="math notranslate nohighlight">\(W(T)\)</span> is evaluated as in <a class="reference internal" href="#equation-w-of-time">()</a>.
+Since we have prescribed the surface runoff flow from the land to the river to be <span class="math notranslate nohighlight">\(kW\)</span>, by assessing the value of <span class="math notranslate nohighlight">\(W\)</span> we can evaluate the runoff rate.</p>
+<figure class="margin-caption align-default" id="runoff-response">
+<img alt="../../_images/figure121.png" src="../../_images/figure121.png" />
+<figcaption>
+<p><span class="caption-text">Plot showing the response of the run-off rate to constant rainfall.</span><a class="headerlink" href="#runoff-response" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="infiltration">
+<h2>Infiltration<a class="headerlink" href="#infiltration" title="Permalink to this headline">#</a></h2>
+<p>In the above model we have assumed the infiltration is small, but in general the infiltration will depend on the permeability of the ground, so that the infiltration speed follows a law of the form</p>
+<div class="math notranslate nohighlight" id="equation-infilitration-speed">
+<span class="eqno">()<a class="headerlink" href="#equation-infilitration-speed" title="Permalink to this equation">#</a></span>\[U = \frac{k_p}{\mu} \rho g\]</div>
+<p>Where <span class="math notranslate nohighlight">\(k_p\)</span> is the permeability of the ground (soil or clay typically) and the density and viscosity of the water are <span class="math notranslate nohighlight">\(\rho\)</span> and <span class="math notranslate nohighlight">\(\mu\)</span> respectively, assuming the water seeps into the ground.
+The actual seepage may be more complex and depend on effects of capillarity and fractional flow if the soil is only partially wet with water (ie above the water table, but that is beyond the scope of the present modelling).
+If for simplicity we take a permeability of <span class="math notranslate nohighlight">\(10^{-12} - 10^{-13} \ \mathrm{m}^2\)</span> and a viscosity of <span class="math notranslate nohighlight">\(0.001 \ \mathrm{Pa \ s}\)</span> and density of <span class="math notranslate nohighlight">\(1000 \ \mathrm{kg \ m^{-3}}\)</span> then we find that the speed is about <span class="math notranslate nohighlight">\(10^{-6} - 10^{-7} \ \mathrm{m \ s^{-1}}\)</span>.</p>
+<p>This means the infiltration per square metre will be about <span class="math notranslate nohighlight">\(10^{-7} \ \mathrm{m^3 \ s^{-1}}\)</span> and compared to the rainfall rates quoted above, we see that a significant fraction of light rain may be able to infiltrate into the ground while only a very small fraction of heavy rain will be able to infiltrate leading to surface water flows, and water entering drainage channels on the surface.</p>
+<p>If we add a constant infiltration rate in solving the above model <a class="reference internal" href="#equation-runoff-balance">()</a> we find that</p>
+<div class="math notranslate nohighlight" id="equation-raining">
+<span class="eqno">()<a class="headerlink" href="#equation-raining" title="Permalink to this equation">#</a></span>\[W(t) = W(0) e^{- kt} + (R-I) \frac{(1 - e^{-kt})}{k} \mathsf{\; while \; it \; is \; raining, \;} 0&lt;t&lt;T\]</div>
+<p>and then</p>
+<div class="math notranslate nohighlight" id="equation-not-raining">
+<span class="eqno">()<a class="headerlink" href="#equation-not-raining" title="Permalink to this equation">#</a></span>\[W(t) = W(T) e^{-k(t-T)} – I \frac{\left(1 – e^{-k(t-T)}\right)}{k} \mathsf{\; after \; the \; rain \; stops, \;} t&gt;T\]</div>
+<p>In some cases there may be a capillary entry pressure for the surface water to drain into the soil/clay below the surface and this is usually given in terms of the interfacial tension, <span class="math notranslate nohighlight">\(\sigma\)</span> , and the size of the pore throats, <span class="math notranslate nohighlight">\(r\)</span></p>
+<div class="math notranslate nohighlight" id="equation-cap-pressure">
+<span class="eqno">()<a class="headerlink" href="#equation-cap-pressure" title="Permalink to this equation">#</a></span>\[P_{\mathrm{capillary}} = \frac{\sigma}{r}\]</div>
+<p>If a pool of surface water develops of depth <span class="math notranslate nohighlight">\(h\)</span>, the hydrostatic pressure of this pool should exceed the capillary entry pressure for the water to begin to drain into the soil.</p>
+<p>With the capillary pressure being of order <span class="math notranslate nohighlight">\(70-700 \ \mathrm{Pa}\)</span> for a pore throat of <span class="math notranslate nohighlight">\(0.1-1.0 \ \mathrm{mm}\)</span>, then the pool of water needs to be of depth <span class="math notranslate nohighlight">\(1-10 \ \mathrm{cm}\)</span> before water begins to drain.</p>
+</section>
+<section id="multiple-drainage-zones">
+<h2>Multiple Drainage Zones<a class="headerlink" href="#multiple-drainage-zones" title="Permalink to this headline">#</a></h2>
+<p>In a drainage system, there will typically be multiple drainage zones for the surface flow, depending on the topology of the land.
+Each area will flow into a network of channels, which feed into larger channels, ultimately reaching a river or tributary of a river.
+In modelling the flow to a river from a drainage basin, the topography and the nature of the surface need to be quantified to determine the partitioning between infiltration and surface flow.
+In a heavily vegetated zone, the value of <span class="math notranslate nohighlight">\(k\)</span> (previous section) will be small, and the water will be held up, draining into the river more slowly than an area with no vegetation.
+Development of land, with concrete and other impermeable surfaces, substantially increases the surface flow rate thereby reducing the time between a rain fall and the arrival of water in a river.</p>
+<p>In different parts of the catchment, the slope of the terrain may be different and this can lead to different run off rates <span class="math notranslate nohighlight">\(k\)</span>.
+If there are <span class="math notranslate nohighlight">\(n\)</span> zones of run off, with different average values of <span class="math notranslate nohighlight">\(k_i\)</span> then the total flow supplied to the river <span class="math notranslate nohighlight">\(F(t)\)</span> will take the form of a sum over</p>
+<div class="math notranslate nohighlight" id="equation-catchment-element">
+<span class="eqno">()<a class="headerlink" href="#equation-catchment-element" title="Permalink to this equation">#</a></span>\[k_iW_i(t) = \frac{R}{k_i} \left(1-e^{-k_i t}\right)\]</div>
+<p>so the total flow supplied to the river will be</p>
+<div class="math notranslate nohighlight" id="equation-catchment-sum">
+<span class="eqno">()<a class="headerlink" href="#equation-catchment-sum" title="Permalink to this equation">#</a></span>\[F(t) = \sum_0^n(k_i W_i) \]</div>
+<p>And each <span class="math notranslate nohighlight">\(W_i(t)\)</span> depends on the drainage in that zone of the catchment, which will depend on the local rainfall, as well as the constant <span class="math notranslate nohighlight">\(k_i\)</span> and the local infiltration rate.</p>
+<figure class="margin-caption align-default" id="china-basins">
+<img alt="../../_images/figure131.png" src="../../_images/figure131.png" />
+<figcaption>
+<p><span class="caption-text">Different drainage basins in China, associated with the different rivers
+and for each river showing a series of drainage channels feeding into the main river.</span><a class="headerlink" href="#china-basins" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./03_rivers/l13"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By the QES Committee<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

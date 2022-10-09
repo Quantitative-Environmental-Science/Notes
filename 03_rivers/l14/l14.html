@@ -1,0 +1,583 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Lecture 14: River Flows &#8212; Quantitative Environmental Science</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams"]}, "tex": {"packages": ["base", "physics", "ams"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Quantitative Environmental Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Quantitative Environmental Science
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Earth's Energy Balance
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../00_energybalance/l2/l2.html">
+   Lecture 2: Where does the energy come from on Earth?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../00_energybalance/l3/l3.html">
+   Lecture 3: The Carbon Cycle
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Groundwater Hydrology
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../01_groundwater/intro/intro.html">
+   Introduction to Groundwater
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../01_groundwater/l4/l4.html">
+   Lecture 4: Groundwater Systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../01_groundwater/l5/l5.html">
+   Lecture 5: Why water moves beneath the surface
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../01_groundwater/l6/l6.html">
+   Lecture 6: How we measure and understand water movement
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../01_groundwater/l7/l7.html">
+   Lecture 7: Groundwater challenges and sustainable groundwater
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../reference/glossary.html">
+   Glossary
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/03_rivers/l14/l14.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#coupled-model">
+   2.1 Coupled Model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#managing-flow-from-drainage-basins-reservoirs">
+   2.2 Managing flow from drainage basins - reservoirs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sediment-transport">
+   2.3 Sediment transport
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Lecture 14: River Flows</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#coupled-model">
+   2.1 Coupled Model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#managing-flow-from-drainage-basins-reservoirs">
+   2.2 Managing flow from drainage basins - reservoirs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sediment-transport">
+   2.3 Sediment transport
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-14-river-flows">
+<span id="lecture-14"></span><h1>Lecture 14: River Flows<a class="headerlink" href="#lecture-14-river-flows" title="Permalink to this headline">#</a></h1>
+<p>The previous section focussed on flow in the catchment towards a river.
+Some very simplified models for the surface run-off in terms of the rainfall flux
+were developed to help inform relationships between the rainfall rate
+and the rate at which this flows into a river.</p>
+<p>To interpret these models of the surface runoff,
+we need a model for the flow in a river to understand if the river can accommodate the flow,
+or if it will overtop its banks and flood.
+As a simple model, a river has a cross-section area <span class="math notranslate nohighlight">\(A(h)\)</span> as a function of the water depth,
+and the water in the river moves downstream with speed <span class="math notranslate nohighlight">\(u\)</span>.
+If the river inclination is <span class="math notranslate nohighlight">\(\theta\)</span> then the gravity force down-slope is</p>
+<div class="math notranslate nohighlight" id="equation-gravity">
+<span class="eqno">()<a class="headerlink" href="#equation-gravity" title="Permalink to this equation">#</a></span>\[F_g = g \sin(\theta) \rho A\]</div>
+<p>and the drag force resisting this flow is</p>
+<div class="math notranslate nohighlight" id="equation-drag">
+<span class="eqno">()<a class="headerlink" href="#equation-drag" title="Permalink to this equation">#</a></span>\[F_d = c \rho g u^2 P(h)\]</div>
+<p>Where <span class="math notranslate nohighlight">\(P(h)\)</span> is the wetted perimeter of the river bed.</p>
+<figure class="margin-caption align-default" id="river-bed">
+<img alt="../../_images/figure16.png" src="../../_images/figure16.png" />
+<figcaption>
+<p><span class="caption-text">Above, diagram showing a cross-section of a river with cross-sectional area <span class="math notranslate nohighlight">\(A(h)\)</span>,
+and a perimeter <span class="math notranslate nohighlight">\(P(h)\)</span>.
+Below, a side view of the river, at an angle <span class="math notranslate nohighlight">\(\theta\)</span>,
+showing the drag force <span class="math notranslate nohighlight">\(\tau\)</span> acting on an element <span class="math notranslate nohighlight">\(\delta x\)</span>.</span><a class="headerlink" href="#river-bed" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If we balance these flows we find that the speed</p>
+<div class="math notranslate nohighlight" id="equation-grav-drag-balance">
+<span class="eqno">()<a class="headerlink" href="#equation-grav-drag-balance" title="Permalink to this equation">#</a></span>\[u(h) = \sqrt{\frac{A(h) g \sin(\theta)}{c P(h)}}\]</div>
+<p>And the volume flow in the river is approximately</p>
+<div class="math notranslate nohighlight" id="equation-river-vol">
+<span class="eqno">()<a class="headerlink" href="#equation-river-vol" title="Permalink to this equation">#</a></span>\[Q = A(h) u(h)\]</div>
+<p>In a specific example, we might consider that the river area <span class="math notranslate nohighlight">\(A(h) = \alpha h^2\)</span> and that the perimeter <span class="math notranslate nohighlight">\(P(h) = \beta h\)</span> so that</p>
+<div class="math notranslate nohighlight" id="equation-parabolic-river">
+<span class="eqno">()<a class="headerlink" href="#equation-parabolic-river" title="Permalink to this equation">#</a></span>\[Q(h) = \sqrt{\frac{\alpha^3}{\beta} \frac{g \sin(\theta)}{c} h^{5}} \]</div>
+<p>is the law for the flux in the river.</p>
+<figure class="margin-caption align-default" id="flux-law">
+<img alt="../../_images/figure24.png" src="../../_images/figure24.png" />
+<figcaption>
+<p><span class="caption-text">River discharge as a function of river depth measured on the river Severn at Bewdley (blue dots).
+The red line shows the theoretical relationship between <span class="math notranslate nohighlight">\(Q\)</span> and <span class="math notranslate nohighlight">\(h\)</span> derived above.</span><a class="headerlink" href="#flux-law" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This provides a reasonable simplified model for the flow in many rivers,
+for example the chart above compares this formula with data from the River Severn showing flow as a function of the water depth.</p>
+<p>An initial result emerging from this model is that if the level of the banks are at <span class="math notranslate nohighlight">\(z = h^*\)</span> above the base of the river,
+then the critical flow rate of water in the river above which it begins to flood is</p>
+<div class="math notranslate nohighlight" id="equation-critical-flow">
+<span class="eqno">()<a class="headerlink" href="#equation-critical-flow" title="Permalink to this equation">#</a></span>\[Q^* = Q(h^*)\]</div>
+<p>If we want to use this model for the river flow to reduce the flood we see that the key controls we have are
+(a) raising the height of the banks; (b) deepening the river; (c) widening the river.</p>
+<figure class="margin-caption align-default" id="river-strats">
+<img alt="../../_images/figure45.png" src="../../_images/figure45.png" />
+<figcaption>
+<p><span class="caption-text">Schematic showing different river flooding mitigation strategies.</span><a class="headerlink" href="#river-strats" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="margin-caption align-default" id="strat-effects">
+<img alt="../../_images/figure36.png" src="../../_images/figure36.png" />
+<figcaption>
+<p><span class="caption-text">Illustration of different mitigation strategies to prevent flooding of a river.
+In red, raising the banks (i.e. changing <span class="math notranslate nohighlight">\(h^*\)</span>). In blue, deepening the river
+and in green, widening the river.</span><a class="headerlink" href="#strat-effects" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Our earlier idealised models for the surface runoff identify how more intense and longer duration rain events lead to a greater flux reaching the river,
+and hence we can explore the type of rainstorm which will lead to the flux exceeding the maximum river flux in terms of the model for the runoff.
+Given statistics for the distribution of expected rainfall intensity and rainfall duration,
+it is then possible to design mitigation measures to reduce the flux arriving at the river from the run-off for a given rainstorm.
+There is then a cost benefit analysis to be carried out to determine the benefit of mitigating the flood risk for different intensity storms:
+this involves estimating the costs of the mitigation measures compared to the costs of the damage produced by the flooding multiplied by the risk of the flooding.</p>
+<section id="coupled-model">
+<h2>2.1 Coupled Model<a class="headerlink" href="#coupled-model" title="Permalink to this headline">#</a></h2>
+<p>If we combine the runoff model with the river model we find the following comparison plot,
+illustrating how different types of rainfall lead to different flow regimes (i.e. flooding or not)</p>
+<figure class="margin-caption align-default" id="rain-response">
+<img alt="../../_images/figure56.png" src="../../_images/figure56.png" />
+<figcaption>
+<p><span class="caption-text">Plot showing river flow response to different kinds of rainfall events over time.
+In red, short heavy rain response. In green, the response to a long moderate rainfall event.
+In blue, a long and heavy rainstorm that causes the river to exceed the critical flow rate <span class="math notranslate nohighlight">\(Q^*\)</span>.</span><a class="headerlink" href="#rain-response" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This model, although simplified, has features in common with the classical river hydrograph,
+as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">hydrograph</span></code>, in which we plot the rainfall flux and the river flow rate as a function of time.</p>
+<figure class="margin-caption align-default" id="hydrograph">
+<img alt="../../_images/figure64.png" src="../../_images/figure64.png" />
+<figcaption>
+<p><span class="caption-text">An example of a river hydrograph, showing the reponse of river flux to a rainfall event.</span><a class="headerlink" href="#hydrograph" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="managing-flow-from-drainage-basins-reservoirs">
+<h2>2.2 Managing flow from drainage basins - reservoirs<a class="headerlink" href="#managing-flow-from-drainage-basins-reservoirs" title="Permalink to this headline">#</a></h2>
+<p>In order to manage flow from drainage basins, reservoirs are often developed to store the run-off upstream and hence delay the arrival of the run-off into the river.
+Delaying and spreading out the arrival of the run-off represents a very effective means of mitigating a flood.
+We can model how a reservoir operates as follows.</p>
+<p>If a reservoir has storage volume <span class="math notranslate nohighlight">\(V\)</span> then the volume of water <span class="math notranslate nohighlight">\(V_w\)</span> in the reservoir follows the law</p>
+<div class="math notranslate nohighlight" id="equation-reservoir-eqn">
+<span class="eqno">()<a class="headerlink" href="#equation-reservoir-eqn" title="Permalink to this equation">#</a></span>\[\frac{d V_w}{dt} = kW – \mathrm{Out}\]</div>
+<p>where <span class="math notranslate nohighlight">\(kW\)</span> is the inflow from the drainage system, channelled into the reservoir, and <span class="math notranslate nohighlight">\(\mathrm{Out}\)</span> is the outflow flow from the reservoir to the river.
+This output flow is typically controlled by the height of the water in the reservoir, <span class="math notranslate nohighlight">\(h\)</span>, above the outflow opening which has area <span class="math notranslate nohighlight">\(A(h)\)</span>, and through which the flow is released</p>
+<div class="math notranslate nohighlight" id="equation-res-outflux">
+<span class="eqno">()<a class="headerlink" href="#equation-res-outflux" title="Permalink to this equation">#</a></span>\[\mathrm{Out} = A \sqrt{2gh}\]</div>
+<p>We can write</p>
+<div class="math notranslate nohighlight" id="equation-reservoir-int">
+<span class="eqno">()<a class="headerlink" href="#equation-reservoir-int" title="Permalink to this equation">#</a></span>\[V_w = \int_{z=o}^{z=h} X(z) dz\]</div>
+<p>where <span class="math notranslate nohighlight">\(X(z)\)</span> is the area of the reservoir when it has depth <span class="math notranslate nohighlight">\(z\)</span>.</p>
+<p>Using the above equations, we can solve for the change in depth of the reservoir given (i) the history of the rainfall and knowledge about the drainage basin, to allow us to estimate <span class="math notranslate nohighlight">\(kW(t)\)</span>, and (ii) knowledge of the reservoir opening <span class="math notranslate nohighlight">\(A\)</span> to allow us to estimate the loss of water from the reservoir.</p>
+<p>In the simple case that <span class="math notranslate nohighlight">\(X(z)\)</span> is a constant, there is an equilibrium between the run-off from the rainfall and loss of water from the reservoir,</p>
+<div class="math notranslate nohighlight" id="equation-reservoir-eq">
+<span class="eqno">()<a class="headerlink" href="#equation-reservoir-eq" title="Permalink to this equation">#</a></span>\[h_{eq} = \frac{k^2 W^2}{2 A^2 g}\]</div>
+<p>If the reservoir is deeper it will tend to empty, and if the reservoir is shallower it will fill up.
+Until the reservoir is full it can be used to regulate the outflow from the drainage basin into the river, and hence mitigate the impact of very heavy rain.
+However, the ultimate mitigation of the rain depends on the volume of the reservoir compared to the volume of the rainfall.
+Under-sizing the reservoir will provide some protection from very high run off rates, but it may not be sufficient for the run-off to remain smaller than the flow capacity of the river; however, the larger the reservoir, the more expensive.</p>
+<figure class="margin-caption align-default" id="runoff-rates">
+<img alt="../../_images/figure75.png" src="../../_images/figure75.png" />
+<figcaption>
+<p><span class="caption-text">Simple illustration of the benefit of a reservoir for delaying the flow into a river and hence mitigating the impact of rapid surface run off rates in a large rainstorm.</span><a class="headerlink" href="#runoff-rates" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="sediment-transport">
+<h2>2.3 Sediment transport<a class="headerlink" href="#sediment-transport" title="Permalink to this headline">#</a></h2>
+<p>One of the challenges of flow filling a reservoir is that the flow slows down and any suspended particle matter in the flow will tend to sediment.
+Over time this can lead to a build up of sediment and reduced effectiveness of a reservoir.
+Each year reservoirs may lose 0.5-1% of their volume owing to sedimentation.
+In addition, they starve the land downstream of sediment and associated nutrients trapped with the sediment.</p>
+<p>Interesting examples where sedimentation behind dams has had an impact include the <span class="math notranslate nohighlight">\(520 \ \mathrm{MW}\)</span> Dez hydroelectric dam in Iran,
+where sedimentation has raised the riverbed by <span class="math notranslate nohighlight">\(2 \ \mathrm{m \ yr^{-1}}\)</span>,
+losing 19% of the power generation over the past 40 years of operation.
+As the sediment bed builds up to the level of the off-take,
+operation of turbines becomes progressively more challenging owing to the sediment.
+The Three Gorges Dam in China has on the Yangtze river has a power generating capacity of <span class="math notranslate nohighlight">\(22,500 \ \mathrm{MW}\)</span>;
+the sediment storage part of the reservoir is <span class="math notranslate nohighlight">\(17 \times 10^9 \ \mathrm{m}^3\)</span> while the remaining <span class="math notranslate nohighlight">\(22 \times 10^9 \ \mathrm{m}^3\)</span> will be retained by flushing the sediment from the bed.
+In Britain, the average sediment load tends to about <span class="math notranslate nohighlight">\(50 \ \mathrm{tones \ km^{-2} \ yr^{-1}}\)</span> but this depends on the source.</p>
+<p>Sediment transport and deposition is a complex process.
+However, a simple rule of thumb is that the sediment begins to settle when the flow speed of the becomes smaller than a multiple of about 20 times the particle settling speed, and the particles are no longer suspended.</p>
+<div class="math notranslate nohighlight" id="equation-settling-speed">
+<span class="eqno">()<a class="headerlink" href="#equation-settling-speed" title="Permalink to this equation">#</a></span>\[U &lt; V_{\mathrm{s}} \theta\]</div>
+<p>where <span class="math notranslate nohighlight">\(\theta\)</span> is the angle of slope (assumed to be small) and <span class="math notranslate nohighlight">\(V_s\)</span> is the settling velocity of the particle.
+Note this is a very simplified relation.</p>
+<p>The settling speed of (small) particles is given by Stokes Law after Sir Gabriel Stokes of Pembroke College</p>
+<div class="math notranslate nohighlight" id="equation-stokes-law">
+<span class="eqno">()<a class="headerlink" href="#equation-stokes-law" title="Permalink to this equation">#</a></span>\[V_s = \frac{2 g \Delta \rho r^2}{9\mu} \]</div>
+<p>where <span class="math notranslate nohighlight">\(\Delta \rho\)</span> is the density difference of the particle and the water,
+typically about <span class="math notranslate nohighlight">\(1500 \ \mathrm{kg \ m^{-3}}\)</span> for silica type particles,
+<span class="math notranslate nohighlight">\(r\)</span> is the particle radius,
+and <span class="math notranslate nohighlight">\(\mu\)</span> is the fluid viscosity.</p>
+<figure class="margin-caption align-default" id="particle-size-vs-speed">
+<img alt="../../_images/figure82.png" src="../../_images/figure82.png" />
+<figcaption>
+<p><span class="caption-text">A plot of particle size against settling speed.</span><a class="headerlink" href="#particle-size-vs-speed" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>It is seen that particles of size <span class="math notranslate nohighlight">\(0.1-1.0 \ \mathrm{mm}\)</span> have settling speeds of <span class="math notranslate nohighlight">\(0.02-2.0 \ \mathrm{m \ s^{-1}}\)</span>,
+and so these will be expected to sediment in a reservoir as the flow slows and fills the reservoir.
+The very small particles may remain suspended depending on the flow speed in the reservoir.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./03_rivers/l14"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By the QES Committee<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
