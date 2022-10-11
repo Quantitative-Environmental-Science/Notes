@@ -390,18 +390,18 @@ This means all together:</p>
 <p>Which can be solved to give:</p>
 <div class="math notranslate nohighlight" id="equation-gw-flow-solution">
 <span class="eqno">(15)<a class="headerlink" href="#equation-gw-flow-solution" title="Permalink to this equation">#</a></span>\[h_o - h_w = \frac{Q}{2 \pi b K} \ln{\frac{r_o}{r_w}}\]</div>
-<p>Which we can rearrange to make something called the <strong>Theim equation</strong>:</p>
-<div class="math notranslate nohighlight" id="equation-gw-theim">
-<span class="eqno">(16)<a class="headerlink" href="#equation-gw-theim" title="Permalink to this equation">#</a></span>\[Q = 2 \pi b K \frac{h_o - h_w}{\ln{\frac{r_o}{r_w}}}\]</div>
+<p>Which we can rearrange to make something called the <strong>Thiem equation</strong>:</p>
+<div class="math notranslate nohighlight" id="equation-gw-thiem">
+<span class="eqno">(16)<a class="headerlink" href="#equation-gw-thiem" title="Permalink to this equation">#</a></span>\[Q = 2 \pi b K \frac{h_o - h_w}{\ln{\frac{r_o}{r_w}}}\]</div>
 <p>Here <span class="math notranslate nohighlight">\(h_o\)</span> is the height from the aquifer to the surface before any pumping and <span class="math notranslate nohighlight">\(r_o\)</span> is the radius before any pumping, so <span class="math notranslate nohighlight">\(h_w\)</span> and <span class="math notranslate nohighlight">\(r\)</span> just track the evolution of the height and radius of the cone as the pumping test evolves.
 It follows that if <span class="math notranslate nohighlight">\(Q\)</span> is fixed, and <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(K\)</span> don’t change, there should be a linear relationship between <span class="math notranslate nohighlight">\(h\)</span> and <span class="math notranslate nohighlight">\(\ln{r}\)</span>.</p>
 <p>In most cases we are using a certain pumping rate (<span class="math notranslate nohighlight">\(Q\)</span>) and then measuring the response of the cone, and we want to understand the hydraulic conductivity of the system (or the permeability).
-We can rearrange Eq. <a class="reference internal" href="#equation-gw-theim">(16)</a> to solve for permeability:</p>
-<div class="math notranslate nohighlight" id="equation-gw-theim-perm">
-<span class="eqno">(17)<a class="headerlink" href="#equation-gw-theim-perm" title="Permalink to this equation">#</a></span>\[K = \frac{Q}{2 \pi b (h_2 - h_1)} \ln{\frac{r_2}{r_1}}\]</div>
+We can rearrange Eq. <a class="reference internal" href="#equation-gw-thiem">(16)</a> to solve for permeability:</p>
+<div class="math notranslate nohighlight" id="equation-gw-thiem-perm">
+<span class="eqno">(17)<a class="headerlink" href="#equation-gw-thiem-perm" title="Permalink to this equation">#</a></span>\[K = \frac{Q}{2 \pi b (h_2 - h_1)} \ln{\frac{r_2}{r_1}}\]</div>
 <p>One of the major assumptions in a test like this is that we are at steady state, and the cone shape and size isn’t changing with time (adding in a time dependence would change the maths quite a bit).
 This isn’t strictly true as the longer we pump a groundwater system, the more the cone will widen and deepen.
-However at some point you do reach a point where the rate of change is really very small over time and we can assume a ‘quasi’ steady state (<a class="reference internal" href="#quasi-steady-state"><span class="std std-numref">Fig. 32</span></a>).</p>
+However, at some point you do reach a point where the rate of change is really very small over time, and we can assume a ‘quasi’ steady state (<a class="reference internal" href="#quasi-steady-state"><span class="std std-numref">Fig. 32</span></a>).</p>
 <figure class="margin-caption align-default" id="quasi-steady-state">
 <img alt="../../_images/figure73.png" src="../../_images/figure73.png" />
 <figcaption>
