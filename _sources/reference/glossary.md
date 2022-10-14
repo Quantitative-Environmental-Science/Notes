@@ -1,10 +1,9 @@
-<br><div style="page-break-before:always;"></div>
-
 # Glossary
 
 A list of terms used in the QES course.
 
 ```{glossary}
+
 Aquiclude
     Sometime refered to as an *aquifuge*;
     a rock with very low hydraulic conductivity that acts as an impermeable barrier to groundwater flow.
@@ -33,8 +32,7 @@ Percolation
     The downward movement of water through soil.
 
 Porosity
-    The total sum of all void spaces in a rock. Often expressed as a percentage, or a number between 1 and 0.
-    Not all these spaces may be connected, however, so for water flow, the *effective porosity* is the amount of void space that can hold and transmit water.
+    The total sum of all void spaces in a rock. Often expressed as a percentage, or a number between 1 and 0. Not all these spaces may be connected, however, so for water flow, the *effective porosity* is the amount of void space that can hold and transmit water.
 
 Recharge
     The downward movement of water from the soil to the {term}`water table<Water Table>`.

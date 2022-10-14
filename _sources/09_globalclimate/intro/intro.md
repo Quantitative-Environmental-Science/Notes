@@ -1,0 +1,4 @@
+# Global Climate
+
+```{tableofcontents}
+```
