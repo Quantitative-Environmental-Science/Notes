@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Placeholder</title>
+    <title>3.2. The growth and melting of ice</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,9 +50,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams"]}, "tex": {"packages": ["base", "physics", "ams"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3.3. Ice sheets and the flow of glacial ice" href="../l10/l10.html" />
+    <link rel="prev" title="3.1. Ice in the polar regions" href="../l8/l8.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -102,7 +106,7 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../00_intro/intro/intro.html">
    1. Introduction
@@ -162,19 +166,29 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../intro/intro.html">
    3. Cryosphere
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="../l8/l8.html">
      3.1. Ice in the polar regions
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.2. The growth and melting of ice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../l10/l10.html">
+     3.3. Ice sheets and the flow of glacial ice
     </a>
    </li>
   </ul>
@@ -294,23 +308,90 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-stefan-problem">
+   The Stefan problem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-stefan-condition">
+   The Stefan condition
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-first-simplified-model-of-ice-growth">
+   A first simplified model of ice growth
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#forced-convection-and-limits-on-the-growth-of-ice">
+   Forced convection and limits on the growth of ice
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Placeholder</h1>
+                <h1>The growth and melting of ice</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-stefan-problem">
+   The Stefan problem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-stefan-condition">
+   The Stefan condition
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-first-simplified-model-of-ice-growth">
+   A first simplified model of ice growth
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#forced-convection-and-limits-on-the-growth-of-ice">
+   Forced convection and limits on the growth of ice
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -318,8 +399,93 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="placeholder">
-<span id="lecture-9"></span><h1>Placeholder<a class="headerlink" href="#placeholder" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="the-growth-and-melting-of-ice">
+<span id="lecture-9"></span><h1><span class="section-number">3.2. </span>The growth and melting of ice<a class="headerlink" href="#the-growth-and-melting-of-ice" title="Permalink to this headline">#</a></h1>
+<p>The formation of ice in the polar regions is a process central to many ecosystems, to the livelihoods of indigenous and norther communities and, at the largest scales, to the radiative balance at high latitudes.  An indication of the extent of the region in the Northern Hemisphere which experiences significant freezing is indicated in the following map of the mean non-frozen days.</p>
+<figure class="margin-caption align-default" id="freezingdays">
+<img alt="../../_images/9.FreezingFreeDays.png" src="../../_images/9.FreezingFreeDays.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 3.7 </span><span class="caption-text">Average number of days per year experiencing non-freezing temperatures in the period 1979-2008 (Kim <em>et al.</em> Remote. Sens. Env. 2012)</span><a class="headerlink" href="#freezingdays" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="the-stefan-problem">
+<h2>The Stefan problem<a class="headerlink" href="#the-stefan-problem" title="Permalink to this headline">#</a></h2>
+<figure class="margin-caption align-default" id="stefan">
+<a class="reference internal image-reference" href="../../_images/9.StefanProblem.png"><img alt="../../_images/9.StefanProblem.png" src="../../_images/9.StefanProblem.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.8 </span><span class="caption-text">The Stefan problem, in which a layer of ice forms of thickness <span class="math notranslate nohighlight">\(h(t)\)</span> from an upper surface with temperature <span class="math notranslate nohighlight">\(T_a\)</span> into water at the freezing temperature <span class="math notranslate nohighlight">\(T_w\)</span>.</span><a class="headerlink" href="#stefan" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Let’s consider the growth of freshwater ice, and try to predict the thickness of the ice as a function of time.  To do so we’ll need to predict the temperature in the ice, and where it reaches the freezing point, <span class="math notranslate nohighlight">\(0~^\circ\mbox{C}\)</span> for fresh (not salty) water, and hence we’ll need to solve for the temperature in the ice, <span class="math notranslate nohighlight">\(T(\mathbf{x},t)\)</span>.  In general this temperature could depend on both space <span class="math notranslate nohighlight">\(\mathbf{x} = (x,y,z)\)</span> and time <span class="math notranslate nohighlight">\(t\)</span>.  To start, let’s simplify things by considering a thin layer of ice on a wide body of water so that the temperature is solely a function of the vertical <span class="math notranslate nohighlight">\(T(z,t)\)</span>, where <span class="math notranslate nohighlight">\(z\)</span> is the vertical coordinate pointing down into the ice.</p>
+<p>The temperature at the surface <span class="math notranslate nohighlight">\(T_s = T(0,t)\)</span> is, in general, set by processes at the surface of the ice.  We’ll assume, again for simplicity, that the surface temperature is fixed at <span class="math notranslate nohighlight">\(T_s = -20~^\circ\mbox{C}\)</span>.  This might correspond, for example, to the arrival of a sudden cold front, or the drop in temperatures as night falls.</p>
+<p>The base of the ice is in contact with water, and here the temperature is constrained by phase equilibrium.  The phase diagram has the bulk melting point of water at atmospheric pressure to be <span class="math notranslate nohighlight">\(T_m = 0~^\circ\mbox{C}\)</span>, so the temperature at the base of the ice <span class="math notranslate nohighlight">\(T_h = T(h,t) = T_m = 0~^\circ\mbox{C}\)</span>.</p>
+<p>To understand the solidification or melting of any material, ice included, we need to be able to model the flux of thermal energy.  To do so we’ll make use of Fourier’s law of heat conduction, which states that thermal energy (heat) flows from a hotter body to a colder one.  Hence, in one dimension the vertical heat flux <span class="math notranslate nohighlight">\(F\)</span> in the ice is</p>
+<div class="math notranslate nohighlight">
+\[F = -k\pdv{T}{z},\]</div>
+<p>where <span class="math notranslate nohighlight">\(k\)</span> is the thermal conductivity which is a material property determining how quickly temperature is conducted the material.  For ice <span class="math notranslate nohighlight">\(k \simeq 2.22\, W m^{-1}K^{-1}\)</span>, and hence the heat flux <span class="math notranslate nohighlight">\(F\)</span> is measured in <span class="math notranslate nohighlight">\(Wm^{-2}\)</span>.  It is worth noting that, in general, the heat may be written in vector form as <span class="math notranslate nohighlight">\(\mathbf{F} = -k\nabla T\)</span>, where <span class="math notranslate nohighlight">\(\nabla = (\pdv{}{x},\pdv{}{y},\pdv{}{z}).\)</span>.</p>
+</section>
+<section id="the-stefan-condition">
+<h2>The Stefan condition<a class="headerlink" href="#the-stefan-condition" title="Permalink to this headline">#</a></h2>
+<p>The growth or melting of a material requires that sufficient thermal energy is removed or added to drive phase change.  At the phase boundary, consider a volume of solid grown per unit area in time <span class="math notranslate nohighlight">\(\Delta t\)</span> is <span class="math notranslate nohighlight">\(v_n\Delta t\)</span>, where <span class="math notranslate nohighlight">\(v_n\)</span> is the growth velocity of the interface (measured in the direction normal to the interface).  This growth requires an amount of latent heat be removed <span class="math notranslate nohighlight">\(L\rho v_n\Delta t\)</span>, where <span class="math notranslate nohighlight">\(L\)</span> is the latent heat and <span class="math notranslate nohighlight">\(\rho\)</span> is the density of the solid.  For ice, <span class="math notranslate nohighlight">\(L = 334\ \mbox{kJ kg}^{-1}\)</span> and <span class="math notranslate nohighlight">\(\rho = 917\ \mbox{kg m}^{-3}\)</span>.  This release / requirement of latent heat (on solidification / melting) must be balanced by the difference in flux of energy over time <span class="math notranslate nohighlight">\(\Delta t\)</span> from the liquid and the solid, <span class="math notranslate nohighlight">\((\mathbf{\hat{n}}\cdot\mathbf{F}_l-\mathbf{\hat{n}}\cdot\mathbf{F}_s)\Delta t\)</span>. Hence the general expression for the Stefan condition is</p>
+<div class="math notranslate nohighlight">
+\[\rho L v_n = \mathbf{\hat{n}}\cdot\mathbf{F}_l-\mathbf{\hat{n}}\cdot\mathbf{F}_s.\]</div>
+<p>In our two-dimensional system, where the growth rate <span class="math notranslate nohighlight">\(v_n = dh/dt\)</span>, this simplifies to</p>
+<div class="math notranslate nohighlight">
+\[\rho L \frac{dh}{dt} = F_l- F_s,\]</div>
+<p>where <span class="math notranslate nohighlight">\(F_l\)</span> and <span class="math notranslate nohighlight">\(F_s\)</span> are the vertical heat fluxes in the solid and liquid respectively.</p>
+</section>
+<section id="a-first-simplified-model-of-ice-growth">
+<h2>A first simplified model of ice growth<a class="headerlink" href="#a-first-simplified-model-of-ice-growth" title="Permalink to this headline">#</a></h2>
+<p>Let’s put the pieces together.  We’ve made the simplifying assumption that the surface is at fixed (constant) temperature <span class="math notranslate nohighlight">\(T_s\)</span>, and we know that the base is at the melting temperature <span class="math notranslate nohighlight">\(T_h = T_m\)</span>.  While the temperature within the ice is governed by thermal diffusion, let’s make the bold assumption that it is to good approximation linear. Hence the temperature is the ice is approximately,</p>
+<div class="math notranslate nohighlight">
+\[T = T_s + (T_m - T_s)\frac{z}{h}.\]</div>
+<p>If the water is initially at temperature <span class="math notranslate nohighlight">\(T_w = T_m\)</span> then the heat flux from the water is zero, <span class="math notranslate nohighlight">\(F_l = 0\)</span>.  The linear temperature assumption simplifies the Stefan condition to</p>
+<div class="math notranslate nohighlight">
+\[\rho L \frac{dh}{dt} = k\frac{T_m-T_s}{h}.\]</div>
+<p>This is a linear ordinary differential equation for the thickness of ice <span class="math notranslate nohighlight">\(h(t)\)</span>, the solution to which is</p>
+<div class="math notranslate nohighlight">
+\[h = \sqrt{\frac{2\kappa t}{\mathcal{S}}}.\]</div>
+<p>Here <span class="math notranslate nohighlight">\(\kappa = k/\rho c_p\)</span> is the thermal diffusivity of ice and <span class="math notranslate nohighlight">\(c_p\)</span> is the specific heat capacity. For ice the specific heat capacity, which represents the amount of energy needed to raise the temperature of one kilogram by one degree (Kelvin), is <span class="math notranslate nohighlight">\(c_p = 2.05\ \mbox{kJ kg}^{-1}\mbox{K}^{-1}\)</span> and hence the thermal diffusivity is <span class="math notranslate nohighlight">\(\kappa = 1.2\times10^{-6}\ \mbox{m s}^{-2}\)</span>.  The Stefan number,</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{S} = \frac{L}{c_p \Delta T},\]</div>
+<p>is a non-dimensional number which characterises the importance of latent heat release on phase change to the change of temperature within the ice over a characteristic temperature scale <span class="math notranslate nohighlight">\(\Delta T = T_m - T_s\)</span>.  For the numbers in our example (<span class="math notranslate nohighlight">\(T_m = 0~^\circ\mbox{C},\ T_s = -20~^\circ\mbox{C}\)</span>) the Stefan number <span class="math notranslate nohighlight">\(\mathcal{S} = 8.1\)</span>.  This is large (<span class="math notranslate nohighlight">\(\mathcal{S} \gg 1\)</span>) and suggests that it is the release of latent heat on solidification that limits the growth of ice.</p>
+<figure class="margin-caption align-default" id="thickness">
+<img alt="../../_images/9.thickness_2.png" src="../../_images/9.thickness_2.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 3.9 </span><span class="caption-text">Ice growth from <span class="math notranslate nohighlight">\(T_s = -20~^\circ\mbox{C}\)</span> into water at <span class="math notranslate nohighlight">\(T_w = 0~^\circ\mbox{C}\)</span>.</span><a class="headerlink" href="#thickness" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Out simplified model predicts that ice growth with be rapid at first, and slow down with time as the latent heat of solidification must be conducted through an ever thicker ice cover.  This explains why a thin surface skim of ice may rapidly grow on a cold night, but that it takes several days of persistent low temperatures to form a layer you can walk and skate on.</p>
+<p>The rapid initial growth of ice also has important implications for the recovery of ice in the polar oceans following the summer melt season.  We’ll return to this question in the next lecture, but our result suggests that ice will rapidly regrow following enhanced melting as the climate warms, but that the resultant ice pack may be much thinner.</p>
+</section>
+<section id="forced-convection-and-limits-on-the-growth-of-ice">
+<h2>Forced convection and limits on the growth of ice<a class="headerlink" href="#forced-convection-and-limits-on-the-growth-of-ice" title="Permalink to this headline">#</a></h2>
+<p>Of course, we’ve simplified the problem greatly, and in many natural settings the water beneath the ice is neither still nor is it at the melting temperature.  So long as the atmosphere is sufficiently cold, ice may form on a flowing river, or indeed on a lake before the temperature reaches <span class="math notranslate nohighlight">\(0~^\circ\mbox{C}\)</span>. Indeed, since the density of water is greatest at <span class="math notranslate nohighlight">\(4~^\circ\mbox{C}\)</span> lakes typically freeze while the depths are still well above freezing.</p>
+<p>Let’s now consider a setting where the water is at <span class="math notranslate nohighlight">\(T_w &gt; T_m\)</span> and the current has a mean speed <span class="math notranslate nohighlight">\(U\)</span> far from the ice-water interface.  As described in lecture, we may now anticipate a forced, convective heat flux from the water to the ice of the form,</p>
+<div class="math notranslate nohighlight">
+\[F_c = \lambda\rho c_p U (T_w-T_m),\]</div>
+<p>where <span class="math notranslate nohighlight">\(\lambda\)</span> is a heat transfer coefficient.</p>
+<p>The Stefan condition may now be written as</p>
+<div class="math notranslate nohighlight">
+\[\rho L \frac{dh}{dt} = \left.-k \frac{dT}{dz}\right|_{z = h} - F_c,\]</div>
+<p>which on using the assumption of a linear temperature profile in the ice becomes</p>
+<div class="math notranslate nohighlight">
+\[\rho L \frac{dh}{dt} = k \frac{T_m - T_s}{h} - \lambda \rho c_p U (T_w-T_m).\]</div>
+<p>Already it is clear that the ice thickness importantly now reaches a finite thickness as <span class="math notranslate nohighlight">\(t\to\infty\)</span>, given by</p>
+<div class="math notranslate nohighlight">
+\[h = \frac{\kappa}{\lambda U}\frac{T_m-T_s}{T_w-T_m}.\]</div>
+<p>In fact, with a little more work we can see that at early times as <span class="math notranslate nohighlight">\(h\to0\)</span> we recover our earlier model, since the convective heat flux from the water must be much less than the conductive heat flux through the very thin ice.</p>
+<p>In fact, this is still a first order, ordinary differential equation, which we can solve (implicitly) for the ice thickness.  We find that</p>
+<div class="math notranslate nohighlight">
+\[h + \frac{\kappa}{\lambda U \theta}\ln\left(1-\frac{\lambda U \theta h}{\kappa}\right) = -\frac{\lambda U \theta t}{\mathcal{S}},\]</div>
+<p>where we have defined the ratio <span class="math notranslate nohighlight">\(\theta = (T_w-T_m)/(T_m-T_s)\)</span> for simplicity of notation.</p>
+<figure class="margin-caption align-default" id="forced">
+<img alt="../../_images/9.forced_1.png" src="../../_images/9.forced_1.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 3.10 </span><span class="caption-text">Ice growth from <span class="math notranslate nohighlight">\(T_s = -20~^\circ\mbox{C}\)</span> into water at <span class="math notranslate nohighlight">\(T_w = 4~^\circ\mbox{C}\)</span> and with farfield flow velocity <span class="math notranslate nohighlight">\(U = 1\ \mbox{m/s}\)</span>, and with a parameterised heat flux due to the farfield forced flow.  Red dashed is the unforced simulation, while solid blue includes the heat flux from the flowing water.</span><a class="headerlink" href="#forced" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -349,6 +515,20 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../l8/l8.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">3.1. </span>Ice in the polar regions</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../l10/l10.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3.3. </span>Ice sheets and the flow of glacial ice</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>

@@ -15,3 +15,5 @@ forms and melts, and the underlying dynamics of glacial flows.
 
 ```{tableofcontents}
 ```
+
+The final two lectures in this section will be online soon...
