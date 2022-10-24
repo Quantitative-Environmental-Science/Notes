@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3.3. Ice sheets and the flow of glacial ice</title>
+    <title>3.3. The extent of sea ice</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4. Glossary" href="../../reference/glossary.html" />
+    <link rel="next" title="3.4. Ice sheets and the flow of glacial ice" href="../l11/l11.html" />
     <link rel="prev" title="3.2. The growth and melting of ice" href="../l9/l9.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
@@ -188,7 +188,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     3.3. Ice sheets and the flow of glacial ice
+     3.3. The extent of sea ice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../l11/l11.html">
+     3.4. Ice sheets and the flow of glacial ice
     </a>
    </li>
   </ul>
@@ -331,18 +336,33 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-viscous-flow-of-ice">
-   The viscous flow of ice
+  <a class="reference internal nav-link" href="#radiation-model-for-sea-ice-formation">
+   Radiation model for sea ice formation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-steady-state-ice-sheet">
-   The steady state ice sheet
+  <a class="reference internal nav-link" href="#formation-of-ice-on-the-ocean-surface">
+   Formation of ice on the ocean surface
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#additional-processes">
-   Additional processes
+  <a class="reference internal nav-link" href="#growth-of-sea-ice">
+   Growth of sea ice
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#melting-of-sea-ice">
+   Melting of sea ice
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#seasonal-cycle">
+   Seasonal cycle
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#freezing-salty-ocean-water">
+   Freezing salty ocean water
   </a>
  </li>
 </ul>
@@ -354,7 +374,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Ice sheets and the flow of glacial ice</h1>
+                <h1>The extent of sea ice</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -365,18 +385,33 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-viscous-flow-of-ice">
-   The viscous flow of ice
+  <a class="reference internal nav-link" href="#radiation-model-for-sea-ice-formation">
+   Radiation model for sea ice formation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-steady-state-ice-sheet">
-   The steady state ice sheet
+  <a class="reference internal nav-link" href="#formation-of-ice-on-the-ocean-surface">
+   Formation of ice on the ocean surface
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#additional-processes">
-   Additional processes
+  <a class="reference internal nav-link" href="#growth-of-sea-ice">
+   Growth of sea ice
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#melting-of-sea-ice">
+   Melting of sea ice
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#seasonal-cycle">
+   Seasonal cycle
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#freezing-salty-ocean-water">
+   Freezing salty ocean water
   </a>
  </li>
 </ul>
@@ -389,127 +424,134 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="ice-sheets-and-the-flow-of-glacial-ice">
-<span id="lecture-10"></span><h1><span class="section-number">3.3. </span>Ice sheets and the flow of glacial ice<a class="headerlink" href="#ice-sheets-and-the-flow-of-glacial-ice" title="Permalink to this headline">#</a></h1>
-<p>Glaciers and ice sheets form where ice accumulates persistently over time and compacts to form ice.  When the ice is sufficiently thick, the solid ice may flow under its own weight, deforming as a viscous fluid or sliding at the base of the glacier where it contacts the ground or bedrock.   Glaciers tend to form at high elevations where it is cold, and snow accumulated in the winter months can persist through the melt season.  Their topography is generally determined by the topography (mountains) on which they form.</p>
-<p>In contrast, the two major ice sheets on Earth, in Greenland and Antarctica, are so massive that their surface topography is, to a large extent, independent from the topography of the land on which they sit.  These massive ice sheets have incorporated a sufficient volume of ice such that they produce their own high elevations and now melt, or are discharged into the ocean, only around their periphery.</p>
-<p>In this lecture we will construct models of the flow, accumulation and melting of glaciers in order to understand how glaciers and ice sheets may be expected to respond to climate change.</p>
-<section id="the-viscous-flow-of-ice">
-<h2>The viscous flow of ice<a class="headerlink" href="#the-viscous-flow-of-ice" title="Permalink to this headline">#</a></h2>
-<figure class="margin-caption align-default" id="eastantarctica">
-<img alt="../../_images/10.EastAntarctica.png" src="../../_images/10.EastAntarctica.png" />
+  <section class="tex2jax_ignore mathjax_ignore" id="the-extent-of-sea-ice">
+<span id="lecture-10"></span><h1><span class="section-number">3.3. </span>The extent of sea ice<a class="headerlink" href="#the-extent-of-sea-ice" title="Permalink to this headline">#</a></h1>
+<p>The formation of sea ice plays an important role in both the radiative balance in the polar oceans as well as the polar component of large-scale oceanic circulation.</p>
+<section id="radiation-model-for-sea-ice-formation">
+<h2>Radiation model for sea ice formation<a class="headerlink" href="#radiation-model-for-sea-ice-formation" title="Permalink to this headline">#</a></h2>
+<p>Let’s consider a reasonably complete picture of the various heat fluxes which determine the growth of sea ice in the polar oceans, and then we’ll return to a very simplified model to understand the essential dynamics.</p>
+<figure class="margin-caption align-default" id="seaiceradiation">
+<img alt="../../_images/10.SeaIceRadiation.png" src="../../_images/10.SeaIceRadiation.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 3.11 </span><span class="caption-text">A representation of the long-thin flow of the Antarctic ice sheet over East Antarctica.</span><a class="headerlink" href="#eastantarctica" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 3.11 </span><span class="caption-text">Simplified radiation model for the growth of sea ice.</span><a class="headerlink" href="#seaiceradiation" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>The accumulation of ice in Greenland and Antarctica occurs over huge lateral distances of 1000 kilometres or more, with an accumulated depth of 2-3 kilometres (see for example the illustration in <a class="reference internal" href="#eastantarctica"><span class="std std-numref">Fig. 3.11</span></a>).  Since the lateral extent of the ice is so much greater than the vertical, the flow of ice from the interior to the margins of the ice sheet is predominantly horizontal.  Correspondingly, the vertical velocity of the ice is negligible, and the pressure is therefore hydrostatic,</p>
-<div class="math notranslate nohighlight" id="equation-l10-pressure">
-<span class="eqno">(3.1)<a class="headerlink" href="#equation-l10-pressure" title="Permalink to this equation">#</a></span>\[p = p_0 + \rho g (h-z).\]</div>
-<p>Here <span class="math notranslate nohighlight">\(p_0\)</span> is atmospheric pressure, <span class="math notranslate nohighlight">\(\rho\)</span> is the density of the ice, <span class="math notranslate nohighlight">\(g = 9.81\ \mbox{m s}^{-2}\)</span> is the local gravitational acceleration, <span class="math notranslate nohighlight">\(h = h(x,t)\)</span> is the ice thickness which itself may depend on space and time, and <span class="math notranslate nohighlight">\(z\)</span> is the local vertical coordinate (pointing upwards).  It is then clear, both from the diagram and from equation <a class="reference internal" href="#equation-l10-pressure">(3.1)</a> that there is a pressure gradient from thick to thin regions.  It is this pressure gradient which drives the flow of glacial ice, which may be written in the horizontal as</p>
+<p>A simplified version of the complex balance of radiative forcing on sea ice is as follows.</p>
+<ol>
+<li><p>The surface ice receives incident, short wavelength solar radiation <span class="math notranslate nohighlight">\(F_{sw}\)</span>.</p></li>
+<li><p>A fraction, <span class="math notranslate nohighlight">\(\alpha\)</span>, of the incident short-wavelength radiation is reflected, where <span class="math notranslate nohighlight">\(\alpha\)</span> is the albedo.</p></li>
+<li><p>A fraction, <span class="math notranslate nohighlight">\((1-\alpha)\)</span>, of the incident short-wavelength radiation is transmitted into the ice below the surface, and subsequently into the ocean below.</p></li>
+<li><p>If the atmosphere is at temperature <span class="math notranslate nohighlight">\(T_A\)</span> then the ice receives long wavelength radiation <span class="math notranslate nohighlight">\(F_{LW,i} = \sigma T_A^4\)</span> from the atmosphere and transmits outgoing radiation <span class="math notranslate nohighlight">\(F_{LW,o} = \sigma T_s^4\)</span>, where <span class="math notranslate nohighlight">\(T_s\)</span> is the surface ice temperature.  The difference between these fluxes thus gives a net outgoing heat flux</p>
 <div class="math notranslate nohighlight">
-\[\pdv{p}{x} = \rho g \pdv{h}{x}.\]</div>
-<p>This pressure gradient is balanced by the viscous resistance to flow of the ice.  Viscous resistance is, in general, proportional to the shear which, for long thin ice is predominantly in the vertical, <span class="math notranslate nohighlight">\(\eta \partial u/\partial z\)</span>, that shear being proportional to the gradients in the horizontal velocity <span class="math notranslate nohighlight">\(u\)</span> with height <span class="math notranslate nohighlight">\(z\)</span>.  In the ice sheet, gradients in the horizontal pressure are balanced by vertical gradients in the viscous shear so that</p>
+\[\begin{split}F_{LW} &amp; = &amp; \sigma T_S^4 - \sigma T_A^4 \\
+&amp; \simeq &amp; 4\sigma T_s^3(T_s-T_A)\end{split}\]</div>
+<p>where the approximation follows because <span class="math notranslate nohighlight">\(T_s \simeq T_A\)</span> (at least when measured in Kelvin).</p>
+<p>It’s perhaps worth recalling that the power radiated from a body (ice or atmosphere) at a given temperature <span class="math notranslate nohighlight">\(T\)</span> is given by the Stefan-Bolztmann law</p>
 <div class="math notranslate nohighlight">
-\[\pdv{p}{x} = \rho g \pdv{h}{x} = \eta \pdv{^2u}{z^2}.\]</div>
-<p>Since the pressure gradient depends only on <span class="math notranslate nohighlight">\(x\)</span>, we can integrate (twice) to find the velocity in the ice</p>
+\[F = \sigma T^4\]</div>
+<p>where <span class="math notranslate nohighlight">\(\sigma = 5.67\times10^{-8}\ \mathrm{W~m^{-2}~K^{-4}}\)</span>.</p>
+</li>
+<li><p>The ice looses sensible heat through a surface flux, which is mostly forced by convection in the air, <span class="math notranslate nohighlight">\(F_s = h_T (T_s - T_A)\)</span>.  Here <span class="math notranslate nohighlight">\(h_T\)</span> is a heat transfer coefficient which might, in general, depend on the wind strength, but for simplicity here is taken as a constant.</p></li>
+<li><p>Finally, the ice looses energy in the form of a latent heat flux associated with sublimation (evaporation) of the ice into the atmosphere,</p>
 <div class="math notranslate nohighlight">
-\[u = -\frac{\rho g}{2\eta}\pdv{h}{x} z (2h-z),\]</div>
-<p>where we have assumed that the shear at the top surface (<span class="math notranslate nohighlight">\(z = h\)</span>) is zero, and that the velocity at the base (perhaps in contact with the bedrock) is likewise zero.  The viscous fluid, ice, therefore deforms with a parabolic velocity profile.</p>
-<p>While the velocity of the ice, particularly the surface velocity which may be observed and measured both in situ and remotely, is of interest, it is the mass flux which determines the evolution of the ice sheet and its contribution to sea level rise (for example).  Integrating the velocity over the depth therefore gives the mass flux</p>
-<div class="math notranslate nohighlight" id="equation-l10-flux">
-<span class="eqno">(3.2)<a class="headerlink" href="#equation-l10-flux" title="Permalink to this equation">#</a></span>\[q = \int_0^h u\, dz = -\frac{\rho g}{3\eta}h^3\pdv{h}{x}.\]</div>
-<p>Locally the mass of ice must be conserved.  Hence, the thickness of the ice at any given location is determined by the mass of ice flowing in and out, as well as the rates of accumulation and melting</p>
-<div class="math notranslate nohighlight" id="equation-l10-mass-cons">
-<span class="eqno">(3.3)<a class="headerlink" href="#equation-l10-mass-cons" title="Permalink to this equation">#</a></span>\[\pdv{h}{t} + \pdv{q}{x} = a\]</div>
-<p>where here <span class="math notranslate nohighlight">\(a = a(h,t)\)</span> is the accumulation and ablation (or melting) of ice per unit area at a particular location which, in general, depends both on the local elevation and season, and hence depends on time <span class="math notranslate nohighlight">\(t\)</span>.  A simple model of accumulation and ablation, which makes the mathematical model somewhat easier to solve, is of a constant accumulation / ablation rate above a critical elevation <span class="math notranslate nohighlight">\(h^\star\)</span>, which is called the snow line.  Let us therefore take the simple model</p>
-<div class="math notranslate nohighlight" id="equation-l10-accumulation">
-<span class="eqno">(3.4)<a class="headerlink" href="#equation-l10-accumulation" title="Permalink to this equation">#</a></span>\[\begin{split}a = \left\{ \begin{array}{rl}
-\alpha &amp; h &gt; h^\star, \\
--\alpha &amp; h &lt; h^\star,
-\end{array} \right.\end{split}\]</div>
-<p>where we take the magnitude of the accumulation / ablation, <span class="math notranslate nohighlight">\(\alpha\)</span>, to be a constant (again for simplicity).</p>
-<p>Putting together the local statement of mass conservation (equation <a class="reference internal" href="#equation-l10-mass-cons">(3.3)</a>) together with the model for the ice flux (equation <a class="reference internal" href="#equation-l10-flux">(3.2)</a>) and the accumulation/ablation rate (equation <a class="reference internal" href="#equation-l10-accumulation">(3.4)</a>) we have</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\pdv{h}{t} - \frac{\rho g}{3\eta}\pdv{}{x}\left(h^3\pdv{h}{x}\right) = \left\{ \begin{array}{rl}
-\alpha &amp; h &gt; h^\star, \\
--\alpha &amp; h &lt; h^\star.
-\end{array} \right.\end{split}\]</div>
-<p>This is a partial differential equation for the elevation <span class="math notranslate nohighlight">\(h(x,t)\)</span> … but don’t worry, we’ll simplify the equation before attempting to solve it.  However, it’s worth noting that for many environmental and climate processes the dynamics depend on space and evolve in time, so a partial differential equation is often the result of such models.</p>
-<p>Before we simplify this equation we need to provide some boundary conditions to complete our model. Remember that you need as many boundary conditions as the order of your equation.  So for our model we’d need two spatial boundary conditions (though we’ll return to this later), as well as an initial condition.</p>
-<p>Since the thickness of the ice may evolve in space and time, we first need an initial condition <span class="math notranslate nohighlight">\(h_0(x) = h(x,t=0)\)</span>.  We also need a condition at the ice divide, that is at <span class="math notranslate nohighlight">\(x = 0\)</span> in the middle of the continent.  Here, there is no input mass flux so we take</p>
-<div class="math notranslate nohighlight">
-\[q(0,t) = \left.-\frac{\rho g}{3\eta}h^3\pdv{h}{x}\right|_{x=0} = 0.\]</div>
-<p>If we consider a cross-section of the Greenland ice sheet, much of the ice sheet terminates on land (we’ll consider the ice shelves of Antarctica next lecture).  The ice thickness therefore vanishes at the ice edge, or nose, of the ice sheet</p>
-<div class="math notranslate nohighlight">
-\[h(x_N,t) = 0,\]</div>
-<p>where <span class="math notranslate nohighlight">\(x_N\)</span> is the position of the nose of the ice sheet measured from the ice divide (so is a measure of the lateral extent of the ice sheet).  In this model, we do not know <em>a priori</em> how long the ice sheet may be, and indeed we may want to be able to determine how the ice edge retreats as the climate warms and the elevation of the snow line increases.  So <span class="math notranslate nohighlight">\(x_N\)</span> needs to be determined as part of the solution, and therefore we need one last boundary condition.  We’ll take that the flux of ice through the nose is zero,</p>
-<div class="math notranslate nohighlight">
-\[q(x_N) = \left. -\frac{\rho g}{3\eta}h^3\pdv{h}{x}\right|_{x = x_N} = 0.\]</div>
-<p>This then provides a complete description of our simplified ice sheet model.</p>
+\[F_L = h_s( T_s-T_A)\]</div>
+<p>where <span class="math notranslate nohighlight">\(h_s\)</span> is a heat transfer coefficient for sublimation / evaporation which incorporates the latent heat of phase change.</p>
+</li>
+</ol>
 </section>
-<section id="the-steady-state-ice-sheet">
-<h2>The steady state ice sheet<a class="headerlink" href="#the-steady-state-ice-sheet" title="Permalink to this headline">#</a></h2>
-<figure class="margin-caption align-default" id="ssicesheet-fig">
-<img alt="../../_images/10.SteadyIceSheet.png" src="../../_images/10.SteadyIceSheet.png" />
+<section id="formation-of-ice-on-the-ocean-surface">
+<h2>Formation of ice on the ocean surface<a class="headerlink" href="#formation-of-ice-on-the-ocean-surface" title="Permalink to this headline">#</a></h2>
+<figure class="margin-caption align-default" id="iceformation">
+<a class="reference internal image-reference" href="../../_images/10.IceFormation.png"><img alt="../../_images/10.IceFormation.png" src="../../_images/10.IceFormation.png" style="width: 70%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 3.12 </span><span class="caption-text">Schematic of the steady-state ice sheet with snow at high elevations (<span class="math notranslate nohighlight">\(h &gt; h^\star\)</span>) and melting at low elevations (<span class="math notranslate nohighlight">\(h &lt; h^\star\)</span>).</span><a class="headerlink" href="#ssicesheet-fig" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 3.12 </span><span class="caption-text">Conditions for the formation of the first ice, when the surface temperature of the ocean <span class="math notranslate nohighlight">\(T_s = T_m\)</span>.</span><a class="headerlink" href="#iceformation" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>To simplify the analysis further, let’s look for so-called steady-state ice sheet models.  That is, we’ll seek a solution for the ice sheet in which the net accumulation balances the net melting exactly, and hence the geometry of the ice sheet doesn’t change even as there is a continual flux of ice through the system (this also turns our partial differential equation into an ordinary differential equation!).  Hence we take</p>
+<p>Ice forms in the polar oceans during the polar winter when the atmospheric temperature becomes significantly below zero.  Prior to ice formation, the condition at the ocean surface is that the heat flux from the ocean must equal the heat flux to the atmosphere, the balance of which determines the surface temperature.  Hence</p>
 <div class="math notranslate nohighlight">
-\[\pdv{h}{t} = 0.\]</div>
-<p>First, let’s examine (equation <a class="reference internal" href="#equation-l10-mass-cons">(3.3)</a>), examining above and below the snow line (<span class="math notranslate nohighlight">\(h^\star\)</span>) separately.  Above the snow line we solve</p>
+\[\begin{split}F_0 &amp; = &amp; F_A \\
+\implies \lambda_0(T_0-T_s) &amp; = &amp; \lambda_A(T_s-T_A)\end{split}\]</div>
+<p>which we can re-arrange to give the surface temperature</p>
 <div class="math notranslate nohighlight">
-\[\pdv{q}{x} = \alpha,\]</div>
-<p>and hence, noting that <span class="math notranslate nohighlight">\(q(0) = 0\)</span>, we find that</p>
+\[T_s = \frac{\lambda_0 T_0+ \lambda_A T_A}{\lambda_0 + \lambda_A}\]</div>
+<p>Ice begins to form when the surface temperature goes below the melting / freezing temperature <span class="math notranslate nohighlight">\(T_s &lt; T_m\)</span>, so that</p>
 <div class="math notranslate nohighlight">
-\[q_+ = \alpha x,\]</div>
-<p>where the <span class="math notranslate nohighlight">\(+\)</span> indicates the solution above the snow line.</p>
-<p>Below the snow line, where the ice is melting, we solve</p>
-<div class="math notranslate nohighlight">
-\[\pdv{q}{x} = -\alpha,\]</div>
-<p>and hence, noting that <span class="math notranslate nohighlight">\(q(x_N) = 0\)</span>, we find that</p>
-<div class="math notranslate nohighlight">
-\[q_- = \alpha(x_N - x),\]</div>
-<p>where the <span class="math notranslate nohighlight">\(-\)</span> indicates the solution below the snow line.</p>
-<p>Let’s piece these two solutions together.  We know that at the snow line, <span class="math notranslate nohighlight">\(h = h^\star\)</span> at <span class="math notranslate nohighlight">\(x = x^\star\)</span>, and that the flux through this point must be continuous.  Hence</p>
-<div class="math notranslate nohighlight">
-\[q_+(x^\star) = q_-(x^\star) \quad \implies \quad x^\star = \frac{x_N}{2}.\]</div>
-<p>In our simple model for accumulation / ablation, the area of accumulation must be exactly equal to the area of ablation to obtain a steady-state balance.</p>
-<p>We can now integrate the expressions for the flux above and below the snow line to determine the thickness of the ice sheet,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{eqnarray}
-h_+^4 &amp; = &amp; \frac{12\eta}{\rho g}\alpha\left(c-\frac{x^2}{2}\right) \quad h &gt; h^\star, \\
-h_-^4 &amp; = &amp; \frac{12\eta}{\rho g}\alpha\left(d + \frac{x^2}{2} - x_N x\right) \quad h &lt; h^\star.
-\end{eqnarray}\end{split}\]</div>
-<p>Noting that <span class="math notranslate nohighlight">\(h(x_N) = 0\)</span> gives <span class="math notranslate nohighlight">\(d = 0\)</span>, and hence matching <span class="math notranslate nohighlight">\(h_+ = h_- = h_\star\)</span> gives <span class="math notranslate nohighlight">\(x = x_N^2/4.\)</span>. The complete profile of the ice sheet is therefore given by</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}h = \left\{\begin{array}{ll}
-\left(\frac{6\eta\alpha}{\rho g}\right)^{1/4} \left(\frac{x_N^2}{2} - x^2\right)^{1/2} &amp; h &gt; h^\star, \\
-\left(\frac{6\eta\alpha}{\rho g}\right)^{1/4}\left(x_N^2-2xx_N + x^2\right)^{1/4} &amp; h &lt; h^\star.
-\end{array} \right.\end{split}\]</div>
-<p>We can determine the lateral scale of the ice sheet, which is set by the material properties of the ice and the height of the now line where <span class="math notranslate nohighlight">\(h(x^\star) = h^\star\)</span>, and hence</p>
-<div class="math notranslate nohighlight">
-\[x^\star = \left(\frac{\rho g}{6\eta\alpha}\right)^{1/2}{h^\star}^2.\]</div>
-<p>The solution to our steady-state ice sheet model is plotted in <a class="reference internal" href="#icesheet-soln"><span class="std std-numref">Fig. 3.13</span></a>.</p>
-<figure class="margin-caption align-default" id="icesheet-soln">
-<a class="reference internal image-reference" href="../../_images/10.IceSheet_soln_combined.png"><img alt="../../_images/10.IceSheet_soln_combined.png" src="../../_images/10.IceSheet_soln_combined.png" style="width: 60%;" /></a>
+\[T_A &lt; T_m - \frac{\lambda_0}{\lambda_A}(T_0-T_m) &lt; T_m\]</div>
+</section>
+<section id="growth-of-sea-ice">
+<h2>Growth of sea ice<a class="headerlink" href="#growth-of-sea-ice" title="Permalink to this headline">#</a></h2>
+<figure class="margin-caption align-default" id="icegrowth">
+<a class="reference internal image-reference" href="../../_images/10.IceGrowth.png"><img alt="../../_images/10.IceGrowth.png" src="../../_images/10.IceGrowth.png" style="width: 70%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 3.13 </span><span class="caption-text">Solution of the steady-state ice sheet model showing (a) the thickness of the ice sheet and (b) the surface velocity.</span><a class="headerlink" href="#icesheet-soln" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 3.13 </span><span class="caption-text">Simple thermal model for the growth of sea ice.</span><a class="headerlink" href="#icegrowth" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>We have made significant approximations in our model of the steady-state ice sheet, so we shouldn’t expect it to mirror all the features of the large ice sheets exactly.  However, the model is able to capture some leading-order features of the Greeland and (East) Antarctic ice sheet.  In particular, they mirror the relatively flat interior topography of the ice sheets, with much steeper margins.  Correspondingly, the surface ice velocity - which can be measured both by arduous field campaigns or remotely with satellite INterferrometric Synthetic Aperature Radar (INSAR) - shows that ice velocities are relatively low in the interior, but are signficantly higher near the margins where the topographic gradients driving flow are correpsondingly higher.  This is reflected, for example, in the map of the surface velocity of the Greenland ice sheet as shown in <a class="reference internal" href="#greenlandvelocity"><span class="std std-numref">Fig. 3.14</span></a>.</p>
-<figure class="margin-caption align-default" id="greenlandvelocity">
-<a class="reference internal image-reference" href="../../_images/10.GreenlandIceVelocity.png"><img alt="../../_images/10.GreenlandIceVelocity.png" src="../../_images/10.GreenlandIceVelocity.png" style="width: 50%;" /></a>
+<p>Once the ice is growing, we assume that the ice grows in a quasi-steady manner, and hence that there is a linear thermal profile through the ice.  The growth of ice is driven by the heat flux to the atmosphere which balances the diffusive flux of heat across the ice,</p>
+<div class="math notranslate nohighlight" id="equation-10-surf-heat-flux">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-10-surf-heat-flux" title="Permalink to this equation">#</a></span>\[F_A = \lambda_A(T_s-T_A) = k\frac{T_m-T_s}{h}\]</div>
+<p>and is limited by the release of latent heat on solidification and any heat flux from the ocean,</p>
+<div class="math notranslate nohighlight" id="equation-10-stefan-growth">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-10-stefan-growth" title="Permalink to this equation">#</a></span>\[\rho L \dd{h}{t} = k\frac{T_m-T_s}{h} - F_0\]</div>
+<p>If we consider a fixed ocean temperature, and hence a fixed oceanic heat flux <span class="math notranslate nohighlight">\(F_0 = \lambda_0(T_0-T_m)\)</span>, then we can infer (from equation <a class="reference internal" href="#equation-10-surf-heat-flux">(3.1)</a>) that the surface temperature is</p>
+<div class="math notranslate nohighlight">
+\[T_s = \frac{T_m + (\lambda_A h/k)T_A}{1+\lambda_A h/k}\]</div>
+<p>So already we can see that the surface temperature approaches the freezing point for thin ice, <span class="math notranslate nohighlight">\(T_s \to T_m\)</span> as <span class="math notranslate nohighlight">\(h\to0\)</span>, while for thick ice it approaches the atmospheric temperature <span class="math notranslate nohighlight">\(T_s \to T_a\)</span> as <span class="math notranslate nohighlight">\(h\to\infty\)</span>.  We can also see that <span class="math notranslate nohighlight">\(T_s \simeq T_A\)</span> once <span class="math notranslate nohighlight">\(h \ge k/\lambda_A\)</span>.</p>
+<p>The equation governing the growth of ice (equation <a class="reference internal" href="#equation-10-stefan-growth">(3.2)</a>) can be now be re-written as</p>
+<div class="math notranslate nohighlight">
+\[\rho L \dd{h}{t} = \frac{\lambda_A(T_m-T_A)}{1+\lambda_A h/k} - F_0\]</div>
+<p>which is now an (admittedly awkward) ODE in thickness <span class="math notranslate nohighlight">\(h\)</span> alone (otherwise it is known temperatures and material parameters).  Interestingly, we can observe the following behaviour.  At early times when <span class="math notranslate nohighlight">\(\lambda_A h/k \ll 1\)</span> the ice growth is approximately constant <span class="math notranslate nohighlight">\(h \sim t\)</span>, whereas at intermediate times <span class="math notranslate nohighlight">\(\lambda_A h/k \gg 1\)</span> the ice grows as the square-root of time <span class="math notranslate nohighlight">\(h \sim \sqrt{t}\)</span>.  Finally at late times the oceanic heat flux balances the surface cooling so that the ice reaches a steady state thickness,</p>
+<div class="math notranslate nohighlight">
+\[h(t \to \infty) = \frac{k}{\lambda_A}\left[\frac{\lambda_A(T_m-T_A)}{F_0} - 1\right]\]</div>
+<p>Note that for ice <span class="math notranslate nohighlight">\(k \simeq 2\ \mathrm{W~m^{-2}~K^{-1}}\)</span> and <span class="math notranslate nohighlight">\(\lambda_A \simeq 20\ \mathrm{W~m^{-2}~K^{-1}}\)</span> the length scale <span class="math notranslate nohighlight">\(k/\lambda_A \simeq 10\ \mbox{cm}\)</span> and the final steady state thickness is a few metres.</p>
+<figure class="margin-caption align-default" id="icethickness">
+<a class="reference internal image-reference" href="../../_images/10.IceThickness.png"><img alt="../../_images/10.IceThickness.png" src="../../_images/10.IceThickness.png" style="width: 90%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 3.14 </span><span class="caption-text">Surface velocity of the Greenland ice sheet from Mouginot <em>et al.</em> Proc. Nat. Acad. Sci. (2019)</span><a class="headerlink" href="#greenlandvelocity" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 3.14 </span><span class="caption-text">Ice thickness over time using a radiative balance at the ice surface.</span><a class="headerlink" href="#icethickness" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
-<section id="additional-processes">
-<h2>Additional processes<a class="headerlink" href="#additional-processes" title="Permalink to this headline">#</a></h2>
-<p>Of course the model we’ve just constructed is an intensionally simplified, steady-state ice sheet model with a number of significant pieces neglected.  For example, for simplicity we’ve approximated the viscosity of the ice as constant, whereas in practice the viscosity of ice is shear thinning.  That is, the ice becomes less viscous the more it is sheared, with a power-law behaviour referred to commonly as <em>Glenn’s flow law</em>.  We’ve also assumed that the ice is everywhere stuck to the bedrock, so that the velocity at <span class="math notranslate nohighlight">\(z = 0\)</span> is <span class="math notranslate nohighlight">\(u_b = u(z = 0) = 0\)</span>.  In practice, as the ice sheet melts around its margins the meltwater is routed to the base of the ice through fractures and moulins in the ice.  Water at the base of the ice sheet lubricates the flow of ice, and results in significant basal sliding, <span class="math notranslate nohighlight">\(u_b \neq 0\)</span>, with strong seasonal (and even daily) signatures.  Finally, it’s worth mentioning that our model of the accumulation / ablation of ice is particularly simplified, and in practice we would expect these rates to depend on distance from the ocean, on elevation, and on the incident solar radiation (as in our previous lectures).  Nevertheless, the underlying physical model captures the essential physics and many of these additional processes could be incorporated into a more refined model of the ice sheet.</p>
-<p>Finally, our model assumes that the ice sheet terminates on land (<span class="math notranslate nohighlight">\(h(x_N) = 0\)</span>) and in many cases, and particularly in West Antarctica the ice sheet instead flows out onto the ocean as a floating ice sheet.  We’ll turn to the dynamics of floating ice sheets in our next lecture, returning to the contribution of ice sheets to sea level changes as we do so.</p>
+<section id="melting-of-sea-ice">
+<h2>Melting of sea ice<a class="headerlink" href="#melting-of-sea-ice" title="Permalink to this headline">#</a></h2>
+<p>The melting of sea ice can occur from two directions.  The ocean temperature may be warmer, indicating a higher oceanic heat flux leading to thinning from the base of the ice.  Correspondingly, and often intuitively given the surface seasonal radiative balance, the atmospheric temperature may increase above the melting temperature.  Both an increase in surface sensible air temperature and oceanic heat flux are relevant for the response of sea ice thickness to climate change.</p>
+<p>Since we have considered a fixed ocean heat flux in our solidification examples (above) let’s focus on the case of a high air temperature <span class="math notranslate nohighlight">\(T_A &gt; T_m\)</span>.  In this case, the surface temperature is at the melting temperature <span class="math notranslate nohighlight">\(T_s = T_m\)</span> and, since it is still in contact with the liquid water ocean, so is the base of the ice.  After an initial transient the ice is therefore uniformly at the melting temperature, and the melt rate is simply given by</p>
+<div class="math notranslate nohighlight">
+\[\rho L \dd{h}{t} = F_a - F_0\]</div>
+<p>recalling of course that <span class="math notranslate nohighlight">\(F_A = \lambda_A(T_m - T_A) &lt; 0\)</span> since now <span class="math notranslate nohighlight">\(T_A &gt; T_m\)</span>.  Hence, the ice melts from both the top and bottom.</p>
+<figure class="margin-caption align-default" id="icemelting">
+<a class="reference internal image-reference" href="../../_images/10.IceMelting.png"><img alt="../../_images/10.IceMelting.png" src="../../_images/10.IceMelting.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.15 </span><span class="caption-text">Schematic temperature structure in melting ice.</span><a class="headerlink" href="#icemelting" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="seasonal-cycle">
+<h2>Seasonal cycle<a class="headerlink" href="#seasonal-cycle" title="Permalink to this headline">#</a></h2>
+<p>Putting all of these pieces together we can begin to understand the seasonal cycle of sea ice.  As the summer radiation wanes, the surface temperature follows the atmospheric temperature with some lag.  Then, as the air temperature plummets the surface temperature finally crosses the freezing point and ice begins to form.  This ice layer grows and thickens, but more slowly as it thickens, and effectively insulates the ocean beneath which always has a surface temperature <span class="math notranslate nohighlight">\(T_m\)</span>.  Finally, as the air temperature warms the ice becomes isothermal at the melting temperature and melts (from the top and the bottom).  The discontinuous jump in surface temperature occurs when the ice disappears, at which point the surface is no longer pinned to the freezing temperature.  The seasonal cycle is sketched schematically in <a class="reference internal" href="#seasonalice"><span class="std std-numref">Fig. 3.16</span></a>.</p>
+<figure class="margin-caption align-default" id="seasonalice">
+<a class="reference internal image-reference" href="../../_images/10.SeasonalIce.png"><img alt="../../_images/10.SeasonalIce.png" src="../../_images/10.SeasonalIce.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.16 </span><span class="caption-text">Schematic seasonal cycle of ice surface temperature <span class="math notranslate nohighlight">\(T_s\)</span> and ice thickness <span class="math notranslate nohighlight">\(h\)</span>.</span><a class="headerlink" href="#seasonalice" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>It is worth also mentioning that, while we have concentrated on the thermodynamic growth and melting of sea ice, the thickness distribution of sea ice is a function of both the thermodynamic growth (which accounts for the thin end of the thickness distribution) and advection of ice resulting in ridging and rafting (which accounts for the long, thick tail of the ice thickness distribution).  A representative ice thickness distribution is given in <a class="reference internal" href="#icedistribution"><span class="std std-numref">Fig. 3.17</span></a>.</p>
+<figure class="margin-caption align-default" id="icedistribution">
+<a class="reference internal image-reference" href="../../_images/10.IceThicknessDistribution.png"><img alt="../../_images/10.IceThicknessDistribution.png" src="../../_images/10.IceThicknessDistribution.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.17 </span><span class="caption-text">Ice thickness distribution in the Arctic ocean, from Renner <em>et al.</em> Annals. Glac. (2013).</span><a class="headerlink" href="#icedistribution" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="freezing-salty-ocean-water">
+<h2>Freezing salty ocean water<a class="headerlink" href="#freezing-salty-ocean-water" title="Permalink to this headline">#</a></h2>
+<p>A significant aspect of the solidification of sea ice in polar waters is that ocean water is salty, not fresh.  This means that ocean waters, with a salt concentration of approximately <span class="math notranslate nohighlight">\(C_0 \simeq 0\ \mathrm{wt\%}\)</span>, freeze at a temperature <span class="math notranslate nohighlight">\(T_L \simeq -1.8^\circ\mathrm{C}\)</span>.  The result is fresh water ice (salt does not get incorporated in the ice lattice) and more salty and cold surface waters.</p>
+<p>This thermodynamics of freezing salty ocean water is therefore determined by a binary eutectic phase diagram.  This plots the phase behaviour as a function of temperature <span class="math notranslate nohighlight">\(T\)</span> and the concentration <span class="math notranslate nohighlight">\(C\)</span> of the dominant salt, NaCl (here in weight percent) as shown in <a class="reference internal" href="#phasediagram"><span class="std std-numref">Fig. 3.18</span></a>.  On the phase diagram the liquidus line, <span class="math notranslate nohighlight">\(T_L(C)\)</span> distinguishes the concentration-dependent freezing temperature.  Below the liquidius nearly pure solid ice crystals form, bathed in a cold and salty interstitial brine.  As temperatures fall below the eutectic temperature <span class="math notranslate nohighlight">\(T_E\)</span> both solid ice and salt crystals form.</p>
+<figure class="margin-caption align-default" id="phasediagram">
+<a class="reference internal image-reference" href="../../_images/10.IcePhaseDiagram.png"><img alt="../../_images/10.IcePhaseDiagram.png" src="../../_images/10.IcePhaseDiagram.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.18 </span><span class="caption-text">Phase diagram of sea ice as a function of temperature <span class="math notranslate nohighlight">\(T\)</span> and concentration <span class="math notranslate nohighlight">\(C\ (\mathrm{wt\%})\)</span>.  Note theliquidus line <span class="math notranslate nohighlight">\(T_L(C)\)</span> which marks the concentration-dependent freezing point, and the eutectic temperature and concentration, <span class="math notranslate nohighlight">\(T_E,\ C_E\)</span>, which is the temperature below which both ice and salt crystals form.</span><a class="headerlink" href="#phasediagram" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The impact of the salt on the solidification of sea ice is important both locally and globally.  Locally, the solidification of ice from brine results in a porous block of ice, which has important implications for the thermal and mechanical properties of the ice.  But on a global scale, it is the rejection of salt on freezing which produces very cold, salty and therefore dense waters in the polar regions that has major implications for the dynamics of the global overturning circulation.</p>
 </section>
 </section>
 
@@ -547,10 +589,10 @@ h_-^4 &amp; = &amp; \frac{12\eta}{\rho g}\alpha\left(d + \frac{x^2}{2} - x_N x\r
             <p class="prev-next-title"><span class="section-number">3.2. </span>The growth and melting of ice</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../../reference/glossary.html" title="next page">
+    <a class='right-next' id="next-link" href="../l11/l11.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Glossary</p>
+        <p class="prev-next-title"><span class="section-number">3.4. </span>Ice sheets and the flow of glacial ice</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
