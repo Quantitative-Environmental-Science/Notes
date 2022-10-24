@@ -28,7 +28,7 @@ Groundwater 🌧
 How water flows through the Earth.
 :::
 
-<!-- :::{grid-item-card}
+:::{grid-item-card}
 :link: 02_cryosphere/intro/intro
 :link-type: doc
 :class-header: bg-light
@@ -37,7 +37,7 @@ Cryosphere 🧊
 ^^^
 
 How ice forms, moves and melts.
-::: -->
+:::
 
 <!-- :::{grid-item-card}
 :link: 03_rivers/intro/intro
