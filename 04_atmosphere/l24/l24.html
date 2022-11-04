@@ -196,9 +196,26 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../03_rivers/intro/intro.html">
+   4. Surface water, flooding and impact of climate change
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_rivers/l13/l13.html">
+     4.1. Rain and Surface Water
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../reference/glossary.html">
-   4. Glossary
+   5. Glossary
   </a>
  </li>
 </ul>
@@ -480,7 +497,7 @@ If we assume that <span class="math notranslate nohighlight">\(L\)</span> is con
 <p>where <span class="math notranslate nohighlight">\(e_s\)</span> is in <span class="math notranslate nohighlight">\(\times 10^2 \ \mathrm{Pa}\)</span> (<span class="math notranslate nohighlight">\(\mathrm{mbar}\)</span>) and <span class="math notranslate nohighlight">\(T\)</span> in Kelvin.
 As <span class="math notranslate nohighlight">\(e_s\)</span> increases exponentially with <span class="math notranslate nohighlight">\(T\)</span>, if an air parcel cools (without changing <span class="math notranslate nohighlight">\(e\)</span>) the air parcel will change from being <strong>subsaturated</strong> to <strong>supersaturated</strong>.</p>
 <figure class="margin-caption align-default" id="saturation-vp">
-<img alt="../../_images/figure18.png" src="../../_images/figure18.png" />
+<img alt="../../_images/figure13.png" src="../../_images/figure13.png" />
 <figcaption>
 <p><span class="caption-text">Schematic of the saturation vapour pressure of water.</span><a class="headerlink" href="#saturation-vp" title="Permalink to this image">#</a></p>
 </figcaption>
@@ -515,7 +532,7 @@ Note that radiative cooling and mixing happen at constant pressure (isobaric), w
 In the atmosphere, uplift or adiabatic expansion of ascending air is the most prevalent mechanism for a parcel of moist air to be cooled below <span class="math notranslate nohighlight">\(T_d\)</span> in order to reach supersaturation (see <code class="xref std std-numref docutils literal notranslate"><span class="pre">relative_humidity</span></code>).
 We will see later that in an ascending parcel, the updraft velocity affects the rate of cooling and hence the amount of condensation which forms.</p>
 <figure class="margin-caption align-default" id="relative-humidity">
-<img alt="../../_images/figure26.png" src="../../_images/figure26.png" />
+<img alt="../../_images/figure24.png" src="../../_images/figure24.png" />
 <figcaption>
 <p><span class="caption-text">Schematic of changes in relative humidity (RH) and supersaturation for a parcel of air rising in a cloud.</span><a class="headerlink" href="#relative-humidity" title="Permalink to this image">#</a></p>
 </figcaption>
@@ -555,7 +572,7 @@ This is described by <strong>Raoult’s Law</strong>.</p>
 Consequently, a droplet containing, for instance, dissolved salt favours condensation more than would a pure water droplet of the same size.
 In other words, existing particles onto which water vapour condenses (<strong>cloud condensation nuclei;</strong> CCN) enable condensation at supersaturations well below those required for <strong>homogeneous nucleation</strong> (primarily because of their size) as discussed further below.</p>
 <figure class="margin-caption align-default" id="vp-schematic">
-<img alt="../../_images/figure45.png" src="../../_images/figure45.png" />
+<img alt="../../_images/figure43.png" src="../../_images/figure43.png" />
 <figcaption>
 <p><span class="caption-text">Schematic of the saturation vapour pressure for (a) pure water, and (b) an ideal solution.
 The white disks denote water molecules, and the black disks dissolved molecules.
@@ -584,7 +601,7 @@ An example is salt, <span class="math notranslate nohighlight">\(\mathrm{NaCl}\)
 <span class="eqno">()<a class="headerlink" href="#equation-koehler-approx" title="Permalink to this equation">#</a></span>\[S = \frac{e^*(\infty)}{e_s(\infty)} \approx 1 + \frac{a}{r} - \frac{b}{r^3})\]</div>
 <p><code class="xref std std-numref docutils literal notranslate"><span class="pre">koehler_curve</span></code> shows a Koehler curve, i.e., the saturation ratio as a function of the droplet radius, and separate curves for the curvature and solute effects.</p>
 <figure class="margin-caption align-default" id="koehler-curve">
-<img alt="../../_images/figure55.png" src="../../_images/figure55.png" />
+<img alt="../../_images/figure53.png" src="../../_images/figure53.png" />
 <figcaption>
 <p><span class="caption-text">Exemplar Koehler curve (black line) with red dashed line indicating the contribution from Raoult’s Law and the dotted line that from the Kelvin equation.
 Figure from Ritchie [2017].</span><a class="headerlink" href="#koehler-curve" title="Permalink to this image">#</a></p>
@@ -609,7 +626,7 @@ In contrast, larger aerosol particles require smaller supersaturations to be act
 <h2>Aerosol- cloud interactions<a class="headerlink" href="#aerosol-cloud-interactions" title="Permalink to this headline">#</a></h2>
 <p><strong>Aerosol-cloud interactions</strong> (also known as aerosol indirect effects) refer to the modification of cloud properties due to changes in the aerosol population as summarized in <code class="xref std std-numref docutils literal notranslate"><span class="pre">aerosol_effects</span></code>.</p>
 <figure class="margin-caption align-default" id="aerosol-effects">
-<img alt="../../_images/figure64.png" src="../../_images/figure64.png" />
+<img alt="../../_images/figure62.png" src="../../_images/figure62.png" />
 <figcaption>
 <p><span class="caption-text">Summary of aerosol-cloud interactions and their climate effects.
 Based on IPCC AR5.</span><a class="headerlink" href="#aerosol-effects" title="Permalink to this image">#</a></p>

@@ -39,7 +39,7 @@ Cryosphere 🧊
 How ice forms, moves and melts.
 :::
 
-<!-- :::{grid-item-card}
+:::{grid-item-card}
 :link: 03_rivers/intro/intro
 :link-type: doc
 :class-header: bg-light
@@ -48,7 +48,7 @@ Rivers and Flooding 🏞
 ^^^
 
 How water flows on the surface.
-::: -->
+:::
 
 <!-- :::{grid-item-card}
 :link: 04_atmosphere/intro/intro
