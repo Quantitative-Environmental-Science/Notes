@@ -38,7 +38,10 @@ Recharge
     The downward movement of water from the soil to the {term}`water table<Water Table>`.
     
 Residence time
-    The time that a given substance remains in a particular reservoir in a biogeochemical cycle. 
+    The time that a given substance remains in a particular reservoir in a biogeochemical cycle.
+
+Reynolds Number
+    The ratio of inertial forces to viscous forces within a fluid. Fluids with a large Reynolds Numberare dominated by intertial forces, and fluids with a small Reynolds Number are dominated by viscous drag.
 
 Unconfined Aquifer
     An aquifer where the {term}`water table<Water Table>` defines the upper water limit.  
