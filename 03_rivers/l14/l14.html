@@ -426,7 +426,7 @@ To this end we consider the next step of development of the model which is to co
 If we denote the surface storage as <span class="math notranslate nohighlight">\(S(x,t)\)</span> then the change of surface storage in a length of slope <span class="math notranslate nohighlight">\(\mathrm{D}x\)</span> over a time <span class="math notranslate nohighlight">\(\mathrm{D}t\)</span> is given by the build up of rain <span class="math notranslate nohighlight">\(R \mathrm{D}x \mathrm{D}t\)</span> minus the infiltration over this time, <span class="math notranslate nohighlight">\(I \mathrm{D}x \mathrm{D}t\)</span>, as well as the difference of the flow into the element, <span class="math notranslate nohighlight">\(u S(x,t) \mathrm{D}t\)</span> and the flow out of the element <span class="math notranslate nohighlight">\(u S(x+\mathrm{D}x,t) \mathrm{D}t\)</span>.</p>
 <p>This leads to the balance:</p>
 <div class="math notranslate nohighlight">
-\[S(x, t + \partial t) \partial x - S(x, t) \partial x = R \partial x \partial t - I \partial x \partial t + u S(x, t) \partial t - u S(x + \partial x, t) \partial t\]</div>
+\[S(x, t + \delta t) \delta x - S(x, t) \delta x = R \delta x \delta t - I \delta x \delta t + u S(x, t) \delta t - u S(x + \delta x, t) \delta t\]</div>
 <p>And hence the equation:</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial S}{\partial t} = R - I - u \frac{\partial S}{\partial x}\]</div>
@@ -437,8 +437,10 @@ If we denote the surface storage as <span class="math notranslate nohighlight">\
 <p>Where <span class="math notranslate nohighlight">\(\eta = x - u t\)</span> and <span class="math notranslate nohighlight">\(\tau = t\)</span>.</p>
 <p>This leads to the relations:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\frac{\partial W}{\partial t} = - u \frac{\partial W}{\partial z} + \frac{\partial W}{\partial \tau} \\
-\frac{\partial W}{\partial x} = \frac{\partial W}{\partial z}\end{split}\]</div>
+\[\begin{split}\begin{align}
+\frac{\partial W}{\partial t} &amp;= - u \frac{\partial W}{\partial z} + \frac{\partial W}{\partial \tau} \\
+\frac{\partial W}{\partial x} &amp;= \frac{\partial W}{\partial z}
+\end{align}\end{split}\]</div>
 <p>And the equation becomes:</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial W}{\partial \tau} = R - I\]</div>
@@ -459,7 +461,7 @@ Hence the time to reach the line <span class="math notranslate nohighlight">\(x 
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{align}
 u S &amp;= u (R - I) t &amp;&amp; t \lt L / u\\
-&amp;= (R - I) L &amp;&amp; \geq L / u
+&amp;= (R - I) L &amp;&amp; t \geq L / u
 \end{align}\end{split}\]</div>
 <p>Matching this latter solution for equilibrium, with the equilibrium solution for the bucket model, we find that the parameter <span class="math notranslate nohighlight">\(\lambda\)</span> in the bucket model is given by</p>
 <div class="math notranslate nohighlight">
