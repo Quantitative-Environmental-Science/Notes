@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>River Flows</title>
+    <title>4.2. Floods</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,9 +50,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams"]}, "tex": {"packages": ["base", "physics", "ams"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="5. Glossary" href="../../reference/glossary.html" />
+    <link rel="prev" title="4.1. Rain and Surface Water" href="../l13/l13.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -102,7 +106,7 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../00_intro/intro/intro.html">
    1. Introduction
@@ -194,19 +198,24 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../intro/intro.html">
    4. Surface water
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="../l13/l13.html">
      4.1. Rain and Surface Water
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     4.2. Floods
     </a>
    </li>
   </ul>
@@ -326,23 +335,70 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#river-flows">
+   River Flows
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#coupled-model">
+   Coupled Model
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>River Flows</h1>
+                <h1>Floods</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#river-flows">
+   River Flows
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#coupled-model">
+   Coupled Model
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -350,8 +406,127 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="river-flows">
-<span id="lecture-14"></span><h1>River Flows<a class="headerlink" href="#river-flows" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="floods">
+<span id="lecture-14"></span><h1><span class="section-number">4.2. </span>Floods<a class="headerlink" href="#floods" title="Permalink to this headline">#</a></h1>
+<p>In a catchment there are a series of drainage zones, each flowing into a stream and then into the river, in a hierarchical way.
+This leads to the question of how to build a model for the whole drainage basin which is more complex that the idealised bucket model.
+We also may used such a detailed model to assess the value of l in the model based on the more detailed physical processes in a more complete model.
+To this end we consider the next step of development of the model which is to consider the drainage along the land from the watershed to a stream as shown in <a class="reference internal" href="#surface-drainage"><span class="std std-numref">Fig. 4.9</span></a>.</p>
+<figure class="margin-caption align-default" id="surface-drainage">
+<a class="reference internal image-reference" href="../../_images/figure14.1.png"><img alt="../../_images/figure14.1.png" src="../../_images/figure14.1.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.9 </span><span class="caption-text">A more detailed surface drainage model.</span><a class="headerlink" href="#surface-drainage" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The speed of the flow down the slope may be given in terms of the permeable flow relation (Darcy law) for flow through crops, wooded land or other surfaces with considerable resistance.</p>
+<div class="math notranslate nohighlight">
+\[u = k \frac{\rho g \sin\theta}{\mu}\]</div>
+<p>And the outflow Q is given by <span class="math notranslate nohighlight">\(u S\)</span>, where <span class="math notranslate nohighlight">\(S\)</span> is evaluated at the base of the surface flow zone, at the stream.</p>
+<p>To relate this to the flow along the slope, we require a model of the change of the surface storage along the slope as the rain falls.
+If we denote the surface storage as <span class="math notranslate nohighlight">\(S(x,t)\)</span> then the change of surface storage in a length of slope <span class="math notranslate nohighlight">\(\mathrm{D}x\)</span> over a time <span class="math notranslate nohighlight">\(\mathrm{D}t\)</span> is given by the build up of rain <span class="math notranslate nohighlight">\(R \mathrm{D}x \mathrm{D}t\)</span> minus the infiltration over this time, <span class="math notranslate nohighlight">\(I \mathrm{D}x \mathrm{D}t\)</span>, as well as the difference of the flow into the element, <span class="math notranslate nohighlight">\(u S(x,t) \mathrm{D}t\)</span> and the flow out of the element <span class="math notranslate nohighlight">\(u S(x+\mathrm{D}x,t) \mathrm{D}t\)</span>.</p>
+<p>This leads to the balance:</p>
+<div class="math notranslate nohighlight">
+\[S(x, t + \partial t) \partial x - S(x, t) \partial x = R \partial x \partial t - I \partial x \partial t + u S(x, t) \partial t - u S(x + \partial x, t) \partial t\]</div>
+<p>And hence the equation:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial S}{\partial t} = R - I - u \frac{\partial S}{\partial x}\]</div>
+<p>Governing the change of surface storage along the surface from the watershed to the stream (in the direction of the flow along the surface).</p>
+<p>We need to find the value of <span class="math notranslate nohighlight">\(S(L,t)\)</span> at the point where the surface flow drains into the stream. To do this we seek a solution of the form:</p>
+<div class="math notranslate nohighlight">
+\[S(x,t) = W(\eta, \tau)\]</div>
+<p>Where <span class="math notranslate nohighlight">\(\eta = x - u t\)</span> and <span class="math notranslate nohighlight">\(\tau = t\)</span>.</p>
+<p>This leads to the relations:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{\partial W}{\partial t} = - u \frac{\partial W}{\partial z} + \frac{\partial W}{\partial \tau} \\
+\frac{\partial W}{\partial x} = \frac{\partial W}{\partial z}\end{split}\]</div>
+<p>And the equation becomes:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial W}{\partial \tau} = R - I\]</div>
+<p>If we solve this equation on lines <span class="math notranslate nohighlight">\(\eta = \mathrm{constant}\)</span>, then we find that</p>
+<div class="math notranslate nohighlight">
+\[W(\eta, \tau) = W(\eta, 0) + (R - I) \tau\]</div>
+<p>We want the solution when <span class="math notranslate nohighlight">\(x = L\)</span> (i.e. the value of <span class="math notranslate nohighlight">\(S\)</span> at the stream). The lines of <span class="math notranslate nohighlight">\(\eta = \mathrm{constant}\)</span> are shown on the <span class="math notranslate nohighlight">\(x-t\)</span> plane in <code class="xref std std-numref docutils literal notranslate"><span class="pre">eta_constat</span></code>.</p>
+<figure class="margin-caption align-default" id="eta-constant">
+<a class="reference internal image-reference" href="../../_images/figure14.2.png"><img alt="../../_images/figure14.2.png" src="../../_images/figure14.2.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.10 </span><span class="caption-text">Lines of <span class="math notranslate nohighlight">\(\eta = \mathrm{constant}\)</span> on the <span class="math notranslate nohighlight">\(x-t\)</span> plane</span><a class="headerlink" href="#eta-constant" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>There are two regions – the set of points where <span class="math notranslate nohighlight">\(x = L\)</span> and <span class="math notranslate nohighlight">\(t \lt L/u\)</span>, for which lines <span class="math notranslate nohighlight">\(\eta = \mathrm{constant}\)</span> start on the x axis at time = 0 (eg the line starting at <span class="math notranslate nohighlight">\(x_0\)</span>), and for each of these lines, the time at which they reach the distance <span class="math notranslate nohighlight">\(x = L\)</span> is <span class="math notranslate nohighlight">\((L-x_0)/u\)</span>. This is the time for the line of constant <span class="math notranslate nohighlight">\(\eta\)</span> starting at <span class="math notranslate nohighlight">\(x=x_0\)</span> at <span class="math notranslate nohighlight">\(t=0\)</span> to reach the line <span class="math notranslate nohighlight">\(x = L\)</span>, and so the value of <span class="math notranslate nohighlight">\(W\)</span> (and hence <span class="math notranslate nohighlight">\(S\)</span>) at time <span class="math notranslate nohighlight">\(t\)</span> and at <span class="math notranslate nohighlight">\(x = L\)</span> is <span class="math notranslate nohighlight">\(w=(R-I)t\)</span>.</p>
+<p>The other region corresponds to the points <span class="math notranslate nohighlight">\(x=L\)</span> and <span class="math notranslate nohighlight">\(t \gt L/u\)</span>. In this region the lines of constant <span class="math notranslate nohighlight">\(\eta\)</span> which reach <span class="math notranslate nohighlight">\(x = L\)</span> for <span class="math notranslate nohighlight">\(t \gt L/u\)</span> start at <span class="math notranslate nohighlight">\(x = 0\)</span> at a time <span class="math notranslate nohighlight">\(t0 \gt 0\)</span>.
+Hence the time to reach the line <span class="math notranslate nohighlight">\(x = L\)</span> is <span class="math notranslate nohighlight">\(L/u\)</span>, and so at <span class="math notranslate nohighlight">\(x = L\)</span>, <span class="math notranslate nohighlight">\(w = (R-I) L/u\)</span> if <span class="math notranslate nohighlight">\(t \gt L/u\)</span>.</p>
+<p>As a result, the flux at <span class="math notranslate nohighlight">\(x = L\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+u S &amp;= u (R - I) t &amp;&amp; t \lt L / u\\
+&amp;= (R - I) L &amp;&amp; \geq L / u
+\end{align}\end{split}\]</div>
+<p>Matching this latter solution for equilibrium, with the equilibrium solution for the bucket model, we find that the parameter <span class="math notranslate nohighlight">\(\lambda\)</span> in the bucket model is given by</p>
+<div class="math notranslate nohighlight">
+\[\lambda = u / L\]</div>
+<p>and this is the time constant for reaching equilibrium between the surface water accumulation and flow into the streams.</p>
+<section id="river-flows">
+<h2>River Flows<a class="headerlink" href="#river-flows" title="Permalink to this headline">#</a></h2>
+<p>The previous section focussed on flow in the catchment towards a river. Some very simplified models for the surface run off in terms of the rainfall flux were developed to help inform relationships between the rainfall rate and the rate at which this flows into a river.</p>
+<p>To interpret these models of the surface runoff, we need a model for the flow in a river to understand if the river can accommodate the flow, or if it will overtop its banks and flood. As a simple model, a river has a cross section area <span class="math notranslate nohighlight">\(A(h)\)</span> as a function of the water depth, and the water in the river moves downstream with speed u.  If the river inclination is <span class="math notranslate nohighlight">\(\Theta\)</span> then the gravity force downslope is</p>
+<div class="math notranslate nohighlight">
+\[F g = g \sin{\Theta} \rho A\]</div>
+<p>and the drag force resisting this flow is</p>
+<div class="math notranslate nohighlight">
+\[F d = c \rho g u^2 P\]</div>
+<p>where <span class="math notranslate nohighlight">\(P(h)\)</span> is the wetted perimeter of the river bed.</p>
+<figure class="margin-caption align-default" id="river-flow">
+<a class="reference internal image-reference" href="../../_images/figure14.3.png"><img alt="../../_images/figure14.3.png" src="../../_images/figure14.3.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.11 </span><span class="caption-text">The geometry of an idealised river bed.</span><a class="headerlink" href="#river-flow" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If we balance these flows we find that the speed</p>
+<div class="math notranslate nohighlight">
+\[U(h) = (A(h) g sin{\Theta} / c P(h))^{1/2}\]</div>
+<p>And the volume flow in the river is approximately</p>
+<div class="math notranslate nohighlight">
+\[Q = A(h) u(h)\]</div>
+<p>In a specific example, we might consider that the river area <span class="math notranslate nohighlight">\(A(h) = \alpha h^2\)</span> and that the perimeter <span class="math notranslate nohighlight">\(P(h) = \beta h\)</span> so that</p>
+<div class="math notranslate nohighlight">
+\[Q(h) = (\alpha^3 / \beta)^{1/2)} (g \sin{\Theta} / c)^{1/2} h^{5/2}\]</div>
+<p>Is the law for the flux in the river.</p>
+<figure class="margin-caption align-default" id="discharge-rate">
+<a class="reference internal image-reference" href="../../_images/figure14.4.png"><img alt="../../_images/figure14.4.png" src="../../_images/figure14.4.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.12 </span><span class="caption-text">The discharge rate <span class="math notranslate nohighlight">\(Q\)</span> in a river as a function of the water depth.</span><a class="headerlink" href="#discharge-rate" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This provides a reasonable simplified model for the flow in many rivers, for example the chart above compares this formula with data from the River Severn showing flow as a function of the water depth.</p>
+<p>An initial result emerging from this model is that if the level of the banks are at <span class="math notranslate nohighlight">\(z = h^*\)</span> above the base of the river, then the critical flow rate of water in the river above which it begins to flood is</p>
+<div class="math notranslate nohighlight">
+\[Q^* = Q(h^*)\]</div>
+<p>If we want to use this model for the river flow to reduce the flood we see that the key controls we have are (a) raising the height of the banks; (b) deepening the river; (c) widening the river.</p>
+<figure class="margin-caption align-default" id="flood-barriers">
+<a class="reference internal image-reference" href="../../_images/figure14.5.png"><img alt="../../_images/figure14.5.png" src="../../_images/figure14.5.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.13 </span><span class="caption-text">An illustration of mitigation strategies to prevent flooding of a river.</span><a class="headerlink" href="#flood-barriers" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Our earlier idealised models for the surface runoff identify how more intense and longer duration rain events lead to a greater flux reaching the river, and hence we can explore the type of rain storm which will lead to the flux exceeding the maximum river flux in terms of the model for the runoff. Given statistics for the distribution of expected rainfall intensity and rainfall duration, it is then possible to design mitigation measures to reduce the flux arriving at the river from the run-off for a given rain storm. There is then a cost benefit analysis to be carried out to determine the benefit of mitigating the flood risk for different intensity storms : this involves estimating the costs of the mitigation measures compared to the costs of the damage produced by the flooding multiplied by the risk of the flooding.</p>
+</section>
+<section id="coupled-model">
+<h2>Coupled Model<a class="headerlink" href="#coupled-model" title="Permalink to this headline">#</a></h2>
+<p>If we combine the runoff model with the river model we find the following comparison plot, illustrating how different types of rainfall lead to different flow regimes (ie flooding or not)</p>
+<figure class="margin-caption align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/figure14.6.png"><img alt="../../_images/figure14.6.png" src="../../_images/figure14.6.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.14 </span><span class="caption-text">A coupled river flow and flooding model</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This model, although simplified, has features in common with the classical river hydrograph (<a class="reference internal" href="#hydrograph"><span class="std std-numref">Fig. 4.15</span></a>) in which we plot the rainfall flux and the river flow rate as a function of time.</p>
+<figure class="margin-caption align-default" id="hydrograph">
+<a class="reference internal image-reference" href="../../_images/figure14.7.png"><img alt="../../_images/figure14.7.png" src="../../_images/figure14.7.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.15 </span><span class="caption-text">A hydrograph showing the rainfall flux and the river flow rate as a function of time.</span><a class="headerlink" href="#hydrograph" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -381,6 +556,20 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../l13/l13.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">4.1. </span>Rain and Surface Water</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../reference/glossary.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Glossary</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
