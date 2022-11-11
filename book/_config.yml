@@ -39,7 +39,6 @@ sphinx:
       preamble: |
         \newcommand{\dv}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}  % replaces physics.sty \dv
         \newcommand{\dd}{\mathrm{d}}  % replaces physics.sty \dd
-
       pointsize: 11pt
       papersize: a4paper
     latex_logo: ./logo.png

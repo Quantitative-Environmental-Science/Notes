@@ -58,6 +58,9 @@ Recharge
 Residence Time
     The average time that a given substance remains in a reservoir.
 
+Reynolds Number
+    The ratio of inertial forces to viscous forces within a fluid. Fluids with a large Reynolds Numberare dominated by intertial forces, and fluids with a small Reynolds Number are dominated by viscous drag.
+
 Transmissivity
     The ability of an {term}`aquifer` to transmit groundwater throughout its entire saturated thickness.
 
