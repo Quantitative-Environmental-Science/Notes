@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Placeholder</title>
+    <title>4.4. Flood Waves</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,9 +50,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams"]}, "tex": {"packages": ["base", "physics", "ams"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="5. Glossary" href="../../reference/glossary.html" />
+    <link rel="prev" title="4.3. Reservoirs" href="../l15/l15.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -102,7 +106,7 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../00_intro/intro/intro.html">
    1. Introduction
@@ -199,16 +203,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../intro/intro.html">
    4. Surface water
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="../l13/l13.html">
      4.1. Rain and Surface Water
@@ -222,6 +226,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../l15/l15.html">
      4.3. Reservoirs
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     4.4. Flood Waves
     </a>
    </li>
   </ul>
@@ -353,7 +362,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Placeholder</h1>
+                <h1>Flood Waves</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -365,8 +374,53 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="placeholder">
-<span id="lecture-17"></span><h1>Placeholder<a class="headerlink" href="#placeholder" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="flood-waves">
+<span id="lecture-16"></span><h1><span class="section-number">4.4. </span>Flood Waves<a class="headerlink" href="#flood-waves" title="Permalink to this headline">#</a></h1>
+<p>We now turn our attention to the propagation of flood waves down a river.
+This is important to predict since it is useful to know the time of arrival of a flood many tens of km downstream in order to provide warning to residents and try to mitigate the impacts,
+but also for planning flood prevention systems for example.</p>
+<p>The famous flood from the Geitro glacier formed a flood wave which moved down a valley as shown in the figure below.</p>
+<p>The flood wave can be found in a case where the flow is frictionally controlled that</p>
+<div class="math notranslate nohighlight">
+\[Q(h) = k h^\frac{5}{2}\]</div>
+<p>and the area of the river scales as</p>
+<div class="math notranslate nohighlight">
+\[A(h) = a h^2\]</div>
+<p>Now if the flow down the river changes, the depth at a given point may change.
+Indeed, if more flow enters than leaves a control volume, then the evolution  of the depth follows the law</p>
+<div class="math notranslate nohighlight">
+\[\dv{A}{h} \frac{\partial h}{\partial t} = \frac{\partial Q}{\partial x}\]</div>
+<p>Substitute for <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> to find the equation in terms of <span class="math notranslate nohighlight">\(h\)</span></p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial h}{\partial t} + \frac{5k}{2 \alpha} h^\frac{1}{2} \frac{\partial h}{\partial x} = 0\]</div>
+<p>There is a solution dependent on constant depth flow moving down the channel with speed that depends on depth.
+On the flood wave</p>
+<div class="math notranslate nohighlight">
+\[x = \frac{5k}{2 \alpha} h^\frac{1}{2} t\]</div>
+<p>so, rearranging for <span class="math notranslate nohighlight">\(h\)</span></p>
+<div class="math notranslate nohighlight">
+\[h = \left( \frac{5k}{2 \alpha} \frac{x}{t} \right)^2\]</div>
+<p>Using this solution for the long time depth of the current, we can estimate the nose location and depth.</p>
+<figure class="margin-caption align-default" id="flood-profile">
+<a class="reference internal image-reference" href="../../_images/figure1.png"><img alt="../../_images/figure1.png" src="../../_images/figure1.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.18 </span><span class="caption-text">Sketch of the behaviour of a flood wave nose.</span><a class="headerlink" href="#flood-profile" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We first work out the volume in the flow and this leads to an expression for the position of the nose</p>
+<div class="math notranslate nohighlight">
+\[v = \int_0^{x_N} A(h) \dd{x}\]</div>
+<div class="math notranslate nohighlight">
+\[x_N(t) = \left[ \frac{5v}{\alpha} \left( \frac{5kt}{2 \alpha} \right)^4 \right] ^\frac{1}{5}\]</div>
+<p>Using this nose position we can establish the depth of the flow</p>
+<div class="math notranslate nohighlight">
+\[h_N = \left( \frac{2 \alpha}{5k} \right)^\frac{1}{10} \left( \frac{5v}{\alpha} \right)^\frac{2}{5} t^{-\frac{2}{5}}\]</div>
+<figure class="margin-caption align-default" id="wave-evolution">
+<a class="reference internal image-reference" href="../../_images/figure21.png"><img alt="../../_images/figure21.png" src="../../_images/figure21.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.19 </span><span class="caption-text">Flood wave evolution with time.</span><a class="headerlink" href="#wave-evolution" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 
     <script type="text/x-thebe-config">
@@ -396,6 +450,20 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../l15/l15.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">4.3. </span>Reservoirs</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../reference/glossary.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Glossary</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
