@@ -6,5 +6,3 @@ In this series of lectures we will develop a series of models for the dynamics o
 
 ```{tableofcontents}
 ```
-
-Notes will appear as the lecture block progresses.
