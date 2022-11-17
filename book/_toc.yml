@@ -28,13 +28,13 @@ chapters:
   - file: 03_rivers/l15/l15
   - file: 03_rivers/l16/l16
 #   - file: 03_rivers/l17/l17
-#   - file: 03_rivers/l18/l18
-# - file: 04_atmosphere/intro/intro
-#   sections:
-#   - file: 04_atmosphere/l19/l19
-#   - file: 04_atmosphere/l20/l20
-#   - file: 04_atmosphere/l21/l21
-#   - file: 04_atmosphere/l22/l22
+  - file: 03_rivers/l18/l18
+- file: 04_atmosphere/intro/intro
+  sections:
+  - file: 04_atmosphere/l19/l19
+  - file: 04_atmosphere/l20/l20
+  - file: 04_atmosphere/l21/l21
+  - file: 04_atmosphere/l22/l22
 #   - file: 04_atmosphere/l23/l23
 #   - file: 04_atmosphere/l24/l24
 # - file: 05_globalenvironment/intro/intro
