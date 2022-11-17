@@ -26,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -50,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams"]}, "tex": {"packages": ["base", "physics", "ams"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -413,37 +416,55 @@ title="Print to PDF"
 <p>A list of terms used in the QES course.</p>
 <dl class="glossary simple">
 <dt id="term-Aquiclude">Aquiclude<a class="headerlink" href="#term-Aquiclude" title="Permalink to this term">#</a></dt><dd><p>Sometime refered to as an <em>aquifuge</em>;
-a rock with very low hydraulic conductivity that acts as an impermeable barrier to groundwater flow.</p>
+a rock with very low <a class="reference internal" href="#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a> that acts as an impermeable barrier to groundwater flow.</p>
 </dd>
 <dt id="term-Aquifer">Aquifer<a class="headerlink" href="#term-Aquifer" title="Permalink to this term">#</a></dt><dd><p>A body of permerable rock that is capable of storing significant quantities of water,
 underlain by impermeable material.</p>
 </dd>
-<dt id="term-Aquitard">Aquitard<a class="headerlink" href="#term-Aquitard" title="Permalink to this term">#</a></dt><dd><p>A rock with low values of hydraulic conductivity, but that still allows some flow of groundwater through it.</p>
+<dt id="term-Aquitard">Aquitard<a class="headerlink" href="#term-Aquitard" title="Permalink to this term">#</a></dt><dd><p>A rock with low values of <a class="reference internal" href="#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a>, but that still allows some flow of groundwater through it.</p>
 </dd>
 <dt id="term-Artisan-Well">Artisan Well<a class="headerlink" href="#term-Artisan-Well" title="Permalink to this term">#</a></dt><dd><p>A well that flows without pumping
 because the hydraulic head in the <a class="reference internal" href="#term-Confined-Aquifer"><span class="xref std std-term">confined aquifer</span></a> that feeds it is greater than that at ground level.</p>
 </dd>
-<dt id="term-Confined-Aquifer">Confined Aquifer<a class="headerlink" href="#term-Confined-Aquifer" title="Permalink to this term">#</a></dt><dd><p>An aquifer that is sealed by impermeable rock above and below.</p>
+<dt id="term-Confined-Aquifer">Confined Aquifer<a class="headerlink" href="#term-Confined-Aquifer" title="Permalink to this term">#</a></dt><dd><p>An <a class="reference internal" href="#term-Aquifer"><span class="xref std std-term">aquifer</span></a> that is sealed by impermeable rock above and below.</p>
 </dd>
 <dt id="term-Discharge">Discharge<a class="headerlink" href="#term-Discharge" title="Permalink to this term">#</a></dt><dd><p>The amount of water flowing at a particular point.</p>
+</dd>
+<dt id="term-Elevation-Head">Elevation Head<a class="headerlink" href="#term-Elevation-Head" title="Permalink to this term">#</a></dt><dd><p>The height in m above the reference datum, which is usually mean sea level in groundwater systems.</p>
+</dd>
+<dt id="term-Hydraulic-Conductivity">Hydraulic Conductivity<a class="headerlink" href="#term-Hydraulic-Conductivity" title="Permalink to this term">#</a></dt><dd><p>A combination of the physical properties of a fluid and the <a class="reference internal" href="#term-Permeability"><span class="xref std std-term">permeability</span></a> of the medium it is flowing through which descibes how quickly the fluid can move through it, termed <span class="math notranslate nohighlight">\(K\)</span>. This is a key property of hydrogeologic systems which is highly variable (12 orders of magnitude!) depending on rock type.</p>
+</dd>
+<dt id="term-Hydraulic-Gradient">Hydraulic Gradient<a class="headerlink" href="#term-Hydraulic-Gradient" title="Permalink to this term">#</a></dt><dd><p>The difference in <a class="reference internal" href="#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a> per unit distance, <span class="math notranslate nohighlight">\(\dv{h}{l}\)</span></p>
+</dd>
+<dt id="term-Hydraulic-Head">Hydraulic Head<a class="headerlink" href="#term-Hydraulic-Head" title="Permalink to this term">#</a></dt><dd><p>A measure of liquid pressure at a particular place (depth) relative to some datum (usually mean sea level). Descibes the amount of energy available in the system. Can be subdivided into the <a class="reference internal" href="#term-Pressure-Head"><span class="xref std std-term">pressure head</span></a> and <a class="reference internal" href="#term-Elevation-Head"><span class="xref std std-term">elevation head</span></a> (also kinetic head, although this is negligible in groundwater systems).</p>
 </dd>
 <dt id="term-Infiltration">Infiltration<a class="headerlink" href="#term-Infiltration" title="Permalink to this term">#</a></dt><dd><p>The downward entry of water into soil.</p>
 </dd>
 <dt id="term-Percolation">Percolation<a class="headerlink" href="#term-Percolation" title="Permalink to this term">#</a></dt><dd><p>The downward movement of water through soil.</p>
 </dd>
+<dt id="term-Permeability">Permeability<a class="headerlink" href="#term-Permeability" title="Permalink to this term">#</a></dt><dd><p>The physical characteristics of a porous medium that allow water to flow through it. Related to <a class="reference internal" href="#term-Porosity"><span class="xref std std-term">porosity</span></a>, but not identical - a porous rock is not necessarily permeable.</p>
+</dd>
 <dt id="term-Porosity">Porosity<a class="headerlink" href="#term-Porosity" title="Permalink to this term">#</a></dt><dd><p>The total sum of all void spaces in a rock. Often expressed as a percentage, or a number between 1 and 0. Not all these spaces may be connected, however, so for water flow, the <em>effective porosity</em> is the amount of void space that can hold and transmit water.</p>
+</dd>
+<dt id="term-Pressure-Head">Pressure Head<a class="headerlink" href="#term-Pressure-Head" title="Permalink to this term">#</a></dt><dd><p>The total absolute pressure exerted on a point in the system, expressed in m.</p>
 </dd>
 <dt id="term-Recharge">Recharge<a class="headerlink" href="#term-Recharge" title="Permalink to this term">#</a></dt><dd><p>The downward movement of water from the soil to the <a class="reference internal" href="#term-Water-Table"><span class="xref std std-term">water table</span></a>.</p>
 </dd>
-<dt id="term-Residence-time">Residence time<a class="headerlink" href="#term-Residence-time" title="Permalink to this term">#</a></dt><dd><p>The time that a given substance remains in a particular reservoir in a biogeochemical cycle.</p>
+<dt id="term-Residence-Time">Residence Time<a class="headerlink" href="#term-Residence-Time" title="Permalink to this term">#</a></dt><dd><p>The average time that a given substance remains in a reservoir.</p>
 </dd>
 <dt id="term-Reynolds-Number">Reynolds Number<a class="headerlink" href="#term-Reynolds-Number" title="Permalink to this term">#</a></dt><dd><p>The ratio of inertial forces to viscous forces within a fluid. Fluids with a large Reynolds Numberare dominated by intertial forces, and fluids with a small Reynolds Number are dominated by viscous drag.</p>
 </dd>
-<dt id="term-Unconfined-Aquifer">Unconfined Aquifer<a class="headerlink" href="#term-Unconfined-Aquifer" title="Permalink to this term">#</a></dt><dd><p>An aquifer where the <a class="reference internal" href="#term-Water-Table"><span class="xref std std-term">water table</span></a> defines the upper water limit.</p>
+<dt id="term-Transmissivity">Transmissivity<a class="headerlink" href="#term-Transmissivity" title="Permalink to this term">#</a></dt><dd><p>The ability of an <a class="reference internal" href="#term-Aquifer"><span class="xref std std-term">aquifer</span></a> to transmit groundwater throughout its entire saturated thickness.</p>
+</dd>
+<dt id="term-Specific-Discharge">Specific Discharge<a class="headerlink" href="#term-Specific-Discharge" title="Permalink to this term">#</a></dt><dd><p>The flow rate through a system divided by its cross sectional area, <span class="math notranslate nohighlight">\(q\)</span>.</p>
+</dd>
+<dt id="term-Storativity">Storativity<a class="headerlink" href="#term-Storativity" title="Permalink to this term">#</a></dt><dd><p>The volume of water released from storage per unit decline in hydraulic head in the aquifer, per unit area of the aquifer</p>
+</dd>
+<dt id="term-Unconfined-Aquifer">Unconfined Aquifer<a class="headerlink" href="#term-Unconfined-Aquifer" title="Permalink to this term">#</a></dt><dd><p>An <a class="reference internal" href="#term-Aquifer"><span class="xref std std-term">aquifer</span></a> where the <a class="reference internal" href="#term-Water-Table"><span class="xref std std-term">water table</span></a> defines the upper water limit.</p>
 </dd>
 <dt id="term-Water-Footprint">Water Footprint<a class="headerlink" href="#term-Water-Footprint" title="Permalink to this term">#</a></dt><dd><p>The total amount of water it takes to manufacture something.</p>
 </dd>
-<dt id="term-Water-Table">Water Table<a class="headerlink" href="#term-Water-Table" title="Permalink to this term">#</a></dt><dd><p>The upper surface of groundwater, or the level below which an <a class="reference internal" href="#term-Aquifer"><span class="xref std std-term">unconfined aquifer</span></a> is permamently saturated with water.</p>
+<dt id="term-Water-Table">Water Table<a class="headerlink" href="#term-Water-Table" title="Permalink to this term">#</a></dt><dd><p>The upper surface of groundwater, or the level below which an <a class="reference internal" href="#term-Aquifer"><span class="xref std std-term">aquifer</span></a> is permamently saturated with water.</p>
 </dd>
 </dl>
 </section>

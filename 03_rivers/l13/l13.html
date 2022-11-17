@@ -26,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -497,9 +498,17 @@ However, sea level rise will also lead to flooding of near coastal areas, and th
 </figure>
 <section id="rainfall-and-drainage-systems">
 <h2>Rainfall and drainage systems<a class="headerlink" href="#rainfall-and-drainage-systems" title="Permalink to this headline">#</a></h2>
+<aside class="units margin sidebar">
+<p class="sidebar-title">Units!</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+S, I, T &amp;= \mathrm{m^3~s^{-1}~m^{-2}} \\
+&amp;= \mathrm{m~s^{-1}}
+\end{split}\]</div>
+</aside>
 <p>Rainfall typically accumulates on the ground and disperses through three pathways.
 First the rain may run over the land surface downhill towards drainage channels, a process we will call surface run-off, <span class="math notranslate nohighlight">\(S\)</span>, with a flux per unit area.
-Second the rain may infiltrate into the ground, flowing into the subsurface aquifers, a process we label with a flux, <span class="math notranslate nohighlight">\(D\)</span>, per unit area.
+Second the rain may infiltrate into the ground, flowing into the subsurface aquifers, a process we label with a flux, <span class="math notranslate nohighlight">\(I\)</span>, per unit area.
 Third, some rainfall is taken up by crops and then returned to the atmosphere by the process of evapotranspiration, with a flux, <span class="math notranslate nohighlight">\(T\)</span>, per unit area of the land.
 The controls on these three fluxes are associated with the type of vegetation, the slope of the land and the type of soil which will be more or less permeable, and hence will regulate the flux of water into the ground.
 If the surface run-off if too large, then this may lead to overspilling of drainage gullies and channels, and a flood may develop.</p>
@@ -534,6 +543,19 @@ This delay is key to preventing flooding in many cases.</p>
 <p>If we are to model fluid flows, we need to assess the dominant controls on the dynamics.
 With water flowing downhill on the land surface, the downslope force of gravity is balanced by either the inertia of the fluid or the friction force from the ground on the fluid.
 The inertia represents the force required to speed up or slow down the flow; as fluid moves over the land, it may change direction for example, over some length scale <span class="math notranslate nohighlight">\(h\)</span> comparable to the depth of the flow, and this requires a time <span class="math notranslate nohighlight">\(\frac{L}{u}\)</span>, so the effective change in momentum divided by the time is</p>
+<aside class="units margin sidebar">
+<p class="sidebar-title">Units!</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+y &amp;= \mathrm{s} \\
+h &amp;= \mathrm{m} \\
+u &amp;= \mathrm{m~s^{-1}} \\
+\rho &amp;= \mathrm{kg~m^{-3}} \\
+c &amp;= \mathrm{unitless} \\
+g &amp;= \mathrm{m~s^{-2}} \\
+\theta &amp;= \mathrm{radians} \\
+\end{split}\]</div>
+</aside>
 <div class="math notranslate nohighlight" id="equation-runoff-balance">
 <span class="eqno">(4.1)<a class="headerlink" href="#equation-runoff-balance" title="Permalink to this equation">#</a></span>\[\frac{d (\rho u)}{dt} \sim \rho c \frac{u^2}{h}\]</div>
 <p>where <span class="math notranslate nohighlight">\(c\)</span> is the drag coefficient, <span class="math notranslate nohighlight">\(h\)</span> the depth of the flow and <span class="math notranslate nohighlight">\(u\)</span> is the flow speed.
@@ -541,12 +563,26 @@ Moody has published tables for the drag as a function of the roughness of the be
 <p>If the gravity force down-slope is <span class="math notranslate nohighlight">\(\rho g \sin(\theta)\)</span> for a slope of angle <span class="math notranslate nohighlight">\(\theta\)</span> then the flow speed <span class="math notranslate nohighlight">\(u\)</span> will be of order</p>
 <div class="math notranslate nohighlight" id="equation-gravity-speed">
 <span class="eqno">(4.2)<a class="headerlink" href="#equation-gravity-speed" title="Permalink to this equation">#</a></span>\[u = \sqrt{\frac{gh}{c} \sin(\theta)}\]</div>
-<p>and the flux will be</p>
+<p>and the flux per unit distance across the slope will be</p>
+<aside class="units margin sidebar">
+<p class="sidebar-title">Units!</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+q &amp;= \mathrm{m^{2}~s^{-1}} \\
+\end{split}\]</div>
+</aside>
 <div class="math notranslate nohighlight" id="equation-gravity-flux">
 <span class="eqno">(4.3)<a class="headerlink" href="#equation-gravity-flux" title="Permalink to this equation">#</a></span>\[q = h u\]</div>
 <p>In contrast, for a very thin film, the viscous force from the ground will dominate the flow, and this has the form</p>
+<aside class="units margin sidebar">
+<p class="sidebar-title">Units!</p>
+<div class="math notranslate nohighlight">
+\[
+\mu = \mathrm{kg~m^{-1}~s^{-1}}
+\]</div>
+</aside>
 <div class="math notranslate nohighlight" id="equation-viscous-force">
-<span class="eqno">(4.4)<a class="headerlink" href="#equation-viscous-force" title="Permalink to this equation">#</a></span>\[\mu = \frac{u}{h^2}\]</div>
+<span class="eqno">(4.4)<a class="headerlink" href="#equation-viscous-force" title="Permalink to this equation">#</a></span>\[\mu \approx \frac{u}{h^2}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\mu\)</span> is the dynamic viscosity of the fluid, and again <span class="math notranslate nohighlight">\(h\)</span> is the depth of the flow.
 Matching this with the gravity force downslope we find</p>
 <div class="math notranslate nohighlight" id="equation-viscous-grav-balance">
@@ -555,6 +591,13 @@ Matching this with the gravity force downslope we find</p>
 <div class="math notranslate nohighlight" id="equation-thin-film-flow">
 <span class="eqno">(4.6)<a class="headerlink" href="#equation-thin-film-flow" title="Permalink to this equation">#</a></span>\[q = g \rho \sin(\theta) \frac{h^3}{6\mu} \]</div>
 <p>Taking the ratio of the inertial and viscous forces, we find</p>
+<aside class="units margin sidebar">
+<p class="sidebar-title">Units!</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\Re &amp;= \mathrm{unitless} \\
+\end{split}\]</div>
+</aside>
 <div class="math notranslate nohighlight" id="equation-reynolds-derivation">
 <span class="eqno">(4.7)<a class="headerlink" href="#equation-reynolds-derivation" title="Permalink to this equation">#</a></span>\[\mathrm{Re} = \frac{\rho u h}{\mu}\]</div>
 <p>which this is known as the <strong><a class="reference internal" href="../../reference/glossary.html#term-Reynolds-Number"><span class="xref std std-term">Reynolds number</span></a></strong>.
@@ -565,6 +608,13 @@ To estimate the transition point we can find the flux for which the depth of the
 <p>Surface run off in mild rain fall is likely to follow the slow viscous drag, but as the flow increases there may be a transition to the inertial flow regime.</p>
 <p>Surface run off in vegetated areas may be more accurately modelled in terms of a porous flow with the water moving around the plants and surface soil, which provide the effective porous media with an effective permeability k.
 In this case, the flow speed will be of the form</p>
+<aside class="units margin sidebar">
+<p class="sidebar-title">Units!</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+k &amp;= \mathrm{m^2} \\
+\end{split}\]</div>
+</aside>
 <div class="math notranslate nohighlight" id="equation-vegetated">
 <span class="eqno">(4.8)<a class="headerlink" href="#equation-vegetated" title="Permalink to this equation">#</a></span>\[u = g \rho \sin(\theta) \frac{k}{\mu}\]</div>
 <p>over the surface of the ground. The effective permeability may be quite high near the ground.</p>
@@ -572,6 +622,13 @@ In this case, the flow speed will be of the form</p>
 However, given the irregularities of the terrain typical in many catchments, it is helpful to develop an averaged description of the run off flow from a localised area of the catchment,  and then we can add these together as shown in the figure of  the multiple drainage zones which flow into the main river.
 We therefore work with an integrated picture of the volume of surface water, and relate this to the run-off flow with a phenomenological model in which we denote the runoff from an area as being <span class="math notranslate nohighlight">\(u S(t)\)</span> per unit area, where <span class="math notranslate nohighlight">\(S(t)\)</span> is the volume of surface water per unit area.
 For the present illustrative models, we write <span class="math notranslate nohighlight">\(u = \lambda L\)</span>, where <span class="math notranslate nohighlight">\(\lambda\)</span> is a constant (see problem set).</p>
+<aside class="units margin sidebar">
+<p class="sidebar-title">Units!</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\lambda &amp;= \mathrm{unitless} \\
+\end{split}\]</div>
+</aside>
 <p>If <span class="math notranslate nohighlight">\(S\)</span> increases in one zone, the run-off into the river from this zone will increase, and so we expect <span class="math notranslate nohighlight">\(S\)</span> to vary according to the relation</p>
 <div class="math notranslate nohighlight" id="equation-flow-sum">
 <span class="eqno">(4.9)<a class="headerlink" href="#equation-flow-sum" title="Permalink to this equation">#</a></span>\[\frac{dS}{dt} = L R – \lambda L S – L I - L T\]</div>
@@ -585,11 +642,18 @@ In the problem set we will explore a nonlinear flux law, but the simple model pr
 In heavily vegetated zones this is a significant factor; the vegetation also impacts the value of <span class="math notranslate nohighlight">\(\lambda S\)</span>, the surface run-off rate, since it requires a deeper level of surface water before it runs off.
 In the model solutions below we neglect <span class="math notranslate nohighlight">\(T\)</span> but can readily include these in the model, provided we have a relation between T and the rain fall.</p>
 <p>If the drainage rate is also small then we can approximate equation <a class="reference internal" href="#equation-flow-sum">(4.9)</a> by the equation</p>
+<aside class="units margin sidebar">
+<p class="sidebar-title">Units!</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+R &amp;= \mathrm{m~s^{-1}} \\
+\end{split}\]</div>
+</aside>
 <div class="math notranslate nohighlight" id="equation-flow-approx">
 <span class="eqno">(4.10)<a class="headerlink" href="#equation-flow-approx" title="Permalink to this equation">#</a></span>\[\frac{dS}{dt} + \lambda S = R\]</div>
 <p>This can be expressed in the form</p>
 <div class="math notranslate nohighlight" id="equation-flow-approx-sln">
-<span class="eqno">(4.11)<a class="headerlink" href="#equation-flow-approx-sln" title="Permalink to this equation">#</a></span>\[\frac{d}{dt} ( S e^{\lambda t} ) = R e^{\lambda t}\]</div>
+<span class="eqno">(4.11)<a class="headerlink" href="#equation-flow-approx-sln" title="Permalink to this equation">#</a></span>\[\frac{d}{dt} ( S e^{\lambda t} ) = R~e^{\lambda t}\]</div>
 <p>and so in general we can write the solution for <span class="math notranslate nohighlight">\(S(t)\)</span> in the form</p>
 <div class="math notranslate nohighlight" id="equation-s-of-time">
 <span class="eqno">(4.12)<a class="headerlink" href="#equation-s-of-time" title="Permalink to this equation">#</a></span>\[S(t) = S(0) e^{-\lambda t} + e^{-\lambda t} \int R(t) e^{\lambda t} dt\]</div>
