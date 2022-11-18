@@ -1,5 +1,10 @@
 # Air Pollution and Atmospheric Chemistry
 
+```{tableofcontents}
+```
+
+The remaining two lectures will be added later.
+
 __Lecture 19 – An overview of the atmosphere__
 +++
 During this lecture we will review the structure (layers) of the atmosphere.
@@ -34,9 +39,3 @@ __Lecture 24 - Air pollution and climate: indirect effects__
 This lecture describes how aerosols affect climate through their interaction with clouds.
 It introduces the role of aerosols in cloud formation, the Koehler theory and rate of droplet growth.
 It introduces also the role of aerosols in modifying cloud properties such as cloud optical thickness, lifetime, and albedo.
-
-
-```{tableofcontents}
-```
-
-The remaining two lectures will be added later.
