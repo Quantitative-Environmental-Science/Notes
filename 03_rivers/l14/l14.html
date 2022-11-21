@@ -472,12 +472,34 @@ To this end we consider the next step of development of the model which is to co
 </figcaption>
 </figure>
 <p>The speed of the flow down the slope may be given in terms of the permeable flow relation (Darcy law) for flow through crops, wooded land or other surfaces with considerable resistance.</p>
+<aside class="units margin sidebar">
+<p class="sidebar-title">Units!</p>
 <div class="math notranslate nohighlight">
-\[u = k \frac{\rho g \sin\theta}{\mu}\]</div>
-<p>And the outflow Q is given by <span class="math notranslate nohighlight">\(u S\)</span>, where <span class="math notranslate nohighlight">\(S\)</span> is evaluated at the base of the surface flow zone, at the stream.</p>
+\[\begin{split}
+u &amp;= \mathrm{m~s^{-1}} \\
+\rho &amp;= \mathrm{kg~m^{-3}} \\
+g &amp;= \mathrm{m~s^{-2}} \\
+\theta &amp;= \mathrm{radians} \\
+\mu &amp;= \mathrm{kg~m^{-1}~s^{-1}} \\
+k &amp;= \mathrm{m^2} \\
+\end{split}\]</div>
+</aside>
+<div class="math notranslate nohighlight">
+\[u = \rho g \sin{(\theta)} \frac{k}{\mu}\]</div>
+<p>And the outflow <span class="math notranslate nohighlight">\(Q\)</span> is given by <span class="math notranslate nohighlight">\(u S\)</span>, where <span class="math notranslate nohighlight">\(S\)</span> is evaluated at the base of the surface flow zone, at the stream.</p>
 <p>To relate this to the flow along the slope, we require a model of the change of the surface storage along the slope as the rain falls.
-If we denote the surface storage as <span class="math notranslate nohighlight">\(S(x,t)\)</span> then the change of surface storage in a length of slope <span class="math notranslate nohighlight">\(\mathrm{D}x\)</span> over a time <span class="math notranslate nohighlight">\(\mathrm{D}t\)</span> is given by the build up of rain <span class="math notranslate nohighlight">\(R \mathrm{D}x \mathrm{D}t\)</span> minus the infiltration over this time, <span class="math notranslate nohighlight">\(I \mathrm{D}x \mathrm{D}t\)</span>, as well as the difference of the flow into the element, <span class="math notranslate nohighlight">\(u S(x,t) \mathrm{D}t\)</span> and the flow out of the element <span class="math notranslate nohighlight">\(u S(x+\mathrm{D}x,t) \mathrm{D}t\)</span>.</p>
+If we denote the surface storage as <span class="math notranslate nohighlight">\(S(x,t)\)</span> then the change of surface storage in a length of slope <span class="math notranslate nohighlight">\(\mathrm{d}x\)</span> over a time <span class="math notranslate nohighlight">\(\mathrm{d}t\)</span> is given by the build up of rain <span class="math notranslate nohighlight">\(R~\mathrm{d}x~\mathrm{d}t\)</span> minus the infiltration over this time, <span class="math notranslate nohighlight">\(I~\mathrm{d}x~\mathrm{d}t\)</span>, as well as the difference of the flow into the element, <span class="math notranslate nohighlight">\(u S(x,t)~\mathrm{d}t\)</span> and the flow out of the element <span class="math notranslate nohighlight">\(u S~(x+\mathrm{d}x,t)~\mathrm{d}t\)</span>.</p>
 <p>This leads to the balance:</p>
+<aside class="units margin sidebar">
+<p class="sidebar-title">Units!</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Q &amp;= \mathrm{m^3~s^{-1}} \\
+R, I &amp;= \mathrm{m~s^{-1}} \\
+S &amp;= \mathrm{m^2} \\
+L &amp;= \mathrm{m} \\
+\end{split}\]</div>
+</aside>
 <div class="math notranslate nohighlight">
 \[S(x, t + \delta t) \delta x - S(x, t) \delta x = R \delta x \delta t - I \delta x \delta t + u S(x, t) \delta t - u S(x + \delta x, t) \delta t\]</div>
 <p>And hence the equation:</p>
@@ -485,6 +507,15 @@ If we denote the surface storage as <span class="math notranslate nohighlight">\
 \[\frac{\partial S}{\partial t} = R - I - u \frac{\partial S}{\partial x}\]</div>
 <p>Governing the change of surface storage along the surface from the watershed to the stream (in the direction of the flow along the surface).</p>
 <p>We need to find the value of <span class="math notranslate nohighlight">\(S(L,t)\)</span> at the point where the surface flow drains into the stream. To do this we seek a solution of the form:</p>
+<aside class="units margin sidebar">
+<p class="sidebar-title">Units!</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+W &amp;= \mathrm{m^2} \\
+\eta &amp;= \mathrm{m} \\
+\tau &amp;= \mathrm{s} \\
+\end{split}\]</div>
+</aside>
 <div class="math notranslate nohighlight">
 \[S(x,t) = W(\eta, \tau)\]</div>
 <p>Where <span class="math notranslate nohighlight">\(\eta = x - u t\)</span> and <span class="math notranslate nohighlight">\(\tau = t\)</span>.</p>
@@ -523,13 +554,13 @@ u S &amp;= u (R - I) t &amp;&amp; t \lt L / u\\
 <section id="river-flows">
 <h2>River Flows<a class="headerlink" href="#river-flows" title="Permalink to this headline">#</a></h2>
 <p>The previous section focussed on flow in the catchment towards a river. Some very simplified models for the surface run off in terms of the rainfall flux were developed to help inform relationships between the rainfall rate and the rate at which this flows into a river.</p>
-<p>To interpret these models of the surface runoff, we need a model for the flow in a river to understand if the river can accommodate the flow, or if it will overtop its banks and flood. As a simple model, a river has a cross section area <span class="math notranslate nohighlight">\(A(h)\)</span> as a function of the water depth, and the water in the river moves downstream with speed u.  If the river inclination is <span class="math notranslate nohighlight">\(\Theta\)</span> then the gravity force downslope is</p>
+<p>To interpret these models of the surface runoff, we need a model for the flow in a river to understand if the river can accommodate the flow, or if it will overtop its banks and flood. As a simple model, a river has a cross section area <span class="math notranslate nohighlight">\(A(h)\)</span> as a function of the water depth, and the water in the river moves downstream with speed u.  If the river inclination is <span class="math notranslate nohighlight">\(\theta\)</span> then the gravity force downslope is</p>
 <div class="math notranslate nohighlight">
-\[F g = g \sin{\Theta} \rho A\]</div>
+\[F_g = g \sin{(\theta)} \rho A\]</div>
 <p>and the drag force resisting this flow is</p>
 <div class="math notranslate nohighlight">
-\[F d = c \rho g u^2 P\]</div>
-<p>where <span class="math notranslate nohighlight">\(P(h)\)</span> is the wetted perimeter of the river bed.</p>
+\[F_d = C_D \rho u^2 P\]</div>
+<p>where <span class="math notranslate nohighlight">\(P(h)\)</span> is the wetted perimeter of the river bed and <span class="math notranslate nohighlight">\(C_D\)</span> is the drag coefficient of the river bed.</p>
 <figure class="margin-caption align-default" id="river-flow">
 <a class="reference internal image-reference" href="../../_images/figure14.3.png"><img alt="../../_images/figure14.3.png" src="../../_images/figure14.3.png" style="width: 80%;" /></a>
 <figcaption>
@@ -538,13 +569,13 @@ u S &amp;= u (R - I) t &amp;&amp; t \lt L / u\\
 </figure>
 <p>If we balance these flows we find that the speed</p>
 <div class="math notranslate nohighlight">
-\[U(h) = (A(h) g sin{\Theta} / c P(h))^{1/2}\]</div>
+\[u(h) = \sqrt{\frac{A(h)}{P(h)} \frac{g}{C_D}\sin{(\theta)}}\]</div>
 <p>And the volume flow in the river is approximately</p>
 <div class="math notranslate nohighlight">
 \[Q = A(h) u(h)\]</div>
 <p>In a specific example, we might consider that the river area <span class="math notranslate nohighlight">\(A(h) = \alpha h^2\)</span> and that the perimeter <span class="math notranslate nohighlight">\(P(h) = \beta h\)</span> so that</p>
 <div class="math notranslate nohighlight">
-\[Q(h) = (\alpha^3 / \beta)^{1/2)} (g \sin{\Theta} / c)^{1/2} h^{5/2}\]</div>
+\[Q(h) = (\alpha^3 / \beta)^{1/2)} (g \sin{(\theta)} / c)^{1/2} h^{5/2}\]</div>
 <p>Is the law for the flux in the river.</p>
 <figure class="margin-caption align-default" id="discharge-rate">
 <a class="reference internal image-reference" href="../../_images/figure14.4.png"><img alt="../../_images/figure14.4.png" src="../../_images/figure14.4.png" style="width: 80%;" /></a>
