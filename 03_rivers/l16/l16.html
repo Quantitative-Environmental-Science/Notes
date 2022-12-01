@@ -440,15 +440,15 @@ Indeed, if more flow enters than leaves a control volume, then the evolution  of
 \[\dv{A}{h} \frac{\partial h}{\partial t} = \frac{\partial Q}{\partial x}\]</div>
 <p>Substitute for <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> to find the equation in terms of <span class="math notranslate nohighlight">\(h\)</span></p>
 <div class="math notranslate nohighlight">
-\[\frac{\partial h}{\partial t} + \frac{5k}{2 \alpha} h^\frac{1}{2} \frac{\partial h}{\partial x} = 0\]</div>
+\[\frac{\partial h}{\partial t} + \frac{5k}{4 \alpha} h^\frac{1}{2} \frac{\partial h}{\partial x} = 0\]</div>
 <!-- TODO: Should this be \frac{5k}{4 \alpha} throughout? -->
 <p>There is a solution dependent on constant depth flow moving down the channel with speed that depends on depth.
 On the flood wave</p>
 <div class="math notranslate nohighlight">
-\[x = \frac{5k}{2 \alpha} h^\frac{1}{2} t\]</div>
+\[x = \frac{5k}{4 \alpha} h^\frac{1}{2} t\]</div>
 <p>so, rearranging for <span class="math notranslate nohighlight">\(h\)</span></p>
 <div class="math notranslate nohighlight">
-\[h = \left( \frac{5k}{2 \alpha} \frac{x}{t} \right)^2\]</div>
+\[h = \left( \frac{5k}{4 \alpha} \frac{x}{t} \right)^2\]</div>
 <p>Using this solution for the long time depth of the current, we can estimate the nose location and depth.</p>
 <figure class="margin-caption align-default" id="flood-profile">
 <a class="reference internal image-reference" href="../../_images/figure1.png"><img alt="../../_images/figure1.png" src="../../_images/figure1.png" style="width: 80%;" /></a>
@@ -460,10 +460,10 @@ On the flood wave</p>
 <div class="math notranslate nohighlight">
 \[v = \int_0^{x_N} A(h) \dd{x}\]</div>
 <div class="math notranslate nohighlight">
-\[x_N(t) = \left[ \frac{5v}{\alpha} \left( \frac{5kt}{2 \alpha} \right)^4 \right] ^\frac{1}{5}\]</div>
+\[x_N(t) = \left[ \frac{5v}{\alpha} \left( \frac{5kt}{4 \alpha} \right)^4 \right] ^\frac{1}{5}\]</div>
 <p>Using this nose position we can establish the depth of the flow</p>
 <div class="math notranslate nohighlight">
-\[h_N = \left( \frac{2 \alpha}{5k} \right)^\frac{1}{10} \left( \frac{5v}{\alpha} \right)^\frac{2}{5} t^{-\frac{2}{5}}\]</div>
+\[h_N = \left( \frac{4 \alpha}{5k} \right)^\frac{1}{10} \left( \frac{5v}{\alpha} \right)^\frac{2}{5} t^{-\frac{2}{5}}\]</div>
 <figure class="margin-caption align-default" id="wave-evolution">
 <a class="reference internal image-reference" href="../../_images/figure21.png"><img alt="../../_images/figure21.png" src="../../_images/figure21.png" style="width: 80%;" /></a>
 <figcaption>
