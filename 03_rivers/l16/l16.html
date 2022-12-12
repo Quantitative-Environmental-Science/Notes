@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>4.4. Flood Waves</title>
+    <title>4.4. Reservoirs</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -56,8 +56,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4.5. Flooding from a River" href="../l18/l18.html" />
-    <link rel="prev" title="4.3. Reservoirs" href="../l15/l15.html" />
+    <link rel="next" title="4.5. Flood waves" href="../l17/l17.html" />
+    <link rel="prev" title="4.3. River flows" href="../l15/l15.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -206,7 +206,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../intro/intro.html">
-   4. Surface water
+   4. Surface water and Flooding
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -216,27 +216,32 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="../l13/l13.html">
-     4.1. Rain and Surface Water
+     4.1. Catchment and drainage
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../l14/l14.html">
-     4.2. Floods
+     4.2. 1D model of drainage into a river
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../l15/l15.html">
-     4.3. Reservoirs
+     4.3. River flows
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     4.4. Flood Waves
+     4.4. Reservoirs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../l17/l17.html">
+     4.5. Flood waves
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../l18/l18.html">
-     4.5. Flooding from a River
+     4.6. Flooding from a river
     </a>
    </li>
   </ul>
@@ -410,7 +415,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Flood Waves</h1>
+                <h1>Reservoirs</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -422,51 +427,65 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="flood-waves">
-<span id="lecture-16"></span><h1><span class="section-number">4.4. </span>Flood Waves<a class="headerlink" href="#flood-waves" title="Permalink to this headline">#</a></h1>
-<p>We now turn our attention to the propagation of flood waves down a river.
-This is important to predict since it is useful to know the time of arrival of a flood many tens of km downstream in order to provide warning to residents and try to mitigate the impacts,
-but also for planning flood prevention systems for example.</p>
-<p>The famous flood from the Geitro glacier formed a flood wave which moved down a valley as shown in the figure below.</p>
-<p>The flood wave can be found in a case where the flow is frictionally controlled that</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="reservoirs">
+<span id="lecture-16"></span><h1><span class="section-number">4.4. </span>Reservoirs<a class="headerlink" href="#reservoirs" title="Permalink to this headline">#</a></h1>
+<p>In order to arrest the flow of water from the surface run-off into the
+river and help mitigate a flood, sometimes reservoirs are built
+upstream. These lead to accumulation of the surface run-off in the
+upstream section of the river, and limit the magnitude of the flow which
+reaches regions further downstream.</p>
+<p>In order to model the effect of a reservoir, we consider a reservoir of
+area <span class="math notranslate nohighlight">\(A(h)\)</span> when it is filled to height <span class="math notranslate nohighlight">\(h\)</span>. We assume the upstream waters
+flow into the reservoir, and the water moving downstream from the
+reservoir exits the reservoir from an opening at the base of the
+reservoir wall of area <span class="math notranslate nohighlight">\(A_o\)</span>. The speed of this outflow will be
+<span class="math notranslate nohighlight">\((2gh)^\frac{1}{2}\)</span> when the water in the reservoir has depth <span class="math notranslate nohighlight">\(h\)</span>, and so the flux
+leaving the reservoir is <span class="math notranslate nohighlight">\(A_o(2gh)^\frac{1}{2}\)</span>.</p>
+<p>As water flows into the reservoir, the volume deepens according to the
+mixmatch between the inflow and the outflow</p>
 <div class="math notranslate nohighlight">
-\[Q(h) = k h^\frac{5}{2}\]</div>
-<p>and the area of the river scales as</p>
+\[A(h) \dv{h}{t} = Q_{upstream} - Q_{outflow}\]</div>
+<p>There is an equilibrium solution for this system where the inflow and
+outflow to the reservoir match, and this occurs when the depth of the
+reservoir is</p>
 <div class="math notranslate nohighlight">
-\[A(h) = a h^2\]</div>
-<p>Now if the flow down the river changes, the depth at a given point may change.
-Indeed, if more flow enters than leaves a control volume, then the evolution  of the depth follows the law</p>
+\[h_e = \frac{Q_o^2}{A_o^2 g}\]</div>
+<p>We can then find time dependent solutions.</p>
+<p>Let us choose the area of the reservoir to vary as</p>
 <div class="math notranslate nohighlight">
-\[\dv{A}{h} \frac{\partial h}{\partial t} = \frac{\partial Q}{\partial x}\]</div>
-<p>Substitute for <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> to find the equation in terms of <span class="math notranslate nohighlight">\(h\)</span></p>
+\[A(h) = \alpha h^2\]</div>
+<p>And for convenience we will introduce a dimensionless reservoir depth <span class="math notranslate nohighlight">\(y\)</span>
+and time <span class="math notranslate nohighlight">\(\tau\)</span> given by</p>
 <div class="math notranslate nohighlight">
-\[\frac{\partial h}{\partial t} + \frac{5k}{4 \alpha} h^\frac{1}{2} \frac{\partial h}{\partial x} = 0\]</div>
-<p>There is a solution dependent on constant depth flow moving down the channel with speed that depends on depth.
-On the flood wave</p>
+\[h = h_e y \quad \tau = \frac{Q_o}{\alpha h_e^3} t\]</div>
+<p>It then follows that</p>
 <div class="math notranslate nohighlight">
-\[x = \frac{5k}{4 \alpha} h^\frac{1}{2} t\]</div>
-<p>so, rearranging for <span class="math notranslate nohighlight">\(h\)</span></p>
-<div class="math notranslate nohighlight">
-\[h = \left( \frac{5k}{4 \alpha} \frac{x}{t} \right)^2\]</div>
-<p>Using this solution for the long time depth of the current, we can estimate the nose location and depth.</p>
-<figure class="margin-caption align-default" id="flood-profile">
-<a class="reference internal image-reference" href="../../_images/figure1.png"><img alt="../../_images/figure1.png" src="../../_images/figure1.png" style="width: 80%;" /></a>
+\[\mu^2 \dv{\mu}{\tau} = 1-y^\frac{1}{2}\]</div>
+<p>This equation can be solved but the algebra becomes involved (use the
+substitution <span class="math notranslate nohighlight">\(y = (1-s) ^2\)</span> ), so we can instead solve the equation numerically, and
+you obtain a solution of the form below.</p>
+<figure class="margin-caption align-default" id="reservoir-refilling">
+<a class="reference internal image-reference" href="../../_images/figure15.1.png"><img alt="../../_images/figure15.1.png" src="../../_images/figure15.1.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.18 </span><span class="caption-text">Sketch of the behaviour of a flood wave nose.</span><a class="headerlink" href="#flood-profile" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.16 </span><span class="caption-text">Sketch of the recharge behaviour of a reservoir.</span><a class="headerlink" href="#reservoir-refilling" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>We first work out the volume in the flow and this leads to an expression for the position of the nose</p>
+<p>Since <span class="math notranslate nohighlight">\(y\)</span> takes some time to reach equilibrium, the outflow to the river
+of the full flow from the rain is reduced (until the reservoir fills
+up).</p>
+<p>We can combine this model for a reservoir with the earlier model for the
+surface run-off to illustrate the effect of the reservoir in buffering
+the surface run off. An example of this is shown in the figure below. We
+combine the model of a rainstorm which leads to an increasing run-off
+until the rain stops, and then a decaying run-off, as some
+surface water drains into the ground and the remainder flows into the
+reservoir.</p>
 <div class="math notranslate nohighlight">
-\[v = \int_0^{x_N} A(h) \dd{x}\]</div>
-<div class="math notranslate nohighlight">
-\[x_N(t) = \left[ \frac{5v}{\alpha} \left( \frac{5kt}{4 \alpha} \right)^4 \right] ^\frac{1}{5}\]</div>
-<p>Using this nose position we can establish the depth of the flow</p>
-<div class="math notranslate nohighlight">
-\[h_N = \left( \frac{4 \alpha}{5k} \right)^\frac{1}{10} \left( \frac{5v}{\alpha} \right)^\frac{2}{5} t^{-\frac{2}{5}}\]</div>
-<figure class="margin-caption align-default" id="wave-evolution">
-<a class="reference internal image-reference" href="../../_images/figure21.png"><img alt="../../_images/figure21.png" src="../../_images/figure21.png" style="width: 80%;" /></a>
+\[\mu^2 \dv{\mu}{\tau} = 1-y^\frac{1}{2}\]</div>
+<figure class="margin-caption align-default" id="reservoir-response">
+<a class="reference internal image-reference" href="../../_images/figure2.png"><img alt="../../_images/figure2.png" src="../../_images/figure2.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.19 </span><span class="caption-text">Flood wave evolution with time.</span><a class="headerlink" href="#wave-evolution" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.17 </span><span class="caption-text">The response of a reservoirs depth, and outflow as a function of the input flow from surface runoff.</span><a class="headerlink" href="#reservoir-response" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -502,13 +521,13 @@ On the flood wave</p>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">4.3. </span>Reservoirs</p>
+            <p class="prev-next-title"><span class="section-number">4.3. </span>River flows</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../l18/l18.html" title="next page">
+    <a class='right-next' id="next-link" href="../l17/l17.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4.5. </span>Flooding from a River</p>
+        <p class="prev-next-title"><span class="section-number">4.5. </span>Flood waves</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>4.3. Reservoirs</title>
+    <title>4.3. River flows</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -56,8 +56,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4.4. Flood Waves" href="../l16/l16.html" />
-    <link rel="prev" title="4.2. Floods" href="../l14/l14.html" />
+    <link rel="next" title="4.4. Reservoirs" href="../l16/l16.html" />
+    <link rel="prev" title="4.2. 1D model of drainage into a river" href="../l14/l14.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -206,7 +206,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../intro/intro.html">
-   4. Surface water
+   4. Surface water and Flooding
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -216,27 +216,32 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="../l13/l13.html">
-     4.1. Rain and Surface Water
+     4.1. Catchment and drainage
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../l14/l14.html">
-     4.2. Floods
+     4.2. 1D model of drainage into a river
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     4.3. Reservoirs
+     4.3. River flows
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../l16/l16.html">
-     4.4. Flood Waves
+     4.4. Reservoirs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../l17/l17.html">
+     4.5. Flood waves
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../l18/l18.html">
-     4.5. Flooding from a River
+     4.6. Flooding from a river
     </a>
    </li>
   </ul>
@@ -398,23 +403,80 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#flow-in-a-river">
+   Flow in a river
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#critical-flow-rate-for-flooding">
+   Critical flow rate for flooding
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#coupled-model">
+   Coupled Model
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Reservoirs</h1>
+                <h1>River flows</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#flow-in-a-river">
+   Flow in a river
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#critical-flow-rate-for-flooding">
+   Critical flow rate for flooding
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#coupled-model">
+   Coupled Model
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -422,67 +484,164 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="reservoirs">
-<span id="lecture-15"></span><h1><span class="section-number">4.3. </span>Reservoirs<a class="headerlink" href="#reservoirs" title="Permalink to this headline">#</a></h1>
-<p>In order to arrest the flow of water from the surface run-off into the
-river and help mitigate a flood, sometimes reservoirs are built
-upstream. These lead to accumulation of the surface run-off in the
-upstream section of the river, and limit the magnitude of the flow which
-reaches regions further downstream.</p>
-<p>In order to model the effect of a reservoir, we consider a reservoir of
-area <span class="math notranslate nohighlight">\(A(h)\)</span> when it is filled to height <span class="math notranslate nohighlight">\(h\)</span>. We assume the upstream waters
-flow into the reservoir, and the water moving downstream from the
-reservoir exits the reservoir from an opening at the base of the
-reservoir wall of area <span class="math notranslate nohighlight">\(A_o\)</span>. The speed of this outflow will be
-<span class="math notranslate nohighlight">\((2gh)^\frac{1}{2}\)</span> when the water in the reservoir has depth <span class="math notranslate nohighlight">\(h\)</span>, and so the flux
-leaving the reservoir is <span class="math notranslate nohighlight">\(A_o(2gh)^\frac{1}{2}\)</span>.</p>
-<p>As water flows into the reservoir, the volume deepens according to the
-mixmatch between the inflow and the outflow</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="river-flows">
+<span id="lecture-15"></span><h1><span class="section-number">4.3. </span>River flows<a class="headerlink" href="#river-flows" title="Permalink to this headline">#</a></h1>
+<section id="flow-in-a-river">
+<h2>Flow in a river<a class="headerlink" href="#flow-in-a-river" title="Permalink to this headline">#</a></h2>
+<p>The previous lecture focussed on flow in the catchment towards a river.
+Some very simplified models for the surface run-off in terms of the rainfall flux were developed to help inform relationships between the rainfall rate and the rate at which this flows into a river.</p>
+<p>To interpret these models of the surface runoff, we need a model for the flow in a river to understand if the river can accommodate the flow, or if it will overtop its banks and flood.
+As a simple model, a river has a cross-section area <span class="math notranslate nohighlight">\(A(h)\)</span> as a function of the water depth, and the water in the river moves downstream with speed <span class="math notranslate nohighlight">\(u\)</span>.
+If the river inclination is <span class="math notranslate nohighlight">\(\theta\)</span> then the gravity force down slope is</p>
 <div class="math notranslate nohighlight">
-\[A(h) \dv{h}{t} = Q_{upstream} - Q_{outflow}\]</div>
-<p>There is an equilibrium solution for this system where the inflow and
-outflow to the reservoir match, and this occurs when the depth of the
-reservoir is</p>
+\[F_g = g \sin{(\theta)} \rho A\]</div>
+<p>and the drag force resisting this flow is</p>
 <div class="math notranslate nohighlight">
-\[h_e = \frac{Q_o^2}{A_o^2 g}\]</div>
-<p>We can then find time dependent solutions.</p>
-<p>Let us choose the area of the reservoir to vary as</p>
-<div class="math notranslate nohighlight">
-\[A(h) = \alpha h^2\]</div>
-<p>And for convenience we will introduce a dimensionless reservoir depth <span class="math notranslate nohighlight">\(y\)</span>
-and time <span class="math notranslate nohighlight">\(\tau\)</span> given by</p>
-<div class="math notranslate nohighlight">
-\[h = h_e y \quad \tau = \frac{Q_o}{\alpha h_e^3} t\]</div>
-<p>It then follows that</p>
-<div class="math notranslate nohighlight">
-\[\mu^2 \dv{\mu}{\tau} = 1-y^\frac{1}{2}\]</div>
-<p>This equation can be solved but the algebra becomes involved (use the
-substitution <span class="math notranslate nohighlight">\(y = (1-s) ^2\)</span> ), so we can instead solve the equation numerically, and
-you obtain a solution of the form below.</p>
-<figure class="margin-caption align-default" id="reservoir-refilling">
-<a class="reference internal image-reference" href="../../_images/figure15.1.png"><img alt="../../_images/figure15.1.png" src="../../_images/figure15.1.png" style="width: 80%;" /></a>
+\[F_d = C_D \rho u^2 P\]</div>
+<p>where <span class="math notranslate nohighlight">\(P(h)\)</span> is the wetted perimeter of the river bed and <span class="math notranslate nohighlight">\(C_D\)</span> is the drag coefficient of the river bed.</p>
+<figure class="margin-caption align-default" id="river-flow">
+<a class="reference internal image-reference" href="../../_images/figure14.3.png"><img alt="../../_images/figure14.3.png" src="../../_images/figure14.3.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.16 </span><span class="caption-text">Sketch of the recharge behaviour of a reservoir.</span><a class="headerlink" href="#reservoir-refilling" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.11 </span><span class="caption-text">The geometry of an idealised river bed. (NB <span class="math notranslate nohighlight">\(\tau = C_D\)</span>)</span><a class="headerlink" href="#river-flow" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Since <span class="math notranslate nohighlight">\(y\)</span> takes some time to reach equilibrium, the outflow to the river
-of the full flow from the rain is reduced (until the reservoir fills
-up).</p>
-<p>We can combine this model for a reservoir with the earlier model for the
-surface run-off to illustrate the effect of the reservoir in buffering
-the surface run off. An example of this is shown in the figure below. We
-combine the model of a rainstorm which leads to an increasing run-off
-until the rain stops, and then a decaying run-off, as some
-surface water drains into the ground and the remainder flows into the
-reservoir.</p>
+<p>If we balance these forces we find that the speed</p>
 <div class="math notranslate nohighlight">
-\[\mu^2 \dv{\mu}{\tau} = 1-y^\frac{1}{2}\]</div>
-<figure class="margin-caption align-default" id="reservoir-response">
-<a class="reference internal image-reference" href="../../_images/figure2.png"><img alt="../../_images/figure2.png" src="../../_images/figure2.png" style="width: 80%;" /></a>
+\[u(h) = \sqrt{\frac{A(h)}{P(h)} \frac{g\sin(\theta)}{C_D}}\]</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Derivation</p>
+<p><strong>Drag force</strong></p>
+<p>The inertia represents the force required to speed up or slow down the flow (i.e. the change in momentum);
+as fluid moves around an obstacle, it may change direction for example, over some length scale <span class="math notranslate nohighlight">\(h\)</span> comparable to the depth of the flow,
+and this requires a time <span class="math notranslate nohighlight">\(\Delta t \sim \frac{h}{u}\)</span>, so the effective change in momentum with time (i.e. the force required) is</p>
+<aside class="units margin sidebar">
+<p class="sidebar-title">Units!</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+y &amp;= \mathrm{s} \\
+h &amp;= \mathrm{m} \\
+u &amp;= \mathrm{m~s^{-1}} \\
+\rho &amp;= \mathrm{kg~m^{-3}} \\
+C_D &amp;= \mathrm{unitless} \\
+g &amp;= \mathrm{m~s^{-2}} \\
+\theta &amp;= \mathrm{radians} \\
+q &amp;= \mathrm{m^{2}~s^{-1}} \\
+\end{split}\]</div>
+</aside>
+<div class="math notranslate nohighlight" id="equation-drag-intuition">
+<span class="eqno">(4.7)<a class="headerlink" href="#equation-drag-intuition" title="Permalink to this equation">#</a></span>\[\dv{\rho u}{t} \sim C_D \frac{\rho u}{\Delta t} \sim C_D \frac{\rho u^2}{h}\]</div>
+<p>where <span class="math notranslate nohighlight">\(C_D\)</span> is a constant of proportionality; the <strong>drag coefficient</strong>, <span class="math notranslate nohighlight">\(h\)</span> the depth of the flow and <span class="math notranslate nohighlight">\(u\)</span> is the flow speed.
+There are published tables (e.g. Moody) for the drag as a function of the roughness of the bed, but a representative value for <span class="math notranslate nohighlight">\(C_D\)</span> may be 0.01-0.004.</p>
+<p><strong>Gravity force</strong></p>
+<p>If the gravity force per unit volume down-slope is <span class="math notranslate nohighlight">\(\rho g \sin(\theta)\)</span> for a slope of angle <span class="math notranslate nohighlight">\(\theta\)</span> then we can balance the forces on a volume of fluid.
+For a distance along the river <span class="math notranslate nohighlight">\(\delta x\)</span>, with a cross sectional area <span class="math notranslate nohighlight">\(A(h)\)</span>, we have a volume of fluid <span class="math notranslate nohighlight">\(A(h) \delta x\)</span>,
+and hence a gravity force acting:</p>
+<div class="math notranslate nohighlight" id="equation-gravity-force">
+<span class="eqno">(4.8)<a class="headerlink" href="#equation-gravity-force" title="Permalink to this equation">#</a></span>\[F_g = \rho g \sin(\theta) A(h) \delta x\]</div>
+<p>and similarly we have a drag force acting (assuming we take the area of the river to go as <span class="math notranslate nohighlight">\(A(h) \sim P(h) \vdot h)\)</span></p>
+<div class="math notranslate nohighlight" id="equation-drag-force">
+<span class="eqno">(4.9)<a class="headerlink" href="#equation-drag-force" title="Permalink to this equation">#</a></span>\[F_d = C_D \frac{\rho u^2}{h} P(h) \vdot h \delta x\]</div>
+<p>and so balancing these forces we get</p>
+<div class="math notranslate nohighlight" id="equation-force-bal">
+<span class="eqno">(4.10)<a class="headerlink" href="#equation-force-bal" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{align}
+F_d = &amp; F_g \\
+C_D \frac{\rho u^2}{h} P(h) \vdot h \delta x = &amp; \rho g \sin(\theta) A(h) \delta x \\
+C_D u^2 P(h) = &amp; g \sin(\theta) A(h)
+\end{align}\end{split}\]</div>
+<p>and rearranging for <span class="math notranslate nohighlight">\(u\)</span> we get</p>
+<div class="math notranslate nohighlight" id="equation-gravity-speed">
+<span class="eqno">(4.11)<a class="headerlink" href="#equation-gravity-speed" title="Permalink to this equation">#</a></span>\[u = \sqrt{\frac{A(h)}{P(h)} \frac{g \sin(\theta)}{C_D} }\]</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Reynolds Number</p>
+<p>We can also use our intuition for the magnitude of the inertial force to derive the <strong>Reynolds Number</strong>,
+which identifies what kind of flow regime we are in.
+In contrast to our deep river, for a very thin film the viscous force from the ground will dominate the flow, and this has the form</p>
+<aside class="units margin sidebar">
+<p class="sidebar-title">Units!</p>
+<div class="math notranslate nohighlight">
+\[
+\mu = \mathrm{kg~m^{-1}~s^{-1}}
+\]</div>
+</aside>
+<div class="math notranslate nohighlight" id="equation-viscous-force">
+<span class="eqno">(4.12)<a class="headerlink" href="#equation-viscous-force" title="Permalink to this equation">#</a></span>\[F_v \approx \mu \frac{u}{h^2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mu\)</span> is the dynamic viscosity of the fluid, and again <span class="math notranslate nohighlight">\(h\)</span> is the depth of the flow.</p>
+<p>Taking the ratio of the inertial (<a class="reference internal" href="#equation-drag-intuition">(4.7)</a>) and viscous forces, we find</p>
+<aside class="units margin sidebar">
+<p class="sidebar-title">Units!</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\Re &amp;= \mathrm{unitless} \\
+\end{split}\]</div>
+</aside>
+<div class="math notranslate nohighlight" id="equation-reynolds-derivation">
+<span class="eqno">(4.13)<a class="headerlink" href="#equation-reynolds-derivation" title="Permalink to this equation">#</a></span>\[\mathrm{Re} = \frac{\rho u h}{\mu}\]</div>
+<p>which this is known as the <strong><a class="reference internal" href="../../reference/glossary.html#term-Reynolds-Number"><span class="xref std std-term">Reynolds number</span></a></strong>.</p>
+<p>If <span class="math notranslate nohighlight">\(\mathrm{Re}\)</span> is large (<span class="math notranslate nohighlight">\(\mathrm{Re} \gt 1\)</span>) it implies that the flow is dominated by the inertia.
+This corresponds to deep or fast flow.
+The Reynolds number can be <span class="math notranslate nohighlight">\(10^5\)</span> in a typical river.
+Shallower slow flow is more likely to have low Reynolds number (<span class="math notranslate nohighlight">\(\mathrm{Re} \lt 1\)</span>) and be controlled by the viscous drag.
+To estimate the transition point we can find the flux for which the depth of the current is comparable in the inertia dominated and viscous dominated flow (see the Examples Sheet).</p>
+</div>
+</div>
+<p>And therefore the volume flow in the river is given as</p>
+<div class="math notranslate nohighlight">
+\[Q = A(h) u(h)\]</div>
+<p>In a specific example, we might consider that the river area <span class="math notranslate nohighlight">\(A(h) = \alpha h^2\)</span> and that the perimeter <span class="math notranslate nohighlight">\(P(h) = \beta h\)</span>
+(i.e. a triangular river) so that</p>
+<div class="math notranslate nohighlight">
+\[Q(h) = \sqrt{\frac{\alpha^3}{\beta}} \sqrt{\frac{g\sin(\theta)}{C_D}} h^{\frac{5}{2}}\]</div>
+<p>is the law for the flux in the river.</p>
+<figure class="margin-caption align-default" id="discharge-rate">
+<a class="reference internal image-reference" href="../../_images/figure14.4.png"><img alt="../../_images/figure14.4.png" src="../../_images/figure14.4.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.17 </span><span class="caption-text">The response of a reservoirs depth, and outflow as a function of the input flow from surface runoff.</span><a class="headerlink" href="#reservoir-response" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.12 </span><span class="caption-text">The discharge rate <span class="math notranslate nohighlight">\(Q\)</span> in a river as a function of the water depth.</span><a class="headerlink" href="#discharge-rate" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
+<p>This provides a reasonable simplified model for the flow in many rivers,
+for example the chart in <a class="reference internal" href="#discharge-rate"><span class="std std-numref">Fig. 4.12</span></a> compares this formula with data from the River Severn showing flow as a function of the water depth.</p>
+</section>
+<section id="critical-flow-rate-for-flooding">
+<h2>Critical flow rate for flooding<a class="headerlink" href="#critical-flow-rate-for-flooding" title="Permalink to this headline">#</a></h2>
+<p>An initial result emerging from this model is that if the level of the banks are at <span class="math notranslate nohighlight">\(z = h^*\)</span> above the base of the river,
+where <span class="math notranslate nohighlight">\(h^*\)</span> is the height at which the water will overtop the bank,
+then the critical flow rate of water in the river above which it begins to flood is</p>
+<div class="math notranslate nohighlight">
+\[Q^* = Q(h^*)\]</div>
+<p>and we can link this back to our drainage basin model to predict when a river might flood based on rainfall.</p>
+<p>If we want to use this model for the river flow to reduce the flood we see that the key controls we have are
+(a) raising the height of the banks; (b) deepening the river; (c) widening the river.</p>
+<figure class="margin-caption align-default" id="flood-barriers">
+<a class="reference internal image-reference" href="../../_images/figure14.5.png"><img alt="../../_images/figure14.5.png" src="../../_images/figure14.5.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.13 </span><span class="caption-text">An illustration of mitigation strategies to prevent flooding of a river.</span><a class="headerlink" href="#flood-barriers" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Our earlier idealised models for the surface runoff identify how more intense and longer duration rain events lead to a greater flux reaching the river,
+and hence we can explore the type of rainstorm which will lead to the flux exceeding the maximum river flux in terms of the model for the runoff.
+Given statistics for the distribution of expected rainfall intensity and rainfall duration,
+it is then possible to design mitigation measures to reduce the flux arriving at the river from the run-off for a given rainstorm.
+There is then a cost benefit analysis to be carried out to determine the benefit of mitigating the flood risk for different intensity storms:
+this involves estimating the costs of the mitigation measures compared to the costs of the damage produced by the flooding multiplied by the risk of the flooding.</p>
+</section>
+<section id="coupled-model">
+<h2>Coupled Model<a class="headerlink" href="#coupled-model" title="Permalink to this headline">#</a></h2>
+<p>If we combine the runoff model with the river model we find the following comparison plot, illustrating how different types of rainfall lead to different flow regimes (i.e. flooding or not)</p>
+<figure class="margin-caption align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/figure14.6.png"><img alt="../../_images/figure14.6.png" src="../../_images/figure14.6.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.14 </span><span class="caption-text">A coupled river flow and flooding model</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This model, although simplified, has features in common with the classical river hydrograph (<a class="reference internal" href="#hydrograph"><span class="std std-numref">Fig. 4.15</span></a>),
+in which we plot the rainfall flux and the river flow rate as a function of time.</p>
+<figure class="margin-caption align-default" id="hydrograph">
+<a class="reference internal image-reference" href="../../_images/figure14.7.png"><img alt="../../_images/figure14.7.png" src="../../_images/figure14.7.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.15 </span><span class="caption-text">A hydrograph showing the rainfall flux and the river flow rate as a function of time.</span><a class="headerlink" href="#hydrograph" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -516,13 +675,13 @@ reservoir.</p>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">4.2. </span>Floods</p>
+            <p class="prev-next-title"><span class="section-number">4.2. </span>1D model of drainage into a river</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../l16/l16.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4.4. </span>Flood Waves</p>
+        <p class="prev-next-title"><span class="section-number">4.4. </span>Reservoirs</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
