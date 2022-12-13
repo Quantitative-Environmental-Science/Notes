@@ -579,7 +579,14 @@ On real terrain, the ground may be irregular and so the way in which water flows
 <p>Given this heterogeneity in the terrain typical in many catchments, it is helpful to first develop an averaged description of the run-off flow from a localised area of the catchment.
 Eventually, we can add these together as shown in the figure of the multiple drainage zones which flow into the main river.</p>
 <p>But first, we therefore work with an integrated picture of the volume of surface water, and relate this to the net run-off flow with a 0D model, with no spatial component.
-We can consider this a “bucket model” of the drainage basin.</p>
+We can consider this a “bucket model” of the drainage basin, as shown in <a class="reference internal" href="#bucket-model"><span class="std std-numref">Fig. 4.8</span></a>.</p>
+<figure class="margin-caption align-default" id="bucket-model">
+<a class="reference internal image-reference" href="../../_images/figure13.8.png"><img alt="../../_images/figure13.8.png" src="../../_images/figure13.8.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.8 </span><span class="caption-text">Schematic of the 0D (or “bucket”) model of surface water drainage, over an area <span class="math notranslate nohighlight">\(A\)</span>, with an average water depth of <span class="math notranslate nohighlight">\(S\)</span>,
+an input of water due to rainfall at a rate <span class="math notranslate nohighlight">\(R\)</span> per unit area, and fluxes out due to flow into a stream and infiltration (per unit area), <span class="math notranslate nohighlight">\(Q\)</span> and <span class="math notranslate nohighlight">\(I\)</span> respectively.</span><a class="headerlink" href="#bucket-model" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>In this model we will consider the catchment area as a single bucket that accounts for the surface water stored in the area.
 This bucket has a single input of water due to rainfall, <span class="math notranslate nohighlight">\(F_{in} = RA\)</span>, where <span class="math notranslate nohighlight">\(R\)</span> is the (constant) rainfall rate, and <span class="math notranslate nohighlight">\(A\)</span> is the surface area of the watershed.
 The volume of water stored in the bucket will be <span class="math notranslate nohighlight">\(V = SA\)</span> where <span class="math notranslate nohighlight">\(S\)</span> is the (averaged) depth of water stored in our conceptual bucket.</p>
@@ -624,9 +631,9 @@ giving us the form</p>
 Since we have prescribed the surface runoff flow from the land to the river to be <span class="math notranslate nohighlight">\(\lambda S\)</span>,
 by assessing the value of <span class="math notranslate nohighlight">\(S\)</span> at any given time we can evaluate the runoff rate.</p>
 <figure class="margin-caption align-default" id="runoff-response">
-<img alt="../../_images/figure13.8.png" src="../../_images/figure13.8.png" />
+<img alt="../../_images/figure13.9.png" src="../../_images/figure13.9.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 4.8 </span><span class="caption-text">Plot showing the response of the run-off rate to constant rainfall.</span><a class="headerlink" href="#runoff-response" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.9 </span><span class="caption-text">Plot showing the response of the run-off rate to constant rainfall.</span><a class="headerlink" href="#runoff-response" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>

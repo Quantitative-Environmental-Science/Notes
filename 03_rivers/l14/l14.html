@@ -489,11 +489,11 @@ title="Print to PDF"
 <p>In a catchment there are a series of drainage zones, each flowing into a stream and then into the river, in a hierarchical way.
 This leads to the question of how to build a model for the whole drainage basin which is more complex that the idealised bucket model.
 We also may use such a detailed model to assess the value of <span class="math notranslate nohighlight">\(\lambda\)</span> in the model based on the more detailed physical processes in a more complete model.
-To this end we consider the next step of development of the model which is to consider the drainage along the land from the watershed to a stream as shown in <a class="reference internal" href="#surface-drainage"><span class="std std-numref">Fig. 4.9</span></a>.</p>
+To this end we consider the next step of development of the model which is to consider the drainage along the land from the watershed to a stream as shown in <a class="reference internal" href="#surface-drainage"><span class="std std-numref">Fig. 4.10</span></a>.</p>
 <figure class="margin-caption align-default" id="surface-drainage">
 <a class="reference internal image-reference" href="../../_images/figure14.1.png"><img alt="../../_images/figure14.1.png" src="../../_images/figure14.1.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.9 </span><span class="caption-text">A more detailed surface drainage model.</span><a class="headerlink" href="#surface-drainage" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.10 </span><span class="caption-text">A more detailed surface drainage model showing the fractal nature of drainage networks.</span><a class="headerlink" href="#surface-drainage" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="flow-speed">
@@ -520,13 +520,20 @@ k &amp;= \mathrm{m^2} \\
 </section>
 <section id="deriving-the-advection-equation">
 <h2>Deriving the advection equation<a class="headerlink" href="#deriving-the-advection-equation" title="Permalink to this headline">#</a></h2>
-<p>We now wish to dervive a relation desciribng how water is stored on and moves down our slope.
-We will do this by considering the flow of water into and out of a small space element on our slope, <span class="math notranslate nohighlight">\(\delta x\)</span>.</p>
+<p>We now wish to derive a relation describing how water is stored on and moves down our slope.
+We will do this by considering the flow of water into and out of a small space element on our slope, <span class="math notranslate nohighlight">\(\delta x\)</span>,
+as shown in <a class="reference internal" href="#surface-flow"><span class="std std-numref">Fig. 4.11</span></a>.</p>
+<figure class="margin-caption align-default" id="surface-flow">
+<a class="reference internal image-reference" href="../../_images/figure14.2.png"><img alt="../../_images/figure14.2.png" src="../../_images/figure14.2.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.11 </span><span class="caption-text">A schematic model showing how surface water, <span class="math notranslate nohighlight">\(S\)</span>, flows downhill towards a stream.</span><a class="headerlink" href="#surface-flow" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>The total amount of water stored in our space element is denoted by <span class="math notranslate nohighlight">\(S\)</span>.
 The sources of water to our element will be flow in from up slope, and rain, <span class="math notranslate nohighlight">\(R\)</span>.
 The sinks of water from our element will be flow out of the element down slope, and infiltration into the ground, <span class="math notranslate nohighlight">\(I\)</span>.</p>
 <p>The flow, <span class="math notranslate nohighlight">\(Q(x,t)\)</span>, at a point is calculated as the product of the amount of water <span class="math notranslate nohighlight">\(S\)</span>, multiplied by its speed <span class="math notranslate nohighlight">\(u\)</span>.
-Given that our speed down the slope, <span class="math notranslate nohighlight">\(u\)</span>, is constant in this formulation, we can use our diagram in <a class="reference internal" href="#surface-drainage"><span class="std std-numref">Fig. 4.9</span></a> to identify the flow in from up-slope as <span class="math notranslate nohighlight">\(u S(x,t)\)</span>
+Given that our speed down the slope, <span class="math notranslate nohighlight">\(u\)</span>, is constant in this formulation, we can use our diagram in <a class="reference internal" href="#surface-flow"><span class="std std-numref">Fig. 4.11</span></a> to identify the flow in from up-slope as <span class="math notranslate nohighlight">\(u S(x,t)\)</span>
 and the flow out down-slope as <span class="math notranslate nohighlight">\(-u S(x+\delta x, t)\)</span>.</p>
 <p>Therefore, balancing all inputs and outputs of water to our space element over a short period of time, <span class="math notranslate nohighlight">\(\delta t\)</span>, we get the relation:</p>
 <aside class="units margin sidebar">
@@ -597,12 +604,12 @@ This gives us a solution for a given (i.e. constant) value of <span class="math 
 \[W(\eta, \tau) = W(\eta, 0) + (R - I) \tau\]</div>
 <p>Where <span class="math notranslate nohighlight">\(W(\eta, 0)\)</span> is our constant of integration representing the initial condition.
 This allows us to construct a <strong>characteristic diagram</strong> for the system, showing solutions in the <span class="math notranslate nohighlight">\(x\)</span> - <span class="math notranslate nohighlight">\(t\)</span> plane, along lines of constant <span class="math notranslate nohighlight">\(\eta\)</span>.
-This is shown in <a class="reference internal" href="#eta-constant"><span class="std std-numref">Fig. 4.10</span></a>.</p>
-<p>We want the solution when <span class="math notranslate nohighlight">\(x = L\)</span> (i.e. the value of <span class="math notranslate nohighlight">\(S\)</span> at the stream), shown as the dashed line intersecting the <span class="math notranslate nohighlight">\(x\)</span> axis in <a class="reference internal" href="#eta-constant"><span class="std std-numref">Fig. 4.10</span></a>.</p>
+This is shown in <a class="reference internal" href="#eta-constant"><span class="std std-numref">Fig. 4.12</span></a>.</p>
+<p>We want the solution when <span class="math notranslate nohighlight">\(x = L\)</span> (i.e. the value of <span class="math notranslate nohighlight">\(S\)</span> at the stream), shown as the dashed line intersecting the <span class="math notranslate nohighlight">\(x\)</span> axis in <a class="reference internal" href="#eta-constant"><span class="std std-numref">Fig. 4.12</span></a>.</p>
 <figure class="margin-caption align-default" id="eta-constant">
-<a class="reference internal image-reference" href="../../_images/figure14.2.png"><img alt="../../_images/figure14.2.png" src="../../_images/figure14.2.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../../_images/figure14.3.png"><img alt="../../_images/figure14.3.png" src="../../_images/figure14.3.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10 </span><span class="caption-text">The characteristic diagram for the advection equation, showing lines of <span class="math notranslate nohighlight">\(\eta = \mathrm{constant}\)</span> on the <span class="math notranslate nohighlight">\(x\)</span> - <span class="math notranslate nohighlight">\(t\)</span> plane.</span><a class="headerlink" href="#eta-constant" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.12 </span><span class="caption-text">The characteristic diagram for the advection equation, showing lines of <span class="math notranslate nohighlight">\(\eta = \mathrm{constant}\)</span> on the <span class="math notranslate nohighlight">\(x\)</span> - <span class="math notranslate nohighlight">\(t\)</span> plane.</span><a class="headerlink" href="#eta-constant" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>There are two regions for the solution:</p>
