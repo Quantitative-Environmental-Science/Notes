@@ -403,12 +403,41 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#formulation-of-the-reservoir-problem">
+   Formulation of the reservoir problem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#time-dependent-solutions-for-reservoir-filling">
+   Time-dependent solutions for reservoir filling
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -420,6 +449,24 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#formulation-of-the-reservoir-problem">
+   Formulation of the reservoir problem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#time-dependent-solutions-for-reservoir-filling">
+   Time-dependent solutions for reservoir filling
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -429,65 +476,116 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="reservoirs">
 <span id="lecture-16"></span><h1><span class="section-number">4.4. </span>Reservoirs<a class="headerlink" href="#reservoirs" title="Permalink to this headline">#</a></h1>
-<p>In order to arrest the flow of water from the surface run-off into the
-river and help mitigate a flood, sometimes reservoirs are built
-upstream. These lead to accumulation of the surface run-off in the
-upstream section of the river, and limit the magnitude of the flow which
-reaches regions further downstream.</p>
+<section id="formulation-of-the-reservoir-problem">
+<h2>Formulation of the reservoir problem<a class="headerlink" href="#formulation-of-the-reservoir-problem" title="Permalink to this headline">#</a></h2>
+<p>In order to arrest the flow of water from the surface run-off into the river and help mitigate flooding, sometimes reservoirs are built upstream.
+These lead to accumulation of the surface run-off in the upstream section of the river,
+and acts as a capacitor in the river system that limits the magnitude of the flow which reaches regions further downstream.</p>
 <p>In order to model the effect of a reservoir, we consider a reservoir of
-area <span class="math notranslate nohighlight">\(A(h)\)</span> when it is filled to height <span class="math notranslate nohighlight">\(h\)</span>. We assume the upstream waters
-flow into the reservoir, and the water moving downstream from the
-reservoir exits the reservoir from an opening at the base of the
-reservoir wall of area <span class="math notranslate nohighlight">\(A_o\)</span>. The speed of this outflow will be
-<span class="math notranslate nohighlight">\((2gh)^\frac{1}{2}\)</span> when the water in the reservoir has depth <span class="math notranslate nohighlight">\(h\)</span>, and so the flux
-leaving the reservoir is <span class="math notranslate nohighlight">\(A_o(2gh)^\frac{1}{2}\)</span>.</p>
-<p>As water flows into the reservoir, the volume deepens according to the
-mixmatch between the inflow and the outflow</p>
+area <span class="math notranslate nohighlight">\(A(h)\)</span> when it is filled to height <span class="math notranslate nohighlight">\(h\)</span>; a schematic of this is shown in <a class="reference internal" href="#reservoir-schematic"><span class="std std-numref">Fig. 4.18</span></a>.</p>
+<figure class="margin-caption align-default" id="reservoir-schematic">
+<a class="reference internal image-reference" href="../../_images/figure16.1.png"><img alt="../../_images/figure16.1.png" src="../../_images/figure16.1.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.18 </span><span class="caption-text">Schematic diagram showing an idealised reservoir.
+The water is filled up to a height <span class="math notranslate nohighlight">\(h\)</span> and discharges out of the gate of area <span class="math notranslate nohighlight">\(A_0\)</span> at the bottom with a flux <span class="math notranslate nohighlight">\(Q_o\)</span>.</span><a class="headerlink" href="#reservoir-schematic" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Therefore, the volume of water stored in the reservoir is given by</p>
 <div class="math notranslate nohighlight">
-\[A(h) \dv{h}{t} = Q_{upstream} - Q_{outflow}\]</div>
-<p>There is an equilibrium solution for this system where the inflow and
-outflow to the reservoir match, and this occurs when the depth of the
-reservoir is</p>
+\[V(h) = \int^h_0 A(h')dh'\]</div>
+<p>The water in the reservoir flows out of an opening at the base of area <span class="math notranslate nohighlight">\(A_0\)</span>, with a speed <span class="math notranslate nohighlight">\(u\)</span>.
+By considering the force of gravity acting on the fluid, we can deduce that the speed of outflow must be</p>
 <div class="math notranslate nohighlight">
-\[h_e = \frac{Q_o^2}{A_o^2 g}\]</div>
-<p>We can then find time dependent solutions.</p>
-<p>Let us choose the area of the reservoir to vary as</p>
+\[u = \sqrt{2gh}\]</div>
+<p>and hence the total flux out must be</p>
+<div class="math notranslate nohighlight">
+\[Q_o = uA_0 = A_0 \sqrt{2gh}\]</div>
+<p>So, if we assume the upstream waters flow into the reservoir at a rate <span class="math notranslate nohighlight">\(Q_{in}\)</span>, then the overall change in the volume of water held in the reservoir with respect to time will be given by</p>
+<div class="math notranslate nohighlight" id="equation-reservoir-eq">
+<span class="eqno">(4.14)<a class="headerlink" href="#equation-reservoir-eq" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{align}
+    \dv{V}{t} = &amp;\ Q_{in} - A_0 \sqrt{2gh} \\
+    = &amp;\ A(h) \dv{h}{t} 
+\end{align}\end{split}\]</div>
+<p>At steady-state, we may deduce that, since the volume of water will not change with time, the equilibrium water height in the reservoir is given by</p>
+<div class="math notranslate nohighlight" id="equation-eq-height">
+<span class="eqno">(4.15)<a class="headerlink" href="#equation-eq-height" title="Permalink to this equation">#</a></span>\[h_{eq} = \frac{Q_{in}^2}{A_0^2} \frac{1}{2g}\]</div>
+<p>With this equilibrium solution in mind, we can now go on to search for a time-dependent solution for <span class="math notranslate nohighlight">\(h\)</span>.</p>
+</section>
+<section id="time-dependent-solutions-for-reservoir-filling">
+<h2>Time-dependent solutions for reservoir filling<a class="headerlink" href="#time-dependent-solutions-for-reservoir-filling" title="Permalink to this headline">#</a></h2>
+<p>We will now solve this system for an example reservoir geometry by converting the differential equation to a dimensionless version.
+This makes our solution easier in the long run because this approach deals with all the constants up front,
+and will give us a solution that we can analyse the behaviour of, independently of the details of any specific reservoir.</p>
+<p>Let us choose the shape of the reservoir such that the area varies as</p>
 <div class="math notranslate nohighlight">
 \[A(h) = \alpha h^2\]</div>
-<p>And for convenience we will introduce a dimensionless reservoir depth <span class="math notranslate nohighlight">\(y\)</span>
-and time <span class="math notranslate nohighlight">\(\tau\)</span> given by</p>
+<p>And for convenience we will introduce a dimensionless reservoir depth <span class="math notranslate nohighlight">\(y\)</span>, which is relative to the equilibrium height <span class="math notranslate nohighlight">\(h_{eq}\)</span>,
+such that when <span class="math notranslate nohighlight">\(y = 1\)</span>, <span class="math notranslate nohighlight">\(h = h_{eq}\)</span>.</p>
 <div class="math notranslate nohighlight">
-\[h = h_e y \quad \tau = \frac{Q_o}{\alpha h_e^3} t\]</div>
-<p>It then follows that</p>
+\[y(t) = \frac{h}{h_{eq}} \quad \tau = \frac{Q_o}{\alpha h_e^3} t\]</div>
+<p>We then rearrange the expression of the time dependence of the volume given in equation <a class="reference internal" href="#equation-reservoir-eq">(4.14)</a> by dividing through by a factor of <span class="math notranslate nohighlight">\(Q_{in}\)</span>,
+which makes the expression dimensionless:</p>
+<div class="math notranslate nohighlight" id="equation-res-dimensionless">
+<span class="eqno">(4.16)<a class="headerlink" href="#equation-res-dimensionless" title="Permalink to this equation">#</a></span>\[\frac{\alpha h^2}{Q_{in}} \dv{h}{t} = 1 - \frac{A_0}{Q_{in}} \sqrt{2gh}\]</div>
+<p>Substituting the expression for <span class="math notranslate nohighlight">\(y\)</span> into <a class="reference internal" href="#equation-res-dimensionless">(4.16)</a>, it follows that</p>
 <div class="math notranslate nohighlight">
-\[\mu^2 \dv{\mu}{\tau} = 1-y^\frac{1}{2}\]</div>
+\[\frac{\alpha (h_{eq} y)^2}{Q_{in}} h_{eq} \dv{y}{t} = 1 - \frac{A_0}{Q_{in}} \sqrt{2gh_{eq}y}\]</div>
+<p>and if we recall the expression for the equilibrium height given in <a class="reference internal" href="#equation-eq-height">(4.15)</a>,
+we can see that the coefficient of <span class="math notranslate nohighlight">\(\sqrt{y}\)</span> on the right hand side is equal to <span class="math notranslate nohighlight">\(1\)</span>.
+So doing some tidying up, we arrive at the expression</p>
+<div class="math notranslate nohighlight" id="equation-space-dimensionless">
+<span class="eqno">(4.17)<a class="headerlink" href="#equation-space-dimensionless" title="Permalink to this equation">#</a></span>\[\frac{\alpha h_{eq}^3}{Q_{in}} y^2 \dv{y}{t} = 1 - y^\frac{1}{2}\]</div>
+<p>So we now have our equation in a dimensionless form, with a dimensionless “space” coordinate.
+Our time coordinate, <span class="math notranslate nohighlight">\(t\)</span>, however, still has units of time.
+We therefore want to make a substitution for <span class="math notranslate nohighlight">\(t\)</span> that will replace it with some dimensionless time coordinate <span class="math notranslate nohighlight">\(\tau\)</span>.
+Therefore we make the substitution</p>
+<div class="math notranslate nohighlight" id="equation-t-subst">
+<span class="eqno">(4.18)<a class="headerlink" href="#equation-t-subst" title="Permalink to this equation">#</a></span>\[\tau = t \frac{Q_{in}}{\alpha h_{eq}^3}\]</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Rationale</p>
+<p>This substitution for <span class="math notranslate nohighlight">\(t\)</span> may seem slightly out of the blue.
+The rationale that one might employ to see that this substitution makes sense when solving this problem ‘out in the wild’ is as follows:</p>
+<ul class="simple">
+<li><p>We wish to find a dimensionless coordinate for time.</p></li>
+<li><p>The rest of our equation is already dimensionless, including the space coordinate <span class="math notranslate nohighlight">\(y\)</span>.</p></li>
+<li><p>Therefore, given that the left hand side of <a class="reference internal" href="#equation-space-dimensionless">(4.17)</a> is <span class="math notranslate nohighlight">\(\dv{y}{t}\)</span> times some constant,
+then that constant pre-multiplying that derivative must have units of time if the quantity is dimensionless over all.</p></li>
+<li><p>So the reciprocal of that coefficient, multiplied by <span class="math notranslate nohighlight">\(t\)</span>, is at least candidate for our substitution.</p></li>
+<li><p>What makes it better than any other combination of constants with the units <span class="math notranslate nohighlight">\(\mathrm{s^{-1}}\)</span>?</p>
+<ul>
+<li><p>Clearly, it will make the constants out the front of the expression disappear, further simplifying our expression,
+so it has at least got to be worth a try.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>and we will also note that therefore <span class="math notranslate nohighlight">\(T = \frac{\alpha h_{eq}^3}{Q_{in}}\)</span> constitutes some characteristic filling timed for our reservoir.
+Substituting <a class="reference internal" href="#equation-t-subst">(4.18)</a> into <a class="reference internal" href="#equation-space-dimensionless">(4.17)</a> we get</p>
+<div class="math notranslate nohighlight" id="equation-fully-dimensionless">
+<span class="eqno">(4.19)<a class="headerlink" href="#equation-fully-dimensionless" title="Permalink to this equation">#</a></span>\[y^2 \dv{y}{\tau} = 1 - y^\frac{1}{2}\]</div>
 <p>This equation can be solved but the algebra becomes involved (use the
-substitution <span class="math notranslate nohighlight">\(y = (1-s) ^2\)</span> ), so we can instead solve the equation numerically, and
-you obtain a solution of the form below.</p>
+substitution <span class="math notranslate nohighlight">\(y = (1-s)^2\)</span> ), so we can instead solve the equation numerically,
+which gives a solution of the form below.</p>
 <figure class="margin-caption align-default" id="reservoir-refilling">
-<a class="reference internal image-reference" href="../../_images/figure15.1.png"><img alt="../../_images/figure15.1.png" src="../../_images/figure15.1.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../../_images/figure16.2.png"><img alt="../../_images/figure16.2.png" src="../../_images/figure16.2.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.18 </span><span class="caption-text">Sketch of the recharge behaviour of a reservoir.</span><a class="headerlink" href="#reservoir-refilling" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.19 </span><span class="caption-text">Sketch of the recharge behaviour of a reservoir.</span><a class="headerlink" href="#reservoir-refilling" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Since <span class="math notranslate nohighlight">\(y\)</span> takes some time to reach equilibrium, the outflow to the river
 of the full flow from the rain is reduced (until the reservoir fills
 up).</p>
-<p>We can combine this model for a reservoir with the earlier model for the
-surface run-off to illustrate the effect of the reservoir in buffering
-the surface run off. An example of this is shown in the figure below. We
-combine the model of a rainstorm which leads to an increasing run-off
-until the rain stops, and then a decaying run-off, as some
-surface water drains into the ground and the remainder flows into the
-reservoir.</p>
-<div class="math notranslate nohighlight">
-\[\mu^2 \dv{\mu}{\tau} = 1-y^\frac{1}{2}\]</div>
+<p>We can combine this model for a reservoir with the earlier model for the surface run-off to illustrate the effect of the reservoir in buffering the surface run off.
+An example of this is shown in <a class="reference internal" href="#reservoir-response"><span class="std std-numref">Fig. 4.20</span></a>.
+We combine the model of a rainstorm which leads to an increasing run-off until the rain stops,
+and then a decaying run-off, as some surface water drains into the ground and the remainder flows into the reservoir.</p>
 <figure class="margin-caption align-default" id="reservoir-response">
-<a class="reference internal image-reference" href="../../_images/figure2.png"><img alt="../../_images/figure2.png" src="../../_images/figure2.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../../_images/figure16.3.png"><img alt="../../_images/figure16.3.png" src="../../_images/figure16.3.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.19 </span><span class="caption-text">The response of a reservoirs depth, and outflow as a function of the input flow from surface runoff.</span><a class="headerlink" href="#reservoir-response" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.20 </span><span class="caption-text">The response of a reservoirs depth, and outflow as a function of the input flow from surface runoff.</span><a class="headerlink" href="#reservoir-response" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
