@@ -435,6 +435,18 @@ title="Print to PDF"
    Time-dependent solutions for reservoir filling
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problems-with-reservoirs-sediment">
+   Problems with reservoirs: sediment
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#resuspension-the-shields-criterion">
+     Resuspension: the Shields criterion
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </nav>
@@ -463,6 +475,18 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#time-dependent-solutions-for-reservoir-filling">
    Time-dependent solutions for reservoir filling
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problems-with-reservoirs-sediment">
+   Problems with reservoirs: sediment
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#resuspension-the-shields-criterion">
+     Resuspension: the Shields criterion
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -585,6 +609,40 @@ and then a decaying run-off, as some surface water drains into the ground and th
 <p><span class="caption-number">Fig. 4.20 </span><span class="caption-text">The response of a reservoirs depth, and outflow as a function of the input flow from surface runoff.</span><a class="headerlink" href="#reservoir-response" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
+</section>
+<section id="problems-with-reservoirs-sediment">
+<h2>Problems with reservoirs: sediment<a class="headerlink" href="#problems-with-reservoirs-sediment" title="Permalink to this headline">#</a></h2>
+<p>Rivers globally has a very high sediment load; as such, when a dam is built blocking a river,
+that sediment accumulates in the reservoir.
+This has two major effects:</p>
+<ol class="simple">
+<li><p>The sediment is no longer being sent downstream, so there is ultimately net erosion downstream of the dam.</p>
+<ul class="simple">
+<li><p>This has the effect of making flooding more likely, as banks are eroded.</p></li>
+<li><p>It also means that the nutrients supplied by the sediment flux are no longer being carried downstream, which can impoverish soil quality.</p></li>
+</ul>
+</li>
+<li><p>The accumulation of sediment in the reservoir can also reduce the reservoir capacity, by filling up the bottom.</p>
+<ul class="simple">
+<li><p>This also has an impairs the function of hydroelectric generators, which are often incorporated into reservoir design.
+The sediment flux can even break the turbines all together.</p></li>
+</ul>
+</li>
+</ol>
+<section id="resuspension-the-shields-criterion">
+<h3>Resuspension: the Shields criterion<a class="headerlink" href="#resuspension-the-shields-criterion" title="Permalink to this headline">#</a></h3>
+<p>To remove sediment from a reservoir without dredging it, one option is to resuspend the sediment in the flow of water out of the reservoir.
+In order to resuspend sediment on the bed, the shear force due to the water flowing over it must overcome the weight of the sediment particle.</p>
+<p>We therefore relate the shear force, <span class="math notranslate nohighlight">\(F_s\)</span>, to the particle diameter, <span class="math notranslate nohighlight">\(d_s\)</span>, and densities of the water and sediment, <span class="math notranslate nohighlight">\(\rho_s\)</span> and <span class="math notranslate nohighlight">\(\rho_w\)</span> respectively,
+given us the <strong>Shields criterion</strong> for resuspension</p>
+<div class="math notranslate nohighlight">
+\[F_s  \gt 0.06 (\rho_s - \rho_w) g d_s\]</div>
+<p>where <span class="math notranslate nohighlight">\(0.06\)</span> is an empirical factor, and <span class="math notranslate nohighlight">\(F_s\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[F_s = f \rho_w u^2\]</div>
+<p>where <span class="math notranslate nohighlight">\(f\)</span> is another empirical factor in the range <span class="math notranslate nohighlight">\(0.01 - 0.1\)</span>.
+Therefore, we need fast flows to resuspend sediment.</p>
+</section>
 </section>
 </section>
 
