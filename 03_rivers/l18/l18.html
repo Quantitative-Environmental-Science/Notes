@@ -504,8 +504,8 @@ If the water level decreases by an amount <span class="math notranslate nohighli
 The height of the embankment below the height of the free surface of the river in the centre of the river above the river bed, <span class="math notranslate nohighlight">\(H\)</span>, can be written as <span class="math notranslate nohighlight">\(H-(b+h)\)</span>.
 At the crest of the embankment, the height above the base of the river is a maximum, and so if <span class="math notranslate nohighlight">\(y\)</span> is the coordinate normal to the river, then</p>
 <div class="math notranslate nohighlight" id="equation-eq-embankment">
-<span class="eqno">(4.20)<a class="headerlink" href="#equation-eq-embankment" title="Permalink to this equation">#</a></span>\[\dv{h}{y} + \dv{b}{y} = 0\]</div>
-<p>If we differentiate the expression for the flux <span class="math notranslate nohighlight">\(Q\)</span> above with respect to <span class="math notranslate nohighlight">\(y\)</span>, then the answer should be zero (as the flux is constant in space) and using Eq. <a class="reference internal" href="#equation-eq-embankment">(4.20)</a> we then find that</p>
+<span class="eqno">(4.25)<a class="headerlink" href="#equation-eq-embankment" title="Permalink to this equation">#</a></span>\[\dv{h}{y} + \dv{b}{y} = 0\]</div>
+<p>If we differentiate the expression for the flux <span class="math notranslate nohighlight">\(Q\)</span> above with respect to <span class="math notranslate nohighlight">\(y\)</span>, then the answer should be zero (as the flux is constant in space) and using Eq. <a class="reference internal" href="#equation-eq-embankment">(4.25)</a> we then find that</p>
 <div class="math notranslate nohighlight">
 \[2h = b\]</div>
 <p>and so</p>
@@ -518,7 +518,7 @@ This leads to the result that the flux is given by</p>
 <p>As the flow then runs down the embankment and onto the flood plain, the flow speed depends on the slope and the water generally moves in the direction of maximum slope.
 With rapid flow from the river, the flow is turbulent in the flooding zone, and the speed of the flooding water is given by</p>
 <div class="math notranslate nohighlight" id="equation-eq-flow-speed">
-<span class="eqno">(4.21)<a class="headerlink" href="#equation-eq-flow-speed" title="Permalink to this equation">#</a></span>\[u = \left( \frac{ g \sin{\theta} h}{C_D} \right)^{1/2}\]</div>
+<span class="eqno">(4.26)<a class="headerlink" href="#equation-eq-flow-speed" title="Permalink to this equation">#</a></span>\[u = \left( \frac{ g \sin{\theta} h}{C_D} \right)^{1/2}\]</div>
 <p>and the flux per unit width is <span class="math notranslate nohighlight">\(Q = hu\)</span>.</p>
 <p>As the flood spreads over the flood plain, the flow will generally move in two dimensions (horizontal directions) depending on the direction of maximum slope,
 but if the slope is directed away from the river the advancing flood can be modelled by the 1D flood equation for the depth of the floodwaters.
@@ -527,9 +527,9 @@ If there is no infiltration, the flow follows the law</p>
 \[\frac{\partial h}{\partial t} = - \frac{\partial Q}{\partial x}
 \Rightarrow \frac{\partial h}{\partial t} + \frac{3}{2} \left( \frac{g \sin{\theta}}{C_D} \right)^{1/2} h^{1/2} \frac{\partial h}{\partial x} = 0\]</div>
 <p>This equation is similar to the equation for the flow along the river, but it now relates to the flow over the flood plain, and cD is the drag coefficient for the flood plain.
-The speed of the flooding wave over the land is given by Eq. <a class="reference internal" href="#equation-eq-flow-speed">(4.21)</a>.
+The speed of the flooding wave over the land is given by Eq. <a class="reference internal" href="#equation-eq-flow-speed">(4.26)</a>.
 With a source term for this equation at the river, we can find a range of solutions for the advance of the flooding water over the flood plain.
-For example, with a constant source, <span class="math notranslate nohighlight">\(Q\)</span>, we expect <span class="math notranslate nohighlight">\(\dv{d}{t} = 0\)</span> and the flood wave will advance with a constant speed given by Eq. <a class="reference internal" href="#equation-eq-flow-speed">(4.21)</a>
+For example, with a constant source, <span class="math notranslate nohighlight">\(Q\)</span>, we expect <span class="math notranslate nohighlight">\(\dv{d}{t} = 0\)</span> and the flood wave will advance with a constant speed given by Eq. <a class="reference internal" href="#equation-eq-flow-speed">(4.26)</a>
 and we can estimate the depth <span class="math notranslate nohighlight">\(h\)</span> by matching <span class="math notranslate nohighlight">\(Q = hu\)</span>.</p>
 <figure class="margin-caption align-default" id="fig-flood">
 <a class="reference internal image-reference" href="../../_images/flood.png"><img alt="../../_images/flood.png" src="../../_images/flood.png" style="width: 100%;" /></a>
