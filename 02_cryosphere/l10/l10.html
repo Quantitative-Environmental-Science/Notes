@@ -533,8 +533,8 @@ title="Print to PDF"
 <li><p>A fraction, <span class="math notranslate nohighlight">\((1-\alpha)\)</span>, of the incident short-wavelength radiation is transmitted into the ice below the surface, and subsequently into the ocean below.</p></li>
 <li><p>If the atmosphere is at temperature <span class="math notranslate nohighlight">\(T_A\)</span> then the ice receives long wavelength radiation <span class="math notranslate nohighlight">\(F_{LW,i} = \sigma T_A^4\)</span> from the atmosphere and transmits outgoing radiation <span class="math notranslate nohighlight">\(F_{LW,o} = \sigma T_s^4\)</span>, where <span class="math notranslate nohighlight">\(T_s\)</span> is the surface ice temperature.  The difference between these fluxes thus gives a net outgoing heat flux</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}F_{LW} &amp; = &amp; \sigma T_S^4 - \sigma T_A^4 \\
-&amp; \simeq &amp; 4\sigma T_s^3(T_s-T_A)\end{split}\]</div>
+\[\begin{split}F_{LW} &amp; = \sigma T_S^4 - \sigma T_A^4 \\
+&amp; \simeq 4\sigma T_s^3(T_s-T_A)\end{split}\]</div>
 <p>where the approximation follows because <span class="math notranslate nohighlight">\(T_s \simeq T_A\)</span> (at least when measured in Kelvin).</p>
 <p>It’s perhaps worth recalling that the power radiated from a body (ice or atmosphere) at a given temperature <span class="math notranslate nohighlight">\(T\)</span> is given by the Stefan-Bolztmann law</p>
 <div class="math notranslate nohighlight">
@@ -557,9 +557,11 @@ title="Print to PDF"
 <p><span class="caption-number">Fig. 3.12 </span><span class="caption-text">Conditions for the formation of the first ice, when the surface temperature of the ocean <span class="math notranslate nohighlight">\(T_s = T_m\)</span>.</span><a class="headerlink" href="#iceformation" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Ice forms in the polar oceans during the polar winter when the atmospheric temperature becomes significantly below zero.  Prior to ice formation, the condition at the ocean surface is that the heat flux from the ocean must equal the heat flux to the atmosphere, the balance of which determines the surface temperature.  Hence</p>
+<p>Ice forms in the polar oceans during the polar winter when the atmospheric temperature becomes significantly below zero.
+Prior to ice formation, the condition at the ocean surface is that the heat flux from the ocean must equal the heat flux to the atmosphere, the balance of which determines the surface temperature.
+Hence</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}F_0 &amp; = &amp; F_A \\
+\[\begin{split}F_o &amp; = F_A \\
 \implies \lambda_0(T_0-T_s) &amp; = &amp; \lambda_A(T_s-T_A)\end{split}\]</div>
 <p>which we can re-arrange to give the surface temperature</p>
 <div class="math notranslate nohighlight">
@@ -578,15 +580,15 @@ title="Print to PDF"
 </figure>
 <p>Once the ice is growing, we assume that the ice grows in a quasi-steady manner, and hence that there is a linear thermal profile through the ice.  The growth of ice is driven by the heat flux to the atmosphere which balances the diffusive flux of heat across the ice,</p>
 <div class="math notranslate nohighlight" id="equation-10-surf-heat-flux">
-<span class="eqno">(3.1)<a class="headerlink" href="#equation-10-surf-heat-flux" title="Permalink to this equation">#</a></span>\[F_A = \lambda_A(T_s-T_A) = k\frac{T_m-T_s}{h}\]</div>
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-10-surf-heat-flux" title="Permalink to this equation">#</a></span>\[F_A = \lambda_A(T_s-T_A) = k\frac{T_m-T_s}{h}\]</div>
 <p>and is limited by the release of latent heat on solidification and any heat flux from the ocean,</p>
 <div class="math notranslate nohighlight" id="equation-10-stefan-growth">
-<span class="eqno">(3.2)<a class="headerlink" href="#equation-10-stefan-growth" title="Permalink to this equation">#</a></span>\[\rho L \dd{h}{t} = k\frac{T_m-T_s}{h} - F_0\]</div>
-<p>If we consider a fixed ocean temperature, and hence a fixed oceanic heat flux <span class="math notranslate nohighlight">\(F_0 = \lambda_0(T_0-T_m)\)</span>, then we can infer (from equation <a class="reference internal" href="#equation-10-surf-heat-flux">(3.1)</a>) that the surface temperature is</p>
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-10-stefan-growth" title="Permalink to this equation">#</a></span>\[\rho L \dv{h}{t} = k\frac{T_m-T_s}{h} - F_0\]</div>
+<p>If we consider a fixed ocean temperature, and hence a fixed oceanic heat flux <span class="math notranslate nohighlight">\(F_0 = \lambda_0(T_0-T_m)\)</span>, then we can infer (from equation <a class="reference internal" href="#equation-10-surf-heat-flux">(3.2)</a>) that the surface temperature is</p>
 <div class="math notranslate nohighlight">
 \[T_s = \frac{T_m + (\lambda_A h/k)T_A}{1+\lambda_A h/k}\]</div>
 <p>So already we can see that the surface temperature approaches the freezing point for thin ice, <span class="math notranslate nohighlight">\(T_s \to T_m\)</span> as <span class="math notranslate nohighlight">\(h\to0\)</span>, while for thick ice it approaches the atmospheric temperature <span class="math notranslate nohighlight">\(T_s \to T_a\)</span> as <span class="math notranslate nohighlight">\(h\to\infty\)</span>.  We can also see that <span class="math notranslate nohighlight">\(T_s \simeq T_A\)</span> once <span class="math notranslate nohighlight">\(h \ge k/\lambda_A\)</span>.</p>
-<p>The equation governing the growth of ice (equation <a class="reference internal" href="#equation-10-stefan-growth">(3.2)</a>) can be now be re-written as</p>
+<p>The equation governing the growth of ice (equation <a class="reference internal" href="#equation-10-stefan-growth">(3.3)</a>) can be now be re-written as</p>
 <div class="math notranslate nohighlight">
 \[\rho L \dd{h}{t} = \frac{\lambda_A(T_m-T_A)}{1+\lambda_A h/k} - F_0\]</div>
 <p>which is now an (admittedly awkward) ODE in thickness <span class="math notranslate nohighlight">\(h\)</span> alone (otherwise it is known temperatures and material parameters).  Interestingly, we can observe the following behaviour.  At early times when <span class="math notranslate nohighlight">\(\lambda_A h/k \ll 1\)</span> the ice growth is approximately constant <span class="math notranslate nohighlight">\(h \sim t\)</span>, whereas at intermediate times <span class="math notranslate nohighlight">\(\lambda_A h/k \gg 1\)</span> the ice grows as the square-root of time <span class="math notranslate nohighlight">\(h \sim \sqrt{t}\)</span>.  Finally at late times the oceanic heat flux balances the surface cooling so that the ice reaches a steady state thickness,</p>
