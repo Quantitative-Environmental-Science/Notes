@@ -532,19 +532,19 @@ title="Print to PDF"
 <li><p>A fraction, <span class="math notranslate nohighlight">\(\alpha\)</span>, of the incident short-wavelength radiation is reflected, where <span class="math notranslate nohighlight">\(\alpha\)</span> is the albedo.</p></li>
 <li><p>A fraction, <span class="math notranslate nohighlight">\((1-\alpha)\)</span>, of the incident short-wavelength radiation is transmitted into the ice below the surface, and subsequently into the ocean below.</p></li>
 <li><p>If the atmosphere is at temperature <span class="math notranslate nohighlight">\(T_A\)</span> then the ice receives long wavelength radiation <span class="math notranslate nohighlight">\(F_{LW,i} = \sigma T_A^4\)</span> from the atmosphere and transmits outgoing radiation <span class="math notranslate nohighlight">\(F_{LW,o} = \sigma T_s^4\)</span>, where <span class="math notranslate nohighlight">\(T_s\)</span> is the surface ice temperature.  The difference between these fluxes thus gives a net outgoing heat flux</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}F_{LW} &amp; = \sigma T_S^4 - \sigma T_A^4 \\
+<div class="math notranslate nohighlight" id="equation-10-flux-difference">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-10-flux-difference" title="Permalink to this equation">#</a></span>\[\begin{split}F_{LW} &amp; = \sigma T_S^4 - \sigma T_A^4 \\
 &amp; \simeq 4\sigma T_s^3(T_s-T_A)\end{split}\]</div>
 <p>where the approximation follows because <span class="math notranslate nohighlight">\(T_s \simeq T_A\)</span> (at least when measured in Kelvin).</p>
 <p>It’s perhaps worth recalling that the power radiated from a body (ice or atmosphere) at a given temperature <span class="math notranslate nohighlight">\(T\)</span> is given by the Stefan-Bolztmann law</p>
-<div class="math notranslate nohighlight">
-\[F = \sigma T^4\]</div>
+<div class="math notranslate nohighlight" id="equation-10-sb-law">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-10-sb-law" title="Permalink to this equation">#</a></span>\[F = \sigma T^4\]</div>
 <p>where <span class="math notranslate nohighlight">\(\sigma = 5.67\times10^{-8}\ \mathrm{W~m^{-2}~K^{-4}}\)</span>.</p>
 </li>
 <li><p>The ice looses sensible heat through a surface flux, which is mostly forced by convection in the air, <span class="math notranslate nohighlight">\(F_s = h_T (T_s - T_A)\)</span>.  Here <span class="math notranslate nohighlight">\(h_T\)</span> is a heat transfer coefficient which might, in general, depend on the wind strength, but for simplicity here is taken as a constant.</p></li>
 <li><p>Finally, the ice looses energy in the form of a latent heat flux associated with sublimation (evaporation) of the ice into the atmosphere,</p>
-<div class="math notranslate nohighlight">
-\[F_L = h_s( T_s-T_A)\]</div>
+<div class="math notranslate nohighlight" id="equation-10-latent-heat-flux">
+<span class="eqno">(3.4)<a class="headerlink" href="#equation-10-latent-heat-flux" title="Permalink to this equation">#</a></span>\[F_L = h_s(T_s - T_A)\]</div>
 <p>where <span class="math notranslate nohighlight">\(h_s\)</span> is a heat transfer coefficient for sublimation / evaporation which incorporates the latent heat of phase change.</p>
 </li>
 </ol>
@@ -560,15 +560,15 @@ title="Print to PDF"
 <p>Ice forms in the polar oceans during the polar winter when the atmospheric temperature becomes significantly below zero.
 Prior to ice formation, the condition at the ocean surface is that the heat flux from the ocean must equal the heat flux to the atmosphere, the balance of which determines the surface temperature.
 Hence</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}F_o &amp; = F_A \\
-\implies \lambda_0(T_0-T_s) &amp; = &amp; \lambda_A(T_s-T_A)\end{split}\]</div>
+<div class="math notranslate nohighlight" id="equation-o-a-balance">
+<span class="eqno">(3.5)<a class="headerlink" href="#equation-o-a-balance" title="Permalink to this equation">#</a></span>\[\begin{split}F_o &amp; = F_A \\
+\implies \lambda_o(T_o-T_s) &amp; = &amp; \lambda_A(T_s-T_A)\end{split}\]</div>
 <p>which we can re-arrange to give the surface temperature</p>
-<div class="math notranslate nohighlight">
-\[T_s = \frac{\lambda_0 T_0+ \lambda_A T_A}{\lambda_0 + \lambda_A}\]</div>
+<div class="math notranslate nohighlight" id="equation-10-surface-temp">
+<span class="eqno">(3.9)<a class="headerlink" href="#equation-10-surface-temp" title="Permalink to this equation">#</a></span>\[T_s = \frac{\lambda_o T_o+ \lambda_A T_A}{\lambda_o + \lambda_A}\]</div>
 <p>Ice begins to form when the surface temperature goes below the melting / freezing temperature <span class="math notranslate nohighlight">\(T_s &lt; T_m\)</span>, so that</p>
-<div class="math notranslate nohighlight">
-\[T_A &lt; T_m - \frac{\lambda_0}{\lambda_A}(T_0-T_m) &lt; T_m\]</div>
+<div class="math notranslate nohighlight" id="equation-10-freeze-cond">
+<span class="eqno">(3.7)<a class="headerlink" href="#equation-10-freeze-cond" title="Permalink to this equation">#</a></span>\[T_A &lt; T_m - \frac{\lambda_o}{\lambda_A}(T_o-T_m) &lt; T_m\]</div>
 </section>
 <section id="growth-of-sea-ice">
 <h2>Growth of sea ice<a class="headerlink" href="#growth-of-sea-ice" title="Permalink to this headline">#</a></h2>
@@ -578,22 +578,25 @@ Hence</p>
 <p><span class="caption-number">Fig. 3.13 </span><span class="caption-text">Simple thermal model for the growth of sea ice.</span><a class="headerlink" href="#icegrowth" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Once the ice is growing, we assume that the ice grows in a quasi-steady manner, and hence that there is a linear thermal profile through the ice.  The growth of ice is driven by the heat flux to the atmosphere which balances the diffusive flux of heat across the ice,</p>
+<p>Once the ice is growing, we assume that the ice grows in a quasi-steady manner, and hence that there is a linear thermal profile through the ice.
+The growth of ice is driven by the heat flux to the atmosphere, <span class="math notranslate nohighlight">\(F_A\)</span>, which balances the diffusive flux of heat across the ice,</p>
 <div class="math notranslate nohighlight" id="equation-10-surf-heat-flux">
-<span class="eqno">(3.2)<a class="headerlink" href="#equation-10-surf-heat-flux" title="Permalink to this equation">#</a></span>\[F_A = \lambda_A(T_s-T_A) = k\frac{T_m-T_s}{h}\]</div>
-<p>and is limited by the release of latent heat on solidification and any heat flux from the ocean,</p>
+<span class="eqno">(3.8)<a class="headerlink" href="#equation-10-surf-heat-flux" title="Permalink to this equation">#</a></span>\[F_A = \lambda_A(T_s-T_A) = k\frac{T_m-T_s}{h}\]</div>
+<p>and we can then infer (from equation <a class="reference internal" href="#equation-10-surf-heat-flux">(3.8)</a>) that the surface temperature is given by</p>
+<div class="math notranslate nohighlight" id="equation-10-surface-temp">
+<span class="eqno">(3.9)<a class="headerlink" href="#equation-10-surface-temp" title="Permalink to this equation">#</a></span>\[T_s = \frac{T_m + (\lambda_A h/k)T_A}{1+\lambda_A h/k}\]</div>
+<p>If we consider a fixed ocean temperature, and hence a fixed oceanic heat flux <span class="math notranslate nohighlight">\(F_o = \lambda_o(T_o-T_m)\)</span>,
+and recalledd that the growth of ice is limited by the release of latent heat on solidification and any heat flux from the ocean,
+we can construct the equation governing the growth of ice:</p>
 <div class="math notranslate nohighlight" id="equation-10-stefan-growth">
-<span class="eqno">(3.3)<a class="headerlink" href="#equation-10-stefan-growth" title="Permalink to this equation">#</a></span>\[\rho L \dv{h}{t} = k\frac{T_m-T_s}{h} - F_0\]</div>
-<p>If we consider a fixed ocean temperature, and hence a fixed oceanic heat flux <span class="math notranslate nohighlight">\(F_0 = \lambda_0(T_0-T_m)\)</span>, then we can infer (from equation <a class="reference internal" href="#equation-10-surf-heat-flux">(3.2)</a>) that the surface temperature is</p>
-<div class="math notranslate nohighlight">
-\[T_s = \frac{T_m + (\lambda_A h/k)T_A}{1+\lambda_A h/k}\]</div>
-<p>So already we can see that the surface temperature approaches the freezing point for thin ice, <span class="math notranslate nohighlight">\(T_s \to T_m\)</span> as <span class="math notranslate nohighlight">\(h\to0\)</span>, while for thick ice it approaches the atmospheric temperature <span class="math notranslate nohighlight">\(T_s \to T_a\)</span> as <span class="math notranslate nohighlight">\(h\to\infty\)</span>.  We can also see that <span class="math notranslate nohighlight">\(T_s \simeq T_A\)</span> once <span class="math notranslate nohighlight">\(h \ge k/\lambda_A\)</span>.</p>
-<p>The equation governing the growth of ice (equation <a class="reference internal" href="#equation-10-stefan-growth">(3.3)</a>) can be now be re-written as</p>
-<div class="math notranslate nohighlight">
-\[\rho L \dd{h}{t} = \frac{\lambda_A(T_m-T_A)}{1+\lambda_A h/k} - F_0\]</div>
+<span class="eqno">(3.10)<a class="headerlink" href="#equation-10-stefan-growth" title="Permalink to this equation">#</a></span>\[\rho L \dv{h}{t} = k\frac{T_m-T_s}{h} - F_o\]</div>
+<p>So already we can see that the surface temperature approaches the freezing point for thin ice, <span class="math notranslate nohighlight">\(T_s \to T_m\)</span> as <span class="math notranslate nohighlight">\(h\to0\)</span>, while for thick ice it approaches the atmospheric temperature <span class="math notranslate nohighlight">\(T_s \to T_a\)</span> as <span class="math notranslate nohighlight">\(h\to\infty\)</span>.  We can also see that, from <a class="reference internal" href="#equation-10-surface-temp">(3.9)</a>, <span class="math notranslate nohighlight">\(T_s \simeq T_A\)</span> once <span class="math notranslate nohighlight">\(h \ge k/\lambda_A\)</span>.</p>
+<p>The equation governing the growth of ice (equation <a class="reference internal" href="#equation-10-stefan-growth">(3.10)</a>) can be now be re-written as</p>
+<div class="math notranslate nohighlight" id="equation-10-growth-rearrange">
+<span class="eqno">(3.11)<a class="headerlink" href="#equation-10-growth-rearrange" title="Permalink to this equation">#</a></span>\[\rho L \dv{h}{t} = \frac{\lambda_A(T_m-T_A)}{1+\lambda_A h/k} - F_o\]</div>
 <p>which is now an (admittedly awkward) ODE in thickness <span class="math notranslate nohighlight">\(h\)</span> alone (otherwise it is known temperatures and material parameters).  Interestingly, we can observe the following behaviour.  At early times when <span class="math notranslate nohighlight">\(\lambda_A h/k \ll 1\)</span> the ice growth is approximately constant <span class="math notranslate nohighlight">\(h \sim t\)</span>, whereas at intermediate times <span class="math notranslate nohighlight">\(\lambda_A h/k \gg 1\)</span> the ice grows as the square-root of time <span class="math notranslate nohighlight">\(h \sim \sqrt{t}\)</span>.  Finally at late times the oceanic heat flux balances the surface cooling so that the ice reaches a steady state thickness,</p>
-<div class="math notranslate nohighlight">
-\[h(t \to \infty) = \frac{k}{\lambda_A}\left[\frac{\lambda_A(T_m-T_A)}{F_0} - 1\right]\]</div>
+<div class="math notranslate nohighlight" id="equation-10-steady-state">
+<span class="eqno">(3.12)<a class="headerlink" href="#equation-10-steady-state" title="Permalink to this equation">#</a></span>\[h(t \to \infty) = \frac{k}{\lambda_A}\left[\frac{\lambda_A(T_m-T_A)}{F_o} - 1\right]\]</div>
 <p>Note that for ice <span class="math notranslate nohighlight">\(k \simeq 2\ \mathrm{W~m^{-2}~K^{-1}}\)</span> and <span class="math notranslate nohighlight">\(\lambda_A \simeq 20\ \mathrm{W~m^{-2}~K^{-1}}\)</span> the length scale <span class="math notranslate nohighlight">\(k/\lambda_A \simeq 10\ \mbox{cm}\)</span> and the final steady state thickness is a few metres.</p>
 <figure class="margin-caption align-default" id="icethickness">
 <a class="reference internal image-reference" href="../../_images/10.IceThickness.png"><img alt="../../_images/10.IceThickness.png" src="../../_images/10.IceThickness.png" style="width: 90%;" /></a>
@@ -606,8 +609,8 @@ Hence</p>
 <h2>Melting of sea ice<a class="headerlink" href="#melting-of-sea-ice" title="Permalink to this headline">#</a></h2>
 <p>The melting of sea ice can occur from two directions.  The ocean temperature may be warmer, indicating a higher oceanic heat flux leading to thinning from the base of the ice.  Correspondingly, and often intuitively given the surface seasonal radiative balance, the atmospheric temperature may increase above the melting temperature.  Both an increase in surface sensible air temperature and oceanic heat flux are relevant for the response of sea ice thickness to climate change.</p>
 <p>Since we have considered a fixed ocean heat flux in our solidification examples (above) let’s focus on the case of a high air temperature <span class="math notranslate nohighlight">\(T_A &gt; T_m\)</span>.  In this case, the surface temperature is at the melting temperature <span class="math notranslate nohighlight">\(T_s = T_m\)</span> and, since it is still in contact with the liquid water ocean, so is the base of the ice.  After an initial transient the ice is therefore uniformly at the melting temperature, and the melt rate is simply given by</p>
-<div class="math notranslate nohighlight">
-\[\rho L \dd{h}{t} = F_a - F_0\]</div>
+<div class="math notranslate nohighlight" id="equation-10-melt-rate">
+<span class="eqno">(3.13)<a class="headerlink" href="#equation-10-melt-rate" title="Permalink to this equation">#</a></span>\[\rho L \dv{h}{t} = F_A - F_o\]</div>
 <p>recalling of course that <span class="math notranslate nohighlight">\(F_A = \lambda_A(T_m - T_A) &lt; 0\)</span> since now <span class="math notranslate nohighlight">\(T_A &gt; T_m\)</span>.  Hence, the ice melts from both the top and bottom.</p>
 <figure class="margin-caption align-default" id="icemelting">
 <a class="reference internal image-reference" href="../../_images/10.IceMelting.png"><img alt="../../_images/10.IceMelting.png" src="../../_images/10.IceMelting.png" style="width: 70%;" /></a>
@@ -635,7 +638,7 @@ Hence</p>
 </section>
 <section id="freezing-salty-ocean-water">
 <h2>Freezing salty ocean water<a class="headerlink" href="#freezing-salty-ocean-water" title="Permalink to this headline">#</a></h2>
-<p>A significant aspect of the solidification of sea ice in polar waters is that ocean water is salty, not fresh.  This means that ocean waters, with a salt concentration of approximately <span class="math notranslate nohighlight">\(C_0 \simeq 0\ \mathrm{wt\%}\)</span>, freeze at a temperature <span class="math notranslate nohighlight">\(T_L \simeq -1.8^\circ\mathrm{C}\)</span>.  The result is fresh water ice (salt does not get incorporated in the ice lattice) and more salty and cold surface waters.</p>
+<p>A significant aspect of the solidification of sea ice in polar waters is that ocean water is salty, not fresh.  This means that ocean waters, with a salt concentration of approximately <span class="math notranslate nohighlight">\(C_o \simeq 0\ \mathrm{wt\%}\)</span>, freeze at a temperature <span class="math notranslate nohighlight">\(T_L \simeq -1.8^\circ\mathrm{C}\)</span>.  The result is fresh water ice (salt does not get incorporated in the ice lattice) and more salty and cold surface waters.</p>
 <p>This thermodynamics of freezing salty ocean water is therefore determined by a binary eutectic phase diagram.  This plots the phase behaviour as a function of temperature <span class="math notranslate nohighlight">\(T\)</span> and the concentration <span class="math notranslate nohighlight">\(C\)</span> of the dominant salt, NaCl (here in weight percent) as shown in <a class="reference internal" href="#phasediagram"><span class="std std-numref">Fig. 3.18</span></a>.  On the phase diagram the liquidus line, <span class="math notranslate nohighlight">\(T_L(C)\)</span> distinguishes the concentration-dependent freezing temperature.  Below the liquidius nearly pure solid ice crystals form, bathed in a cold and salty interstitial brine.  As temperatures fall below the eutectic temperature <span class="math notranslate nohighlight">\(T_E\)</span> both solid ice and salt crystals form.</p>
 <figure class="margin-caption align-default" id="phasediagram">
 <a class="reference internal image-reference" href="../../_images/10.IcePhaseDiagram.png"><img alt="../../_images/10.IcePhaseDiagram.png" src="../../_images/10.IcePhaseDiagram.png" style="width: 70%;" /></a>
