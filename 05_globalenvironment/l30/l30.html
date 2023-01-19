@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Atmospheric heat transport</title>
+    <title>6.5. Atmospheric heat transport</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -56,6 +56,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="7. Glossary" href="../../reference/glossary.html" />
+    <link rel="prev" title="6.4. Structure and mean circulation of the atmosphere" href="../l29/l29.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -105,7 +107,7 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../00_intro/intro/intro.html">
    1. Introduction
@@ -286,16 +288,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../intro/intro.html">
    6. Global Environment
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="../l26/l26.html">
      6.1. Introduction
@@ -314,6 +316,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../l29/l29.html">
      6.4. Structure and mean circulation of the atmosphere
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     6.5. Atmospheric heat transport
     </a>
    </li>
   </ul>
@@ -458,84 +465,73 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="atmospheric-heat-transport">
-<span id="lecture-30"></span><h1>Atmospheric heat transport<a class="headerlink" href="#atmospheric-heat-transport" title="Permalink to this headline">#</a></h1>
-<p>In this section, we will describe the mechanisms leading to poleward heat transport in the atmosphere and develop a simple model to predict the equilibrium temperature distribution. While the mean meridional circulation in the atmosphere (e.g. the Hadley circulation) is capable of transporting heat, most of the heat transport in the atmosphere is associated with \textit{transient} features.</p>
-<p>The thermal wind balance introduced in the previous section is a state of equilibrium; the force exerted by the hydrostatic pressure gradient is balanced by the Coriolis acceleration. This equilibrium is \textit{unstable}. Imagine starting with an east/west jet in thermal wind balance with the mean temperature gradient. Because the wind is in a state of equilibrium, it will be steady (<span class="math notranslate nohighlight">\(\partial \mathbf{u}/\partial t=\mathbf{0}\)</span>). However, because the equilibrium is unstable, if we give this perturb this equilibrium state by a small amount, the perturbation will grow. As a result, the east/west jet will develop meanders, some of which will eventually develo into closed eddies. These are the weather systems that bring us periods of wet and dry weather.</p>
-<p>\begin{figure}
-\begin{center}
-\includegraphics[width=\textwidth]{figures/lagrangian_trajectories.png}
-\caption{Trajectories of dust particles originating in western China (Cottle et al. 2013)}
-\label{fig:lagrangian_trajectories}
-\end{center}
-\end{figure}</p>
-<p>As air parcels are transported by meandering jets and eddies, they trace out chaotic trajectories. For example, Figure \ref{fig:lagrangian_trajectories} shows trajectories of small dust particles from a source in western China, inferred from a forecast model. Notice how the collection of particles spreads out as they travel to the east. This process is important for dispersing dust, aerosols, and pollutants.</p>
+<span id="lecture-30"></span><h1><span class="section-number">6.5. </span>Atmospheric heat transport<a class="headerlink" href="#atmospheric-heat-transport" title="Permalink to this headline">#</a></h1>
+<p>In this section, we will describe the mechanisms leading to poleward heat transport in the atmosphere and develop a simple model to predict the equilibrium temperature distribution. While the mean meridional circulation in the atmosphere (e.g. the Hadley circulation) is capable of transporting heat, most of the heat transport in the atmosphere is associated with <em>transient</em> features.</p>
+<p>The thermal wind balance introduced in the previous section is a state of equilibrium; the force exerted by the hydrostatic pressure gradient is balanced by the Coriolis acceleration. This equilibrium is <em>unstable</em>. Imagine starting with an east/west jet in thermal wind balance with the mean temperature gradient. Because the wind is in a state of equilibrium, it will be steady (<span class="math notranslate nohighlight">\(\partial \mathbf{u}/\partial t=\mathbf{0}\)</span>). However, because the equilibrium is unstable, if we give this perturb this equilibrium state by a small amount, the perturbation will grow. As a result, the east/west jet will develop meanders, some of which will eventually develo into closed eddies. These are the weather systems that bring us periods of wet and dry weather.</p>
+<figure class="margin-caption align-default" id="fig-lagrangian-trajectories">
+<a class="reference internal image-reference" href="../../_images/lagrangian_trajectories.png"><img alt="../../_images/lagrangian_trajectories.png" src="../../_images/lagrangian_trajectories.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.14 </span><span class="caption-text">Trajectories of dust particles originating in western China (Cottle et al. 2013).</span><a class="headerlink" href="#fig-lagrangian-trajectories" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>As air parcels are transported by meandering jets and eddies, they trace out chaotic trajectories. For example, Figure <a class="reference internal" href="#fig-lagrangian-trajectories"><span class="std std-numref">Fig. 6.14</span></a> shows trajectories of small dust particles from a source in western China, inferred from a forecast model. Notice how the collection of particles spreads out as they travel to the east. This process is important for dispersing dust, aerosols, and pollutants.</p>
 <p>The chaotic motion induced by transient eddies also transports heat. The motion of individual air parcels due to eddying motion is akin to a random walk. When an air parcel encounters an eddy, it might be advected to the north or to the south with some probability. Taking the analogy one step further, the collective effect of eddying motions on the concentration of a scalar field can be modelled using a diffusion equation.</p>
-<p>Consider the following model for the vertically and longitudinally averaged atmospheric temperature, <span class="math notranslate nohighlight">\(T\)</span>:
-\begin{equation}
-C_a\frac{\partial T}{\partial t} = I(y) - O(y,T) + C_a\kappa \frac{\partial^2 T}{\partial y^2}.
-\label{eq:diffusive_model_form}
-\end{equation}
-Here, <span class="math notranslate nohighlight">\(y\)</span> is the distance (in meters) measured north from the Equator and <span class="math notranslate nohighlight">\(t\)</span> is time\footnote{To be quantitatively precise, we would normally write this equation in spherical coordinates. This would make the equation more complicated and more difficult to solve, so here we opt for a simpler approximate form.}. This second order partial differential equation is a forced diffusion equation (sometimes called the heat equation). The forcing terms, <span class="math notranslate nohighlight">\(I\)</span> and <span class="math notranslate nohighlight">\(O\)</span> represent the net incoming shortwave and outgoing longwave radiative forcing. The units of <span class="math notranslate nohighlight">\(I\)</span> and <span class="math notranslate nohighlight">\(O\)</span> will be in <span class="math notranslate nohighlight">\(\mbox{W}/\mbox{m}^2\)</span>, and <span class="math notranslate nohighlight">\(C_a\)</span> is the heat capcity of a vertical column of atmosphere. Recall that the heat capacity of air is about 1000 J/kg/<span class="math notranslate nohighlight">\(^\circ\)</span> C and the mass of the atmosphere is about <span class="math notranslate nohighlight">\(10^4\)</span> kg/m<span class="math notranslate nohighlight">\(^2\)</span>. Therefore, <span class="math notranslate nohighlight">\(C_a\simeq 10^7\)</span> J/m<span class="math notranslate nohighlight">\(^2\)</span>/<span class="math notranslate nohighlight">\(^\circ\)</span>C.</p>
-<p>\begin{figure}
-\begin{center}
-\includegraphics[width=\textwidth]{figures/CESM_fluxes.png}
-\caption{Net incoming shortwave (ASR) and outgoing longwave (OLR) radiative fluxes at the top of the atmosphere}
-\label{fig:CESM_fluxes}
-\end{center}
-\end{figure}</p>
-<p>Figure \ref{fig:CESM_fluxes} shows profiles of the incoming shortwave and outgoing longwave radiative fluxes at the top of the atmosphere. Here, we we assume that the incoming shortwave flux is a function of latitude only. Inspired by Fig.\ \ref{fig:CESM_fluxes}, we could take
-\begin{equation}
-I(y)=C(1+\cos{\frac{2y}{R_e}})+D,
-\end{equation}
-where <span class="math notranslate nohighlight">\(R_e\)</span> is the radius of the Earth and <span class="math notranslate nohighlight">\(Q_{max}\)</span> is the maximum incoming solar radiation (which occurs at the equator (<span class="math notranslate nohighlight">\(y=0\)</span>)). The argument to the <span class="math notranslate nohighlight">\(\cos\)</span> function is set so that this term vanishes at the poles where <span class="math notranslate nohighlight">\(y=\pm \pi R_e/2\)</span>. Based on Figure \ref{fig:CESM_fluxes}, the difference between the incoming shortwave radiation at the equator and poles is about 250 W/m<span class="math notranslate nohighlight">\(^2\)</span>, so we take <span class="math notranslate nohighlight">\(C=125\)</span> W/<span class="math notranslate nohighlight">\(m^2\)</span>. The global average of the incoming shortwave radiation is about 240 W/m<span class="math notranslate nohighlight">\(^2\)</span>, so we take <span class="math notranslate nohighlight">\(D=115\)</span> W/m<span class="math notranslate nohighlight">\(^2\)</span>. Note from comparison with Fig.\ \ref{fig:CESM_fluxes} that this value makes the incoming shorwave radiation too high, but this is needed to yield the correct mean value while accounting for the fact that the equatorial region has a larger surface area per degree latitude than the polar regions. We could also include time-dependence in <span class="math notranslate nohighlight">\(I\)</span> to represent seasons, but here <span class="math notranslate nohighlight">\(I\)</span> instead represents an idealized annual average.</p>
-<p>Recall from the atmospheric chemistry lectures that the outgoing longwave radiation depends on the atmospheric temperature. It is important to account for this if we want to create a model that is capable of capturing climate states that are different to the one that we are currently experiencing. A simple way to represent the temperature dependence on the outgoing longwave radiation is using a linear function:
-\begin{equation}
-O(y,T)=A + B T.
-\end{equation}
-Reasonable values for the constants are <span class="math notranslate nohighlight">\(A=210 \mbox{W}/\mbox{m}^2\)</span> and <span class="math notranslate nohighlight">\(B=2 \mbox{W}/\mbox{m}^2/^\circ \mbox{C}\)</span>.</p>
-<p>Combining these terms, Eq.\ \ref{eq:diffusive_model_form} becomes
-\begin{equation}
-C_a \frac{\partial T}{\partial t} = C(1+\cos{\frac{2y}{R_e}})+(D-A)-BT + C_a \kappa \frac{\partial ^2 T}{\partial y^2}.
-\label{eq:diffusive_model}
-\end{equation}
-We can think of the last term in Eq.\ \ref{eq:diffusive_model} as the divergence of a flux,
-\begin{equation}
-\frac{\partial}{\partial y}\left(\kappa \frac{\partial T}{\partial y}\right),
-\end{equation}
-where the term in parenthesis is the north/south heat flux. An important aspect of the heat flux is that it always transports heat \textit{downgradient} so that heat is transfered from relatively warm regions (i.e. the tropics) towards relatively cool regions (i.e. the poles). Therefore, while the the net radiative heating/cooling acts to warm the equatorial regions and cool the polar regions, the heat flux acts to make the global temperature more uniform. An alternative approach inspired by this idea would be to replace the diffusion term in Eq.\ \ref{eq:diffusive_model} with a term like <span class="math notranslate nohighlight">\(-\gamma (T-\overline{T})\)</span> where <span class="math notranslate nohighlight">\(\overline{T}\)</span> is the global mean temperature. A term of this form (with <span class="math notranslate nohighlight">\(\gamma&gt;0\)</span>) will cause the temperature to `relax’ towards the global mean on a timescale of <span class="math notranslate nohighlight">\(1/\gamma\)</span>.</p>
-<p>Now, let’s consider the possible steady state solutions to Eq.\ \ref{eq:diffusive_model}. Since we are removing the time dependence, the equilibrium temperature, <span class="math notranslate nohighlight">\(T_e\)</span>, depends only on latitude and hence the equation changes from a partial differential equation for <span class="math notranslate nohighlight">\(T(y,t)\)</span> to an ordinary differential equation for <span class="math notranslate nohighlight">\(T_e(y)\)</span>: Eq.<br />
-\ref{eq:diffusive_model_form} becomes
-\begin{equation}
-A(1+\cos{\frac{2y}{R_e}})+(B-C)-DT_e + C_a \kappa \frac{d ^2 T_e}{d y^2}=0.
-\label{eq:equilibrium_temperature_eq}
-\end{equation}
-Since this is a second order ODE, we need two boundary conditions. One choice is to ensure that the heat flux vanishes at the poles which requires that
-\begin{equation}
-\frac{\partial T}{\partial y}= 0, \quad &#64; \quad y=-90^\circ, 90^\circ.
-\end{equation}
-Based on this boundary condition and the form of Eq.\ \ref{eq:equilibrium_temperature_eq}, we might guess that the solution will be of the form
-\begin{equation}
-T_e=\alpha + \beta \cos{\frac{2y}{R_e}}.
-\label{eq:equilibrium_temperature_form}
-\end{equation}
-Notice that this form for <span class="math notranslate nohighlight">\(T_e\)</span> always satsfies our boundary conditions. All that is left is to plug it into Eq.\ \ref{eq:equilibrium_temperature_eq} and find <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>. After re-arranging terms, we have
-\begin{equation}
-(C+D-A-\alpha B) + (C- B\beta - \frac{4}{R_e^2}C_a \kappa \beta)\cos{\frac{2y}{R_e}} = 0.
-\end{equation}
-Since this equation must hold for all values of <span class="math notranslate nohighlight">\(y\)</span> (including <span class="math notranslate nohighlight">\(y=90^\circ\)</span> where <span class="math notranslate nohighlight">\(\cos{y}=0\)</span>), the terms in both sets of parentheses must both vanish. Hence, we find that
-\begin{equation}
-\alpha=\frac{C+D-A}{B}, \quad \mbox{and} \quad \beta = \frac{C}{B+4C_a \kappa/R_e^2}.
-\end{equation}
-From Eq.\ \ref{eq:equilibrium_temperature_form}, we see that the equator to pole temperature difference is proportional to <span class="math notranslate nohighlight">\(\beta\)</span>. When <span class="math notranslate nohighlight">\(\kappa\)</span> increases, <span class="math notranslate nohighlight">\(\beta\)</span> will decrease, consistent with our intuition above that diffusion will tend to make the temperature more uniform.</p>
+<p>Consider the following model for the vertically and longitudinally averaged atmospheric temperature, <span class="math notranslate nohighlight">\(T\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-eq-diffusive-model-form">
+<span class="eqno">(6.17)<a class="headerlink" href="#equation-eq-diffusive-model-form" title="Permalink to this equation">#</a></span>\[C_a\frac{\partial T}{\partial t} = I(y) - O(y,T) + C_a\kappa \frac{\partial^2 T}{\partial y^2}.\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(y\)</span> is the distance (in meters) measured north from the Equator and <span class="math notranslate nohighlight">\(t\)</span> is time<a class="footnote-reference brackets" href="#id2" id="id1">1</a>. This second order partial differential equation is a forced diffusion equation (sometimes called the heat equation). The forcing terms, <span class="math notranslate nohighlight">\(I\)</span> and <span class="math notranslate nohighlight">\(O\)</span> represent the net incoming shortwave and outgoing longwave radiative forcing. The units of <span class="math notranslate nohighlight">\(I\)</span> and <span class="math notranslate nohighlight">\(O\)</span> will be in <span class="math notranslate nohighlight">\(\mbox{W}/\mbox{m}^2\)</span>, and <span class="math notranslate nohighlight">\(C_a\)</span> is the heat capcity of a vertical column of atmosphere. Recall that the heat capacity of air is about 1000 J/kg/<span class="math notranslate nohighlight">\(^\circ\)</span> C and the mass of the atmosphere is about <span class="math notranslate nohighlight">\(10^4\)</span> kg/m<span class="math notranslate nohighlight">\(^2\)</span>. Therefore, <span class="math notranslate nohighlight">\(C_a\simeq 10^7\)</span> J/m<span class="math notranslate nohighlight">\(^2\)</span>/<span class="math notranslate nohighlight">\(^\circ\)</span>C.</p>
+<figure class="margin-caption align-default" id="fig-cesm-fluxes">
+<a class="reference internal image-reference" href="../../_images/CESM_fluxes.png"><img alt="../../_images/CESM_fluxes.png" src="../../_images/CESM_fluxes.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.15 </span><span class="caption-text">Net incoming shortwave (ASR) and outgoing longwave (OLR) radiative fluxes at the top of the atmosphere.</span><a class="headerlink" href="#fig-cesm-fluxes" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Figure <a class="reference internal" href="#fig-cesm-fluxes"><span class="std std-numref">Fig. 6.15</span></a> shows profiles of the incoming shortwave and outgoing longwave radiative fluxes at the top of the atmosphere. Here, we we assume that the incoming shortwave flux is a function of latitude only. Inspired by Fig. <a class="reference internal" href="#fig-cesm-fluxes"><span class="std std-numref">Fig. 6.15</span></a>, we could take</p>
+<div class="math notranslate nohighlight">
+\[I(y)=C(1+\cos{\frac{2y}{R_e}})+D,\]</div>
+<p>where <span class="math notranslate nohighlight">\(R_e\)</span> is the radius of the Earth and <span class="math notranslate nohighlight">\(Q_{max}\)</span> is the maximum incoming solar radiation (which occurs at the equator (<span class="math notranslate nohighlight">\(y=0\)</span>)). The argument to the <span class="math notranslate nohighlight">\(\cos\)</span> function is set so that this term vanishes at the poles where <span class="math notranslate nohighlight">\(y=\pm \pi R_e/2\)</span>. Based on Figure <a class="reference internal" href="#fig-cesm-fluxes"><span class="std std-numref">Fig. 6.15</span></a>, the difference between the incoming shortwave radiation at the equator and poles is about 250 W/m<span class="math notranslate nohighlight">\(^2\)</span>, so we take <span class="math notranslate nohighlight">\(C=125\)</span> W/<span class="math notranslate nohighlight">\(m^2\)</span>. The global average of the incoming shortwave radiation is about 240 W/m<span class="math notranslate nohighlight">\(^2\)</span>, so we take <span class="math notranslate nohighlight">\(D=115\)</span> W/m<span class="math notranslate nohighlight">\(^2\)</span>. Note from comparison with Fig. <a class="reference internal" href="#fig-cesm-fluxes"><span class="std std-numref">Fig. 6.15</span></a> that this value makes the incoming shorwave radiation too high, but this is needed to yield the correct mean value while accounting for the fact that the equatorial region has a larger surface area per degree latitude than the polar regions. We could also include time-dependence in <span class="math notranslate nohighlight">\(I\)</span> to represent seasons, but here <span class="math notranslate nohighlight">\(I\)</span> instead represents an idealized annual average.</p>
+<p>Recall from the atmospheric chemistry lectures that the outgoing longwave radiation depends on the atmospheric temperature. It is important to account for this if we want to create a model that is capable of capturing climate states that are different to the one that we are currently experiencing. A simple way to represent the temperature dependence on the outgoing longwave radiation is using a linear function:</p>
+<div class="math notranslate nohighlight">
+\[O(y,T)=A + B T.\]</div>
+<p>Reasonable values for the constants are <span class="math notranslate nohighlight">\(A=210 \mbox{W}/\mbox{m}^2\)</span> and <span class="math notranslate nohighlight">\(B=2 \mbox{W}/\mbox{m}^2/^\circ \mbox{C}\)</span>.</p>
+<p>Combining these terms, Eq. <a class="reference internal" href="#equation-eq-diffusive-model-form">(6.17)</a> becomes</p>
+<div class="math notranslate nohighlight" id="equation-eq-diffusive-model">
+<span class="eqno">(6.18)<a class="headerlink" href="#equation-eq-diffusive-model" title="Permalink to this equation">#</a></span>\[C_a \frac{\partial T}{\partial t} = C(1+\cos{\frac{2y}{R_e}})+(D-A)-BT + C_a \kappa \frac{\partial ^2 T}{\partial y^2}.\]</div>
+<p>We can think of the last term in Eq. <a class="reference internal" href="#equation-eq-diffusive-model">(6.18)</a> as the divergence of a flux,</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial}{\partial y}\left(\kappa \frac{\partial T}{\partial y}\right),\]</div>
+<p>where the term in parenthesis is the north/south heat flux. An important aspect of the heat flux is that it always transports heat <em>downgradient</em> so that heat is transfered from relatively warm regions (i.e. the tropics) towards relatively cool regions (i.e. the poles). Therefore, while the the net radiative heating/cooling acts to warm the equatorial regions and cool the polar regions, the heat flux acts to make the global temperature more uniform. An alternative approach inspired by this idea would be to replace the diffusion term in Eq. <a class="reference internal" href="#equation-eq-diffusive-model">(6.18)</a> with a term like <span class="math notranslate nohighlight">\(-\gamma (T-\overline{T})\)</span> where <span class="math notranslate nohighlight">\(\overline{T}\)</span> is the global mean temperature. A term of this form (with <span class="math notranslate nohighlight">\(\gamma&gt;0\)</span>) will cause the temperature to `relax’ towards the global mean on a timescale of <span class="math notranslate nohighlight">\(1/\gamma\)</span>.</p>
+<p>Now, let’s consider the possible steady state solutions to Eq. <a class="reference internal" href="#equation-eq-diffusive-model">(6.18)</a>. Since we are removing the time dependence, the equilibrium temperature, <span class="math notranslate nohighlight">\(T_e\)</span>, depends only on latitude and hence the equation changes from a partial differential equation for <span class="math notranslate nohighlight">\(T(y,t)\)</span> to an ordinary differential equation for <span class="math notranslate nohighlight">\(T_e(y)\)</span>: Eq.
+<a class="reference internal" href="#equation-eq-diffusive-model-form">(6.17)</a> becomes</p>
+<div class="math notranslate nohighlight" id="equation-eq-equilibrium-temperature-eq">
+<span class="eqno">(6.19)<a class="headerlink" href="#equation-eq-equilibrium-temperature-eq" title="Permalink to this equation">#</a></span>\[A(1+\cos{\frac{2y}{R_e}})+(B-C)-DT_e + C_a \kappa \frac{d ^2 T_e}{d y^2}=0.\]</div>
+<p>Since this is a second order ODE, we need two boundary conditions. One choice is to ensure that the heat flux vanishes at the poles which requires that</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial T}{\partial y}= 0, \quad &#64; \quad y=-90^\circ, 90^\circ.\]</div>
+<p>Based on this boundary condition and the form of Eq. <a class="reference internal" href="#equation-eq-equilibrium-temperature-eq">(6.19)</a>, we might guess that the solution will be of the form</p>
+<div class="math notranslate nohighlight" id="equation-eq-equilibrium-temperature-form">
+<span class="eqno">(6.20)<a class="headerlink" href="#equation-eq-equilibrium-temperature-form" title="Permalink to this equation">#</a></span>\[T_e=\alpha + \beta \cos{\frac{2y}{R_e}}.\]</div>
+<p>Notice that this form for <span class="math notranslate nohighlight">\(T_e\)</span> always satsfies our boundary conditions. All that is left is to plug it into Eq. <a class="reference internal" href="#equation-eq-equilibrium-temperature-eq">(6.19)</a> and find <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>. After re-arranging terms, we have</p>
+<div class="math notranslate nohighlight">
+\[(C+D-A-\alpha B) + (C- B\beta - \frac{4}{R_e^2}C_a \kappa \beta)\cos{\frac{2y}{R_e}} = 0.\]</div>
+<p>Since this equation must hold for all values of <span class="math notranslate nohighlight">\(y\)</span> (including <span class="math notranslate nohighlight">\(y=90^\circ\)</span> where <span class="math notranslate nohighlight">\(\cos{y}=0\)</span>), the terms in both sets of parentheses must both vanish. Hence, we find that</p>
+<div class="math notranslate nohighlight">
+\[\alpha=\frac{C+D-A}{B}, \quad \mbox{and} \quad \beta = \frac{C}{B+4C_a \kappa/R_e^2}.\]</div>
+<p>From Eq. <a class="reference internal" href="#equation-eq-equilibrium-temperature-form">(6.20)</a>, we see that the equator to pole temperature difference is proportional to <span class="math notranslate nohighlight">\(\beta\)</span>. When <span class="math notranslate nohighlight">\(\kappa\)</span> increases, <span class="math notranslate nohighlight">\(\beta\)</span> will decrease, consistent with our intuition above that diffusion will tend to make the temperature more uniform.</p>
 <p>In order to estimate the equilibrium temperature distribution, we still need to specify the diffusivity, <span class="math notranslate nohighlight">\(\kappa\)</span>, the units of which are L/T<span class="math notranslate nohighlight">\(^2\)</span>. We can estimate <span class="math notranslate nohighlight">\(\kappa\)</span> as the product of characteristic velocity and length scales, <span class="math notranslate nohighlight">\(\kappa=U*L\)</span>. A typical wind speed associated with weather systems in the troposhere is <span class="math notranslate nohighlight">\(U\sim 5\mbox{m}/\mbox{s}\)</span>, while a typical eddy size is <span class="math notranslate nohighlight">\(L\sim 1000\mbox{km}\)</span>. Hence <span class="math notranslate nohighlight">\(\kappa \sim 5\times 10^6 \mbox{m}^2/\mbox{s}\)</span>.</p>
-<p>\begin{figure}
-\begin{center}
-\includegraphics[width=\textwidth]{figures/diffusion_model_temp.png}
-\caption{Equilibrium atmospheric temperature distribution from the diffusive model in Eq.\ \ref{eq:diffusive_model}.}
-\label{fig:diffusion_model_temp}
-\end{center}
-\end{figure}</p>
-<p>From the estimates above, we have <span class="math notranslate nohighlight">\(\alpha\simeq 15^\circ C\)</span> and <span class="math notranslate nohighlight">\(\beta\simeq 18^\circ C\)</span>. Figure \ref{fig:diffusion_model_temp} shows the equilibrium temperature from Eq.\ \ref{eq:equilibrium_temperature_form} with these constants. Comparing this with the Earth’s mean temperature in Fig.\ \ref{fig:equilibrium_temperature}, the diffusive model gives a reasonable equilibrium temperature distribution.</p>
+<figure class="margin-caption align-default" id="fig-diffusion-model-temp">
+<a class="reference internal image-reference" href="../../_images/diffusion_model_temp.png"><img alt="../../_images/diffusion_model_temp.png" src="../../_images/diffusion_model_temp.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.16 </span><span class="caption-text">Equilibrium atmospheric temperature distribution from the diffusive model in Eq. <a class="reference internal" href="#equation-eq-diffusive-model">(6.18)</a>.</span><a class="headerlink" href="#fig-diffusion-model-temp" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From the estimates above, we have <span class="math notranslate nohighlight">\(\alpha\simeq 15^\circ C\)</span> and <span class="math notranslate nohighlight">\(\beta\simeq 18^\circ C\)</span>. Figure <a class="reference internal" href="#fig-diffusion-model-temp"><span class="std std-numref">Fig. 6.16</span></a> shows the equilibrium temperature from Eq. <a class="reference internal" href="#equation-eq-equilibrium-temperature-form">(6.20)</a> with these constants. Comparing this with the Earth’s mean temperature in Fig. <a class="reference internal" href="../l26/l26.html#fig-equilibrium-temperature"><span class="std std-numref">Fig. 6.2</span></a>, the diffusive model gives a reasonable equilibrium temperature distribution.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>To be quantitatively precise, we would normally write this equation in spherical coordinates. This would make the equation more complicated and more difficult to solve, so here we opt for a simpler approximate form.</p>
+</dd>
+</dl>
 </section>
 
     <script type="text/x-thebe-config">
@@ -565,6 +561,20 @@ From Eq.\ \ref{eq:equilibrium_temperature_form}, we see that the equator to pole
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../l29/l29.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">6.4. </span>Structure and mean circulation of the atmosphere</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../reference/glossary.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Glossary</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
