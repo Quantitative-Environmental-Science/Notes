@@ -323,6 +323,26 @@ const thebe_selector_output = ".output, .cell_output"
      6.5. Atmospheric heat transport
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../l31/l31.html">
+     6.6. 2-box model for the global heat distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../l32/l32.html">
+     6.7. Stommel box model for ocean heat transport
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../l33/l33.html">
+     6.8. Shallow wind-forced ocean circulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../l34/l34.html">
+     6.9. Thermohaline Circulation
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -474,14 +494,14 @@ title="Print to PDF"
 <p><span class="caption-number">Fig. 6.1 </span><span class="caption-text">Distribution of incoming and outgoing radiation and their difference (net). From <a class="reference external" href="http://seaos-project.org">seaos-project.org</a></span><a class="headerlink" href="#fig-heat-distribution" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Figure <a class="reference internal" href="#fig-heat-distribution"><span class="std std-numref">Fig. 6.1</span></a> shows the distribution of the incoming and outgoing radiation as a function of latitude, averaged in time and longitude. The net radiation (incoming minus outgoing) is also shown. The incoming radiation exceeds the outgoing radiation by nearly 100 W/m<span class="math notranslate nohighlight">\(^2\)</span> at the equator, with a similar deficit near the poles. However, movement of air and water in the atmosphere and ocean transport heat from the tropics to the poles, compensating for the imbalance in the net radiation.</p>
+<p><a class="reference internal" href="#fig-heat-distribution"><span class="std std-numref">Fig. 6.1</span></a> shows the distribution of the incoming and outgoing radiation as a function of latitude, averaged in time and longitude. The net radiation (incoming minus outgoing) is also shown. The incoming radiation exceeds the outgoing radiation by nearly 100 W/m<span class="math notranslate nohighlight">\(^2\)</span> at the equator, with a similar deficit near the poles. However, movement of air and water in the atmosphere and ocean transport heat from the tropics to the poles, compensating for the imbalance in the net radiation.</p>
 <figure class="margin-caption align-default" id="fig-equilibrium-temperature">
 <a class="reference internal image-reference" href="../../_images/equilibrium_temperature.png"><img alt="../../_images/equilibrium_temperature.png" src="../../_images/equilibrium_temperature.png" style="width: 70%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 6.2 </span><span class="caption-text">Equilibrium surface temperature as a function of sin(latitude) for the Earth and two hypothetical scenarios. From North et al. 1981.</span><a class="headerlink" href="#fig-equilibrium-temperature" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Without any heat transport, the net radiation imbalance would cause the tropics to heat up and the poles to cool down until the earth surface reached a new equilibrium temperature. The hypothetical equilibrium temperature without any heat transport is shown as a function of the sine of latitude in Figure <a class="reference internal" href="#fig-equilibrium-temperature"><span class="std std-numref">Fig. 6.2</span></a>. For comparison, the actual mean Earth temperature is shown as a dotted line. Cambridge sits at about <span class="math notranslate nohighlight">\(\mu=0.79\)</span> where the equilibrium temperature without heat transport would be less than <span class="math notranslate nohighlight">\(-20^\circ\)</span>C! We should be very grateful for atmosphere and ocean dynamics! In the opposite extreme of infinitely fast transport, the earth’s surface would have a uniform temperature which is indicated in the horizontal dashed line.</p>
+<p>Without any heat transport, the net radiation imbalance would cause the tropics to heat up and the poles to cool down until the earth surface reached a new equilibrium temperature. The hypothetical equilibrium temperature without any heat transport is shown as a function of the sine of latitude in <a class="reference internal" href="#fig-equilibrium-temperature"><span class="std std-numref">Fig. 6.2</span></a>. For comparison, the actual mean Earth temperature is shown as a dotted line. Cambridge sits at about <span class="math notranslate nohighlight">\(\mu=0.79\)</span> where the equilibrium temperature without heat transport would be less than <span class="math notranslate nohighlight">\(-20^\circ\)</span>C! We should be very grateful for atmosphere and ocean dynamics! In the opposite extreme of infinitely fast transport, the earth’s surface would have a uniform temperature which is indicated in the horizontal dashed line.</p>
 <figure class="margin-caption align-default" id="fig-mean-atmospheric-temperature">
 <a class="reference internal image-reference" href="../../_images/mean_atmospheric_temperature.png"><img alt="../../_images/mean_atmospheric_temperature.png" src="../../_images/mean_atmospheric_temperature.png" style="width: 90%;" /></a>
 <figcaption>
@@ -494,7 +514,7 @@ title="Print to PDF"
 <p><span class="caption-number">Fig. 6.4 </span><span class="caption-text">North/South section of temperature from the Altantic Ocean in degrees C. From <a class="reference external" href="http://eWOCE.org">eWOCE.org</a></span><a class="headerlink" href="#fig-woce-ocean-temperature" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Figure <a class="reference internal" href="#fig-mean-atmospheric-temperature"><span class="std std-numref">Fig. 6.3</span></a> shows the annually-averaged temperature in the atmosphere, averaged in longitude as a function of latitude and height. Similarly, Figure <a class="reference internal" href="#fig-woce-ocean-temperature"><span class="std std-numref">Fig. 6.4</span></a> shows a section of temperature across the North Atlantic as measured from a ship (note that this is not averaged). As we might expect, the mean temperature is highest in the tropics and near the Earth’s surface in both the atmosphere and ocean.</p>
+<p><a class="reference internal" href="#fig-mean-atmospheric-temperature"><span class="std std-numref">Fig. 6.3</span></a> shows the annually-averaged temperature in the atmosphere, averaged in longitude as a function of latitude and height. Similarly, <a class="reference internal" href="#fig-woce-ocean-temperature"><span class="std std-numref">Fig. 6.4</span></a> shows a section of temperature across the North Atlantic as measured from a ship (note that this is not averaged). As we might expect, the mean temperature is highest in the tropics and near the Earth’s surface in both the atmosphere and ocean.</p>
 <p>There are significant gradients in temperature with latitude and height in both the ocean and atmosphere. At the Earth’s surface the cold air and water near the poles is significantly more dense than the corresponding warm air/water in the tropics. We might wonder what maintains this equilibrium; if the air near the poles is colder and denser than the air elsewhere on the earth’s surface, why doesn’t the cold dense air spread out to lower latitudes? As we will see, large-scale horizontal density gradients in the atmosphere and ocean are balanced by currents of air and water associated with the Coriolis acceleration.</p>
 <figure class="margin-caption align-default" id="fig-heat-transport">
 <a class="reference internal image-reference" href="../../_images/heat_transport.png"><img alt="../../_images/heat_transport.png" src="../../_images/heat_transport.png" style="width: 70%;" /></a>
@@ -502,7 +522,7 @@ title="Print to PDF"
 <p><span class="caption-number">Fig. 6.5 </span><span class="caption-text">North/south advective heat flux with atmospheric and oceanic contributions. From Wunsch 2005.</span><a class="headerlink" href="#fig-heat-transport" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>The imbalance in the net radiation is compensated by a poleward transport of heat due to the movement of air and water - an <em>advective heat flux</em>. Part of the advective heat flux is associated with winds in the atmosphere and part by ocean currents. Figure <a class="reference internal" href="#fig-heat-transport"><span class="std std-numref">Fig. 6.5</span></a> shows the total north/south (or <em>meridional</em>) heat transport and the portion due to motions in the atmosphere and ocean.</p>
+<p>The imbalance in the net radiation is compensated by a poleward transport of heat due to the movement of air and water - an <em>advective heat flux</em>. Part of the advective heat flux is associated with winds in the atmosphere and part by ocean currents. <a class="reference internal" href="#fig-heat-transport"><span class="std std-numref">Fig. 6.5</span></a> shows the total north/south (or <em>meridional</em>) heat transport and the portion due to motions in the atmosphere and ocean.</p>
 <p>The atmosphere transports more heat overall, but the ocean still transports a significant amount of heat, particularly at low latitudes. The two transport mechanisms are coupled - e.g. heat transported by the ocean could be released to the atmosphere which could then provide further poleward heat transport. As we will discuss later, the atmospheric heat transport is largely associated with eddies (e.g. storm systems), while the oceanic heat transport is largely associated with the mean (time-averaged) circulation.</p>
 <p>In addition to its heat transport, the ocean plays a central role in the earth’s climate system by acting as a massive reservoir for heat and carbon. The heat capacity of seawater is about 4000 J/kg/<span class="math notranslate nohighlight">\(^\circ\)</span>C, meaning that it takes this amount of energy to heat 1 kg of seawater by 1<span class="math notranslate nohighlight">\(^\circ\)</span>C. By comparison, the heat capacity of dry air is about 1000 J/kg/<span class="math notranslate nohighlight">\(^\circ\)</span>C. The difference in the <em>volumetric</em> heat capacity is much more dramatic since the density of water is about 1000 times larger than the density of air. The mass of the atmosphere is about <span class="math notranslate nohighlight">\(10^4\)</span> kg/m<span class="math notranslate nohighlight">\(^2\)</span>. Therefore, the upper 2.5m of the ocean has the same heat capacity as the entire atmosphere above it. When we consider that the ocean is several kilometers deep, we see that the heat capacity of the ocean vastly exceeds that of the atmosphere.</p>
 <figure class="margin-caption align-default" id="fig-ipcc-heat-change">
@@ -511,14 +531,14 @@ title="Print to PDF"
 <p><span class="caption-number">Fig. 6.6 </span><span class="caption-text">Change in heat energy contained in various components of the earth system. From Bindoff et al. 2007 and IPCC AR4.</span><a class="headerlink" href="#fig-ipcc-heat-change" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Figure <a class="reference internal" href="#fig-ipcc-heat-change"><span class="std std-numref">Fig. 6.6</span></a> shows the change in heat energy during two periods. While we are all familiar with the warming trend in the atmosphere over this period, the ocean accounts for the vast majority of the increase in heat. This of course does not imply that the other components of the climate system are not important (e.g. melting of ice sheets contributes to sea level rise and melting Arctic sea ice changes the planet’s albedo).</p>
+<p><a class="reference internal" href="#fig-ipcc-heat-change"><span class="std std-numref">Fig. 6.6</span></a> shows the change in heat energy during two periods. While we are all familiar with the warming trend in the atmosphere over this period, the ocean accounts for the vast majority of the increase in heat. This of course does not imply that the other components of the climate system are not important (e.g. melting of ice sheets contributes to sea level rise and melting Arctic sea ice changes the planet’s albedo).</p>
 <figure class="margin-caption align-default" id="fig-carbon-components">
 <a class="reference internal image-reference" href="../../_images/carbon_components.png"><img alt="../../_images/carbon_components.png" src="../../_images/carbon_components.png" style="width: 80%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 6.7 </span><span class="caption-text">Non-geologic carbon reservoirs (boxes) and fluxes (arrows).</span><a class="headerlink" href="#fig-carbon-components" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>The ocean is also the largest non-geological carbon reservoir on the Earth. This is illustrated in Figure <a class="reference internal" href="#fig-carbon-components"><span class="std std-numref">Fig. 6.7</span></a> where the amount of carbon in each component is labelled in Petagrams (1 Pg = <span class="math notranslate nohighlight">\(10^{15}\)</span> grams) and the area of each box is proportional to the amount of carbon. Arrows indicate carbon fluxes which are labelled in Terragrams (1 Tg = <span class="math notranslate nohighlight">\(10^{12}\)</span> grams) of carbon per year. Most of the carbon emitted through the burning of fossil fuels is accumulating in the atmosphere, but some of this human-emitted (<em>anthropogenic</em>) carbon has also been stored on land in vegetation and soils, and in the ocean.</p>
+<p>The ocean is also the largest non-geological carbon reservoir on the Earth. This is illustrated in <a class="reference internal" href="#fig-carbon-components"><span class="std std-numref">Fig. 6.7</span></a> where the amount of carbon in each component is labelled in Petagrams (1 Pg = <span class="math notranslate nohighlight">\(10^{15}\)</span> grams) and the area of each box is proportional to the amount of carbon. Arrows indicate carbon fluxes which are labelled in Terragrams (1 Tg = <span class="math notranslate nohighlight">\(10^{12}\)</span> grams) of carbon per year. Most of the carbon emitted through the burning of fossil fuels is accumulating in the atmosphere, but some of this human-emitted (<em>anthropogenic</em>) carbon has also been stored on land in vegetation and soils, and in the ocean.</p>
 </section>
 
     <script type="text/x-thebe-config">

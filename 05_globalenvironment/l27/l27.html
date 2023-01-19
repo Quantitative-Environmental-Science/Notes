@@ -323,6 +323,26 @@ const thebe_selector_output = ".output, .cell_output"
      6.5. Atmospheric heat transport
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../l31/l31.html">
+     6.6. 2-box model for the global heat distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../l32/l32.html">
+     6.7. Stommel box model for ocean heat transport
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../l33/l33.html">
+     6.8. Shallow wind-forced ocean circulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../l34/l34.html">
+     6.9. Thermohaline Circulation
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -473,7 +493,7 @@ title="Print to PDF"
 <p><span class="caption-number">Fig. 6.8 </span><span class="caption-text">Sketch of rotating and inertial reference frames.</span><a class="headerlink" href="#fig-rotating-ref-frame" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Consider a reference frame rotating about the <span class="math notranslate nohighlight">\(z\)</span> axis with a constant angular velocity, <span class="math notranslate nohighlight">\(\mathbf{\Omega}=\Omega \hat{\mathbf{z}}\)</span>. Here, bold symbols will be used to denote vector quantities. Let subscript <span class="math notranslate nohighlight">\(I\)</span> denote a quantity in an inertial (non-rotating) reference frame, and let subscript <span class="math notranslate nohighlight">\(R\)</span> denote a quantity in the rotating reference frame. Figure <a class="reference internal" href="#fig-rotating-ref-frame"><span class="std std-numref">Fig. 6.8</span></a> illustrates rotating and non-rotating reference frames.</p>
+<p>Consider a reference frame rotating about the <span class="math notranslate nohighlight">\(z\)</span> axis with a constant angular velocity, <span class="math notranslate nohighlight">\(\mathbf{\Omega}=\Omega \hat{\mathbf{z}}\)</span>. Here, bold symbols will be used to denote vector quantities. Let subscript <span class="math notranslate nohighlight">\(I\)</span> denote a quantity in an inertial (non-rotating) reference frame, and let subscript <span class="math notranslate nohighlight">\(R\)</span> denote a quantity in the rotating reference frame. <a class="reference internal" href="#fig-rotating-ref-frame"><span class="std std-numref">Fig. 6.8</span></a> illustrates rotating and non-rotating reference frames.</p>
 <p>A point that is stationary in the rotating reference frame will move in the inertial reference frame with a velocity <span class="math notranslate nohighlight">\(\mathbf{\Omega} \times \mathbf{x}\)</span>, where <span class="math notranslate nohighlight">\(\times\)</span> denotes the vector (or cross) product. Therefore, for a point with position vector <span class="math notranslate nohighlight">\(\mathbf{x}_R\)</span> that is <em>moving</em> with a velocity <span class="math notranslate nohighlight">\(\mathbf{u}_R\)</span> in the rotating reference frame, its velocity in the inertial reference frame will be :</p>
 <div class="math notranslate nohighlight" id="equation-eq-velocity-rotating-ref-frame">
 <span class="eqno">(6.1)<a class="headerlink" href="#equation-eq-velocity-rotating-ref-frame" title="Permalink to this equation">#</a></span>\[\mathbf{u}_I=\mathbf{u}_R + \mathbf{\Omega} \times \mathbf{x},\]</div>
@@ -504,7 +524,7 @@ We can write the equivalent equation in a <em>rotating</em> reference frame usin
 <p><span class="caption-number">Fig. 6.9 </span><span class="caption-text">Sketch of a local Cartesian coordinate system</span><a class="headerlink" href="#fig-local-cartesian" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Since writing equations in geopotential coordinates is cumbersome, when studying motion that is small compared to the radius of the Earth, it is convenient (and common) to define local Cartesian coordinates where <span class="math notranslate nohighlight">\(z\)</span> points in the local vertical direction, <span class="math notranslate nohighlight">\(y\)</span> points to the north, and <span class="math notranslate nohighlight">\(x\)</span> points to the east. The local Cartesian coordinate system for a latitude <span class="math notranslate nohighlight">\(\theta\)</span> is sketched in Figure <a class="reference internal" href="#fig-local-cartesian"><span class="std std-numref">Fig. 6.9</span></a>. In the local Cartesian coordinate system defined at a latitude <span class="math notranslate nohighlight">\(\theta\)</span>, the angular velocity points inthe <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span> directions with <span class="math notranslate nohighlight">\((x,y,z)\)</span> components</p>
+<p>Since writing equations in geopotential coordinates is cumbersome, when studying motion that is small compared to the radius of the Earth, it is convenient (and common) to define local Cartesian coordinates where <span class="math notranslate nohighlight">\(z\)</span> points in the local vertical direction, <span class="math notranslate nohighlight">\(y\)</span> points to the north, and <span class="math notranslate nohighlight">\(x\)</span> points to the east. The local Cartesian coordinate system for a latitude <span class="math notranslate nohighlight">\(\theta\)</span> is sketched in <a class="reference internal" href="#fig-local-cartesian"><span class="std std-numref">Fig. 6.9</span></a>. In the local Cartesian coordinate system defined at a latitude <span class="math notranslate nohighlight">\(\theta\)</span>, the angular velocity points inthe <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span> directions with <span class="math notranslate nohighlight">\((x,y,z)\)</span> components</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{\Omega} = (0, \Omega \cos{\theta}, \Omega \sin{\theta}).\]</div>
 <p>If we let <span class="math notranslate nohighlight">\(\mathbf{u}=(u,v,w)\)</span> be the fluid velocity in Cartesian components, then the Coriolis acceleration can be written</p>

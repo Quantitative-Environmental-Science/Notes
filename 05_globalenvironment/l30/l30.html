@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="7. Glossary" href="../../reference/glossary.html" />
+    <link rel="next" title="6.6. 2-box model for the global heat distribution" href="../l31/l31.html" />
     <link rel="prev" title="6.4. Structure and mean circulation of the atmosphere" href="../l29/l29.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
@@ -323,6 +323,26 @@ const thebe_selector_output = ".output, .cell_output"
      6.5. Atmospheric heat transport
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../l31/l31.html">
+     6.6. 2-box model for the global heat distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../l32/l32.html">
+     6.7. Stommel box model for ocean heat transport
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../l33/l33.html">
+     6.8. Shallow wind-forced ocean circulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../l34/l34.html">
+     6.9. Thermohaline Circulation
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -474,7 +494,7 @@ title="Print to PDF"
 <p><span class="caption-number">Fig. 6.14 </span><span class="caption-text">Trajectories of dust particles originating in western China (Cottle et al. 2013).</span><a class="headerlink" href="#fig-lagrangian-trajectories" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>As air parcels are transported by meandering jets and eddies, they trace out chaotic trajectories. For example, Figure <a class="reference internal" href="#fig-lagrangian-trajectories"><span class="std std-numref">Fig. 6.14</span></a> shows trajectories of small dust particles from a source in western China, inferred from a forecast model. Notice how the collection of particles spreads out as they travel to the east. This process is important for dispersing dust, aerosols, and pollutants.</p>
+<p>As air parcels are transported by meandering jets and eddies, they trace out chaotic trajectories. For example, <a class="reference internal" href="#fig-lagrangian-trajectories"><span class="std std-numref">Fig. 6.14</span></a> shows trajectories of small dust particles from a source in western China, inferred from a forecast model. Notice how the collection of particles spreads out as they travel to the east. This process is important for dispersing dust, aerosols, and pollutants.</p>
 <p>The chaotic motion induced by transient eddies also transports heat. The motion of individual air parcels due to eddying motion is akin to a random walk. When an air parcel encounters an eddy, it might be advected to the north or to the south with some probability. Taking the analogy one step further, the collective effect of eddying motions on the concentration of a scalar field can be modelled using a diffusion equation.</p>
 <p>Consider the following model for the vertically and longitudinally averaged atmospheric temperature, <span class="math notranslate nohighlight">\(T\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-eq-diffusive-model-form">
@@ -486,10 +506,10 @@ title="Print to PDF"
 <p><span class="caption-number">Fig. 6.15 </span><span class="caption-text">Net incoming shortwave (ASR) and outgoing longwave (OLR) radiative fluxes at the top of the atmosphere.</span><a class="headerlink" href="#fig-cesm-fluxes" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Figure <a class="reference internal" href="#fig-cesm-fluxes"><span class="std std-numref">Fig. 6.15</span></a> shows profiles of the incoming shortwave and outgoing longwave radiative fluxes at the top of the atmosphere. Here, we we assume that the incoming shortwave flux is a function of latitude only. Inspired by Fig. <a class="reference internal" href="#fig-cesm-fluxes"><span class="std std-numref">Fig. 6.15</span></a>, we could take</p>
+<p><a class="reference internal" href="#fig-cesm-fluxes"><span class="std std-numref">Fig. 6.15</span></a> shows profiles of the incoming shortwave and outgoing longwave radiative fluxes at the top of the atmosphere. Here, we we assume that the incoming shortwave flux is a function of latitude only. Inspired by Fig. <a class="reference internal" href="#fig-cesm-fluxes"><span class="std std-numref">Fig. 6.15</span></a>, we could take</p>
 <div class="math notranslate nohighlight">
 \[I(y)=C(1+\cos{\frac{2y}{R_e}})+D,\]</div>
-<p>where <span class="math notranslate nohighlight">\(R_e\)</span> is the radius of the Earth and <span class="math notranslate nohighlight">\(Q_{max}\)</span> is the maximum incoming solar radiation (which occurs at the equator (<span class="math notranslate nohighlight">\(y=0\)</span>)). The argument to the <span class="math notranslate nohighlight">\(\cos\)</span> function is set so that this term vanishes at the poles where <span class="math notranslate nohighlight">\(y=\pm \pi R_e/2\)</span>. Based on Figure <a class="reference internal" href="#fig-cesm-fluxes"><span class="std std-numref">Fig. 6.15</span></a>, the difference between the incoming shortwave radiation at the equator and poles is about 250 W/m<span class="math notranslate nohighlight">\(^2\)</span>, so we take <span class="math notranslate nohighlight">\(C=125\)</span> W/<span class="math notranslate nohighlight">\(m^2\)</span>. The global average of the incoming shortwave radiation is about 240 W/m<span class="math notranslate nohighlight">\(^2\)</span>, so we take <span class="math notranslate nohighlight">\(D=115\)</span> W/m<span class="math notranslate nohighlight">\(^2\)</span>. Note from comparison with Fig. <a class="reference internal" href="#fig-cesm-fluxes"><span class="std std-numref">Fig. 6.15</span></a> that this value makes the incoming shorwave radiation too high, but this is needed to yield the correct mean value while accounting for the fact that the equatorial region has a larger surface area per degree latitude than the polar regions. We could also include time-dependence in <span class="math notranslate nohighlight">\(I\)</span> to represent seasons, but here <span class="math notranslate nohighlight">\(I\)</span> instead represents an idealized annual average.</p>
+<p>where <span class="math notranslate nohighlight">\(R_e\)</span> is the radius of the Earth and <span class="math notranslate nohighlight">\(Q_{max}\)</span> is the maximum incoming solar radiation (which occurs at the equator (<span class="math notranslate nohighlight">\(y=0\)</span>)). The argument to the <span class="math notranslate nohighlight">\(\cos\)</span> function is set so that this term vanishes at the poles where <span class="math notranslate nohighlight">\(y=\pm \pi R_e/2\)</span>. Based on <a class="reference internal" href="#fig-cesm-fluxes"><span class="std std-numref">Fig. 6.15</span></a>, the difference between the incoming shortwave radiation at the equator and poles is about 250 W/m<span class="math notranslate nohighlight">\(^2\)</span>, so we take <span class="math notranslate nohighlight">\(C=125\)</span> W/<span class="math notranslate nohighlight">\(m^2\)</span>. The global average of the incoming shortwave radiation is about 240 W/m<span class="math notranslate nohighlight">\(^2\)</span>, so we take <span class="math notranslate nohighlight">\(D=115\)</span> W/m<span class="math notranslate nohighlight">\(^2\)</span>. Note from comparison with Fig. <a class="reference internal" href="#fig-cesm-fluxes"><span class="std std-numref">Fig. 6.15</span></a> that this value makes the incoming shorwave radiation too high, but this is needed to yield the correct mean value while accounting for the fact that the equatorial region has a larger surface area per degree latitude than the polar regions. We could also include time-dependence in <span class="math notranslate nohighlight">\(I\)</span> to represent seasons, but here <span class="math notranslate nohighlight">\(I\)</span> instead represents an idealized annual average.</p>
 <p>Recall from the atmospheric chemistry lectures that the outgoing longwave radiation depends on the atmospheric temperature. It is important to account for this if we want to create a model that is capable of capturing climate states that are different to the one that we are currently experiencing. A simple way to represent the temperature dependence on the outgoing longwave radiation is using a linear function:</p>
 <div class="math notranslate nohighlight">
 \[O(y,T)=A + B T.\]</div>
@@ -525,7 +545,7 @@ title="Print to PDF"
 <p><span class="caption-number">Fig. 6.16 </span><span class="caption-text">Equilibrium atmospheric temperature distribution from the diffusive model in Eq. <a class="reference internal" href="#equation-eq-diffusive-model">(6.18)</a>.</span><a class="headerlink" href="#fig-diffusion-model-temp" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>From the estimates above, we have <span class="math notranslate nohighlight">\(\alpha\simeq 15^\circ C\)</span> and <span class="math notranslate nohighlight">\(\beta\simeq 18^\circ C\)</span>. Figure <a class="reference internal" href="#fig-diffusion-model-temp"><span class="std std-numref">Fig. 6.16</span></a> shows the equilibrium temperature from Eq. <a class="reference internal" href="#equation-eq-equilibrium-temperature-form">(6.20)</a> with these constants. Comparing this with the Earth’s mean temperature in Fig. <a class="reference internal" href="../l26/l26.html#fig-equilibrium-temperature"><span class="std std-numref">Fig. 6.2</span></a>, the diffusive model gives a reasonable equilibrium temperature distribution.</p>
+<p>From the estimates above, we have <span class="math notranslate nohighlight">\(\alpha\simeq 15^\circ C\)</span> and <span class="math notranslate nohighlight">\(\beta\simeq 18^\circ C\)</span>. <a class="reference internal" href="#fig-diffusion-model-temp"><span class="std std-numref">Fig. 6.16</span></a> shows the equilibrium temperature from Eq. <a class="reference internal" href="#equation-eq-equilibrium-temperature-form">(6.20)</a> with these constants. Comparing this with the Earth’s mean temperature in Fig. <a class="reference internal" href="../l26/l26.html#fig-equilibrium-temperature"><span class="std std-numref">Fig. 6.2</span></a>, the diffusive model gives a reasonable equilibrium temperature distribution.</p>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
@@ -568,10 +588,10 @@ title="Print to PDF"
             <p class="prev-next-title"><span class="section-number">6.4. </span>Structure and mean circulation of the atmosphere</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../../reference/glossary.html" title="next page">
+    <a class='right-next' id="next-link" href="../l31/l31.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>Glossary</p>
+        <p class="prev-next-title"><span class="section-number">6.6. </span>2-box model for the global heat distribution</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

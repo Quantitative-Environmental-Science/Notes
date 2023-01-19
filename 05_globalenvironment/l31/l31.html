@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2-box model for the global heat distribution</title>
+    <title>6.6. 2-box model for the global heat distribution</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -56,6 +56,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="6.7. Stommel box model for ocean heat transport" href="../l32/l32.html" />
+    <link rel="prev" title="6.5. Atmospheric heat transport" href="../l30/l30.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -105,7 +107,7 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../00_intro/intro/intro.html">
    1. Introduction
@@ -286,16 +288,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../intro/intro.html">
    6. Global Environment
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="../l26/l26.html">
      6.1. Introduction
@@ -319,6 +321,26 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../l30/l30.html">
      6.5. Atmospheric heat transport
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     6.6. 2-box model for the global heat distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../l32/l32.html">
+     6.7. Stommel box model for ocean heat transport
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../l33/l33.html">
+     6.8. Shallow wind-forced ocean circulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../l34/l34.html">
+     6.9. Thermohaline Circulation
     </a>
    </li>
   </ul>
@@ -463,101 +485,81 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="box-model-for-the-global-heat-distribution">
-<span id="lecture-31"></span><h1>2-box model for the global heat distribution<a class="headerlink" href="#box-model-for-the-global-heat-distribution" title="Permalink to this headline">#</a></h1>
-<p>In the previous section, we proposed a model for heat transport in the atmosphere using a one-dimensional diffusion equation. Another approach is to model the average temperature of tropical and polar regions using a \textit{box model}. This approach is particularly useful when studying climates where relatively little is known about the dynamics (e.g. paleoclimate or exoplanets). During the practical projects this term, we will be developing a climate model based on box models for the atmosphere and ocean, including both heat and carbon. This lecture also serves as an introduction to the first practical project.</p>
-<p>\begin{figure}
-\begin{center}
-\includegraphics[width=0.75\textwidth]{figures/lorenz_sketch.png}
-\caption{Sketch of a 2-component box model for heat transport.}
-\label{fig:lorenz_sketch}
-\end{center}
-\end{figure}</p>
-<p>The box model that we will use is sketched in Figure \ref{fig:lorenz_sketch}. We have two boxes - box <code class="docutils literal notranslate"><span class="pre">l&quot;</span> <span class="pre">represents</span> <span class="pre">the</span> <span class="pre">low</span> <span class="pre">latitude</span> <span class="pre">(tropical)</span> <span class="pre">regions</span> <span class="pre">and</span> <span class="pre">box</span> </code>h” represents high latitudes. We assume symmetry about the equator so that the high latitude box represents the combined northern and southern high latitudes. To account for this, the flux of heat from low latitudes to high latitudes, <span class="math notranslate nohighlight">\(F\)</span>, is twice what it would be for a single hemisphere. It would be relatively straightforward to use three boxes to represent southern and northern high latitudes in addition to the low latitude box. Indeed, one of the advantages of box models is that they are flexible and can easily be expanded.</p>
+<span id="lecture-31"></span><h1><span class="section-number">6.6. </span>2-box model for the global heat distribution<a class="headerlink" href="#box-model-for-the-global-heat-distribution" title="Permalink to this headline">#</a></h1>
+<p>In the previous section, we proposed a model for heat transport in the atmosphere using a one-dimensional diffusion equation. Another approach is to model the average temperature of tropical and polar regions using a <em>box model</em>. This approach is particularly useful when studying climates where relatively little is known about the dynamics (e.g. paleoclimate or exoplanets). During the practical projects this term, we will be developing a climate model based on box models for the atmosphere and ocean, including both heat and carbon. This lecture also serves as an introduction to the first practical project.</p>
+<figure class="margin-caption align-default" id="fig-lorenz-sketch">
+<a class="reference internal image-reference" href="../../_images/lorenz_sketch.png"><img alt="../../_images/lorenz_sketch.png" src="../../_images/lorenz_sketch.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.17 </span><span class="caption-text">Sketch of a 2-component box model for heat transport.</span><a class="headerlink" href="#fig-lorenz-sketch" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The box model that we will use is sketched in <a class="reference internal" href="#fig-lorenz-sketch"><span class="std std-numref">Fig. 6.17</span></a>. We have two boxes - box “l” represents the low latitude (tropical) regions and box “h” represents high latitudes. We assume symmetry about the equator so that the high latitude box represents the combined northern and southern high latitudes. To account for this, the flux of heat from low latitudes to high latitudes, <span class="math notranslate nohighlight">\(F\)</span>, is twice what it would be for a single hemisphere. It would be relatively straightforward to use three boxes to represent southern and northern high latitudes in addition to the low latitude box. Indeed, one of the advantages of box models is that they are flexible and can easily be expanded.</p>
 <p>Although the exact latitude separating the two boxes is arbitrary, it is common to take it to be about 30<span class="math notranslate nohighlight">\(^\circ\)</span> so that the surface area of the low latitude box and the combined surface area of the high latitudes in the high latitude box are approximately equal. This allows us to use the same heat capacity in each box which keeps things a bit simpler.</p>
-<p>The rate of change in the heat content in each box is simply the sum of the incoming and outgoing heat fluxes for that box:
-\begin{center}
-\begin{align}
-C_a \frac{\partial T_l}{\partial t} &amp;= I_l - O_l - F,\
-C_a \frac{\partial T_h}{\partial t} &amp;= I_h - O_h + F.
-\end{align}
-\end{center}</p>
-<p>As before, the incoming shortwave radiation is represented by <span class="math notranslate nohighlight">\(I\)</span> and the emitted longwave radiation is represented by <span class="math notranslate nohighlight">\(O\)</span>. Subscripts are used to indicate the box where the exchange occurs. As before, the incoming shortwave radiation will be prescribed, but now <span class="math notranslate nohighlight">\(I_l\)</span> and <span class="math notranslate nohighlight">\(I_h\)</span> are simply constants. We will use the same form for the emitted radiation, namely
-\begin{equation}
-O_i=A+BT_i,
-\end{equation}
-where <span class="math notranslate nohighlight">\(i=l,h\)</span> and <span class="math notranslate nohighlight">\(T_i\)</span> is the mean temperature in the corresponding box, e.g.\ <span class="math notranslate nohighlight">\(T_l\)</span> represents the mean temperature in the low latitude box.</p>
+<p>The rate of change in the heat content in each box is simply the sum of the incoming and outgoing heat fluxes for that box:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}C_a \frac{\partial T_l}{\partial t} &amp;= I_l - O_l - F,\\
+C_a \frac{\partial T_h}{\partial t} &amp;= I_h - O_h + F.\end{split}\]</div>
+<p>As before, the incoming shortwave radiation is represented by <span class="math notranslate nohighlight">\(I\)</span> and the emitted longwave radiation is represented by <span class="math notranslate nohighlight">\(O\)</span>. Subscripts are used to indicate the box where the exchange occurs. As before, the incoming shortwave radiation will be prescribed, but now <span class="math notranslate nohighlight">\(I_l\)</span> and <span class="math notranslate nohighlight">\(I_h\)</span> are simply constants. We will use the same form for the emitted radiation, namely</p>
+<div class="math notranslate nohighlight">
+\[O_i=A+BT_i,\]</div>
+<p>where <span class="math notranslate nohighlight">\(i=l,h\)</span> and <span class="math notranslate nohighlight">\(T_i\)</span> is the mean temperature in the corresponding box, e.g. <span class="math notranslate nohighlight">\(T_l\)</span> represents the mean temperature in the low latitude box.</p>
 <p>We assume that the heat flux, <span class="math notranslate nohighlight">\(F\)</span>, is proportional to the difference between the temperatures in the low latitude and high latitude boxes. We will let <span class="math notranslate nohighlight">\(D\)</span> be the coefficient of proportionality and as noted above, we need to multiply by a factor of two to account for the heat flux going south and north from the low latitude box. Hence we take <span class="math notranslate nohighlight">\(F=2D\Delta T\)</span>, where <span class="math notranslate nohighlight">\(\Delta T=T_l-T_h\)</span>.</p>
-<p>Using these forms for <span class="math notranslate nohighlight">\(O\)</span>, and <span class="math notranslate nohighlight">\(F\)</span>, we have
-\begin{center}
-\begin{align}
-C_a \frac{\partial T_l}{\partial t} &amp;= I_l - A - BT_l - 2D\Delta T, \label{eq:lorenz1}\
-C_a \frac{\partial T_h}{\partial t} &amp;= I_h - A - B_T_h + 2D\Delta T.\label{eq:lorenz2}
-\end{align}
-\end{center}
-This represents a system of coupled first order ordinary differential equations. In the first practical project, you will timestep these equations numerically.</p>
-<p>Here, we are primarily interested in the equilibrium temperature difference, <span class="math notranslate nohighlight">\(\Delta T\)</span>, implied by the model. Steady state solutions require that the LHS of Eq.\ \ref{eq:lorenz1} and \ref{eq:lorenz2} are zero. If we then subtract Eq.\ \ref{eq:lorenz2} from Eq.\ \ref{eq:lorenz1}, we obtain
-\begin{equation}
-I_l-I_h - B \Delta T - 4D\Delta T = 0,
-\end{equation}
-and hence the equilibrium temperature difference is
-\begin{equation}
-\Delta T = \frac{I_l-I_h}{4D + B}.
-\label{eq:lorenz_delta_t}
-\end{equation}</p>
-<p>Adding Eq.\ \ref{eq:lorenz2} to Eq.\ \ref{eq:lorenz1}, we obtain
-\begin{equation}
-T_l + T_h = (I_l+I_h)/B - 2A .
-\end{equation}
-Then combining with the expression for <span class="math notranslate nohighlight">\(\Delta T\)</span> (\ref{eq:lorenz_delta_t}) we obtain
-\begin{align}
-T_l = \frac{1}{2} I_l { \frac{1}{B} + \frac{1}{B+4D} } +
-\frac{1}{2} I_h { \frac{1}{B} - \frac{1}{B+4D} } - A  \
-T_h = \frac{1}{2} I_h { \frac{1}{B} + \frac{1}{B+4D} } +
-\frac{1}{2} I_l { \frac{1}{B} - \frac{1}{B+4D} } -A .
-\end{align}
-Note that each of <span class="math notranslate nohighlight">\(T_h\)</span> and <span class="math notranslate nohighlight">\(T_l\)</span> is determined by a weighted average of <span class="math notranslate nohighlight">\(I_h\)</span> and <span class="math notranslate nohighlight">\(I_l\)</span>.</p>
-<p>Our last task is to estimate <span class="math notranslate nohighlight">\(D\)</span>. First, let’s do this using our estimate for the diffusive heat flux from the last section. Notice that the units of <span class="math notranslate nohighlight">\(D\)</span> are W/m<span class="math notranslate nohighlight">\(^2\)</span>/<span class="math notranslate nohighlight">\(^\circ\)</span>C so that the units of <span class="math notranslate nohighlight">\(DT\)</span> match <span class="math notranslate nohighlight">\(I\)</span> and <span class="math notranslate nohighlight">\(E\)</span>. The form of the diffusive heat flux that we used in the last section is
-\begin{equation}
-C_a \kappa \frac{\partial T}{\partial y},
-\end{equation}
-and the units of this are W/m (check this yourself!). Recall that at a state of equilibrium, the diffusive heat flux across a given latitude is equal to the integral of the incoming and outgoing heat fluxes from the equator to that latitude. Therefore, to get a heat flux in units of W/m<span class="math notranslate nohighlight">\(^2\)</span>, we need to divide by the approximate north/south width of each box, say <span class="math notranslate nohighlight">\(\pi R_e/2\)</span>. Let’s further approximate <span class="math notranslate nohighlight">\(\partial T/\partial y\)</span> with <span class="math notranslate nohighlight">\(\Delta T/(\pi R_e/2)\)</span>. Then we can equate the flux in the box model with the approximate diffusive flux:
-\begin{equation}
-2D\Delta T \simeq \frac{4 C_a \kappa \Delta T}{\pi^2 R_e^2}.
-\end{equation}
-This gives us the following estimate for <span class="math notranslate nohighlight">\(D\)</span>:
-\begin{equation}
-D\simeq \frac{2 C_a \kappa}{\pi^2 R_e^2} \simeq 0.25 \mbox{W}/\mbox{m}^2/^\circ C,
-\end{equation}
-using <span class="math notranslate nohighlight">\(\kappa = 5 \times 10^{6} \mbox{m}^2/\mbox{s}\)</span>.</p>
-<p>Based on Figure \ref{fig:CESM_fluxes} (with the low latitude box representing the range from <span class="math notranslate nohighlight">\(-30^\circ\)</span>S to <span class="math notranslate nohighlight">\(30^\circ\)</span>N, we might take <span class="math notranslate nohighlight">\(I_l=280\)</span>W/m<span class="math notranslate nohighlight">\(^2\)</span> and <span class="math notranslate nohighlight">\(I_h=160\)</span>W/m<span class="math notranslate nohighlight">\(^2\)</span>. With <span class="math notranslate nohighlight">\(B=2\)</span>W/m<span class="math notranslate nohighlight">\(^2\)</span>/<span class="math notranslate nohighlight">\(^\circ\)</span>C as before, we estimate from Eq.\ \ref{eq:lorenz_delta_t} that the difference between the low latitude and high latitude temperatures is <span class="math notranslate nohighlight">\(\Delta T \simeq 40^\circ \mbox{C}\)</span>. This is comparable to the pole to equator temperature difference and is certainly reasonable given the degree of approximations involved in this model.</p>
-<p>The 2-box model can be used to illustrate interesting aspects of the climate of the Earth (and of other planets). We consider the example of the {\em ice-albedo} effect. As the climate warms, ice melts from the polar regions and mountains. Since ice is very reflective, less ice means that less radiation is reflected from the earth and hence the earth absorbs more solar radiation. This creates a \textit{feedback} where the earth will warm faster. A similar feedback occurs as the planet cools (e.g.\ heading into an ice age).</p>
+<p>Using these forms for <span class="math notranslate nohighlight">\(O\)</span>, and <span class="math notranslate nohighlight">\(F\)</span>, we have</p>
+<div class="math notranslate nohighlight" id="equation-eq-lorenz1">
+<span class="eqno">(6.21)<a class="headerlink" href="#equation-eq-lorenz1" title="Permalink to this equation">#</a></span>\[C_a \frac{\partial T_l}{\partial t} = I_l - A - BT_l - 2D \Delta T\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-lorenz2">
+<span class="eqno">(6.22)<a class="headerlink" href="#equation-eq-lorenz2" title="Permalink to this equation">#</a></span>\[C_a \frac{\partial T_h}{\partial t} = I_h - A - BT_h + 2D \Delta T\]</div>
+<p>This represents a system of coupled first order ordinary differential equations. In the first practical project, you will timestep these equations numerically.</p>
+<p>Here, we are primarily interested in the equilibrium temperature difference, <span class="math notranslate nohighlight">\(\Delta T\)</span>, implied by the model. Steady state solutions require that the LHS of Eq. <a class="reference internal" href="#equation-eq-lorenz1">(6.21)</a> and <a class="reference internal" href="#equation-eq-lorenz2">(6.22)</a> are zero. If we then subtract Eq. <a class="reference internal" href="#equation-eq-lorenz2">(6.22)</a> from Eq. <a class="reference internal" href="#equation-eq-lorenz1">(6.21)</a>, we obtain</p>
+<div class="math notranslate nohighlight">
+\[I_l-I_h - B \Delta T - 4D\Delta T = 0,\]</div>
+<p>and hence the equilibrium temperature difference is</p>
+<div class="math notranslate nohighlight" id="equation-eq-lorenz-delta-t">
+<span class="eqno">(6.23)<a class="headerlink" href="#equation-eq-lorenz-delta-t" title="Permalink to this equation">#</a></span>\[\Delta T = \frac{I_l-I_h}{4D + B}.\]</div>
+<p>Adding Eq. <a class="reference internal" href="#equation-eq-lorenz2">(6.22)</a> to Eq. <a class="reference internal" href="#equation-eq-lorenz1">(6.21)</a>, we obtain</p>
+<div class="math notranslate nohighlight">
+\[T_l + T_h = (I_l+I_h)/B - 2A .\]</div>
+<p>Then combining with the expression for <span class="math notranslate nohighlight">\(\Delta T\)</span> (<a class="reference internal" href="#equation-eq-lorenz-delta-t">(6.23)</a>) we obtain</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}T_l = \frac{1}{2} I_l \{ \frac{1}{B} + \frac{1}{B+4D} \} + 
+\frac{1}{2} I_h \{ \frac{1}{B} - \frac{1}{B+4D} \} - A  \\
+T_h = \frac{1}{2} I_h \{ \frac{1}{B} + \frac{1}{B+4D} \} + 
+\frac{1}{2} I_l \{ \frac{1}{B} - \frac{1}{B+4D} \} -A .\end{split}\]</div>
+<p>Note that each of <span class="math notranslate nohighlight">\(T_h\)</span> and <span class="math notranslate nohighlight">\(T_l\)</span> is determined by a weighted average of <span class="math notranslate nohighlight">\(I_h\)</span> and <span class="math notranslate nohighlight">\(I_l\)</span>.</p>
+<p>Our last task is to estimate <span class="math notranslate nohighlight">\(D\)</span>. First, let’s do this using our estimate for the diffusive heat flux from the last section. Notice that the units of <span class="math notranslate nohighlight">\(D\)</span> are W/m<span class="math notranslate nohighlight">\(^2\)</span>/<span class="math notranslate nohighlight">\(^\circ\)</span>C so that the units of <span class="math notranslate nohighlight">\(DT\)</span> match <span class="math notranslate nohighlight">\(I\)</span> and <span class="math notranslate nohighlight">\(E\)</span>. The form of the diffusive heat flux that we used in the last section is</p>
+<div class="math notranslate nohighlight">
+\[C_a \kappa \frac{\partial T}{\partial y},\]</div>
+<p>and the units of this are W/m (check this yourself!). Recall that at a state of equilibrium, the diffusive heat flux across a given latitude is equal to the integral of the incoming and outgoing heat fluxes from the equator to that latitude. Therefore, to get a heat flux in units of W/m<span class="math notranslate nohighlight">\(^2\)</span>, we need to divide by the approximate north/south width of each box, say <span class="math notranslate nohighlight">\(\pi R_e/2\)</span>. Let’s further approximate <span class="math notranslate nohighlight">\(\partial T/\partial y\)</span> with <span class="math notranslate nohighlight">\(\Delta T/(\pi R_e/2)\)</span>. Then we can equate the flux in the box model with the approximate diffusive flux:</p>
+<div class="math notranslate nohighlight">
+\[2D\Delta T \simeq \frac{4 C_a \kappa \Delta T}{\pi^2 R_e^2}.\]</div>
+<p>This gives us the following estimate for <span class="math notranslate nohighlight">\(D\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[D\simeq \frac{2 C_a \kappa}{\pi^2 R_e^2} \simeq 0.25 \mbox{W}/\mbox{m}^2/^\circ C,\]</div>
+<p>using <span class="math notranslate nohighlight">\(\kappa = 5 \times 10^{6} \mbox{m}^2/\mbox{s}\)</span>.</p>
+<p>Based on <a class="reference internal" href="../l30/l30.html#fig-cesm-fluxes"><span class="std std-numref">Fig. 6.15</span></a> (with the low latitude box representing the range from <span class="math notranslate nohighlight">\(-30^\circ\)</span>S to <span class="math notranslate nohighlight">\(30^\circ\)</span>N, we might take <span class="math notranslate nohighlight">\(I_l=280\)</span>W/m<span class="math notranslate nohighlight">\(^2\)</span> and <span class="math notranslate nohighlight">\(I_h=160\)</span>W/m<span class="math notranslate nohighlight">\(^2\)</span>. With <span class="math notranslate nohighlight">\(B=2\)</span>W/m<span class="math notranslate nohighlight">\(^2\)</span>/<span class="math notranslate nohighlight">\(^\circ\)</span>C as before, we estimate from Eq. <a class="reference internal" href="#equation-eq-lorenz-delta-t">(6.23)</a> that the difference between the low latitude and high latitude temperatures is <span class="math notranslate nohighlight">\(\Delta T \simeq 40^\circ \mbox{C}\)</span>. This is comparable to the pole to equator temperature difference and is certainly reasonable given the degree of approximations involved in this model.</p>
+<p>The 2-box model can be used to illustrate interesting aspects of the climate of the Earth (and of other planets). We consider the example of the <em>ice-albedo</em> effect. As the climate warms, ice melts from the polar regions and mountains. Since ice is very reflective, less ice means that less radiation is reflected from the earth and hence the earth absorbs more solar radiation. This creates a <em>feedback</em> where the earth will warm faster. A similar feedback occurs as the planet cools (e.g. heading into an ice age).</p>
 <p>The net incoming SW radiation is the difference between the incident radiation and the fraction reflected directly back to space. For the Earth’s atmosphere some radiation is reflected by clouds and aerosols and some by the surface. We focus on the latter.</p>
-<p>The {\em albedo} is the fraction of incident SW radiation reflected by the surface. The value of the albedo depends on different characteristics of the surface, e.g.\ the presence or absence of vegetation. A very important depdendence is on ice cover. An ice-covered surface has much larger albedo that a surface without ice.</p>
-<p>How does this affect the 2-box calculation. If the surface in the box <span class="math notranslate nohighlight">\(i\)</span> is ice-covered then the net incident SW radiation <span class="math notranslate nohighlight">\((I_i)\)</span> in the calculation above, needs to be multiplied by a factor <span class="math notranslate nohighlight">\(\sigma\)</span> where
-\begin{equation}
-\sigma = \frac{1 - {\rm albedo}<em>{\rm ice}}{1 - {\rm albedo}</em>{\rm no ice}} &lt; 1 .
-\end{equation}
-But it also needs to be taken into account that ice cover in the box <span class="math notranslate nohighlight">\(i\)</span> is realisable only if the temperature <span class="math notranslate nohighlight">\(T_i\)</span> less that a threshold value <span class="math notranslate nohighlight">\(T_{\rm ice}\)</span> for ice formation.</p>
-<p>We assume that <span class="math notranslate nohighlight">\(I_h &lt; I_i\)</span> so that <span class="math notranslate nohighlight">\(T_h &lt; T_l\)</span> implying a state with ice in box <span class="math notranslate nohighlight">\(l\)</span> only is impossible. There are then, in principle, three possible states:
-\begin{enumerate}
-\item
-no ice in either box (`ice-free state’)
-\item
-ice in box <span class="math notranslate nohighlight">\(h\)</span> only (1high-latitude-ice state’)
-\item
-ice in boxes <span class="math notranslate nohighlight">\(h\)</span> and <span class="math notranslate nohighlight">\(l\)</span> (1global-ice state’) .
-\end{enumerate}
-But only a subset of these states may be realisable (i.e.\ with <span class="math notranslate nohighlight">\(T_i &lt; T_{\rm ice}\)</span>). Detailed calculation shows that there is always at least one realisable state and sometimes more that one.</p>
+<p>The <em>albedo</em> is the fraction of incident SW radiation reflected by the surface. The value of the albedo depends on different characteristics of the surface, e.g. the presence or absence of vegetation. A very important dependence is on ice cover. An ice-covered surface has much larger albedo that a surface without ice.</p>
+<p>How does this affect the 2-box calculation. If the surface in the box <span class="math notranslate nohighlight">\(i\)</span> is ice-covered then the net incident SW radiation <span class="math notranslate nohighlight">\((I_i)\)</span> in the calculation above, needs to be multiplied by a factor <span class="math notranslate nohighlight">\(\sigma\)</span> where</p>
+<div class="math notranslate nohighlight">
+\[\sigma = \frac{1 - {\rm albedo}_{\rm ice}}{1 - {\rm albedo}_{\rm no ice}} &lt; 1 .\]</div>
+<p>But it also needs to be taken into account that ice cover in the box <span class="math notranslate nohighlight">\(i\)</span> is realisable only if the temperature <span class="math notranslate nohighlight">\(T_i\)</span> less that a threshold value <span class="math notranslate nohighlight">\(T_{\rm ice}\)</span> for ice formation.</p>
+<p>We assume that <span class="math notranslate nohighlight">\(I_h &lt; I_i\)</span> so that <span class="math notranslate nohighlight">\(T_h &lt; T_l\)</span> implying a state with ice in box <span class="math notranslate nohighlight">\(l\)</span> only is impossible. There are then, in principle, three possible states:</p>
+<ol class="simple">
+<li><p>no ice in either box (`ice-free state’)</p></li>
+<li><p>ice in box <span class="math notranslate nohighlight">\(h\)</span> only (1high-latitude-ice state’)</p></li>
+<li><p>ice in boxes <span class="math notranslate nohighlight">\(h\)</span> and <span class="math notranslate nohighlight">\(l\)</span> (1global-ice state’).</p></li>
+</ol>
+<p>But only a subset of these states may be realisable (i.e. with <span class="math notranslate nohighlight">\(T_i &lt; T_{\rm ice}\)</span>). Detailed calculation shows that there is always at least one realisable state and sometimes more that one.</p>
 <p>We illustrate the behaviour by using the same values of <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span> and <span class="math notranslate nohighlight">\(D\)</span> as before. We set <span class="math notranslate nohighlight">\(\sigma=0.6\)</span> and <span class="math notranslate nohighlight">\(T_{ice}=-10^\circ C\)</span>.
 We introduce a parameter <span class="math notranslate nohighlight">\(q\)</span> representing the relative strength of solar radiation, so that the values of <span class="math notranslate nohighlight">\(I_h\)</span> and <span class="math notranslate nohighlight">\(I_l\)</span> used above are now multiplied by <span class="math notranslate nohighlight">\(q\)</span>. We can then calculate the temperatures <span class="math notranslate nohighlight">\(T_h\)</span> and <span class="math notranslate nohighlight">\(T_i\)</span> in each of the three possible states as a function of <span class="math notranslate nohighlight">\(q\)</span> and check whether the state is realisable.</p>
-<p>The variation of <span class="math notranslate nohighlight">\(T_l\)</span> and <span class="math notranslate nohighlight">\(T_h\)</span> with <span class="math notranslate nohighlight">\(q\)</span> are shown in Figure \ref{fig:temperature_variation_with_q}. The three states, ice free, high latitude ice and global ice, are shown with different line styles. Different states are realisable for different ranges of <span class="math notranslate nohighlight">\(q\)</span>. For a given value of <span class="math notranslate nohighlight">\(q\)</span> there may be one, two or three realisable states. This raises the question of, when there is more than one realisable state, which state is actually achieved. This may be addressed by considering the stability of the state (what happens in the time-evolving problem when there is a small perturbation to the steady state), or the effect of slow time variation of <span class="math notranslate nohighlight">\(q\)</span>, e.g.\ what happens if the system starts in an ice-free state with <span class="math notranslate nohighlight">\(q\)</span> large and then <span class="math notranslate nohighlight">\(q\)</span> is slowly reduced?</p>
-<p>\begin{figure}
-\begin{center}
-\includegraphics[width=1\textwidth]{figures/temperature_variation_with_q.png}
-\caption{Variation of temperatures <span class="math notranslate nohighlight">\(T_l\)</span> and <span class="math notranslate nohighlight">\(T_h\)</span> with strength of solar radiation. The three states, ice free (solid line), high latitude ice (dashed line) and global ice (dash-dot line), are shown where realisable. For a given line style the upper line shows <span class="math notranslate nohighlight">\(T_l\)</span> and the lower line <span class="math notranslate nohighlight">\(T_h\)</span>. A horizontal line shows the threshold value <span class="math notranslate nohighlight">\(T_{\rm ice}\)</span>. Different states are realisable for different ranges of <span class="math notranslate nohighlight">\(q\)</span>. For a given value of <span class="math notranslate nohighlight">\(q\)</span> there may be one, two or three realisable states.}
-\label{fig:temperature_variation_with_q}
-\end{center}
-\end{figure}</p>
+<p>The variation of <span class="math notranslate nohighlight">\(T_l\)</span> and <span class="math notranslate nohighlight">\(T_h\)</span> with <span class="math notranslate nohighlight">\(q\)</span> are shown in <a class="reference internal" href="#fig-temperature-variation-with-q"><span class="std std-numref">Fig. 6.18</span></a>. The three states, ice free, high latitude ice and global ice, are shown with different line styles. Different states are realisable for different ranges of <span class="math notranslate nohighlight">\(q\)</span>. For a given value of <span class="math notranslate nohighlight">\(q\)</span> there may be one, two or three realisable states. This raises the question of, when there is more than one realisable state, which state is actually achieved. This may be addressed by considering the stability of the state (what happens in the time-evolving problem when there is a small perturbation to the steady state), or the effect of slow time variation of <span class="math notranslate nohighlight">\(q\)</span>, e.g. what happens if the system starts in an ice-free state with <span class="math notranslate nohighlight">\(q\)</span> large and then <span class="math notranslate nohighlight">\(q\)</span> is slowly reduced?</p>
+<figure class="margin-caption align-default" id="fig-temperature-variation-with-q">
+<a class="reference internal image-reference" href="../../_images/temperature_variation_with_q.png"><img alt="../../_images/temperature_variation_with_q.png" src="../../_images/temperature_variation_with_q.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.18 </span><span class="caption-text">Variation of temperatures <span class="math notranslate nohighlight">\(T_l\)</span> and <span class="math notranslate nohighlight">\(T_h\)</span> with strength of solar radiation. The three states, ice free (solid line), high latitude ice (dashed line) and global ice (dash-dot line), are shown where realisable. For a given line style the upper line shows <span class="math notranslate nohighlight">\(T_l\)</span> and the lower line <span class="math notranslate nohighlight">\(T_h\)</span>. A horizontal line shows the threshold value <span class="math notranslate nohighlight">\(T_{\rm ice}\)</span>. Different states are realisable for different ranges of <span class="math notranslate nohighlight">\(q\)</span>. For a given value of <span class="math notranslate nohighlight">\(q\)</span> there may be one, two or three realisable states.</span><a class="headerlink" href="#fig-temperature-variation-with-q" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>There is strong evidence that during periods of its history the Earth has been in (or close to) a global-ice state – `Snowball Earth’. A more sophisticated (but still very simple) model can be formulated using the 1-D approach of Lecture 5. Then the boundary between ice/no ice is at some value of <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(y_b\)</span> say, which is a function of <span class="math notranslate nohighlight">\(q\)</span>.</p>
 </section>
 
@@ -588,6 +590,20 @@ We introduce a parameter <span class="math notranslate nohighlight">\(q\)</span>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../l30/l30.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">6.5. </span>Atmospheric heat transport</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../l32/l32.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">6.7. </span>Stommel box model for ocean heat transport</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>

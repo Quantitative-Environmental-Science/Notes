@@ -323,6 +323,26 @@ const thebe_selector_output = ".output, .cell_output"
      6.5. Atmospheric heat transport
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../l31/l31.html">
+     6.6. 2-box model for the global heat distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../l32/l32.html">
+     6.7. Stommel box model for ocean heat transport
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../l33/l33.html">
+     6.8. Shallow wind-forced ocean circulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../l34/l34.html">
+     6.9. Thermohaline Circulation
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -480,7 +500,7 @@ title="Print to PDF"
 <p>Eq. <a class="reference internal" href="#equation-eq-geostrophic-balance">(6.7)</a> can be re-written</p>
 <div class="math notranslate nohighlight" id="equation-eq-geostrophic-velocity">
 <span class="eqno">(6.8)<a class="headerlink" href="#equation-eq-geostrophic-velocity" title="Permalink to this equation">#</a></span>\[\mathbf{u}=\frac{1}{\rho f} \hat{\mathbf{z}} \times \nabla p.\]</div>
-<p>Therefore, the velocity in geostrophic balance is perpendicular to <span class="math notranslate nohighlight">\(\nabla p\)</span> and <em>parallel to contours of constant pressure</em>. Figure <a class="reference internal" href="#fig-weather-chart"><span class="std std-numref">Fig. 6.10</span></a> shows a weather forecast for the North Atlantic. The wind (quivered arrows) closely follows pressure contours, consistent with geostrophic balance. The magnitude of the velocity in geostrophic balance is proportional to the pressure gradient. In Figure <a class="reference internal" href="#fig-weather-chart"><span class="std std-numref">Fig. 6.10</span></a>, stronger winds will occur where the pressure contours are closer together.</p>
+<p>Therefore, the velocity in geostrophic balance is perpendicular to <span class="math notranslate nohighlight">\(\nabla p\)</span> and <em>parallel to contours of constant pressure</em>. <a class="reference internal" href="#fig-weather-chart"><span class="std std-numref">Fig. 6.10</span></a> shows a weather forecast for the North Atlantic. The wind (quivered arrows) closely follows pressure contours, consistent with geostrophic balance. The magnitude of the velocity in geostrophic balance is proportional to the pressure gradient. In <a class="reference internal" href="#fig-weather-chart"><span class="std std-numref">Fig. 6.10</span></a>, stronger winds will occur where the pressure contours are closer together.</p>
 <figure class="margin-caption align-default" id="fig-atmosphere-scales">
 <a class="reference internal image-reference" href="../../_images/atmosphere_scales.jpg"><img alt="../../_images/atmosphere_scales.jpg" src="../../_images/atmosphere_scales.jpg" style="width: 90%;" /></a>
 <figcaption>
@@ -493,7 +513,7 @@ title="Print to PDF"
 <p><span class="caption-number">Fig. 6.12 </span><span class="caption-text">Length and time scales of various ocean processes (not examinable). From Cronin et al., 2012 and D. Chelton.</span><a class="headerlink" href="#fig-ocean-scales" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Figures <a class="reference internal" href="#fig-atmosphere-scales"><span class="std std-numref">Fig. 6.11</span></a> and <a class="reference internal" href="#fig-ocean-scales"><span class="std std-numref">Fig. 6.12</span></a> show the length and times scales of various processes in the atmosphere and ocean (you will not be expected to remember these names or scales). A typical wind speed in the atmosphere is <span class="math notranslate nohighlight">\(\sim 10 m/s\)</span>. The Coriolis parameter, <span class="math notranslate nohighlight">\(f\simeq 10^{-4} \mbox{s}^{-1}\)</span> at mid-latitudes. With these values, <span class="math notranslate nohighlight">\(U/f\simeq 100 \mbox{km}\)</span> in the atmosphere. Because this scale sits between large scale motions where the Earth’s rotation plays a large role and small scales where it is negligible, processes at this scale are call ‘meso’ (meaning middle) scale. Weather systems typically have a horizontal scale of <span class="math notranslate nohighlight">\(\sim 1000 \mbox{km}\)</span>. With wind speeds on the order of 10 <span class="math notranslate nohighlight">\(\mbox{m}/\mbox{s}\)</span>, weather systems typically have <span class="math notranslate nohighlight">\(\mbox{Ro}\ll 1\)</span> and hence are close to geostrophic balance (this is one reason why weather maps often show contours of pressure.) The advective timescale for weather systems at this scale is <span class="math notranslate nohighlight">\(T=L/U\simeq 1\mbox{ day}\)</span>. This partly explains why weather patterns typically last for a few days.</p>
+<p><a class="reference internal" href="#fig-atmosphere-scales"><span class="std std-numref">Fig. 6.11</span></a> and <a class="reference internal" href="#fig-ocean-scales"><span class="std std-numref">Fig. 6.12</span></a> show the length and times scales of various processes in the atmosphere and ocean (you will not be expected to remember these names or scales). A typical wind speed in the atmosphere is <span class="math notranslate nohighlight">\(\sim 10 m/s\)</span>. The Coriolis parameter, <span class="math notranslate nohighlight">\(f\simeq 10^{-4} \mbox{s}^{-1}\)</span> at mid-latitudes. With these values, <span class="math notranslate nohighlight">\(U/f\simeq 100 \mbox{km}\)</span> in the atmosphere. Because this scale sits between large scale motions where the Earth’s rotation plays a large role and small scales where it is negligible, processes at this scale are call ‘meso’ (meaning middle) scale. Weather systems typically have a horizontal scale of <span class="math notranslate nohighlight">\(\sim 1000 \mbox{km}\)</span>. With wind speeds on the order of 10 <span class="math notranslate nohighlight">\(\mbox{m}/\mbox{s}\)</span>, weather systems typically have <span class="math notranslate nohighlight">\(\mbox{Ro}\ll 1\)</span> and hence are close to geostrophic balance (this is one reason why weather maps often show contours of pressure.) The advective timescale for weather systems at this scale is <span class="math notranslate nohighlight">\(T=L/U\simeq 1\mbox{ day}\)</span>. This partly explains why weather patterns typically last for a few days.</p>
 <p>Currents in the ocean are generally slower than wind in the atmosphere. A typical current speed in the ocean is <span class="math notranslate nohighlight">\(u\sim 0.1 \mbox{m}/\mbox{s}\)</span>. Hence, <span class="math notranslate nohighlight">\(U/f\sim 1 \mbox{km}\)</span> in the ocean. The ocean contains eddies with typical sizes of <span class="math notranslate nohighlight">\(\sim 100 \mbox{km}\)</span>. Since this corresponds to the atmospheric mesoscale, these ocean eddies are called ‘mesoscale eddies’ despite the fact that they are characterised by <span class="math notranslate nohighlight">\(\mbox{Ro}\ll 1\)</span>. Like atmospheric weather systems, mesoscale eddies are typically close to geostrophic balance.</p>
 <figure class="margin-caption align-default" id="fig-mean-ssh">
 <a class="reference internal image-reference" href="../../_images/mean_ssh.png"><img alt="../../_images/mean_ssh.png" src="../../_images/mean_ssh.png" style="width: 90%;" /></a>
@@ -511,7 +531,7 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[f\hat{\mathbf{z}} \times \mathbf{u} = -g \nabla \eta.\]</div>
 <p>From this equation, we see that the surface height plays a similar role to the pressure for ocean currents that are in geostrophic balance, i.e. the velocity will follow contours of constant surface height and the speed is proportional to the gradient in surface height.</p>
-<p>Figure <a class="reference internal" href="#fig-mean-ssh"><span class="std std-numref">Fig. 6.13</span></a> shows the mean (time-averaged) surface height, <span class="math notranslate nohighlight">\(\eta\)</span>. The Gulf Stream is visible as a large gradient in the sea surface height in the North Atlantic. The sea level to the south of the Gulf Stream can be about 1m higher than the sea level to the north of the Gulf Stream. The resulting pressure gradient within the ocean is associated with geostrophic current speeds in excess of 1 m/s. The large gradient in surface height in the Southern Ocean is associated with the Antarctic Circumpolar Current - a major current system which flows eastward, circling Antarctica. In between the other continents, the surface height contours form closed ‘loops’. This is the imprint of large ocean ‘gyres’. Notice also that the sea level is significantly higher on the western sides of the ocean basins at mid-latitudes. We will discuss these features in some depth in a few lectures.</p>
+<p><a class="reference internal" href="#fig-mean-ssh"><span class="std std-numref">Fig. 6.13</span></a> shows the mean (time-averaged) surface height, <span class="math notranslate nohighlight">\(\eta\)</span>. The Gulf Stream is visible as a large gradient in the sea surface height in the North Atlantic. The sea level to the south of the Gulf Stream can be about 1m higher than the sea level to the north of the Gulf Stream. The resulting pressure gradient within the ocean is associated with geostrophic current speeds in excess of 1 m/s. The large gradient in surface height in the Southern Ocean is associated with the Antarctic Circumpolar Current - a major current system which flows eastward, circling Antarctica. In between the other continents, the surface height contours form closed ‘loops’. This is the imprint of large ocean ‘gyres’. Notice also that the sea level is significantly higher on the western sides of the ocean basins at mid-latitudes. We will discuss these features in some depth in a few lectures.</p>
 </section>
 
     <script type="text/x-thebe-config">
