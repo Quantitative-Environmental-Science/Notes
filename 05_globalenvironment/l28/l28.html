@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Lecture 28</title>
+    <title>6.3. Scales of motion in the atmosphere and ocean</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,9 +51,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams"]}, "tex": {"packages": ["base", "physics", "ams"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="6.4. Structure and mean circulation of the atmosphere" href="../l29/l29.html" />
+    <link rel="prev" title="6.2. Equations of motion on the rotating earth" href="../l27/l27.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -103,7 +107,7 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../00_intro/intro/intro.html">
    1. Introduction
@@ -284,19 +288,34 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../intro/intro.html">
    6. Global Environment
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="../l26/l26.html">
      6.1. Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../l27/l27.html">
+     6.2. Equations of motion on the rotating earth
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     6.3. Scales of motion in the atmosphere and ocean
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../l29/l29.html">
+     6.4. Structure and mean circulation of the atmosphere
     </a>
    </li>
   </ul>
@@ -428,7 +447,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Lecture 28</h1>
+                <h1>Scales of motion in the atmosphere and ocean</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -440,8 +459,54 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="lecture-28">
-<span id="id1"></span><h1>Lecture 28<a class="headerlink" href="#lecture-28" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="scales-of-motion-in-the-atmosphere-and-ocean">
+<span id="lecture-28"></span><h1><span class="section-number">6.3. </span>Scales of motion in the atmosphere and ocean<a class="headerlink" href="#scales-of-motion-in-the-atmosphere-and-ocean" title="Permalink to this headline">#</a></h1>
+<p>As we can see from the definition of the Rossby number, <span class="math notranslate nohighlight">\(\mbox{Ro}\equiv U/(fL)\)</span>, small-scale motions in the atmosphere and ocean tend to be relatively unaffected by the Earth’s rotation since we might expect that <span class="math notranslate nohighlight">\(\mbox{Ro}\gg 1\)</span> when <span class="math notranslate nohighlight">\(L\)</span> is small. When <span class="math notranslate nohighlight">\(\mbox{Ro}\simeq 1\)</span>, the two terms on the LHS of Eq. <a class="reference internal" href="../l27/l27.html#equation-eq-traditional-accel">(6.6)</a> will be comparable in magnitude. This happens when the characteristic lengthscale is <span class="math notranslate nohighlight">\(L=U/f\)</span>. Motions with characteristic lengthscales larger than <span class="math notranslate nohighlight">\(U/f\)</span> will be strongly affected by the Earth’s rotation, while motions with on scales smaller than <span class="math notranslate nohighlight">\(U/f\)</span> will be relatively unaffected by the Earth’s rotation.</p>
+<p>When <span class="math notranslate nohighlight">\(\mbox{Ro}\ll 1\)</span>, Eq. <a class="reference internal" href="../l27/l27.html#equation-eq-traditional-accel">(6.6)</a> is approximated by</p>
+<div class="math notranslate nohighlight" id="equation-eq-geostrophic-balance">
+<span class="eqno">(6.7)<a class="headerlink" href="#equation-eq-geostrophic-balance" title="Permalink to this equation">#</a></span>\[f\hat{\mathbf{z}} \times \mathbf{u} = -\frac{1}{\rho}\nabla p.\]</div>
+<p>This state is called `geostrophic balance’. Since the time-derivative is neglected in this limit, this describes an equilibrium state where the velocity balances the pressure gradient through the Coriolis acceleration. Large-scale flows in the ocean and atmosphere tend to be close to geostrophic balance.</p>
+<figure class="margin-caption align-default" id="fig-weather-chart">
+<a class="reference internal image-reference" href="../../_images/weather_chart.png"><img alt="../../_images/weather_chart.png" src="../../_images/weather_chart.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.10 </span><span class="caption-text">Weather forecast chart for December 2022 showing pressure (contours) and wind (quivered arrows).</span><a class="headerlink" href="#fig-weather-chart" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Eq. <a class="reference internal" href="#equation-eq-geostrophic-balance">(6.7)</a> can be re-written</p>
+<div class="math notranslate nohighlight" id="equation-eq-geostrophic-velocity">
+<span class="eqno">(6.8)<a class="headerlink" href="#equation-eq-geostrophic-velocity" title="Permalink to this equation">#</a></span>\[\mathbf{u}=\frac{1}{\rho f} \hat{\mathbf{z}} \times \nabla p.\]</div>
+<p>Therefore, the velocity in geostrophic balance is perpendicular to <span class="math notranslate nohighlight">\(\nabla p\)</span> and <em>parallel to contours of constant pressure</em>. Figure <a class="reference internal" href="#fig-weather-chart"><span class="std std-numref">Fig. 6.10</span></a> shows a weather forecast for the North Atlantic. The wind (quivered arrows) closely follows pressure contours, consistent with geostrophic balance. The magnitude of the velocity in geostrophic balance is proportional to the pressure gradient. In Figure <a class="reference internal" href="#fig-weather-chart"><span class="std std-numref">Fig. 6.10</span></a>, stronger winds will occur where the pressure contours are closer together.</p>
+<figure class="margin-caption align-default" id="fig-atmosphere-scales">
+<a class="reference internal image-reference" href="../../_images/atmosphere_scales.jpg"><img alt="../../_images/atmosphere_scales.jpg" src="../../_images/atmosphere_scales.jpg" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.11 </span><span class="caption-text">Length and time scales of various atmospheric processes (not examinable). From Brisch and Kantz, 2019</span><a class="headerlink" href="#fig-atmosphere-scales" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="margin-caption align-default" id="fig-ocean-scales">
+<a class="reference internal image-reference" href="../../_images/ocean_scales.png"><img alt="../../_images/ocean_scales.png" src="../../_images/ocean_scales.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.12 </span><span class="caption-text">Length and time scales of various ocean processes (not examinable). From Cronin et al., 2012 and D. Chelton.</span><a class="headerlink" href="#fig-ocean-scales" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Figures <a class="reference internal" href="#fig-atmosphere-scales"><span class="std std-numref">Fig. 6.11</span></a> and <a class="reference internal" href="#fig-ocean-scales"><span class="std std-numref">Fig. 6.12</span></a> show the length and times scales of various processes in the atmosphere and ocean (you will not be expected to remember these names or scales). A typical wind speed in the atmosphere is <span class="math notranslate nohighlight">\(\sim 10 m/s\)</span>. The Coriolis parameter, <span class="math notranslate nohighlight">\(f\simeq 10^{-4} \mbox{s}^{-1}\)</span> at mid-latitudes. With these values, <span class="math notranslate nohighlight">\(U/f\simeq 100 \mbox{km}\)</span> in the atmosphere. Because this scale sits between large scale motions where the Earth’s rotation plays a large role and small scales where it is negligible, processes at this scale are call ‘meso’ (meaning middle) scale. Weather systems typically have a horizontal scale of <span class="math notranslate nohighlight">\(\sim 1000 \mbox{km}\)</span>. With wind speeds on the order of 10 <span class="math notranslate nohighlight">\(\mbox{m}/\mbox{s}\)</span>, weather systems typically have <span class="math notranslate nohighlight">\(\mbox{Ro}\ll 1\)</span> and hence are close to geostrophic balance (this is one reason why weather maps often show contours of pressure.) The advective timescale for weather systems at this scale is <span class="math notranslate nohighlight">\(T=L/U\simeq 1\mbox{ day}\)</span>. This partly explains why weather patterns typically last for a few days.</p>
+<p>Currents in the ocean are generally slower than wind in the atmosphere. A typical current speed in the ocean is <span class="math notranslate nohighlight">\(u\sim 0.1 \mbox{m}/\mbox{s}\)</span>. Hence, <span class="math notranslate nohighlight">\(U/f\sim 1 \mbox{km}\)</span> in the ocean. The ocean contains eddies with typical sizes of <span class="math notranslate nohighlight">\(\sim 100 \mbox{km}\)</span>. Since this corresponds to the atmospheric mesoscale, these ocean eddies are called ‘mesoscale eddies’ despite the fact that they are characterised by <span class="math notranslate nohighlight">\(\mbox{Ro}\ll 1\)</span>. Like atmospheric weather systems, mesoscale eddies are typically close to geostrophic balance.</p>
+<figure class="margin-caption align-default" id="fig-mean-ssh">
+<a class="reference internal image-reference" href="../../_images/mean_ssh.png"><img alt="../../_images/mean_ssh.png" src="../../_images/mean_ssh.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.13 </span><span class="caption-text">Mean sea surface height (departure from the stationary geoid) in cm.</span><a class="headerlink" href="#fig-mean-ssh" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Large-scale pressure gradients within the ocean are usually associated with changes in temperature (and hence density) and/or surface elevation. As an example, let’s look at how variations in the surface height of the ocean correspond to large-scale ocean currents. In a state of hydrostatic balance, the vertical pressure gradient force is balanced by the buoyant force acting on a fluid parcel, or</p>
+<div class="math notranslate nohighlight" id="equation-eq-hydrostatic-balance">
+<span class="eqno">(6.9)<a class="headerlink" href="#equation-eq-hydrostatic-balance" title="Permalink to this equation">#</a></span>\[\frac{\partial p}{\partial z} = -\rho g.\]</div>
+<p>(Recall that we have seen this balance in the cryosphere and atmospheric chemistry lectures.) By convention, when studying the ocean we often let <span class="math notranslate nohighlight">\(z=0\)</span> correspond to the sea level for a stationary ocean (with a constant geopotential height). The positive <span class="math notranslate nohighlight">\(z\)</span> direction still points up so that <span class="math notranslate nohighlight">\(z&lt;0\)</span> in most of the ocean. Let <span class="math notranslate nohighlight">\(z=\eta(x,y,t)\)</span> correspond to the height relative to the stationary geoid. For now, let’s assume that the density of seawater (<span class="math notranslate nohighlight">\(\rho\)</span>) is constant. Then, if we integrate Eq. <a class="reference internal" href="#equation-eq-hydrostatic-balance">(6.9)</a> from a height <span class="math notranslate nohighlight">\(z\)</span> to the top of the ocean <span class="math notranslate nohighlight">\(\eta\)</span>, we get</p>
+<div class="math notranslate nohighlight" id="equation-eq-hydrostatic-pressure">
+<span class="eqno">(6.10)<a class="headerlink" href="#equation-eq-hydrostatic-pressure" title="Permalink to this equation">#</a></span>\[p = p_{A} + \rho g (\eta - z).\]</div>
+<p>For simplicity, let’s also assume that <span class="math notranslate nohighlight">\(p_{A}\)</span> is constant. Using Eq. <a class="reference internal" href="#equation-eq-hydrostatic-pressure">(6.10)</a> in the relation for geostrophic balance (Eq. <a class="reference internal" href="#equation-eq-geostrophic-balance">(6.7)</a>) then gives</p>
+<div class="math notranslate nohighlight">
+\[f\hat{\mathbf{z}} \times \mathbf{u} = -g \nabla \eta.\]</div>
+<p>From this equation, we see that the surface height plays a similar role to the pressure for ocean currents that are in geostrophic balance, i.e. the velocity will follow contours of constant surface height and the speed is proportional to the gradient in surface height.</p>
+<p>Figure <a class="reference internal" href="#fig-mean-ssh"><span class="std std-numref">Fig. 6.13</span></a> shows the mean (time-averaged) surface height, <span class="math notranslate nohighlight">\(\eta\)</span>. The Gulf Stream is visible as a large gradient in the sea surface height in the North Atlantic. The sea level to the south of the Gulf Stream can be about 1m higher than the sea level to the north of the Gulf Stream. The resulting pressure gradient within the ocean is associated with geostrophic current speeds in excess of 1 m/s. The large gradient in surface height in the Southern Ocean is associated with the Antarctic Circumpolar Current - a major current system which flows eastward, circling Antarctica. In between the other continents, the surface height contours form closed ‘loops’. This is the imprint of large ocean ‘gyres’. Notice also that the sea level is significantly higher on the western sides of the ocean basins at mid-latitudes. We will discuss these features in some depth in a few lectures.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -471,6 +536,20 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../l27/l27.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">6.2. </span>Equations of motion on the rotating earth</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../l29/l29.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">6.4. </span>Structure and mean circulation of the atmosphere</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>

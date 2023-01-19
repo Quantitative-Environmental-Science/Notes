@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Lecture 27</title>
+    <title>6.2. Equations of motion on the rotating earth</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,9 +51,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams"]}, "tex": {"packages": ["base", "physics", "ams"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="6.3. Scales of motion in the atmosphere and ocean" href="../l28/l28.html" />
+    <link rel="prev" title="6.1. Introduction" href="../l26/l26.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -103,7 +107,7 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../00_intro/intro/intro.html">
    1. Introduction
@@ -284,19 +288,34 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../intro/intro.html">
    6. Global Environment
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="../l26/l26.html">
      6.1. Introduction
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     6.2. Equations of motion on the rotating earth
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../l28/l28.html">
+     6.3. Scales of motion in the atmosphere and ocean
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../l29/l29.html">
+     6.4. Structure and mean circulation of the atmosphere
     </a>
    </li>
   </ul>
@@ -428,7 +447,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Lecture 27</h1>
+                <h1>Equations of motion on the rotating earth</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -440,8 +459,77 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="lecture-27">
-<span id="id1"></span><h1>Lecture 27<a class="headerlink" href="#lecture-27" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="equations-of-motion-on-the-rotating-earth">
+<span id="lecture-27"></span><h1><span class="section-number">6.2. </span>Equations of motion on the rotating earth<a class="headerlink" href="#equations-of-motion-on-the-rotating-earth" title="Permalink to this headline">#</a></h1>
+<p>The Earth’s rotation is an important factor in the large-scale dynamics of the atmosphere and ocean. In this section, we will start to examine the influence of the Earth’s rotation on the equations for fluid motion. To start, let’s consider the acceleration of a point mass in a rotating reference frame.</p>
+<figure class="margin-caption align-default" id="fig-rotating-ref-frame">
+<a class="reference internal image-reference" href="../../_images/rotating_ref_frame.png"><img alt="../../_images/rotating_ref_frame.png" src="../../_images/rotating_ref_frame.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.8 </span><span class="caption-text">Sketch of rotating and inertial reference frames.</span><a class="headerlink" href="#fig-rotating-ref-frame" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Consider a reference frame rotating about the <span class="math notranslate nohighlight">\(z\)</span> axis with a constant angular velocity, <span class="math notranslate nohighlight">\(\mathbf{\Omega}=\Omega \hat{\mathbf{z}}\)</span>. Here, bold symbols will be used to denote vector quantities. Let subscript <span class="math notranslate nohighlight">\(I\)</span> denote a quantity in an inertial (non-rotating) reference frame, and let subscript <span class="math notranslate nohighlight">\(R\)</span> denote a quantity in the rotating reference frame. Figure <a class="reference internal" href="#fig-rotating-ref-frame"><span class="std std-numref">Fig. 6.8</span></a> illustrates rotating and non-rotating reference frames.</p>
+<p>A point that is stationary in the rotating reference frame will move in the inertial reference frame with a velocity <span class="math notranslate nohighlight">\(\mathbf{\Omega} \times \mathbf{x}\)</span>, where <span class="math notranslate nohighlight">\(\times\)</span> denotes the vector (or cross) product. Therefore, for a point with position vector <span class="math notranslate nohighlight">\(\mathbf{x}_R\)</span> that is <em>moving</em> with a velocity <span class="math notranslate nohighlight">\(\mathbf{u}_R\)</span> in the rotating reference frame, its velocity in the inertial reference frame will be :</p>
+<div class="math notranslate nohighlight" id="equation-eq-velocity-rotating-ref-frame">
+<span class="eqno">(6.1)<a class="headerlink" href="#equation-eq-velocity-rotating-ref-frame" title="Permalink to this equation">#</a></span>\[\mathbf{u}_I=\mathbf{u}_R + \mathbf{\Omega} \times \mathbf{x},\]</div>
+<p>or the sum of the velocity vector associated with the movement of the rotating reference frame and the velocity of the point in the rotating reference frame.</p>
+<p>Note that the velocity vector can be found by taking the time-derivative of the position vector, i.e. <span class="math notranslate nohighlight">\(\mathbf{u}=d\mathbf{x}/dt\)</span>,and Eq. <a class="reference internal" href="#equation-eq-velocity-rotating-ref-frame">(6.1)</a> can be written</p>
+<div class="math notranslate nohighlight" id="equation-eq-position-vector-rotating-ref-frame">
+<span class="eqno">(6.2)<a class="headerlink" href="#equation-eq-position-vector-rotating-ref-frame" title="Permalink to this equation">#</a></span>\[\left.\frac{d\mathbf{x}}{dt}\right|_I=\left.\frac{d\mathbf{x}}{dt}\right|_R + \mathbf{\Omega} \times \mathbf{x}. \]</div>
+<p>From this equation we see that the time-derivative of a vector <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> in the inertial reference frame can be written as the sum of the time-derivative of a vector <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> in the rotating reference frame and the vector (cross) product of the angular velocity and the vector <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>. If this holds for the vector <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>, then it should (and does!) hold for any other vector. We can therefore use this rule to find an expression for the acceleration in the inertial reference frame. Using Eq. <a class="reference internal" href="#equation-eq-velocity-rotating-ref-frame">(6.1)</a>, we find that the time-derivative of the velocity in the inertial reference frame is</p>
+<div class="math notranslate nohighlight" id="equation-eq-accel-rotating-ref-frame">
+<span class="eqno">(6.3)<a class="headerlink" href="#equation-eq-accel-rotating-ref-frame" title="Permalink to this equation">#</a></span>\[\begin{split}\left.\frac{d\mathbf{u}}{dt}\right|_I&amp;=\frac{d}{dt}\left.\left(\mathbf{u}_R + \mathbf{\Omega}\times \mathbf{x}\right)\right|_R + \mathbf{\Omega} \times (\mathbf{u}_R + \left.\mathbf{\Omega}\times \mathbf{x})\right|_R \\
+&amp;=\left.\frac{d\mathbf{u}}{dt}\right|_R + 2 \mathbf{\Omega} \times \mathbf{u}_R + \mathbf{\Omega} \times (\mathbf{\Omega} \times \mathbf{x}),\end{split}\]</div>
+<p>where we have assumed that <span class="math notranslate nohighlight">\(\mathbf{\Omega}\)</span> is constant. The last two terms in Eq. <a class="reference internal" href="#equation-eq-accel-rotating-ref-frame">(6.3)</a> are the
+<em>Coriolis acceleration</em> and the <em>centrifugal acceleration</em>. The centrifugal acceleration points radially outwards from the axis of rotation. The corresponding force, the <em>centrigual force</em> is the apparent force that you feel when a car turns suddenly, or on the flying swings or other spinning amusement park rides.</p>
+<p>Curiously, the Coriolis acceleration is perpendicular to the velocity of the point in the rotating reference frame (recall that if <span class="math notranslate nohighlight">\(\mathbf{a}=\mathbf{b} \times \mathbf{c}\)</span>, then <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> is perpendicular to both <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{c}\)</span>). This property of the Coriolis acceleration leads to some non-intuitive properties of large-scale motion in the atmosphere and ocean.</p>
+<p>The movement of air in the atmosphere and water in the ocean is subject to a force induced by gradients in pressure. The sense of the <em>pressure gradient force</em> is to push fluid from regions of high pressure towards regions with low pressure. We encountered this force last term when discussing the cryosphere. The pressure gradient force also causes ice to flow away from regions with high pressure.</p>
+<p>We can write an expression for the acceleration of a fluid (air or water) due to a pressure gradient in a <em>{non-rotating}</em> reference frame using Newton’s second law:</p>
+<div class="math notranslate nohighlight" id="equation-eq-non-rot-momentum">
+<span class="eqno">(6.4)<a class="headerlink" href="#equation-eq-non-rot-momentum" title="Permalink to this equation">#</a></span>\[\rho\frac{\partial \mathbf{u}}{\partial t} = - \nabla p.\]</div>
+<p>Note that this equation has units of force per unit volume. The pressure, <span class="math notranslate nohighlight">\(p\)</span>, has units of force per unit area, and the density, <span class="math notranslate nohighlight">\(\rho\)</span> has units of mass per unit volume.<a class="footnote-reference brackets" href="#id2" id="id1">1</a> Therefore, the right hand side of Eq. <a class="reference internal" href="#equation-eq-non-rot-momentum">(6.4)</a> is the force per unit volume, and the left hand side is mass per unit volume times acceleration.
+We can write the equivalent equation in a <em>rotating</em> reference frame using Eq. <a class="reference internal" href="#equation-eq-accel-rotating-ref-frame">(6.3)</a>:</p>
+<div class="math notranslate nohighlight" id="equation-eq-rot-momentum">
+<span class="eqno">(6.5)<a class="headerlink" href="#equation-eq-rot-momentum" title="Permalink to this equation">#</a></span>\[\rho\left[\left.\frac{d\mathbf{u}}{dt}\right|_R + 2 \mathbf{\Omega} \times \mathbf{u}_R + \mathbf{\Omega \times (\mathbf{\Omega \times \mathbf{x})}}\right] = -\nabla p.\]</div>
+<p>From this point on, we will exclusively consider a rotating reference frame (the Earth) and will drop the subscript <span class="math notranslate nohighlight">\(R\)</span>.</p>
+<p>If the atmosphere and ocean were at rest (with <span class="math notranslate nohighlight">\(\mathbf{u}=\mathbf{0}\)</span>), then the only non-zero term on the RHS of Eq. <a class="reference internal" href="#equation-eq-rot-momentum">(6.5)</a> would be the centrifugal acceleration which would then balance the pressure gradient. On the rotating Earth, the centrifugal acceleration causes the atmosphere and ocean to bulge outwards at the equator, away from the axis of rotation. The interior of the Earth is also fluid, and hence the surface of the Earth similarly bulges outwards at the equator. In fact, the Earth’s radius at the equator is 22km larger than the radius at the poles. The radial displacement relative to these slightly bulging surfaces is called <em>geopotential height</em>. On surfaces with constant geopotential height (e.g. the surface of a stationary ocean), the outward centrifugal acceleration is balanced by the inward pull of gravity. Since flows in the atmosphere and ocean tend to move along surfaces with constant geopotential height, the centrifugal acceleration plays a relatively minor role in atmosphere/ocean dynamics.</p>
+<figure class="mar align-default" id="fig-local-cartesian">
+<a class="reference internal image-reference" href="../../_images/local_cartesian.png"><img alt="../../_images/local_cartesian.png" src="../../_images/local_cartesian.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.9 </span><span class="caption-text">Sketch of a local Cartesian coordinate system</span><a class="headerlink" href="#fig-local-cartesian" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Since writing equations in geopotential coordinates is cumbersome, when studying motion that is small compared to the radius of the Earth, it is convenient (and common) to define local Cartesian coordinates where <span class="math notranslate nohighlight">\(z\)</span> points in the local vertical direction, <span class="math notranslate nohighlight">\(y\)</span> points to the north, and <span class="math notranslate nohighlight">\(x\)</span> points to the east. The local Cartesian coordinate system for a latitude <span class="math notranslate nohighlight">\(\theta\)</span> is sketched in Figure <a class="reference internal" href="#fig-local-cartesian"><span class="std std-numref">Fig. 6.9</span></a>. In the local Cartesian coordinate system defined at a latitude <span class="math notranslate nohighlight">\(\theta\)</span>, the angular velocity points inthe <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span> directions with <span class="math notranslate nohighlight">\((x,y,z)\)</span> components</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{\Omega} = (0, \Omega \cos{\theta}, \Omega \sin{\theta}).\]</div>
+<p>If we let <span class="math notranslate nohighlight">\(\mathbf{u}=(u,v,w)\)</span> be the fluid velocity in Cartesian components, then the Coriolis acceleration can be written</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}2\mathbf{\Omega \times \mathbf{u}} &amp;= (2\Omega w \cos{\theta} - 2\Omega v \sin{\theta}, 2\Omega u \sin{\theta}, -2\Omega u \cos{\theta})\\
+&amp;= (-fv + f^*w, fu, -f^* u),\end{split}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[f\equiv 2\Omega \sin{\theta}, \quad f^*\equiv 2\Omega \cos{\theta}.\]</div>
+<p>Often, the horizontal velocity components are much larger than the vertical velocity component such that <span class="math notranslate nohighlight">\(f^*w \ll fv\)</span>, and the vertical component of the Coriolis acceleration is small compared to the gravitational acceleration, <span class="math notranslate nohighlight">\(f^*u \ll g\)</span>. Hence, theCoriolis acceleration is often approximated as</p>
+<div class="math notranslate nohighlight">
+\[2\mathbf{\Omega} \times \mathbf{u} \simeq (-fv, fu, 0) = f\hat{\mathbf{z}}\times \mathbf{u}.\]</div>
+<p>With these approximations, we can write Eq. <a class="reference internal" href="#equation-eq-accel-rotating-ref-frame">(6.3)</a> in local Cartesian coordinates aligned with a surfaceof constant geopotential height,</p>
+<div class="math notranslate nohighlight" id="equation-eq-traditional-accel">
+<span class="eqno">(6.6)<a class="headerlink" href="#equation-eq-traditional-accel" title="Permalink to this equation">#</a></span>\[\frac{d \mathbf{u}}{d t} + f\hat{\mathbf{z}} \times \mathbf{u} = -\frac{1}{\rho}\nabla p,\]</div>
+<p>where <span class="math notranslate nohighlight">\(\hat{\mathbf{z}}\)</span> is a unit vector aligned with the local vertical direction. This equation will be the starting point for much of the discussion in the following sections. From this equation, we see that <span class="math notranslate nohighlight">\(f\)</span>, which is called the <em>Coriolis parameter</em>, plays an important role in atmosphere and ocean dynamics.</p>
+<p>Next, let’s consider the relative sizes of the <span class="math notranslate nohighlight">\(d/dt\)</span> and Coriolis terms on the LHS of Eq. <a class="reference internal" href="#equation-eq-traditional-accel">(6.6)</a> using a scaling analysis. Let <span class="math notranslate nohighlight">\(U\)</span> denote the characteristic fluid speed. Let <span class="math notranslate nohighlight">\(T\)</span> be a characteristic timescale which we will take to be the that it takes for an object moving with the characteristic velocity to move a length <span class="math notranslate nohighlight">\(L\)</span> such that <span class="math notranslate nohighlight">\(T=L/U\)</span>. The terms on the LHS of Eq. <a class="reference internal" href="#equation-eq-traditional-accel">(6.6)</a> then scale with</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{d\mathbf{u}}{dt} \sim \frac{U}{T} \sim \frac{U^2}{L},\\
+f\hat{\mathbf{z}}\times \mathbf{u} \sim fU.\end{split}\]</div>
+<p>The ratio of the first and second terms on the LHS of Eq. <a class="reference internal" href="#equation-eq-traditional-accel">(6.6)</a> is described by a non-dimensional parametercalled the <em>Rossby number</em>:</p>
+<div class="math notranslate nohighlight">
+\[\mbox{Ro}\equiv\frac{U}{fL}.\]</div>
+<p>When <span class="math notranslate nohighlight">\(\mbox{Ro}\ll 1\)</span>, the acceleration of the fluid (the <span class="math notranslate nohighlight">\(d\mathbf{u}/dt\)</span> term) is small compared to the Coriolis acceleration. Somewhat counter-intuitively this means that the Earth’s rotation is important role in this limit (note that Ro does <em>not</em> stand for `rotation’!).</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Non-examinable note: In writing Eq. <a class="reference internal" href="#equation-eq-non-rot-momentum">(6.4)</a>, we have neglected the fluid inertia (momentum). If we had included this effect, we would have an additional term on the left hand side of Eq. <a class="reference internal" href="#equation-eq-non-rot-momentum">(6.4)</a> involving <span class="math notranslate nohighlight">\(\mathbf{u}\cdot \nabla \mathbf{u}\)</span>. This term creates a nonlinearity in the Navier-Stokes equations that makes them notoriously difficult to analyse.</p>
+</dd>
+</dl>
 </section>
 
     <script type="text/x-thebe-config">
@@ -471,6 +559,20 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../l26/l26.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">6.1. </span>Introduction</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../l28/l28.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">6.3. </span>Scales of motion in the atmosphere and ocean</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>

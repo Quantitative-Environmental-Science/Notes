@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Lecture 29</title>
+    <title>6.4. Structure and mean circulation of the atmosphere</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,9 +51,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams"]}, "tex": {"packages": ["base", "physics", "ams"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="7. Glossary" href="../../reference/glossary.html" />
+    <link rel="prev" title="6.3. Scales of motion in the atmosphere and ocean" href="../l28/l28.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -103,7 +107,7 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../00_intro/intro/intro.html">
    1. Introduction
@@ -284,19 +288,34 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../intro/intro.html">
    6. Global Environment
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="../l26/l26.html">
      6.1. Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../l27/l27.html">
+     6.2. Equations of motion on the rotating earth
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../l28/l28.html">
+     6.3. Scales of motion in the atmosphere and ocean
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     6.4. Structure and mean circulation of the atmosphere
     </a>
    </li>
   </ul>
@@ -428,7 +447,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Lecture 29</h1>
+                <h1>Structure and mean circulation of the atmosphere</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -440,8 +459,46 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="lecture-29">
-<span id="id1"></span><h1>Lecture 29<a class="headerlink" href="#lecture-29" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="structure-and-mean-circulation-of-the-atmosphere">
+<span id="lecture-29"></span><h1><span class="section-number">6.4. </span>Structure and mean circulation of the atmosphere<a class="headerlink" href="#structure-and-mean-circulation-of-the-atmosphere" title="Permalink to this headline">#</a></h1>
+<p>In the next three lectures, we will discuss the mean (time and longitudinally-averaged) structure of the atmosphere as a function of height and latitude. We will discuss the implications for this structure on the mean wind in geostrophic balance. We will also discuss the processes that lead to poleward heat transport and will introduce a few simple models to estimate the global heat distribution that results from a balance between net radiation and transport processes.</p>
+<p>Figure <a class="reference internal" href="../l26/l26.html#fig-mean-atmospheric-temperature"><span class="std std-numref">Fig. 6.3</span></a> showed the mean distribution of temperature in the atmosphere as a function of height and latitude. The north/south gradients in temperature are related to the wind speed through geostrophic and hydrostatic balance. Recall that geostrophic balance (Eq. <a class="reference internal" href="../l28/l28.html#equation-eq-geostrophic-balance">(6.7)</a>) relates the velocity vector with gradients in pressure. Here, we are considering the velocity associated with the mean (time and longitudinally-averaged) temperature and pressure. Therefore <span class="math notranslate nohighlight">\(p=p(y,z)\)</span> and <span class="math notranslate nohighlight">\(\partial p/\partial x=0\)</span> and from Eq. <a class="reference internal" href="../l28/l28.html#equation-eq-geostrophic-balance">(6.7)</a>, the north/south component of the geostrophic wind will be zero <span class="math notranslate nohighlight">\((v=0)\)</span>.</p>
+<p>The <span class="math notranslate nohighlight">\(x\)</span>-component of the geostrophic wind satisfies</p>
+<div class="math notranslate nohighlight" id="equation-eq-atmosphere-geostrophic">
+<span class="eqno">(6.11)<a class="headerlink" href="#equation-eq-atmosphere-geostrophic" title="Permalink to this equation">#</a></span>\[u = -\frac{1}{\rho f}\frac{\partial p}{\partial y}.\]</div>
+<p>Notice that we have used a partial derivative on the RHS since <span class="math notranslate nohighlight">\(p\)</span> also varies in <span class="math notranslate nohighlight">\(z\)</span>. We will also assume that the pressure is in hydrostatic balance:</p>
+<div class="math notranslate nohighlight" id="equation-eq-atmosphere-hydrostatic">
+<span class="eqno">(6.12)<a class="headerlink" href="#equation-eq-atmosphere-hydrostatic" title="Permalink to this equation">#</a></span>\[\frac{\partial p}{\partial z}=-\rho g.\]</div>
+<p>From the ideal gas law</p>
+<div class="math notranslate nohighlight" id="equation-eq-ideal-gas">
+<span class="eqno">(6.13)<a class="headerlink" href="#equation-eq-ideal-gas" title="Permalink to this equation">#</a></span>\[\rho=\frac{Mp}{RT},\]</div>
+<p>where <span class="math notranslate nohighlight">\(M\)</span> is the mean molar mass of air and <span class="math notranslate nohighlight">\(R\)</span> is the ideal gas constant. Using Eq. <a class="reference internal" href="#equation-eq-ideal-gas">(6.13)</a> in Eqns. <a class="reference internal" href="#equation-eq-atmosphere-geostrophic">(6.11)</a> and <a class="reference internal" href="#equation-eq-atmosphere-hydrostatic">(6.12)</a> gives</p>
+<div class="math notranslate nohighlight" id="equation-eq-atmosphere-geostrophic-2">
+<span class="eqno">(6.14)<a class="headerlink" href="#equation-eq-atmosphere-geostrophic-2" title="Permalink to this equation">#</a></span>\[\frac{fu}{T} = -\frac{R}{Mp}\frac{\partial p}{\partial y} = -\frac{R}{M} \frac{\partial \ln{p}}{\partial y},\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight" id="equation-eq-atmosphere-hydrostatic-2">
+<span class="eqno">(6.15)<a class="headerlink" href="#equation-eq-atmosphere-hydrostatic-2" title="Permalink to this equation">#</a></span>\[\frac{g}{T}=-\frac{R}{Mp}\frac{\partial p}{\partial z} = -\frac{R}{M}\frac{\partial \ln{p}}{\partial z},\]</div>
+<p>where the last relation in each equation follows from the differentiation rule for the natural logarithm. We can eliminate the pressure and combine these two equations by cross-differentiating these equations. Taking the derivative of Eq. <a class="reference internal" href="#equation-eq-atmosphere-geostrophic-2">(6.14)</a> with respect to <span class="math notranslate nohighlight">\(z\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial}{\partial z}\left(\frac{fU}{T}\right) = -\frac{R}{M}\frac{\partial \ln{P}}{\partial y \partial z},\]</div>
+<p>and taking the derivative of Eq. <a class="reference internal" href="#equation-eq-atmosphere-hydrostatic-2">(6.15)</a> with respect to <span class="math notranslate nohighlight">\(y\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial}{\partial y}\left(\frac{g}{T}\right) = - \frac{R}{M}\frac{\partial \ln{P}}{\partial y\partial z}.\]</div>
+<p>Since the RHS of these equations are identical, it follows that</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial}{\partial z}\left(\frac{fU}{T}\right)=\frac{\partial}{\partial y}\left(\frac{g}{T}\right).\]</div>
+<p>Applying both derivatives using the product and reciprocal rules and re-arranging gives a relationship between the vertical derivative of the wind speed and the temperature gradient:</p>
+<div class="math notranslate nohighlight" id="equation-eq-exact-thermal-wind">
+<span class="eqno">(6.16)<a class="headerlink" href="#equation-eq-exact-thermal-wind" title="Permalink to this equation">#</a></span>\[\frac{\partial u}{\partial z} = -\frac{g}{fT} \frac{\partial T}{\partial y} + \frac{u}{T} \frac{\partial T}{\partial z}.\]</div>
+<p>This equation is called <em>thermal wind balance</em> and we refer to <span class="math notranslate nohighlight">\(u\)</span> as the <em>thermal wind</em>.
+In practice, the second term on the RHS of Eq. <a class="reference internal" href="#equation-eq-exact-thermal-wind">(6.16)</a> is usually smaller than the first, and the thermal wind approximately satisfies</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial u}{\partial z} = -\frac{g}{fT}\frac{\partial T}{\partial y}.\]</div>
+<p>The thermal wind can be found by integrating the thermal wind balance equation with respect to <span class="math notranslate nohighlight">\(z\)</span> and fixing the thermal wind at a reference level to determine the constant of integration. We often do this by setting <span class="math notranslate nohighlight">\(u=0\)</span> at the ground (<span class="math notranslate nohighlight">\(z=0\)</span>).</p>
+<p>Returning to Figure <a class="reference internal" href="../l26/l26.html#fig-mean-atmospheric-temperature"><span class="std std-numref">Fig. 6.3</span></a>, in the Northern Hemisphere, <span class="math notranslate nohighlight">\(\partial T/\partial y&lt;0\)</span> (temperature decreases in the northwards direction). Recall that <span class="math notranslate nohighlight">\(f\)</span> is related to the Earth’s angular velocity vector projected onto the local vertical direction and in the Northern Hemisphere, <span class="math notranslate nohighlight">\(f&gt;0\)</span>. Hence, with <span class="math notranslate nohighlight">\(u=0\)</span> at <span class="math notranslate nohighlight">\(z=0\)</span>, we expect the thermal wind to have <span class="math notranslate nohighlight">\(u&gt;0\)</span>. In the Southern Hemisphere <span class="math notranslate nohighlight">\(\partial T/\partial y &lt; 0\)</span>, but since <span class="math notranslate nohighlight">\(f&lt;0\)</span> we again have <span class="math notranslate nohighlight">\(u&gt;0\)</span>.</p>
+<p>Figure <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:climatological_wind</span></code> shows the average (climatological) wind speed for January. The highest wind speeds are associated with mid-latitude jets of wind circling the globe and blowing from west to east. These ‘westerly jets’ are approximately in thermal wind balance. Note that the maximum wind speed is usually found between 30N and 60N where the mean north/south temperature gradient is large (compare with Figure <a class="reference internal" href="../l26/l26.html#fig-mean-atmospheric-temperature"><span class="std std-numref">Fig. 6.3</span></a>).</p>
+<p>In addition to thermal wind moving from west to east, the atmosphere also has a mean circulation in the <span class="math notranslate nohighlight">\(z-y\)</span> plane. We call this the <em>meridional circulation</em>. An important component of this is called the <em>Hadley circulation</em> after an English lawyer and amateur meterologist called George Hadley. This circulation is sketched in Figure <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:Hadley</span></code>.</p>
+<p>The following is a simple explanation for the mean Hadley circulation: As air near the equator is warmed by solar insolation, it rises until it reaches the top of the troposphere. Here the air is no longer buoyant enough to continue to rise and hence the air moves poleward in the upper troposphere. As the air flows north, it gradually sinks and then returns to the equator near the ground. The  air moving equatorward at low levels is affected by the Earth’s rotation, causing it to veer to the west. The resulting winds blowing from east to west near the ground a low latitudes are the so-called `trade winds’.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -471,6 +528,20 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../l28/l28.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">6.3. </span>Scales of motion in the atmosphere and ocean</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../reference/glossary.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Glossary</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
