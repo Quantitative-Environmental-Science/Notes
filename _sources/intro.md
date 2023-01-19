@@ -61,16 +61,16 @@ Atmosphere 💨
 Movement, pollution and aerosols.
 :::
 
-<!-- :::{grid-item-card}
+:::{grid-item-card}
 :link: 05_globalenvironment/intro/intro
 :link-type: doc
 :class-header: bg-light
 
-The Global Environment 🌍
+Global Environment 🌍
 ^^^
 
 Fluids on a rotating planet
-::: -->
+:::
 
 <!-- :::{grid-item-card}
 :link: 06_oceancarbon/intro/intro
