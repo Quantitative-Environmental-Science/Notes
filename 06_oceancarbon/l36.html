@@ -1,0 +1,1048 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>The Solubility Pump</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/admonitions.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams"]}, "tex": {"packages": ["base", "physics", "ams"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../00_intro/intro/intro.html">
+   1. Introduction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00_intro/l1/l1.html">
+     1.1. Course Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00_intro/l2/l2.html">
+     1.2. Where does the energy come from on Earth?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00_intro/l3/l3.html">
+     1.3. The Carbon Cycle
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_groundwater/intro/intro.html">
+   2. Groundwater
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_groundwater/l4/l4.html">
+     2.1. Groundwater Systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_groundwater/l5/l5.html">
+     2.2. Why water moves beneath the surface
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_groundwater/l6/l6.html">
+     2.3. How we measure and understand water movement
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_groundwater/l7/l7.html">
+     2.4. Groundwater challenges and sustainable groundwater
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_cryosphere/intro/intro.html">
+   3. Cryosphere
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_cryosphere/l8/l8.html">
+     3.1. Ice in the polar regions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_cryosphere/l9/l9.html">
+     3.2. The growth and melting of ice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_cryosphere/l10/l10.html">
+     3.3. The extent of sea ice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_cryosphere/l11/l11.html">
+     3.4. Ice sheets and the flow of glacial ice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_cryosphere/l12/l12.html">
+     3.5. Floating ice shelves and the flow of glacial ice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03_rivers/intro/intro.html">
+   4. Surface water and Flooding
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_rivers/l13/l13.html">
+     4.1. Catchment and drainage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_rivers/l14/l14.html">
+     4.2. 1D model of drainage into a river
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_rivers/l15/l15.html">
+     4.3. River flows
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_rivers/l16/l16.html">
+     4.4. Reservoirs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_rivers/l17/l17.html">
+     4.5. Flood waves
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_rivers/l18/l18.html">
+     4.6. Flooding
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04_atmosphere/intro/intro.html">
+   5. Air Pollution and Atmospheric Chemistry
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_atmosphere/l19/l19.html">
+     5.1. An overview of the atmosphere
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_atmosphere/l20/l20.html">
+     5.2. Air pollution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_atmosphere/l21/l21.html">
+     5.3. The chemistry of pollutants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_atmosphere/l22/l22.html">
+     5.4. Aerosols
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_atmosphere/l23/l23.html">
+     5.5. Air pollution and climate – indirect effects
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_atmosphere/l24/l24.html">
+     5.6. Air pollution and climate – direct effects
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05_globalenvironment/intro/intro.html">
+   6. Global Environment
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_globalenvironment/l26/l26.html">
+     6.1. Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_globalenvironment/l27/l27.html">
+     6.2. Equations of motion on the rotating earth
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_globalenvironment/l28/l28.html">
+     6.3. Scales of motion in the atmosphere and ocean
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_globalenvironment/l29/l29.html">
+     6.4. Structure and mean circulation of the atmosphere
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_globalenvironment/l30/l30.html">
+     6.5. Atmospheric heat transport
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_globalenvironment/l31/l31.html">
+     6.6. 2-box model for the global heat distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_globalenvironment/l32/l32.html">
+     6.7. Stommel box model for ocean heat transport
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_globalenvironment/l33/l33.html">
+     6.8. Shallow wind-forced ocean circulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_globalenvironment/l34/l34.html">
+     6.9. Thermohaline Circulation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="intro.html">
+   7. Ocean Carbon
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="l35.html">
+     7.1. How much carbon is in the ocean?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../reference/glossary.html">
+   8. Glossary
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/06_oceancarbon/l36.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#co-sub-2-sub-dissolves-in-water">
+   CO
+   <sub>
+    2
+   </sub>
+   dissolves in water
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#co-sub-2-sub-reacts-with-water">
+   CO
+   <sub>
+    2
+   </sub>
+   reacts with water
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dic-speciation">
+     DIC Speciation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pco-sub-2-sub-ph-and-dic">
+     pCO
+     <sub>
+      2
+     </sub>
+     , pH and DIC
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pco-sub-2-sub-and-ph">
+       1. pCO
+       <sub>
+        2
+       </sub>
+       and pH
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pco-sub-2-sub-and-dic">
+       2. pCO
+       <sub>
+        2
+       </sub>
+       and DIC
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modelling-the-solubility-pump">
+   Modelling the Solubility Pump
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atmospheric-carbon">
+     Atmospheric Carbon
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ocean-atmosphere-exchange">
+     Ocean-Atmosphere Exchange
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     DIC Speciation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dic-concentration">
+     DIC Concentration
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>The Solubility Pump</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#co-sub-2-sub-dissolves-in-water">
+   CO
+   <sub>
+    2
+   </sub>
+   dissolves in water
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#co-sub-2-sub-reacts-with-water">
+   CO
+   <sub>
+    2
+   </sub>
+   reacts with water
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dic-speciation">
+     DIC Speciation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pco-sub-2-sub-ph-and-dic">
+     pCO
+     <sub>
+      2
+     </sub>
+     , pH and DIC
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pco-sub-2-sub-and-ph">
+       1. pCO
+       <sub>
+        2
+       </sub>
+       and pH
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pco-sub-2-sub-and-dic">
+       2. pCO
+       <sub>
+        2
+       </sub>
+       and DIC
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modelling-the-solubility-pump">
+   Modelling the Solubility Pump
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#atmospheric-carbon">
+     Atmospheric Carbon
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ocean-atmosphere-exchange">
+     Ocean-Atmosphere Exchange
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     DIC Speciation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dic-concentration">
+     DIC Concentration
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="the-solubility-pump">
+<span id="carbon-solubility"></span><h1>The Solubility Pump<a class="headerlink" href="#the-solubility-pump" title="Permalink to this headline">#</a></h1>
+<!-- Reaction of CO2 with water.
+
+pH dependence.
+
+Conservative tracer(s) for the carbon system.
+
+## Model Equations
+
+DIC and TA tracers, C speciation calculation, pCO2 equilibration
+ -->
+<p>The majority of carbon (~98%) in the ocean exists as <a class="reference internal" href="../reference/glossary.html#term-DIC"><span class="xref std std-term">Dissolved Inorganic Carbon (DIC)</span></a>.
+The DIC pool is therefore the primary carbon reservoir in the ocean, and the chemical properties of DIC determine the ocean’s ability to store carbon.
+We’ll now look at how CO<sub>2</sub> is related to DIC.</p>
+<section id="co-sub-2-sub-dissolves-in-water">
+<h2>CO<sub>2</sub> dissolves in water<a class="headerlink" href="#co-sub-2-sub-dissolves-in-water" title="Permalink to this headline">#</a></h2>
+<!-- - Ideal gasses dissolve into water following Henry's Law ($K_0$)
+- Sensitive to temperature
+  - Think: what happens as water changes temperature?
+  - Refer back to CO2 patterns.
+- Calculate DIC concentration from pCO2 with only $K_0$ -->
+<p>As we saw in the last lecture, CO<sub>2(g)</sub> behaves like an ideal gas and dissolves from air into water until it reaches an equilibrium with CO<sub>2(aq)</sub> concentration that is described by <strong>Henry’s Law</strong> (Eq. <a class="reference internal" href="l35.html#equation-eq-carbon-henrys">(7.1)</a>):</p>
+<p>The solubility of a gas in water depends strongly on temperature, and weakly on salinity (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:carbon:K0</span></code>).
+More gas will dissolve into colder, fresher water than warmer, saltier water.</p>
+<figure class="margin-caption align-default" id="fig-carbon-k0">
+<a class="reference internal image-reference" href="../_images/carbon_K0.png"><img alt="../_images/carbon_K0.png" src="../_images/carbon_K0.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-text">Change in <span class="math notranslate nohighlight">\(K_0\)</span> with temperature and salinity.</span><a class="headerlink" href="#fig-carbon-k0" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The variability of gas solubility interacts with Thermohaline Circulation (THC) to elevate carbon concentrations in the deep ocean.
+During surface transport (e.g. along Western boundary currents like the Gulf Stream) water loses heat to the atmosphere and cools down (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:carbon:oceanheat</span></code>).
+This increases <span class="math notranslate nohighlight">\(K_0\)</span>, allowing the water to hold more dissolved CO<sub>2</sub> at a given atmospheric pCO<sub>2</sub>.
+The water reaches as a temperature minimum, and therefore [CO<sub>2(aq)</sub>] maximum, at its density maximum just before it sinks to the deep ocean.
+Once in the deep ocean that water is isolated from the atmosphere until it resurfaces somewhere along the circulation path.
+The downwelling of cold, CO<sub>2</sub>-rich water therefore removes carbon from the atmosphere until that water is upwelled again 100s-1000s of years later.
+Consequently, these upwelling zones outgas CO<sub>2</sub> to the atmosphere as the water warms up at the surface.
+This cycle, driven by changes in gas solubility in water, is known as the <strong>solubility pump</strong>.</p>
+<figure class="margin-caption align-default" id="fig-carbon-oceanheat">
+<a class="reference internal image-reference" href="../_images/ocean-heat-flux.png"><img alt="../_images/ocean-heat-flux.png" src="../_images/ocean-heat-flux.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Heat loss and absorption by the ocean. The ocean loses heat and cools as warmer water moves to high latitudes, and gains heat and warms as cool, deep water rises to the surface in upwelling zones. Black arrows indicate major surface currents.</span><a class="headerlink" href="#fig-carbon-oceanheat" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The solubulity of CO<sub>2</sub> explains first-order patterns of CO<sub>2</sub> uptake and release in terms of ocean circulation, but is not enough to explain the high concentration of inorganic carbon in the ocean.
+If we take the entire range of <span class="math notranslate nohighlight">\(K_0\)</span> (0.02 to 0.07) at modern atmospheric pCO<sub>2</sub> (420 ppm), this only allows an equilibrium CO<sub>2(aq)</sub> concentration of between 8.4-33.6 μmol kg<sup>-1</sup>.
+Measurements of inorganic carbon in the ocean show that the actual concentration is on the order of ~2000 μmol kg<sup>-1</sup>.</p>
+</section>
+<section id="co-sub-2-sub-reacts-with-water">
+<h2>CO<sub>2</sub> reacts with water<a class="headerlink" href="#co-sub-2-sub-reacts-with-water" title="Permalink to this headline">#</a></h2>
+<!-- - Reacts with water to form a weak **diprotic** acid, carbonic acid, which dissociates.
+  - $\mathrm{CO_{2(aq)} + H_2O \leftrightarrow H_2CO_3 \leftrightarrow HCO_3^- + H^+ \leftrightarrow HCO_3^{2-} + 2H^+}$
+- {term}`DIC` is the sum of the dissolved, C-containing species:
+  - $\mathrm{DIC = [CO_{2(aq)}] + [H_2CO_3] + [HCO_3^-] + [CO_3^{2-}]}$
+  - Square brackets denote concentration.
+  - Units generally $\mathrm{\mu mol~kg^{-1}}$ - 'average' seawater has around $\mathrm{2100 \mu mol~kg^{-1}}$
+- The abundance of each species is linked to the pH of seawater ($\mathrm{pH = -\log_{10}[H^+]}$)
+  - Equilibrium constants
+  - Calculate $HCO_3^-$ as a fn of DIC and pH.
+  - Bjerrum Plot.
+  - Approximate abundance of species in 'normal' seawater.
+- Ks and Temp/Sal
+  - drive changes in speciation - $\dv{DIC}{pCO_2}$ as a fn of T/S -->
+<p>There is more carbon in the ocean than we would expect based on gas solubility because CO<sub>2(aq)</sub> reacts with water to form non-gaseous species that cannot exchange with the atmosphere.
+Once CO<sub>2(g)</sub> is dissolved  to CO<sub>2(aq)</sub> it reacts with water to form a weak <strong>diprotic</strong> acid (an acid with two protons, H<sup>+</sup>) called carbonic acid.
+This acid dissociates to produce the <strong>Dissolved Inorganic Carbon (DIC)</strong> species:</p>
+<div class="math notranslate nohighlight" id="equation-eq-carbon-dissociation">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-carbon-dissociation" title="Permalink to this equation">#</a></span>\[CO_{2(g)} \leftrightarrow \underbrace{CO_{2(aq)}}_{dissolved~gas} + H_2O \leftrightarrow \underbrace{H_2CO_3}_{carbonic~acid} \leftrightarrow \underbrace{HCO_3^-}_{bicarbonate} + H^+ \leftrightarrow \underbrace{CO_3^{2-}}_{carbonate} + 2H^+\]</div>
+<p>Where DIC is defined as the sum of these species in seawater:</p>
+<aside class="units margin sidebar">
+<p class="sidebar-title">Units!</p>
+<p>Square brackets denote the concentration of a dissolved chemical species</p>
+</aside>
+<div class="math notranslate nohighlight" id="equation-eq-carbon-dic">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-carbon-dic" title="Permalink to this equation">#</a></span>\[\begin{split}DIC &amp;= [CO_{2(aq)}] + [H_2CO_3] + [HCO_3^-] + [CO_3^{2-}] \\
+&amp;= [CO_2^*] + [HCO_3^-] + [CO_3^{2-}]\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\([CO_2^*] = [CO_{2(aq)}] + [H_2CO_3]\)</span> because carbonic acid is functionally absent in normal seawater - as soon as CO<sub>2(aq)</sub> reacts with water the carbonic acid dissociates to form bicarbonate and a proton.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Note on CO<sub>2</sub>*…</p>
+<p>[CO<sub>2</sub><sup>*</sup>] is a good approximation in most cases, but be aware that the reaction of CO<sub>2(aq)</sub> with water is much slower than the subsequent dissociation reactions because it requires breaking strong C-O bonds, whereas the dissociation involves adding/removing weakly-bound protons (H<sup>+</sup>).
+This means that the CO<sub>2</sub><sup>*</sup> approximation may start to break down in dynamic systems where DIC speciation is far from equilibrium with CO<sub>2(aq)</sub>.
+This can become important when considering rapid ocean-atmosphere interactions, because CO<sub>2(aq)</sub>, rather than than H<sub>2</sub>CO<sub>3</sub>, is the species that exchanges with CO<sub>2(g)</sub> in the atmosphere.</p>
+</div>
+<p>Because CO<sub>2(aq)</sub> is the only species that exchanges with CO<sub>2(g)</sub> in the atmosphere, the speciation of DIC is critical when considering the relationship between DIC and pCO<sub>2</sub>.
+From Eq <a class="reference internal" href="#equation-eq-carbon-dissociation">()</a> we see that DIC speciation will depend on the concentration of each of the DIC species and <strong>H<sup>+</sup></strong> in the water.
+The concentration of H<sup>+</sup> is described by the pH of the water (pH = -log<sub>10</sub>[H<sup>+</sup>]), which tells us that the concentration of the carbon species in seawater is a function of pH (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:carbon:bjerrum</span></code>).</p>
+<figure class="margin-caption align-default" id="fig-carbon-bjerrum">
+<a class="reference internal image-reference" href="../_images/carbon_bjerrum.png"><img alt="../_images/carbon_bjerrum.png" src="../_images/carbon_bjerrum.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-text">The concentration of DIC species in seawater as a function of pH. The vertical blue bar shows the typical pH range in surface ocean water, and vertical dashed lines show the locations of the equilibrium constants that define the dissociation of DIC in seawater.</span><a class="headerlink" href="#fig-carbon-bjerrum" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Note that at normal surface seawater pH (~8.1, <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:carbon:bjerrum</span></code>), very little of the DIC is in the form of CO<sub>2(aq)</sub> - most is in the form of the non-exchangeable species bicarbonate and carbonate.</p>
+<section id="dic-speciation">
+<h3>DIC Speciation<a class="headerlink" href="#dic-speciation" title="Permalink to this headline">#</a></h3>
+<p>The speciation of DIC is described by acid-base equilibria described by the <strong>equilibrium constants</strong> K<sub>1</sub> and K<sub>2</sub>:</p>
+<div class="math notranslate nohighlight" id="equation-eq-carbon-k-reactions">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-carbon-k-reactions" title="Permalink to this equation">#</a></span>\[\begin{split}CO_{2}^* &amp;\overset{K_1}{\leftrightarrow} HCO_3^- + H^+ \\
+HCO_3^- &amp;\overset{K_2}{\leftrightarrow} CO_3^{2-} + H^+\end{split}\]</div>
+<p>Where K<sub>1</sub> and K<sub>2</sub> are defined as:</p>
+<div class="math notranslate nohighlight" id="equation-eq-carbon-ks">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-carbon-ks" title="Permalink to this equation">#</a></span>\[\begin{split}K_1 &amp;= \frac{[H^+][HCO_3^-]}{[CO_2^*]} \\
+K_2 &amp;= \frac{[H^+][CO_3^{2-}]}{[HCO_3^-]}\end{split}\]</div>
+<p>These can be combined to define the concentration of each DIC species as a function of [DIC], pH and the equilibrium constants K<sub>1</sub> and K<sub>2</sub>:</p>
+<div class="dropdown admonition">
+<p class="admonition-title">[CO<sub>2</sub>*] derivation…</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+DIC &amp;= [CO_2^*] + [HCO_3^-] + [CO_3^{2-}] \\
+&amp;= [CO_2^*] + [HCO_3^-] + \frac{K_2 [HCO_3^-]}{[H^+]} &amp; \mathrm{substitute ~ [CO_3^{2-}] ~ using ~ K_2} \\
+&amp;= [CO_2^*] + \frac{K_1[CO_2^*]}{[H^+]} + \frac{K_2 K_1 [CO_2^*]}{[H^+]^2} &amp; \mathrm{substitute ~ [HCO_3^{-}] ~ using ~ K_1} \\
+&amp;= [CO_2^*] \left( 1 + \frac{K_1}{[H^+]} + \frac{K_2 K_1}{[H^+]^2} \right) &amp; \mathrm{separate ~ [CO_2^*]} \\
+[CO_2^*] &amp;= \frac{DIC}{1 + \frac{K_1}{[H^+]} + \frac{K_1K_2}{[H^+]^2}} &amp; \mathrm{solve ~ for ~ [CO_2^*]}
+\end{align}
+\end{split}\]</div>
+</div>
+<div class="math notranslate nohighlight" id="equation-eq-carbon-speciation">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-carbon-speciation" title="Permalink to this equation">#</a></span>\[\begin{split}[CO_2^*] &amp;= \frac{DIC}{1 + \frac{K_1}{[H^+]} + \frac{K_1K_2}{[H^+]^2}} \\
+[HCO_3^-] &amp;= \frac{DIC}{1 + \frac{[H^+]}{K_1} + \frac{K_2}{[H^+]^2}} \\
+[CO_3^{2-}] &amp;= \frac{DIC}{1 + \frac{[H^+]}{K_2} + \frac{[H^+]^2}{K_1K_2}} \\\end{split}\]</div>
+<p>These Ks have been carefully determined for seawater, and can be calculated as a function of temperature, salinity and pressure.
+At standard salinity and temperature (35, 25 °C) and 1 atmosphere pressure (surface seawater), these K and pK (-log<sub>10</sub>K) are:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(K\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(pK\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p><span class="math notranslate nohighlight">\(K_0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(2.839 \times 10^{-2}\)</span></p></td>
+<td><p>1.547</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><span class="math notranslate nohighlight">\(K_1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1.422 \times 10^{-6}\)</span></p></td>
+<td><p>5.847</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><span class="math notranslate nohighlight">\(K_2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1.082 \times 10^{-9}\)</span></p></td>
+<td><p>8.966</p></td>
+</tr>
+</tbody>
+</table>
+<p>Where the pK values denote the pH at which the species are present in equal concentrations (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:carbon:bjerrum</span></code>).</p>
+<p>Because these Ks are sensitive temperature, salinty and pressure, the speciation of DIC also shifts as the properties of the water change.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Solving the DIC system…</p>
+<p>We’ve now seen that measuring the concentration of DIC in seawater is not enough to understand ocean carbon - we also need to know the state of the carbon species in seawater. How do we determine this?</p>
+<p>The equilibrium equations in <a class="reference internal" href="#equation-eq-carbon-ks">()</a> define a system of two equations with four unknowns (<span class="math notranslate nohighlight">\([CO_2^*], [HCO_3^-], [CO_3^{2-}] and [H^+]\)</span>). To determine the concentration of an individual DIC species we therefore need to know two of these variables.</p>
+<p>In reality only one of these variables, pH, can be practically measured in seawater, which presents a problem.
+There are, however, two other properties that can be readily measured related to ocean carbon: DIC contencentration, and Total Alkalinity <span class="math notranslate nohighlight">\((TA = 2 [CO_3^{2-}] + [HCO_3^-] + [minor~bases] + [OH^-] - [H^+])\)</span>, which is the sum of the charge of weak bases in seawater (don’t worry about this - it’s far beyond the scope of this course!).
+We now have four equations and six unknowns, but three of those unknowns are relatively easy to measure in seawater.</p>
+</div>
+</section>
+<section id="pco-sub-2-sub-ph-and-dic">
+<h3>pCO<sub>2</sub>, pH and DIC<a class="headerlink" href="#pco-sub-2-sub-ph-and-dic" title="Permalink to this headline">#</a></h3>
+<p>From the equations and K values above, we can calculate that for a typical ocean pH of ~8.1, only ~0.5% of DIC exists as CO<sub>2</sub>* at ‘standard’ conditions.
+This shows why the concentration of DIC in the ocean is so much higher than predicted by the concentration of CO<sub>2</sub> in the atmosphere.
+However, this simple calculation implies that pH and DIC speciation are independent of each other, which is not the case.</p>
+<p>In <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:carbon:bjerrum</span></code> we show the concentration of the DIC species changing solely as a function of water pH, but this is only true for a fixed DIC concentration.
+You can see from <a class="reference internal" href="#equation-eq-carbon-k-reactions">()</a>-<a class="reference internal" href="#equation-eq-carbon-speciation">()</a> that the concentration of each DIC species and [H<sup>+</sup>] (and therefore pH) exist in an <em>equilibrium</em>.
+This means that if any component of the system is changed, all parts of the system will adjust to reach a new equilibrium state.</p>
+<p>This has two important consequences for our understanding of ocean carbon:</p>
+<section id="pco-sub-2-sub-and-ph">
+<h4>1. pCO<sub>2</sub> and pH<a class="headerlink" href="#pco-sub-2-sub-and-ph" title="Permalink to this headline">#</a></h4>
+<p>Atmospheric pCO<sub>2</sub> and ocean pH are coupled - increasing pCO<sub>2</sub> will decrease pH in a process known as <strong>Ocean Acidification</strong>.
+This follows directly from <a class="reference internal" href="#equation-eq-carbon-dic">()</a>, where we see that the immediate dissociation of carbonic acid releases a proton into the ocean.
+The majority of these protons will react with CO<sub>3</sub><sup>2-</sup> to form HCO<sub>3</sub><sup>-</sup>, but the new equilibrium reached will be at a lower pH, with consequently different DIC speciation (towards the left in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:carbon:bjerrum</span></code>).</p>
+<figure class="margin-caption align-default" id="fig-carbon-pco2-ph">
+<a class="reference internal image-reference" href="../_images/carbon-pCO2-pH.png"><img alt="../_images/carbon-pCO2-pH.png" src="../_images/carbon-pCO2-pH.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-text">The change in seawater pH in warm and cold water associated with changing atmospheric pCO<sub>2</sub>. Vertical lines show representative pre-industrial and modern pCO<sub>2</sub> values, highlighting the drop in surface ocean pH that has already occurred in the last ~200 years. Note that because pH is a log scale, a 0.1 unit decrease corresponds to a ~doubling of [H<sup>+</sup>].</span><a class="headerlink" href="#fig-carbon-pco2-ph" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Conversely, any process that independently alters the pH of the ocean will change the speciation of DIC, allowing the surface ocean to take up or release CO<sub>2</sub>. This becomes important when considering biological processes, which we will discuss in the next two sections.</p>
+</section>
+<section id="pco-sub-2-sub-and-dic">
+<h4>2. pCO<sub>2</sub> and DIC<a class="headerlink" href="#pco-sub-2-sub-and-dic" title="Permalink to this headline">#</a></h4>
+<p>DIC does not increase with [CO<sub>2</sub><em>] in a 1:1 relationship.
+<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:carbon:pCO2-DIC</span></code> shows the change in DIC concentration and speciation as pCO<sub>2</sub> increases.
+Here, the increase in [CO<sub>2</sub></em>] is set entirely by Henry’s Law, but the total increase in DIC concentration includes the increase in non-exchangeable carbon species that occurs as that CO<sub>2</sub> reacts with water in the ocean.
+This causes the total increase in DIC per unit pCO2 to be much greater than the increase in [CO<sub>2</sub>*] alone, amplifying the effect of solubility pump that is driven by changes in CO<sub>2</sub> solubility.</p>
+<figure class="margin-caption align-default" id="fig-carbon-pco2-dic">
+<a class="reference internal image-reference" href="../_images/carbon-pCO2-DIC.png"><img alt="../_images/carbon-pCO2-DIC.png" src="../_images/carbon-pCO2-DIC.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-text">Change in DIC concentration and speciation in warm and cold water as pCO<sub>2</sub> increases. Note that the increase in DIC concentration is much greater than the change in [CO<sub>2</sub>*]. This is because the a large part of the increase in DIC is due to the increase in non-exchangeable DIC species. Note that pH will also be decreasing over this range, as seen in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:carbon:pCO2-pH</span></code>.</span><a class="headerlink" href="#fig-carbon-pco2-dic" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<!-- - Describe cycle:
+  - Surface cooling & equilibration
+  - downwelling & transport
+  - upwelling & equilibration
+  - {term}`Solubility Pump`
+- How to calculate equilibration?
+  - Need to know DIC and one other parameter...
+  - above given pH - measure of the free positive ions that are the net results of multiple acid-base equilibria in the ocean.
+    - Highly sensitive to T/S - i.e. not ideal because it is not _conservative_. -->
+</section>
+</section>
+</section>
+<section id="modelling-the-solubility-pump">
+<h2>Modelling the Solubility Pump<a class="headerlink" href="#modelling-the-solubility-pump" title="Permalink to this headline">#</a></h2>
+<p>To include the solubility pump in our model, we add:</p>
+<ul class="simple">
+<li><p>A box to represent the atmosphere.</p></li>
+<li><p>The concentration of DIC.</p></li>
+<li><p>The speciation of DIC.</p></li>
+<li><p>The exchange of CO<sub>2</sub> between the atmosphere and each surface box.</p></li>
+</ul>
+<section id="atmospheric-carbon">
+<h3>Atmospheric Carbon<a class="headerlink" href="#atmospheric-carbon" title="Permalink to this headline">#</a></h3>
+<p>We will model the atmosphere as a single, well-mixed box that overlies both surface ocean boxes.
+This is an OK approximation because the processes of atmospheric mixing are much faster than the processes of ocean mixing.
+Our atmosphere will have a pCO<sub>2</sub>, which is related to the number of moles of CO<sub>2</sub> in the atmosphere by:</p>
+<div class="math notranslate nohighlight" id="equation-eq-3box-pco2atmos">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-3box-pco2atmos" title="Permalink to this equation">#</a></span>\[N_{CO2} = pCO_2~N_{air}\times 10^{-6}\]</div>
+<p>Where <span class="math notranslate nohighlight">\(N_{air}\)</span> is the total number of moles of air in the atmosphere and <span class="math notranslate nohighlight">\(pCO_2\)</span> is in ppm. We can also calculate the mass of carbon in the atmosphere:</p>
+<div class="math notranslate nohighlight" id="equation-eq-3box-massco2atmos">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-3box-massco2atmos" title="Permalink to this equation">#</a></span>\[m_{CO2} = N_{CO2} 12\]</div>
+<p>For an initial pCO<sub>2</sub> of 400 ppm with N<sub>air</sub> of 1.773x10<sup>20</sup>, this yields a totoal mass of 851 GtC in out model atmosphere.</p>
+</section>
+<section id="ocean-atmosphere-exchange">
+<h3>Ocean-Atmosphere Exchange<a class="headerlink" href="#ocean-atmosphere-exchange" title="Permalink to this headline">#</a></h3>
+<p>We will model exchange in the atmosphere by allowing CO<sub>2</sub> in each surface box to equilibrate with the overlying atmosphere with a characteristic timescale, <span class="math notranslate nohighlight">\(\tau^{CO2}\)</span>, which defines how quickly CO<sub>2</sub> the atmosphere and the surface box will equilibrate (<a class="reference internal" href="l35.html#fig-carbon-tau"><span class="std std-numref">Fig. 7.6</span></a>).
+This allows us to calculate the number of moles of C moving from the atmosphere into one of the surface boxes as:</p>
+<div class="math notranslate nohighlight" id="equation-eq-3box-co2ex-ocean">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-3box-co2ex-ocean" title="Permalink to this equation">#</a></span>\[\dv{DIC_{CO2,i}}{t} = - \frac{1}{\tau^{CO2}_i} V_i \left([CO_2]_i - \underbrace{K_{0,i} ~ pCO_2}_{\mathrm{\mu mol~kg^{-1}}} \right)\]</div>
+<p>Where <span class="math notranslate nohighlight">\(i\)</span> is either of the surface boxes (<span class="math notranslate nohighlight">\(H, L\)</span>). Note that we have to be a bit careful with units here, as <span class="math notranslate nohighlight">\(K_0 pCO_2\)</span> will return units of <span class="math notranslate nohighlight">\(\mu mol~kg^{-1}\)</span> if <span class="math notranslate nohighlight">\(pCO_2\)</span> is given in ppm - this has to be in the same units as <span class="math notranslate nohighlight">\([CO_2]_i\)</span>.</p>
+<p>Conversely, the change in <span class="math notranslate nohighlight">\(pCO_2\)</span> of the atmosphere can be calculated as:</p>
+<div class="math notranslate nohighlight" id="equation-eq-3box-co2ex-atmos">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-3box-co2ex-atmos" title="Permalink to this equation">#</a></span>\[\dv{pCO_2}{t} = \sum_{i=L,H} \left(\frac{1}{\tau^{CO2}_i} V_i \left([CO_2]_i - K_{0,i} ~ pCO_2 \right) \right) \times 10^{6} / N_{air}\]</div>
+<p>To calculate this flux accurately, we need to know both the concentration of DIC and the state of DIC speciation to determine <span class="math notranslate nohighlight">\([CO_2]_i\)</span>. We can model DIC just like any other conservative tracer <a class="reference internal" href="l35.html#equation-eq-3box-conservative">(7.2)</a>, but keeping track of speciation is a bit more complicated.</p>
+</section>
+<section id="id1">
+<h3>DIC Speciation<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p>Above we calculated DIC speciation as a function of pH and the speciation constants <span class="math notranslate nohighlight">\(K_1\)</span> and <span class="math notranslate nohighlight">\(K_2\)</span>, so can we use pH to model DIC speciation?
+Unfortunately, pH is not a conservative quantity.
+The <span class="math notranslate nohighlight">\(K\)</span> values for DIC speciation are sensitive to temperature, salinity and pressure, which also make pH sensitive to these parameters.
+This allows pH to change based on the physical properties of the box, so the total amount of <span class="math notranslate nohighlight">\(H^+\)</span> in the entire model is not constant.
+To track DIC speciation, we need a <em>conservative</em> quantity that, along with DIC, can be used to calculate the concentration of CO<sub>2</sub> in each surface box.</p>
+<p>This conservative quantity is Total Alkalinity (TA).
+This is a conceptually tricky quantity that is beyond the scope of this course to understand.
+For our purposes, it is sufficient to know that TA is conservative, and that TA and DIC together can be used to calculate aqueous carbon speciation.
+In practicals, you will use a <a class="reference external" href="https://github.com/oscarbranson/cbsyst">python package</a> for doing these calculations.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">No but what actually <em>is</em> TA?!</p>
+<p>OK… you asked for it. TA is a difficult concept. For a chemist, TA is “<em>a measure of the excess bases (proton acceptors) over acids (proton donors), and is operationally defined by the titration with H<sup>+</sup> of all weak bases present in the solution</em>” (Sarmiento &amp; Gruber, 2006). For a geochemist, “<em>TA is equal to the charge difference between conservative cations and anions</em>”, so is a measure of the charge imbalance of seawater. It can also be thought of as the ‘buffering capacity’ of water, as higher alkalinity water has more proton acceptors so can better resist changes in pH.</p>
+<p>Functionally, it is approximately defined as:
+<span class="math notranslate nohighlight">\(
+TA = 2[CO_3^{2-}] + [HCO_3^-] + [B(OH)_4^-] + [minor~bases] + [OH^-] - [H^+]
+\)</span></p>
+<p>If you really want to know the details, take a look at section 1.2 of <a class="reference external" href="https://idiscover.lib.cam.ac.uk/permalink/f/1ii55o6/44CAM_ALMA51670486420003606">Zeebe &amp; Wolf-Gladrow (2001)</a>… but <strong>you really do not need to know this for QES</strong>.</p>
+</div>
+<p>As no processes in our model currently modify TA (they will soon), we can model TA using the equations for conservative tracer transport given in <a class="reference internal" href="l35.html#equation-eq-3box-conservative">(7.2)</a>.</p>
+</section>
+<section id="dic-concentration">
+<h3>DIC Concentration<a class="headerlink" href="#dic-concentration" title="Permalink to this headline">#</a></h3>
+<p>Now we have a way to keep track of DIC speciation, we can calculate the concentration of CO<sub>2</sub> in each surface box as:</p>
+<div class="math notranslate nohighlight">
+\[[CO_2]_i = f(DIC_i, TA_i, T_i, S_i)\]</div>
+<p>This allows us to model DIC as a conservative tracer <a class="reference internal" href="l35.html#equation-eq-3box-conservative">(7.2)</a>, with additional terms for the exchange of CO<sub>2</sub> with the atmosphere in the surface boxes:</p>
+<div class="math notranslate nohighlight" id="equation-eq-3box-dic-solubility">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-3box-dic-solubility" title="Permalink to this equation">#</a></span>\[\begin{split}\dv{DIC_L}{t} &amp;= [\mathrm{transport}] - \frac{1}{\tau^{CO2}_L} ([CO_2]_L - K_{0,L} ~ pCO_2 ) \\
+\dv{DIC_H}{t} &amp;= [\mathrm{transport}] - \frac{1}{\tau^{CO2}_H} ([CO_2]_H - K_{0,H} ~ pCO_2 ) \\
+\dv{DIC_D}{t} &amp;= [\mathrm{transport}]\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\([\mathrm{transport}]\)</span> represents the conservative transport terms from <a class="reference internal" href="l35.html#equation-eq-3box-conservative">(7.2)</a>.
+Note that the deep box is only affected by transport terms because it does not exchange CO<sub>2</sub> with the atmosphere.</p>
+<!-- ## Conservative Tracer for Speciation
+
+A final important concept in carbon speciation is the concept of **Total Alkalinity (TA)**.
+This somewhat-tricky concept is a key property for describing ocean carbon because it is *conservative* (does not change with temperature or pressure, like mass, salt or DIC).
+This is important because the concentration of the dissolved carbon species and pH all vary substantially with temperature and pressure.
+This makes it difficult to understand whether the carbon system is being modified by external processes, or simply responding to changes in physical conditions.
+A change in DIC or TA has to be caused by an external process acting on the water body.
+Along with DIC, this provides two conservative quantities that can be used to fully describe the concentration and speciation of carbon in seawater.
+
+So now we know why we might want it, what is it?!
+Total Alkalinity can be described in different ways depending on the context.
+For example, TA is:
+1. the charge difference between conservative anions and cations
+2. the excess of proton acceptors over donors
+3. the moles of acid per kg of seawater that must be added to reach the 'equivalence point', where $[H^+] = [HCO_3^-]$
+
+For our purposes you can think of TA as 'setting' both the pH and DIC speciation in seawater such that the positive and negative charges in that water balance.
+For a more complete undertanding of the topic, I recommend Section 1.2 of {cite}`Zeebe2001`.
+
+Regardless of the precise definition you use to get there, the important species that make up TA in seawater are:
+
+$$
+TA = [HCO_3^-] + 2 [CO_3^{2-}] + [B(OH)_4^-] + [OH^-] - [H^+]
+$$ -->
+<!-- {term}`Total Alkalinity`
+- Describes the charge balance of seawater.
+- Conservative, as includes positive and negative species.
+- Useful second parameter for tracking C speciation.
+- No analytical solution, but...
+  - Show carbonate alkalinity approximations.
+  - Mention carbon calculators that do it for you. -->
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./06_oceancarbon"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By the QES Team<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

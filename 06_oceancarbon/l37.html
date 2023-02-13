@@ -1,0 +1,800 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>The Biological Pump</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/admonitions.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams"]}, "tex": {"packages": ["base", "physics", "ams"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../00_intro/intro/intro.html">
+   1. Introduction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00_intro/l1/l1.html">
+     1.1. Course Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00_intro/l2/l2.html">
+     1.2. Where does the energy come from on Earth?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00_intro/l3/l3.html">
+     1.3. The Carbon Cycle
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_groundwater/intro/intro.html">
+   2. Groundwater
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_groundwater/l4/l4.html">
+     2.1. Groundwater Systems
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_groundwater/l5/l5.html">
+     2.2. Why water moves beneath the surface
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_groundwater/l6/l6.html">
+     2.3. How we measure and understand water movement
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_groundwater/l7/l7.html">
+     2.4. Groundwater challenges and sustainable groundwater
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_cryosphere/intro/intro.html">
+   3. Cryosphere
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_cryosphere/l8/l8.html">
+     3.1. Ice in the polar regions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_cryosphere/l9/l9.html">
+     3.2. The growth and melting of ice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_cryosphere/l10/l10.html">
+     3.3. The extent of sea ice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_cryosphere/l11/l11.html">
+     3.4. Ice sheets and the flow of glacial ice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_cryosphere/l12/l12.html">
+     3.5. Floating ice shelves and the flow of glacial ice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03_rivers/intro/intro.html">
+   4. Surface water and Flooding
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_rivers/l13/l13.html">
+     4.1. Catchment and drainage
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_rivers/l14/l14.html">
+     4.2. 1D model of drainage into a river
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_rivers/l15/l15.html">
+     4.3. River flows
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_rivers/l16/l16.html">
+     4.4. Reservoirs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_rivers/l17/l17.html">
+     4.5. Flood waves
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_rivers/l18/l18.html">
+     4.6. Flooding
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04_atmosphere/intro/intro.html">
+   5. Air Pollution and Atmospheric Chemistry
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_atmosphere/l19/l19.html">
+     5.1. An overview of the atmosphere
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_atmosphere/l20/l20.html">
+     5.2. Air pollution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_atmosphere/l21/l21.html">
+     5.3. The chemistry of pollutants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_atmosphere/l22/l22.html">
+     5.4. Aerosols
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_atmosphere/l23/l23.html">
+     5.5. Air pollution and climate – indirect effects
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_atmosphere/l24/l24.html">
+     5.6. Air pollution and climate – direct effects
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05_globalenvironment/intro/intro.html">
+   6. Global Environment
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_globalenvironment/l26/l26.html">
+     6.1. Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_globalenvironment/l27/l27.html">
+     6.2. Equations of motion on the rotating earth
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_globalenvironment/l28/l28.html">
+     6.3. Scales of motion in the atmosphere and ocean
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_globalenvironment/l29/l29.html">
+     6.4. Structure and mean circulation of the atmosphere
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_globalenvironment/l30/l30.html">
+     6.5. Atmospheric heat transport
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_globalenvironment/l31/l31.html">
+     6.6. 2-box model for the global heat distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_globalenvironment/l32/l32.html">
+     6.7. Stommel box model for ocean heat transport
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_globalenvironment/l33/l33.html">
+     6.8. Shallow wind-forced ocean circulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_globalenvironment/l34/l34.html">
+     6.9. Thermohaline Circulation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="intro.html">
+   7. Ocean Carbon
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="l35.html">
+     7.1. How much carbon is in the ocean?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../reference/glossary.html">
+   8. Glossary
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/06_oceancarbon/l37.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#phytoplankton">
+   Phytoplankton
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#organic-matter">
+   Organic Matter
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nutrients">
+     Nutrients
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   The Biological Pump
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modelling-the-biological-pump">
+   Modelling the Biological Pump
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-a-nutrient">
+     Adding a nutrient
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#coupling-productivity-and-dic">
+     Coupling productivity and DIC.
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>The Biological Pump</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#phytoplankton">
+   Phytoplankton
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#organic-matter">
+   Organic Matter
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nutrients">
+     Nutrients
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   The Biological Pump
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modelling-the-biological-pump">
+   Modelling the Biological Pump
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-a-nutrient">
+     Adding a nutrient
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#coupling-productivity-and-dic">
+     Coupling productivity and DIC.
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="the-biological-pump">
+<span id="carbon-biopump"></span><h1>The Biological Pump<a class="headerlink" href="#the-biological-pump" title="Permalink to this headline">#</a></h1>
+<p>The surface ocean is a soup of microscopic life - one ml of average surface ocean water contains around 5 x 10<sup>5</sup> organisms (and <a class="reference external" href="https://doi.org/10.1073/pnas.95.12.6578">that estimate</a> only includes prokaryotes!).
+Many of these organisms are photosynthetic phytoplankton, the ‘plants of the sea’, which harvest light energy from the sun to convert CO<sub>2</sub> into sugars.
+These are the ‘primary producers’ of the ocean, and are the base of the marine food web.
+Here, we’ll look at how the carbon trapped by these organisms is exported from the surface ocean to the deep, removing carbon from the atmosphere and concentrating it in the ocean.</p>
+<section id="phytoplankton">
+<h2>Phytoplankton<a class="headerlink" href="#phytoplankton" title="Permalink to this headline">#</a></h2>
+<figure class="margin-caption align-default" id="fig-carbon-chla">
+<a class="reference internal image-reference" href="../_images/seawifs-chlorophyll.png"><img alt="../_images/seawifs-chlorophyll.png" src="../_images/seawifs-chlorophyll.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">The concentration of chlorophyll in the surface ocean, as measured by the SeaWiFS satellite. Chlorophyll is the green pigment that phytoplankton use to harvest light energy, and its characteristic absorption spectrum make it possible to determine its concentration, and therefore phytoplankton abundance, from satellite measurements of ocean colour. Image from <a class="reference external" href="https://svs.gsfc.nasa.gov/30801">NASA</a>.</span><a class="headerlink" href="#fig-carbon-chla" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Phytoplankton are present everywhere in the surface ocean, but their abundance is not uniform (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:carbon:chla</span></code>).
+Patterns in their abundance are driven by the availability of the two key components required for growth: light and nutrients.
+However, phytoplankton are extremely diverse, with numerous adaptations to living in inhospitable areas of the ocean: the ‘marine deserts’ in the subtropical gyres have a healthy population of particularly small phytoplankton that are specially adapted for living in these nutrient-poor waters, and some phytoplankton that live in polar oceans are specially adapted to survive the long winters, with almost no light for ~6 months.
+Phytoplankton are found <em>everywhere</em> in the surface ocean, but their abundance and productivity varies greatly.</p>
+<p>Phytoplankton fuel a complex food web of zooplankton (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:carbon:plankton</span></code>), fish, and ultimately all marine life.
+However, for the purposes of understanding ocean carbon, we’re going to compress all this complexity to consider ‘organic matter’ - solid material that makes up the bodies of marine organisms that is created from dissolved CO<sub>2</sub> and light by phytoplankton.
+All organisms eventually die, and their organic matter gradually sinks from the surface into the deep ocean.</p>
+<figure class="margin-caption align-default" id="fig-carbon-plankton">
+<a class="reference internal image-reference" href="../_images/carbon-plankton.jpg"><img alt="../_images/carbon-plankton.jpg" src="../_images/carbon-plankton.jpg" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-text">A light micrograph of surface ocean plankton. This is typical of what you’d see down a microscope if you filtered a few litres of seawater. Photo: Annegret Stuhr, GEOMAR.</span><a class="headerlink" href="#fig-carbon-plankton" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="organic-matter">
+<h2>Organic Matter<a class="headerlink" href="#organic-matter" title="Permalink to this headline">#</a></h2>
+<p>Organic matter is produced by phytoplankton from dissolved CO<sub>2</sub> in the ocean, and can be approximated as:</p>
+<div class="math notranslate nohighlight" id="equation-eq-carbon-phot-glucose">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-carbon-phot-glucose" title="Permalink to this equation">#</a></span>\[\mathrm{\underbrace{6 CO_2}_{carbon~dioxide} + \underbrace{6 H_2O}_{water} \xrightarrow[+light]{photosynthesis} \underbrace{C_6H_{12}O_6}_{glucose} + \underbrace{6 O_2}_{oxygen}}\]</div>
+<p>This describes the process of <strong>primary productivity</strong> in its most basic form: the capture of CO<sub>2</sub> from the atmosphere by photosynthesis, and the production of glucose, a simple sugar, which can fuel biological processes in organisms.
+However, because CO<sub>2</sub> is ubiquitously present in the surface ocean, this equation predicts that photosynthesis should be capturing carbon from the atmosphere <em>everywhere</em> that there is light.
+We can see from <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:carbon:chla</span></code> that this is not the case, with large regions of low productivity in the subtropical gyres, where there is abundant light.
+This is because the availability of nutrients is a key driver of phytoplankton abundance, and the availability of nutrients is not uniform in the ocean.</p>
+<section id="nutrients">
+<h3>Nutrients<a class="headerlink" href="#nutrients" title="Permalink to this headline">#</a></h3>
+<p>To consider the limiting effect of nutrients, we must use a more complete (but still very approximate) definition of organic matter:</p>
+<div class="math notranslate nohighlight" id="equation-eq-carbon-phot-organic">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-carbon-phot-organic" title="Permalink to this equation">#</a></span>\[\mathrm{\underbrace{106 CO_2}_{carbon~dioxide} + \underbrace{16 NO_3 + H_3PO_4}_{nutrients} + 78 H_2O + 18H^+ \xrightarrow[+light]{photosynthesis} \underbrace{C_{106}H_{175}O_{42}N_{16}P}_{organic~matter} + \underbrace{150 O_2}_{oxygen}}\]</div>
+<p>Here, we include the <strong>macronutrients</strong> nitrogen and phosphorous alongside carbon, which are two of the main limiting nutrients in the ocean.
+An interesting characteristic of organic matter is that it contains C:N:P in a relatively consistent 106:16:1 ratio, which is known as the <strong>Redfield Ratio</strong> (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:carbon:redfield</span></code>).</p>
+<figure class="margin-caption align-default" id="fig-carbon-redfield">
+<a class="reference internal image-reference" href="../_images/carbon-redfield.webp"><img alt="../_images/carbon-redfield.webp" src="../_images/carbon-redfield.webp" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-text">The dissolved concentations of N and P in the ocean show a consistent 16:1 slope, corresponding to the concentration of these elements in average organic matter.</span><a class="headerlink" href="#fig-carbon-redfield" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Nutrients will be consumed in proportion to their abundance in organic matter (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:carbon:limitation</span></code>) wherever there is light available to power photosynthesis.
+This means that, with the exception for the polar oceans where light can be limiting, the patterns of primary productivity are determined by nutrient supply.
+The mechanisms that supply N and P to the ocean are very different.</p>
+<p><strong>Phosphate</strong> (PO<sub>4</sub>) is derived from the dissolution of rocks on the continents.
+Consequently, it must either be supplied either via rivers, or by wind-blown dust, primarily from deserts (dust from the Sahara is regularly found in Central America!).</p>
+<p><strong>Nitrate</strong> (NO<sub>3</sub>) is also supplied from the continents, but the atmosphere provides a second significant source.
+Nitrogen is the most abundant element in the atmosphere, which is 78% N<sub>2</sub>, but this form of nitrogen is not available for use by phytoplankton.
+Specialised groups of phytoplankton have evolved the ability to reduce dissolved N<sub>2</sub> into forms that can be used by other phytoplankton, in a process known as <strong>nitrogen fixation</strong>.</p>
+<p>A third source of both N and P to the surface ocean is the upwelling of nutrient-rich deep water, which recycles nutrients from the deep ocean back to the surface.
+We’ll discuss why the deep ocean is enriched in nutrients below.</p>
+<figure class="margin-caption align-default" id="fig-carbon-limitation">
+<a class="reference internal image-reference" href="../_images/carbon-nutrient-limitation.webp"><img alt="../_images/carbon-nutrient-limitation.webp" src="../_images/carbon-nutrient-limitation.webp" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-text">The average concentration of elements in phytoplankton cells and dissolved in the ocean. Anything that falls below the dotted line will limit phytoplankton growth. Consequently, elements below this line (e.g. Fe, Mn, Co) are rapidly consumed by phytoplankton, which gives the ma very short residence time in the ocean compared to abundant ions that are not limiting (e.g. Mg, K, S). From <a class="reference external" href="https://doi.org/10.1038/ngeo1765">Moore et al. (2013)</a>.</span><a class="headerlink" href="#fig-carbon-limitation" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="dropdown admonition">
+<p class="admonition-title">Micronutrients…</p>
+<p>It is worth noting that N and P are not the only nutrients that limit phytoplankton growth (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:carbon:limitation</span></code>).
+There are large areas of the ocean where they are abundant, but <strong>micronutrients</strong> such as iron, manganese, and cobalt, prevent phytoplankton from growing.
+These patterns of limitation are largely a product of the patterns of the supply of micronutrients on the planet.</p>
+<p>The Southern Ocean, for example, is relatively rich in N and P, but has low phytoplankton productivity compared to the Northern hemisphere.
+This is predominantly driven by low iron concentrations in the Southern Ocean.
+Iron is low because, like P, it is derived from the dissolution of rocks on the continents, but the antarctic circumpolar current has minimal contact with coastlines that can supply dissolved iron from rivers, and there are no desert regions in the path of the westerlies that blow towards antarctica to supply dust.</p>
+<p>The patterns of micronutrient limitation are complex, and beyond the scope of this course.
+Here, we’ll only consider the effects of macronutrients on phytoplankton growth.</p>
+</div>
+</section>
+</section>
+<section id="id1">
+<h2>The Biological Pump<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>The <strong>Biological Pump</strong> describes the transport of nutrients and carbon from the surface ocean to the deep ocean by sinking organic matter (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:carbon:biopump</span></code>).
+This process is driven by the production of organic matter in the surface waters, which is broken down by bacteria and other organisms as it sinks through the ocean interior, <strong>remineralising</strong> the organic matter back into its dissolved constituents.
+This increases the dissolved concentrations of carbon and nutrients in the deep ocean, which are then eventually returned to the surface by Thermohaline Circulation.</p>
+<figure class="margin-caption align-default" id="fig-carbon-biopump">
+<a class="reference internal image-reference" href="../_images/carbon-biopump.webp"><img alt="../_images/carbon-biopump.webp" src="../_images/carbon-biopump.webp" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-text">A schematic of the biological pum from <a class="reference external" href="https://doi.org/10.1038/35037696">Chisholm (2000)</a></span><a class="headerlink" href="#fig-carbon-biopump" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The process of organic matter breakdown is very efficient.
+Only about 1% of the organic matter produced at the surface makes it all the way to the sediments at the bottom of the ocean.
+The remaining 99% is broken down as it sinks through the water column, and is release as dissolved carbon and nutrients into the water.
+In fact, remineralisation is so efficient that only ~20% of the organic matter produced in the surface ocean even makes it into the deep ocean - ~80% is broken down while it is still close to the surface!</p>
+<p>However, the ocean is very large and thermohaline circulation is slow, so the biological pump drives a significant accumulation of nutrients and carbon in the deep ocean, which increases in concentration along the thermohaline circulation path (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:carbon:circulation</span></code>).</p>
+<figure class="margin-caption align-default" id="fig-carbon-circulation">
+<a class="reference internal image-reference" href="../_images/carbon-cx-dic-po4-circ.png"><img alt="../_images/carbon-cx-dic-po4-circ.png" src="../_images/carbon-cx-dic-po4-circ.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">The (salinity-normalised) concentrations of PO<sub>4</sub> and DIC in the ocean interior along the Thermohaline Circulation path (red arrows). Notice how both PO<sub>4</sub> and DIC increase in deep water along the circulation path. This is because they receive a constant supply of nutrients from organic matter falling from the surface and remineralising in the deep water. This acts to concentration nutrients and DIC in the deep ocean, leading to nutrient-rich waters in upwelling zones. From <a class="reference external" href="https://doi.org/10.1515/9781400849079">Sarmiento &amp; Gruber (2006), Chapter 5</a>.</span><a class="headerlink" href="#fig-carbon-circulation" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The biological pump provides an efficient one-way transport of nutrients and organic matter into the deep ocean, which causes the deep ocean to be significantly more enriched in DIC than we would expect based on <a class="reference internal" href="l36.html#carbon-solubility"><span class="std std-ref">The Solubility Pump</span></a> alone.</p>
+<figure class="margin-caption align-default" id="fig-carbon-csoft">
+<a class="reference internal image-reference" href="../_images/carbon-Csoft.png"><img alt="../_images/carbon-Csoft.png" src="../_images/carbon-Csoft.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">The contribution of the biological pump to the deep ocean carbon reservoir. <a class="reference external" href="https://doi.org/10.1515/9781400849079">Sarmiento &amp; Gruber (2006), Chapter 5</a>.</span><a class="headerlink" href="#fig-carbon-csoft" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="modelling-the-biological-pump">
+<h2>Modelling the Biological Pump<a class="headerlink" href="#modelling-the-biological-pump" title="Permalink to this headline">#</a></h2>
+<p>To model the biological pump we must include a nutrient to limit biological productivity, and include the uptake and release of DIC and nutrients by photosynethsis and remineralisation.</p>
+<section id="adding-a-nutrient">
+<h3>Adding a nutrient<a class="headerlink" href="#adding-a-nutrient" title="Permalink to this headline">#</a></h3>
+<p>For our model we will use Phosphate (PO<sub>4</sub>) as our limiting nutrient.
+The choice of P here is arbitrary - you could just as easily use Nitrate, or some other limiting nutrient.</p>
+<p>We model phosphate as a conservative tracer that is transported, consumed by phytoplankton in the surface, and released at depth by remineralisation (assuming that everything that leaves the surface box is remineralised in the deep box).
+As with atmospheric CO<sub>2</sub> exchange, we will model the consumption of P by phytoplankton using a characteristic timescale, <span class="math notranslate nohighlight">\(\tau^P\)</span> (<a class="reference internal" href="l35.html#fig-carbon-tau"><span class="std std-numref">Fig. 7.6</span></a>).
+This modifies Eq. <a class="reference internal" href="l35.html#equation-eq-3box-conservative">(7.2)</a> to:</p>
+<div class="math notranslate nohighlight" id="equation-eq-carbon-po4">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-carbon-po4" title="Permalink to this equation">#</a></span>\[\begin{split}\dv{P_L}{t} &amp;= [\mathrm{transport}] - \frac{1}{\tau^P_L} P_L \\
+\dv{P_H}{t} &amp;= [\mathrm{transport}] - \frac{1}{\tau^P_H} P_H \\
+\dv{P_D}{t} &amp;= [\mathrm{transport}] + \left. \left( \frac{V_L}{\tau^P_L} P_L + \frac{V_L}{\tau^P_H} P_H \right) \middle/ V_D \right.\end{split}\]</div>
+<p>Where <span class="math notranslate nohighlight">\([\mathrm{transport}]\)</span> represents the thermohaline and vertical mixing terms from <a class="reference internal" href="l35.html#equation-eq-3box-conservative">(7.2)</a>.</p>
+</section>
+<section id="coupling-productivity-and-dic">
+<h3>Coupling productivity and DIC.<a class="headerlink" href="#coupling-productivity-and-dic" title="Permalink to this headline">#</a></h3>
+<p>DIC is linked to PO4 by the Redfield Ratio as:</p>
+<div class="math notranslate nohighlight" id="equation-eq-carbon-p-dic">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-carbon-p-dic" title="Permalink to this equation">#</a></span>\[\Delta DIC_{org} = 106 \Delta P_{org}\]</div>
+<p>which allows us to include additional biological pumping terms to our DIC expression <a class="reference internal" href="l36.html#equation-eq-3box-dic-solubility">()</a> to represent the updtake of DIC in the surface and release at depth:</p>
+<div class="math notranslate nohighlight" id="equation-eq-3box-dic-biopump">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-3box-dic-biopump" title="Permalink to this equation">#</a></span>\[\begin{split}\dv{DIC_L}{t} &amp;= \begin{bmatrix} \mathrm{transport} \\ \mathrm{CO_2~exch.}\end{bmatrix} - 106 \frac{1}{\tau^P_L} P_L \\
+\dv{DIC_H}{t} &amp;= \begin{bmatrix} \mathrm{transport} \\ \mathrm{CO_2~exch.}\end{bmatrix} - 106 \frac{1}{\tau^P_H} P_H \\
+\dv{DIC_D}{t} &amp;= [\mathrm{transport}] + \left. \left( 106 \frac{V_L}{\tau^P_L} P_L + 106 \frac{V_H}{\tau^P_H} P_H \right) \middle / V_D \right.\end{split}\]</div>
+<p>Where the terms in squre brackets represent the conservative transport <a class="reference internal" href="l35.html#equation-eq-3box-conservative">(7.2)</a> and gas exchange <a class="reference internal" href="l36.html#equation-eq-3box-dic-solubility">()</a> terms.</p>
+<p>The biological pump is now included in our model, and we can run it to see how it affects the ocean carbon cycle.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./06_oceancarbon"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By the QES Team<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

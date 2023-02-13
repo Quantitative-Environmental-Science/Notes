@@ -345,9 +345,26 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../06_oceancarbon/intro.html">
+   7. Ocean Carbon
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../06_oceancarbon/l35.html">
+     7.1. How much carbon is in the ocean?
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../reference/glossary.html">
-   7. Glossary
+   8. Glossary
   </a>
  </li>
 </ul>
@@ -630,9 +647,9 @@ If we assume that <span class="math notranslate nohighlight">\(L\)</span> is con
 <p>where <span class="math notranslate nohighlight">\(e_s\)</span> is in <span class="math notranslate nohighlight">\(\times 10^2 \ \mathrm{Pa}\)</span> (<span class="math notranslate nohighlight">\(\mathrm{mbar}\)</span>) and <span class="math notranslate nohighlight">\(T\)</span> in Kelvin.
 As <span class="math notranslate nohighlight">\(e_s\)</span> increases exponentially with <span class="math notranslate nohighlight">\(T\)</span>, if an air parcel cools (without changing <span class="math notranslate nohighlight">\(e\)</span>) the air parcel will change from being <strong>subsaturated</strong> to <strong>supersaturated</strong>.</p>
 <figure class="margin-caption align-default" id="saturation-vp">
-<a class="reference internal image-reference" href="../../_images/figure13.png"><img alt="../../_images/figure13.png" src="../../_images/figure13.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../../_images/figure1.png"><img alt="../../_images/figure1.png" src="../../_images/figure1.png" style="width: 70%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5.18 </span><span class="caption-text">Schematic of the saturation vapour pressure of water.</span><a class="headerlink" href="#saturation-vp" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 5.19 </span><span class="caption-text">Schematic of the saturation vapour pressure of water.</span><a class="headerlink" href="#saturation-vp" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>When discussing cloud droplet formation, the <strong>saturation ratio (<span class="math notranslate nohighlight">\(S\)</span>)</strong> and <strong>supersaturation (<span class="math notranslate nohighlight">\(s\)</span>)</strong> (both unitless) are useful variables, defined as follows:</p>
@@ -666,12 +683,12 @@ Once we consider actual particles, we get into situations where <em>curvature or
 In these cases, supersaturation needs to be considered relative to the equilibrium value of <span class="math notranslate nohighlight">\(e\)</span> for a particular curved surface, so we refer to <span class="math notranslate nohighlight">\(e^*\)</span> as the <strong>equilibrium vapour pressure,</strong> which can differ from <span class="math notranslate nohighlight">\(e_s\)</span> over a flat plane surface.</p>
 <p>In the atmosphere, supersaturation can be achieved, in principle, via three basic mechanisms: <strong>radiative cooling</strong> , <strong>uplift</strong>, and <strong>mixing</strong>.
 Note that radiative cooling and mixing happen at constant pressure (isobaric), whereas uplift happens at constant energy (adiabatic).
-In the atmosphere, uplift or adiabatic expansion of ascending air is the most prevalent mechanism for a parcel of moist air to be cooled below <span class="math notranslate nohighlight">\(T_d\)</span> in order to reach supersaturation (see <a class="reference internal" href="#relative-humidity"><span class="std std-numref">Fig. 5.19</span></a>).
+In the atmosphere, uplift or adiabatic expansion of ascending air is the most prevalent mechanism for a parcel of moist air to be cooled below <span class="math notranslate nohighlight">\(T_d\)</span> in order to reach supersaturation (see <a class="reference internal" href="#relative-humidity"><span class="std std-numref">Fig. 5.20</span></a>).
 We will see later that in an ascending parcel, the updraft velocity affects the rate of cooling and hence the amount of condensation which forms.</p>
 <figure class="margin-caption align-default" id="relative-humidity">
-<a class="reference internal image-reference" href="../../_images/figure23.png"><img alt="../../_images/figure23.png" src="../../_images/figure23.png" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="04_atmosphere/l23/figures/figure2.png"><img alt="04_atmosphere/l23/figures/figure2.png" src="04_atmosphere/l23/figures/figure2.png" style="width: 90%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5.19 </span><span class="caption-text">Schematic of changes in relative humidity (RH) and supersaturation for a parcel of air rising in a cloud.</span><a class="headerlink" href="#relative-humidity" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 5.20 </span><span class="caption-text">Schematic of changes in relative humidity (RH) and supersaturation for a parcel of air rising in a cloud.</span><a class="headerlink" href="#relative-humidity" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -690,12 +707,12 @@ The second is a chemical effect of the aerosol dissolving in the growing water d
 <p>Where <span class="math notranslate nohighlight">\(\sigma\)</span> is the surface tension between water and air, and is the density of the droplet evaluated at <span class="math notranslate nohighlight">\(T\)</span>.
 <span class="math notranslate nohighlight">\(R\)</span> is the molar gas constant.
 At <span class="math notranslate nohighlight">\(273.2 \ \mathrm{K}, \sigma = 0.0756 \ \mathrm{N m^{-1}}\)</span>.</p>
-<p><a class="reference internal" href="#kelvin-curvature"><span class="std std-numref">Fig. 5.20</span></a> shows a plot of the Kelvin equation.
+<p><a class="reference internal" href="#kelvin-curvature"><span class="std std-numref">Fig. 5.21</span></a> shows a plot of the Kelvin equation.
 Smaller particles need a higher supersaturation to grow because their surfaces are more curved and water evaporates from them more easily.</p>
 <figure class="margin-caption align-default" id="kelvin-curvature">
-<a class="reference internal image-reference" href="../../_images/figure31.jpg"><img alt="../../_images/figure31.jpg" src="../../_images/figure31.jpg" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../../_images/figure3.jpg"><img alt="../../_images/figure3.jpg" src="../../_images/figure3.jpg" style="width: 70%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5.20 </span><span class="caption-text">Vapour pressure over a curved surface for pure <span class="math notranslate nohighlight">\(\mathrm{H_2O}\)</span> at 298 K.
+<p><span class="caption-number">Fig. 5.21 </span><span class="caption-text">Vapour pressure over a curved surface for pure <span class="math notranslate nohighlight">\(\mathrm{H_2O}\)</span> at 298 K.
 Figure credit: W. Brune (Penn State University).</span><a class="headerlink" href="#kelvin-curvature" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
@@ -705,13 +722,13 @@ Figure credit: W. Brune (Penn State University).</span><a class="headerlink" hre
 <p>Aerosol particles are abundant in the atmosphere and some of the particles are hydrophilic and water-soluble.
 In terms of droplet growth, this solubility is fortunate because the saturation vapour pressure over a solution is lowered by the presence of the solute compared to that of pure water and hence growth is energetically favourable.
 This is described by <strong>Raoult’s Law</strong>.</p>
-<p>Phenomenologically (and in a simplified manner) this vapour pressure reduction can be understood as follows: solute molecules (i.e. the chemical that is being dissolved in the solvent) occupy surface sites that would otherwise be occupied by water molecules (the solvent), which in turn prevents water molecules from evaporating from those sites as shown in <a class="reference internal" href="#vp-schematic"><span class="std std-numref">Fig. 5.21</span></a>.
+<p>Phenomenologically (and in a simplified manner) this vapour pressure reduction can be understood as follows: solute molecules (i.e. the chemical that is being dissolved in the solvent) occupy surface sites that would otherwise be occupied by water molecules (the solvent), which in turn prevents water molecules from evaporating from those sites as shown in <a class="reference internal" href="#vp-schematic"><span class="std std-numref">Fig. 5.22</span></a>.
 Consequently, a droplet containing, for instance, dissolved salt favours condensation more than would a pure water droplet of the same size.
 In other words, existing particles onto which water vapour condenses (<strong>cloud condensation nuclei;</strong> CCN) enable condensation at supersaturations well below those required for <strong>homogeneous nucleation</strong> (primarily because of their size) as discussed further below.</p>
 <figure class="margin-caption align-default" id="vp-schematic">
-<a class="reference internal image-reference" href="../../_images/figure43.png"><img alt="../../_images/figure43.png" src="../../_images/figure43.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="04_atmosphere/l23/figures/figure4.png"><img alt="04_atmosphere/l23/figures/figure4.png" src="04_atmosphere/l23/figures/figure4.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5.21 </span><span class="caption-text">Schematic of the saturation vapour pressure for (a) pure water, and (b) an ideal solution.
+<p><span class="caption-number">Fig. 5.22 </span><span class="caption-text">Schematic of the saturation vapour pressure for (a) pure water, and (b) an ideal solution.
 The white disks denote water molecules, and the black disks dissolved molecules.
 The reduction in vapour pressure from (a) to (b) corresponds to there being fewer sites from where water molecules can escape through the air–water interface.
 Figure from Lohmann et al. [2016].</span><a class="headerlink" href="#vp-schematic" title="Permalink to this image">#</a></p>
@@ -736,15 +753,15 @@ An example is salt, <span class="math notranslate nohighlight">\(\mathrm{NaCl}\)
 <p>As <span class="math notranslate nohighlight">\(a \ll r\)</span> and <span class="math notranslate nohighlight">\(b \ll r^3\)</span>, expanding each term in <span class="math notranslate nohighlight">\(S\)</span> and neglecting higher order terms yields:</p>
 <div class="math notranslate nohighlight" id="equation-koehler-approx">
 <span class="eqno">(5.30)<a class="headerlink" href="#equation-koehler-approx" title="Permalink to this equation">#</a></span>\[S = \frac{e^*(\infty)}{e_s(\infty)} \approx 1 + \frac{a}{r} - \frac{b}{r^3}\]</div>
-<p><a class="reference internal" href="#koehler-curve"><span class="std std-numref">Fig. 5.22</span></a> shows a Koehler curve, i.e., the saturation ratio as a function of the droplet radius, and separate curves for the curvature and solute effects.</p>
+<p><a class="reference internal" href="#koehler-curve"><span class="std std-numref">Fig. 5.23</span></a> shows a Koehler curve, i.e., the saturation ratio as a function of the droplet radius, and separate curves for the curvature and solute effects.</p>
 <figure class="margin-caption align-default" id="koehler-curve">
-<img alt="../../_images/figure52.png" src="../../_images/figure52.png" />
+<img alt="04_atmosphere/l23/figures/figure5.png" src="04_atmosphere/l23/figures/figure5.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 5.22 </span><span class="caption-text">Exemplar Koehler curve (black line) with red dashed line indicating the contribution from Raoult’s Law and the dotted line that from the Kelvin equation.
+<p><span class="caption-number">Fig. 5.23 </span><span class="caption-text">Exemplar Koehler curve (black line) with red dashed line indicating the contribution from Raoult’s Law and the dotted line that from the Kelvin equation.
 Figure from Ritchie [2017].</span><a class="headerlink" href="#koehler-curve" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>From <a class="reference internal" href="#koehler-curve"><span class="std std-numref">Fig. 5.22</span></a>, it can also be seen that the Kelvin effect is negligible for droplets larger than <span class="math notranslate nohighlight">\(1 \ \mathrm{\mu m}\)</span> where all curves approach <span class="math notranslate nohighlight">\(S = 1\)</span>.</p>
+<p>From <a class="reference internal" href="#koehler-curve"><span class="std std-numref">Fig. 5.23</span></a>, it can also be seen that the Kelvin effect is negligible for droplets larger than <span class="math notranslate nohighlight">\(1 \ \mathrm{\mu m}\)</span> where all curves approach <span class="math notranslate nohighlight">\(S = 1\)</span>.</p>
 <p>The peak of a Koehler curve corresponds to the so-called <strong>critical saturation ratio</strong>, <span class="math notranslate nohighlight">\(S_c\)</span> at the <strong>critical radius</strong> , <span class="math notranslate nohighlight">\(r_c\)</span> (that is typically between <span class="math notranslate nohighlight">\(0.1 \ \mathrm{\mu m}\)</span> and <span class="math notranslate nohighlight">\(1.0 \ \mathrm{\mu m}\)</span>).
 <span class="math notranslate nohighlight">\(S_c\)</span> and <span class="math notranslate nohighlight">\(r_c\)</span> can be obtained by differentiating the Koehler equation with respect to <span class="math notranslate nohighlight">\(r\)</span> and setting the derivative to 0:</p>
 <div class="math notranslate nohighlight" id="equation-koehler-peak">
@@ -761,11 +778,11 @@ In contrast, larger aerosol particles require smaller supersaturations to be act
 </section>
 <section id="aerosol-cloud-interactions">
 <h2>Aerosol- cloud interactions<a class="headerlink" href="#aerosol-cloud-interactions" title="Permalink to this headline">#</a></h2>
-<p><strong>Aerosol-cloud interactions</strong> (also known as aerosol indirect effects) refer to the modification of cloud properties due to changes in the aerosol population as summarized in <a class="reference internal" href="#aerosol-effects"><span class="std std-numref">Fig. 5.23</span></a>.</p>
+<p><strong>Aerosol-cloud interactions</strong> (also known as aerosol indirect effects) refer to the modification of cloud properties due to changes in the aerosol population as summarized in <a class="reference internal" href="#aerosol-effects"><span class="std std-numref">Fig. 5.24</span></a>.</p>
 <figure class="margin-caption align-default" id="aerosol-effects">
-<img alt="../../_images/figure62.png" src="../../_images/figure62.png" />
+<img alt="../../_images/figure6.png" src="../../_images/figure6.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 5.23 </span><span class="caption-text">Summary of aerosol-cloud interactions and their climate effects.
+<p><span class="caption-number">Fig. 5.24 </span><span class="caption-text">Summary of aerosol-cloud interactions and their climate effects.
 Based on IPCC AR5.</span><a class="headerlink" href="#aerosol-effects" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
@@ -804,7 +821,7 @@ Absorbing aerosol particles may heat the lowermost atmosphere and thus suppress 
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./04_atmosphere/l23"
         },
         predefinedOutput: true

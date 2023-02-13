@@ -345,9 +345,26 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../06_oceancarbon/intro.html">
+   7. Ocean Carbon
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../06_oceancarbon/l35.html">
+     7.1. How much carbon is in the ocean?
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../reference/glossary.html">
-   7. Glossary
+   8. Glossary
   </a>
  </li>
 </ul>
@@ -678,7 +695,7 @@ At higher altitudes, diffusive separation can occur with light molecules such as
 Ignoring for the moment the region above <span class="math notranslate nohighlight">\(50 \ \mathrm{km}\)</span>, the main features are decreasing temperatures with altitude up to <span class="math notranslate nohighlight">\(\sim 15 \ \mathrm{km}\)</span>, with increasing temperatures above.
 We will now consider why this occurs, and critically, why it is important.</p>
 <figure class="margin-caption align-default" id="atmosphere-t">
-<a class="reference internal image-reference" href="../../_images/figure1.png"><img alt="../../_images/figure1.png" src="../../_images/figure1.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../../_images/figure19.1.png"><img alt="../../_images/figure19.1.png" src="../../_images/figure19.1.png" style="width: 70%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 5.1 </span><span class="caption-text">Temperature structure of the atmosphere.</span><a class="headerlink" href="#atmosphere-t" title="Permalink to this image">#</a></p>
 </figcaption>
@@ -695,7 +712,9 @@ If <span class="math notranslate nohighlight">\(\dd{q} = 0\)</span> (an adiabati
 <div class="math notranslate nohighlight" id="equation-internal-energy-diff">
 <span class="eqno">(5.4)<a class="headerlink" href="#equation-internal-energy-diff" title="Permalink to this equation">#</a></span>\[\dd{U} = – p \dd{V}\]</div>
 <p>From the definition of enthalpy (<span class="math notranslate nohighlight">\(H = U + pV\)</span>)</p>
-<p><span class="math notranslate nohighlight">\(\dd{H} = \dd{U} + p \dd{V} + V \dd{p}\)</span> and substitution for <span class="math notranslate nohighlight">\(\dd{U}\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[\dd{H} = \dd{U} + p \dd{V} + V \dd{p}\]</div>
+<p>and substitution for <span class="math notranslate nohighlight">\(\dd{U}\)</span> gives</p>
 <div class="math notranslate nohighlight" id="equation-enthalpy-diff">
 <span class="eqno">(5.5)<a class="headerlink" href="#equation-enthalpy-diff" title="Permalink to this equation">#</a></span>\[\dd{H} = V \dd{p}\]</div>
 <p>From the hydrostatic equation, the altitude dependence of pressure is given by</p>
@@ -714,14 +733,14 @@ The definition of the molar heat capacity, <span class="math notranslate nohighl
 <span class="eqno">(5.9)<a class="headerlink" href="#equation-abd-lapse-rate" title="Permalink to this equation">#</a></span>\[\dv{T}{z} = -9.8 \mathrm{K \ km^{-1}}\]</div>
 <p>which is termed the <em>(dry) adiabatic lapse rate</em>, or <span class="math notranslate nohighlight">\(\Gamma_{ad} = 9.8 \ \mathrm{K \ km^{–1}}\)</span>.
 In fact latent heat release from condensing water vapour heats the ascending air, leading to an average actual (environmental) lapse rate, <span class="math notranslate nohighlight">\(\Gamma_{\mathrm{env}} = 6.5 \ \mathrm{K \ km^{–1}}\)</span>.
-This drop in temperature with altitude can be seen in <a class="reference internal" href="#atmosphere-t"><span class="std std-numref">Figure 5.1</span></a></p>
+This drop in temperature with altitude can be seen in <a class="reference internal" href="#atmosphere-t"><span class="std std-numref">Fig. 5.1</span></a></p>
 </section>
 <section id="the-stratospheric-temperature-profile-heating-from-above">
 <h3>The stratospheric temperature profile – heating from above<a class="headerlink" href="#the-stratospheric-temperature-profile-heating-from-above" title="Permalink to this headline">#</a></h3>
 <p>By contrast, the stratosphere is heated from above.
 Solar radiation is absorbed by <span class="math notranslate nohighlight">\(\mathrm{O_3}\)</span> (and at higher altitudes by <span class="math notranslate nohighlight">\(\mathrm{O_2}\)</span>).</p>
 <figure class="margin-caption align-default" id="ox-absorption">
-<a class="reference internal image-reference" href="../../_images/figure2.png"><img alt="../../_images/figure2.png" src="../../_images/figure2.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../../_images/figure19.2.png"><img alt="../../_images/figure19.2.png" src="../../_images/figure19.2.png" style="width: 80%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 5.2 </span><span class="caption-text">Absorption bands of O2 and O3.</span><a class="headerlink" href="#ox-absorption" title="Permalink to this image">#</a></p>
 </figcaption>
@@ -738,7 +757,7 @@ Solar radiation is absorbed by <span class="math notranslate nohighlight">\(\mat
 <section id="vertical-stability-of-the-atmosphere">
 <h2>Vertical stability of the atmosphere<a class="headerlink" href="#vertical-stability-of-the-atmosphere" title="Permalink to this headline">#</a></h2>
 <p>The atmospheric temperature profile is important because it determines the vertical stability (speed of vertical mixing) of the atmosphere.</p>
-<p>Consider an idealised temperature profile (<a class="reference internal" href="#unstable-t"><span class="std std-numref">Figure 5.3</span></a>) with an <em>environmental lapse rate</em> (solid line) which <em>in this illustrative case</em> is taken to be larger (i.e. more negative) than the adiabatic lapse rate (dashed line).
+<p>Consider an idealised temperature profile (<a class="reference internal" href="#unstable-t"><span class="std std-numref">Fig. 5.3</span></a>) with an <em>environmental lapse rate</em> (solid line) which <em>in this illustrative case</em> is taken to be larger (i.e. more negative) than the adiabatic lapse rate (dashed line).
 As a notional air parcel is displaced upwards from point A, it will cool at the adiabatic lapse rate by an amount <span class="math notranslate nohighlight">\(\dd{T}\)</span>.
 However, at point B the environmental temperature is <em>cooler</em> by a further amount <span class="math notranslate nohighlight">\(\dd{T}\)</span>.</p>
 <p>The notional air parcel is thus warmer than its surroundings, is less dense, and will thus continue to rise – the air has become convectively unstable.
@@ -746,19 +765,19 @@ Similarly, if the parcel is displaced downwards, the same argument leads to the 
 In the troposphere where this condition is often satisfied, overturning readily occurs leading to rapid vertical transport and short transport times (typically weeks or less).
 If the environmental lapse rate <span class="math notranslate nohighlight">\(\Gamma_{\mathrm{env}} \sim \Gamma_{ad}\)</span>, the air is said to be <em>neutrally</em> stable.</p>
 <figure class="margin-caption align-default" id="unstable-t">
-<a class="reference internal image-reference" href="../../_images/figure3.png"><img alt="../../_images/figure3.png" src="../../_images/figure3.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../../_images/figure19.3.png"><img alt="../../_images/figure19.3.png" src="../../_images/figure19.3.png" style="width: 70%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 5.3 </span><span class="caption-text">Temperature profile for unstable conditions</span><a class="headerlink" href="#unstable-t" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Consider the case when the vertical temperature gradient is positive (see <a class="reference internal" href="#stable-t"><span class="std std-numref">Figure 5.4</span></a>).
+<p>Consider the case when the vertical temperature gradient is positive (see <a class="reference internal" href="#stable-t"><span class="std std-numref">Fig. 5.4</span></a>).
 As above, upward displacement of the air parcel leads to a cooling of <span class="math notranslate nohighlight">\(\Delta T\)</span>.
 However now the environmental temperature is <em>higher</em> by <span class="math notranslate nohighlight">\(\dd{T}\)</span>, and so now the displaced parcel is cooler and thus more dense than its surroundings, and thus descends.
 As above, if it displaced downwards, it has a tendency to rise.
 Under these conditions the atmosphere is now stable to vertical displacements.
 These conditions are those found in the stratosphere, in which vertical transport is therefore slow (months – years).</p>
 <figure class="margin-caption align-default" id="stable-t">
-<img alt="../../_images/figure4.png" src="../../_images/figure4.png" />
+<img alt="../../_images/figure19.4.png" src="../../_images/figure19.4.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 5.4 </span><span class="caption-text">Temperature profile for stable conditions</span><a class="headerlink" href="#stable-t" title="Permalink to this image">#</a></p>
 </figcaption>
@@ -768,7 +787,7 @@ Gases emitted from the Earth’s surface thus become rapidly mixed throughout th
 If they can be effectively <em>scavenged</em> when in the troposphere, they are unlikely to reach the upper atmosphere in significant concentrations.</p>
 <section id="radiative-properties-of-gases-and-particles">
 <h3>Radiative properties of gases and particles<a class="headerlink" href="#radiative-properties-of-gases-and-particles" title="Permalink to this headline">#</a></h3>
-<p>In Lecture 2 (and Practical 1) we derived a simple energy balance model of the atmosphere.
+<p>In <a class="reference internal" href="../../00_intro/l2/l2.html#lecture-2"><span class="std std-numref">Section 1.2</span></a> we derived a simple energy balance model of the atmosphere.
 In this model we considered that the sun provides incoming short wave length radiation (<span class="math notranslate nohighlight">\(\lambda &lt; 500 \ \mathrm{nm}\)</span>) and the Earth’s surface acts as a source of long-wavelength radiation.
 The difference in the emission of radiation from a black body can be described by Wien’s displacement law:</p>
 <div class="math notranslate nohighlight" id="equation-wiens-law">
@@ -776,12 +795,12 @@ The difference in the emission of radiation from a black body can be described b
 <p>where <span class="math notranslate nohighlight">\(\lambda_\mathrm{max}\)</span> is the wavelength that is a the peak of the curve, <span class="math notranslate nohighlight">\(b\)</span> is Wein’s displacement constant,
 and <span class="math notranslate nohighlight">\(T\)</span> is the absolute temperature of the black-body in Kelvin.</p>
 <figure class="margin-caption align-default" id="black-body">
-<a class="reference internal image-reference" href="../../_images/figure5.png"><img alt="../../_images/figure5.png" src="../../_images/figure5.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="04_atmosphere/l19/figures/figure5.png"><img alt="04_atmosphere/l19/figures/figure5.png" src="04_atmosphere/l19/figures/figure5.png" style="width: 80%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 5.5 </span><span class="caption-text">Black body emission curves for the sun and Earth (a) and ground level emissivity (b).</span><a class="headerlink" href="#black-body" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>In panel (b) of <a class="reference internal" href="#black-body"><span class="std std-numref">Figure 5.5</span></a> we can see that different molecules absorb the different wavelengths of radiation emitted by the sun and Earth.
+<p>In panel (b) of <a class="reference internal" href="#black-body"><span class="std std-numref">Fig. 5.5</span></a> we can see that different molecules absorb the different wavelengths of radiation emitted by the sun and Earth.
 For an absorption to occur a molecule must be able to undergo a change in energy level (translational, rotation, vibrational or electronic).
 Absorption in the microwave region are typically associated with rotational transitions; Absorption in the infrared region typically are related to vibrational transitions; Absorption in the UV is typically associated with electronic transitions.</p>
 <p>To absorb or emit radiation a molecule must possess a changing <em>electric dipole</em>.
@@ -810,10 +829,10 @@ As a result it <em>does</em> have a vibrational spectrum.</p></li>
 As <span class="math notranslate nohighlight">\(\mathrm{H_2O}\)</span> vibrates, <em>all</em> of the vibrations create vibrating dipoles.
 As a result, like <span class="math notranslate nohighlight">\(\mathrm{CO_2}\)</span>, it <em>does</em> have a vibrational spectrum.</p></li>
 </ol>
-<p>These gases that can absorb the Earth’s outgoing long-wave radiation “trap” it and so distort the simple energy balance model we produced in Lecture 2.</p>
+<p>These gases that can absorb the Earth’s outgoing long-wave radiation “trap” it and so distort the simple energy balance model we produced in <a class="reference internal" href="../../00_intro/l2/l2.html#lecture-2"><span class="std std-numref">Section 1.2</span></a>.</p>
 <p>The abundance of these gases has changed considerably over time.</p>
 <figure class="margin-caption align-default" id="ice-core-gases">
-<a class="reference internal image-reference" href="../../_images/figure6.png"><img alt="../../_images/figure6.png" src="../../_images/figure6.png" style="width: 50%;" /></a>
+<a class="reference internal image-reference" href="../../_images/figure19.6.png"><img alt="../../_images/figure19.6.png" src="../../_images/figure19.6.png" style="width: 50%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 5.6 </span><span class="caption-text">Atmospheric well-mixed greenhouse gas (WMGHG) concentrations from ice cores.
 (a) Records during the last 800 kyr with the Last Glacial Maximum (LGM) to Holocene transition as inset.
@@ -839,7 +858,7 @@ Source IPCC AR6.</span><a class="headerlink" href="#ice-core-gases" title="Perma
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./04_atmosphere/l19"
         },
         predefinedOutput: true
