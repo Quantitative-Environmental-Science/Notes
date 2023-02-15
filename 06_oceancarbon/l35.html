@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="8. Glossary" href="../reference/glossary.html" />
+    <link rel="next" title="7.2. The Solubility Pump" href="l36.html" />
     <link rel="prev" title="7. Ocean Carbon" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
@@ -358,6 +358,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      7.1. How much carbon is in the ocean?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="l36.html">
+     7.2. The Solubility Pump
     </a>
    </li>
   </ul>
@@ -693,7 +698,7 @@ These measurements show that the concentration of Dissolved Inorganic Carbon (DI
 Combined with the mass of the ocean, we can calculate that there are ~37,900 PgC dissolved in seawater (<a class="reference internal" href="#fig-carbon-1box"><span class="std std-numref">Fig. 7.1</span></a>).
 This is around 50x more than is present in the atmosphere today (~750 GtC).</p>
 <figure class="margin-caption align-default" id="fig-carbon-1box">
-<a class="reference internal image-reference" href="../_images/carbon_1box.png"><img alt="../_images/carbon_1box.png" src="../_images/carbon_1box.png" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="../_images/carbon-1box.png"><img alt="../_images/carbon-1box.png" src="../_images/carbon-1box.png" style="width: 90%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.1 </span><span class="caption-text">The amounts of carbon in the ocean and atmosphere and the exchange between them in the modern ocean. The area of each box is proportional to the size of the reservoir.</span><a class="headerlink" href="#fig-carbon-1box" title="Permalink to this image">#</a></p>
 </figcaption>
@@ -741,7 +746,7 @@ This means that if carbon in the oceans and atmosphere were in equilibrium, the 
 <li><p><strong>Biological processes</strong> in the surface ocean absorb up carbon from the atmosphere and transport it to the deep ocean, where it cannot equilibrate with the atmosphere.</p></li>
 </ol>
 <figure class="margin-caption align-default" id="fig-carbon-reservoirs">
-<a class="reference internal image-reference" href="../_images/carbon_components1.png"><img alt="../_images/carbon_components1.png" src="../_images/carbon_components1.png" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="../_images/carbon-components.png"><img alt="../_images/carbon-components.png" src="../_images/carbon-components.png" style="width: 90%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.2 </span><span class="caption-text">The amount of carbon in each of the main available reservoirs at Earth’s surface, and the fluxes between them.
 The deep ocean contains by far the largest amount of carbon, so small changes in the processes that partition carbon between the surface and deep ocean can have a major impact on atmospheric CO<sub>2</sub> concentration.
@@ -773,7 +778,7 @@ However, to model ocean carbon we must be able to represent the vertical stratit
 This provides the necessary latidudinal structure to represent ocean circulation, and the vertical structure to represent the ocean carbon cycle.
 We will also add an overlying atmosphere to the model, which will allow us to represent the exchange of carbon between the ocean and atmosphere.</p>
 <figure class="margin-caption align-default" id="fig-carbon-3box">
-<a class="reference internal image-reference" href="../_images/Ocean_3box.png"><img alt="../_images/Ocean_3box.png" src="../_images/Ocean_3box.png" style="width: 60%;" /></a>
+<a class="reference internal image-reference" href="../_images/ocean-3box.png"><img alt="../_images/ocean-3box.png" src="../_images/ocean-3box.png" style="width: 60%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.4 </span><span class="caption-text">The geometry of our model of the ocean carbon cycle containing 3 ocean boxes and an overlying atmosphere box. For the purposes of carbon, the atmosphere is considered as a well-mixed reservoir.
 This is a reasonable approximation because atmospheric transport is so much faster than ocean circulation.
@@ -804,11 +809,12 @@ We represent this surface-deep exchange using a characteristic timescale, <span 
 </figure>
 <p>Together, these two mixing processes give us:</p>
 <div class="math notranslate nohighlight" id="equation-eq-3box-conservative">
-<span class="eqno">(7.2)<a class="headerlink" href="#equation-eq-3box-conservative" title="Permalink to this equation">#</a></span>\[\begin{split}\dv{C_L}{t} &amp;= \frac{q}{V_L} (C_D - C_L) - \frac{1}{\tau^{mix}_L} ( C_L - C_D ) \\
-\dv{C_H}{t} &amp;= \frac{q}{V_H} (C_L - C_H) - \frac{1}{\tau^{mix}_H} ( C_H - C_D ) \\
-\dv{C_D}{t} &amp;= \frac{q}{V_D} (C_H - C_D) +  \left. \left( \frac{V_L}{\tau^{mix}_L} ( C_L - C_D ) + \frac{V_H}{\tau^{mix}_H} ( C_H - C_D ) \right) \middle/ V_D \right.\end{split}\]</div>
+<span class="eqno">(7.2)<a class="headerlink" href="#equation-eq-3box-conservative" title="Permalink to this equation">#</a></span>\[\begin{split}\dv{C_L}{t} &amp;= \underbrace{\frac{q}{V_L} (C_D - C_L) - \frac{1}{\tau^{mix}_L} ( C_L - C_D )}_{\mathrm{[transport]_L}} \\
+\dv{C_H}{t} &amp;= \underbrace{\frac{q}{V_H} (C_L - C_H) - \frac{1}{\tau^{mix}_H} ( C_H - C_D )}_{\mathrm{[transport]_H}} \\
+\dv{C_D}{t} &amp;= \underbrace{\frac{q}{V_D} (C_H - C_D) +  \left. \left( \frac{V_L}{\tau^{mix}_L} ( C_L - C_D ) + \frac{V_H}{\tau^{mix}_H} ( C_H - C_D ) \right) \middle/ V_D \right.}_{\mathrm{[transport]_D}}\end{split}\]</div>
 <p>Where the subscripts <span class="math notranslate nohighlight">\(L\)</span>, <span class="math notranslate nohighlight">\(H\)</span>, and <span class="math notranslate nohighlight">\(D\)</span> refer to the high, low, and deep boxes, respectively.
-These equations are very similar to the <a class="reference internal" href="../05_globalenvironment/l32/l32.html#lecture-32"><span class="std std-ref">Stommel Model</span></a>, but with the addition of a deep ocean box.</p>
+These equations are very similar to the <a class="reference internal" href="../05_globalenvironment/l32/l32.html#lecture-32"><span class="std std-ref">Stommel Model</span></a>, but with the addition of a deep ocean box.
+In subsequent expressions we will express these as ‘<span class="math notranslate nohighlight">\(\mathrm{[transport]_x}\)</span>’ for simplicity.</p>
 <p>Notice a key difference here is that we have to take the volume (<span class="math notranslate nohighlight">\(V\)</span>) of each of the boxes into account when calculating transport of dissolved constituents.</p>
 <p>All properties of each box will be influenced by these transport processes, so these equations will apply to all tracers included in our model.</p>
 </section>
@@ -820,15 +826,15 @@ These equations are very similar to the <a class="reference internal" href="../0
 <p>where <span class="math notranslate nohighlight">\(\Delta T\)</span> and <span class="math notranslate nohighlight">\(\Delta S\)</span> are the <span class="math notranslate nohighlight">\(L - H\)</span> temperature and salinity gradients, respectively.</p>
 <p>To calculate the transport of salinity (<span class="math notranslate nohighlight">\(S\)</span>) we add evaporation and precipitation, <span class="math notranslate nohighlight">\(E\)</span>, to <a class="reference internal" href="#equation-eq-3box-conservative">(7.2)</a>, which adds salt (by evaporation) in the low latitudes and removes salt (by dilution) in the high latitudes, to get:</p>
 <div class="math notranslate nohighlight" id="equation-eq-3box-salt">
-<span class="eqno">(7.4)<a class="headerlink" href="#equation-eq-3box-salt" title="Permalink to this equation">#</a></span>\[\begin{split}\dv{S_L}{t} &amp;= [\mathrm{transport}] + \frac{E}{V_L} \\
-\dv{S_H}{t} &amp;= [\mathrm{transport}] - \frac{E}{V_H} \\
-\dv{S_D}{t} &amp;= [\mathrm{transport}] \\\end{split}\]</div>
+<span class="eqno">(7.4)<a class="headerlink" href="#equation-eq-3box-salt" title="Permalink to this equation">#</a></span>\[\begin{split}\dv{S_L}{t} &amp;= \mathrm{[transport]_L} + \frac{E}{V_L} \\
+\dv{S_H}{t} &amp;= \mathrm{[transport]}_H - \frac{E}{V_H} \\
+\dv{S_D}{t} &amp;= \mathrm{[transport]}_D \\\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\mathrm{[transport]}\)</span> represents the conservative transport terms from <a class="reference internal" href="#equation-eq-3box-conservative">(7.2)</a>.</p>
 <p>To calculate the transport of heat (temperature, <span class="math notranslate nohighlight">\(T\)</span>), we add terms for the exchange of heat between the ocean and atmosphere to <a class="reference internal" href="#equation-eq-3box-conservative">(7.2)</a> to get:</p>
 <div class="math notranslate nohighlight" id="equation-eq-3box-heat">
-<span class="eqno">(7.5)<a class="headerlink" href="#equation-eq-3box-heat" title="Permalink to this equation">#</a></span>\[\begin{split}\dv{T_L}{t} &amp;= [\mathrm{transport}] - \frac{1}{\tau^{T}_L} (T_L - T_A ) \\
-\dv{T_H}{t} &amp;= [\mathrm{transport}] - \frac{1}{\tau^{T}_H} (T_H - T_A ) \\
-\dv{T_D}{t} &amp;= [\mathrm{transport}] \\\end{split}\]</div>
+<span class="eqno">(7.5)<a class="headerlink" href="#equation-eq-3box-heat" title="Permalink to this equation">#</a></span>\[\begin{split}\dv{T_L}{t} &amp;= \mathrm{[transport]}_L - \frac{1}{\tau^{T}_L} (T_L - T_A ) \\
+\dv{T_H}{t} &amp;= \mathrm{[transport]}_H - \frac{1}{\tau^{T}_H} (T_H - T_A ) \\
+\dv{T_D}{t} &amp;= \mathrm{[transport]}_D \\\end{split}\]</div>
 <p>Note that neither <span class="math notranslate nohighlight">\(E\)</span> nor <span class="math notranslate nohighlight">\(\tau^T\)</span> influences the deep box directly because it is not in contact with the atmosphere.
 Any change in surface properties must therefore be communicated to the deep box through the mixing fluxes, which adds a significant delay to the response time of the deep ocean.</p>
 </section>
@@ -875,10 +881,10 @@ We will therefore be solving this model numerically in practicals by running sim
             <p class="prev-next-title"><span class="section-number">7. </span>Ocean Carbon</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../reference/glossary.html" title="next page">
+    <a class='right-next' id="next-link" href="l36.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">8. </span>Glossary</p>
+        <p class="prev-next-title"><span class="section-number">7.2. </span>The Solubility Pump</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

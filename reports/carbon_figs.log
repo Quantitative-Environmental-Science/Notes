@@ -20,6 +20,7 @@ nbclient.exceptions.CellExecutionError: An error occurred while executing the fo
 import numpy as np
 import cbsyst as cb
 import matplotlib.pyplot as plt
+from matplotlib.gridspec import GridSpec
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m

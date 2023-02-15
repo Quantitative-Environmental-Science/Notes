@@ -358,6 +358,11 @@ const thebe_selector_output = ".output, .cell_output"
      7.1. How much carbon is in the ocean?
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="l36.html">
+     7.2. The Solubility Pump
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -606,6 +611,17 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="the-biological-pump">
 <span id="carbon-biopump"></span><h1>The Biological Pump<a class="headerlink" href="#the-biological-pump" title="Permalink to this headline">#</a></h1>
+<blockquote class="highlights">
+<div><p>Key Points:</p>
+<ul class="simple">
+<li><p>Phytoplankton grow in the ocean and take up CO<sub>2</sub> from the atmosphere via photosynthesis.</p></li>
+<li><p>The growth of phytoplankton is limited by the availability of nutrients and light.</p></li>
+<li><p>Phytoplankton fuel the marin food web, which produces organic matter in the surface.</p></li>
+<li><p>All this organic matter eventually sinks from the surface ocean.</p></li>
+<li><p>Sinking organic matter is ‘remineralised’ as it sinks, which releases dissolved C and nutrients back into the water.</p></li>
+<li><p>This exports carbon from the surface ocean to the deep, removing it from the atmosphere, and is known as the <strong>biological pump</strong>.</p></li>
+</ul>
+</div></blockquote>
 <p>The surface ocean is a soup of microscopic life - one ml of average surface ocean water contains around 5 x 10<sup>5</sup> organisms (and <a class="reference external" href="https://doi.org/10.1073/pnas.95.12.6578">that estimate</a> only includes prokaryotes!).
 Many of these organisms are photosynthetic phytoplankton, the ‘plants of the sea’, which harvest light energy from the sun to convert CO<sub>2</sub> into sugars.
 These are the ‘primary producers’ of the ocean, and are the base of the marine food web.
@@ -734,12 +750,12 @@ This modifies Eq. <a class="reference internal" href="l35.html#equation-eq-3box-
 <p>DIC is linked to PO4 by the Redfield Ratio as:</p>
 <div class="math notranslate nohighlight" id="equation-eq-carbon-p-dic">
 <span class="eqno">()<a class="headerlink" href="#equation-eq-carbon-p-dic" title="Permalink to this equation">#</a></span>\[\Delta DIC_{org} = 106 \Delta P_{org}\]</div>
-<p>which allows us to include additional biological pumping terms to our DIC expression <a class="reference internal" href="l36.html#equation-eq-3box-dic-solubility">()</a> to represent the updtake of DIC in the surface and release at depth:</p>
+<p>which allows us to include additional biological pumping terms to our DIC expression <a class="reference internal" href="l36.html#equation-eq-3box-dic-solubility">(7.15)</a> to represent the updtake of DIC in the surface and release at depth:</p>
 <div class="math notranslate nohighlight" id="equation-eq-3box-dic-biopump">
 <span class="eqno">()<a class="headerlink" href="#equation-eq-3box-dic-biopump" title="Permalink to this equation">#</a></span>\[\begin{split}\dv{DIC_L}{t} &amp;= \begin{bmatrix} \mathrm{transport} \\ \mathrm{CO_2~exch.}\end{bmatrix} - 106 \frac{1}{\tau^P_L} P_L \\
 \dv{DIC_H}{t} &amp;= \begin{bmatrix} \mathrm{transport} \\ \mathrm{CO_2~exch.}\end{bmatrix} - 106 \frac{1}{\tau^P_H} P_H \\
 \dv{DIC_D}{t} &amp;= [\mathrm{transport}] + \left. \left( 106 \frac{V_L}{\tau^P_L} P_L + 106 \frac{V_H}{\tau^P_H} P_H \right) \middle / V_D \right.\end{split}\]</div>
-<p>Where the terms in squre brackets represent the conservative transport <a class="reference internal" href="l35.html#equation-eq-3box-conservative">(7.2)</a> and gas exchange <a class="reference internal" href="l36.html#equation-eq-3box-dic-solubility">()</a> terms.</p>
+<p>Where the terms in squre brackets represent the conservative transport <a class="reference internal" href="l35.html#equation-eq-3box-conservative">(7.2)</a> and gas exchange <a class="reference internal" href="l36.html#equation-eq-3box-dic-solubility">(7.15)</a> terms.</p>
 <p>The biological pump is now included in our model, and we can run it to see how it affects the ocean carbon cycle.</p>
 </section>
 </section>
