@@ -51,12 +51,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams"]}, "tex": {"packages": ["base", "physics", "ams"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams", "[tex]/mhchem"]}, "tex": {"packages": ["base", "physics", "ams", "mhchem"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="8. Glossary" href="../reference/glossary.html" />
+    <link rel="next" title="7.3. The Biological Pump" href="l37.html" />
     <link rel="prev" title="7.1. How much carbon is in the ocean?" href="l35.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
@@ -363,6 +363,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      7.2. The Solubility Pump
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="l37.html">
+     7.3. The Biological Pump
     </a>
    </li>
   </ul>
@@ -966,11 +971,14 @@ The <span class="math notranslate nohighlight">\(K\)</span> values for DIC speci
 This allows pH to change based on the physical properties of the box, so the total amount of <span class="math notranslate nohighlight">\(H^+\)</span> in the entire model is not constant - <strong>pH is not conservative</strong>.
 To track DIC speciation, we need a <strong>conservative</strong> quantity that, along with DIC, can be used to calculate the concentration of CO<sub>2</sub> in each surface box.</p>
 <p>This conservative quantity is <strong>Total Alkalinity (TA)</strong>, which is tricky concept that is beyond the scope of this course.
-For our purposes, it is sufficient to know that:</p>
+For our purposes, it is sufficient to know that TA is approximately defined as:</p>
+<div class="math notranslate nohighlight" id="equation-eq-carbon-ta">
+<span class="eqno">(7.15)<a class="headerlink" href="#equation-eq-carbon-ta" title="Permalink to this equation">#</a></span>\[\mathrm{TA \approx 2[CO_3^{2-}] + HCO_3^- + [...] - [H^+]}\]</div>
+<p>And be aware that:</p>
 <ul class="simple">
 <li><p>TA is conservative</p></li>
 <li><p>TA and DIC together can be used to calculate aqueous carbon speciation (<a class="reference internal" href="#fig-carbon-dic-ta"><span class="std std-numref">Fig. 7.12</span></a>).</p></li>
-<li><p>TA can approximately defined as <span class="math notranslate nohighlight">\(\mathrm{TA = 2[CO_3^{2-}] + HCO_3^- - [H^+]}\)</span>, which means that <em>adding/removing CO<sub>2</sub> does not change TA</em>.</p></li>
+<li><p>From <a class="reference internal" href="#equation-eq-carbon-ta">(7.15)</a>, we can see that <em>adding/removing CO<sub>2</sub> does not change TA</em> because <span class="math notranslate nohighlight">\(\mathrm{CO_2 + H_2O \rightarrow HCO_3^- + H^+}\)</span>, which cancel out in the definition of TA.</p></li>
 </ul>
 <p>In practicals, you will use a <a class="reference external" href="https://github.com/oscarbranson/cbsyst">python package</a> to calculate DIC speciation.</p>
 <figure class="margin-caption align-default" id="fig-carbon-dic-ta">
@@ -982,10 +990,6 @@ For our purposes, it is sufficient to know that:</p>
 <div class="dropdown admonition">
 <p class="admonition-title">No but what actually <em>is</em> TA?!</p>
 <p>TA has multiple definitions from different fields. TA is <em>not</em> the opposite of acidity, although increasing TA will also increase pH. For a chemist, TA is “<em>a measure of the excess bases (proton acceptors) over acids (proton donors), and is operationally defined by the titration with H<sup>+</sup> of all weak bases present in the solution</em>” (Sarmiento &amp; Gruber, 2006). In practical terms, it is the moles of H<sup>+</sup> you must add to a kg of seawater to reach the equivalence point where [H<sup>+</sup>] = [HCO<sub>3</sub><sup>-</sup>]. For an oceanographer, “<em>TA is equal to the charge difference between conservative cations and anions</em>”, so is a measure of the charge imbalance of seawater. It can also be thought of as the ‘buffering capacity’ of water, as higher alkalinity water has more proton acceptors so can better resist changes in pH.</p>
-<p>It is approximately defined as:
-<span class="math notranslate nohighlight">\(
-\mathrm{TA = 2[CO_3^{2-}] + [HCO_3^-] + [B(OH)_4^-] + [minor~bases] + [OH^-] - [H^+]}
-\)</span></p>
 <p>If you really want to know the details, section 1.2 of <a class="reference external" href="https://idiscover.lib.cam.ac.uk/permalink/f/1ii55o6/44CAM_ALMA51670486420003606">Zeebe &amp; Wolf-Gladrow (2001)</a> provides a comprehensive overview… but <strong>you really do not need to know this for QES</strong>!</p>
 </div>
 <p>As no processes in our model currently modify TA (but they will soon), we can model TA using only the equations for conservative tracer transport in <a class="reference internal" href="l35.html#equation-eq-3box-conservative">(7.2)</a>.</p>
@@ -997,7 +1001,7 @@ For our purposes, it is sufficient to know that:</p>
 \[[CO_2]_i = f(DIC_i, TA_i, T_i, S_i)\]</div>
 <p>This allows us to model DIC as a conservative tracer <a class="reference internal" href="l35.html#equation-eq-3box-conservative">(7.2)</a>, with additional terms for the exchange of CO<sub>2</sub> with the atmosphere in the surface boxes:</p>
 <div class="math notranslate nohighlight" id="equation-eq-3box-dic-solubility">
-<span class="eqno">(7.15)<a class="headerlink" href="#equation-eq-3box-dic-solubility" title="Permalink to this equation">#</a></span>\[\begin{split}\dv{DIC_L}{t} &amp;= [\mathrm{transport}] - \frac{1}{\tau^{CO2}_L} ([CO_2]_L - K_{0,L} ~ pCO_2 ~ \rho_L ~ 10^{-6} ) \\
+<span class="eqno">(7.16)<a class="headerlink" href="#equation-eq-3box-dic-solubility" title="Permalink to this equation">#</a></span>\[\begin{split}\dv{DIC_L}{t} &amp;= [\mathrm{transport}] - \frac{1}{\tau^{CO2}_L} ([CO_2]_L - K_{0,L} ~ pCO_2 ~ \rho_L ~ 10^{-6} ) \\
 \dv{DIC_H}{t} &amp;= [\mathrm{transport}] - \frac{1}{\tau^{CO2}_H} ([CO_2]_H - K_{0,H} ~ pCO_2 ~ \rho_H ~ 10^{-6}) \\
 \dv{DIC_D}{t} &amp;= [\mathrm{transport}]\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\([\mathrm{transport}]\)</span> represents the conservative transport terms from <a class="reference internal" href="l35.html#equation-eq-3box-conservative">(7.2)</a>.
@@ -1071,10 +1075,10 @@ $$ -->
             <p class="prev-next-title"><span class="section-number">7.1. </span>How much carbon is in the ocean?</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../reference/glossary.html" title="next page">
+    <a class='right-next' id="next-link" href="l37.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">8. </span>Glossary</p>
+        <p class="prev-next-title"><span class="section-number">7.3. </span>The Biological Pump</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
