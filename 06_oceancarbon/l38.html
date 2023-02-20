@@ -847,12 +847,12 @@ We therefore model the impact of calcification on DIC as:</p>
 <div class="math notranslate nohighlight" id="equation-eq-3box-dic-calc">
 <span class="eqno">(7.26)<a class="headerlink" href="#equation-eq-3box-dic-calc" title="Permalink to this equation">#</a></span>\[\begin{split}\dv{DIC_L}{t} &amp;= \begin{bmatrix} \mathrm{transport} \\ \mathrm{CO_2~exch.} \\ \mathrm{bio.~pump.} \end{bmatrix} - f_{calc,L} 106 \frac{1}{\tau^P_L} P_L \\
 \dv{DIC_H}{t} &amp;= \begin{bmatrix} \mathrm{transport} \\ \mathrm{CO_2~exch.} \\ \mathrm{bio.~pump.} \end{bmatrix} - f_{calc,H} 106 \frac{1}{\tau^P_H} P_H \\
-\dv{DIC_D}{t} &amp;= \begin{bmatrix} \mathrm{transport} \\ \mathrm{bio.~pump.} \end{bmatrix} + \left(f_{calc,L} 106 \frac{V_L}{\tau^P_L} P_L + f_{calc,H} 106 \frac{V_L}{\tau^P_H} P_H \right) / V_D\end{split}\]</div>
+\dv{DIC_D}{t} &amp;= \begin{bmatrix} \mathrm{transport} \\ \mathrm{bio.~pump.} \end{bmatrix} + \left(f_{calc,L} 106 \frac{V_L}{\tau^P_L} P_L + f_{calc,H} 106 \frac{V_H}{\tau^P_H} P_H \right) / V_D\end{split}\]</div>
 <p>where the terms in square brackets represents the transport <a class="reference internal" href="l35.html#equation-eq-3box-conservative">(7.2)</a>, gas exchange <a class="reference internal" href="l36.html#equation-eq-3box-dic-solubility">(7.16)</a> and biological pump <a class="reference internal" href="l37.html#equation-eq-3box-dic-biopump">(7.22)</a> terms.  For TA, the expression is included as:</p>
 <div class="math notranslate nohighlight" id="equation-eq-3box-ta-calc">
 <span class="eqno">(7.27)<a class="headerlink" href="#equation-eq-3box-ta-calc" title="Permalink to this equation">#</a></span>\[\begin{split}\dv{TA_L}{t} &amp;= \begin{bmatrix} \mathrm{transport} \\ \mathrm{bio.~pump.} \end{bmatrix} - 2 f_{calc,L} 106 \frac{1}{\tau^P_L} P_L \\
 \dv{TA_H}{t} &amp;= \begin{bmatrix} \mathrm{transport} \\ \mathrm{bio.~pump.} \end{bmatrix} - 2 f_{calc,H} 106 \frac{1}{\tau^P_H} \\
-\dv{TA_D}{t} &amp;= \begin{bmatrix} \mathrm{transport} \\ \mathrm{bio.~pump.} \end{bmatrix} + \left( 2 f_{calc,L} 106 \frac{V_L}{\tau^P_L} P_L + 2 f_{calc,H} 106 \frac{V_L}{\tau^P_H} P_H \right) / V_D\end{split}\]</div>
+\dv{TA_D}{t} &amp;= \begin{bmatrix} \mathrm{transport} \\ \mathrm{bio.~pump.} \end{bmatrix} + \left( 2 f_{calc,L} 106 \frac{V_L}{\tau^P_L} P_L + 2 f_{calc,H} 106 \frac{V_H}{\tau^P_H} P_H \right) / V_D\end{split}\]</div>
 </section>
 </section>
 
