@@ -1,3 +1,4 @@
+(carbon:intro)=
 # Ocean Carbon
 
 This section of the course we will examine how chemical and biological processes combine with the physical circulation processes you saw in the last lecture block to regulate the exchange of carbon between the ocean and the atmosphere.
