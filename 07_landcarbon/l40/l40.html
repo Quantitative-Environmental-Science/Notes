@@ -600,7 +600,7 @@ title="Print to PDF"
 <p>We have touched on the importance of plants, vegetation, the land surface and soils, several times throughout the year.</p>
 <ul class="simple">
 <li><p>The land surface stores carbon from days, to years, to millennia</p></li>
-<li><p>Plants exert a biophysical control of evapotranspiration - Stomates (openings in plant leaves) control the interchange of water and CO2 between the atmosphere and the plant.
+<li><p>Plants exert a biophysical control of evapotranspiration. Stomates (openings in plant leaves) control the interchange of water and <span class="math notranslate nohighlight">\(\mathrm{CO_2}\)</span> between the atmosphere and the plant.
 Think back to the groundwater lectures at the start of the year and the water balance equation.</p></li>
 <li><p>Momentum transfer - Plants create “friction” for the atmospheric flow near the surface.
 Plants create turbulent motions that enhance vertical mixing of heat and water vapor near the surface.</p></li>
@@ -613,7 +613,7 @@ Daisyworld is a simple planetary model used to explore the effects of coupling b
 It is a nice analogue to how plant life grows and influences the environment around it.
 Daisyworld was, and is, controversial because it implies that planetary self-regulation can emerge from a series of realistic feedbacks without the need for organisms to adapt or change.
 Evolutionary biologists don’t really like it as a result.
-The paper is named “Biological homeostasis of the global environment: the parable of Daisyworld.</p>
+The paper is named “Biological homeostasis of the global environment: the parable of Daisyworld”.</p>
 <section id="daisyworld">
 <h2>Daisyworld<a class="headerlink" href="#daisyworld" title="Permalink to this headline">#</a></h2>
 <p>In this paper, Watson and Lovelock imagine a planet that is covered in two types of daisies, white daisies and black daisies, and land that has no daisies (gray soil).
@@ -628,8 +628,9 @@ The further simplifying assumption is that there are no greenhouse gases, theref
 <p>If we consider the equation of population growth to describe the daisy fields:</p>
 <div class="math notranslate nohighlight" id="equation-eq-land-daisyworld">
 <span class="eqno">(8.1)<a class="headerlink" href="#equation-eq-land-daisyworld" title="Permalink to this equation">#</a></span>\[\pdv{\alpha}{t} = \alpha(p - \alpha) \beta(x) - \alpha \gamma(x) \]</div>
-<p>Where <span class="math notranslate nohighlight">\(\alpha\)</span> is the fractional coverage of the ground by a species, <span class="math notranslate nohighlight">\(p\)</span> is the proportion of habitable bare ground, and <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span> are the birth and death rates of the species, which depend on an environmental parameter <span class="math notranslate nohighlight">\(x\)</span>.</p>
-<p>We can amend these equations for Daisyworld, for the ground covered by white daisies (<span class="math notranslate nohighlight">\(a_w\)</span>) and the ground covered by black daisies (<span class="math notranslate nohighlight">\(a_b\)</span>)</p>
+<p>Where <span class="math notranslate nohighlight">\(\alpha\)</span> is the fractional coverage of the ground by a species, <span class="math notranslate nohighlight">\(p\)</span> is the fraction of total habitable bare ground, and <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span> are the birth and death rates of the species, which depend on an environmental parameter <span class="math notranslate nohighlight">\(x\)</span>.
+By convention <span class="math notranslate nohighlight">\(p=1\)</span> most of the time, but can be changed to represent there being some land that can’t be colonised by the daisies, e.g. ocean.</p>
+<p>We can amend these equations for Daisyworld, for the ground covered by white daisies (<span class="math notranslate nohighlight">\(\alpha_w\)</span>) and the ground covered by black daisies (<span class="math notranslate nohighlight">\(\alpha_b\)</span>)</p>
 <div class="math notranslate nohighlight" id="equation-eq-land-daisyworld-1">
 <span class="eqno">(8.2)<a class="headerlink" href="#equation-eq-land-daisyworld-1" title="Permalink to this equation">#</a></span>\[\begin{split}\pdv{\alpha_w}{t} &amp;= \alpha_w(\alpha_g \beta(T_w) - \gamma) \\
 \pdv{\alpha_b}{t} &amp;= \alpha_b(\alpha_g \beta(T_b) - \gamma) \\\end{split}\]</div>
@@ -641,22 +642,22 @@ The death rate - <span class="math notranslate nohighlight">\(\gamma\)</span> - 
 0 &amp; \text{otherwise}
 \end{cases}\end{split}\]</div>
 <p>Many people who have modelled Daisyworld have played around with <span class="math notranslate nohighlight">\(k\)</span>, the width of the parabola, but in general people have settled on a <span class="math notranslate nohighlight">\(k\)</span> value so that the growth is bracketed between 5 and 40 °C.</p>
-<p>The impact of the daisies on albedo is simple, white daisies have a fixed albedo (<span class="math notranslate nohighlight">\(a\)</span>) of 1 and reflect back all incoming light, while black daisies have an albedo of 0 and absorb all incoming light.
+<p>The impact of the daisies on albedo is simple, white daisies have a fixed albedo (<span class="math notranslate nohighlight">\(A\)</span>) of 1 and reflect back all incoming light, while black daisies have an albedo of 0 and absorb all incoming light.
 Ground with no daisies is conventionally set to 0.5.
 Therefore the mean planetary albedo (<span class="math notranslate nohighlight">\(A\)</span>) is:</p>
 <div class="math notranslate nohighlight" id="equation-eq-land-daisyworld-3">
-<span class="eqno">(8.4)<a class="headerlink" href="#equation-eq-land-daisyworld-3" title="Permalink to this equation">#</a></span>\[A = \alpha_w a_w + \alpha_b a_b + \alpha_g a_g\]</div>
+<span class="eqno">(8.4)<a class="headerlink" href="#equation-eq-land-daisyworld-3" title="Permalink to this equation">#</a></span>\[A = \alpha_w A_w + \alpha_b A_b + \alpha_g A_g\]</div>
 <p>The local temperatures that the daisies or bare ground feels, <span class="math notranslate nohighlight">\(T_w\)</span> and <span class="math notranslate nohighlight">\(T_b\)</span>, which determines their growth rate, assumes linear diffusion of heat, and are given by</p>
 <div class="math notranslate nohighlight" id="equation-eq-land-daisyworld-4">
-<span class="eqno">(8.5)<a class="headerlink" href="#equation-eq-land-daisyworld-4" title="Permalink to this equation">#</a></span>\[\begin{split}T_w^4 = q (A - a_w) + T^4 \\
-T_b^4 = q (A - a_b) + T^4 \\
-T_g^4 = q (A - a_g) + T^4 \\\end{split}\]</div>
+<span class="eqno">(8.5)<a class="headerlink" href="#equation-eq-land-daisyworld-4" title="Permalink to this equation">#</a></span>\[\begin{split}T_w^4 = q (A - A_w) + T^4 \\
+T_b^4 = q (A - A_b) + T^4 \\
+T_g^4 = q (A - A_g) + T^4 \\\end{split}\]</div>
 <p>Where <span class="math notranslate nohighlight">\(T\)</span> is the planetary temperature and <span class="math notranslate nohighlight">\(q\)</span> is a heat transfer coefficient.
 Finally the planet stays in thermal balance, as given by the 0D energy balance equation:</p>
 <div class="math notranslate nohighlight" id="equation-eq-land-daisyworld-5">
 <span class="eqno">(8.6)<a class="headerlink" href="#equation-eq-land-daisyworld-5" title="Permalink to this equation">#</a></span>\[S_o(1-A) = k_B T^4\]</div>
 <p>Where <span class="math notranslate nohighlight">\(S_o\)</span> is the average solar energy incident on the surface of Daisyworld and <span class="math notranslate nohighlight">\(k_B\)</span> is the Stefan Boltzmann constant (5.67 x 10<sup>-8</sup> W m<sup>-2</sup> K<sup>-4</sup>).
-The assumed value for <span class="math notranslate nohighlight">\(q\)</span> in the original paper is 2.06 x 10<sup>^9</sup> K<sup>4</sup>.</p>
+The assumed value for <span class="math notranslate nohighlight">\(q\)</span> in the original paper is 2.06 x 10<sup>9</sup> K<sup>4</sup>.</p>
 <p>These equations make a system of multiple, non-linear feedback loops and the analytical solution is not simple.
 In the original paper, Watson and Lovelock solved the steady state solution, and many authors since have found analytical solutions to these equations.
 What is tested is a slowly rising solar constant, representing increased solar luminosity which drives increased temperature on Daisyworld.
@@ -742,7 +743,7 @@ Throughout these lectures we will return to how measurements are actually made t
 <section id="eddy-covariance">
 <h2>Eddy Covariance<a class="headerlink" href="#eddy-covariance" title="Permalink to this headline">#</a></h2>
 <figure class="margin-caption align-default" id="fig-land-soil-airflow">
-<a class="reference internal image-reference" href="07_landcarbon/l40/figures/image7.jpeg"><img alt="07_landcarbon/l40/figures/image7.jpeg" src="07_landcarbon/l40/figures/image7.jpeg" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../../_images/image7.png"><img alt="../../_images/image7.png" src="../../_images/image7.png" style="width: 80%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 8.7 </span><span class="caption-text">The movement of air through ecosystems.</span><a class="headerlink" href="#fig-land-soil-airflow" title="Permalink to this image">#</a></p>
 </figcaption>
@@ -754,7 +755,7 @@ These eddies have vertical and horizontal components.</p>
 <li><p>Each parcel of air has a concentration of some gas, a temperature, a water vapour content, if we know these and the speed <span class="math notranslate nohighlight">\(w_x\)</span> then we know the flux.</p></li>
 </ul>
 <figure class="margin-caption align-default" id="fig-land-soil-eddycov">
-<a class="reference internal image-reference" href="07_landcarbon/l40/figures/image8.jpeg"><img alt="07_landcarbon/l40/figures/image8.jpeg" src="07_landcarbon/l40/figures/image8.jpeg" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="../../_images/image8.png"><img alt="../../_images/image8.png" src="../../_images/image8.png" style="width: 90%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 8.8 </span><span class="caption-text">A schematic of Eddy Covariance.</span><a class="headerlink" href="#fig-land-soil-eddycov" title="Permalink to this image">#</a></p>
 </figcaption>
@@ -780,7 +781,7 @@ So we can consider both the average of a property below and the fluctuation abov
 <p>This means at any given instant, you can multiply velocity of air being moved upwards or downwards at a speed of m s<sup>-1</sup>, by the fluctuation of the entity about its mean.
 If you average these you will get the net flux from the ecosystem.
 This gives you <em>g of entity transferred vertically, per square meter of surface area per second</em>.</p>
-<p>Using this to get the carbon flux or the methane flux is relatively straightforward, you can make near instantaneous measurements of methane or CO2 while also measuring the velocity of air and the average density of air.
+<p>Using this to get the carbon flux or the methane flux is relatively straightforward, you can make near instantaneous measurements of methane or <span class="math notranslate nohighlight">\(\mathrm{CO_2}\)</span> while also measuring the velocity of air and the average density of air.
 You can also use this to get the Latent Heat emitted from the surface, as well as the Sensible Heat (remember from Michaelmas that these are two of the key ways that the Earth re-radiates heat.
 In the equation below we derive the sensible heat flux by multiplying the average air density with the instantaneous velocity and temperature and convert it to energy units with the specific heat capacity of water.</p>
 <div class="math notranslate nohighlight">
@@ -798,7 +799,7 @@ In the equation below we derive the sensible heat flux by multiplying the averag
 <li><p>Gap filling issues</p></li>
 <li><p>Relatively Expensive</p></li>
 <li><p>Stationarity issues</p></li>
-<li><p>The eddy covariance method is most accurate when the atmospheric conditions (wind, temperature, humidity, CO2) are steady, the underlying vegetation is homogeneous and it is situated on flat terrain for an extended distance upwind.</p></li>
+<li><p>The eddy covariance method is most accurate when the atmospheric conditions (wind, temperature, humidity, <span class="math notranslate nohighlight">\(\mathrm{CO_2}\)</span>) are steady, the underlying vegetation is homogeneous and it is situated on flat terrain for an extended distance upwind.</p></li>
 </ul>
 </section>
 </section>
