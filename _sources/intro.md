@@ -83,7 +83,7 @@ Ocean Carbon 🌊
 How carbon moves around the ocean
 :::
 
-<!-- :::{grid-item-card}
+:::{grid-item-card}
 :link: 07_landcarbon/intro/intro
 :link-type: doc
 :class-header: bg-light
@@ -92,7 +92,7 @@ Terrestrial Carbon 🌲
 ^^^
 
 Carbon on land
-::: -->
+:::
 
 <!-- :::{grid-item-card}
 :link: 08_polarcasestudy/intro/intro
