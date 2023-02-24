@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Lecture 40</title>
+    <title>8.1. Plants, Soils and Eddies</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,9 +51,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams", "[tex]/mhchem", "[tex]/color"]}, "tex": {"packages": ["base", "physics", "ams", "mhchem", "color"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="9. Glossary" href="../../reference/glossary.html" />
+    <link rel="prev" title="8. Terrestrial Carbon" href="../intro/intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -103,7 +107,7 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../00_intro/intro/intro.html">
    1. Introduction
@@ -378,9 +382,26 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../intro/intro.html">
+   8. Terrestrial Carbon
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     8.1. Plants, Soils and Eddies
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../reference/glossary.html">
-   8. Glossary
+   9. Glossary
   </a>
  </li>
 </ul>
@@ -493,23 +514,80 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#daisyworld">
+   Daisyworld
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#soils">
+   Soils
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eddy-covariance">
+   Eddy Covariance
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Lecture 40</h1>
+                <h1>Plants, Soils and Eddies</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#daisyworld">
+   Daisyworld
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#soils">
+   Soils
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eddy-covariance">
+   Eddy Covariance
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -517,8 +595,212 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="lecture-40">
-<span id="id1"></span><h1>Lecture 40<a class="headerlink" href="#lecture-40" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="plants-soils-and-eddies">
+<span id="lecture-40"></span><h1><span class="section-number">8.1. </span>Plants, Soils and Eddies<a class="headerlink" href="#plants-soils-and-eddies" title="Permalink to this headline">#</a></h1>
+<p>We have touched on the importance of plants, vegetation, the land surface and soils, several times throughout the year.</p>
+<ul class="simple">
+<li><p>The land surface stores carbon from days, to years, to millennia</p></li>
+<li><p>Plants exert a biophysical control of evapotranspiration - Stomates (openings in plant leaves) control the interchange of water and CO2 between the atmosphere and the plant.
+Think back to the groundwater lectures at the start of the year and the water balance equation.</p></li>
+<li><p>Momentum transfer - Plants create “friction” for the atmospheric flow near the surface.
+Plants create turbulent motions that enhance vertical mixing of heat and water vapor near the surface.</p></li>
+<li><p>Soil moisture availability - Plants have roots that determine the amount of water available for evapotranspiration. Soils more broadly control infiltration and thus influence the amount of flooding.</p></li>
+<li><p>Insulation - Plants that shade the surface and protect it from intense solar radiation and strong evaporation.</p></li>
+</ul>
+<p>Plants also play a role in environmental temperature regulation.
+This was first conceptualised in a paper in 1983 by Watson and Lovelock, where they introduced the concept of Daisyworld.
+Daisyworld is a simple planetary model used to explore the effects of coupling between life and its environment.
+It is a nice analogue to how plant life grows and influences the environment around it.
+Daisyworld was, and is, controversial because it implies that planetary self-regulation can emerge from a series of realistic feedbacks without the need for organisms to adapt or change.
+Evolutionary biologists don’t really like it as a result.
+The paper is named “Biological homeostasis of the global environment: the parable of Daisyworld.</p>
+<section id="daisyworld">
+<h2>Daisyworld<a class="headerlink" href="#daisyworld" title="Permalink to this headline">#</a></h2>
+<p>In this paper, Watson and Lovelock imagine a planet that is covered in two types of daisies, white daisies and black daisies, and land that has no daisies (gray soil).
+The daisies growth depends only on temperature, that is the assumption is that the soil has enough nutrients and everything else to support growth of the daisies.
+The further simplifying assumption is that there are no greenhouse gases, therefore the temperature of the planet is determined by solar luminosity and albedo, and albedo is impacted by whether the planet is covered in white daisies or black daisies.</p>
+<figure class="margin-caption align-default" id="fig-land-daisyworld">
+<a class="reference internal image-reference" href="../../_images/image1.png"><img alt="../../_images/image1.png" src="../../_images/image1.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 8.1 </span><span class="caption-text">A schematic of ‘DaisyWorld’.</span><a class="headerlink" href="#fig-land-daisyworld" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If we consider the equation of population growth to describe the daisy fields:</p>
+<div class="math notranslate nohighlight" id="equation-eq-land-daisyworld">
+<span class="eqno">(8.1)<a class="headerlink" href="#equation-eq-land-daisyworld" title="Permalink to this equation">#</a></span>\[\pdv{\alpha}{t} = \alpha(p - \alpha) \beta(x) - \alpha \gamma(x) \]</div>
+<p>Where <span class="math notranslate nohighlight">\(\alpha\)</span> is the fractional coverage of the ground by a species, <span class="math notranslate nohighlight">\(p\)</span> is the proportion of habitable bare ground, and <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span> are the birth and death rates of the species, which depend on an environmental parameter <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>We can amend these equations for Daisyworld, for the ground covered by white daisies (<span class="math notranslate nohighlight">\(a_w\)</span>) and the ground covered by black daisies (<span class="math notranslate nohighlight">\(a_b\)</span>)</p>
+<div class="math notranslate nohighlight" id="equation-eq-land-daisyworld-1">
+<span class="eqno">(8.2)<a class="headerlink" href="#equation-eq-land-daisyworld-1" title="Permalink to this equation">#</a></span>\[\begin{split}\pdv{\alpha_w}{t} &amp;= \alpha_w(\alpha_g \beta(T_w) - \gamma) \\
+\pdv{\alpha_b}{t} &amp;= \alpha_b(\alpha_g \beta(T_b) - \gamma) \\\end{split}\]</div>
+<p>Here <span class="math notranslate nohighlight">\(a_g\)</span> is the amount of available bare ground (<span class="math notranslate nohighlight">\(\alpha_g = p - \alpha_b - \alpha_w\)</span>) and <span class="math notranslate nohighlight">\(T_w\)</span> and <span class="math notranslate nohighlight">\(T_b\)</span> are the local temperatures felt by each daisy type (white and black, respectively).
+The death rate - <span class="math notranslate nohighlight">\(\gamma\)</span> - is kept fixed, and the functional form for <span class="math notranslate nohighlight">\(\beta\)</span> (the growth rate) is:</p>
+<div class="math notranslate nohighlight" id="equation-eq-land-daisyworld-2">
+<span class="eqno">(8.3)<a class="headerlink" href="#equation-eq-land-daisyworld-2" title="Permalink to this equation">#</a></span>\[\begin{split}\beta(T) = \begin{cases}
+1 - k (T - T_{opt})^2 &amp; |T - T_{opt}| &lt; k^{1/2} \\
+0 &amp; \text{otherwise}
+\end{cases}\end{split}\]</div>
+<p>Many people who have modelled Daisyworld have played around with <span class="math notranslate nohighlight">\(k\)</span>, the width of the parabola, but in general people have settled on a <span class="math notranslate nohighlight">\(k\)</span> value so that the growth is bracketed between 5 and 40 °C.</p>
+<p>The impact of the daisies on albedo is simple, white daisies have a fixed albedo (<span class="math notranslate nohighlight">\(a\)</span>) of 1 and reflect back all incoming light, while black daisies have an albedo of 0 and absorb all incoming light.
+Ground with no daisies is conventionally set to 0.5.
+Therefore the mean planetary albedo (<span class="math notranslate nohighlight">\(A\)</span>) is:</p>
+<div class="math notranslate nohighlight" id="equation-eq-land-daisyworld-3">
+<span class="eqno">(8.4)<a class="headerlink" href="#equation-eq-land-daisyworld-3" title="Permalink to this equation">#</a></span>\[A = \alpha_w a_w + \alpha_b a_b + \alpha_g a_g\]</div>
+<p>The local temperatures that the daisies or bare ground feels, <span class="math notranslate nohighlight">\(T_w\)</span> and <span class="math notranslate nohighlight">\(T_b\)</span>, which determines their growth rate, assumes linear diffusion of heat, and are given by</p>
+<div class="math notranslate nohighlight" id="equation-eq-land-daisyworld-4">
+<span class="eqno">(8.5)<a class="headerlink" href="#equation-eq-land-daisyworld-4" title="Permalink to this equation">#</a></span>\[\begin{split}T_w^4 = q (A - a_w) + T^4 \\
+T_b^4 = q (A - a_b) + T^4 \\
+T_g^4 = q (A - a_g) + T^4 \\\end{split}\]</div>
+<p>Where <span class="math notranslate nohighlight">\(T\)</span> is the planetary temperature and <span class="math notranslate nohighlight">\(q\)</span> is a heat transfer coefficient.
+Finally the planet stays in thermal balance, as given by the 0D energy balance equation:</p>
+<div class="math notranslate nohighlight" id="equation-eq-land-daisyworld-5">
+<span class="eqno">(8.6)<a class="headerlink" href="#equation-eq-land-daisyworld-5" title="Permalink to this equation">#</a></span>\[S_o(1-A) = k_B T^4\]</div>
+<p>Where <span class="math notranslate nohighlight">\(S_o\)</span> is the average solar energy incident on the surface of Daisyworld and <span class="math notranslate nohighlight">\(k_B\)</span> is the Stefan Boltzmann constant (5.67 x 10<sup>-8</sup> W m<sup>-2</sup> K<sup>-4</sup>).
+The assumed value for <span class="math notranslate nohighlight">\(q\)</span> in the original paper is 2.06 x 10<sup>^9</sup> K<sup>4</sup>.</p>
+<p>These equations make a system of multiple, non-linear feedback loops and the analytical solution is not simple.
+In the original paper, Watson and Lovelock solved the steady state solution, and many authors since have found analytical solutions to these equations.
+What is tested is a slowly rising solar constant, representing increased solar luminosity which drives increased temperature on Daisyworld.
+What happens then is that initially when the solar constant is still low, the black daisies grow preferentially to the white daisies, but as the solar constant gets stronger, the white daisies take over and grow relative to the black daisies.
+Eventually we reach temperatures that are too high and the white daisies all die too.</p>
+<figure class="margin-caption align-default" id="fig-land-daisyworld-feedbacks">
+<a class="reference internal image-reference" href="../../_images/image2.png"><img alt="../../_images/image2.png" src="../../_images/image2.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 8.2 </span><span class="caption-text">Non-linear loops in ‘DaisyWorld’. Time is on the x-axis, but we can take time to be the stepped increase in solar luminosity.</span><a class="headerlink" href="#fig-land-daisyworld-feedbacks" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>What arises from these models is the fact that the presence of the daisies keeps the temperature of the planet equable at intermediate solar luminosity.
+This is the primary finding of Daisyworld, that the land surface, and particularly the types of plants on the surface, can evolve to adjust to help keep the global average surface temperature regulated.
+That is the parable of Daisyworld and allows us to motivate understanding what is on Earth’s land surface and the role that it plays in Earth’s climate and carbon system.</p>
+<p>In addition to the plants on the surface, <strong>soils</strong> play a key role in Earth’s climate system.
+While the vegetation on land stores more carbon than the surface ocean, most (~80%) of this is in soils.
+As you may remember from the groundwater and flooding modules, soil type also controls infiltration and therefore plays a key role in our understanding of flooding and surface run off.</p>
+</section>
+<section id="soils">
+<h2>Soils<a class="headerlink" href="#soils" title="Permalink to this headline">#</a></h2>
+<p>What are soils?
+Formally the definition is solid earth material that has been altered by physical, chemical and biological processes so that it can support rooted plant life.
+A mixture of organic matter, minerals, gases, liquids, and organisms that together support life.</p>
+<p>Most people think of soils as the breakdown of plant material from above, and this does add to soils.
+However the majority of the soil, in terms of many of the key attributes like hydraulic conductivity and chemical content, is from the breakdown of rock material from below.
+The soil is a balance between the production from the erosion of the bedrock underneath and the erosion of the soil downslope.</p>
+<figure class="margin-caption align-default" id="fig-land-soil-formation">
+<a class="reference internal image-reference" href="../../_images/image3.png"><img alt="../../_images/image3.png" src="../../_images/image3.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 8.3 </span><span class="caption-text">A schematic of the formation of soil, which is a balance between the production from the erosion of the bedrock underneath and the erosion of the soil downslope.</span><a class="headerlink" href="#fig-land-soil-formation" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The types of soil that are formed depend on many environmental factors, including Climate, Organisms, Parent Material, Topography and the amount of time the soil has to develop.</p>
+<ul class="simple">
+<li><p>Climate is key because it determines temperature and precipitation and the breakdown of the bedrock happens far more when there is more rain.</p></li>
+<li><p>The types of organisms also play a key role in the types of soils that develop – plants produce organic acids, and roots act to break apart the bedrock, they also help to stabilise soil profiles from run off and erosion.
+Indeed, rewilding is being used as flood mitigation measure in parts of the UK.</p></li>
+<li><p>The parent material is also key as different rocks breakdown differently, some breakdown completely and others breakdown partially and leave behind reactive particles.</p>
+<ul>
+<li><p>Key to both of these are the metals available for life as well as the pH of the soil.  Unlike the ocean, the pH in soils can range from 3.5 to 10, which impacts the redox mobility of various metals and therefore the microbial life that can be present.
+For example many key nutrients for plant life are pH sensitive.
+At neutral pH, only half the iron in soil is ‘bioavailable’, at low pH aluminium is at high concentrations and can be toxic, at high pH, calcium</p></li>
+</ul>
+</li>
+<li><p>Topography is also key, as well as which direction the soil is facing, as it helps determine how thick the soil will be.
+Soils on hillslopes tend to be around 1 meter thick, while soils on flat surfaces can grow very thick.</p></li>
+</ul>
+<figure class="margin-caption align-default" id="fig-land-soil-nutrients">
+<a class="reference internal image-reference" href="../../_images/image4.png"><img alt="../../_images/image4.png" src="../../_images/image4.png" style="width: 40%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 8.4 </span><span class="caption-text">The availability of nutrients in soil as a function of pH.</span><a class="headerlink" href="#fig-land-soil-nutrients" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Soils end up representing the combined impact of additions to the ground surface, chemical reactions within the soil, vertical transfer and things that are removed, either eliminated through biology or chemistry or eroded away.
+They grow through the addition of organic matter (<a class="reference internal" href="#fig-land-soil-nutrients"><span class="std std-numref">Fig. 8.4</span></a>) and the weathering of rock (<a class="reference internal" href="#fig-land-soil-weathering"><span class="std std-numref">Fig. 8.5</span></a>).</p>
+<figure class="margin-caption align-default" id="fig-land-soil-weathering">
+<a class="reference internal image-reference" href="../../_images/image5.jpeg"><img alt="../../_images/image5.jpeg" src="../../_images/image5.jpeg" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 8.5 </span><span class="caption-text">Weathering processes that form soil.</span><a class="headerlink" href="#fig-land-soil-weathering" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="margin-caption align-default" id="fig-land-soil-horizons">
+<a class="reference internal image-reference" href="../../_images/image6.jpeg"><img alt="../../_images/image6.jpeg" src="../../_images/image6.jpeg" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 8.6 </span><span class="caption-text"><strong>Soil Horizons.</strong>
+Over time, soil layers differentiate into distinct ‘horizons’ which can be considered zones of chemical action.</span><a class="headerlink" href="#fig-land-soil-horizons" title="Permalink to this image">#</a></p>
+<div class="legend">
+<ul class="simple">
+<li><p>Chemical reactions and formation of secondary minerals (clays).</p></li>
+<li><p>Leaching by infiltrating water</p></li>
+<li><p>Deposition and accumulation of material leached from higher levels in the soil</p></li>
+</ul>
+</div>
+</figcaption>
+</figure>
+<p>If we link this back to the climate models we have been studying (and building) throughout this term, we can see that ultimately for a full climate model, we would need proper representation of the flow of mass, momentum, energy, and trace gases (e.g., water vapor, CO<sub>2</sub>) between the surface and the atmosphere – soils and plants on the surface moderate this exchange.
+This has led to an entire class of models known as Surface, Vegetation, Atmospheric Transfer Models (SVAT).</p>
+<p>Ultimately these models need to be parameterised by understanding exactly what controls soil moisture release, how much gas is coming off a forest or another ecosystem to feed into broader global climate models.
+This comes back to measurements you can make in the field.
+Throughout these lectures we will return to how measurements are actually made that help us understand what we put into global climate models.</p>
+<p>In the case of understanding what is being released by plants and soils, one of the most common tools is to use a tower and use the Eddy Covariance technique to determine the gas or heat or moisture flux.</p>
+</section>
+<section id="eddy-covariance">
+<h2>Eddy Covariance<a class="headerlink" href="#eddy-covariance" title="Permalink to this headline">#</a></h2>
+<figure class="margin-caption align-default" id="fig-land-soil-airflow">
+<a class="reference internal image-reference" href="07_landcarbon/l40/figures/image7.jpeg"><img alt="07_landcarbon/l40/figures/image7.jpeg" src="07_landcarbon/l40/figures/image7.jpeg" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 8.7 </span><span class="caption-text">The movement of air through ecosystems.</span><a class="headerlink" href="#fig-land-soil-airflow" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>As we learned in the Global Environment lectures, air and water on our rotating planet are moved in turbulent eddies, which are like circular movements of fluid that serve to disperse and diffuse air particles and things in those air particles.
+These eddies have vertical and horizontal components.</p>
+<ul class="simple">
+<li><p>If we consider the vertical component, we see below that Eddy 1 moves parcel of air <span class="math notranslate nohighlight">\(c_1\)</span> down with a speed <span class="math notranslate nohighlight">\(w_1\)</span> while Eddy 2 moves parcel of air <span class="math notranslate nohighlight">\(c_2\)</span> up with speed <span class="math notranslate nohighlight">\(w_2\)</span>.</p></li>
+<li><p>Each parcel of air has a concentration of some gas, a temperature, a water vapour content, if we know these and the speed <span class="math notranslate nohighlight">\(w_x\)</span> then we know the flux.</p></li>
+</ul>
+<figure class="margin-caption align-default" id="fig-land-soil-eddycov">
+<a class="reference internal image-reference" href="07_landcarbon/l40/figures/image8.jpeg"><img alt="07_landcarbon/l40/figures/image8.jpeg" src="07_landcarbon/l40/figures/image8.jpeg" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 8.8 </span><span class="caption-text">A schematic of Eddy Covariance.</span><a class="headerlink" href="#fig-land-soil-eddycov" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>When we have turbulent flow, the vertical flux is equal to the mean product of <strong>air density</strong> (<span class="math notranslate nohighlight">\(\rho_a\)</span>), <strong>vertical wind speed</strong> (<span class="math notranslate nohighlight">\(w\)</span>) and the <strong>mixing ratio</strong> of the gas of interest (<span class="math notranslate nohighlight">\(s\)</span>).</p>
+<div class="math notranslate nohighlight">
+\[F = \overline{\rho_a w s}\]</div>
+<p>We consider this graphically below (<a class="reference internal" href="#fig-land-soil-airmovement"><span class="std std-numref">Fig. 8.9</span></a>).
+Properties in turbulent air parcels will fluctuate up and down because of wind gusts and movement of air.
+So we can consider both the average of a property below and the fluctuation above and below that mean.</p>
+<figure class="margin-caption align-default" id="fig-land-soil-airmovement">
+<a class="reference internal image-reference" href="../../_images/image9.png"><img alt="../../_images/image9.png" src="../../_images/image9.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 8.9 </span><span class="caption-text">The fluctuation of air around a mean driven by eddies.</span><a class="headerlink" href="#fig-land-soil-airmovement" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We can use a technique called Reynolds decomposition to break the density, velocity and property of interest into the mean and the fluctuation around the mean.</p>
+<div class="math notranslate nohighlight" id="equation-eq-land-eddy-reynolds">
+<span class="eqno">(8.7)<a class="headerlink" href="#equation-eq-land-eddy-reynolds" title="Permalink to this equation">#</a></span>\[F = \overline{(\bar{\rho_a} + \rho_a') (\bar{w} + w') (\bar{s} + s')}\]</div>
+<p>If we multiply this out and remove the terms with a single prime (because the average deviation around an average is zero, and make the assumption that there isn’t much variation in the density of air, and that there is no divergence or convergence in the flow, then the flux becomes</p>
+<div class="math notranslate nohighlight" id="equation-eq-land-eddy-f">
+<span class="eqno">(8.8)<a class="headerlink" href="#equation-eq-land-eddy-f" title="Permalink to this equation">#</a></span>\[F = \overline{(\bar{\rho_a} w' s')}\]</div>
+<p>This means at any given instant, you can multiply velocity of air being moved upwards or downwards at a speed of m s<sup>-1</sup>, by the fluctuation of the entity about its mean.
+If you average these you will get the net flux from the ecosystem.
+This gives you <em>g of entity transferred vertically, per square meter of surface area per second</em>.</p>
+<p>Using this to get the carbon flux or the methane flux is relatively straightforward, you can make near instantaneous measurements of methane or CO2 while also measuring the velocity of air and the average density of air.
+You can also use this to get the Latent Heat emitted from the surface, as well as the Sensible Heat (remember from Michaelmas that these are two of the key ways that the Earth re-radiates heat.
+In the equation below we derive the sensible heat flux by multiplying the average air density with the instantaneous velocity and temperature and convert it to energy units with the specific heat capacity of water.</p>
+<div class="math notranslate nohighlight">
+\[Q H = \bar{\rho_a} C p \bar{w'} \bar{T'}\]</div>
+<p>The advantages of Eddy Covariance are</p>
+<ul class="simple">
+<li><p>Averages small-scale variability of fluxes over a surface area that increases with measurement height</p></li>
+<li><p>Measurements are continuous and in high temporal resolution</p></li>
+<li><p>Fluxes are determined without disturbing the surface being monitored</p></li>
+<li><p>Great tool to look at ecosystem physiology</p></li>
+</ul>
+<p>The disadvantages are</p>
+<ul class="simple">
+<li><p>Need turbulence!</p></li>
+<li><p>Gap filling issues</p></li>
+<li><p>Relatively Expensive</p></li>
+<li><p>Stationarity issues</p></li>
+<li><p>The eddy covariance method is most accurate when the atmospheric conditions (wind, temperature, humidity, CO2) are steady, the underlying vegetation is homogeneous and it is situated on flat terrain for an extended distance upwind.</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -548,6 +830,20 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../intro/intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">8. </span>Terrestrial Carbon</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../reference/glossary.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>Glossary</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
