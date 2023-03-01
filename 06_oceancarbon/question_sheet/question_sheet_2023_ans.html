@@ -656,6 +656,56 @@ percent in ocean 2.3008228888621454
 <ol class="arabic simple" start="5">
 <li><p>Still in this homogeneous ocean, describe how increasing pCO2 would alter the partitioning of carbon between the ocean and atmosphere. Will the proportion of carbon stored in the ocean stay constant?</p></li>
 </ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">cbsyst</span> <span class="k">as</span> <span class="nn">cb</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">cbsyst</span> <span class="k">as</span> <span class="nn">cb</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pCO2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">900</span><span class="p">)</span>
+
+<span class="n">tc</span> <span class="o">=</span> <span class="n">cb</span><span class="o">.</span><span class="n">Csys</span><span class="p">(</span><span class="n">TA</span><span class="o">=</span><span class="mi">2300</span><span class="p">,</span> <span class="n">pCO2</span><span class="o">=</span><span class="n">pCO2</span><span class="p">,</span> <span class="n">T_in</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+
+<span class="n">T</span> <span class="o">=</span> <span class="mi">16</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">pCO2</span> <span class="o">/</span> <span class="mi">200</span>
+
+<span class="n">cc</span> <span class="o">=</span> <span class="n">cb</span><span class="o">.</span><span class="n">Csys</span><span class="p">(</span><span class="n">TA</span><span class="o">=</span><span class="mi">2300</span><span class="p">,</span> <span class="n">pCO2</span><span class="o">=</span><span class="n">pCO2</span><span class="p">,</span> <span class="n">T_in</span><span class="o">=</span><span class="n">T</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pCO2</span><span class="p">,</span> <span class="n">tc</span><span class="o">.</span><span class="n">DIC</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;T = 16&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pCO2</span><span class="p">,</span> <span class="n">cc</span><span class="o">.</span><span class="n">DIC</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;T = 16 +1C per doubling&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$pCO_2$ (ppm)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;DIC (μmol/kg)&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fe51ea3b550&gt;
+</pre></div>
+</div>
+<img alt="../../_images/ff9a895e3fa3b39ea8f534ae078cd374280b4cd5959d494e66765fc8e9eb8ad5.png" src="../../_images/ff9a895e3fa3b39ea8f534ae078cd374280b4cd5959d494e66765fc8e9eb8ad5.png" />
+</div>
+</div>
 <ol class="arabic simple" start="6">
 <li><p>Explain what is meant by the ‘saturation state’ of seawater with respect to calcium carbonate. Why does calcium carbonate dissolve in the deep ocean?</p></li>
 </ol>
