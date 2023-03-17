@@ -27,7 +27,10 @@ html:
   navbar_number_sections: true
 
 sphinx:
+  recursive_update: true
   config:
+    html_theme_options:
+      repository_provider: github
     language: en
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
     mathjax3_config:
