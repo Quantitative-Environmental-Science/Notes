@@ -116,7 +116,7 @@ Global Climate 🌍
 Climate change, IPCC and policy
 ::: -->
 
-<!-- :::{grid-item-card}
+:::{grid-item-card}
 :link: 10_energytransitions/intro/intro
 :link-type: doc
 :class-header: bg-light
@@ -125,6 +125,6 @@ Energy Transitions 🏭
 ^^^
 
 Towards a sustainable future
-::: -->
+:::
 
 ::::
