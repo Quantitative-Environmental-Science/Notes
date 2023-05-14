@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Lecture 53</title>
+    <title>9.5. Heating and Heat Transfer in Buildings</title>
   
   
   
@@ -62,10 +62,14 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams", "[tex]/mhchem", "[tex]/color"]}, "tex": {"packages": ["base", "physics", "ams", "mhchem", "color"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '10_energytransitions/l53/l53';</script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="9.6. Heat pumps" href="../l54/l54.html" />
+    <link rel="prev" title="9.4. Carbon Removal and Storage" href="../l52/l52.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -148,7 +152,7 @@ const thebe_selector_output = ".output, .cell_output"
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../00_intro/intro/intro.html">1. Introduction</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../00_intro/l1/l1.html">1.1. Course Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../00_intro/l2/l2.html">1.2. Where does the energy come from on Earth?</a></li>
@@ -215,13 +219,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../07_landcarbon/l43/l43.html">8.4. Methane Sources</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../intro/intro.html">9. Energy Transitions</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../intro/intro.html">9. Energy Transitions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../l49/l49.html">9.1. Wind Power</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../l50/l50.html">9.2. Solar Power</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../l51/l51.html">9.3. Energy Storage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../l52/l52.html">9.4. Carbon Removal and Storage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../l54/l54.html">9.5. Heat pumps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../l55/l55.html">9.6. Cars and Minerals</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">9.5. Heating and Heat Transfer in Buildings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../l54/l54.html">9.6. Heat pumps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../l55/l55.html">9.7. Cars and Minerals</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/glossary.html">10. Glossary</a></li>
@@ -359,7 +364,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Lecture 53</h1>
+    <h1>Heating and Heat Transfer in Buildings</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -373,8 +378,82 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="lecture-53">
-<span id="id1"></span><h1>Lecture 53<a class="headerlink" href="#lecture-53" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="heating-and-heat-transfer-in-buildings">
+<span id="lecture-53"></span><h1><span class="section-number">9.5. </span>Heating and Heat Transfer in Buildings<a class="headerlink" href="#heating-and-heat-transfer-in-buildings" title="Permalink to this heading">#</a></h1>
+<p>Heat usage in buildings represents about 1/3 of the energy use in the UK, with domestic heating presently using natural gas as the dominant energy source.
+The transition in energy supply requires a change in the systems used for heating, and this opens up three opportunities:</p>
+<ol class="arabic simple">
+<li><p>Improved control of the heat supply.</p></li>
+<li><p>Improved insulation to reduce the heat demand.</p></li>
+<li><p>A change of system from gas boiler to heat pumps.</p></li>
+</ol>
+<p>It is of interest to try to assess the relative potential of these three approaches.
+While new build can be of very high standard, there are many existing houses and buildings, whose lifetime will exceed 2050, and these present more of a challenge.
+To progress we will develop a simple model and explore the implications.</p>
+<p>The relation controlling the heat transfer from a building to the exterior is of the form</p>
+<div class="math notranslate nohighlight">
+\[CM \dv{T}{t} = Q_{heating} + Q_{people} - U(T - T_{ext}) - \mathrm{Ventilation}\]</div>
+<p>where the left hand side is the heat content, and the right hand sides in the sum of the various sources and sinks of heat in the domestic setting.</p>
+<p>The heating system responds to controls based on temperature and time, while the heat loss depends on the insulation quality of the walls,
+and the ventilation heat flow depends on the volume flow of ventilation air and the temperature contrast with the outside.</p>
+<p>The thermal mass <span class="math notranslate nohighlight">\(M\)</span> represents the mass of the fabric in the building in good thermal contact with the air.
+In practice the heat exchange to the air is rate limited by conduction through the fabric and so the thermal mass is an effective or time averaged thermal mass.</p>
+<p>The value of <span class="math notranslate nohighlight">\(U\)</span>, the building heat flow coefficient,
+can be derived from the thermal conduction law in steady state across the different elements in the building fabric,
+since <span class="math notranslate nohighlight">\(U\)</span> represents the areal sum of the windows, door and walls.
+The heat flow coefficient for walls typically varies from 0.6-1.6 WK<sup>-1</sup>m<sup>2</sup>, depending on the insulation levels,
+while glazing varies from 6 WK<sup>-1</sup>m<sup>2</sup> for single pane to less than 1 WK<sup>-1</sup>m<sup>2</sup> for triple glazed systems
+and 1.2 WK<sup>-1</sup>m<sup>2</sup> for double glazed systems.
+Typical roofs are 0.4-2.4 WK<sup>-1</sup>m<sup>2</sup> depending on the insulation, and the floor may be 0.7-0.9 WK<sup>-1</sup>m<sup>2</sup>.
+If this is added up over a house, of size 10 m * 10 m * 5 m, the net <span class="math notranslate nohighlight">\(U\)</span> value may range from 250-800 WK<sup>-1</sup> or thereabouts for the whole house.</p>
+<p>The model is useful for tracking the interior temperature of a building, and by combining with the exterior temperature and the thermal mass of the building,
+a model heat load profile can be calculated for a given interior temperature (below).</p>
+<p>First, the steady state or equilibrium solution shows the interior temperature is given by the relation between the heating and the heat loss</p>
+<div class="math notranslate nohighlight">
+\[Q(t) = U ( T – T_e )\]</div>
+<p>From this we can deduce that as the set point for the temperature is decreased the heat demand decreases.
+For example if <span class="math notranslate nohighlight">\(T_e\)</span> = 5 C, then reducing the interior temperature from 21 to 20 reduces the heat demand by a factor 15/16.</p>
+<p>If a building is heated up with the heating on full strength, <span class="math notranslate nohighlight">\(Q_{max}\)</span>, then the system heats up at a rate determined by the relation</p>
+<div class="math notranslate nohighlight">
+\[C_p M \dv{T}{t} = Q_{max} - U(T - T_e)\]</div>
+<p>where we note  <span class="math notranslate nohighlight">\(T_{equilibrium} = \frac{Q_{max}{U + T_e}\)</span>.
+We can simplify this relation to</p>
+<div class="math notranslate nohighlight">
+\[\dv{T}{t} + \frac{U}{C_p M} T = \frac{Q_{max} + U T_e}{C_p M}\]</div>
+<p>and assuming that the temperature of the exterior only changes a small amount as the interior is heated  up, then this equation has solution</p>
+<div class="math notranslate nohighlight">
+\[T(t) = T(0) \exp( - \frac{U t}{Cp M}) +  \frac{Q_{max}}{U + Te} \left[1 - \exp( -\frac{U t}{Cp M)} \right]\]</div>
+<p>This solution shows the system adjusts over the time <span class="math notranslate nohighlight">\(\tau = \frac{C_p M}{U}\)</span>, and so when <span class="math notranslate nohighlight">\(t = 2.2 \tau\)</span> the system temperature has adjusted to 90% of the steady state.
+If the typical time is 1000s, and <span class="math notranslate nohighlight">\(C_p\)</span> = 1000  K kg<sup>-1</sup>/J<sup>-1</sup> while <span class="math notranslate nohighlight">\(U\)</span> = 500 W K<sup>-1</sup> then the thermal mass <span class="math notranslate nohighlight">\(M\)</span> is of order 500 kg.</p>
+<p>The model can also be compared to data for cooling of a space at night when there may be no heat supply.
+In the data below we can see a series of rooms cooling over night and reheating in the morning.</p>
+<figure class="margin-caption align-default" id="fig-heating-1">
+<a class="reference internal image-reference" href="../../_images/figure12.png"><img alt="../../_images/figure12.png" src="../../_images/figure12.png" style="width: 70%;" /></a>
+</figure>
+<p>The above graph illustrates an accommodation unit in the week before Christmas when there are no occupants.
+It is seen that only a fraction of the rooms are heated, as evidenced by the fluctuations in the temperature each morning in some rooms,
+and the subsequent cooling in the evening (red lines).
+The blue lines show rooms which continue to cool, but whose temperature is buffered by the red rooms.
+If none of these rooms are heated, then savings can be or order 10-12% of the total annual heat load.</p>
+<figure class="margin-caption align-default" id="fig-heating-2">
+<a class="reference internal image-reference" href="../../_images/figure21.png"><img alt="../../_images/figure21.png" src="../../_images/figure21.png" style="width: 70%;" /></a>
+</figure>
+<p>Once we have a calibrated model, we can combine the model with annual weather date,
+to assess the potential benefits of different energy efficiency measures which would reduce the value of <span class="math notranslate nohighlight">\(U\)</span> (see the 2017 Cambridge temperature data).
+In the figure below, a series of calculations of the impact of different insulation measures are shown,
+in terms of the fractional change in heating required over a year, using the Cambridge weather data.
+The blue curves correspond to a reference temperature of 18C, and the orange show the effect of raising the set temperature to 20C.</p>
+<figure class="margin-caption align-default" id="fig-heating-3">
+<a class="reference internal image-reference" href="../../_images/figure32.png"><img alt="../../_images/figure32.png" src="../../_images/figure32.png" style="width: 70%;" /></a>
+</figure>
+<p>These predictions can be tested by comparison with a real upgraded building, as shown in <a class="reference internal" href="#fig-heating-4"><span class="std std-numref">Fig. 9.39</span></a> showing gas used in 5 houses in Cambridge.
+Two of the buildings had substantial improvements in the insulation and the data show this reduced the gas usage by about 50%.</p>
+<figure class="margin-caption align-default" id="fig-heating-4">
+<a class="reference internal image-reference" href="../../_images/figure42.png"><img alt="../../_images/figure42.png" src="../../_images/figure42.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 9.39 </span><span class="caption-text">Comparison of gas usage in refurbished and unrefurbished student houses owned by St. John’s college.</span><a class="headerlink" href="#fig-heating-4" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 
     <script type="text/x-thebe-config">
@@ -408,6 +487,24 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../l52/l52.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">9.4. </span>Carbon Removal and Storage</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../l54/l54.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">9.6. </span>Heat pumps</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
