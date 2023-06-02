@@ -64,12 +64,12 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams", "[tex]/mhchem", "[tex]/color"]}, "tex": {"packages": ["base", "physics", "ams", "mhchem", "color"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '06_oceancarbon/l37';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '06_oceancarbon/03_biopump';</script>
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="7.4. The Carbonate Pump" href="l38.html" />
-    <link rel="prev" title="7.2. The Solubility Pump" href="l36.html" />
+    <link rel="next" title="7.4. The Carbonate Pump" href="04_carbonatepump.html" />
+    <link rel="prev" title="7.2. The Solubility Pump" href="02_solubility.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -204,12 +204,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../05_globalenvironment/l34/l34.html">6.9. Thermohaline Circulation</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">7. Ocean Carbon</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="l35.html">7.1. How much carbon is in the ocean?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="l36.html">7.2. The Solubility Pump</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="00_intro.html">7. Ocean Carbon</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_3box.html">7.1. How much carbon is in the ocean?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_solubility.html">7.2. The Solubility Pump</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">7.3. The Biological Pump</a></li>
-<li class="toctree-l2"><a class="reference internal" href="l38.html">7.4. The Carbonate Pump</a></li>
-<li class="toctree-l2"><a class="reference internal" href="l39.html">7.5. Future Oceans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_carbonatepump.html">7.4. The Carbonate Pump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_futureoceans.html">7.5. Future Oceans</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../07_landcarbon/intro/intro.html">8. Terrestrial Carbon</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -289,7 +289,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/06_oceancarbon/l37.md" target="_blank"
+      <li><a href="../_sources/06_oceancarbon/03_biopump.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -568,7 +568,7 @@ Only about 1% of the organic matter produced at the surface eventually makes it 
 <p><span class="caption-number">Fig. 7.21 </span><span class="caption-text">The (salinity-normalised) concentrations of PO<sub>4</sub> and DIC in the ocean interior along the Thermohaline Circulation path (red arrows). Notice how both PO<sub>4</sub> and DIC increase in deep water along the circulation path. This is because they receive a constant supply of nutrients from organic matter falling from the surface and remineralising in the deep water. This acts to concentration nutrients and DIC in the deep ocean, leading to nutrient-rich waters in upwelling zones. From <a class="reference external" href="https://doi.org/10.1515/9781400849079">Sarmiento &amp; Gruber (2006), Chapter 5</a>.</span><a class="headerlink" href="#fig-carbon-circulation" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>The influence of the biological pump can be estimated by subtracting measured DIC concentrations in the deep ocean from patterns predicted by <a class="reference internal" href="l36.html#carbon-solubility"><span class="std std-ref">The Solubility Pump</span></a> alone.</p>
+<p>The influence of the biological pump can be estimated by subtracting measured DIC concentrations in the deep ocean from patterns predicted by <a class="reference internal" href="02_solubility.html#carbon-solubility"><span class="std std-ref">The Solubility Pump</span></a> alone.</p>
 <figure class="margin-caption align-default" id="fig-carbon-csoft">
 <a class="reference internal image-reference" href="../_images/carbon-Csoft.png"><img alt="../_images/carbon-Csoft.png" src="../_images/carbon-Csoft.png" style="width: 100%;" /></a>
 <figcaption>
@@ -599,13 +599,13 @@ This can increase the importance of higher trophic levels in driving organic mat
 <p>For our model we will use Phosphate (PO<sub>4</sub>) as our limiting nutrient.
 The choice of P here is arbitrary - you could just as easily use Nitrate, or some other limiting nutrient.</p>
 <p>We model phosphate as a conservative tracer that is transported, consumed by phytoplankton in the surface, and released at depth by remineralisation (assuming that everything that leaves the surface box is remineralised in the deep box).
-As with atmospheric CO<sub>2</sub> exchange, we will model the consumption of P by phytoplankton using a characteristic timescale, <span class="math notranslate nohighlight">\(\tau^P\)</span> (<a class="reference internal" href="l35.html#fig-carbon-tau"><span class="std std-numref">Fig. 7.6</span></a>).
-This modifies Eq. <a class="reference internal" href="l35.html#equation-eq-3box-conservative">(7.2)</a> to:</p>
+As with atmospheric CO<sub>2</sub> exchange, we will model the consumption of P by phytoplankton using a characteristic timescale, <span class="math notranslate nohighlight">\(\tau^P\)</span> (<a class="reference internal" href="01_3box.html#fig-carbon-tau"><span class="std std-numref">Fig. 7.6</span></a>).
+This modifies Eq. <a class="reference internal" href="01_3box.html#equation-eq-3box-conservative">(7.2)</a> to:</p>
 <div class="math notranslate nohighlight" id="equation-eq-carbon-po4">
 <span class="eqno">(7.19)<a class="headerlink" href="#equation-eq-carbon-po4" title="Permalink to this equation">#</a></span>\[\begin{split}\mathrm{\dv{P_L}{t}} &amp;= \mathrm{[\mathrm{transport}] - \frac{1}{\tau^P_L} P_L} \\
 \mathrm{\dv{P_H}{t}} &amp;= \mathrm{[\mathrm{transport}] - \frac{1}{\tau^P_H} P_H} \\
 \mathrm{\dv{P_D}{t}} &amp;= \mathrm{[\mathrm{transport}] + \left. \left( \frac{V_L}{\tau^P_L} P_L + \frac{V_L}{\tau^P_H} P_H \right) \middle/ V_D \right.} \\\end{split}\]</div>
-<p>Where <span class="math notranslate nohighlight">\([\mathrm{transport}]\)</span> represents the thermohaline and vertical mixing terms from <a class="reference internal" href="l35.html#equation-eq-3box-conservative">(7.2)</a>.</p>
+<p>Where <span class="math notranslate nohighlight">\([\mathrm{transport}]\)</span> represents the thermohaline and vertical mixing terms from <a class="reference internal" href="01_3box.html#equation-eq-3box-conservative">(7.2)</a>.</p>
 </section>
 <section id="coupling-productivity-and-carbon">
 <h3>Coupling productivity and Carbon<a class="headerlink" href="#coupling-productivity-and-carbon" title="Permalink to this heading">#</a></h3>
@@ -613,12 +613,12 @@ This modifies Eq. <a class="reference internal" href="l35.html#equation-eq-3box-
 To do this, we can write a simplified version of <a class="reference internal" href="#equation-eq-carbon-phot-organic">(7.18)</a> that only includes the terms that affect DIC and TA:</p>
 <div class="math notranslate nohighlight" id="equation-eq-carbon-phot-organic-simplified">
 <span class="eqno">(7.20)<a class="headerlink" href="#equation-eq-carbon-phot-organic-simplified" title="Permalink to this equation">#</a></span>\[\mathrm{P + 106 DIC - 18 TA \xrightleftharpoons[remineralisation]{photosynthesis} [organic~matter]}\]</div>
-<p>Where the relationship with TA is negative because photosynthesis consumes H<sup>+</sup>, which is a negative term in our definition of TA <a class="reference internal" href="l36.html#equation-eq-carbon-ta">(7.15)</a>.</p>
+<p>Where the relationship with TA is negative because photosynthesis consumes H<sup>+</sup>, which is a negative term in our definition of TA <a class="reference internal" href="02_solubility.html#equation-eq-carbon-ta">(7.15)</a>.</p>
 <p>We can therefore link DIC and TA to PO4 via the Redfield Ratio as:</p>
 <div class="math notranslate nohighlight" id="equation-eq-carbon-p-dic">
 <span class="eqno">(7.21)<a class="headerlink" href="#equation-eq-carbon-p-dic" title="Permalink to this equation">#</a></span>\[\begin{split}\mathrm{\frac{d[DIC]_{bio}}{dt}} &amp;= \mathrm{106 \frac{dP_{bio}}{dt}} \\
 \mathrm{\frac{d[TA]_{bio}}{dt}} &amp;= \mathrm{-18 \frac{dP_{bio}}{dt}}\end{split}\]</div>
-<p>which allows us to include additional biological pumping terms to our DIC expression <a class="reference internal" href="l36.html#equation-eq-3box-dic-solubility">(7.16)</a> to represent the updtake of DIC in the surface and release at depth:</p>
+<p>which allows us to include additional biological pumping terms to our DIC expression <a class="reference internal" href="02_solubility.html#equation-eq-3box-dic-solubility">(7.16)</a> to represent the updtake of DIC in the surface and release at depth:</p>
 <div class="math notranslate nohighlight" id="equation-eq-3box-dic-biopump">
 <span class="eqno">(7.22)<a class="headerlink" href="#equation-eq-3box-dic-biopump" title="Permalink to this equation">#</a></span>\[\begin{split}\mathrm{\dv{DIC_L}{t}} &amp;= \mathrm{\begin{bmatrix} \mathrm{transport} \\ \mathrm{CO_2~exch.}\end{bmatrix} - 106 \frac{1}{\tau^P_L} P_L} \\
 \mathrm{\dv{DIC_H}{t}} &amp;= \mathrm{\begin{bmatrix} \mathrm{transport} \\ \mathrm{CO_2~exch.}\end{bmatrix} - 106 \frac{1}{\tau^P_H} P_H} \\
@@ -628,7 +628,7 @@ To do this, we can write a simplified version of <a class="reference internal" h
 <span class="eqno">(7.23)<a class="headerlink" href="#equation-eq-3box-ta-biopump" title="Permalink to this equation">#</a></span>\[\begin{split}\mathrm{\dv{TA_L}{t}} &amp;= \mathrm{[\mathrm{transport}] + 18 \frac{1}{\tau^P_L} P_L} \\
 \mathrm{\dv{TA_H}{t}} &amp;= \mathrm{[\mathrm{transport}] + 18 \frac{1}{\tau^P_H} P_H} \\
 \mathrm{\dv{TA_D}{t}} &amp;= \mathrm{[\mathrm{transport}] - \left. \left( 18 \frac{V_L}{\tau^P_L} P_L + 18 \frac{V_H}{\tau^P_H} P_H \right) \middle / V_D \right.}\end{split}\]</div>
-<p>Where the terms in squre brackets represent the conservative transport <a class="reference internal" href="l35.html#equation-eq-3box-conservative">(7.2)</a> and gas exchange <a class="reference internal" href="l36.html#equation-eq-3box-dic-solubility">(7.16)</a> terms.</p>
+<p>Where the terms in squre brackets represent the conservative transport <a class="reference internal" href="01_3box.html#equation-eq-3box-conservative">(7.2)</a> and gas exchange <a class="reference internal" href="02_solubility.html#equation-eq-3box-dic-solubility">(7.16)</a> terms.</p>
 <p>The biological pump is now included in our model, and we can run it to see how it affects the ocean carbon cycle.</p>
 </section>
 </section>
@@ -666,7 +666,7 @@ To do this, we can write a simplified version of <a class="reference internal" h
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="l36.html"
+       href="02_solubility.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
@@ -675,7 +675,7 @@ To do this, we can write a simplified version of <a class="reference internal" h
       </div>
     </a>
     <a class="right-next"
-       href="l38.html"
+       href="04_carbonatepump.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
