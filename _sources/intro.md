@@ -17,7 +17,7 @@ Course Overview 🧭
 The global context of Environmental Sciences
 :::
 
-<!-- :::{grid-item-card}
+:::{grid-item-card}
 :link: 01_groundwater/intro/intro
 :link-type: doc
 :class-header: bg-light
@@ -26,7 +26,7 @@ Groundwater 🌧
 ^^^
 
 How water flows through the Earth.
-::: -->
+:::
 
 <!-- :::{grid-item-card}
 :link: 02_cryosphere/intro/intro
