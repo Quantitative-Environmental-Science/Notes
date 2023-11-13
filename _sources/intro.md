@@ -50,7 +50,7 @@ Rivers and Flooding 🏞
 How water flows on the surface.
 :::
 
-<!-- :::{grid-item-card}
+:::{grid-item-card}
 :link: 04_atmosphere/intro/intro
 :link-type: doc
 :class-header: bg-light
@@ -59,7 +59,7 @@ Atmosphere 💨
 ^^^
 
 Movement, pollution and aerosols.
-::: -->
+:::
 
 <!-- :::{grid-item-card}
 :link: 05_globalenvironment/intro/intro
