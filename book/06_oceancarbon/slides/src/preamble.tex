@@ -1,0 +1,105 @@
+\documentclass[aspectratio=169]{beamer}
+% \documentclass[aspectratio=169, handout]{beamer}
+
+%---------------------------
+%       Beamer Cheat Sheet
+%---------------------------
+% https://www.cpt.univ-mrs.fr/~masson/latex/Beamer-appearance-cheat-sheet.pdf
+
+%---------------------------
+%       Set Theme and Colors
+%---------------------------
+
+\usetheme[width=.1\paperwidth]{Hannover}
+% \setbeamertemplate{sidebar canvas right}[vertical shading][top=red,bottom=blue]
+
+\definecolor{QESblue}{HTML}{8AD2ED}
+\definecolor{QESdarkblue}{HTML}{187ca2}
+\definecolor{QESlightblue}{HTML}{c4e8f6}
+
+\setbeamercolor{sidebar}{bg=QESlightblue}
+\setbeamercolor{titlelike}{fg=QESdarkblue}
+
+\setbeamercolor{palette sidebar secondary}{fg=QESdarkblue}
+\setbeamercolor{title in sidebar}{fg=QESdarkblue}
+\setbeamercolor{author in sidebar}{fg=QESdarkblue}
+
+\setbeamercolor{section in sidebar}{fg=QESdarkblue}
+\setbeamercolor{subsection in sidebar}{fg=QESdarkblue}
+
+\addtobeamertemplate{sidebar left}{}{\vfill \hspace{.006\paperwidth} \includegraphics[width=.08\paperwidth]{../../../logo.png} \vspace{.006\paperwidth} } 
+% \addtobeamertemplate{sidebar left}{}{\vfill \hspace{.00001\paperwidth} \includegraphics[width=.093\paperwidth]{../../figures/qes-qr.png} \vspace{.003\paperwidth} } 
+
+%---------------------------
+%       No navigation symbols
+%---------------------------
+\setbeamertemplate{navigation symbols}{}
+
+%---------------------------
+%       Set Fonts
+%---------------------------
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{sansmathfonts}
+\usepackage{upgreek}
+
+\setbeamerfont{frametitle}{series=\bfseries, size=\Large}
+\setbeamerfont{title in sidebar}{series=\bfseries, size=\small}
+\setbeamertemplate{caption}{\it\raggedright\insertcaption\par}
+
+%---------------------------
+%       Math font packages
+%---------------------------
+\usepackage{dsfont, amsmath, amsthm, mathtools}
+\usepackage{bbm, bm}
+\usepackage[T1]{fontenc}
+\usepackage[version=3]{mhchem}
+
+%---------------------------
+%       Figure packages
+%---------------------------
+\usepackage{graphicx}
+\graphicspath{{../../figures}}
+
+\usepackage{epstopdf}
+\usepackage{color}
+
+\setbeamerfont{caption}{size=\footnotesize}
+
+\usepackage{subfigure}
+
+%---------------------------
+%       Manual placement packages
+%---------------------------
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+%---------------------------
+%       Local Macros
+%---------------------------
+
+\newcommand{\manualpic}[4]{
+    % inputs {filename}{figure options}{x offset}{y offset}
+    \tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(#3,#4)$) {\includegraphics[#2]{#1}};
+}
+
+\newcommand{\manualtext}[3]{
+    % inputs {text}{x offset}{y offset}
+    \tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(#2,#3)$) {#1};
+}
+
+\newcommand{\manualtextleft}[3]{
+    % inputs {text}{x offset}{y offset}
+    \tikz[remember picture, overlay] \node[anchor=west] at ($(current page.center)+(#2,#3)$) {#1};
+}
+
+\newcommand{\manualtextright}[3]{
+    % inputs {text}{x offset}{y offset}
+    \tikz[remember picture, overlay] \node[anchor=east] at ($(current page.center)+(#2,#3)$) {#1};
+}
+
+\newcommand{\slidereference}[1]{
+    \manualtextleft{{\color{QESdarkblue}\tiny #1}}{-0.47\linewidth}{-0.47\textheight}
+}
+
+\newcommand{\dv}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}

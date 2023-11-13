@@ -4,7 +4,7 @@
 
 # Notes
 
-Lecture notes for the course, available online [here](https://quantitative-environmental-science.github.io/).
+Lecture notes for the course, available online [here](https://quantitative-environmental-science.github.io/Notes).
 
 ## IMPORTANT
 

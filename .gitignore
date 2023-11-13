@@ -7,10 +7,13 @@ raw/
 .idea/
 
 # OSX
-.DS_STORE
+.DS_Store
 
 # Build files
 ._*.md
 ._*.png
 ._*.jpg
 ._*.tif
+
+# ignore PDF build directory
+**/pdf/*

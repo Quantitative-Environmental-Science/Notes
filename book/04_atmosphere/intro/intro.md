@@ -1,3 +1,4 @@
+(atmos:intro)=
 # Air Pollution and Atmospheric Chemistry
 
 __Lecture 18 – An overview of the atmosphere__
@@ -27,8 +28,5 @@ __Lecture 22 - Air pollution and climate__
 +++
 This lecture describes how aerosols affect climate through their interaction with clouds. It introduces the role of aerosols in cloud formation, the Koehler theory and rate of droplet growth. It introduces also the role of aerosols in modifying cloud properties such as cloud optical thickness, lifetime, and albedo.
 
-
 ```{tableofcontents}
 ```
-
-The remaining two lectures will be added later.

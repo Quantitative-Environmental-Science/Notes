@@ -50,7 +50,7 @@ Rivers and Flooding 🏞
 How water flows on the surface.
 :::
 
-:::{grid-item-card}
+<!-- :::{grid-item-card}
 :link: 04_atmosphere/intro/intro
 :link-type: doc
 :class-header: bg-light
@@ -59,21 +59,21 @@ Atmosphere 💨
 ^^^
 
 Movement, pollution and aerosols.
-:::
+::: -->
 
 <!-- :::{grid-item-card}
 :link: 05_globalenvironment/intro/intro
 :link-type: doc
 :class-header: bg-light
 
-The Global Environment 🌍
+Global Environment 🌍
 ^^^
 
 Fluids on a rotating planet
 ::: -->
 
 <!-- :::{grid-item-card}
-:link: 06_oceancarbon/intro/intro
+:link: 06_oceancarbon/intro
 :link-type: doc
 :class-header: bg-light
 
@@ -92,17 +92,6 @@ Terrestrial Carbon 🌲
 ^^^
 
 Carbon on land
-::: -->
-
-<!-- :::{grid-item-card}
-:link: 08_polarcasestudy/intro/intro
-:link-type: doc
-:class-header: bg-light
-
-Polar Case Study 🐧
-^^^
-
-Land-ocean-atmosphere-ice interactions
 ::: -->
 
 <!-- :::{grid-item-card}
@@ -125,6 +114,17 @@ Energy Transitions 🏭
 ^^^
 
 Towards a sustainable future
+::: -->
+
+<!-- :::{grid-item-card}
+:link: 08_polarcasestudy/intro/intro
+:link-type: doc
+:class-header: bg-light
+
+Polar Case Study 🐧
+^^^
+
+Land-ocean-atmosphere-ice interactions
 ::: -->
 
 ::::

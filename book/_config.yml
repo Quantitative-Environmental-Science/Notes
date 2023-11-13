@@ -1,5 +1,5 @@
 title: 
-author: The QES Team
+author: the QES Team
 logo: logo.png
 
 # Force re-execution of notebooks on each build.
@@ -27,18 +27,24 @@ html:
   navbar_number_sections: true
 
 sphinx:
+  recursive_update: true
   config:
+    html_theme_options:
+      repository_provider: github
     language: en
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
     mathjax3_config:
       loader:
-        load: ['[tex]/physics', '[tex]/ams']
+        load: ['[tex]/physics', '[tex]/ams', '[tex]/mhchem', '[tex]/color']
       tex:
-        packages: ['base', 'physics', 'ams']
+        packages: ['base', 'physics', 'ams', 'mhchem', color]
     latex_elements:
       preamble: |
         \newcommand{\dv}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}  % replaces physics.sty \dv
         \newcommand{\dd}{\mathrm{d}}  % replaces physics.sty \dd
+        \newcommand{\pdv}[2]{\frac{\partial #1}{\partial #2}}  % partial derivative
       pointsize: 11pt
       papersize: a4paper
     latex_logo: ./logo.png
+
+# Look at including mhchem here - https://mhchem.github.io/MathJax-mhchem/
