@@ -35,7 +35,7 @@ chapters:
   - file: 04_atmosphere/l20/l20
   - file: 04_atmosphere/l21/l21
   - file: 04_atmosphere/l22/l22
-#   - file: 04_atmosphere/l23/l23
+  - file: 04_atmosphere/l23/l23
 #   - file: 04_atmosphere/l24/l24
 # - file: 05_globalenvironment/intro/intro
 #   sections:
