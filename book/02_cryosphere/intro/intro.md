@@ -9,7 +9,7 @@ the polar regions. Mountain glaciers, and at a much larger scale the
 polar ice sheets, store an immense quantity of fresh water. The flow of
 that grounded ice to the ocean, either as meltwater or through the
 viscous flow of ice, directly contributes to current sea level rise.
-These lectures we will construct simple models of these components of
+In these lectures we will construct simple models of these components of
 the cyrosphere in order to answer questions about the rate at which ice
 forms and melts, and the underlying dynamics of glacial flows.
 
