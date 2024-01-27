@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>4.6. Flooding</title>
   
@@ -29,44 +28,48 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/admonitions.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/admonitions.css?v=1588abde" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams", "[tex]/mhchem", "[tex]/color"]}, "tex": {"packages": ["base", "physics", "ams", "mhchem", "color"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '03_rivers/l18/l18';</script>
-    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="5. Air Pollution and Atmospheric Chemistry" href="../../04_atmosphere/intro/intro.html" />
@@ -164,7 +167,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../00_intro/intro/intro.html">1. Introduction</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -376,15 +390,15 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="flooding">
-<span id="lecture-18"></span><h1><span class="section-number">4.6. </span>Flooding<a class="headerlink" href="#flooding" title="Permalink to this heading">#</a></h1>
+<span id="lecture-18"></span><h1><span class="section-number">4.6. </span>Flooding<a class="headerlink" href="#flooding" title="Link to this heading">#</a></h1>
 <section id="overtopping-the-bank">
-<h2>Overtopping the bank<a class="headerlink" href="#overtopping-the-bank" title="Permalink to this heading">#</a></h2>
+<h2>Overtopping the bank<a class="headerlink" href="#overtopping-the-bank" title="Link to this heading">#</a></h2>
 <p>A river flowing through the landscape may overtop its embankment, as shown in <a class="reference internal" href="#fig-flood"><span class="std std-numref">Fig. 4.23</span></a>.
 The means water flows out of the channel and inundates the surrounding flood plane, and eventually can reach towns and other urban areas.</p>
 <figure class="margin-caption align-default" id="fig-flood">
 <a class="reference internal image-reference" href="../../_images/flood.png"><img alt="../../_images/flood.png" src="../../_images/flood.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.23 </span><span class="caption-text">A river overtopping its banks and flowing on to the flood plain.</span><a class="headerlink" href="#fig-flood" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.23 </span><span class="caption-text">A river overtopping its banks and flowing on to the flood plain.</span><a class="headerlink" href="#fig-flood" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>We wish to determine the rate at which water is flowing out of the river.
@@ -392,7 +406,7 @@ The situation is shown in more detail in <a class="reference internal" href="#fi
 <figure class="margin-caption align-default" id="fig-flood-schematic">
 <a class="reference internal image-reference" href="../../_images/figure18.2.png"><img alt="../../_images/figure18.2.png" src="../../_images/figure18.2.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.24 </span><span class="caption-text">A river overtopping its banks and flowing on to the flood plain.</span><a class="headerlink" href="#fig-flood-schematic" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.24 </span><span class="caption-text">A river overtopping its banks and flowing on to the flood plain.</span><a class="headerlink" href="#fig-flood-schematic" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The flow rate of the water moving over the embankment depends on the velocity of the water flow and the height over the top of the bank, <span class="math notranslate nohighlight">\(b\)</span>.
@@ -403,11 +417,11 @@ If the speed of the water is <span class="math notranslate nohighlight">\(\sim \
 With the flux over the bank established, we can turn our attention to the flow down the slope, further away from the levee.</p>
 <p>Balancing the flows in and out of a control volume in the flow, as we have previously, we get a differential equation describing the rate of change of the thickness of the flow, <span class="math notranslate nohighlight">\(h\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-flux-balance-overtopping">
-<span class="eqno">(4.25)<a class="headerlink" href="#equation-flux-balance-overtopping" title="Permalink to this equation">#</a></span>\[\pdv{h}{t} = -\pdv{Q}{x} + I\]</div>
+<span class="eqno">(4.25)<a class="headerlink" href="#equation-flux-balance-overtopping" title="Link to this equation">#</a></span>\[\pdv{h}{t} = -\pdv{Q}{x} + I\]</div>
 <p>where <span class="math notranslate nohighlight">\(I\)</span> is an infiltration term.
 With rapid flow from the river, the flow is turbulent in the flooding zone, and the speed of the flooding water is given by</p>
 <div class="math notranslate nohighlight" id="equation-eq-flow-speed">
-<span class="eqno">(4.26)<a class="headerlink" href="#equation-eq-flow-speed" title="Permalink to this equation">#</a></span>\[u = \sqrt{\frac{gh \sin{\theta}}{C_D}}\]</div>
+<span class="eqno">(4.26)<a class="headerlink" href="#equation-eq-flow-speed" title="Link to this equation">#</a></span>\[u = \sqrt{\frac{gh \sin{\theta}}{C_D}}\]</div>
 <p>and we can substitute into <a class="reference internal" href="#equation-flux-balance-overtopping">(4.25)</a> using <span class="math notranslate nohighlight">\(\pdv{Q}{x} = \pdv{(uh)}{x}\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\pdv{h}{t} + \frac{3}{2} \sqrt{\frac{g \sin(\theta)}{C_D}} h^\frac{1}{2} \pdv{h}{x} - I = 0\]</div>
@@ -429,7 +443,7 @@ If the water level decreases by an amount <span class="math notranslate nohighli
 The height of the embankment below the height of the free surface of the river in the centre of the river above the river bed, <span class="math notranslate nohighlight">\(H\)</span>, can be written as <span class="math notranslate nohighlight">\(H-(b+h)\)</span>.
 At the crest of the embankment, the height above the base of the river is a maximum, and so if <span class="math notranslate nohighlight">\(y\)</span> is the coordinate normal to the river, then</p>
 <div class="math notranslate nohighlight" id="equation-eq-embankment">
-<span class="eqno">(4.27)<a class="headerlink" href="#equation-eq-embankment" title="Permalink to this equation">#</a></span>\[\dv{h}{y} + \dv{b}{y} = 0\]</div>
+<span class="eqno">(4.27)<a class="headerlink" href="#equation-eq-embankment" title="Link to this equation">#</a></span>\[\dv{h}{y} + \dv{b}{y} = 0\]</div>
 <p>If we differentiate the expression for the flux <span class="math notranslate nohighlight">\(Q\)</span> above with respect to <span class="math notranslate nohighlight">\(y\)</span>, then the answer should be zero (as the flux is constant in space)
 and using Eq. <a class="reference internal" href="#equation-eq-embankment">(4.27)</a> we then find that</p>
 <div class="math notranslate nohighlight">
@@ -445,13 +459,13 @@ This leads to the result that the flux is given by</p>
 </div>
 </section>
 <section id="flood-defense-barriers">
-<h2>Flood defense barriers<a class="headerlink" href="#flood-defense-barriers" title="Permalink to this heading">#</a></h2>
+<h2>Flood defense barriers<a class="headerlink" href="#flood-defense-barriers" title="Link to this heading">#</a></h2>
 <p>A flood defence barrier needs to withstand the pressure from the flood water.
 This leads to a horizontal force on the barrier which can be calculated from the integral of the hydrostatic pressure on the wall of the barrier.</p>
 <figure class="margin-caption align-default" id="fig-barrier">
 <a class="reference internal image-reference" href="../../_images/figure18.3.png"><img alt="../../_images/figure18.3.png" src="../../_images/figure18.3.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.25 </span><span class="caption-text">A flood defence barrier, height <span class="math notranslate nohighlight">\(H\)</span>, holding back water at a height <span class="math notranslate nohighlight">\(h\)</span>.</span><a class="headerlink" href="#fig-barrier" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.25 </span><span class="caption-text">A flood defence barrier, height <span class="math notranslate nohighlight">\(H\)</span>, holding back water at a height <span class="math notranslate nohighlight">\(h\)</span>.</span><a class="headerlink" href="#fig-barrier" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Since the atmospheric pressure acts on both sides of the barrier, we can ignore it.
@@ -469,12 +483,12 @@ which may include a series of inclined support rods pressing on the top of the b
 <figure class="margin-caption align-default" id="fig-venice-lagoon">
 <a class="reference internal image-reference" href="../../_images/venice_lagoon.png"><img alt="../../_images/venice_lagoon.png" src="../../_images/venice_lagoon.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.26 </span><span class="caption-text">In the Venice lagoon there are some interesting flood barriers which float up to the surface to stop incoming flow as in the figure above from the MODA website.</span><a class="headerlink" href="#fig-venice-lagoon" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.26 </span><span class="caption-text">In the Venice lagoon there are some interesting flood barriers which float up to the surface to stop incoming flow as in the figure above from the MODA website.</span><a class="headerlink" href="#fig-venice-lagoon" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="objects-carried-by-a-flood">
-<h2>Objects carried by a flood<a class="headerlink" href="#objects-carried-by-a-flood" title="Permalink to this heading">#</a></h2>
+<h2>Objects carried by a flood<a class="headerlink" href="#objects-carried-by-a-flood" title="Link to this heading">#</a></h2>
 <p>A particular challenge in a city environment for a flood relates to the transport of debris by a flood.
 Cars, logs and other large objects can be swept downstream and lead to blockages and the build up of very large forces by continuing floodwaters and damage.</p>
 <p>There are several key elements to assessing the transport of an object by the flood which makes for an interesting calculation.
@@ -483,7 +497,7 @@ The sliding friction is typically given by a fraction <span class="math notransl
 <figure class="margin-caption align-default" id="fig-car-forces">
 <a class="reference internal image-reference" href="../../_images/figure18.5.png"><img alt="../../_images/figure18.5.png" src="../../_images/figure18.5.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.27 </span><span class="caption-text">The ability of a car to resist movement.</span><a class="headerlink" href="#fig-car-forces" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.27 </span><span class="caption-text">The ability of a car to resist movement.</span><a class="headerlink" href="#fig-car-forces" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>In a flood, if the car is submerged to a depth <span class="math notranslate nohighlight">\(h\)</span>, and the car is waterproof then, modelling the car as a cuboid with a basal area <span class="math notranslate nohighlight">\(A\)</span>,
@@ -502,7 +516,7 @@ So, it is easier to move the car owing to the buoyancy from the presence of the 
 <figure class="margin-caption align-default" id="fig-car-forces-side">
 <a class="reference internal image-reference" href="../../_images/figure18.6.png"><img alt="../../_images/figure18.6.png" src="../../_images/figure18.6.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.28 </span><span class="caption-text">Forces exerted on a car in a flood.</span><a class="headerlink" href="#fig-car-forces-side" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.28 </span><span class="caption-text">Forces exerted on a car in a flood.</span><a class="headerlink" href="#fig-car-forces-side" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>This leads to the result that the water speed required to move the car depends on the depth of the water according to the relation</p>
@@ -515,7 +529,7 @@ then with <span class="math notranslate nohighlight">\(\mu = 0.2\)</span>, <span
 so the drag force and hence current speed required to move the car falls to much smaller values.</p>
 </section>
 <section id="flooding-through-a-city">
-<h2>Flooding through a city<a class="headerlink" href="#flooding-through-a-city" title="Permalink to this heading">#</a></h2>
+<h2>Flooding through a city<a class="headerlink" href="#flooding-through-a-city" title="Link to this heading">#</a></h2>
 <p>When a flood passes through a city, the advance of the flood may be strongly controlled by the road system, which presents a high throughput pathway for the floodwaters.
 The development of the flood in the city will often encounter debris which can be picked up and transported by the flood, as illustrated in the calculations above,
 leading to significant blockages in the roads and hence time dependent evolution of the flood pathway.</p>
@@ -525,13 +539,13 @@ If the sewers spill out into the road this can lead to contaminants in the flood
 The time of day that a flood enters a city is key for modelling the flood and the debris transported by the flood.</p>
 </section>
 <section id="groundwater-floods">
-<h2>Groundwater floods<a class="headerlink" href="#groundwater-floods" title="Permalink to this heading">#</a></h2>
+<h2>Groundwater floods<a class="headerlink" href="#groundwater-floods" title="Link to this heading">#</a></h2>
 <p>A somewhat similar flood process also occurs with groundwater flows in the event that there is an open permeable flow path, perhaps bounded below by a clay layer, as in the figure below.
 However, similar effects occur in limestone formations, but with much of the flow passing through the fracture-related permeability rather than the pore spaces.</p>
 <figure class="margin-caption align-default" id="fig-groundwater-floods">
 <a class="reference internal image-reference" href="../../_images/groundwater_floods.png"><img alt="../../_images/groundwater_floods.png" src="../../_images/groundwater_floods.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.29 </span><span class="caption-text">The processes of a groundwater flood.</span><a class="headerlink" href="#fig-groundwater-floods" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.29 </span><span class="caption-text">The processes of a groundwater flood.</span><a class="headerlink" href="#fig-groundwater-floods" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The flow running below ground typically has a velocity which depends on the permeability of the formation (e.g. soil) and the slope of the catchment.
@@ -633,7 +647,7 @@ By the QES Team
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>

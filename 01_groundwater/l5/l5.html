@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>2.2. Why water moves beneath the surface</title>
   
@@ -29,44 +28,48 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/admonitions.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/admonitions.css?v=1588abde" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams", "[tex]/mhchem", "[tex]/color"]}, "tex": {"packages": ["base", "physics", "ams", "mhchem", "color"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '01_groundwater/l5/l5';</script>
-    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="2.3. How we measure and understand water movement" href="../l6/l6.html" />
@@ -164,7 +167,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../00_intro/intro/intro.html">1. Introduction</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -363,14 +377,14 @@ document.write(`
                   
   <p><br><div style="page-break-before:always;"></div></p>
 <section class="tex2jax_ignore mathjax_ignore" id="why-water-moves-beneath-the-surface">
-<span id="lecture-5"></span><h1><span class="section-number">2.2. </span>Why water moves beneath the surface<a class="headerlink" href="#why-water-moves-beneath-the-surface" title="Permalink to this heading">#</a></h1>
+<span id="lecture-5"></span><h1><span class="section-number">2.2. </span>Why water moves beneath the surface<a class="headerlink" href="#why-water-moves-beneath-the-surface" title="Link to this heading">#</a></h1>
 <p>Inherent to the idea of a groundwater system is the idea that groundwater moves from a point of <a class="reference internal" href="../../reference/glossary.html#term-Recharge"><span class="xref std std-term">recharge</span></a> to a point of <a class="reference internal" href="../../reference/glossary.html#term-Discharge"><span class="xref std std-term">discharge</span></a>.
 If the total volume stored is a function of the <a class="reference internal" href="../../reference/glossary.html#term-Porosity"><span class="xref std std-term">porosity</span></a>, then we can ask ourselves what controls how groundwater moves from one point to another point?</p>
 <p>This was first explored in the 1850s by <strong>Henri D’Arcy</strong>, a French civil engineer, who set up a pipe filled with sand and played around with how fast water moved through the pipe.</p>
 <figure class="margin-caption align-default" id="darcy-pipe">
 <a class="reference internal image-reference" href="../../_images/figure5.1.png"><img alt="../../_images/figure5.1.png" src="../../_images/figure5.1.png" style="width: 70%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.7 </span><span class="caption-text">A schematic of the original experiment by Henri D’Arcy.</span><a class="headerlink" href="#darcy-pipe" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.7 </span><span class="caption-text">A schematic of the original experiment by Henri D’Arcy.</span><a class="headerlink" href="#darcy-pipe" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <aside class="units margin sidebar">
@@ -388,7 +402,7 @@ and the flow rate, <span class="math notranslate nohighlight">\(Q\)</span>, was 
 <figure class="margin-caption align-default" id="hyd-grad">
 <img alt="../../_images/figure5.2.jpeg" src="../../_images/figure5.2.jpeg" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.8 </span><span class="caption-text">Plot of Flow Rate <span class="math notranslate nohighlight">\((Q)\)</span> against <span class="math notranslate nohighlight">\(-\dv{h}{l}\)</span>. The gradient gives <span class="math notranslate nohighlight">\(K\)</span>, the <a class="reference internal" href="../../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a>.</span><a class="headerlink" href="#hyd-grad" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.8 </span><span class="caption-text">Plot of Flow Rate <span class="math notranslate nohighlight">\((Q)\)</span> against <span class="math notranslate nohighlight">\(-\dv{h}{l}\)</span>. The gradient gives <span class="math notranslate nohighlight">\(K\)</span>, the <a class="reference internal" href="../../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a>.</span><a class="headerlink" href="#hyd-grad" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>What Darcy found was that <span class="math notranslate nohighlight">\(Q\)</span> is proportional to <span class="math notranslate nohighlight">\(\Delta h\)</span> and inversely proportional to <span class="math notranslate nohighlight">\(l\)</span>.
@@ -408,11 +422,11 @@ q &amp;= \mathrm{m~s^{-1}} \\
 \end{split}\]</div>
 </aside>
 <div class="math notranslate nohighlight" id="equation-darcys-law">
-<span class="eqno">(2.3)<a class="headerlink" href="#equation-darcys-law" title="Permalink to this equation">#</a></span>\[Q = -KA \dv{h}{l}\]</div>
+<span class="eqno">(2.3)<a class="headerlink" href="#equation-darcys-law" title="Link to this equation">#</a></span>\[Q = -KA \dv{h}{l}\]</div>
 <p>which is known as <strong>Darcy’s law</strong>.
 Note that often you will see <span class="math notranslate nohighlight">\(q\)</span> rather than <span class="math notranslate nohighlight">\(Q\)</span> used where <span class="math notranslate nohighlight">\(q\)</span> is <a class="reference internal" href="../../reference/glossary.html#term-Specific-Discharge"><span class="xref std std-term">specific discharge</span></a>, or ‘Darcy velocity’ and is the flow rate (<span class="math notranslate nohighlight">\(Q\)</span>) divided by the area (<span class="math notranslate nohighlight">\(A\)</span>):</p>
 <div class="math notranslate nohighlight" id="equation-darcys-vel">
-<span class="eqno">(2.4)<a class="headerlink" href="#equation-darcys-vel" title="Permalink to this equation">#</a></span>\[q = \frac{Q}{A}\]</div>
+<span class="eqno">(2.4)<a class="headerlink" href="#equation-darcys-vel" title="Link to this equation">#</a></span>\[q = \frac{Q}{A}\]</div>
 <p>Let’s learn more about this <strong><a class="reference internal" href="../../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a></strong> – <span class="math notranslate nohighlight">\(K\)</span>.
 We can derive that the units are length-per-time, or often <span class="math notranslate nohighlight">\(\mathrm{m \ s^{-1}}\)</span>.
 Studies of actual groundwater systems have shown that it can range over 12 orders of magnitude in various materials below the subsurface (<a class="reference internal" href="#fluxes"><span class="std std-numref">Fig. 2.9</span></a>).</p>
@@ -424,7 +438,7 @@ Studies of actual groundwater systems have shown that it can range over 12 order
 Each open square is an optimised or mean value from a part of a model domain that is larger than <span class="math notranslate nohighlight">\(5 \ \mathrm{km}\)</span> horizontally.
 Values are grouped into hydrolithogic categories that are typical for regioonal-scale modeling
 (i.e. fine grained, unconsolidated).
-The geometric meanis shown as a red square with <span class="math notranslate nohighlight">\(1\sigma\)</span> standard deviation for each hydrolithogic category is also shown.</span><a class="headerlink" href="#fluxes" title="Permalink to this image">#</a></p>
+The geometric meanis shown as a red square with <span class="math notranslate nohighlight">\(1\sigma\)</span> standard deviation for each hydrolithogic category is also shown.</span><a class="headerlink" href="#fluxes" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>In general, <a class="reference internal" href="../../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a> is a function of both the medium (what groundwater flows through)
@@ -441,7 +455,7 @@ g &amp;= \mathrm{m~s^{-2}} \\
 \end{split}\]</div>
 </aside>
 <div class="math notranslate nohighlight" id="equation-hyd-conductivity">
-<span class="eqno">(2.5)<a class="headerlink" href="#equation-hyd-conductivity" title="Permalink to this equation">#</a></span>\[K = Cd^2 \frac{\rho g}{\mu}\]</div>
+<span class="eqno">(2.5)<a class="headerlink" href="#equation-hyd-conductivity" title="Link to this equation">#</a></span>\[K = Cd^2 \frac{\rho g}{\mu}\]</div>
 <p>Here, <span class="math notranslate nohighlight">\(Cd^2\)</span> is a property of the medium – where <span class="math notranslate nohighlight">\(d\)</span> is the diameter of the grains, and <span class="math notranslate nohighlight">\(C\)</span> is a constant of proportionality,
 which covers grain packing, how round the grains are, how much cement is around.
 Meanwhile, <span class="math notranslate nohighlight">\(\frac{\rho g}{\mu}\)</span> is a property of the fluid,
@@ -459,7 +473,7 @@ k &amp;= \mathrm{m^2} \\
 \end{split}\]</div>
 </aside>
 <div class="math notranslate nohighlight" id="equation-permeability">
-<span class="eqno">(2.6)<a class="headerlink" href="#equation-permeability" title="Permalink to this equation">#</a></span>\[k = Cd^2\]</div>
+<span class="eqno">(2.6)<a class="headerlink" href="#equation-permeability" title="Link to this equation">#</a></span>\[k = Cd^2\]</div>
 <p>We can see that we can relate <a class="reference internal" href="../../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a> (units <span class="math notranslate nohighlight">\(\mathrm{m \ s^{-1}}\)</span>) to <a class="reference internal" href="../../reference/glossary.html#term-Permeability"><span class="xref std std-term">permeability</span></a> (units <span class="math notranslate nohighlight">\(\mathrm{m^2}\)</span>) quite easily, if we assume that the fluid flowing through the groundwater is water.
 This is usually a safe assumption (even really salty brines in groundwater systems have a specific weight and dynamic viscosity that means they behave more or less as water).
 If you read around a bit you will also find that a unit for <a class="reference internal" href="../../reference/glossary.html#term-Permeability"><span class="xref std std-term">Permeability</span></a> of a ‘Darcy’ is sometimes used (but not often).</p>
@@ -472,7 +486,7 @@ In the lecture we will introduce the concept of <strong><a class="reference inte
 <figcaption>
 <p><span class="caption-number">Fig. 2.10 </span><span class="caption-text">The global distribution of <a class="reference internal" href="../../reference/glossary.html#term-Permeability"><span class="xref std std-term">permeability</span></a> in <span class="math notranslate nohighlight">\(\log(k \ / \ \mathrm{m^2})\)</span>.
 The regional scale <a class="reference internal" href="../../reference/glossary.html#term-Permeability"><span class="xref std std-term">permeability</span></a> will be much lower in the regions north of the dashed continuous permafrost line.
-Smaller continous permafrost areas in mountainous terrain are not shown.</span><a class="headerlink" href="#global-perm" title="Permalink to this image">#</a></p>
+Smaller continous permafrost areas in mountainous terrain are not shown.</span><a class="headerlink" href="#global-perm" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Darcy’s Law provides us with a nice study of what controls the rate that water flows through porous media.
@@ -482,7 +496,7 @@ One of the big assumptions is that flow is <strong>laminar</strong>, and not <st
 <figure class="margin-caption align-default" id="turb-laminar">
 <a class="reference internal image-reference" href="../../_images/figure5.5.png"><img alt="../../_images/figure5.5.png" src="../../_images/figure5.5.png" style="width: 60%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.11 </span><span class="caption-text">Cartoon of the difference between turbulent and laminar flow.</span><a class="headerlink" href="#turb-laminar" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.11 </span><span class="caption-text">Cartoon of the difference between turbulent and laminar flow.</span><a class="headerlink" href="#turb-laminar" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Laminar means that water is moving in the same direction, like a line, while turbulence occurs when there are deviations from this linearity of movement.</p>
@@ -493,7 +507,7 @@ Turbulence causes pressure loss and thus changes the flow rate.</p>
 <a class="reference internal image-reference" href="../../_images/figure5.6.png"><img alt="../../_images/figure5.6.png" src="../../_images/figure5.6.png" style="width: 50%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 2.12 </span><span class="caption-text">Plot of flow against <a class="reference internal" href="../../reference/glossary.html#term-Hydraulic-Gradient"><span class="xref std std-term">hydraulic gradient</span></a> showing the branching of the flow regime.
-The lower branch represents the turbulent regime, where pressure is lost.</span><a class="headerlink" href="#q-vs-dh-dl" title="Permalink to this image">#</a></p>
+The lower branch represents the turbulent regime, where pressure is lost.</span><a class="headerlink" href="#q-vs-dh-dl" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>We know if we are in a laminar versus a turbulent flow regime by calculating the <strong>Reynolds Number</strong>.</p>
@@ -505,14 +519,14 @@ The lower branch represents the turbulent regime, where pressure is lost.</span>
 \end{split}\]</div>
 </aside>
 <div class="math notranslate nohighlight" id="equation-reynolds-num">
-<span class="eqno">(2.7)<a class="headerlink" href="#equation-reynolds-num" title="Permalink to this equation">#</a></span>\[\Re = \frac{\rho v d}{\mu}\]</div>
+<span class="eqno">(2.7)<a class="headerlink" href="#equation-reynolds-num" title="Link to this equation">#</a></span>\[\Re = \frac{\rho v d}{\mu}\]</div>
 <p>Where <span class="math notranslate nohighlight">\(r\)</span> is the density of the fluid, <span class="math notranslate nohighlight">\(v\)</span> is the velocity of the fluid, <span class="math notranslate nohighlight">\(d\)</span> is a length term, typically the grain size, and <span class="math notranslate nohighlight">\(\mu\)</span> is the dynamic viscosity of the fluid.
 If <span class="math notranslate nohighlight">\(\mathrm{Re} &lt; 10\)</span> then the flow is laminar, while is <span class="math notranslate nohighlight">\(\mathrm{Re} &gt; 10\)</span> then it is turbulent.
 Lucky for us, most groundwater systems fall in the category of laminar flow.</p>
 <figure class="margin-caption align-default" id="grain-sizes">
 <a class="reference internal image-reference" href="../../_images/figure5.7.png"><img alt="../../_images/figure5.7.png" src="../../_images/figure5.7.png" style="width: 70%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.13 </span><span class="caption-text">Cartoon showing of different <a class="reference internal" href="../../reference/glossary.html#term-Porosity"><span class="xref std std-term">porosity</span></a> materials.</span><a class="headerlink" href="#grain-sizes" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.13 </span><span class="caption-text">Cartoon showing of different <a class="reference internal" href="../../reference/glossary.html#term-Porosity"><span class="xref std std-term">porosity</span></a> materials.</span><a class="headerlink" href="#grain-sizes" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Remember that the grains in the porous media, more generally, provide frictional resistance to the flow.
@@ -527,7 +541,7 @@ The average groundwater velocity <span class="math notranslate nohighlight">\((v
 <figure class="margin-caption align-default" id="hydraulic-head">
 <img alt="../../_images/figure5.8.png" src="../../_images/figure5.8.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.14 </span><span class="caption-text">Schematic showing the calculation of <a class="reference internal" href="../../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a>.</span><a class="headerlink" href="#hydraulic-head" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.14 </span><span class="caption-text">Schematic showing the calculation of <a class="reference internal" href="../../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a>.</span><a class="headerlink" href="#hydraulic-head" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>If we think about a groundwater system, where there are two wells, the pressure of the water at a particular depth in the well is a function of both the pressure exerted by the water above it, and the gravitational pull.
@@ -619,7 +633,7 @@ By the QES Team
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>

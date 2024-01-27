@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>2-box model for the global heat distribution</title>
   
@@ -29,44 +28,48 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/admonitions.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/admonitions.css?v=1588abde" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams", "[tex]/mhchem", "[tex]/color"]}, "tex": {"packages": ["base", "physics", "ams", "mhchem", "color"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '05_globalenvironment/l31/l31';</script>
-    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -164,7 +167,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../00_intro/intro/intro.html">1. Introduction</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -362,12 +376,12 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="box-model-for-the-global-heat-distribution">
-<span id="lecture-31"></span><h1>2-box model for the global heat distribution<a class="headerlink" href="#box-model-for-the-global-heat-distribution" title="Permalink to this heading">#</a></h1>
+<span id="lecture-31"></span><h1>2-box model for the global heat distribution<a class="headerlink" href="#box-model-for-the-global-heat-distribution" title="Link to this heading">#</a></h1>
 <p>In the previous section, we proposed a model for heat transport in the atmosphere using a one-dimensional diffusion equation. Another approach is to model the average temperature of tropical and polar regions using a <em>box model</em>. This approach is particularly useful when studying climates where relatively little is known about the dynamics (e.g. paleoclimate or exoplanets). During the practical projects this term, we will be developing a climate model based on box models for the atmosphere and ocean, including both heat and carbon. This lecture also serves as an introduction to the first practical project.</p>
 <figure class="margin-caption align-default" id="fig-lorenz-sketch">
 <a class="reference internal image-reference" href="../../_images/lorenz_sketch.png"><img alt="../../_images/lorenz_sketch.png" src="../../_images/lorenz_sketch.png" style="width: 90%;" /></a>
 <figcaption>
-<p><span class="caption-text">Sketch of a 2-component box model for heat transport.</span><a class="headerlink" href="#fig-lorenz-sketch" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Sketch of a 2-component box model for heat transport.</span><a class="headerlink" href="#fig-lorenz-sketch" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The box model that we will use is sketched in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:lorenz_sketch</span></code>. We have two boxes - box “l” represents the low latitude (tropical) regions and box “h” represents high latitudes. We assume symmetry about the equator so that the high latitude box represents the combined northern and southern high latitudes. To account for this, the flux of heat from low latitudes to high latitudes, <span class="math notranslate nohighlight">\(F\)</span>, is twice what it would be for a single hemisphere. It would be relatively straightforward to use three boxes to represent southern and northern high latitudes in addition to the low latitude box. Indeed, one of the advantages of box models is that they are flexible and can easily be expanded.</p>
@@ -383,16 +397,16 @@ C_a \frac{\partial T_h}{\partial t} &amp;= I_h - O_h + F.\end{split}\]</div>
 <p>We assume that the heat flux, <span class="math notranslate nohighlight">\(F\)</span>, is proportional to the difference between the temperatures in the low latitude and high latitude boxes. We will let <span class="math notranslate nohighlight">\(D\)</span> be the coefficient of proportionality and as noted above, we need to multiply by a factor of two to account for the heat flux going south and north from the low latitude box. Hence we take <span class="math notranslate nohighlight">\(F=2D\Delta T\)</span>, where <span class="math notranslate nohighlight">\(\Delta T=T_l-T_h\)</span>.</p>
 <p>Using these forms for <span class="math notranslate nohighlight">\(O\)</span>, and <span class="math notranslate nohighlight">\(F\)</span>, we have</p>
 <div class="math notranslate nohighlight" id="equation-eq-lorenz1">
-<span class="eqno">()<a class="headerlink" href="#equation-eq-lorenz1" title="Permalink to this equation">#</a></span>\[C_a \frac{\partial T_l}{\partial t} = I_l - A - BT_l - 2D \Delta T\]</div>
+<span class="eqno">()<a class="headerlink" href="#equation-eq-lorenz1" title="Link to this equation">#</a></span>\[C_a \frac{\partial T_l}{\partial t} = I_l - A - BT_l - 2D \Delta T\]</div>
 <div class="math notranslate nohighlight" id="equation-eq-lorenz2">
-<span class="eqno">()<a class="headerlink" href="#equation-eq-lorenz2" title="Permalink to this equation">#</a></span>\[C_a \frac{\partial T_h}{\partial t} = I_h - A - BT_h + 2D \Delta T\]</div>
+<span class="eqno">()<a class="headerlink" href="#equation-eq-lorenz2" title="Link to this equation">#</a></span>\[C_a \frac{\partial T_h}{\partial t} = I_h - A - BT_h + 2D \Delta T\]</div>
 <p>This represents a system of coupled first order ordinary differential equations. In the first practical project, you will timestep these equations numerically.</p>
 <p>Here, we are primarily interested in the equilibrium temperature difference, <span class="math notranslate nohighlight">\(\Delta T\)</span>, implied by the model. Steady state solutions require that the LHS of Eq. <a class="reference internal" href="#equation-eq-lorenz1">()</a> and <a class="reference internal" href="#equation-eq-lorenz2">()</a> are zero. If we then subtract Eq. <a class="reference internal" href="#equation-eq-lorenz2">()</a> from Eq. <a class="reference internal" href="#equation-eq-lorenz1">()</a>, we obtain</p>
 <div class="math notranslate nohighlight">
 \[I_l-I_h - B \Delta T - 4D\Delta T = 0,\]</div>
 <p>and hence the equilibrium temperature difference is</p>
 <div class="math notranslate nohighlight" id="equation-eq-lorenz-delta-t">
-<span class="eqno">()<a class="headerlink" href="#equation-eq-lorenz-delta-t" title="Permalink to this equation">#</a></span>\[\Delta T = \frac{I_l-I_h}{4D + B}.\]</div>
+<span class="eqno">()<a class="headerlink" href="#equation-eq-lorenz-delta-t" title="Link to this equation">#</a></span>\[\Delta T = \frac{I_l-I_h}{4D + B}.\]</div>
 <p>Adding Eq. <a class="reference internal" href="#equation-eq-lorenz2">()</a> to Eq. <a class="reference internal" href="#equation-eq-lorenz1">()</a>, we obtain</p>
 <div class="math notranslate nohighlight">
 \[T_l + T_h = (I_l+I_h)/B - 2A .\]</div>
@@ -434,7 +448,7 @@ We introduce a parameter <span class="math notranslate nohighlight">\(q\)</span>
 <figure class="margin-caption align-default" id="fig-temperature-variation-with-q">
 <a class="reference internal image-reference" href="../../_images/temperature_variation_with_q.png"><img alt="../../_images/temperature_variation_with_q.png" src="../../_images/temperature_variation_with_q.png" style="width: 90%;" /></a>
 <figcaption>
-<p><span class="caption-text">Variation of temperatures <span class="math notranslate nohighlight">\(T_l\)</span> and <span class="math notranslate nohighlight">\(T_h\)</span> with strength of solar radiation. The three states, ice free (solid line), high latitude ice (dashed line) and global ice (dash-dot line), are shown where realisable. For a given line style the upper line shows <span class="math notranslate nohighlight">\(T_l\)</span> and the lower line <span class="math notranslate nohighlight">\(T_h\)</span>. A horizontal line shows the threshold value <span class="math notranslate nohighlight">\(T_{\rm ice}\)</span>. Different states are realisable for different ranges of <span class="math notranslate nohighlight">\(q\)</span>. For a given value of <span class="math notranslate nohighlight">\(q\)</span> there may be one, two or three realisable states.</span><a class="headerlink" href="#fig-temperature-variation-with-q" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Variation of temperatures <span class="math notranslate nohighlight">\(T_l\)</span> and <span class="math notranslate nohighlight">\(T_h\)</span> with strength of solar radiation. The three states, ice free (solid line), high latitude ice (dashed line) and global ice (dash-dot line), are shown where realisable. For a given line style the upper line shows <span class="math notranslate nohighlight">\(T_l\)</span> and the lower line <span class="math notranslate nohighlight">\(T_h\)</span>. A horizontal line shows the threshold value <span class="math notranslate nohighlight">\(T_{\rm ice}\)</span>. Different states are realisable for different ranges of <span class="math notranslate nohighlight">\(q\)</span>. For a given value of <span class="math notranslate nohighlight">\(q\)</span> there may be one, two or three realisable states.</span><a class="headerlink" href="#fig-temperature-variation-with-q" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>There is strong evidence that during periods of its history the Earth has been in (or close to) a global-ice state – `Snowball Earth’. A more sophisticated (but still very simple) model can be formulated using the 1-D approach of Lecture 5. Then the boundary between ice/no ice is at some value of <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(y_b\)</span> say, which is a function of <span class="math notranslate nohighlight">\(q\)</span>.</p>
@@ -498,7 +512,7 @@ By the QES Team
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>

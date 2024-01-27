@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>The Carbonate Pump</title>
   
@@ -29,44 +28,48 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/admonitions.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/admonitions.css?v=1588abde" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams", "[tex]/mhchem", "[tex]/color"]}, "tex": {"packages": ["base", "physics", "ams", "mhchem", "color"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '06_oceancarbon/04_carbonatepump';</script>
-    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -164,7 +167,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../00_intro/intro/intro.html">1. Introduction</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -360,9 +374,9 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calcification">Calcification</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calcification-and-co-sub-2-sub">Calcification and CO<sub>2</sub></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calcification-and-co2">Calcification and CO<sub>2</sub></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saturation-state">Saturation State</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caco-sub-3-sub-dissolution">CaCO<sub>3</sub> Dissolution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caco3-dissolution">CaCO<sub>3</sub> Dissolution</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pressure">Pressure</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#biological-pump">Biological Pump</a></li>
 </ul>
@@ -388,7 +402,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="the-carbonate-pump">
-<span id="carbon-calcification"></span><h1>The Carbonate Pump<a class="headerlink" href="#the-carbonate-pump" title="Permalink to this heading">#</a></h1>
+<span id="carbon-calcification"></span><h1>The Carbonate Pump<a class="headerlink" href="#the-carbonate-pump" title="Link to this heading">#</a></h1>
 <blockquote class="highlights">
 <div><p>Key Points:</p>
 <ul class="simple">
@@ -399,7 +413,7 @@ document.write(`
 </ul>
 </div></blockquote>
 <section id="calcification">
-<h2>Calcification<a class="headerlink" href="#calcification" title="Permalink to this heading">#</a></h2>
+<h2>Calcification<a class="headerlink" href="#calcification" title="Link to this heading">#</a></h2>
 <p>Many groups of marine organisms make shells or skeletons from calcium carbonate (CaCO<sub>3</sub>).
 You are probably familiar with bivavles and gastropods that produce the shells you find on the sea shore, and corals that produce massive reef structures found in tropical coastal environments.
 Some examples you may not have encountered are the planktonic organisms found throughout the surface ocean that produce microscopic CaCO<sub>3</sub> structures.
@@ -412,7 +426,7 @@ Three groups of marine plankton are responsible the majority of calcification in
 <figure class="margin-caption align-default" id="fig-carbon-calcifiers">
 <a class="reference internal image-reference" href="../_images/carbon-calcifiers.png"><img alt="../_images/carbon-calcifiers.png" src="../_images/carbon-calcifiers.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-text">The three main open-ocean calcifiers. An SEM micrograph of the coccolithophore <em>Emiliania huleyi</em>, and light micrographs of the planktic foraminifera <em>Orbulina universa</em> and a Pteropod. Images from wikimedia commons (<a class="reference external" href="https://commons.wikimedia.org/wiki/File:Emiliania_huxleyi.jpg">coccolithophore</a>, <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Fis01026_(27555118153).jpg">pteropod</a>) and Oscar Branson.</span><a class="headerlink" href="#fig-carbon-calcifiers" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">The three main open-ocean calcifiers. An SEM micrograph of the coccolithophore <em>Emiliania huleyi</em>, and light micrographs of the planktic foraminifera <em>Orbulina universa</em> and a Pteropod. Images from wikimedia commons (<a class="reference external" href="https://commons.wikimedia.org/wiki/File:Emiliania_huxleyi.jpg">coccolithophore</a>, <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Fis01026_(27555118153).jpg">pteropod</a>) and Oscar Branson.</span><a class="headerlink" href="#fig-carbon-calcifiers" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The shells of these organisms are formed from one of two ‘polymorphs’ of CaCO<sub>3</sub> that are stable at Earth surface conditions: calcite and aragonite.
@@ -420,9 +434,9 @@ Coccolithophores and foraminifera produce calcite, while pteropods produce arago
 <p>The formation of these shells is actively controlled by the organism, and involves taking up dissolved Ca<sup>2+</sup> and CO<sub>3</sub><sup>2-</sup> ions from the surrounding water, and using them to build the a mineral structure.
 This process is known as <strong>calcification</strong>, and can be written as:</p>
 <div class="math notranslate nohighlight" id="equation-eq-carbon-calcification">
-<span class="eqno">()<a class="headerlink" href="#equation-eq-carbon-calcification" title="Permalink to this equation">#</a></span>\[\mathrm{Ca^{2+} + CO_{3}^{2-} \xrightarrow{calcification} CaCO_{3}}\]</div>
-<section id="calcification-and-co-sub-2-sub">
-<span id="carbon-calcification-co2"></span><h3>Calcification and CO<sub>2</sub><a class="headerlink" href="#calcification-and-co-sub-2-sub" title="Permalink to this heading">#</a></h3>
+<span class="eqno">()<a class="headerlink" href="#equation-eq-carbon-calcification" title="Link to this equation">#</a></span>\[\mathrm{Ca^{2+} + CO_{3}^{2-} \xrightarrow{calcification} CaCO_{3}}\]</div>
+<section id="calcification-and-co2">
+<span id="carbon-calcification-co2"></span><h3>Calcification and CO<sub>2</sub><a class="headerlink" href="#calcification-and-co2" title="Link to this heading">#</a></h3>
 <p>Removing CO<sub>3</sub><sup>2-</sup> from the water and trapping it in mineral form both directly removes DIC from surface water, and alters the speciation of the remaining DIC in the surface ocean, causing CO<sub>2</sub> to be released to the atmosphere, further reducing surface DIC.</p>
 <p>Just like organic matter in <a class="reference internal" href="03_biopump.html#carbon-biopump"><span class="std std-ref">The Biological Pump</span></a>, the CO<sub>3</sub><sup>2-</sup> trapped in shells is exported from the surface ocean as shell-bearing organisms die and sink.
 The uptake and export of CO<sub>3</sub><sup>2-</sup> directly removes DIC from the surface ocean.</p>
@@ -432,7 +446,7 @@ We can re-draw DIC speciation diagram (<code class="xref std std-numref docutils
 <figure class="margin-caption align-default" id="fig-carbon-bjerrum-co3">
 <a class="reference internal image-reference" href="../_images/carbon-bjerrum-CO3.png"><img alt="../_images/carbon-bjerrum-CO3.png" src="../_images/carbon-bjerrum-CO3.png" style="width: 70%;" /></a>
 <figcaption>
-<p><span class="caption-text">Change in DIC speciation as a function of CO<sub>3</sub><sup>2-</sup> concentration. This equilbrium is calculated at constant DIC concentration - there is no gas exchange with the atmosphere. If gas exchange were allowed to happen CO<sub>2</sub> would be released to the atmosphere as CO<sub>3</sub><sup>2-</sup> is removed from the surface ocean. This is shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:carbon:calc-co2-release</span></code>.</span><a class="headerlink" href="#fig-carbon-bjerrum-co3" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Change in DIC speciation as a function of CO<sub>3</sub><sup>2-</sup> concentration. This equilbrium is calculated at constant DIC concentration - there is no gas exchange with the atmosphere. If gas exchange were allowed to happen CO<sub>2</sub> would be released to the atmosphere as CO<sub>3</sub><sup>2-</sup> is removed from the surface ocean. This is shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:carbon:calc-co2-release</span></code>.</span><a class="headerlink" href="#fig-carbon-bjerrum-co3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Removing CO<sub>3</sub><sup>2-</sup> from the water causes the fraction of DIC that exists as CO<sub>2</sub> to increase (the equilibrium shifts to the left in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:carbon:bjerrum-co3</span></code>), causing CO<sub>2</sub> to be released to the atmosphere.
@@ -440,7 +454,7 @@ Calcification therefore removes more DIC that we would predict based solely on t
 <figure class="margin-caption align-default" id="fig-carbon-calc-co2-release">
 <a class="reference internal image-reference" href="../_images/carbon-calc-co2-release.png"><img alt="../_images/carbon-calc-co2-release.png" src="../_images/carbon-calc-co2-release.png" style="width: 70%;" /></a>
 <figcaption>
-<p><span class="caption-text">The change in pH and DIC caused by the removal of CO<sub>3</sub><sup>2-</sup> from the surface ocean by calcification when it is equilibrating with an atmosphere at 400 ppm pCO<sub>2</sub>. We can see that DIC is reduced directly by the removal of CO<sub>3</sub><sup>2-</sup>, and indirectly by the resulting shift in DIC speciation (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:carbon:bjerrum-co3</span></code>), causing CO<sub>2</sub> to be released to the atmosphere.</span><a class="headerlink" href="#fig-carbon-calc-co2-release" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">The change in pH and DIC caused by the removal of CO<sub>3</sub><sup>2-</sup> from the surface ocean by calcification when it is equilibrating with an atmosphere at 400 ppm pCO<sub>2</sub>. We can see that DIC is reduced directly by the removal of CO<sub>3</sub><sup>2-</sup>, and indirectly by the resulting shift in DIC speciation (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:carbon:bjerrum-co3</span></code>), causing CO<sub>2</sub> to be released to the atmosphere.</span><a class="headerlink" href="#fig-carbon-calc-co2-release" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The mechanism of exporting of CO<sub>3</sub><sup>2-</sup> from the surface ocean via the formation and sinking of CaCO<sub>3</sub> structures is intuitive, but how is CO<sub>3</sub><sup>2-</sup> released back into the deep ocean?
@@ -448,7 +462,7 @@ The bacterial breakdown that applies to organic matter doesn’t apply here, bec
 To consider the remineralisation of CaCO<sub>3</sub>, we must briefly consider mineral solubility and saturation states.</p>
 </section>
 <section id="saturation-state">
-<h3>Saturation State<a class="headerlink" href="#saturation-state" title="Permalink to this heading">#</a></h3>
+<h3>Saturation State<a class="headerlink" href="#saturation-state" title="Link to this heading">#</a></h3>
 <p>Just like the DIC speciation equations that drive <a class="reference internal" href="02_solubility.html#carbon-solubility"><span class="std std-ref">The Solubility Pump</span></a> <a class="reference internal" href="02_solubility.html#equation-eq-carbon-ks">()</a>, the calcification reaction <a class="reference internal" href="#equation-eq-carbon-calcification">()</a> has an equilibrium point that is defined by the thermodynamic properties of the reactants and product, and is described by an equilibrium solubility product (<span class="math notranslate nohighlight">\(K_{sp}\)</span>) for the mineral phase:</p>
 <div class="math notranslate nohighlight">
 \[K_{sp} = (\mathrm{[Ca^{2+}][CO_{3}^{2-}]})_{eq}\]</div>
@@ -463,11 +477,11 @@ This means that the formation and dissolution of CaCO<sub>3</sub> is predominant
 <p>The majority of the modern surface ocean is <strong>saturated</strong> (i.e. <span class="math notranslate nohighlight">\(\Omega &gt; 1\)</span>) with respect to CaCO<sub>3</sub>, and so calcification is favoured.
 For CaCO<sub>3</sub> to dissolve in the deep ocean, the deep ocean must be <strong>undersaturated</strong> (i.e. <span class="math notranslate nohighlight">\(\Omega &lt; 1\)</span>) with respect to CaCO<sub>3</sub>.</p>
 </section>
-<section id="caco-sub-3-sub-dissolution">
-<h3>CaCO<sub>3</sub> Dissolution<a class="headerlink" href="#caco-sub-3-sub-dissolution" title="Permalink to this heading">#</a></h3>
+<section id="caco3-dissolution">
+<h3>CaCO<sub>3</sub> Dissolution<a class="headerlink" href="#caco3-dissolution" title="Link to this heading">#</a></h3>
 <p>The dissolution of CaCO<sub>3</sub> is driven by a combination of changes in <strong>pressure</strong> and the impact of the <strong>biological pump</strong>.</p>
 <section id="pressure">
-<h4>Pressure<a class="headerlink" href="#pressure" title="Permalink to this heading">#</a></h4>
+<h4>Pressure<a class="headerlink" href="#pressure" title="Link to this heading">#</a></h4>
 <p>The CaCO<sub>3</sub> minerals become more soluble at higher pressure; <span class="math notranslate nohighlight">\(K_{sp}\)</span> increases with depth.
 The two polymorphs of CaCO<sub>3</sub>, calcite and aragonite, also have different <span class="math notranslate nohighlight">\(K_{sp}\)</span> values - calcite is more stable than aragonite, so has a lower <span class="math notranslate nohighlight">\(K_{sp}\)</span>.
 The speciation of DIC is also sensitive to pressure, which causes [CO<sub>3</sub><sup>2-</sup>] to decrease with depth.
@@ -477,25 +491,25 @@ Thus, changes in pressure alone are sufficient to dissolve a large fraction of t
 <figure class="margin-caption align-default" id="fig-carbon-co3-sat">
 <a class="reference internal image-reference" href="../_images/carbon-CO3-sat.png"><img alt="../_images/carbon-CO3-sat.png" src="../_images/carbon-CO3-sat.png" style="width: 70%;" /></a>
 <figcaption>
-<p><span class="caption-text">The concentration of CO<sub>3</sub><sup>2-</sup> in seawater at which the CaCO<sub>3</sub> minerals calcite and aragonite are in equilibrium with seawater across a range of water depths. The shaded regions are supersaturated with respect to each mineral. The horizontal dashed line shows the [CO<sub>3</sub><sup>2-</sup>] for typical deep ocean water. The equilibrium [CO<sub>3</sub><sup>2-</sup>] for each mineral both increase with depth, while [CO<sub>3</sub><sup>2-</sup>] decreases with depth. The mineral will begin to dissolve below where the dashed line intersects with the solid lines. Calculated at 4 °C and salinity of 35.</span><a class="headerlink" href="#fig-carbon-co3-sat" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">The concentration of CO<sub>3</sub><sup>2-</sup> in seawater at which the CaCO<sub>3</sub> minerals calcite and aragonite are in equilibrium with seawater across a range of water depths. The shaded regions are supersaturated with respect to each mineral. The horizontal dashed line shows the [CO<sub>3</sub><sup>2-</sup>] for typical deep ocean water. The equilibrium [CO<sub>3</sub><sup>2-</sup>] for each mineral both increase with depth, while [CO<sub>3</sub><sup>2-</sup>] decreases with depth. The mineral will begin to dissolve below where the dashed line intersects with the solid lines. Calculated at 4 °C and salinity of 35.</span><a class="headerlink" href="#fig-carbon-co3-sat" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="biological-pump">
-<h4>Biological Pump<a class="headerlink" href="#biological-pump" title="Permalink to this heading">#</a></h4>
+<h4>Biological Pump<a class="headerlink" href="#biological-pump" title="Link to this heading">#</a></h4>
 <p>The effects of pressure on solubility and speciation then combine with the biological pump to make CaCO<sub>3</sub> dissolution occur at shallower depths than would be expected from pressure alone.
 The uptake of CO<sub>2</sub> by photosynthesis in surface waters raises pH and [CO<sub>3</sub><sup>2-</sup>], and the release of CO<sub>2</sub> by remineralisation in the deep ocean causes pH and [CO<sub>3</sub><sup>2-</sup>] to decrease.
 In combination with the pressure effects on CaCO<sub>3</sub> solubility, this causes CaCO<sub>3</sub> dissolution to occur at shallower depths (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:carbon:co3-sat-real</span></code>)}).</p>
 <figure class="margin-caption align-default" id="fig-carbon-co3-sat-real">
 <a class="reference internal image-reference" href="../_images/carbon-CO3-sat-real.png"><img alt="../_images/carbon-CO3-sat-real.png" src="../_images/carbon-CO3-sat-real.png" style="width: 70%;" /></a>
 <figcaption>
-<p><span class="caption-text">Similar to <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:carbon:co3-sat</span></code>, but showing a real [CO<sub>3</sub><sup>2-</sup>] profile for the Southern Atlantic. The action of the biological pump causes [CO<sub>3</sub><sup>2-</sup>] to be elevated in surface waters, where CO<sub>2</sub> is being removed by photosynthesis, and elevated at depth, where CO<sub>2</sub> is being released by remineralistion.</span><a class="headerlink" href="#fig-carbon-co3-sat-real" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Similar to <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:carbon:co3-sat</span></code>, but showing a real [CO<sub>3</sub><sup>2-</sup>] profile for the Southern Atlantic. The action of the biological pump causes [CO<sub>3</sub><sup>2-</sup>] to be elevated in surface waters, where CO<sub>2</sub> is being removed by photosynthesis, and elevated at depth, where CO<sub>2</sub> is being released by remineralistion.</span><a class="headerlink" href="#fig-carbon-co3-sat-real" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 </section>
 <section id="aggregates-and-local-environments">
-<span id="carbon-calcification-aggregates"></span><h3>Aggregates and Local Environments<a class="headerlink" href="#aggregates-and-local-environments" title="Permalink to this heading">#</a></h3>
+<span id="carbon-calcification-aggregates"></span><h3>Aggregates and Local Environments<a class="headerlink" href="#aggregates-and-local-environments" title="Link to this heading">#</a></h3>
 <p>Another layer of complexity when considering CaCO<sub>3</sub> is the effect of particle aggregates.
 Most material leaving the surface ocean is in the form of aggregates - collections of smaller particles that clump together to form larger particles.
 The respiration of bacteria in these aggregates can drive very high local CO<sub>2</sub> concentrations, dramatically reducing pH and CO<sub>3</sub><sup>2-</sup> and creating a highly locally undersaturated environment.
@@ -504,20 +518,20 @@ A lot of CaCO<sub>3</sub> dissolution occurs within these local environments, wh
 </section>
 </section>
 <section id="id1">
-<h2>The Carbonate Pump<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2>The Carbonate Pump<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>The export of CaCO<sub>3</sub> from the surface ocean to the deep ocean is known as the <strong>carbonate pump</strong>.
 The impact of the carbonate pump on carbon concentration and speciation considered <a class="reference internal" href="#carbon-calcification-co2"><span class="std std-ref">above</span></a> can also be described in terms of DIC and TA, which describe the concentration and speciation of carbon in the water.
 The carbonate pump acts to move TA and DIC from the surface to the deep ocean in a 2:1 ratio.
 This follows from our definitions of DIC and TA:</p>
 <div class="math notranslate nohighlight" id="equation-eq-carbon-carbonate-pump-dic-ta">
-<span class="eqno">()<a class="headerlink" href="#equation-eq-carbon-carbonate-pump-dic-ta" title="Permalink to this equation">#</a></span>\[\begin{split}\mathrm{DIC} &amp;= {\color{red}\mathrm{[CO_3^{2-}]}} + \mathrm{[HCO_3^-]} + \mathrm{[CO_2^*]} \\
+<span class="eqno">()<a class="headerlink" href="#equation-eq-carbon-carbonate-pump-dic-ta" title="Link to this equation">#</a></span>\[\begin{split}\mathrm{DIC} &amp;= {\color{red}\mathrm{[CO_3^{2-}]}} + \mathrm{[HCO_3^-]} + \mathrm{[CO_2^*]} \\
 \mathrm{TA} &amp;= {\color{red}\mathrm{2[CO_3^{2-}]}} + \mathrm{[HCO_3^-]} + [\dots] - \mathrm{[H^+]} \\\end{split}\]</div>
 <p>Because calcification and dissolution affect TA and DIC in different amounts, it will alter both the concentration and speciation of DIC in the water (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:carbon:DIC-TA</span></code>).</p>
 <p>The carbonate pump is inextricably connected to the biological pump, because CaCO<sub>3</sub> production is driven by biological productivity.
 This means that the carbonate pump also depends on the supply of nutrients to the surface ocean, which fuels biological productivity.
 However, this connection is not one-way: the carbonate pump can also affect the efficiency of the biological pump by altering the density of sinking particles.</p>
 <section id="ballasting">
-<h3>Ballasting<a class="headerlink" href="#ballasting" title="Permalink to this heading">#</a></h3>
+<h3>Ballasting<a class="headerlink" href="#ballasting" title="Link to this heading">#</a></h3>
 <p>We saw in <a class="reference internal" href="03_biopump.html#carbon-biopump"><span class="std std-ref">The Biological Pump</span></a> that the proportion of primary production that is exported to the deep ocean depends to a large extent on particle sinking speed, which is a function of particle density.
 Seawater has a density of ~1025 kg m<sup>-3</sup>, organic matter has a typical density of ~1030-1500 kg m<sup>-3</sup>.
 Calcite has a density of 2710 kg m<sup>-3</sup>.
@@ -526,14 +540,14 @@ This means that, even thought calcification is an immediate source of CO<sub>2</
 This feedback is known as <strong>ballasting</strong>, and the amount of dense CaCO<sub>3</sub> relative to organic matter in sinking particles is a critical parameter in determining the efficiency of the biological pump.</p>
 </section>
 <section id="ocean-acidification">
-<span id="carbon-calcification-ocean-acidification"></span><h3>Ocean Acidification<a class="headerlink" href="#ocean-acidification" title="Permalink to this heading">#</a></h3>
+<span id="carbon-calcification-ocean-acidification"></span><h3>Ocean Acidification<a class="headerlink" href="#ocean-acidification" title="Link to this heading">#</a></h3>
 <p>In <a class="reference internal" href="02_solubility.html#carbon-solubility"><span class="std std-ref">The Solubility Pump</span></a> we saw that pCO<sub>2</sub> and pH are inversely related, and that elevating atmospheric pCO<sub>2</sub> will cause the surface ocean to become more acidic.
 This would reduce [CO<sub>3</sub><sup>2-</sup>], and therefore the saturation state (Ω) of the surface ocean (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:carbon:pco2-ph-omega</span></code>).
 Reducing the saturation state has the potential to reduce CaCO<sub>3</sub> production, by marine organisms, and enhance CaCO<sub>3</sub> dissolution at shallow depths, thus reducing the strength of the carbonate pump.</p>
 <figure class="margin-caption align-default" id="fig-carbon-pco2-ph-omega">
 <a class="reference internal image-reference" href="../_images/carbon-pCO2-pH.png"><img alt="../_images/carbon-pCO2-pH.png" src="../_images/carbon-pCO2-pH.png" style="width: 70%;" /></a>
 <figcaption>
-<p><span class="caption-text">The impact of ocean acidification on surface ocean <span class="math notranslate nohighlight">\(\Omega\)</span> at 0 and 30 °C. Because of the influence of temperature on solubility and DIC speciation, the high latitudes are much more affected by ocean acidification than the tropics. The polar waters may become undersaturated with respect to aragonite as soon as ~2050.</span><a class="headerlink" href="#fig-carbon-pco2-ph-omega" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">The impact of ocean acidification on surface ocean <span class="math notranslate nohighlight">\(\Omega\)</span> at 0 and 30 °C. Because of the influence of temperature on solubility and DIC speciation, the high latitudes are much more affected by ocean acidification than the tropics. The polar waters may become undersaturated with respect to aragonite as soon as ~2050.</span><a class="headerlink" href="#fig-carbon-pco2-ph-omega" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>In the immediate term, this could act as a negative feedback on atmospheric pCO<sub>2</sub>, because reductions in calcification will reduce the rate of associated CO<sub>2</sub> release from the surface ocean.
@@ -542,7 +556,7 @@ The interaction between ballasting and ocean acidification is a significant sour
 </section>
 </section>
 <section id="modelling-the-carbonate-pump">
-<h2>Modelling the Carbonate Pump<a class="headerlink" href="#modelling-the-carbonate-pump" title="Permalink to this heading">#</a></h2>
+<h2>Modelling the Carbonate Pump<a class="headerlink" href="#modelling-the-carbonate-pump" title="Link to this heading">#</a></h2>
 <p>Calcification is biologically-mediated, and takes up CO<sub>3</sub><sup>-2</sup> from the surface ocean and exports it to the deep.
 We will therefore model calcification as a function of biological productivity in the surface ocean, assuming that some fraction of biological carbon export (<span class="math notranslate nohighlight">\(f_{calc}\)</span>) is accompanied by calcification:</p>
 <div class="math notranslate nohighlight">
@@ -553,12 +567,12 @@ We will therefore model calcification as a function of biological productivity i
 <p>From our definitions of TA and DIC <a class="reference internal" href="#equation-eq-carbon-carbonate-pump-dic-ta">()</a>, this modifies TA and DIC in our model in a 2:1 ratio.
 We therefore model the impact of calcification on DIC as:</p>
 <div class="math notranslate nohighlight" id="equation-eq-3box-dic-calc">
-<span class="eqno">()<a class="headerlink" href="#equation-eq-3box-dic-calc" title="Permalink to this equation">#</a></span>\[\begin{split}\dv{DIC_L}{t} &amp;= \begin{bmatrix} \mathrm{transport} \\ \mathrm{CO_2~exch.} \\ \mathrm{bio.~pump.} \end{bmatrix} - f_{calc,L} 106 \frac{1}{\tau^P_L} P_L \\
+<span class="eqno">()<a class="headerlink" href="#equation-eq-3box-dic-calc" title="Link to this equation">#</a></span>\[\begin{split}\dv{DIC_L}{t} &amp;= \begin{bmatrix} \mathrm{transport} \\ \mathrm{CO_2~exch.} \\ \mathrm{bio.~pump.} \end{bmatrix} - f_{calc,L} 106 \frac{1}{\tau^P_L} P_L \\
 \dv{DIC_H}{t} &amp;= \begin{bmatrix} \mathrm{transport} \\ \mathrm{CO_2~exch.} \\ \mathrm{bio.~pump.} \end{bmatrix} - f_{calc,H} 106 \frac{1}{\tau^P_H} P_H \\
 \dv{DIC_D}{t} &amp;= \begin{bmatrix} \mathrm{transport} \\ \mathrm{bio.~pump.} \end{bmatrix} + \left(f_{calc,L} 106 \frac{V_L}{\tau^P_L} P_L + f_{calc,H} 106 \frac{V_H}{\tau^P_H} P_H \right) / V_D\end{split}\]</div>
 <p>where the terms in square brackets represents the transport <a class="reference internal" href="01_3box.html#equation-eq-3box-conservative">()</a>, gas exchange <a class="reference internal" href="02_solubility.html#equation-eq-3box-dic-solubility">()</a> and biological pump <a class="reference internal" href="03_biopump.html#equation-eq-3box-dic-biopump">()</a> terms.  For TA, the expression is included as:</p>
 <div class="math notranslate nohighlight" id="equation-eq-3box-ta-calc">
-<span class="eqno">()<a class="headerlink" href="#equation-eq-3box-ta-calc" title="Permalink to this equation">#</a></span>\[\begin{split}\dv{TA_L}{t} &amp;= \begin{bmatrix} \mathrm{transport} \\ \mathrm{bio.~pump.} \end{bmatrix} - 2 f_{calc,L} 106 \frac{1}{\tau^P_L} P_L \\
+<span class="eqno">()<a class="headerlink" href="#equation-eq-3box-ta-calc" title="Link to this equation">#</a></span>\[\begin{split}\dv{TA_L}{t} &amp;= \begin{bmatrix} \mathrm{transport} \\ \mathrm{bio.~pump.} \end{bmatrix} - 2 f_{calc,L} 106 \frac{1}{\tau^P_L} P_L \\
 \dv{TA_H}{t} &amp;= \begin{bmatrix} \mathrm{transport} \\ \mathrm{bio.~pump.} \end{bmatrix} - 2 f_{calc,H} 106 \frac{1}{\tau^P_H} \\
 \dv{TA_D}{t} &amp;= \begin{bmatrix} \mathrm{transport} \\ \mathrm{bio.~pump.} \end{bmatrix} + \left( 2 f_{calc,L} 106 \frac{V_L}{\tau^P_L} P_L + 2 f_{calc,H} 106 \frac{V_H}{\tau^P_H} P_H \right) / V_D\end{split}\]</div>
 </section>
@@ -611,9 +625,9 @@ We therefore model the impact of calcification on DIC as:</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calcification">Calcification</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calcification-and-co-sub-2-sub">Calcification and CO<sub>2</sub></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calcification-and-co2">Calcification and CO<sub>2</sub></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saturation-state">Saturation State</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caco-sub-3-sub-dissolution">CaCO<sub>3</sub> Dissolution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caco3-dissolution">CaCO<sub>3</sub> Dissolution</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pressure">Pressure</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#biological-pump">Biological Pump</a></li>
 </ul>
@@ -651,7 +665,7 @@ By the QES Team
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>

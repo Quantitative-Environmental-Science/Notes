@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>4.3. River flows</title>
   
@@ -29,44 +28,48 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/admonitions.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/admonitions.css?v=1588abde" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams", "[tex]/mhchem", "[tex]/color"]}, "tex": {"packages": ["base", "physics", "ams", "mhchem", "color"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '03_rivers/l15/l15';</script>
-    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="4.4. Reservoirs" href="../l16/l16.html" />
@@ -164,7 +167,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../00_intro/intro/intro.html">1. Introduction</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -374,9 +388,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="river-flows">
-<span id="lecture-15"></span><h1><span class="section-number">4.3. </span>River flows<a class="headerlink" href="#river-flows" title="Permalink to this heading">#</a></h1>
+<span id="lecture-15"></span><h1><span class="section-number">4.3. </span>River flows<a class="headerlink" href="#river-flows" title="Link to this heading">#</a></h1>
 <section id="flow-in-a-river">
-<h2>Flow in a river<a class="headerlink" href="#flow-in-a-river" title="Permalink to this heading">#</a></h2>
+<h2>Flow in a river<a class="headerlink" href="#flow-in-a-river" title="Link to this heading">#</a></h2>
 <p>The previous lecture focussed on flow in the catchment towards a river.
 Some very simplified models for the surface run-off in terms of the rainfall flux were developed to help inform relationships between the rainfall rate and the rate at which this flows into a river.</p>
 <p>To interpret these models of the surface runoff, we need a model for the flow in a river to understand if the river can accommodate the flow, or if it will overtop its banks and flood.
@@ -391,7 +405,7 @@ If the river inclination is <span class="math notranslate nohighlight">\(\theta\
 <figure class="margin-caption align-default" id="river-flow">
 <a class="reference internal image-reference" href="../../_images/figure14.31.png"><img alt="../../_images/figure14.31.png" src="../../_images/figure14.31.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.13 </span><span class="caption-text">The geometry of an idealised river bed. (NB <span class="math notranslate nohighlight">\(\tau = C_D\)</span>)</span><a class="headerlink" href="#river-flow" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.13 </span><span class="caption-text">The geometry of an idealised river bed. (NB <span class="math notranslate nohighlight">\(\tau = C_D\)</span>)</span><a class="headerlink" href="#river-flow" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>If we balance these forces we find that the speed</p>
@@ -418,7 +432,7 @@ q &amp;= \mathrm{m^{2}~s^{-1}} \\
 \end{split}\]</div>
 </aside>
 <div class="math notranslate nohighlight" id="equation-drag-intuition">
-<span class="eqno">(4.7)<a class="headerlink" href="#equation-drag-intuition" title="Permalink to this equation">#</a></span>\[\dv{\rho u}{t} \sim C_D \frac{\rho u}{\Delta t} \sim C_D \frac{\rho u^2}{h}\]</div>
+<span class="eqno">(4.7)<a class="headerlink" href="#equation-drag-intuition" title="Link to this equation">#</a></span>\[\dv{\rho u}{t} \sim C_D \frac{\rho u}{\Delta t} \sim C_D \frac{\rho u^2}{h}\]</div>
 <p>where <span class="math notranslate nohighlight">\(C_D\)</span> is a constant of proportionality; the <strong>drag coefficient</strong>, <span class="math notranslate nohighlight">\(h\)</span> the depth of the flow and <span class="math notranslate nohighlight">\(u\)</span> is the flow speed.
 There are published tables (e.g. Moody) for the drag as a function of the roughness of the bed, but a representative value for <span class="math notranslate nohighlight">\(C_D\)</span> may be 0.01-0.004.</p>
 <p><strong>Gravity force</strong></p>
@@ -426,20 +440,20 @@ There are published tables (e.g. Moody) for the drag as a function of the roughn
 For a distance along the river <span class="math notranslate nohighlight">\(\delta x\)</span>, with a cross sectional area <span class="math notranslate nohighlight">\(A(h)\)</span>, we have a volume of fluid <span class="math notranslate nohighlight">\(A(h) \delta x\)</span>,
 and hence a gravity force acting:</p>
 <div class="math notranslate nohighlight" id="equation-gravity-force">
-<span class="eqno">(4.8)<a class="headerlink" href="#equation-gravity-force" title="Permalink to this equation">#</a></span>\[F_g = \rho g \sin(\theta) A(h) \delta x\]</div>
+<span class="eqno">(4.8)<a class="headerlink" href="#equation-gravity-force" title="Link to this equation">#</a></span>\[F_g = \rho g \sin(\theta) A(h) \delta x\]</div>
 <p>and similarly we have a drag force acting (assuming we take the area of the river to go as <span class="math notranslate nohighlight">\(A(h) \sim P(h) \vdot h)\)</span></p>
 <div class="math notranslate nohighlight" id="equation-drag-force">
-<span class="eqno">(4.9)<a class="headerlink" href="#equation-drag-force" title="Permalink to this equation">#</a></span>\[F_d = C_D \frac{\rho u^2}{h} P(h) \vdot h \delta x\]</div>
+<span class="eqno">(4.9)<a class="headerlink" href="#equation-drag-force" title="Link to this equation">#</a></span>\[F_d = C_D \frac{\rho u^2}{h} P(h) \vdot h \delta x\]</div>
 <p>and so balancing these forces we get</p>
 <div class="math notranslate nohighlight" id="equation-force-bal">
-<span class="eqno">(4.10)<a class="headerlink" href="#equation-force-bal" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(4.10)<a class="headerlink" href="#equation-force-bal" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
 F_d = &amp; F_g \\
 C_D \frac{\rho u^2}{h} P(h) \vdot h \delta x = &amp; \rho g \sin(\theta) A(h) \delta x \\
 C_D u^2 P(h) = &amp; g \sin(\theta) A(h)
 \end{align}\end{split}\]</div>
 <p>and rearranging for <span class="math notranslate nohighlight">\(u\)</span> we get</p>
 <div class="math notranslate nohighlight" id="equation-gravity-speed">
-<span class="eqno">(4.11)<a class="headerlink" href="#equation-gravity-speed" title="Permalink to this equation">#</a></span>\[u = \sqrt{\frac{A(h)}{P(h)} \frac{g \sin(\theta)}{C_D} }\]</div>
+<span class="eqno">(4.11)<a class="headerlink" href="#equation-gravity-speed" title="Link to this equation">#</a></span>\[u = \sqrt{\frac{A(h)}{P(h)} \frac{g \sin(\theta)}{C_D} }\]</div>
 <div class="dropdown admonition">
 <p class="admonition-title">Reynolds Number</p>
 <p>We can also use our intuition for the magnitude of the inertial force to derive the <strong>Reynolds Number</strong>,
@@ -453,7 +467,7 @@ In contrast to our deep river, for a very thin film the viscous force from the g
 \]</div>
 </aside>
 <div class="math notranslate nohighlight" id="equation-viscous-force">
-<span class="eqno">(4.12)<a class="headerlink" href="#equation-viscous-force" title="Permalink to this equation">#</a></span>\[F_v \approx \mu \frac{u}{h^2}\]</div>
+<span class="eqno">(4.12)<a class="headerlink" href="#equation-viscous-force" title="Link to this equation">#</a></span>\[F_v \approx \mu \frac{u}{h^2}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\mu\)</span> is the dynamic viscosity of the fluid, and again <span class="math notranslate nohighlight">\(h\)</span> is the depth of the flow.</p>
 <p>Taking the ratio of the inertial (<a class="reference internal" href="#equation-drag-intuition">(4.7)</a>) and viscous forces, we find</p>
 <aside class="units margin sidebar">
@@ -464,7 +478,7 @@ In contrast to our deep river, for a very thin film the viscous force from the g
 \end{split}\]</div>
 </aside>
 <div class="math notranslate nohighlight" id="equation-reynolds-derivation">
-<span class="eqno">(4.13)<a class="headerlink" href="#equation-reynolds-derivation" title="Permalink to this equation">#</a></span>\[\mathrm{Re} = \frac{\rho u h}{\mu}\]</div>
+<span class="eqno">(4.13)<a class="headerlink" href="#equation-reynolds-derivation" title="Link to this equation">#</a></span>\[\mathrm{Re} = \frac{\rho u h}{\mu}\]</div>
 <p>which this is known as the <strong><a class="reference internal" href="../../reference/glossary.html#term-Reynolds-Number"><span class="xref std std-term">Reynolds number</span></a></strong>.</p>
 <p>If <span class="math notranslate nohighlight">\(\mathrm{Re}\)</span> is large (<span class="math notranslate nohighlight">\(\mathrm{Re} \gt 1\)</span>) it implies that the flow is dominated by the inertia.
 This corresponds to deep or fast flow.
@@ -484,14 +498,14 @@ To estimate the transition point we can find the flux for which the depth of the
 <figure class="margin-caption align-default" id="discharge-rate">
 <a class="reference internal image-reference" href="../../_images/figure14.4.png"><img alt="../../_images/figure14.4.png" src="../../_images/figure14.4.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.14 </span><span class="caption-text">The discharge rate <span class="math notranslate nohighlight">\(Q\)</span> in a river as a function of the water depth.</span><a class="headerlink" href="#discharge-rate" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.14 </span><span class="caption-text">The discharge rate <span class="math notranslate nohighlight">\(Q\)</span> in a river as a function of the water depth.</span><a class="headerlink" href="#discharge-rate" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>This provides a reasonable simplified model for the flow in many rivers,
 for example the chart in <a class="reference internal" href="#discharge-rate"><span class="std std-numref">Fig. 4.14</span></a> compares this formula with data from the River Severn showing flow as a function of the water depth.</p>
 </section>
 <section id="critical-flow-rate-for-flooding">
-<h2>Critical flow rate for flooding<a class="headerlink" href="#critical-flow-rate-for-flooding" title="Permalink to this heading">#</a></h2>
+<h2>Critical flow rate for flooding<a class="headerlink" href="#critical-flow-rate-for-flooding" title="Link to this heading">#</a></h2>
 <p>An initial result emerging from this model is that if the level of the banks are at <span class="math notranslate nohighlight">\(z = h^*\)</span> above the base of the river,
 where <span class="math notranslate nohighlight">\(h^*\)</span> is the height at which the water will overtop the bank,
 then the critical flow rate of water in the river above which it begins to flood is</p>
@@ -503,7 +517,7 @@ then the critical flow rate of water in the river above which it begins to flood
 <figure class="margin-caption align-default" id="flood-barriers">
 <a class="reference internal image-reference" href="../../_images/figure14.5.png"><img alt="../../_images/figure14.5.png" src="../../_images/figure14.5.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.15 </span><span class="caption-text">An illustration of mitigation strategies to prevent flooding of a river.</span><a class="headerlink" href="#flood-barriers" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.15 </span><span class="caption-text">An illustration of mitigation strategies to prevent flooding of a river.</span><a class="headerlink" href="#flood-barriers" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Our earlier idealised models for the surface runoff identify how more intense and longer duration rain events lead to a greater flux reaching the river,
@@ -514,12 +528,12 @@ There is then a cost benefit analysis to be carried out to determine the benefit
 this involves estimating the costs of the mitigation measures compared to the costs of the damage produced by the flooding multiplied by the risk of the flooding.</p>
 </section>
 <section id="coupled-model">
-<h2>Coupled Model<a class="headerlink" href="#coupled-model" title="Permalink to this heading">#</a></h2>
+<h2>Coupled Model<a class="headerlink" href="#coupled-model" title="Link to this heading">#</a></h2>
 <p>If we combine the runoff model with the river model we find the following comparison plot, illustrating how different types of rainfall lead to different flow regimes (i.e. flooding or not)</p>
 <figure class="margin-caption align-default" id="id1">
 <a class="reference internal image-reference" href="../../_images/figure14.6.png"><img alt="../../_images/figure14.6.png" src="../../_images/figure14.6.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.16 </span><span class="caption-text">A coupled river flow and flooding model</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.16 </span><span class="caption-text">A coupled river flow and flooding model</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>This model, although simplified, has features in common with the classical river hydrograph (<a class="reference internal" href="#hydrograph"><span class="std std-numref">Fig. 4.17</span></a>),
@@ -527,7 +541,7 @@ in which we plot the rainfall flux and the river flow rate as a function of time
 <figure class="margin-caption align-default" id="hydrograph">
 <a class="reference internal image-reference" href="../../_images/figure14.7.png"><img alt="../../_images/figure14.7.png" src="../../_images/figure14.7.png" style="width: 60%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.17 </span><span class="caption-text">A hydrograph showing the rainfall flux and the river flow rate as a function of time.</span><a class="headerlink" href="#hydrograph" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.17 </span><span class="caption-text">A hydrograph showing the rainfall flux and the river flow rate as a function of time.</span><a class="headerlink" href="#hydrograph" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -624,7 +638,7 @@ By the QES Team
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>

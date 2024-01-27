@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>4.4. Reservoirs</title>
   
@@ -29,44 +28,48 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/admonitions.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/admonitions.css?v=1588abde" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams", "[tex]/mhchem", "[tex]/color"]}, "tex": {"packages": ["base", "physics", "ams", "mhchem", "color"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '03_rivers/l16/l16';</script>
-    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="4.5. Flood waves" href="../l17/l17.html" />
@@ -164,7 +167,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../00_intro/intro/intro.html">1. Introduction</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -377,9 +391,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="reservoirs">
-<span id="lecture-16"></span><h1><span class="section-number">4.4. </span>Reservoirs<a class="headerlink" href="#reservoirs" title="Permalink to this heading">#</a></h1>
+<span id="lecture-16"></span><h1><span class="section-number">4.4. </span>Reservoirs<a class="headerlink" href="#reservoirs" title="Link to this heading">#</a></h1>
 <section id="formulation-of-the-reservoir-problem">
-<h2>Formulation of the reservoir problem<a class="headerlink" href="#formulation-of-the-reservoir-problem" title="Permalink to this heading">#</a></h2>
+<h2>Formulation of the reservoir problem<a class="headerlink" href="#formulation-of-the-reservoir-problem" title="Link to this heading">#</a></h2>
 <p>In order to arrest the flow of water from the surface run-off into the river and help mitigate flooding, sometimes reservoirs are built upstream.
 These lead to accumulation of the surface run-off in the upstream section of the river,
 and acts as a capacitor in the river system that limits the magnitude of the flow which reaches regions further downstream.</p>
@@ -389,7 +403,7 @@ area <span class="math notranslate nohighlight">\(A(h)\)</span> when it is fille
 <a class="reference internal image-reference" href="../../_images/figure16.1.png"><img alt="../../_images/figure16.1.png" src="../../_images/figure16.1.png" style="width: 80%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 4.18 </span><span class="caption-text">Schematic diagram showing an idealised reservoir.
-The water is filled up to a height <span class="math notranslate nohighlight">\(h\)</span> and discharges out of the gate of area <span class="math notranslate nohighlight">\(A_0\)</span> at the bottom with a flux <span class="math notranslate nohighlight">\(Q_o\)</span>.</span><a class="headerlink" href="#reservoir-schematic" title="Permalink to this image">#</a></p>
+The water is filled up to a height <span class="math notranslate nohighlight">\(h\)</span> and discharges out of the gate of area <span class="math notranslate nohighlight">\(A_0\)</span> at the bottom with a flux <span class="math notranslate nohighlight">\(Q_o\)</span>.</span><a class="headerlink" href="#reservoir-schematic" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Therefore, the volume of water stored in the reservoir is given by</p>
@@ -404,17 +418,17 @@ By considering the force of gravity acting on the fluid, we can deduce that the 
 \[Q_o = uA_0 = A_0 \sqrt{2gh}\]</div>
 <p>So, if we assume the upstream waters flow into the reservoir at a rate <span class="math notranslate nohighlight">\(Q_{in}\)</span>, then the overall change in the volume of water held in the reservoir with respect to time will be given by</p>
 <div class="math notranslate nohighlight" id="equation-reservoir-eq">
-<span class="eqno">(4.14)<a class="headerlink" href="#equation-reservoir-eq" title="Permalink to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(4.14)<a class="headerlink" href="#equation-reservoir-eq" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
     \dv{V}{t} = &amp;\ Q_{in} - A_0 \sqrt{2gh} \\
     = &amp;\ A(h) \dv{h}{t} 
 \end{align}\end{split}\]</div>
 <p>At steady-state, we may deduce that, since the volume of water will not change with time, the equilibrium water height in the reservoir is given by</p>
 <div class="math notranslate nohighlight" id="equation-eq-height">
-<span class="eqno">(4.15)<a class="headerlink" href="#equation-eq-height" title="Permalink to this equation">#</a></span>\[h_{eq} = \frac{Q_{in}^2}{A_0^2} \frac{1}{2g}\]</div>
+<span class="eqno">(4.15)<a class="headerlink" href="#equation-eq-height" title="Link to this equation">#</a></span>\[h_{eq} = \frac{Q_{in}^2}{A_0^2} \frac{1}{2g}\]</div>
 <p>With this equilibrium solution in mind, we can now go on to search for a time-dependent solution for <span class="math notranslate nohighlight">\(h\)</span>.</p>
 </section>
 <section id="time-dependent-solutions-for-reservoir-filling">
-<h2>Time-dependent solutions for reservoir filling<a class="headerlink" href="#time-dependent-solutions-for-reservoir-filling" title="Permalink to this heading">#</a></h2>
+<h2>Time-dependent solutions for reservoir filling<a class="headerlink" href="#time-dependent-solutions-for-reservoir-filling" title="Link to this heading">#</a></h2>
 <p>We will now solve this system for an example reservoir geometry by converting the differential equation to a dimensionless version.
 This makes our solution easier in the long run because this approach deals with all the constants up front,
 and will give us a solution that we can analyse the behaviour of, independently of the details of any specific reservoir.</p>
@@ -428,7 +442,7 @@ such that when <span class="math notranslate nohighlight">\(y = 1\)</span>, <spa
 <p>We then rearrange the expression of the time dependence of the volume given in equation <a class="reference internal" href="#equation-reservoir-eq">(4.14)</a> by dividing through by a factor of <span class="math notranslate nohighlight">\(Q_{in}\)</span>,
 which makes the expression dimensionless:</p>
 <div class="math notranslate nohighlight" id="equation-res-dimensionless">
-<span class="eqno">(4.16)<a class="headerlink" href="#equation-res-dimensionless" title="Permalink to this equation">#</a></span>\[\frac{\alpha h^2}{Q_{in}} \dv{h}{t} = 1 - \frac{A_0}{Q_{in}} \sqrt{2gh}\]</div>
+<span class="eqno">(4.16)<a class="headerlink" href="#equation-res-dimensionless" title="Link to this equation">#</a></span>\[\frac{\alpha h^2}{Q_{in}} \dv{h}{t} = 1 - \frac{A_0}{Q_{in}} \sqrt{2gh}\]</div>
 <p>Substituting the expression for <span class="math notranslate nohighlight">\(y\)</span> into <a class="reference internal" href="#equation-res-dimensionless">(4.16)</a>, it follows that</p>
 <div class="math notranslate nohighlight">
 \[\frac{\alpha (h_{eq} y)^2}{Q_{in}} h_{eq} \dv{y}{t} = 1 - \frac{A_0}{Q_{in}} \sqrt{2gh_{eq}y}\]</div>
@@ -436,13 +450,13 @@ which makes the expression dimensionless:</p>
 we can see that the coefficient of <span class="math notranslate nohighlight">\(\sqrt{y}\)</span> on the right hand side is equal to <span class="math notranslate nohighlight">\(1\)</span>.
 So doing some tidying up, we arrive at the expression</p>
 <div class="math notranslate nohighlight" id="equation-space-dimensionless">
-<span class="eqno">(4.17)<a class="headerlink" href="#equation-space-dimensionless" title="Permalink to this equation">#</a></span>\[\frac{\alpha h_{eq}^3}{Q_{in}} y^2 \dv{y}{t} = 1 - y^\frac{1}{2}\]</div>
+<span class="eqno">(4.17)<a class="headerlink" href="#equation-space-dimensionless" title="Link to this equation">#</a></span>\[\frac{\alpha h_{eq}^3}{Q_{in}} y^2 \dv{y}{t} = 1 - y^\frac{1}{2}\]</div>
 <p>So we now have our equation in a dimensionless form, with a dimensionless “space” coordinate.
 Our time coordinate, <span class="math notranslate nohighlight">\(t\)</span>, however, still has units of time.
 We therefore want to make a substitution for <span class="math notranslate nohighlight">\(t\)</span> that will replace it with some dimensionless time coordinate <span class="math notranslate nohighlight">\(\tau\)</span>.
 Therefore we make the substitution</p>
 <div class="math notranslate nohighlight" id="equation-t-subst">
-<span class="eqno">(4.18)<a class="headerlink" href="#equation-t-subst" title="Permalink to this equation">#</a></span>\[\tau = t \frac{Q_{in}}{\alpha h_{eq}^3}\]</div>
+<span class="eqno">(4.18)<a class="headerlink" href="#equation-t-subst" title="Link to this equation">#</a></span>\[\tau = t \frac{Q_{in}}{\alpha h_{eq}^3}\]</div>
 <div class="dropdown admonition">
 <p class="admonition-title">Rationale</p>
 <p>This substitution for <span class="math notranslate nohighlight">\(t\)</span> may seem slightly out of the blue.
@@ -464,14 +478,14 @@ so it has at least got to be worth a try.</p></li>
 <p>and we will also note that therefore <span class="math notranslate nohighlight">\(T = \frac{\alpha h_{eq}^3}{Q_{in}}\)</span> constitutes some characteristic filling timed for our reservoir.
 Substituting <a class="reference internal" href="#equation-t-subst">(4.18)</a> into <a class="reference internal" href="#equation-space-dimensionless">(4.17)</a> we get</p>
 <div class="math notranslate nohighlight" id="equation-fully-dimensionless">
-<span class="eqno">(4.19)<a class="headerlink" href="#equation-fully-dimensionless" title="Permalink to this equation">#</a></span>\[y^2 \dv{y}{\tau} = 1 - y^\frac{1}{2}\]</div>
+<span class="eqno">(4.19)<a class="headerlink" href="#equation-fully-dimensionless" title="Link to this equation">#</a></span>\[y^2 \dv{y}{\tau} = 1 - y^\frac{1}{2}\]</div>
 <p>This equation can be solved but the algebra becomes involved (use the
 substitution <span class="math notranslate nohighlight">\(y = (1-s)^2\)</span> ), so we can instead solve the equation numerically,
 which gives a solution of the form below.</p>
 <figure class="margin-caption align-default" id="reservoir-refilling">
 <a class="reference internal image-reference" href="../../_images/figure16.2.png"><img alt="../../_images/figure16.2.png" src="../../_images/figure16.2.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.19 </span><span class="caption-text">Sketch of the recharge behaviour of a reservoir.</span><a class="headerlink" href="#reservoir-refilling" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.19 </span><span class="caption-text">Sketch of the recharge behaviour of a reservoir.</span><a class="headerlink" href="#reservoir-refilling" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Since <span class="math notranslate nohighlight">\(y\)</span> takes some time to reach equilibrium, the outflow to the river
@@ -484,12 +498,12 @@ and then a decaying run-off, as some surface water drains into the ground and th
 <figure class="margin-caption align-default" id="reservoir-response">
 <a class="reference internal image-reference" href="../../_images/figure16.3.png"><img alt="../../_images/figure16.3.png" src="../../_images/figure16.3.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.20 </span><span class="caption-text">The response of a reservoirs depth, and outflow as a function of the input flow from surface runoff.</span><a class="headerlink" href="#reservoir-response" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.20 </span><span class="caption-text">The response of a reservoirs depth, and outflow as a function of the input flow from surface runoff.</span><a class="headerlink" href="#reservoir-response" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="problems-with-reservoirs-sediment">
-<h2>Problems with reservoirs: sediment<a class="headerlink" href="#problems-with-reservoirs-sediment" title="Permalink to this heading">#</a></h2>
+<h2>Problems with reservoirs: sediment<a class="headerlink" href="#problems-with-reservoirs-sediment" title="Link to this heading">#</a></h2>
 <p>Rivers globally has a very high sediment load; as such, when a dam is built blocking a river,
 that sediment accumulates in the reservoir.
 This has two major effects:</p>
@@ -508,7 +522,7 @@ The sediment flux can even break the turbines all together.</p></li>
 </li>
 </ol>
 <section id="resuspension-the-shields-criterion">
-<h3>Resuspension: the Shields criterion<a class="headerlink" href="#resuspension-the-shields-criterion" title="Permalink to this heading">#</a></h3>
+<h3>Resuspension: the Shields criterion<a class="headerlink" href="#resuspension-the-shields-criterion" title="Link to this heading">#</a></h3>
 <p>To remove sediment from a reservoir without dredging it, one option is to resuspend the sediment in the flow of water out of the reservoir.
 In order to resuspend sediment on the bed, the shear force due to the water flowing over it must overcome the weight of the sediment particle.</p>
 <p>We therefore relate the shear force, <span class="math notranslate nohighlight">\(F_s\)</span>, to the particle diameter, <span class="math notranslate nohighlight">\(d_s\)</span>, and densities of the water and sediment, <span class="math notranslate nohighlight">\(\rho_s\)</span> and <span class="math notranslate nohighlight">\(\rho_w\)</span> respectively,
@@ -618,7 +632,7 @@ By the QES Team
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
