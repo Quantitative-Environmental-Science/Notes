@@ -54,18 +54,10 @@
     <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams", "[tex]/mhchem", "[tex]/color"]}, "tex": {"packages": ["base", "physics", "ams", "mhchem", "color"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '05_globalenvironment/l34/l34';</script>
@@ -382,60 +374,118 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="thermohaline-circulation">
 <span id="lecture-34"></span><h1><span class="section-number">6.9. </span>Thermohaline Circulation<a class="headerlink" href="#thermohaline-circulation" title="Link to this heading">#</a></h1>
-<p>In the previous section, we examined the shallow circulation that develops in the upper <span class="math notranslate nohighlight">\(\sim 100\)</span>m of ocean in response to wind forcing. In this section, we will examine the deep <em>Thermohaline Circulation</em> that develops in response to wind forcing and surface heating/cooling and evaporation/precipitation.</p>
-<p>In earlier lectures, we noted that strong poleward-flowing currents (including the Gulf Stream) develop on the western sides of the ocean basins and that these transport significant amounts of heat from low to high latitudes. Also recall from <a class="reference internal" href="../l28/l28.html#fig-mean-ssh"><span class="std std-numref">Fig. 6.13</span></a> the curious observation that the mean sea level is higher on the western sides of ocean basins. We will start by quantitatively explaining both of these features of the large-scale ocean circulation. A key insight that underlies the theory that we will discuss is that the Coriolis parameter, <span class="math notranslate nohighlight">\(f\)</span> varies with latitude (recall that <span class="math notranslate nohighlight">\(f=2\Omega \sin \theta\)</span> where <span class="math notranslate nohighlight">\(\theta\)</span> is the latitude.</p>
-<p>We start by integrating Eq. <a class="reference internal" href="../l33/l33.html#equation-eq-momentum-with-viscosity">(6.35)</a> over the <em>full ocean depth</em> where <span class="math notranslate nohighlight">\(z=-H\)</span> represents the seafloor and <span class="math notranslate nohighlight">\(z=0\)</span> is the ocean surface:</p>
-<div class="math notranslate nohighlight" id="equation-eq-momentum-integrated1">
-<span class="eqno">(6.42)<a class="headerlink" href="#equation-eq-momentum-integrated1" title="Link to this equation">#</a></span>\[\frac{\partial \overline{\mathbf{u}}}{\partial t} + f\hat{\mathbf{z}}\times \mathbf{u} = -\frac{1}{\rho}\nabla \overline{p} - \overline{g}\hat{\mathbf{z}} + \nu \left.\frac{\partial \mathbf{u}}{\partial z}\right|_{-H}^0,\]</div>
-<p>where an overbar denotes a vertical derivative from <span class="math notranslate nohighlight">\(z=-H\)</span> to <span class="math notranslate nohighlight">\(z=0\)</span>. As before, we will look for steady solutions. For simplicity, let’s assume as we did before that the wind stress is aligned with the <span class="math notranslate nohighlight">\(x\)</span>-direction, <span class="math notranslate nohighlight">\(\mathbf{\tau}^w=\tau^w \hat{\mathbf{x}}\)</span>. For now, we will also neglect the viscous stress at the bottom of the ocean (<span class="math notranslate nohighlight">\(z=-H\)</span>). We will revisit this later. The horizontal components of Eq. <a class="reference internal" href="#equation-eq-momentum-integrated1">(6.42)</a> are</p>
-<div class="math notranslate nohighlight" id="equation-eq-momentum-integrated-x">
-<span class="eqno">(6.43)<a class="headerlink" href="#equation-eq-momentum-integrated-x" title="Link to this equation">#</a></span>\[-f\overline{v} = -\frac{1}{\rho} \frac{\partial \overline{p}}{\partial x} + \frac{\tau^w}{\rho},\]</div>
-<div class="math notranslate nohighlight" id="equation-eq-momentum-integrated-y">
-<span class="eqno">(6.44)<a class="headerlink" href="#equation-eq-momentum-integrated-y" title="Link to this equation">#</a></span>\[f\overline{u} = -\frac{1}{\rho} \frac{\partial \overline{p}}{\partial y}\]</div>
-<p>We can eliminate the pressure by cross-differentiating Eqns. <a class="reference internal" href="#equation-eq-momentum-integrated-x">(6.43)</a> and <a class="reference internal" href="#equation-eq-momentum-integrated-y">(6.44)</a>. When we do this, it is important to remember that <span class="math notranslate nohighlight">\(f\)</span> is a function of <span class="math notranslate nohighlight">\(y\)</span> since it varies in the north/south direction. The result is</p>
-<div class="math notranslate nohighlight" id="equation-eq-integral-momentum2">
-<span class="eqno">(6.45)<a class="headerlink" href="#equation-eq-integral-momentum2" title="Link to this equation">#</a></span>\[f\left(\frac{\partial \overline{u}}{\partial x}+ \frac{\partial \overline{v}}{\partial y}\right) + \overline{v}\frac{df}{dy} = -\frac{\partial}{\partial y}\left(\frac{\tau^w}{\rho}\right).\]</div>
-<p>From the integral of the mass conservation (continuity) equation (Eq. <a class="reference internal" href="../l33/l33.html#equation-eq-continuity-integrated">(6.40)</a>), we see that the first term in parentheses is equal to the difference between the vertical velocity at the bottom and top of the ocean. We can safely assume that both of these are zero and hence the first term in Eq. <a class="reference internal" href="#equation-eq-integral-momentum2">(6.45)</a> vanishes and we are left with</p>
-<div class="math notranslate nohighlight" id="equation-eq-sverdrup-balance">
-<span class="eqno">(6.46)<a class="headerlink" href="#equation-eq-sverdrup-balance" title="Link to this equation">#</a></span>\[\overline{v} \frac{df}{dy} = -\frac{\partial}{\partial y}\left(\frac{\tau^w}{\rho}\right).\]</div>
-<p>This equation is often referred to as <em>Sverdrup balance</em> after Harold Sverdrup who first derived it.</p>
-<p>Eq. <a class="reference internal" href="#equation-eq-sverdrup-balance">(6.46)</a> is remarkable. Counter-intuitively, it tells us that the north/south component of the depth-integrated velocity, <span class="math notranslate nohighlight">\(\overline{v}\)</span> is related to the north/south derivative of the <span class="math notranslate nohighlight">\(x\)</span>-component of the wind stress. In the Northern Hemisphere subtropics, <span class="math notranslate nohighlight">\(\partial \tau^w/\partial y&gt;0\)</span>, and hence Eq. <a class="reference internal" href="#equation-eq-sverdrup-balance">(6.46)</a> predicts southward depth-integrated flow (<span class="math notranslate nohighlight">\(\overline{v}\)</span>) in this region. Note that this is somewhat different from the flow that we got in the previous section, but there we were only considering the flow in the upper ocean, whereas Eq. <a class="reference internal" href="#equation-eq-sverdrup-balance">(6.46)</a> applies to the <em>depth-integrated</em> velocity.</p>
-<p>We can use Eq. <a class="reference internal" href="#equation-eq-sverdrup-balance">(6.46)</a> to see why the sea surface is higher on the western sides of ocean basins at mid-latitudes. Recall from our earlier lectures that the Rossby number associated with global-scale ocean circulation is very small, and hence we expect ocean currents on this scale to be in <em>geostrophic balance</em>. In the ocean, we related the currents to gradients in the sea surface height. If we integrate the geostrophic balance relation from <span class="math notranslate nohighlight">\(z=-H\)</span> to <span class="math notranslate nohighlight">\(z=0\)</span>, we get</p>
-<div class="math notranslate nohighlight" id="equation-eq-geostrophic-balance-revisted">
-<span class="eqno">(6.47)<a class="headerlink" href="#equation-eq-geostrophic-balance-revisted" title="Link to this equation">#</a></span>\[f\overline{v} = gH\frac{\partial \eta}{\partial x}.\]</div>
-<p>Using Eq. <a class="reference internal" href="#equation-eq-geostrophic-balance-revisted">(6.47)</a> in Eq. <a class="reference internal" href="#equation-eq-sverdrup-balance">(6.46)</a> gives</p>
-<div class="math notranslate nohighlight">
-\[\frac{gH}{f}\frac{\partial \eta}{\partial x} \frac{d f}{d y} = -\frac{\partial}{\partial y}\left(\frac{\tau^w}{\rho}\right).\]</div>
-<p>Since <span class="math notranslate nohighlight">\(df/dy&gt;0\)</span>, regions where <span class="math notranslate nohighlight">\(\tau^w\)</span> increases with latitude will have <span class="math notranslate nohighlight">\(\partial \eta/\partial x&lt;0\)</span>. In other words, the sea surface height <em>decreases</em> in the eastwards direction and hence the sea surface height is higher on the western sides of the ocean basins at mid-latitudes.</p>
-<p>At this point we encounter a paradox: Eq. <a class="reference internal" href="#equation-eq-sverdrup-balance">(6.46)</a> tells us that the depth-integrated ocean currents are to the south in the Northern Hemisphere in the subtropics. However, the water cannot simply build up near the equator - somehow it must return to the north. We anticipate that the water will return to the north near the coastline where the current will experience extra drag. Specifically, we will add an additional term to Eq. <a class="reference internal" href="#equation-eq-momentum-integrated-x">(6.43)</a> and Eq. <a class="reference internal" href="#equation-eq-momentum-integrated-y">(6.44)</a> to represent drag on the boundary currents. Following early work by Stommel, we will assume that the drag force is a linear function of the depth-integrated velocity so that Eqns. <a class="reference internal" href="#equation-eq-momentum-integrated-x">(6.43)</a> and <a class="reference internal" href="#equation-eq-momentum-integrated-y">(6.44)</a> can be written</p>
-<div class="math notranslate nohighlight" id="equation-eq-momentum-integrated-x-boundary">
-<span class="eqno">(6.48)<a class="headerlink" href="#equation-eq-momentum-integrated-x-boundary" title="Link to this equation">#</a></span>\[-f\overline{v} = -\frac{1}{\rho} \frac{\partial \overline{p}}{\partial x} + \frac{\tau^w}{\rho} - r \overline{u},\]</div>
-<div class="math notranslate nohighlight" id="equation-eq-momentum-integrated-y-boundary">
-<span class="eqno">(6.49)<a class="headerlink" href="#equation-eq-momentum-integrated-y-boundary" title="Link to this equation">#</a></span>\[f\overline{u} = -\frac{1}{\rho} \frac{\partial \overline{p}}{\partial y} -r \overline{v}\]</div>
-<p>where <span class="math notranslate nohighlight">\(r\)</span> is a constant <em>drag coefficient</em>. If we follow the same steps as above, we arrive at a new version of Eq. <a class="reference internal" href="#equation-eq-sverdrup-balance">(6.46)</a>:</p>
-<div class="math notranslate nohighlight" id="equation-eq-sverdrup-stommel">
-<span class="eqno">(6.50)<a class="headerlink" href="#equation-eq-sverdrup-stommel" title="Link to this equation">#</a></span>\[\overline{v}\frac{df}{dy} = -\frac{\partial}{\partial y}\left(\frac{\tau^w}{\rho}\right) - r \left(\frac{\partial \overline{v}}{\partial x} - \frac{\partial \overline{u}}{\partial y}\right).\]</div>
-<p>In the boundary current regions, we expect the current to be predominately north/south and for derivatives in <span class="math notranslate nohighlight">\(x\)</span> to be larger than derivatives in <span class="math notranslate nohighlight">\(y\)</span>. Hence, we expect that <span class="math notranslate nohighlight">\(|\partial \overline{v}/\partial x| \gg |\partial \overline{u}/\partial y|\)</span>. If the boundary current occupies a relatively narrow region near the coast (compared to the width of the ocean basin), then the term involving the wind stress in Eq. <a class="reference internal" href="#equation-eq-sverdrup-stommel">(6.50)</a> must be small compared to the left hand side. Hence, we have approximately</p>
-<div class="math notranslate nohighlight" id="equation-eq-stommel">
-<span class="eqno">(6.51)<a class="headerlink" href="#equation-eq-stommel" title="Link to this equation">#</a></span>\[\overline{v}\frac{df}{dy} = -r \frac{\partial \overline{v}}{\partial x}.\]</div>
-<p>Since <span class="math notranslate nohighlight">\(df/dy&gt;0\)</span>, Eq. <a class="reference internal" href="#equation-eq-stommel">(6.51)</a> implies that a northward velocity (<span class="math notranslate nohighlight">\(v&gt;0\)</span>) must be accompanied by <span class="math notranslate nohighlight">\(\partial v/\partial x &lt; 0\)</span>. This scenario can only work on the western side of the ocean basins.</p>
-<p>To obtain a more intuitive physical explanation for the formation of western boundary currents, we can invoke conservation of angular momentum. On a rotating planet, conservation of angular momentum tells us that the sum of the angular momentum associated with spinning currents and the planet’s rotation must be conserved in the absence of external forces. If we imagine looking down at the Earth from above the north pole, the Earth will appear to rotate counter-clockwise. The vertical component of this rotation decreases with latitude. When wind acts to add clockwise spin to the water - as is the case in the Northern Hemisphere subtropics - the water must move towards the equator to conserve its angular momentum. This is an explanation for Sverdrup balance. The problem is that the Earth’s angular momentum will be re-gained when the water returns to the north. In order to maintain a steady circulation, the drag within the boundary current must decrease the clockwise spin in order to counter-balance the spin added by the wind.</p>
-<p>We can make this argument more quantitative by introducing the concept of <em>vorticity</em>. The vorticity can be defined as</p>
-<div class="math notranslate nohighlight">
-\[\omega = \frac{\partial v}{\partial x} - \frac{\partial u}{\partial y},\]</div>
-<p>and this is a measure of the spin of a parcel of water. When <span class="math notranslate nohighlight">\(\omega&gt;0\)</span> the water is spinning counter-clockwise. Notice that the vorticity  appears on the right hand side of Eq. <a class="reference internal" href="#equation-eq-sverdrup-stommel">(6.50)</a>. In fact, if we had kept the time-derivative terms, then Eq. <a class="reference internal" href="#equation-eq-sverdrup-stommel">(6.50)</a> would be</p>
-<div class="math notranslate nohighlight" id="equation-eq-vorticity">
-<span class="eqno">(6.52)<a class="headerlink" href="#equation-eq-vorticity" title="Link to this equation">#</a></span>\[\frac{\partial \overline{\omega}}{\partial t} + \overline{v}\frac{df}{dy} =  -\frac{\partial}{\partial y}\left(\frac{\tau^2}{\rho}\right) - r \overline{\omega}.\]</div>
-<p>Hence, Eq. <a class="reference internal" href="#equation-eq-vorticity">(6.52)</a> is an evolution equation for the vorticity. In the absence of external forcing (if the RHS of Eq. <a class="reference internal" href="#equation-eq-vorticity">(6.52)</a> is zero) then if the fluid moves to the south <span class="math notranslate nohighlight">\(\overline{v}&lt;0\)</span>, then the vorticity must increase. This is a mathematical statement of conservation of angular momentum. In order to compensate for negative vorticity input by the wind in the Northern Hemisphere subtropics, the bottom drag must act to add positive vorticity in the boundary current. A boundary current on the eastern side of the basin would have positive vorticity, and hence the bottom drag term <span class="math notranslate nohighlight">\(-r \omega &lt; 0\)</span>, which is in the wrong sense. However, a boundary current on the western side of the basin would have negative vorticity, and the bottom drag would impart positive vorticity as needed to balance the negative vorticity input by the wind.</p>
-<p>Unlike the shallow wind-driven ocean circulation that we discussed in the previous lecture, the western boundary currents tend to be quite deep. For example, the Gulf Stream extends to depths below 1000m. However since the upper ocean is much warmer than the deep ocean (see <a class="reference internal" href="../l26/l26.html#fig-woce-ocean-temperature"><span class="std std-numref">Fig. 6.4</span></a>, most of the poleward heat flux occurs near the surface. To a large extent, the western boundary currents are responsible for the poleward near-surface heat flux (the upper advective flux in the Stommel model). This represents one component of the Thermohaline Circulation.</p>
-<p>As the western bondary currents flow polewards, they lose heat (see <a class="reference internal" href="../l32/l32.html#fig-ocean-heat-flux"><span class="std std-numref">Fig. 6.22</span></a>) and the density of the water increases. The water eventually becomes dense enough to sink to the deep ocean. This sinking occurs in relatively small areas through a process called <em>deep convection</em>. The water then spreads throughout the ocean interior and very slowly returns up to the surface. The water involved in a closed loop of the Thermohaline Circulation could travel extremely long distances, as sketched in <a class="reference internal" href="../l32/l32.html#fig-marshall-speer"><span class="std std-numref">Fig. 6.23</span></a> and <a class="reference internal" href="../l26/l26.html#fig-woce-ocean-temperature"><span class="std std-numref">Fig. 6.4</span></a>. It can take more than 1000 years for a parcel of water to complete this circuit. This long timescale is very important for the climate system. Since the ocean is a major reservoir of heat and carbon, the climate system has a very long `memory’. By burning fossil fuels, we are adding <em>antropogenic carbon</em> to the ocean. Some of this carbon will remain in the ocean for more then 1000 years!</p>
+<!-- In the previous section, we examined the shallow circulation that develops in the upper $\sim 100$m of ocean in response to wind forcing. In this section, we will examine the deep _Thermohaline Circulation_ that develops in response to wind forcing and surface heating/cooling and evaporation/precipitation.
+
+In earlier lectures, we noted that strong poleward-flowing currents (including the Gulf Stream) develop on the western sides of the ocean basins and that these transport significant amounts of heat from low to high latitudes. Also recall from {numref}`fig:mean_ssh` the curious observation that the mean sea level is higher on the western sides of ocean basins. We will start by quantitatively explaining both of these features of the large-scale ocean circulation. A key insight that underlies the theory that we will discuss is that the Coriolis parameter, $f$ varies with latitude (recall that $f=2\Omega \sin \theta$ where $\theta$ is the latitude.
+
+We start by integrating Eq. {eq}`eq:momentum_with_viscosity` over the _full ocean depth_ where $z=-H$ represents the seafloor and $z=0$ is the ocean surface:
+
+```{math}
+:label: eq:momentum_integrated1
+\frac{\partial \overline{\mathbf{u}}}{\partial t} + f\hat{\mathbf{z}}\times \mathbf{u} = -\frac{1}{\rho}\nabla \overline{p} - \overline{g}\hat{\mathbf{z}} + \nu \left.\frac{\partial \mathbf{u}}{\partial z}\right|_{-H}^0,
+```
+
+where an overbar denotes a vertical derivative from $z=-H$ to $z=0$. As before, we will look for steady solutions. For simplicity, let's assume as we did before that the wind stress is aligned with the $x$-direction, $\mathbf{\tau}^w=\tau^w \hat{\mathbf{x}}$. For now, we will also neglect the viscous stress at the bottom of the ocean ($z=-H$). We will revisit this later. The horizontal components of Eq. {eq}`eq:momentum_integrated1` are
+
+```{math}
+:label: eq:momentum_integrated_x
+-f\overline{v} = -\frac{1}{\rho} \frac{\partial \overline{p}}{\partial x} + \frac{\tau^w}{\rho},
+```
+
+```{math}
+:label: eq:momentum_integrated_y
+f\overline{u} = -\frac{1}{\rho} \frac{\partial \overline{p}}{\partial y}
+```
+
+We can eliminate the pressure by cross-differentiating Eqns. {eq}`eq:momentum_integrated_x` and {eq}`eq:momentum_integrated_y`. When we do this, it is important to remember that $f$ is a function of $y$ since it varies in the north/south direction. The result is
+
+```{math}
+:label: eq:integral_momentum2
+f\left(\frac{\partial \overline{u}}{\partial x}+ \frac{\partial \overline{v}}{\partial y}\right) + \overline{v}\frac{df}{dy} = -\frac{\partial}{\partial y}\left(\frac{\tau^w}{\rho}\right).
+```
+
+From the integral of the mass conservation (continuity) equation (Eq. {eq}`eq:continuity_integrated`), we see that the first term in parentheses is equal to the difference between the vertical velocity at the bottom and top of the ocean. We can safely assume that both of these are zero and hence the first term in Eq. {eq}`eq:integral_momentum2` vanishes and we are left with
+
+```{math}
+:label: eq:sverdrup_balance
+\overline{v} \frac{df}{dy} = -\frac{\partial}{\partial y}\left(\frac{\tau^w}{\rho}\right).
+```
+
+This equation is often referred to as _Sverdrup balance_ after Harold Sverdrup who first derived it.
+
+Eq. {eq}`eq:sverdrup_balance` is remarkable. Counter-intuitively, it tells us that the north/south component of the depth-integrated velocity, $\overline{v}$ is related to the north/south derivative of the $x$-component of the wind stress. In the Northern Hemisphere subtropics, $\partial \tau^w/\partial y>0$, and hence Eq. {eq}`eq:sverdrup_balance` predicts southward depth-integrated flow ($\overline{v}$) in this region. Note that this is somewhat different from the flow that we got in the previous section, but there we were only considering the flow in the upper ocean, whereas Eq. {eq}`eq:sverdrup_balance` applies to the _depth-integrated_ velocity.
+
+We can use Eq. {eq}`eq:sverdrup_balance` to see why the sea surface is higher on the western sides of ocean basins at mid-latitudes. Recall from our earlier lectures that the Rossby number associated with global-scale ocean circulation is very small, and hence we expect ocean currents on this scale to be in _geostrophic balance_. In the ocean, we related the currents to gradients in the sea surface height. If we integrate the geostrophic balance relation from $z=-H$ to $z=0$, we get
+
+```{math}
+:label: eq:geostrophic_balance_revisted
+f\overline{v} = gH\frac{\partial \eta}{\partial x}.
+```
+
+Using Eq. {eq}`eq:geostrophic_balance_revisted` in Eq. {eq}`eq:sverdrup_balance` gives
+
+```{math}
+\frac{gH}{f}\frac{\partial \eta}{\partial x} \frac{d f}{d y} = -\frac{\partial}{\partial y}\left(\frac{\tau^w}{\rho}\right).
+```
+
+Since $df/dy>0$, regions where $\tau^w$ increases with latitude will have $\partial \eta/\partial x<0$. In other words, the sea surface height _decreases_ in the eastwards direction and hence the sea surface height is higher on the western sides of the ocean basins at mid-latitudes.
+
+At this point we encounter a paradox: Eq. {eq}`eq:sverdrup_balance` tells us that the depth-integrated ocean currents are to the south in the Northern Hemisphere in the subtropics. However, the water cannot simply build up near the equator - somehow it must return to the north. We anticipate that the water will return to the north near the coastline where the current will experience extra drag. Specifically, we will add an additional term to Eq. {eq}`eq:momentum_integrated_x` and Eq. {eq}`eq:momentum_integrated_y` to represent drag on the boundary currents. Following early work by Stommel, we will assume that the drag force is a linear function of the depth-integrated velocity so that Eqns. {eq}`eq:momentum_integrated_x` and {eq}`eq:momentum_integrated_y` can be written
+
+```{math}
+:label: eq:momentum_integrated_x_boundary
+-f\overline{v} = -\frac{1}{\rho} \frac{\partial \overline{p}}{\partial x} + \frac{\tau^w}{\rho} - r \overline{u},
+```
+
+```{math}
+:label: eq:momentum_integrated_y_boundary
+f\overline{u} = -\frac{1}{\rho} \frac{\partial \overline{p}}{\partial y} -r \overline{v}
+```
+
+where $r$ is a constant _drag coefficient_. If we follow the same steps as above, we arrive at a new version of Eq. {eq}`eq:sverdrup_balance`:
+
+```{math}
+:label: eq:sverdrup_stommel
+\overline{v}\frac{df}{dy} = -\frac{\partial}{\partial y}\left(\frac{\tau^w}{\rho}\right) - r \left(\frac{\partial \overline{v}}{\partial x} - \frac{\partial \overline{u}}{\partial y}\right).
+```
+
+In the boundary current regions, we expect the current to be predominately north/south and for derivatives in $x$ to be larger than derivatives in $y$. Hence, we expect that $|\partial \overline{v}/\partial x| \gg |\partial \overline{u}/\partial y|$. If the boundary current occupies a relatively narrow region near the coast (compared to the width of the ocean basin), then the term involving the wind stress in Eq. {eq}`eq:sverdrup_stommel` must be small compared to the left hand side. Hence, we have approximately
+
+```{math}
+:label: eq:stommel
+\overline{v}\frac{df}{dy} = -r \frac{\partial \overline{v}}{\partial x}.
+```
+
+Since $df/dy>0$, Eq. {eq}`eq:stommel` implies that a northward velocity ($v>0$) must be accompanied by $\partial v/\partial x < 0$. This scenario can only work on the western side of the ocean basins.
+
+To obtain a more intuitive physical explanation for the formation of western boundary currents, we can invoke conservation of angular momentum. On a rotating planet, conservation of angular momentum tells us that the sum of the angular momentum associated with spinning currents and the planet's rotation must be conserved in the absence of external forces. If we imagine looking down at the Earth from above the north pole, the Earth will appear to rotate counter-clockwise. The vertical component of this rotation decreases with latitude. When wind acts to add clockwise spin to the water - as is the case in the Northern Hemisphere subtropics - the water must move towards the equator to conserve its angular momentum. This is an explanation for Sverdrup balance. The problem is that the Earth's angular momentum will be re-gained when the water returns to the north. In order to maintain a steady circulation, the drag within the boundary current must decrease the clockwise spin in order to counter-balance the spin added by the wind.
+
+We can make this argument more quantitative by introducing the concept of _vorticity_. The vorticity can be defined as
+
+```{math}
+\omega = \frac{\partial v}{\partial x} - \frac{\partial u}{\partial y},
+```
+
+and this is a measure of the spin of a parcel of water. When $\omega>0$ the water is spinning counter-clockwise. Notice that the vorticity  appears on the right hand side of Eq. {eq}`eq:sverdrup_stommel`. In fact, if we had kept the time-derivative terms, then Eq. {eq}`eq:sverdrup_stommel` would be
+
+```{math}
+:label: eq:vorticity
+\frac{\partial \overline{\omega}}{\partial t} + \overline{v}\frac{df}{dy} =  -\frac{\partial}{\partial y}\left(\frac{\tau^2}{\rho}\right) - r \overline{\omega}.
+```
+
+Hence, Eq. {eq}`eq:vorticity` is an evolution equation for the vorticity. In the absence of external forcing (if the RHS of Eq. {eq}`eq:vorticity` is zero) then if the fluid moves to the south $\overline{v}<0$, then the vorticity must increase. This is a mathematical statement of conservation of angular momentum. In order to compensate for negative vorticity input by the wind in the Northern Hemisphere subtropics, the bottom drag must act to add positive vorticity in the boundary current. A boundary current on the eastern side of the basin would have positive vorticity, and hence the bottom drag term $-r \omega < 0$, which is in the wrong sense. However, a boundary current on the western side of the basin would have negative vorticity, and the bottom drag would impart positive vorticity as needed to balance the negative vorticity input by the wind.
+
+Unlike the shallow wind-driven ocean circulation that we discussed in the previous lecture, the western boundary currents tend to be quite deep. For example, the Gulf Stream extends to depths below 1000m. However since the upper ocean is much warmer than the deep ocean (see {numref}`fig:WOCE_ocean_temperature`, most of the poleward heat flux occurs near the surface. To a large extent, the western boundary currents are responsible for the poleward near-surface heat flux (the upper advective flux in the Stommel model). This represents one component of the Thermohaline Circulation.
+
+As the western bondary currents flow polewards, they lose heat (see {numref}`fig:ocean_heat_flux`) and the density of the water increases. The water eventually becomes dense enough to sink to the deep ocean. This sinking occurs in relatively small areas through a process called _deep convection_. The water then spreads throughout the ocean interior and very slowly returns up to the surface. The water involved in a closed loop of the Thermohaline Circulation could travel extremely long distances, as sketched in {numref}`fig:marshall_speer` and {numref}`fig:WOCE_ocean_temperature`. It can take more than 1000 years for a parcel of water to complete this circuit. This long timescale is very important for the climate system. Since the ocean is a major reservoir of heat and carbon, the climate system has a very long `memory'. By burning fossil fuels, we are adding _antropogenic carbon_ to the ocean. Some of this carbon will remain in the ocean for more then 1000 years! -->
 <figure class="margin-caption align-default" id="fig-munk">
 <a class="reference internal image-reference" href="../../_images/munk.png"><img alt="../../_images/munk.png" src="../../_images/munk.png" style="width: 90%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 6.33 </span><span class="caption-text">Temperature measurements from the eastern Pacific ocean. The vertical axis indicates depth in km. From Munk, 1966.</span><a class="headerlink" href="#fig-munk" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Based on this description, we might expect the deep ocean to fill up with the very cold water that sinks at high latitudes. To some extent this is true, but the as shown in <a class="reference internal" href="#fig-munk"><span class="std std-numref">Fig. 6.33</span></a>, the temperature in the ocean interior is non-uniform and decreases gradually with depth. A remaining question is: if the cold water at the bottom of the ocean is gradually moving up, what is the source of heat that prevents the deep ocean from filling with the coldest water. Sunlight only penetrates the upper 10’s of meters, so solar heating cannot explain the observed temperature profile.</p>
+<!-- Based on this description, we might expect the deep ocean to fill up with the very cold water that sinks at high latitudes. To some extent this is true, but the as shown in {numref}`fig:munk`, the temperature in the ocean interior is non-uniform and decreases gradually with depth. A remaining question is: if the cold water at the bottom of the ocean is gradually moving up, what is the source of heat that prevents the deep ocean from filling with the coldest water. Sunlight only penetrates the upper 10's of meters, so solar heating cannot explain the observed temperature profile.  -->
+<p>Based on high latitude deep water formation, we might expect the deep ocean to fill up with the very cold water that sinks at high latitudes. To some extent this is true, but the as shown in <a class="reference internal" href="#fig-munk"><span class="std std-numref">Fig. 6.33</span></a>, the temperature in the ocean interior is non-uniform and decreases gradually with depth. A remaining question is: if the cold water at the bottom of the ocean is gradually moving up, what is the source of heat that prevents the deep ocean from filling with the coldest water. Sunlight only penetrates the upper 10’s of meters, so solar heating cannot explain the observed temperature profile.</p>
 <p>A solution to this problem was proposed by Munk, 1966. Munk proposed that downward mixing of heat by small-scale turbulence balances the upward advection of cold water. To model this, he used an advection/diffusion equation for a vertical profile of temperature, <span class="math notranslate nohighlight">\(T(z,t)\)</span> of the form</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial T}{\partial t} + w\frac{\partial T}{\partial z} = \kappa \frac{\partial^2 T}{\partial z^2}.\]</div>
