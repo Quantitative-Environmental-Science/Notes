@@ -427,10 +427,10 @@ document.write(`
 <p>Now, let’s consider the possible steady state solutions to Eq. <a class="reference internal" href="#equation-eq-diffusive-model">(6.22)</a>. We will refer to the steady state temperature as the <em>equilibrium</em> temperature, <span class="math notranslate nohighlight">\(T_e\)</span>. Since we are removing the time dependence, <span class="math notranslate nohighlight">\(T_e\)</span> depends only on latitude and hence the equation changes from a partial differential equation for <span class="math notranslate nohighlight">\(T(y,t)\)</span> to an ordinary differential equation for <span class="math notranslate nohighlight">\(T_e(y)\)</span>: Eq.
 <a class="reference internal" href="#equation-eq-diffusive-model-form">(6.21)</a> becomes</p>
 <div class="math notranslate nohighlight" id="equation-eq-equilibrium-temperature-eq">
-<span class="eqno">(6.23)<a class="headerlink" href="#equation-eq-equilibrium-temperature-eq" title="Link to this equation">#</a></span>\[A(1+\cos{\frac{2y}{R_e}})+(B-C)-DT_e + C_a \kappa \frac{d ^2 T_e}{d y^2}=0.\]</div>
+<span class="eqno">(6.23)<a class="headerlink" href="#equation-eq-equilibrium-temperature-eq" title="Link to this equation">#</a></span>\[C(1+\cos{\frac{2y}{R_e}})+(D-A)-BT_e + C_a \kappa \frac{d ^2 T_e}{d y^2}=0.\]</div>
 <p>Since this is a second order ODE, we need two boundary conditions. One choice is to ensure that the heat flux vanishes at the poles which requires that</p>
 <div class="math notranslate nohighlight">
-\[\frac{\partial T}{\partial y}= 0, \quad &#64; \quad y=-90^\circ, 90^\circ.\]</div>
+\[\frac{dT}{dy}= 0, \quad &#64; \quad y=-90^\circ, 90^\circ.\]</div>
 <p>Based on this boundary condition and the form of Eq. <a class="reference internal" href="#equation-eq-equilibrium-temperature-eq">(6.23)</a>, we might guess that the solution will be of the form</p>
 <div class="math notranslate nohighlight" id="equation-eq-equilibrium-temperature-form">
 <span class="eqno">(6.24)<a class="headerlink" href="#equation-eq-equilibrium-temperature-form" title="Link to this equation">#</a></span>\[T_e=\alpha + \beta \cos{\frac{2y}{R_e}}.\]</div>
