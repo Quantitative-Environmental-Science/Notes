@@ -36,28 +36,47 @@
 
 \end{frame}
 
+\begin{frame}{Lab Report}
+    \begin{itemize}
+        \item 25\% of QES Mark
+        \item 5x Short answer questions (L2-L7), worth 10\% each.
+        \begin{itemize}
+            \item 1 Figure
+            \item 250 words
+            \item \textbf{Do these as you go!}
+        \end{itemize}
+        \item 1x Long answer question (Rleased with L8), worth 50\%.
+        \item Due \textbf{Fri 4th Aril}
+        \begin{itemize}
+            \item Single, well-formatted document with all answers to short and long questions.
+            \item Six colab notebooks.
+        \end{itemize} 
+    \end{itemize}
+\end{frame}
+
+
 \section{Measurement}
 
 \begin{frame}{Measuring Ocean Carbon}
     \centering
 
-    \includegraphics<1>[width=\linewidth, totalheight=0.7\textheight, keepaspectratio]{carbon-GLODAP-map.jpg}
-    \only<1>{
+    \includegraphics<1|handout:1>[width=\linewidth, totalheight=0.7\textheight, keepaspectratio]{carbon-GLODAP-map.jpg}
+    \only<1|handout:1>{
         \manualtext{\textbf{GLODAP}}{0.48\linewidth}{-0.3\textheight}
         \manualtext{1085 Cruises}{0.48\linewidth}{-0.35\textheight}
         \manualtext{1.4M samples}{0.48\linewidth}{-0.4\textheight}
         \slidereference{https://www.digitalearthviewer-glodap.geomar.de/}
     }    
 
-    \includegraphics<2>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{carbon-VINDTA.jpg}
+    \includegraphics<2|handout:0>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{carbon-VINDTA.jpg}
 
-    \includegraphics<3->[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{carbon-cx-dic.png}
-    \only<3->{
+    \includegraphics<3-|handout:2>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{carbon-cx-dic.png}
+    \only<3-|handout:2>{
         \manualtext{\rotatebox{90}{$\mathrm{\upmu mol~kg^{-1}}$}}{0.52\linewidth}{-0.6}
         \slidereference{Sarmiento \& Gruber (2006)}
     }
 
-    \only<4>{
+    \only<4|handout:2>{
         \manualtextright{Average $\sim 2255~ \mathrm{\upmu mol~kg^{-1}}$}{0.5\linewidth}{-0.45\textheight}
     }
 
@@ -106,22 +125,22 @@
 
 \begin{frame}{Equilibrium?}
     \centering
-    \includegraphics<1>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{carbon-1box.png}
+    \includegraphics<1|handout:0>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{carbon-1box.png}
 
-    \includegraphics<2>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{carbon-cx-dic.png}
-    \only<2>{
+    \includegraphics<2|handout:0>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{carbon-cx-dic.png}
+    \only<2|handout:0>{
         \manualtext{\rotatebox{90}{$\mathrm{\upmu mol~kg^{-1}}$}}{0.52\linewidth}{-0.6}
         \slidereference{Sarmiento \& Gruber (2006)}
     }
 
-    \includegraphics<3>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{carbon-ocean-atmos.png}
-    \only<3>{
+    \includegraphics<3|handout:1>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{carbon-ocean-atmos.png}
+    \only<3|handout:1>{
         \slidereference{Sarmiento \& Gruber (2006)}
     }
 
 \end{frame}
 
-\begin{frame}{Disequilibrium?}
+\begin{frame}{\underline{Dis}equilibrium?}
     The atmosphere is not in equilibrium with the \textbf{average} ocean.
 
     \begin{itemize}
@@ -137,17 +156,17 @@
 \begin{frame}{Ocean Structure}
     \centering
     
-    \includegraphics<1>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{carbon-cx-dic.png}
-    \only<1>{
+    \includegraphics<1|handout:1>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{carbon-cx-dic.png}
+    \only<1|handout:1>{
         \manualtext{\rotatebox{90}{$\mathrm{\upmu mol~kg^{-1}}$}}{0.52\linewidth}{-0.6}
         \slidereference{Sarmiento \& Gruber (2006)}
     }
 
-    \includegraphics<2>[width=\linewidth, totalheight=0.8\textheight, keepaspectratio]{carbon-components.png}
+    \includegraphics<2|handout:2>[width=\linewidth, totalheight=0.8\textheight, keepaspectratio]{carbon-components.png}
 
-    \includegraphics<3>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{ocean-circulation.png}
+    \includegraphics<3|handout:3>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{ocean-circulation.png}
 
-    \includegraphics<4>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{marshall-speer.png}
+    \includegraphics<4|handout:4>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{marshall-speer.png}
 
 
 \end{frame}
@@ -157,15 +176,15 @@
 \begin{frame}{Modelling Ocean Carbon}
     \centering
 
-    \only<1>{
+    \only<1|handout:1>{
         In \textbf{Practicals L4-8} you will be making a model of carbon in the ocean. \\
         ~ \\
         \Large \textbf{How should we approach this?}
     }
 
-    \includegraphics<2>[width=0.8\linewidth, totalheight=0.75\textheight, keepaspectratio]{stommel_box.png}
+    \includegraphics<2|handout:2>[width=0.8\linewidth, totalheight=0.75\textheight, keepaspectratio]{stommel_box.png}
 
-    \includegraphics<3>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{ocean-circulation.png}
+    \includegraphics<3|handout:0>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{ocean-circulation.png}
 
 \end{frame}
 
