@@ -223,6 +223,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../05_globalenvironment/l34/l34.html">6.9. Thermohaline Circulation</a></li>
 </ul>
 </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="00_intro.html">7. Ocean Carbon</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_3box.html">7.1. How much carbon is in the ocean?</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -589,13 +593,13 @@ This can increase the importance of higher trophic levels in driving organic mat
 <p>For our model we will use Phosphate (PO<sub>4</sub>) as our limiting nutrient.
 The choice of P here is arbitrary - you could just as easily use Nitrate, or some other limiting nutrient.</p>
 <p>We model phosphate as a conservative tracer that is transported, consumed by phytoplankton in the surface, and released at depth by remineralisation (assuming that everything that leaves the surface box is remineralised in the deep box).
-As with atmospheric CO<sub>2</sub> exchange, we will model the consumption of P by phytoplankton using a characteristic timescale, <span class="math notranslate nohighlight">\(\tau^P\)</span> (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:carbon:tau</span></code>).
-This modifies Eq. <a class="reference internal" href="01_3box.html#equation-eq-3box-conservative">()</a> to:</p>
+As with atmospheric CO<sub>2</sub> exchange, we will model the consumption of P by phytoplankton using a characteristic timescale, <span class="math notranslate nohighlight">\(\tau^P\)</span> (<a class="reference internal" href="01_3box.html#fig-carbon-tau"><span class="std std-numref">Fig. 7.6</span></a>).
+This modifies Eq. <a class="reference internal" href="01_3box.html#equation-eq-3box-conservative">(7.2)</a> to:</p>
 <div class="math notranslate nohighlight" id="equation-eq-carbon-po4">
 <span class="eqno">()<a class="headerlink" href="#equation-eq-carbon-po4" title="Link to this equation">#</a></span>\[\begin{split}\mathrm{\dv{P_L}{t}} &amp;= \mathrm{[\mathrm{transport}] - \frac{1}{\tau^P_L} P_L} \\
 \mathrm{\dv{P_H}{t}} &amp;= \mathrm{[\mathrm{transport}] - \frac{1}{\tau^P_H} P_H} \\
 \mathrm{\dv{P_D}{t}} &amp;= \mathrm{[\mathrm{transport}] + \left. \left( \frac{V_L}{\tau^P_L} P_L + \frac{V_L}{\tau^P_H} P_H \right) \middle/ V_D \right.} \\\end{split}\]</div>
-<p>Where <span class="math notranslate nohighlight">\([\mathrm{transport}]\)</span> represents the thermohaline and vertical mixing terms from <a class="reference internal" href="01_3box.html#equation-eq-3box-conservative">()</a>.</p>
+<p>Where <span class="math notranslate nohighlight">\([\mathrm{transport}]\)</span> represents the thermohaline and vertical mixing terms from <a class="reference internal" href="01_3box.html#equation-eq-3box-conservative">(7.2)</a>.</p>
 </section>
 <section id="coupling-productivity-and-carbon">
 <h3>Coupling productivity and Carbon<a class="headerlink" href="#coupling-productivity-and-carbon" title="Link to this heading">#</a></h3>
@@ -618,7 +622,7 @@ To do this, we can write a simplified version of <a class="reference internal" h
 <span class="eqno">()<a class="headerlink" href="#equation-eq-3box-ta-biopump" title="Link to this equation">#</a></span>\[\begin{split}\mathrm{\dv{TA_L}{t}} &amp;= \mathrm{[\mathrm{transport}] + 18 \frac{1}{\tau^P_L} P_L} \\
 \mathrm{\dv{TA_H}{t}} &amp;= \mathrm{[\mathrm{transport}] + 18 \frac{1}{\tau^P_H} P_H} \\
 \mathrm{\dv{TA_D}{t}} &amp;= \mathrm{[\mathrm{transport}] - \left. \left( 18 \frac{V_L}{\tau^P_L} P_L + 18 \frac{V_H}{\tau^P_H} P_H \right) \middle / V_D \right.}\end{split}\]</div>
-<p>Where the terms in squre brackets represent the conservative transport <a class="reference internal" href="01_3box.html#equation-eq-3box-conservative">()</a> and gas exchange <a class="reference internal" href="02_solubility.html#equation-eq-3box-dic-solubility">()</a> terms.</p>
+<p>Where the terms in squre brackets represent the conservative transport <a class="reference internal" href="01_3box.html#equation-eq-3box-conservative">(7.2)</a> and gas exchange <a class="reference internal" href="02_solubility.html#equation-eq-3box-dic-solubility">()</a> terms.</p>
 <p>The biological pump is now included in our model, and we can run it to see how it affects the ocean carbon cycle.</p>
 </section>
 </section>

@@ -223,6 +223,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../05_globalenvironment/l34/l34.html">6.9. Thermohaline Circulation</a></li>
 </ul>
 </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="00_intro.html">7. Ocean Carbon</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_3box.html">7.1. How much carbon is in the ocean?</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -432,7 +436,7 @@ We’ll now look at how CO<sub>2</sub> and DIC are related.</p>
   - Think: what happens as water changes temperature?
   - Refer back to CO2 patterns.
 - Calculate DIC concentration from pCO2 with only $K_0$ -->
-<p>We saw <a class="reference internal" href="01_3box.html#carbon-overview"><span class="std std-ref">previously</span></a> that CO<sub>2(g)</sub> behaves like an ideal gas and dissolves from air into water until it reaches an equilibrium with CO<sub>2(aq)</sub> described by <strong>Henry’s Law</strong> <a class="reference internal" href="01_3box.html#equation-eq-carbon-henrys">()</a>.</p>
+<p>We saw <a class="reference internal" href="01_3box.html#carbon-overview"><span class="std std-ref">previously</span></a> that CO<sub>2(g)</sub> behaves like an ideal gas and dissolves from air into water until it reaches an equilibrium with CO<sub>2(aq)</sub> described by <strong>Henry’s Law</strong> <a class="reference internal" href="01_3box.html#equation-eq-carbon-henrys">(7.1)</a>.</p>
 <p>The solubility constant for CO<sub>2</sub>, <span class="math notranslate nohighlight">\(K_0\)</span>, depends strongly on temperature, and weakly on salinity (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:carbon:K0</span></code>).
 This means that more gas will dissolve into colder, fresher water than warmer, saltier water.</p>
 <figure class="margin-caption align-default" id="fig-carbon-k0">
@@ -650,7 +654,7 @@ Our atmosphere will have a pCO<sub>2</sub>, which is related to the number of mo
 </section>
 <section id="ocean-atmosphere-exchange">
 <h3>2. Ocean-Atmosphere Exchange<a class="headerlink" href="#ocean-atmosphere-exchange" title="Link to this heading">#</a></h3>
-<p>We will model exchange in the atmosphere by allowing CO<sub>2</sub> in each surface box to equilibrate with the overlying atmosphere with a characteristic timescale, <span class="math notranslate nohighlight">\(\tau^{CO2}\)</span>, which defines how quickly CO<sub>2</sub> in a surface box will equilibrate with pCO<sub>2</sub> in the overlying atmosphere (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:carbon:tau</span></code>).
+<p>We will model exchange in the atmosphere by allowing CO<sub>2</sub> in each surface box to equilibrate with the overlying atmosphere with a characteristic timescale, <span class="math notranslate nohighlight">\(\tau^{CO2}\)</span>, which defines how quickly CO<sub>2</sub> in a surface box will equilibrate with pCO<sub>2</sub> in the overlying atmosphere (<a class="reference internal" href="01_3box.html#fig-carbon-tau"><span class="std std-numref">Fig. 7.6</span></a>).
 This allows us to calculate the number of moles of C moving from the atmosphere into one of the surface boxes as:</p>
 <aside class="units margin sidebar">
 <p class="sidebar-title">Units!</p>
@@ -664,7 +668,7 @@ This allows us to calculate the number of moles of C moving from the atmosphere 
 <span class="eqno">()<a class="headerlink" href="#equation-eq-3box-co2ex-atmos" title="Link to this equation">#</a></span>\[\dv{pCO_2}{t} = \sum_{i=L,H} \left(\frac{V_i}{\tau^{CO2}_i} \left([CO_2]_i - K_{0,i} ~ pCO_2 ~ \rho_i ~ 10^{-6} \right) \right) \times 10^{6} / n_{air}\]</div>
 <p>Where <span class="math notranslate nohighlight">\(n_{air}\)</span> is the number of moles of air in the atmosphere, and <span class="math notranslate nohighlight">\(10^6\)</span> converts to ppm.</p>
 <p>To calculate the ocean-atmosphere flux, we need to know both the concentration of DIC and the state of DIC speciation to determine <span class="math notranslate nohighlight">\([CO_2]_i\)</span>.
-We can track the transport of DIC just like any other conservative tracer <a class="reference internal" href="01_3box.html#equation-eq-3box-conservative">()</a>, but keeping track of DIC speciation is a bit more complicated…</p>
+We can track the transport of DIC just like any other conservative tracer <a class="reference internal" href="01_3box.html#equation-eq-3box-conservative">(7.2)</a>, but keeping track of DIC speciation is a bit more complicated…</p>
 </section>
 <section id="id1">
 <h3>3. DIC Speciation<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
@@ -695,19 +699,19 @@ For our purposes, it is sufficient to know that TA is approximately defined as:<
 <p>TA has multiple definitions from different fields. TA is <em>not</em> the opposite of acidity, although increasing TA will also increase pH. For a chemist, TA is “<em>a measure of the excess bases (proton acceptors) over acids (proton donors), and is operationally defined by the titration with H<sup>+</sup> of all weak bases present in the solution</em>” (Sarmiento &amp; Gruber, 2006). In practical terms, it is the moles of H<sup>+</sup> you must add to a kg of seawater to reach the equivalence point where [H<sup>+</sup>] = [HCO<sub>3</sub><sup>-</sup>]. For an oceanographer, “<em>TA is equal to the charge difference between conservative cations and anions</em>”, so is a measure of the charge imbalance of seawater. It can also be thought of as the ‘buffering capacity’ of water, as higher alkalinity water has more proton acceptors so can better resist changes in pH.</p>
 <p>If you really want to know the details, section 1.2 of <a class="reference external" href="https://idiscover.lib.cam.ac.uk/permalink/f/1ii55o6/44CAM_ALMA51670486420003606">Zeebe &amp; Wolf-Gladrow (2001)</a> provides a comprehensive overview… but <strong>you really do not need to know this for QES</strong>!</p>
 </div>
-<p>As no processes in our model currently modify TA (but they will soon), we can model TA using only the equations for conservative tracer transport in <a class="reference internal" href="01_3box.html#equation-eq-3box-conservative">()</a>.</p>
+<p>As no processes in our model currently modify TA (but they will soon), we can model TA using only the equations for conservative tracer transport in <a class="reference internal" href="01_3box.html#equation-eq-3box-conservative">(7.2)</a>.</p>
 </section>
 <section id="dic-concentration">
 <h3>4. DIC Concentration<a class="headerlink" href="#dic-concentration" title="Link to this heading">#</a></h3>
 <p>Now we have a way to keep track of DIC speciation, we can calculate the concentration of CO<sub>2</sub> in each surface box as:</p>
 <div class="math notranslate nohighlight">
 \[[CO_2]_i = f(DIC_i, TA_i, T_i, S_i)\]</div>
-<p>This allows us to model DIC as a conservative tracer <a class="reference internal" href="01_3box.html#equation-eq-3box-conservative">()</a>, with additional terms for the exchange of CO<sub>2</sub> with the atmosphere in the surface boxes:</p>
+<p>This allows us to model DIC as a conservative tracer <a class="reference internal" href="01_3box.html#equation-eq-3box-conservative">(7.2)</a>, with additional terms for the exchange of CO<sub>2</sub> with the atmosphere in the surface boxes:</p>
 <div class="math notranslate nohighlight" id="equation-eq-3box-dic-solubility">
 <span class="eqno">()<a class="headerlink" href="#equation-eq-3box-dic-solubility" title="Link to this equation">#</a></span>\[\begin{split}\dv{DIC_L}{t} &amp;= [\mathrm{transport}] - \frac{1}{\tau^{CO2}_L} ([CO_2]_L - K_{0,L} ~ pCO_2 ~ \rho_L ~ 10^{-6} ) \\
 \dv{DIC_H}{t} &amp;= [\mathrm{transport}] - \frac{1}{\tau^{CO2}_H} ([CO_2]_H - K_{0,H} ~ pCO_2 ~ \rho_H ~ 10^{-6}) \\
 \dv{DIC_D}{t} &amp;= [\mathrm{transport}]\end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\([\mathrm{transport}]\)</span> represents the conservative transport terms from <a class="reference internal" href="01_3box.html#equation-eq-3box-conservative">()</a>.
+<p>where <span class="math notranslate nohighlight">\([\mathrm{transport}]\)</span> represents the conservative transport terms from <a class="reference internal" href="01_3box.html#equation-eq-3box-conservative">(7.2)</a>.
 Note that the deep box is only affected by transport terms because it does not exchange CO<sub>2</sub> with the atmosphere.</p>
 <!-- ## Conservative Tracer for Speciation
 
