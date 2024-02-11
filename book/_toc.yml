@@ -48,13 +48,13 @@ chapters:
   - file: 05_globalenvironment/l32/l32
   - file: 05_globalenvironment/l33/l33
   - file: 05_globalenvironment/l34/l34
-# - file: 06_oceancarbon/00_intro
-#   sections:
-#   - file: 06_oceancarbon/01_3box
-#   - file: 06_oceancarbon/02_solubility
-#   - file: 06_oceancarbon/03_biopump
-#   - file: 06_oceancarbon/04_carbonatepump
-#   - file: 06_oceancarbon/05_futureoceans
+- file: 06_oceancarbon/00_intro
+  sections:
+  - file: 06_oceancarbon/01_3box
+  # - file: 06_oceancarbon/02_solubility
+  # - file: 06_oceancarbon/03_biopump
+  # - file: 06_oceancarbon/04_carbonatepump
+  # - file: 06_oceancarbon/05_futureoceans
 # - file: 07_landcarbon/intro/intro
 #   sections:
 #   - file: 07_landcarbon/l40/l40
