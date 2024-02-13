@@ -237,6 +237,15 @@ To include the biological pump in our model we must:
 1. Include a nutrient to limit biological productivity
 2. Parameterise the impact of photosynethsis and remineralisation on ocean carbon.
 
+```{figure} figures/ocean-3box-CO2-bio.png
+---
+name: fig:carbon:3box
+figclass: margin-caption
+width: 60%
+---
+To model the solubility pump, we need to include the conservative transport of a nutrient through the ocean boxes to fuel biological productivity. We then need to paramterise the production of organic matter in the surface ocean, which takes up DIC and nutrients and exports them to the deep ocean.
+```
+
 ### Adding a nutrient
 
 For our model we will use Phosphate (PO<sub>4</sub>) as our limiting nutrient.

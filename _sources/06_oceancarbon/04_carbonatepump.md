@@ -196,6 +196,15 @@ The interaction between ballasting and ocean acidification is a significant sour
 
 ## Modelling the Carbonate Pump
 
+```{figure} figures/ocean-3box-CO2-bio-calc.png
+---
+name: fig:carbon:3box
+figclass: margin-caption
+width: 60%
+---
+To model the carbonate pump, we need to include the production of CaCO<sub>3<sub> by biological life, which takes up DIC and TA in the surface ocean and exports it to the deep ocean.
+```
+
 Calcification is biologically-mediated, and takes up CO<sub>3</sub><sup>-2</sup> from the surface ocean and exports it to the deep.
 We will therefore model calcification as a function of biological productivity in the surface ocean, assuming that some fraction of biological carbon export ($f_{calc}$) is accompanied by calcification:
 

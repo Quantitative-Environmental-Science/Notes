@@ -286,6 +286,15 @@ To include the solubility pump in our model, we must:
 3. Track the speciation of DIC in the surface ocean.
 4. Track the concentration of DIC.
 
+```{figure} figures/ocean-3box-CO2.png
+---
+name: fig:carbon:3box
+figclass: margin-caption
+width: 60%
+---
+To model the solubility pump, we need to include the exchange of CO<sub>2</sub> between the ocean and atmosphere, the conservative transport of DIC through the ocean interior, and the speciation of DIC in the surface ocean.
+```
+
 ### 1. The Atmosphere
 
 We will model the atmosphere as a single, well-mixed box that overlies both surface ocean boxes.
