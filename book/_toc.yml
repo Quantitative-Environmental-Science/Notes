@@ -51,7 +51,7 @@ chapters:
 - file: 06_oceancarbon/00_intro
   sections:
   - file: 06_oceancarbon/01_3box
-  # - file: 06_oceancarbon/02_solubility
+  - file: 06_oceancarbon/02_solubility
   # - file: 06_oceancarbon/03_biopump
   # - file: 06_oceancarbon/04_carbonatepump
   # - file: 06_oceancarbon/05_futureoceans
