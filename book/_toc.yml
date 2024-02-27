@@ -55,12 +55,12 @@ chapters:
   - file: 06_oceancarbon/03_biopump
   - file: 06_oceancarbon/04_carbonatepump
   - file: 06_oceancarbon/05_futureoceans
-# - file: 07_landcarbon/intro/intro
-#   sections:
-#   - file: 07_landcarbon/l40/l40
-#   - file: 07_landcarbon/l41/l41
-#   - file: 07_landcarbon/l42/l42
-#   - file: 07_landcarbon/l43/l43
+- file: 07_landcarbon/intro/intro
+  sections:
+  - file: 07_landcarbon/l40/l40
+  - file: 07_landcarbon/l41/l41
+  - file: 07_landcarbon/l42/l42
+  - file: 07_landcarbon/l43/l43
 # - file: 10_energytransitions/intro/intro
 #   sections:
 #   - file: 10_energytransitions/l49/l49
