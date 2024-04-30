@@ -94,6 +94,28 @@ Terrestrial Carbon 🌲
 Carbon on land
 :::
 
+:::{grid-item-card}
+:link: 08_polarcasestudy/intro/intro
+:link-type: doc
+:class-header: bg-light
+
+Polar Case Study 🐧
+^^^
+
+Land-ocean-atmosphere-ice interactions
+:::
+
+:::{grid-item-card}
+:link: 10_energytransitions/intro/intro
+:link-type: doc
+:class-header: bg-light
+
+Energy Transitions 🏭
+^^^
+
+Towards a sustainable future
+:::
+
 <!-- :::{grid-item-card}
 :link: 09_globalclimate/intro/intro
 :link-type: doc
@@ -103,28 +125,6 @@ Global Climate 🌍
 ^^^
 
 Climate change, IPCC and policy
-::: -->
-
-<!-- :::{grid-item-card}
-:link: 10_energytransitions/intro/intro
-:link-type: doc
-:class-header: bg-light
-
-Energy Transitions 🏭
-^^^
-
-Towards a sustainable future
-::: -->
-
-<!-- :::{grid-item-card}
-:link: 08_polarcasestudy/intro/intro
-:link-type: doc
-:class-header: bg-light
-
-Polar Case Study 🐧
-^^^
-
-Land-ocean-atmosphere-ice interactions
 ::: -->
 
 ::::
