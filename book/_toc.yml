@@ -60,19 +60,19 @@ chapters:
   - file: 07_landcarbon/l41
   - file: 07_landcarbon/l42
   - file: 07_landcarbon/l43
-- file: 08_polarcasestudy/intro/intro
+- file: 08_polarcasestudy/intro
   sections:
-  - file: 08_polarcasestudy/l44/l44
-  - file: 08_polarcasestudy/l45/l45
-- file: 10_energytransitions/intro/intro
+  - file: 08_polarcasestudy/l44
+  - file: 08_polarcasestudy/l45
+- file: 10_energytransitions/intro
   sections:
-  - file: 10_energytransitions/l49/l49
-  - file: 10_energytransitions/l50/l50
-  - file: 10_energytransitions/l51/l51
-  - file: 10_energytransitions/l52/l52
-  - file: 10_energytransitions/l53/l53
-  - file: 10_energytransitions/l54/l54
-  - file: 10_energytransitions/l55/l55
+  - file: 10_energytransitions/l49
+  - file: 10_energytransitions/l50
+  - file: 10_energytransitions/l51
+  - file: 10_energytransitions/l52
+  - file: 10_energytransitions/l53
+  - file: 10_energytransitions/l54
+  - file: 10_energytransitions/l55
 
 
 # - file: reference/glossary

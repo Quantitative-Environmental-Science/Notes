@@ -84,7 +84,7 @@ How carbon moves around the ocean
 :::
 
 :::{grid-item-card}
-:link: 07_landcarbon/intro/intro
+:link: 07_landcarbon/intro
 :link-type: doc
 :class-header: bg-light
 
@@ -106,7 +106,7 @@ Land-ocean-atmosphere-ice interactions
 :::
 
 :::{grid-item-card}
-:link: 10_energytransitions/intro/intro
+:link: 10_energytransitions/intro
 :link-type: doc
 :class-header: bg-light
 
@@ -117,7 +117,7 @@ Towards a sustainable future
 :::
 
 <!-- :::{grid-item-card}
-:link: 09_globalclimate/intro/intro
+:link: 09_globalclimate/intro
 :link-type: doc
 :class-header: bg-light
 
