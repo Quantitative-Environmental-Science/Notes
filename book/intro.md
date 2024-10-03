@@ -62,7 +62,7 @@ Movement, pollution and aerosols.
 :::
 
 :::{grid-item-card}
-:link: 05_globalenvironment/intro/intro
+:link: 05_globalenvironment/intro
 :link-type: doc
 :class-header: bg-light
 
