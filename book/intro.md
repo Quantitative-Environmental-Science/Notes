@@ -95,7 +95,7 @@ Carbon on land
 :::
 
 :::{grid-item-card}
-:link: 08_polarcasestudy/intro/intro
+:link: 08_polarcasestudy/intro
 :link-type: doc
 :class-header: bg-light
 
