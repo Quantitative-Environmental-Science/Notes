@@ -29,7 +29,7 @@ How water flows through the Earth.
 :::
 
 :::{grid-item-card}
-:link: 02_cryosphere/intro/intro
+:link: 02_cryosphere/intro
 :link-type: doc
 :class-header: bg-light
 

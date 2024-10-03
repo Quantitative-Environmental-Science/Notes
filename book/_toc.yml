@@ -22,13 +22,13 @@ chapters:
   - file: 03_rivers/l16/l16
   - file: 03_rivers/l17/l17
   - file: 03_rivers/l18/l18
-- file: 02_cryosphere/intro/intro
+- file: 02_cryosphere/intro
   sections:
-  - file: 02_cryosphere/l8/l8
-  - file: 02_cryosphere/l9/l9
-  - file: 02_cryosphere/l10/l10
-  - file: 02_cryosphere/l11/l11
-  - file: 02_cryosphere/l12/l12
+  - file: 02_cryosphere/l8
+  - file: 02_cryosphere/l9
+  - file: 02_cryosphere/l10
+  - file: 02_cryosphere/l11
+  - file: 02_cryosphere/l12
 - file: 04_atmosphere/intro/intro
   sections:
   - file: 04_atmosphere/l19/l19
