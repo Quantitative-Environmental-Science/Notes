@@ -18,7 +18,7 @@ The global context of Environmental Sciences
 :::
 
 :::{grid-item-card}
-:link: 01_groundwater/intro/intro
+:link: 01_groundwater/intro
 :link-type: doc
 :class-header: bg-light
 

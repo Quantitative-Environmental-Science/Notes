@@ -8,12 +8,12 @@ chapters:
   - file: 00_intro/l1
   - file: 00_intro/l2
   - file: 00_intro/l3
-- file: 01_groundwater/intro/intro
+- file: 01_groundwater/intro
   sections:
-  - file: 01_groundwater/l4/l4
-  - file: 01_groundwater/l5/l5
-  - file: 01_groundwater/l6/l6
-  - file: 01_groundwater/l7/l7
+  - file: 01_groundwater/l4
+  - file: 01_groundwater/l5
+  - file: 01_groundwater/l6
+  - file: 01_groundwater/l7
 - file: 03_rivers/intro/intro
   sections:
   - file: 03_rivers/l13/l13
