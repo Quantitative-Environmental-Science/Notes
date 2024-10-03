@@ -40,7 +40,7 @@ How ice forms, moves and melts.
 :::
 
 :::{grid-item-card}
-:link: 03_rivers/intro/intro
+:link: 03_rivers/intro
 :link-type: doc
 :class-header: bg-light
 

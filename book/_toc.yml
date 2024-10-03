@@ -14,14 +14,14 @@ chapters:
   - file: 01_groundwater/l5
   - file: 01_groundwater/l6
   - file: 01_groundwater/l7
-- file: 03_rivers/intro/intro
+- file: 03_rivers/intro
   sections:
-  - file: 03_rivers/l13/l13
-  - file: 03_rivers/l14/l14
-  - file: 03_rivers/l15/l15
-  - file: 03_rivers/l16/l16
-  - file: 03_rivers/l17/l17
-  - file: 03_rivers/l18/l18
+  - file: 03_rivers/l13
+  - file: 03_rivers/l14
+  - file: 03_rivers/l15
+  - file: 03_rivers/l16
+  - file: 03_rivers/l17
+  - file: 03_rivers/l18
 - file: 02_cryosphere/intro
   sections:
   - file: 02_cryosphere/l8
