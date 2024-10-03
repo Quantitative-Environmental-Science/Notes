@@ -1,6 +1,6 @@
 # Introduction
 
-Welcome to Quantitative Environmental Sciences, a new course offered at 1B in Natural Sciences.
+**Welcome to Quantitative Environmental Sciences!**
 
 Quantitative Environmental Sciences (QES) is a multidisciplinary course designed to integrate the physics, maths, biology, and chemistry behind environmental issues and models of environmental systems.
 Students will explore how Natural Sciences will be instrumental in solving the real-world problems that we are currently facing and will continue to face in the coming decades.
