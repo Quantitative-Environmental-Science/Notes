@@ -7,7 +7,7 @@ Select an item from the menu on the left or the grid below to get started.
 :gutter: 3
 
 :::{grid-item-card}
-:link: 00_intro/intro/intro
+:link: 00_intro/intro
 :link-type: doc
 :class-header: bg-light
 

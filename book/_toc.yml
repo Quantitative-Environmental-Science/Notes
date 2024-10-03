@@ -3,11 +3,11 @@ root: intro
 options:
   numbered: 2
 chapters:
-- file: 00_intro/intro/intro
+- file: 00_intro/intro
   sections:
-  - file: 00_intro/l1/l1
-  - file: 00_intro/l2/l2
-  - file: 00_intro/l3/l3
+  - file: 00_intro/l1
+  - file: 00_intro/l2
+  - file: 00_intro/l3
 - file: 01_groundwater/intro/intro
   sections:
   - file: 01_groundwater/l4/l4
