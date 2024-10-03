@@ -51,7 +51,7 @@ How water flows on the surface.
 :::
 
 :::{grid-item-card}
-:link: 04_atmosphere/intro/intro
+:link: 04_atmosphere/intro
 :link-type: doc
 :class-header: bg-light
 
