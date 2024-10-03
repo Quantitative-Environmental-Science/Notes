@@ -7,7 +7,7 @@ Select an item from the menu on the left or the grid below to get started.
 :gutter: 3
 
 :::{grid-item-card}
-:link: 00_intro/intro/intro
+:link: 00_intro/intro
 :link-type: doc
 :class-header: bg-light
 
@@ -18,7 +18,7 @@ The global context of Environmental Sciences
 :::
 
 :::{grid-item-card}
-:link: 01_groundwater/intro/intro
+:link: 01_groundwater/intro
 :link-type: doc
 :class-header: bg-light
 
@@ -29,7 +29,7 @@ How water flows through the Earth.
 :::
 
 :::{grid-item-card}
-:link: 02_cryosphere/intro/intro
+:link: 02_cryosphere/intro
 :link-type: doc
 :class-header: bg-light
 
@@ -40,7 +40,7 @@ How ice forms, moves and melts.
 :::
 
 :::{grid-item-card}
-:link: 03_rivers/intro/intro
+:link: 03_rivers/intro
 :link-type: doc
 :class-header: bg-light
 
@@ -51,7 +51,7 @@ How water flows on the surface.
 :::
 
 :::{grid-item-card}
-:link: 04_atmosphere/intro/intro
+:link: 04_atmosphere/intro
 :link-type: doc
 :class-header: bg-light
 
@@ -62,7 +62,7 @@ Movement, pollution and aerosols.
 :::
 
 :::{grid-item-card}
-:link: 05_globalenvironment/intro/intro
+:link: 05_globalenvironment/intro
 :link-type: doc
 :class-header: bg-light
 
@@ -84,7 +84,7 @@ How carbon moves around the ocean
 :::
 
 :::{grid-item-card}
-:link: 07_landcarbon/intro/intro
+:link: 07_landcarbon/intro
 :link-type: doc
 :class-header: bg-light
 
@@ -95,7 +95,7 @@ Carbon on land
 :::
 
 :::{grid-item-card}
-:link: 08_polarcasestudy/intro/intro
+:link: 08_polarcasestudy/intro
 :link-type: doc
 :class-header: bg-light
 
@@ -106,7 +106,7 @@ Land-ocean-atmosphere-ice interactions
 :::
 
 :::{grid-item-card}
-:link: 10_energytransitions/intro/intro
+:link: 10_energytransitions/intro
 :link-type: doc
 :class-header: bg-light
 
@@ -117,7 +117,7 @@ Towards a sustainable future
 :::
 
 <!-- :::{grid-item-card}
-:link: 09_globalclimate/intro/intro
+:link: 09_globalclimate/intro
 :link-type: doc
 :class-header: bg-light
 

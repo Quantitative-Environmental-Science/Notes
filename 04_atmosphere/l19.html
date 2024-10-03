@@ -1,0 +1,799 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>5.1. An overview of the atmosphere &#8212; My Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/admonitions.css?v=1588abde" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams", "[tex]/mhchem", "[tex]/color"]}, "tex": {"packages": ["base", "physics", "ams", "mhchem", "color"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '04_atmosphere/l19';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5.2. Air pollution" href="l20.html" />
+    <link rel="prev" title="5. Air Pollution and Atmospheric Chemistry" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="My Jupyter Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My Jupyter Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../00_intro/intro.html">1. Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l1.html">1.1. Course Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l2.html">1.2. Where does the energy come from on Earth?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l3.html">1.3. The Carbon Cycle</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01_groundwater/intro.html">2. Groundwater</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l4.html">2.1. Groundwater Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l5.html">2.2. Why water moves beneath the surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l6.html">2.3. How we measure and understand water movement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l7.html">2.4. Groundwater challenges and sustainable groundwater</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03_rivers/intro.html">3. Surface water and Flooding</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03_rivers/l13.html">3.1. Catchment and drainage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_rivers/l14.html">3.2. 1D model of drainage into a river</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_rivers/l15.html">3.3. River flows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_rivers/l16.html">3.4. Reservoirs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_rivers/l17.html">3.5. Flood waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_rivers/l18.html">3.6. Flooding</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02_cryosphere/intro.html">4. Cryosphere</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02_cryosphere/l8.html">4.1. Ice in the polar regions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_cryosphere/l9.html">4.2. The growth and melting of ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_cryosphere/l10.html">4.3. The extent of sea ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_cryosphere/l11.html">4.4. Ice sheets and the flow of glacial ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_cryosphere/l12.html">4.5. Floating ice shelves and the flow of glacial ice</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">5. Air Pollution and Atmospheric Chemistry</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.1. An overview of the atmosphere</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l20.html">5.2. Air pollution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l21.html">5.3. The chemistry of pollutants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l22.html">5.4. Aerosols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l23.html">5.5. Air pollution and climate</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05_globalenvironment/intro.html">6. Global Environment</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../05_globalenvironment/l26.html">6.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05_globalenvironment/l27.html">6.2. Equations of motion on the rotating earth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05_globalenvironment/l28.html">6.3. Scales of motion in the atmosphere and ocean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05_globalenvironment/l29.html">6.4. Structure and mean circulation of the atmosphere</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05_globalenvironment/l30.html">6.5. Atmospheric heat transport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05_globalenvironment/l31.html">6.6. 2-box model for the global heat distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05_globalenvironment/l32.html">6.7. Stommel box model for ocean heat transport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05_globalenvironment/l33.html">6.8. Shallow wind-forced ocean circulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05_globalenvironment/l34.html">6.9. Thermohaline Circulation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06_oceancarbon/00_intro.html">7. Ocean Carbon</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../06_oceancarbon/01_3box.html">7.1. How much carbon is in the ocean?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_oceancarbon/02_solubility.html">7.2. The Solubility Pump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_oceancarbon/03_biopump.html">7.3. The Biological Pump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_oceancarbon/04_carbonatepump.html">7.4. The Carbonate Pump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_oceancarbon/05_futureoceans.html">7.5. Future Oceans</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07_landcarbon/intro.html">8. Terrestrial Carbon</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../07_landcarbon/l40.html">8.1. Plants, Soils and Eddies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07_landcarbon/l41.html">8.2. The Methane Cycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07_landcarbon/l42.html">8.3. The Methane Budget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07_landcarbon/l43.html">8.4. Methane Sources</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08_polarcasestudy/intro.html">9. Polar Case Study</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../08_polarcasestudy/l44.html">9.1. The Arctic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08_polarcasestudy/l45.html">9.2. The Antarctic</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../10_energytransitions/intro.html">10. Energy Transitions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../10_energytransitions/l49.html">10.1. Wind Power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_energytransitions/l50.html">10.2. Solar Power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_energytransitions/l51.html">10.3. Energy Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_energytransitions/l52.html">10.4. Carbon Removal and Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_energytransitions/l53.html">10.5. Heating and Heat Transfer in Buildings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_energytransitions/l54.html">10.6. Heat pumps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_energytransitions/l55.html">10.7. Cars and Minerals</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/04_atmosphere/l19.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>An overview of the atmosphere</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-the-atmosphere">Introduction to the atmosphere</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variation-of-atmospheric-pressure-with-altitude">Variation of atmospheric pressure with altitude</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deviations-from-a-uniform-temperature-profile">Deviations from a uniform temperature profile</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-tropospheric-temperature-profile-heating-from-below">The tropospheric temperature profile – heating from below</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-stratospheric-temperature-profile-heating-from-above">The stratospheric temperature profile – heating from above</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vertical-stability-of-the-atmosphere">Vertical stability of the atmosphere</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#radiative-properties-of-gases-and-particles">Radiative properties of gases and particles</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="an-overview-of-the-atmosphere">
+<span id="lecture-19"></span><h1><span class="section-number">5.1. </span>An overview of the atmosphere<a class="headerlink" href="#an-overview-of-the-atmosphere" title="Link to this heading">#</a></h1>
+<p class="rubric">Structure, composition and radiative processes</p>
+<blockquote class="highlights">
+<div><p>Aims:</p>
+<ol class="arabic simple">
+<li><p>To describe the basic structure of the atmosphere and understand what physical processes lead to the distinct “layers” present in Earth’s atmosphere</p></li>
+<li><p>Recap on the radiative budget of the atmosphere and how different constituents affect the Earth’s radiative balance.</p></li>
+<li><p>Outline the key radiatively important gases and particles present in the atmosphere.</p></li>
+</ol>
+<p>Key Points:</p>
+<ul class="simple">
+<li><p>The Earth surface is heated by incoming short-wave length radiation from the sun that is re-emitted out at longer wavelengths. This causes the lower layers of the atmosphere to decrease in Temperature as an air parcel ascends (a negative lapse rate <span class="math notranslate nohighlight">\(\frac{dT}{dz}\)</span>).</p></li>
+<li><p>In the middle atmosphere, around <span class="math notranslate nohighlight">\(30 \ \mathrm{km}\)</span>, ozone (<span class="math notranslate nohighlight">\(\mathrm{O_3}\)</span>) forms a layer (the ozone layer) which absorbs incoming short wave radiation and re-emits radiation at longer wavelengths leading to local heating.</p></li>
+<li><p>This combination of a negative lapse rate in the troposphere and a positive lapse rate in the stratosphere means that air is well mixed in the troposphere but stratified in the stratosphere.</p></li>
+<li><p>The gases and particles present in the atmosphere can absorb, scatter or re-emit radiation.</p></li>
+<li><p>Molecules with a permanent dipole can absorb outgoing long-wave radiation and re-emit this, leading to the greenhouse effect.</p></li>
+<li><p>Certain aerosols can scatter incoming shortwave radiation, cooling the surface.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathrm{CO_2}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{CH_4}\)</span> and <span class="math notranslate nohighlight">\(\mathrm{O_3}\)</span> are key greenhouses gases that have changed in atmospheric abundance considerably due to anthropogenic activities</p></li>
+</ul>
+</div></blockquote>
+<section id="introduction-to-the-atmosphere">
+<h2>Introduction to the atmosphere<a class="headerlink" href="#introduction-to-the-atmosphere" title="Link to this heading">#</a></h2>
+<p>We can consider the atmosphere divided into two main parts,
+dealing with the <em>stratosphere</em> (<span class="math notranslate nohighlight">\(15-50 \ \mathrm{km}\)</span>) and the <em>troposphere</em> (<span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(10-15 \mathrm{km}\)</span>) as essentially separate regions
+with, in many respects, different photochemical and transport processes dominating.
+A very important first question is why this distinction can be made and why it is useful to do so.
+We should also ask why higher altitudes are not considered.
+The answers rest with the <em>physical structure</em> of the atmosphere
+– which is itself a function of both physical processes (gravity, buoyancy effects)
+and <em>photochemistry and spectroscopy</em> (absorption of visible solar radiation by <span class="math notranslate nohighlight">\(\mathrm{O_2}\)</span> and <span class="math notranslate nohighlight">\(\mathrm{O_3}\)</span>,
+and emission in the infra-red by <span class="math notranslate nohighlight">\(\mathrm{CO_2}\)</span>).
+This leads to both a physical barrier between the two regions and quite different photochemical environments, these aspects are discussed below.
+We must start by looking at atmospheric vertical structure.</p>
+</section>
+<section id="variation-of-atmospheric-pressure-with-altitude">
+<h2>Variation of atmospheric pressure with altitude<a class="headerlink" href="#variation-of-atmospheric-pressure-with-altitude" title="Link to this heading">#</a></h2>
+<p>Depending on definition, the atmosphere can be taken to be a few 10s or perhaps <span class="math notranslate nohighlight">\(\mathrm{100 \ km}\)</span> thick.
+The gravitational constant can be taken to be <span class="math notranslate nohighlight">\(g = \mathrm{9.81 \ m \ s^{-2}}\)</span> throughout.
+The surface pressure of the atmosphere is thus determined by the total mass of atmosphere.
+The change in pressure <span class="math notranslate nohighlight">\(\dd{p}\)</span> following a displacement <span class="math notranslate nohighlight">\(\dd{z}\)</span> can be written as</p>
+<div class="math notranslate nohighlight" id="equation-p-change">
+<span class="eqno">(5.1)<a class="headerlink" href="#equation-p-change" title="Link to this equation">#</a></span>\[\dd{p} = -\rho g \dd{z}\]</div>
+<p>where <span class="math notranslate nohighlight">\(p\)</span> is pressure, <span class="math notranslate nohighlight">\(\rho\)</span> is the ambient air density and <span class="math notranslate nohighlight">\(z\)</span> is altitude.</p>
+<p>Since <span class="math notranslate nohighlight">\(pV = nRT\)</span>, we can write <span class="math notranslate nohighlight">\(\rho = \frac{Mn}{V} = \frac{Mp}{RT}\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(M\)</span> is the mean molar mass of <em>air</em>.
+Taking the atmospheric temperature to be constant (N.B. an approximation we will review later) we can write</p>
+<div class="math notranslate nohighlight">
+\[\dd{p} = -\frac{Mgp}{RT} \dd{z}\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight" id="equation-p-diff-t">
+<span class="eqno">(5.2)<a class="headerlink" href="#equation-p-diff-t" title="Link to this equation">#</a></span>\[\frac{1}{p} \dd{p} = d[\ln(p)] = - \frac{Mg}{RT} \dd{z}\]</div>
+<p>which can be integrated to give</p>
+<div class="math notranslate nohighlight" id="equation-p-integrated">
+<span class="eqno">(5.3)<a class="headerlink" href="#equation-p-integrated" title="Link to this equation">#</a></span>\[p = p_0e^{-\frac{z}{H}}\]</div>
+<p>which is the <em>hydrostatic relation</em>, where <span class="math notranslate nohighlight">\(H = \frac{RT}{Mg}\)</span> is the scale height, <span class="math notranslate nohighlight">\(T\)</span>, is the temperature, and <span class="math notranslate nohighlight">\(M\)</span>, is the mean molar mass of dry air (<span class="math notranslate nohighlight">\(28.8 \ \mathrm{g \ mol^{-1}}\)</span>).</p>
+<p>Typical values of <span class="math notranslate nohighlight">\(H\)</span> are given in <a class="reference internal" href="#t-at-height"><span class="std std-numref">Table 5.1</span></a>:</p>
+<div class="pst-scrollable-table-container"><table class="table" id="t-at-height">
+<caption><span class="caption-number">Table 5.1 </span><span class="caption-text">Atmospheric temperatures in Kevin at a scale height, <span class="math notranslate nohighlight">\(H\)</span>.</span><a class="headerlink" href="#t-at-height" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(T \ \mathrm{/ \ K}\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(H \ \mathrm{/ \ km}\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>200</p></td>
+<td><p>5.88</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>240</strong></p></td>
+<td><p><strong>7.06</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>280</p></td>
+<td><p>8.24</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The result is that to a good approximation pressure decays exponentially with height with a <em>pressure scale height</em> <span class="math notranslate nohighlight">\(H\)</span> in km.</p>
+<p>A useful approximation is to take <span class="math notranslate nohighlight">\(H = 7 \ \mathrm{km}\)</span>.
+Up to an altitude of approximately <span class="math notranslate nohighlight">\(90 \ \mathrm{km}\)</span>, the bulk composition of the atmosphere essentially <span class="math notranslate nohighlight">\(\mathrm{N_2:O_2} = 4:1\)</span>.
+At higher altitudes, diffusive separation can occur with light molecules such as <span class="math notranslate nohighlight">\(\mathrm{H_2}\)</span> capable of leaving the atmosphere altogether.</p>
+<p>Using the hydrostatic relation we can calculate that approximately 90% of the atmosphere is below <span class="math notranslate nohighlight">\(15 \ \mathrm{km}\)</span>, 99% below <span class="math notranslate nohighlight">\(30 \ \mathrm{km}\)</span>, and 99.9% below <span class="math notranslate nohighlight">\(45 \ \mathrm{km}\)</span>.</p>
+<p>By considering only the troposphere and stratosphere, we are thus ignoring only 0.1% of the atmosphere (by mass), although for some scientific problems and for issues such as radio transmission, that 0.1% is critical!</p>
+</section>
+<section id="deviations-from-a-uniform-temperature-profile">
+<h2>Deviations from a uniform temperature profile<a class="headerlink" href="#deviations-from-a-uniform-temperature-profile" title="Link to this heading">#</a></h2>
+<p>The observed atmospheric temperature profile is far from uniform (see below).
+Ignoring for the moment the region above <span class="math notranslate nohighlight">\(50 \ \mathrm{km}\)</span>, the main features are decreasing temperatures with altitude up to <span class="math notranslate nohighlight">\(\sim 15 \ \mathrm{km}\)</span>, with increasing temperatures above.
+We will now consider why this occurs, and critically, why it is important.</p>
+<figure class="margin-caption align-default" id="atmosphere-t">
+<a class="reference internal image-reference" href="../_images/figure19.1.png"><img alt="../_images/figure19.1.png" src="../_images/figure19.1.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5.1 </span><span class="caption-text">Temperature structure of the atmosphere.</span><a class="headerlink" href="#atmosphere-t" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="the-tropospheric-temperature-profile-heating-from-below">
+<h3>The tropospheric temperature profile – heating from below<a class="headerlink" href="#the-tropospheric-temperature-profile-heating-from-below" title="Link to this heading">#</a></h3>
+<p>The troposphere is heated largely from below - by solar radiation heating the Earth’s surface, heating the nearby air etc.
+The upshot is that this less dense air then has a tendency to rise (by processes equivalent to convection).
+As the air rises, it then encounters <em>reduced pressures</em> (see above) and therefore <em>expands</em>.
+In doing so it performs work on the external environment and if no external heat is applied, it must <em>cool</em>.</p>
+<p>From the First Law of Thermodynamics: <span class="math notranslate nohighlight">\(\dd{U} = \dd{q} + \dd{w}\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(dU\)</span> is the change in internal energy, <span class="math notranslate nohighlight">\(dq\)</span> the heat supplied <em>to</em> the system and <span class="math notranslate nohighlight">\(dw\)</span> the work done <em>on</em> it.
+If <span class="math notranslate nohighlight">\(\dd{q} = 0\)</span> (an adiabatic process i.e. no heat is given off to the environment) and <span class="math notranslate nohighlight">\(\dd{w} = –p \dd{V}\)</span> (expansion work, done <em>by</em> the rising gas), we can write</p>
+<div class="math notranslate nohighlight" id="equation-internal-energy-diff">
+<span class="eqno">(5.4)<a class="headerlink" href="#equation-internal-energy-diff" title="Link to this equation">#</a></span>\[\dd{U} = – p \dd{V}\]</div>
+<p>From the definition of enthalpy (<span class="math notranslate nohighlight">\(H = U + pV\)</span>)</p>
+<div class="math notranslate nohighlight">
+\[\dd{H} = \dd{U} + p \dd{V} + V \dd{p}\]</div>
+<p>and substitution for <span class="math notranslate nohighlight">\(\dd{U}\)</span> gives</p>
+<div class="math notranslate nohighlight" id="equation-enthalpy-diff">
+<span class="eqno">(5.5)<a class="headerlink" href="#equation-enthalpy-diff" title="Link to this equation">#</a></span>\[\dd{H} = V \dd{p}\]</div>
+<p>From the hydrostatic equation, the altitude dependence of pressure is given by</p>
+<div class="math notranslate nohighlight" id="equation-p-as-alt">
+<span class="eqno">(5.6)<a class="headerlink" href="#equation-p-as-alt" title="Link to this equation">#</a></span>\[\dd{p} = – \rho g \dd{z}\]</div>
+<p>This allows us to write</p>
+<div class="math notranslate nohighlight" id="equation-enth-as-alt">
+<span class="eqno">(5.7)<a class="headerlink" href="#equation-enth-as-alt" title="Link to this equation">#</a></span>\[\dd{H} = –(V \rho) g \dd{z} = – Mg \dd{z}\]</div>
+<p>where <span class="math notranslate nohighlight">\(M\)</span> (<span class="math notranslate nohighlight">\(\mathrm{kg \ mol^{–1}}\)</span>) is the molar mass.
+The definition of the molar heat capacity, <span class="math notranslate nohighlight">\(C_p = \dv{H}{T}\)</span> allows us to rewrite the above</p>
+<div class="math notranslate nohighlight" id="equation-hc-p-as-alt">
+<span class="eqno">(5.8)<a class="headerlink" href="#equation-hc-p-as-alt" title="Link to this equation">#</a></span>\[C_p \dd{T} = –Mg \dd{z}\]</div>
+<p>So, the altitude dependence of temperature is given by <span class="math notranslate nohighlight">\(\dv{T}{z} = – M g / Cp\)</span></p>
+<p>Nitrogen and oxygen have very similar heat capacities of about <span class="math notranslate nohighlight">\(29 \mathrm{J \ mol^{-1} \ K^{–1}}\)</span> and so using an average molar mass for air of <span class="math notranslate nohighlight">\(28.8 \mathrm{g} \ \mathrm{mol^{–1}}\)</span>, we get a rate of change of temperature with altitude</p>
+<div class="math notranslate nohighlight" id="equation-abd-lapse-rate">
+<span class="eqno">(5.9)<a class="headerlink" href="#equation-abd-lapse-rate" title="Link to this equation">#</a></span>\[\dv{T}{z} = -9.8 \mathrm{K \ km^{-1}}\]</div>
+<p>which is termed the <em>(dry) adiabatic lapse rate</em>, or <span class="math notranslate nohighlight">\(\Gamma_{ad} = 9.8 \ \mathrm{K \ km^{–1}}\)</span>.
+In fact latent heat release from condensing water vapour heats the ascending air, leading to an average actual (environmental) lapse rate, <span class="math notranslate nohighlight">\(\Gamma_{\mathrm{env}} = 6.5 \ \mathrm{K \ km^{–1}}\)</span>.
+This drop in temperature with altitude can be seen in <a class="reference internal" href="#atmosphere-t"><span class="std std-numref">Fig. 5.1</span></a></p>
+</section>
+<section id="the-stratospheric-temperature-profile-heating-from-above">
+<h3>The stratospheric temperature profile – heating from above<a class="headerlink" href="#the-stratospheric-temperature-profile-heating-from-above" title="Link to this heading">#</a></h3>
+<p>By contrast, the stratosphere is heated from above.
+Solar radiation is absorbed by <span class="math notranslate nohighlight">\(\mathrm{O_3}\)</span> (and at higher altitudes by <span class="math notranslate nohighlight">\(\mathrm{O_2}\)</span>).</p>
+<figure class="margin-caption align-default" id="ox-absorption">
+<a class="reference internal image-reference" href="../_images/figure19.2.png"><img alt="../_images/figure19.2.png" src="../_images/figure19.2.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5.2 </span><span class="caption-text">Absorption bands of O2 and O3.</span><a class="headerlink" href="#ox-absorption" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Absorption of a photon of sufficient energy (<span class="math notranslate nohighlight">\(h \nu\)</span>) by <span class="math notranslate nohighlight">\(\mathrm{O_3}\)</span> in the Hartley and Huggins bands leads to the dissociation of <span class="math notranslate nohighlight">\(\mathrm{O_3}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{O_3} + h \nu \rightarrow \mathrm{O} + \mathrm{O_2}\]</div>
+<p>Recombination of <span class="math notranslate nohighlight">\(\mathrm{O}\)</span> in the presence of a third body, <span class="math notranslate nohighlight">\(\mathrm{M}\)</span>, then releases the <span class="math notranslate nohighlight">\(\mathrm{O - O_2}\)</span> bond energy in the form of kinetic energy (heat)</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{O} + \mathrm{O_2} + \mathrm{M} \rightarrow \mathrm{O_3} + \mathrm{M^*}\]</div>
+<p>What is a third body? Most likely <span class="math notranslate nohighlight">\(\mathrm{N_2}\)</span> as this is the most abundant gas in the atmosphere, but essentially <span class="math notranslate nohighlight">\(\mathrm{M}\)</span> could be anything.</p>
+</section>
+</section>
+<section id="vertical-stability-of-the-atmosphere">
+<h2>Vertical stability of the atmosphere<a class="headerlink" href="#vertical-stability-of-the-atmosphere" title="Link to this heading">#</a></h2>
+<p>The atmospheric temperature profile is important because it determines the vertical stability (speed of vertical mixing) of the atmosphere.</p>
+<p>Consider an idealised temperature profile (<a class="reference internal" href="#unstable-t"><span class="std std-numref">Fig. 5.3</span></a>) with an <em>environmental lapse rate</em> (solid line) which <em>in this illustrative case</em> is taken to be larger (i.e. more negative) than the adiabatic lapse rate (dashed line).
+As a notional air parcel is displaced upwards from point A, it will cool at the adiabatic lapse rate by an amount <span class="math notranslate nohighlight">\(\dd{T}\)</span>.
+However, at point B the environmental temperature is <em>cooler</em> by a further amount <span class="math notranslate nohighlight">\(\dd{T}\)</span>.</p>
+<p>The notional air parcel is thus warmer than its surroundings, is less dense, and will thus continue to rise – the air has become convectively unstable.
+Similarly, if the parcel is displaced downwards, the same argument leads to the parcel continuing to descend.
+In the troposphere where this condition is often satisfied, overturning readily occurs leading to rapid vertical transport and short transport times (typically weeks or less).
+If the environmental lapse rate <span class="math notranslate nohighlight">\(\Gamma_{\mathrm{env}} \sim \Gamma_{ad}\)</span>, the air is said to be <em>neutrally</em> stable.</p>
+<figure class="margin-caption align-default" id="unstable-t">
+<a class="reference internal image-reference" href="../_images/figure19.3.png"><img alt="../_images/figure19.3.png" src="../_images/figure19.3.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5.3 </span><span class="caption-text">Temperature profile for unstable conditions</span><a class="headerlink" href="#unstable-t" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Consider the case when the vertical temperature gradient is positive (see <a class="reference internal" href="#stable-t"><span class="std std-numref">Fig. 5.4</span></a>).
+As above, upward displacement of the air parcel leads to a cooling of <span class="math notranslate nohighlight">\(\Delta T\)</span>.
+However now the environmental temperature is <em>higher</em> by <span class="math notranslate nohighlight">\(\dd{T}\)</span>, and so now the displaced parcel is cooler and thus more dense than its surroundings, and thus descends.
+As above, if it displaced downwards, it has a tendency to rise.
+Under these conditions the atmosphere is now stable to vertical displacements.
+These conditions are those found in the stratosphere, in which vertical transport is therefore slow (months – years).</p>
+<figure class="margin-caption align-default" id="stable-t">
+<img alt="../_images/figure19.4.png" src="../_images/figure19.4.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 5.4 </span><span class="caption-text">Temperature profile for stable conditions</span><a class="headerlink" href="#stable-t" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The stable stratosphere thus acts as a ‘lid’ on the less stable troposphere, with the tropopause acting as a barrier to transport between the two regions.
+Gases emitted from the Earth’s surface thus become rapidly mixed throughout the troposphere, and are only transported slowly to the stratosphere.
+If they can be effectively <em>scavenged</em> when in the troposphere, they are unlikely to reach the upper atmosphere in significant concentrations.</p>
+<section id="radiative-properties-of-gases-and-particles">
+<h3>Radiative properties of gases and particles<a class="headerlink" href="#radiative-properties-of-gases-and-particles" title="Link to this heading">#</a></h3>
+<p>In <a class="reference internal" href="../00_intro/l2.html#lecture-2"><span class="std std-numref">Section 1.2</span></a> we derived a simple energy balance model of the atmosphere.
+In this model we considered that the sun provides incoming short wave length radiation (<span class="math notranslate nohighlight">\(\lambda &lt; 500 \ \mathrm{nm}\)</span>) and the Earth’s surface acts as a source of long-wavelength radiation.
+The difference in the emission of radiation from a black body can be described by Wien’s displacement law:</p>
+<div class="math notranslate nohighlight" id="equation-wiens-law">
+<span class="eqno">(5.10)<a class="headerlink" href="#equation-wiens-law" title="Link to this equation">#</a></span>\[\lambda_\mathrm{max} = \frac{b}{T}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\lambda_\mathrm{max}\)</span> is the wavelength that is a the peak of the curve, <span class="math notranslate nohighlight">\(b\)</span> is Wein’s displacement constant,
+and <span class="math notranslate nohighlight">\(T\)</span> is the absolute temperature of the black-body in Kelvin.</p>
+<figure class="margin-caption align-default" id="black-body">
+<a class="reference internal image-reference" href="../_images/figure19.5.png"><img alt="../_images/figure19.5.png" src="../_images/figure19.5.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5.5 </span><span class="caption-text">Black body emission curves for the sun and Earth (a) and ground level emissivity (b).</span><a class="headerlink" href="#black-body" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In panel (b) of <a class="reference internal" href="#black-body"><span class="std std-numref">Fig. 5.5</span></a> we can see that different molecules absorb the different wavelengths of radiation emitted by the sun and Earth.
+For an absorption to occur a molecule must be able to undergo a change in energy level (translational, rotation, vibrational or electronic).
+Absorption in the microwave region are typically associated with rotational transitions; Absorption in the infrared region typically are related to vibrational transitions; Absorption in the UV is typically associated with electronic transitions.</p>
+<p>To absorb or emit radiation a molecule must possess a changing <em>electric dipole</em>.
+Molecules can have changing dipoles in several ways:</p>
+<p><strong>The molecule may have a permanent dipole – as the molecule rotates the dipole changes at the rotational frequency. For example:</strong></p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\mathrm{O_2}\)</span> or <span class="math notranslate nohighlight">\(\mathrm{N_2}\)</span>:
+Both are <em>homonuclear diatomic</em> molecules.
+Neither have permanent dipole moments, hence neither have pure rotational absorption spectra.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathrm{CO_2}\)</span>:
+<span class="math notranslate nohighlight">\(\mathrm{CO_2}\)</span> is a <em>linear</em> symmetric molecule, and hence <em>does not</em> have a permanent dipole moment.
+As a result it <em>does not</em> have a pure rotational absorption spectrum.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathrm{H_2O}\)</span>:
+<span class="math notranslate nohighlight">\(\mathrm{H_2O}\)</span> is a <em>bent</em> symmetric molecule, and hence <em>does</em> have a permanent dipole moment.
+As a result it <em>does</em> have a pure rotational absorption spectrum.</p></li>
+</ol>
+<p><strong>The molecule may have a dipole which changes as the molecule vibrates:</strong></p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\mathrm{O_2}\)</span> or <span class="math notranslate nohighlight">\(\mathrm{N_2}\)</span>:
+Both are <em>homonuclear diatomic</em> molecules.
+Because they have no dipoles, as they vibrate they can have no changing dipole – <em>no</em> vibrational spectrum.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathrm{CO_2}\)</span>:
+<span class="math notranslate nohighlight">\(\mathrm{CO_2}\)</span> does not have a permanent dipole moment, however as it vibrates, <em>some</em> of the vibrations create vibrating dipoles.
+As a result it <em>does</em> have a vibrational spectrum.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathrm{H_2O}\)</span>:
+As <span class="math notranslate nohighlight">\(\mathrm{H_2O}\)</span> vibrates, <em>all</em> of the vibrations create vibrating dipoles.
+As a result, like <span class="math notranslate nohighlight">\(\mathrm{CO_2}\)</span>, it <em>does</em> have a vibrational spectrum.</p></li>
+</ol>
+<p>These gases that can absorb the Earth’s outgoing long-wave radiation “trap” it and so distort the simple energy balance model we produced in <a class="reference internal" href="../00_intro/l2.html#lecture-2"><span class="std std-numref">Section 1.2</span></a>.</p>
+<p>The abundance of these gases has changed considerably over time.</p>
+<figure class="margin-caption align-default" id="ice-core-gases">
+<a class="reference internal image-reference" href="../_images/figure19.6.png"><img alt="../_images/figure19.6.png" src="../_images/figure19.6.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5.6 </span><span class="caption-text">Atmospheric well-mixed greenhouse gas (WMGHG) concentrations from ice cores.
+(a) Records during the last 800 kyr with the Last Glacial Maximum (LGM) to Holocene transition as inset.
+(b) Multiple high-resolution records over the CE. The horizontal black bars in panel (a) inset indicate LGM and Last Deglacial Termination (LDT) respectively.
+The red and blue lines in (b) are 100-year running averages for CO2 and N2O concentrations, respectively.
+The numbers with vertical arrows in (b) are instrumentally measured concentrations in 2019.
+Source IPCC AR6.</span><a class="headerlink" href="#ice-core-gases" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./04_atmosphere"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Air Pollution and Atmospheric Chemistry</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="l20.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5.2. </span>Air pollution</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-the-atmosphere">Introduction to the atmosphere</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variation-of-atmospheric-pressure-with-altitude">Variation of atmospheric pressure with altitude</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deviations-from-a-uniform-temperature-profile">Deviations from a uniform temperature profile</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-tropospheric-temperature-profile-heating-from-below">The tropospheric temperature profile – heating from below</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-stratospheric-temperature-profile-heating-from-above">The stratospheric temperature profile – heating from above</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vertical-stability-of-the-atmosphere">Vertical stability of the atmosphere</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#radiative-properties-of-gases-and-particles">Radiative properties of gases and particles</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By the QES Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

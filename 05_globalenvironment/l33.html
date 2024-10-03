@@ -1,0 +1,628 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>6.8. Shallow wind-forced ocean circulation &#8212; My Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/admonitions.css?v=1588abde" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams", "[tex]/mhchem", "[tex]/color"]}, "tex": {"packages": ["base", "physics", "ams", "mhchem", "color"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '05_globalenvironment/l33';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6.9. Thermohaline Circulation" href="l34.html" />
+    <link rel="prev" title="6.7. Stommel box model for ocean heat transport" href="l32.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="My Jupyter Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My Jupyter Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../00_intro/intro.html">1. Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l1.html">1.1. Course Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l2.html">1.2. Where does the energy come from on Earth?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l3.html">1.3. The Carbon Cycle</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01_groundwater/intro.html">2. Groundwater</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l4.html">2.1. Groundwater Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l5.html">2.2. Why water moves beneath the surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l6.html">2.3. How we measure and understand water movement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l7.html">2.4. Groundwater challenges and sustainable groundwater</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03_rivers/intro.html">3. Surface water and Flooding</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03_rivers/l13.html">3.1. Catchment and drainage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_rivers/l14.html">3.2. 1D model of drainage into a river</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_rivers/l15.html">3.3. River flows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_rivers/l16.html">3.4. Reservoirs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_rivers/l17.html">3.5. Flood waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_rivers/l18.html">3.6. Flooding</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02_cryosphere/intro.html">4. Cryosphere</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02_cryosphere/l8.html">4.1. Ice in the polar regions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_cryosphere/l9.html">4.2. The growth and melting of ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_cryosphere/l10.html">4.3. The extent of sea ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_cryosphere/l11.html">4.4. Ice sheets and the flow of glacial ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_cryosphere/l12.html">4.5. Floating ice shelves and the flow of glacial ice</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04_atmosphere/intro.html">5. Air Pollution and Atmospheric Chemistry</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04_atmosphere/l19.html">5.1. An overview of the atmosphere</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_atmosphere/l20.html">5.2. Air pollution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_atmosphere/l21.html">5.3. The chemistry of pollutants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_atmosphere/l22.html">5.4. Aerosols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_atmosphere/l23.html">5.5. Air pollution and climate</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">6. Global Environment</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="l26.html">6.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l27.html">6.2. Equations of motion on the rotating earth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l28.html">6.3. Scales of motion in the atmosphere and ocean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l29.html">6.4. Structure and mean circulation of the atmosphere</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l30.html">6.5. Atmospheric heat transport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l31.html">6.6. 2-box model for the global heat distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l32.html">6.7. Stommel box model for ocean heat transport</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.8. Shallow wind-forced ocean circulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l34.html">6.9. Thermohaline Circulation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06_oceancarbon/00_intro.html">7. Ocean Carbon</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../06_oceancarbon/01_3box.html">7.1. How much carbon is in the ocean?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_oceancarbon/02_solubility.html">7.2. The Solubility Pump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_oceancarbon/03_biopump.html">7.3. The Biological Pump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_oceancarbon/04_carbonatepump.html">7.4. The Carbonate Pump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_oceancarbon/05_futureoceans.html">7.5. Future Oceans</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07_landcarbon/intro.html">8. Terrestrial Carbon</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../07_landcarbon/l40.html">8.1. Plants, Soils and Eddies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07_landcarbon/l41.html">8.2. The Methane Cycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07_landcarbon/l42.html">8.3. The Methane Budget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07_landcarbon/l43.html">8.4. Methane Sources</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08_polarcasestudy/intro.html">9. Polar Case Study</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../08_polarcasestudy/l44.html">9.1. The Arctic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08_polarcasestudy/l45.html">9.2. The Antarctic</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../10_energytransitions/intro.html">10. Energy Transitions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../10_energytransitions/l49.html">10.1. Wind Power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_energytransitions/l50.html">10.2. Solar Power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_energytransitions/l51.html">10.3. Energy Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_energytransitions/l52.html">10.4. Carbon Removal and Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_energytransitions/l53.html">10.5. Heating and Heat Transfer in Buildings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_energytransitions/l54.html">10.6. Heat pumps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_energytransitions/l55.html">10.7. Cars and Minerals</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/05_globalenvironment/l33.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Shallow wind-forced ocean circulation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="shallow-wind-forced-ocean-circulation">
+<span id="lecture-33"></span><h1><span class="section-number">6.8. </span>Shallow wind-forced ocean circulation<a class="headerlink" href="#shallow-wind-forced-ocean-circulation" title="Link to this heading">#</a></h1>
+<p>In the previous section we described a box model for the ocean heat transport. A central feature of this model was a representation of the Thermohaline Circulation (THC) which transports warm water poleward near the ocean surface and returns cold water back to low latitudes in the deep ocean. In the next two sections, we will examine the physical processes that help to set the circulation in the near-surface and deep ocean. Understanding the drivers of the circulation is an important step if we want to understand how the system might change in the future (or how it was different in the past).</p>
+<figure class="margin-caption align-default" id="fig-ocean-circulation">
+<a class="reference internal image-reference" href="../_images/ocean-circulation.png"><img alt="../_images/ocean-circulation.png" src="../_images/ocean-circulation.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.25 </span><span class="caption-text">Shallow wind-driven circulation (white) and Thermohaline Circulation (black) drawn on a North/South section from the Atlantic Ocean showing temperature in color and contours.</span><a class="headerlink" href="#fig-ocean-circulation" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Conceptually, we can divide the ocean circulation into shallow wind-forced component and the deep Thermohaline Circulation (THC). <a class="reference internal" href="#fig-ocean-circulation"><span class="std std-numref">Fig. 6.25</span></a> sketches these two types of circulation on a temperature section from the Atlantic Ocean as a function of Latitude and depth. In this section we will focus on the shallow wind-forced circulation, and we will discuss the THC in the next section. It is important to note that these two circulation systems are not independent of one another, and despite its name, the Thermohaline Circulation is influenced by wind.</p>
+<figure class="margin-caption align-default" id="fig-lowlevel-wind">
+<a class="reference internal image-reference" href="../_images/lowlevel_wind.png"><img alt="../_images/lowlevel_wind.png" src="../_images/lowlevel_wind.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.26 </span><span class="caption-text">Average wind speed for the months of June - August at a height of 10m. Color shows the magnitude and arrows show the direction. From Kallberg et al. 1995.</span><a class="headerlink" href="#fig-lowlevel-wind" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><a class="reference internal" href="#fig-lowlevel-wind"><span class="std std-numref">Fig. 6.26</span></a> shows the average wind speed and direction at a height of 10m above the ground (or the sea). Note that the wind speed is relatively weak at this height over land due to the extra drag induced by vegetation and topography. The wind patterns that we see in <a class="reference internal" href="#fig-lowlevel-wind"><span class="std std-numref">Fig. 6.26</span></a> drive the ocean circulation. In particular, both hemispheres have westerly jets (wind coming from the west and going to the east) at mid-latitudes and trade winds in the opposite direction (blowing to the west) at low latitudes. Here, we will refer to the regions between the maxima of the trade winds and the westerly jets as the <em>subtropics</em>. Note that the trade winds are much more pronounced than in <a class="reference internal" href="l29.html#fig-climatological-wind"><span class="std std-numref">Fig. 6.14</span></a> since the trade winds are confined to low levels in the atmosphere. Also note that in the Northern Hemisphere summer, the westerly jet in the Northern Hemisphere is weaker than it would be in winter.</p>
+<p>When the wind blows over the ocean, it exerts a stress on the ocean surface, and this stress drives currents in the upper ocean. These currents are strongly modified by the Coriolis acceleration, and this has important impacts on the distribution of nutrients and primary production in the upper ocean. We can model the wind stress and study its effects by adding an additional force to our equations of motion. Specifically, the new force will be the derivative of a viscous stress, and the viscous stress is proportional to the vertical derivative of the horizontal velocity where the constant of propotionality is the <em>viscosity</em> \footnote{In reality the stress from the wind is transmitted to the ocean through complicated processes including breaking waves. However, it is common to model this using a viscous stress as we do here, and the mechanism by which the stress is transmitted from the atmosphere to the ocean isn’t critical to the ocean’s response.}. These are the same ideas that we used in the cryosphere lectures.</p>
+<p>Specifically, the equations that we will consider are</p>
+<div class="math notranslate nohighlight" id="equation-eq-momentum-with-viscosity">
+<span class="eqno">(6.35)<a class="headerlink" href="#equation-eq-momentum-with-viscosity" title="Link to this equation">#</a></span>\[\frac{\partial \mathbf{u}}{\partial t} + f \hat{\mathbf{z}}\times \mathbf{u} = -\frac{1}{\rho}\nabla p -g \hat{\mathbf{z}} + \nu \frac{\partial^2 \mathbf{u}}{\partial z^2}.\]</div>
+<p>where <span class="math notranslate nohighlight">\(\nu\)</span> is the <em>kinematic viscosity</em> and has units of length squared per unit time. Note that the last term in Eq. <a class="reference internal" href="#equation-eq-momentum-with-viscosity">(6.35)</a> only involves vertical derivatives. The full equations also involve horizontal derivatives, but these are typically small compared to the vertical derivatives, so we neglect them.</p>
+<p>Since we are interested in the steady-state response of the ocean to wind forcing, we will neglect the time derivative in Eq. <a class="reference internal" href="#equation-eq-momentum-with-viscosity">(6.35)</a>. For simplicity we will also neglect the horizontal components of the pressure gradient. This amounts to assuming that the ocean is uniform horizontally. Then, the horizontal components of Eq. <a class="reference internal" href="#equation-eq-momentum-with-viscosity">(6.35)</a> are:</p>
+<div class="math notranslate nohighlight" id="equation-eq-viscous-momentum">
+<span class="eqno">(6.36)<a class="headerlink" href="#equation-eq-viscous-momentum" title="Link to this equation">#</a></span>\[\begin{split}-f v &amp;= \nu \frac{\partial^2 u}{\partial z^2},\\
+f u &amp;= \nu \frac{\partial^2 v}{\partial z^2}.\end{split}\]</div>
+<p>Now, let’s integrate these equations in height from a depth, <span class="math notranslate nohighlight">\(z=-h\)</span> to the ocean surface, which we will approximate as <span class="math notranslate nohighlight">\(z=0\)</span> (neglecting surface waves):</p>
+<div class="math notranslate nohighlight" id="equation-eq-integral-momentum">
+<span class="eqno">(6.37)<a class="headerlink" href="#equation-eq-integral-momentum" title="Link to this equation">#</a></span>\[\begin{split}-f \int_{-h}^0 v dz &amp;= \nu\left.\frac{\partial u}{\partial z}\right|_0 - \nu\left.\frac{\partial u}{\partial z}\right|_{-h},\\
+f \int_{-h}^0 u dz &amp;= \nu\left.\frac{\partial v}{\partial z}\right|_0 - \nu\left.\frac{\partial v}{\partial z}\right|_{-h}.\end{split}\]</div>
+<p>The terms on the right hand side can be interpreted as the difference between the viscous stress at <span class="math notranslate nohighlight">\(z=-h\)</span> and <span class="math notranslate nohighlight">\(z=0\)</span>. Next, let’s assume that <span class="math notranslate nohighlight">\(z=-h\)</span> is deep enough so that the effects of wind aren’t directly felt and the viscous stress vanishes (we will give a scaling for this depth below). The wind stress <span class="math notranslate nohighlight">\(\mathbf{\tau}^w\)</span> can be represented as the viscous stress at the ocean surface (<span class="math notranslate nohighlight">\(z=0\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{\tau}^w = \rho \nu \frac{\partial \mathbf{u}}{\partial z}.\]</div>
+<p>Suppose that the wind stress is purely aligned with the <span class="math notranslate nohighlight">\(x\)</span> direction, <span class="math notranslate nohighlight">\(\mathbf{\tau}^w=\tau^w \hat{\mathbf{x}}\)</span>. Eq. <a class="reference internal" href="#equation-eq-integral-momentum">(6.37)</a> then becomes</p>
+<div class="math notranslate nohighlight" id="equation-eq-ekman-transport">
+<span class="eqno">(6.38)<a class="headerlink" href="#equation-eq-ekman-transport" title="Link to this equation">#</a></span>\[\begin{split}\int_{-h}^0 v dz &amp;= -\frac{\tau^w}{\rho f}
+\\
+\int_{-h}^0 u dz &amp;= 0.\end{split}\]</div>
+<p>Remarkably, the depth-integrated velocity in the direction of the wind is zero! Instead, the depth-integrated velocity is directed 90<span class="math notranslate nohighlight">\(^\circ\)</span> to the right of the wind stress in the Northern Hemisphere where <span class="math notranslate nohighlight">\(f&gt;0\)</span>.</p>
+<figure class="margin-caption align-default" id="fig-microplastics">
+<a class="reference internal image-reference" href="../_images/microplastics.png"><img alt="../_images/microplastics.png" src="../_images/microplastics.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.27 </span><span class="caption-text">Concentration of microplastics from ship-based surveys. From van Sebille et al.\ 2015.</span><a class="headerlink" href="#fig-microplastics" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In the subtropics, we can see that the wind patterns will lead to a depth-integrated velocity that <em>converges</em> in the middle of the ocean basin. This converging water carries with it floating material which then accumulates in the middle of the ocean basins. This leads to the ‘garbage patches’ that have been observed in the middle of the ocean basins. <a class="reference internal" href="#fig-microplastics"><span class="std std-numref">Fig. 6.27</span></a> shows an estimate of the concentration of microplastics based on ship surveys.</p>
+<figure class="margin-caption align-default" id="fig-continuity-sketch">
+<a class="reference internal image-reference" href="../_images/continuity_sketch.jpeg"><img alt="../_images/continuity_sketch.jpeg" src="../_images/continuity_sketch.jpeg" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.28 </span><span class="caption-text">Sketch illustrating volume conservation in a square control volume</span><a class="headerlink" href="#fig-continuity-sketch" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In regions where the wind-forced flow is convergent, the water has to go somewhere and hence the surface waters in these regions move down into the ocean interior. We can show this mathematically by considering a small cube of water as sketched in <a class="reference internal" href="#fig-continuity-sketch"><span class="std std-numref">Fig. 6.28</span></a>. Let the size of the cube on any single side be <span class="math notranslate nohighlight">\(l\)</span>. Let <span class="math notranslate nohighlight">\(x,y,z\)</span> denote the bottom corner of the cube and let <span class="math notranslate nohighlight">\((x+l, y+l, z+l)\)</span> denote the opposite corner. Water can flow in and out of the cube, but to conserve mass, the water flowing in has to be balanced by water flowing out. Hence,</p>
+<div class="math notranslate nohighlight">
+\[u(x+l) + v(y+l) + w(z+l) = u(x) + v(y).\]</div>
+<p>If we move all terms to the same side of the equation and divide by <span class="math notranslate nohighlight">\(l\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[\frac{u(x+l)-u(x)}{l} + \frac{v(y+l)-v(y)}{l} + \frac{w(z+l)-w(z)}{l} = 0.\]</div>
+<p>If we then take the limit as <span class="math notranslate nohighlight">\(l\rightarrow 0\)</span>, we recognize each of these terms as a partial derivative, so that</p>
+<div class="math notranslate nohighlight" id="equation-eq-continuity">
+<span class="eqno">(6.39)<a class="headerlink" href="#equation-eq-continuity" title="Link to this equation">#</a></span>\[\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} + \frac{\partial w}{\partial z} = 0,\]</div>
+<p>or in vector form, <span class="math notranslate nohighlight">\(\nabla \cdot \mathbf{u}=0\)</span>. This is commonly known as the <em>continuity equation</em>. If we integrate Eq. <a class="reference internal" href="#equation-eq-continuity">(6.39)</a> from <span class="math notranslate nohighlight">\(z=-h\)</span> to <span class="math notranslate nohighlight">\(z=0\)</span>, we have</p>
+<div class="math notranslate nohighlight" id="equation-eq-continuity-integrated">
+<span class="eqno">(6.40)<a class="headerlink" href="#equation-eq-continuity-integrated" title="Link to this equation">#</a></span>\[\frac{\partial}{\partial x}\int_{z=-h}^0 u dz + \frac{\partial}{\partial y}\int_{-h}^0 v dz + w(z=0)-w(z=-h)=0.\]</div>
+<p>Now, let’s apply the continuity equation to the wind-forced flow in the upper ocean. First, since we are considering steady flow on large scales, we can safely assume that <span class="math notranslate nohighlight">\(w(z=0)=0\)</span>. In the case when the wind stress is aligned with the <span class="math notranslate nohighlight">\(x\)</span>-direction, we can combine Eqns.\ <a class="reference internal" href="#equation-eq-ekman-transport">(6.38)</a> and <a class="reference internal" href="#equation-eq-continuity-integrated">(6.40)</a> to give</p>
+<div class="math notranslate nohighlight">
+\[w(z=-h)=-\frac{\partial}{\partial y}\left(\frac{\tau^w}{\rho f}\right).\]</div>
+<p>Hence, in the Northern Hemisphere subtropics, where <span class="math notranslate nohighlight">\(\partial \tau^w/\partial y&gt;0\)</span>, we have <span class="math notranslate nohighlight">\(w(z=-h)&lt;0\)</span> as we anticipated.</p>
+<figure class="margin-caption align-default" id="fig-ekman-pumping">
+<a class="reference internal image-reference" href="../_images/ekman_pumping.png"><img alt="../_images/ekman_pumping.png" src="../_images/ekman_pumping.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.29 </span><span class="caption-text">Time-averaged vertical velocity in the upper ocean. Red shading indicates downward motion and green indicates upward motion. The contour labels are in meters per year. From Wunsch, 2011.</span><a class="headerlink" href="#fig-ekman-pumping" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We could extend this analysis for the wind stress vector (without assuming that it is aligned with the <span class="math notranslate nohighlight">\(x\)</span>-axis). <a class="reference internal" href="#fig-ekman-pumping"><span class="std std-numref">Fig. 6.29</span></a> shows the time-averaged vertical velocity in the upper ocean (at a depth of about 100m). Comparing with <a class="reference internal" href="#fig-lowlevel-wind"><span class="std std-numref">Fig. 6.26</span></a>, we generally see <em>downwelling</em> in regions where the wind patterns will give a <em>convergent</em> steady circulation, and <em>upwelling</em> where the wind patterns will give a <em>divergent</em> steady circulation.</p>
+<p>The downwelling regions in the middle of the ocean basins leads to low biological productivity. Away from the coastlines, microalgae (phytoplankton) growing in the upper ocean tend to deplete the surface waters of essential nutrients. When phytoplankton die, they sink and are eventually broken down by bacteria into inorganic material. This re-supplies nutrients to the ocean interior.</p>
+<figure class="margin-caption align-default" id="fig-ewoce-nitrate">
+<a class="reference internal image-reference" href="../_images/ewoce_nitrate.png"><img alt="../_images/ewoce_nitrate.png" src="../_images/ewoce_nitrate.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.30 </span><span class="caption-text">Nitrate concentration as a function of latitude and time for the Atlantic Ocean. The downwelling wind-forced ocean circulation is indicated in black arrow.</span><a class="headerlink" href="#fig-ewoce-nitrate" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In regions where <span class="math notranslate nohighlight">\(d\tau^w/dy&gt;0\)</span>, including the equatorial regions (between the trade winds and the equator) and high latitudes (north of the westerly winds), wind-forced upwelling brings nutrients back to the surface. As a result, these regions are highly productive. On the other hand, when <span class="math notranslate nohighlight">\(d\tau^w/dy&lt;0\)</span>, low nutrient water is pushed down into the ocean interior, and the near-surface nutrient concentrations remain low. As a result, these regions have low biological productivity. We can see the tendency for low nutrient waters to be pushed down into the ocean interior in <a class="reference internal" href="#fig-ewoce-nitrate"><span class="std std-numref">Fig. 6.30</span></a> which shows nitrate (an important nutrient) on a north/south section of the Atlantic.</p>
+<figure class="margin-caption align-default" id="fig-seawifs-chlorophyll">
+<a class="reference internal image-reference" href="../_images/seawifs_chlorophyll.png"><img alt="../_images/seawifs_chlorophyll.png" src="../_images/seawifs_chlorophyll.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.31 </span><span class="caption-text">Mean (time-averaged) near-surface chlorophyll concentration inferred from an ocean color satellite.</span><a class="headerlink" href="#fig-seawifs-chlorophyll" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><a class="reference internal" href="#fig-seawifs-chlorophyll"><span class="std std-numref">Fig. 6.31</span></a> shows a time-average of the near-surface chlorophyll concentration inferred from an ocean color satellite. This is plotted using a logarithmic colorbar where green is about 10 times larger than blue and red is about 10 times larger than green. The patterns of high and low chlorophyll are generally what we would expect based on the influence of the wind-forced circulation described above.</p>
+<p>Finally, let’s use a scaling analysis to estimate the depth over which the wind forcing penetrates. Let <span class="math notranslate nohighlight">\(U\)</span> be a characteristic horizontal velocity and <span class="math notranslate nohighlight">\(H\)</span> be a characteristic vertical length scale (which we ultimately want to find). Eq. <a class="reference internal" href="#equation-eq-momentum-with-viscosity">(6.35)</a> then suggests that</p>
+<div class="math notranslate nohighlight">
+\[fU \sim \nu \frac{1}{H} \left( \frac{U}{H} \right),\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight" id="equation-eq-viscous-ekman-scaling">
+<span class="eqno">(6.41)<a class="headerlink" href="#equation-eq-viscous-ekman-scaling" title="Link to this equation">#</a></span>\[H \sim \sqrt{\frac{\nu}{f}}.\]</div>
+<p>The kinematic viscosity of seawater is about <span class="math notranslate nohighlight">\(\nu=10^{-6} \mbox{m}^2/\mbox{s}\)</span>. If we use <span class="math notranslate nohighlight">\(f=10^{-4} \mbox{s}^{-1}\)</span> which is characteristic of mid-latitudes, then we have <span class="math notranslate nohighlight">\(H\simeq 10\)</span>cm. In reality, the wind-forced circulation is much deeper than this. Instead of molecular viscosity, momentum is carried down by turbulent eddies. We can estimate this like we did in the atmosphere lectures by invoking a turbulent viscosity, which scales as the product of a turbulent velocity scale, <span class="math notranslate nohighlight">\(u^*\)</span>, and the length scale, <span class="math notranslate nohighlight">\(H\)</span> (assuming that the size of turbulent eddies matches the size of the wind-forced layer) such that <span class="math notranslate nohighlight">\(\nu_t\sim u^*H\)</span>. If we use this scaling in Eq. <a class="reference internal" href="#equation-eq-viscous-ekman-scaling">(6.41)</a>, we get</p>
+<div class="math notranslate nohighlight">
+\[H \sim \sqrt{\frac{u^*H}{f}}.\]</div>
+<p>Solving for H gives <span class="math notranslate nohighlight">\(H=u^*/f\)</span>. We can get an expression for the velocity scale by noting that the units of <span class="math notranslate nohighlight">\(\tau^w/\rho\)</span> are</p>
+<div class="math notranslate nohighlight">
+\[\left[\frac{\tau^w}{\rho}\right] = \left[\nu \frac{\partial u}{\partial z}\right] = \frac{L^2}{T^2},\]</div>
+<p>and hence <span class="math notranslate nohighlight">\(U\sim \sqrt{\tau^w/\rho}\)</span>. Using this in our scaling for <span class="math notranslate nohighlight">\(H\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[H \sim \frac{1}{f}\sqrt{\frac{\tau^w}{\rho}}.\]</div>
+<figure class="margin-caption align-default" id="fig-wind-stress">
+<a class="reference internal image-reference" href="../_images/microplastics.png"><img alt="../_images/microplastics.png" src="../_images/microplastics.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.32 </span><span class="caption-text">Mean wind stress magnitude over the surface of the ocean. From Cronin and Tozuka, 2016.</span><a class="headerlink" href="#fig-wind-stress" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><a class="reference internal" href="#fig-wind-stress"><span class="std std-numref">Fig. 6.32</span></a> shows a map of the time-averaged wind stress magnitude. A typical value is <span class="math notranslate nohighlight">\(\tau^w \simeq 0.1 \mbox{N}/\mbox{m}^2\)</span>. If we also use <span class="math notranslate nohighlight">\(\rho=1000 \mbox{kg}/\
+mbox{m}^3\)</span> and <span class="math notranslate nohighlight">\(f=10^{-4} \mbox{s}^{-1}\)</span>, then we have <span class="math notranslate nohighlight">\(H\simeq 100\)</span>m. This is a typical number for the depth of the wind-forced ocean circulation. Note that this is shallow compared to the full depth of the ocean in most places. In the next section we will examine the deeper Thermohaline Circulation.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./05_globalenvironment"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="l32.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">6.7. </span>Stommel box model for ocean heat transport</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="l34.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">6.9. </span>Thermohaline Circulation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By the QES Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

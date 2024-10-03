@@ -1,0 +1,693 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>3.2. 1D model of drainage into a river &#8212; My Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/admonitions.css?v=1588abde" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams", "[tex]/mhchem", "[tex]/color"]}, "tex": {"packages": ["base", "physics", "ams", "mhchem", "color"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '03_rivers/l14';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3.3. River flows" href="l15.html" />
+    <link rel="prev" title="3.1. Catchment and drainage" href="l13.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="My Jupyter Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My Jupyter Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../00_intro/intro.html">1. Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l1.html">1.1. Course Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l2.html">1.2. Where does the energy come from on Earth?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l3.html">1.3. The Carbon Cycle</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01_groundwater/intro.html">2. Groundwater</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l4.html">2.1. Groundwater Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l5.html">2.2. Why water moves beneath the surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l6.html">2.3. How we measure and understand water movement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l7.html">2.4. Groundwater challenges and sustainable groundwater</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">3. Surface water and Flooding</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="l13.html">3.1. Catchment and drainage</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.2. 1D model of drainage into a river</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l15.html">3.3. River flows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l16.html">3.4. Reservoirs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l17.html">3.5. Flood waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l18.html">3.6. Flooding</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02_cryosphere/intro.html">4. Cryosphere</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02_cryosphere/l8.html">4.1. Ice in the polar regions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_cryosphere/l9.html">4.2. The growth and melting of ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_cryosphere/l10.html">4.3. The extent of sea ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_cryosphere/l11.html">4.4. Ice sheets and the flow of glacial ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_cryosphere/l12.html">4.5. Floating ice shelves and the flow of glacial ice</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04_atmosphere/intro.html">5. Air Pollution and Atmospheric Chemistry</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04_atmosphere/l19.html">5.1. An overview of the atmosphere</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_atmosphere/l20.html">5.2. Air pollution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_atmosphere/l21.html">5.3. The chemistry of pollutants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_atmosphere/l22.html">5.4. Aerosols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_atmosphere/l23.html">5.5. Air pollution and climate</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05_globalenvironment/intro.html">6. Global Environment</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../05_globalenvironment/l26.html">6.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05_globalenvironment/l27.html">6.2. Equations of motion on the rotating earth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05_globalenvironment/l28.html">6.3. Scales of motion in the atmosphere and ocean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05_globalenvironment/l29.html">6.4. Structure and mean circulation of the atmosphere</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05_globalenvironment/l30.html">6.5. Atmospheric heat transport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05_globalenvironment/l31.html">6.6. 2-box model for the global heat distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05_globalenvironment/l32.html">6.7. Stommel box model for ocean heat transport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05_globalenvironment/l33.html">6.8. Shallow wind-forced ocean circulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05_globalenvironment/l34.html">6.9. Thermohaline Circulation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06_oceancarbon/00_intro.html">7. Ocean Carbon</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../06_oceancarbon/01_3box.html">7.1. How much carbon is in the ocean?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_oceancarbon/02_solubility.html">7.2. The Solubility Pump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_oceancarbon/03_biopump.html">7.3. The Biological Pump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_oceancarbon/04_carbonatepump.html">7.4. The Carbonate Pump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_oceancarbon/05_futureoceans.html">7.5. Future Oceans</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07_landcarbon/intro.html">8. Terrestrial Carbon</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../07_landcarbon/l40.html">8.1. Plants, Soils and Eddies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07_landcarbon/l41.html">8.2. The Methane Cycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07_landcarbon/l42.html">8.3. The Methane Budget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07_landcarbon/l43.html">8.4. Methane Sources</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08_polarcasestudy/intro.html">9. Polar Case Study</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../08_polarcasestudy/l44.html">9.1. The Arctic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08_polarcasestudy/l45.html">9.2. The Antarctic</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../10_energytransitions/intro.html">10. Energy Transitions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../10_energytransitions/l49.html">10.1. Wind Power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_energytransitions/l50.html">10.2. Solar Power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_energytransitions/l51.html">10.3. Energy Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_energytransitions/l52.html">10.4. Carbon Removal and Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_energytransitions/l53.html">10.5. Heating and Heat Transfer in Buildings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_energytransitions/l54.html">10.6. Heat pumps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_energytransitions/l55.html">10.7. Cars and Minerals</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/03_rivers/l14.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1D model of drainage into a river</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-speed">Flow speed</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deriving-the-advection-equation">Deriving the advection equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-the-advection-equation">Solving the advection equation</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="d-model-of-drainage-into-a-river">
+<span id="lecture-14"></span><h1><span class="section-number">3.2. </span>1D model of drainage into a river<a class="headerlink" href="#d-model-of-drainage-into-a-river" title="Link to this heading">#</a></h1>
+<p>In a catchment there are a series of drainage zones, each flowing into a stream and then into the river, in a hierarchical way.
+This leads to the question of how to build a model for the whole drainage basin which is more complex that the idealised bucket model.
+We also may use such a detailed model to assess the value of <span class="math notranslate nohighlight">\(\lambda\)</span> in the model based on the more detailed physical processes in a more complete model.
+To this end we consider the next step of development of the model which is to consider the drainage along the land from the watershed to a stream as shown in <a class="reference internal" href="#surface-drainage"><span class="std std-numref">Fig. 3.10</span></a>.</p>
+<figure class="margin-caption align-default" id="surface-drainage">
+<a class="reference internal image-reference" href="../_images/figure14.1.png"><img alt="../_images/figure14.1.png" src="../_images/figure14.1.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.10 </span><span class="caption-text">A more detailed surface drainage model showing the fractal nature of drainage networks.</span><a class="headerlink" href="#surface-drainage" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="flow-speed">
+<h2>Flow speed<a class="headerlink" href="#flow-speed" title="Link to this heading">#</a></h2>
+<p>Extending our model from 0D into 1D, adding a spatial dependence, we are going to need to assess the dominant controls on the fluid dynamics.
+The speed of the flow down the slope may be given in terms of the permeable flow relation; D’Arcy’s law, which we discussed in <a class="reference internal" href="../01_groundwater/l5.html#lecture-5"><span class="std std-numref">Section 2.2</span></a>.
+Flow through crops, wooded land or other surfaces provide the effective porous media with an effective permeability, <span class="math notranslate nohighlight">\(k\)</span>.</p>
+<p>In this case, the flow speed will be of the form</p>
+<aside class="units margin sidebar">
+<p class="sidebar-title">Units!</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+u &amp;= \mathrm{m~s^{-1}} \\
+\rho &amp;= \mathrm{kg~m^{-3}} \\
+g &amp;= \mathrm{m~s^{-2}} \\
+\theta &amp;= \mathrm{radians} \\
+\mu &amp;= \mathrm{kg~m^{-1}~s^{-1}} \\
+k &amp;= \mathrm{m^2} \\
+\end{split}\]</div>
+</aside>
+<div class="math notranslate nohighlight" id="equation-vegetated">
+<span class="eqno">(3.5)<a class="headerlink" href="#equation-vegetated" title="Link to this equation">#</a></span>\[u = \rho g \sin{(\theta)} \frac{k}{\mu}\]</div>
+<p>over the surface. The effective permeability may be quite high near the ground.</p>
+</section>
+<section id="deriving-the-advection-equation">
+<h2>Deriving the advection equation<a class="headerlink" href="#deriving-the-advection-equation" title="Link to this heading">#</a></h2>
+<p>We now wish to derive a relation describing how water is stored on and moves down our slope.
+We will do this by considering the flow of water into and out of a small space element on our slope, <span class="math notranslate nohighlight">\(\delta x\)</span>,
+as shown in <a class="reference internal" href="#surface-flow"><span class="std std-numref">Fig. 3.11</span></a>.</p>
+<figure class="margin-caption align-default" id="surface-flow">
+<a class="reference internal image-reference" href="../_images/figure14.2.png"><img alt="../_images/figure14.2.png" src="../_images/figure14.2.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.11 </span><span class="caption-text">A schematic model showing how surface water, <span class="math notranslate nohighlight">\(S\)</span>, flows downhill towards a stream.</span><a class="headerlink" href="#surface-flow" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The total amount of water stored in our space element is denoted by <span class="math notranslate nohighlight">\(S\)</span>.
+The sources of water to our element will be flow in from up slope, and rain, <span class="math notranslate nohighlight">\(R\)</span>.
+The sinks of water from our element will be flow out of the element down slope, and infiltration into the ground, <span class="math notranslate nohighlight">\(I\)</span>.</p>
+<p>The flow, <span class="math notranslate nohighlight">\(Q(x,t)\)</span>, at a point is calculated as the product of the amount of water <span class="math notranslate nohighlight">\(S\)</span>, multiplied by its speed <span class="math notranslate nohighlight">\(u\)</span>.
+Given that our speed down the slope, <span class="math notranslate nohighlight">\(u\)</span>, is constant in this formulation, we can use our diagram in <a class="reference internal" href="#surface-flow"><span class="std std-numref">Fig. 3.11</span></a> to identify the flow in from up-slope as <span class="math notranslate nohighlight">\(u S(x,t)\)</span>
+and the flow out down-slope as <span class="math notranslate nohighlight">\(-u S(x+\delta x, t)\)</span>.</p>
+<p>Therefore, balancing all inputs and outputs of water to our space element over a short period of time, <span class="math notranslate nohighlight">\(\delta t\)</span>, we get the relation:</p>
+<aside class="units margin sidebar">
+<p class="sidebar-title">Units!</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Q &amp;= \mathrm{m^3~s^{-1}} \\
+R, I &amp;= \mathrm{m~s^{-1}} \\
+S &amp;= \mathrm{m^2 \ (m^3 m^{-1})} \\
+L &amp;= \mathrm{m} \\
+\end{split}\]</div>
+</aside>
+<div class="math notranslate nohighlight">
+\[(S(x, t + \delta t) - S(x, t)) \delta x = R \delta x \delta t - I \delta x \delta t - (u S(x + \delta x, t) - u S(x, t)) \delta t\]</div>
+<p>And so dividing through by <span class="math notranslate nohighlight">\(\delta x\)</span> and <span class="math notranslate nohighlight">\(\delta t\)</span>, and then taking the limit in which <span class="math notranslate nohighlight">\(\delta x\)</span> and <span class="math notranslate nohighlight">\(\delta t\)</span> go to zero
+gives us the differential equation</p>
+<div class="math notranslate nohighlight" id="equation-advection-eqn">
+<span class="eqno">(3.6)<a class="headerlink" href="#equation-advection-eqn" title="Link to this equation">#</a></span>\[\frac{\partial S}{\partial t} = R - I - u \frac{\partial S}{\partial x}\]</div>
+<p>This is called the <strong>advection equation</strong> and it governs the change of surface storage along the surface from the watershed to the stream (in the direction of the flow along the surface).</p>
+</section>
+<section id="solving-the-advection-equation">
+<h2>Solving the advection equation<a class="headerlink" href="#solving-the-advection-equation" title="Link to this heading">#</a></h2>
+<p>To find the flux of water into the river, we need to evaluate <span class="math notranslate nohighlight">\(S(x,t)\)</span> at the river edge (i.e <span class="math notranslate nohighlight">\(x=L\)</span>).
+Therefore we need to solve the advection in case.
+Given that the advection equation has a characteristic speed <span class="math notranslate nohighlight">\(u\)</span>, we expect solutions that encode this.
+In order to use this intuition, we can apply a coordinate transform that moves us into the frame of reference of a parcel of water moving down the slope at a speed <span class="math notranslate nohighlight">\(u\)</span>.</p>
+<aside class="units margin sidebar">
+<p class="sidebar-title">Units!</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+W &amp;= \mathrm{m^2} \\
+\eta &amp;= \mathrm{m} \\
+\tau &amp;= \mathrm{s} \\
+\end{split}\]</div>
+</aside>
+<div class="math notranslate nohighlight">
+\[S(x,t) = W(\eta, \tau)\]</div>
+<p>Where <span class="math notranslate nohighlight">\(\eta = x - u t\)</span> and <span class="math notranslate nohighlight">\(\tau = t\)</span>.</p>
+<p>This leads to the relations:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\frac{\partial W}{\partial t} &amp;= - u \frac{\partial W}{\partial \eta} + \frac{\partial W}{\partial \tau} \\
+\frac{\partial W}{\partial x} &amp;= \frac{\partial W}{\partial \eta}
+\end{align}\end{split}\]</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Derivation</p>
+<p>We want to derive the new derivative relations for our coordinate transformation,
+Therefore, writing out the total derivative in <span class="math notranslate nohighlight">\(W\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\dd{W} = \pdv{W}{\tau} \dd{\tau} + \pdv{W}{\eta} \dd{\eta}\]</div>
+<p>We can then “divide through by <span class="math notranslate nohighlight">\(\dd{t}\)</span>”, which while not rigorous, is fine for a physical system like this one</p>
+<div class="math notranslate nohighlight">
+\[\pdv{W}{t} = \pdv{W}{\tau} \pdv{\tau}{t} + \pdv{W}{\eta} \pdv{\eta}{t}\]</div>
+<p>Then evaluating the derivatives of our coordinate transform</p>
+<div class="math notranslate nohighlight">
+\[\pdv{\tau}{t} = 1 \quad \pdv{\eta}{t}=-u\]</div>
+<p>and then substituting into our previous equation gives the required result</p>
+<div class="math notranslate nohighlight">
+\[\pdv{W}{t} = \pdv{W}{\tau} - u \pdv{W}{\eta}\]</div>
+<p>We could then repeat this analysis to get the equivalent result for <span class="math notranslate nohighlight">\(\pdv{W}{x}\)</span>.</p>
+</div>
+<p>Substituting these relations into <a class="reference internal" href="#equation-advection-eqn">(3.6)</a> we get</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial W}{\partial \tau} = R - I\]</div>
+<p>We can solve this equation by integrating with respect to <span class="math notranslate nohighlight">\(\tau\)</span> (recalling <span class="math notranslate nohighlight">\(R\)</span> and <span class="math notranslate nohighlight">\(I\)</span> are constant).
+This gives us a solution for a given (i.e. constant) value of <span class="math notranslate nohighlight">\(\eta\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[W(\eta, \tau) = W(\eta, 0) + (R - I) \tau\]</div>
+<p>Where <span class="math notranslate nohighlight">\(W(\eta, 0)\)</span> is our constant of integration representing the initial condition.
+This allows us to construct a <strong>characteristic diagram</strong> for the system, showing solutions in the <span class="math notranslate nohighlight">\(x\)</span> - <span class="math notranslate nohighlight">\(t\)</span> plane, along lines of constant <span class="math notranslate nohighlight">\(\eta\)</span>.
+This is shown in <a class="reference internal" href="#eta-constant"><span class="std std-numref">Fig. 3.12</span></a>.</p>
+<p>We want the solution when <span class="math notranslate nohighlight">\(x = L\)</span> (i.e. the value of <span class="math notranslate nohighlight">\(S\)</span> at the stream), shown as the dashed line intersecting the <span class="math notranslate nohighlight">\(x\)</span> axis in <a class="reference internal" href="#eta-constant"><span class="std std-numref">Fig. 3.12</span></a>.</p>
+<figure class="margin-caption align-default" id="eta-constant">
+<a class="reference internal image-reference" href="../_images/figure14.3.png"><img alt="../_images/figure14.3.png" src="../_images/figure14.3.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.12 </span><span class="caption-text">The characteristic diagram for the advection equation, showing lines of <span class="math notranslate nohighlight">\(\eta = \mathrm{constant}\)</span> on the <span class="math notranslate nohighlight">\(x\)</span> - <span class="math notranslate nohighlight">\(t\)</span> plane.</span><a class="headerlink" href="#eta-constant" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>There are two regions for the solution:</p>
+<ul class="simple">
+<li><p>Region 1. The set of points where <span class="math notranslate nohighlight">\(x = L\)</span> and <span class="math notranslate nohighlight">\(t \lt \frac{L}{u}\)</span>, for which lines <span class="math notranslate nohighlight">\(\eta = \mathrm{constant}\)</span> start on the x-axis at time = 0 (e.g. the line starting at <span class="math notranslate nohighlight">\(x_0\)</span>).
+For each of these lines, the time at which they reach the distance <span class="math notranslate nohighlight">\(x = L\)</span> is <span class="math notranslate nohighlight">\(t = \frac{(L-x_0)}{u}\)</span>;
+i.e. the time for the line of constant <span class="math notranslate nohighlight">\(\eta\)</span> starting at <span class="math notranslate nohighlight">\(x=x_0\)</span> at <span class="math notranslate nohighlight">\(t=0\)</span> to reach the line <span class="math notranslate nohighlight">\(x = L\)</span>.
+Therefore the value of <span class="math notranslate nohighlight">\(W\)</span> (and hence <span class="math notranslate nohighlight">\(S\)</span>) at time <span class="math notranslate nohighlight">\(t\)</span> and at <span class="math notranslate nohighlight">\(x = L\)</span> is <span class="math notranslate nohighlight">\(W=(R-I)t\)</span>.</p></li>
+<li><p>Region 2. The other region corresponds to the points <span class="math notranslate nohighlight">\(x=L\)</span> and <span class="math notranslate nohighlight">\(t \gt \frac{L}{u}\)</span>.
+In this region the lines of constant <span class="math notranslate nohighlight">\(\eta\)</span> which reach <span class="math notranslate nohighlight">\(x = L\)</span> for <span class="math notranslate nohighlight">\(t \gt \frac{L}{u}\)</span> start at <span class="math notranslate nohighlight">\(x = 0\)</span> at a time <span class="math notranslate nohighlight">\(t_0 \gt 0\)</span>.
+Hence, the time to reach the line <span class="math notranslate nohighlight">\(x = L\)</span> is <span class="math notranslate nohighlight">\(\frac{L}{u}\)</span>, and so at <span class="math notranslate nohighlight">\(x = L\)</span>, <span class="math notranslate nohighlight">\(W = (R-I) \frac{L}{u}\)</span> for <span class="math notranslate nohighlight">\(t \gt \frac{L}{u}\)</span>.</p></li>
+</ul>
+<p>As a result, the flux at <span class="math notranslate nohighlight">\(x = L\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+u S &amp;= u (R - I) t &amp;&amp; \mathrm{for} &amp;&amp; t \lt \frac{L}{u}\\
+u S &amp;= (R - I) L &amp;&amp; \mathrm{for} &amp;&amp; t \geq \frac{L}{u}
+\end{align}\end{split}\]</div>
+<p>Matching this latter solution for equilibrium with the equilibrium solution for the bucket model, we can identify the parameter <span class="math notranslate nohighlight">\(\lambda\)</span> in the bucket model as</p>
+<div class="math notranslate nohighlight">
+\[\lambda = \frac{L}{u}\]</div>
+<p>This is the time constant for reaching equilibrium between the surface water accumulation and flow into the streams.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./03_rivers"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="l13.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3.1. </span>Catchment and drainage</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="l15.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3.3. </span>River flows</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-speed">Flow speed</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deriving-the-advection-equation">Deriving the advection equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-the-advection-equation">Solving the advection equation</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By the QES Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

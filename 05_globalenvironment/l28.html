@@ -1,0 +1,563 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>6.3. Scales of motion in the atmosphere and ocean &#8212; My Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/admonitions.css?v=1588abde" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams", "[tex]/mhchem", "[tex]/color"]}, "tex": {"packages": ["base", "physics", "ams", "mhchem", "color"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '05_globalenvironment/l28';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="6.4. Structure and mean circulation of the atmosphere" href="l29.html" />
+    <link rel="prev" title="6.2. Equations of motion on the rotating earth" href="l27.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="My Jupyter Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My Jupyter Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../00_intro/intro.html">1. Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l1.html">1.1. Course Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l2.html">1.2. Where does the energy come from on Earth?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l3.html">1.3. The Carbon Cycle</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01_groundwater/intro.html">2. Groundwater</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l4.html">2.1. Groundwater Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l5.html">2.2. Why water moves beneath the surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l6.html">2.3. How we measure and understand water movement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l7.html">2.4. Groundwater challenges and sustainable groundwater</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03_rivers/intro.html">3. Surface water and Flooding</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03_rivers/l13.html">3.1. Catchment and drainage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_rivers/l14.html">3.2. 1D model of drainage into a river</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_rivers/l15.html">3.3. River flows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_rivers/l16.html">3.4. Reservoirs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_rivers/l17.html">3.5. Flood waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_rivers/l18.html">3.6. Flooding</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02_cryosphere/intro.html">4. Cryosphere</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02_cryosphere/l8.html">4.1. Ice in the polar regions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_cryosphere/l9.html">4.2. The growth and melting of ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_cryosphere/l10.html">4.3. The extent of sea ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_cryosphere/l11.html">4.4. Ice sheets and the flow of glacial ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_cryosphere/l12.html">4.5. Floating ice shelves and the flow of glacial ice</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04_atmosphere/intro.html">5. Air Pollution and Atmospheric Chemistry</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04_atmosphere/l19.html">5.1. An overview of the atmosphere</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_atmosphere/l20.html">5.2. Air pollution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_atmosphere/l21.html">5.3. The chemistry of pollutants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_atmosphere/l22.html">5.4. Aerosols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_atmosphere/l23.html">5.5. Air pollution and climate</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">6. Global Environment</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="l26.html">6.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l27.html">6.2. Equations of motion on the rotating earth</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">6.3. Scales of motion in the atmosphere and ocean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l29.html">6.4. Structure and mean circulation of the atmosphere</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l30.html">6.5. Atmospheric heat transport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l31.html">6.6. 2-box model for the global heat distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l32.html">6.7. Stommel box model for ocean heat transport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l33.html">6.8. Shallow wind-forced ocean circulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l34.html">6.9. Thermohaline Circulation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06_oceancarbon/00_intro.html">7. Ocean Carbon</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../06_oceancarbon/01_3box.html">7.1. How much carbon is in the ocean?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_oceancarbon/02_solubility.html">7.2. The Solubility Pump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_oceancarbon/03_biopump.html">7.3. The Biological Pump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_oceancarbon/04_carbonatepump.html">7.4. The Carbonate Pump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_oceancarbon/05_futureoceans.html">7.5. Future Oceans</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07_landcarbon/intro.html">8. Terrestrial Carbon</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../07_landcarbon/l40.html">8.1. Plants, Soils and Eddies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07_landcarbon/l41.html">8.2. The Methane Cycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07_landcarbon/l42.html">8.3. The Methane Budget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07_landcarbon/l43.html">8.4. Methane Sources</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08_polarcasestudy/intro.html">9. Polar Case Study</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../08_polarcasestudy/l44.html">9.1. The Arctic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08_polarcasestudy/l45.html">9.2. The Antarctic</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../10_energytransitions/intro.html">10. Energy Transitions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../10_energytransitions/l49.html">10.1. Wind Power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_energytransitions/l50.html">10.2. Solar Power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_energytransitions/l51.html">10.3. Energy Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_energytransitions/l52.html">10.4. Carbon Removal and Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_energytransitions/l53.html">10.5. Heating and Heat Transfer in Buildings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_energytransitions/l54.html">10.6. Heat pumps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../10_energytransitions/l55.html">10.7. Cars and Minerals</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/05_globalenvironment/l28.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Scales of motion in the atmosphere and ocean</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="scales-of-motion-in-the-atmosphere-and-ocean">
+<span id="lecture-28"></span><h1><span class="section-number">6.3. </span>Scales of motion in the atmosphere and ocean<a class="headerlink" href="#scales-of-motion-in-the-atmosphere-and-ocean" title="Link to this heading">#</a></h1>
+<p>As we can see from the definition of the Rossby number, <span class="math notranslate nohighlight">\(\mbox{Ro}\equiv U/(fL)\)</span>, small-scale motions in the atmosphere and ocean tend to be relatively unaffected by the Earth’s rotation since we might expect that <span class="math notranslate nohighlight">\(\mbox{Ro}\gg 1\)</span> when <span class="math notranslate nohighlight">\(L\)</span> is small. When <span class="math notranslate nohighlight">\(\mbox{Ro}\simeq 1\)</span>, the two terms on the LHS of Eq. <a class="reference internal" href="l27.html#equation-eq-traditional-accel">(6.6)</a> will be comparable in magnitude. This happens when the characteristic lengthscale is <span class="math notranslate nohighlight">\(L=U/f\)</span>. Motions with characteristic lengthscales larger than <span class="math notranslate nohighlight">\(U/f\)</span> will be strongly affected by the Earth’s rotation, while motions with on scales smaller than <span class="math notranslate nohighlight">\(U/f\)</span> will be relatively unaffected by the Earth’s rotation.</p>
+<p>When <span class="math notranslate nohighlight">\(\mbox{Ro}\ll 1\)</span>, Eq. <a class="reference internal" href="l27.html#equation-eq-traditional-accel">(6.6)</a> is approximated by</p>
+<div class="math notranslate nohighlight" id="equation-eq-geostrophic-balance">
+<span class="eqno">(6.7)<a class="headerlink" href="#equation-eq-geostrophic-balance" title="Link to this equation">#</a></span>\[f\hat{\mathbf{z}} \times \mathbf{u} = -\frac{1}{\rho}\nabla p.\]</div>
+<p>This state is called `geostrophic balance’. Since the time-derivative is neglected in this limit, this describes an equilibrium state where the velocity balances the pressure gradient through the Coriolis acceleration. Large-scale flows in the ocean and atmosphere tend to be close to geostrophic balance.</p>
+<figure class="margin-caption align-default" id="fig-weather-chart">
+<a class="reference internal image-reference" href="../_images/weather_chart.png"><img alt="../_images/weather_chart.png" src="../_images/weather_chart.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.10 </span><span class="caption-text">Weather forecast chart for December 2022 showing pressure (contours) and wind (quivered arrows).</span><a class="headerlink" href="#fig-weather-chart" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Eq. <a class="reference internal" href="#equation-eq-geostrophic-balance">(6.7)</a> can be re-written</p>
+<div class="math notranslate nohighlight" id="equation-eq-geostrophic-velocity">
+<span class="eqno">(6.8)<a class="headerlink" href="#equation-eq-geostrophic-velocity" title="Link to this equation">#</a></span>\[\mathbf{u}=\frac{1}{\rho f} \hat{\mathbf{z}} \times \nabla p.\]</div>
+<p>Therefore, the velocity in geostrophic balance is perpendicular to <span class="math notranslate nohighlight">\(\nabla p\)</span> and <em>parallel to contours of constant pressure</em>. <a class="reference internal" href="#fig-weather-chart"><span class="std std-numref">Fig. 6.10</span></a> shows a weather forecast for the North Atlantic. The wind (quivered arrows) closely follows pressure contours, consistent with geostrophic balance. The magnitude of the velocity in geostrophic balance is proportional to the pressure gradient. In <a class="reference internal" href="#fig-weather-chart"><span class="std std-numref">Fig. 6.10</span></a>, stronger winds will occur where the pressure contours are closer together.</p>
+<figure class="margin-caption align-default" id="fig-atmosphere-scales">
+<a class="reference internal image-reference" href="../_images/atmosphere_scales.jpg"><img alt="../_images/atmosphere_scales.jpg" src="../_images/atmosphere_scales.jpg" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.11 </span><span class="caption-text">Length and time scales of various atmospheric processes (not examinable). From Brisch and Kantz, 2019</span><a class="headerlink" href="#fig-atmosphere-scales" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="margin-caption align-default" id="fig-ocean-scales">
+<a class="reference internal image-reference" href="../_images/ocean_scales.png"><img alt="../_images/ocean_scales.png" src="../_images/ocean_scales.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.12 </span><span class="caption-text">Length and time scales of various ocean processes (not examinable). From Cronin et al., 2012 and D. Chelton.</span><a class="headerlink" href="#fig-ocean-scales" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><a class="reference internal" href="#fig-atmosphere-scales"><span class="std std-numref">Fig. 6.11</span></a> and <a class="reference internal" href="#fig-ocean-scales"><span class="std std-numref">Fig. 6.12</span></a> show the length and times scales of various processes in the atmosphere and ocean (you will not be expected to remember these names or scales). A typical wind speed in the atmosphere is <span class="math notranslate nohighlight">\(\sim 10 \mbox{m}/\mbox{s}\)</span>. The Coriolis parameter is <span class="math notranslate nohighlight">\(f\simeq 10^{-4} \mbox{s}^{-1}\)</span> at mid-latitudes. With these values, <span class="math notranslate nohighlight">\(U/f\simeq 100 \mbox{km}\)</span> in the atmosphere. Because this scale sits between large scale motions where the Earth’s rotation plays a large role and small scales where it is negligible, processes at this scale are call ‘meso’ (meaning middle) scale. Weather systems typically have a horizontal scale of <span class="math notranslate nohighlight">\(\sim 1000 \mbox{km}\)</span>. With wind speeds on the order of 10 <span class="math notranslate nohighlight">\(\mbox{m}/\mbox{s}\)</span>, weather systems typically have <span class="math notranslate nohighlight">\(\mbox{Ro}\ll 1\)</span> and hence are close to geostrophic balance (this is one reason why weather maps often show contours of pressure.) The advective timescale for weather systems at this scale is <span class="math notranslate nohighlight">\(T=L/U\simeq 1\mbox{ day}\)</span>. This partly explains why weather patterns typically last for a few days.</p>
+<p>Currents in the ocean are generally slower than wind in the atmosphere. A typical current speed in the ocean is <span class="math notranslate nohighlight">\(U\sim 0.1 \mbox{m}/\mbox{s}\)</span>. Hence, <span class="math notranslate nohighlight">\(U/f\sim 1 \mbox{km}\)</span> in the ocean. The ocean contains eddies with typical sizes of <span class="math notranslate nohighlight">\(\sim 100 \mbox{km}\)</span>. Since this corresponds to the atmospheric mesoscale, these ocean eddies are called ‘mesoscale eddies’ despite the fact that they are characterised by <span class="math notranslate nohighlight">\(\mbox{Ro}\ll 1\)</span>. Like atmospheric weather systems, mesoscale eddies are typically close to geostrophic balance.</p>
+<figure class="margin-caption align-default" id="fig-mean-ssh">
+<a class="reference internal image-reference" href="../_images/mean_ssh.png"><img alt="../_images/mean_ssh.png" src="../_images/mean_ssh.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6.13 </span><span class="caption-text">Mean sea surface height (departure from the stationary geoid) in cm.</span><a class="headerlink" href="#fig-mean-ssh" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Large-scale pressure gradients within the ocean are usually associated with changes in temperature (and hence density) and/or surface elevation. As an example, let’s look at how variations in the surface height of the ocean correspond to large-scale ocean currents. In a state of hydrostatic balance, the vertical pressure gradient force is balanced by the buoyant force acting on a fluid parcel, or</p>
+<div class="math notranslate nohighlight" id="equation-eq-hydrostatic-balance">
+<span class="eqno">(6.9)<a class="headerlink" href="#equation-eq-hydrostatic-balance" title="Link to this equation">#</a></span>\[\frac{\partial p}{\partial z} = -\rho g.\]</div>
+<p>(Recall that we have seen this balance in the cryosphere and atmospheric chemistry lectures.) By convention, when studying the ocean we often let <span class="math notranslate nohighlight">\(z=0\)</span> correspond to the sea level for a stationary ocean (with a constant geopotential height). The positive <span class="math notranslate nohighlight">\(z\)</span> direction still points up so that <span class="math notranslate nohighlight">\(z&lt;0\)</span> in most of the ocean. Let <span class="math notranslate nohighlight">\(z=\eta(x,y,t)\)</span> correspond to the height relative to the stationary geoid. For now, let’s assume that the density of seawater (<span class="math notranslate nohighlight">\(\rho\)</span>) is constant. Then, if we integrate Eq. <a class="reference internal" href="#equation-eq-hydrostatic-balance">(6.9)</a> from a height <span class="math notranslate nohighlight">\(z\)</span> to the top of the ocean <span class="math notranslate nohighlight">\(\eta\)</span>, we get</p>
+<div class="math notranslate nohighlight" id="equation-eq-hydrostatic-pressure">
+<span class="eqno">(6.10)<a class="headerlink" href="#equation-eq-hydrostatic-pressure" title="Link to this equation">#</a></span>\[p = p_{A} + \rho g (\eta - z).\]</div>
+<p>For simplicity, let’s also assume that <span class="math notranslate nohighlight">\(p_{A}\)</span> is constant. Using Eq. <a class="reference internal" href="#equation-eq-hydrostatic-pressure">(6.10)</a> in the relation for geostrophic balance (Eq. <a class="reference internal" href="#equation-eq-geostrophic-balance">(6.7)</a>) then gives</p>
+<div class="math notranslate nohighlight">
+\[f\hat{\mathbf{z}} \times \mathbf{u} = -g \nabla \eta.\]</div>
+<p>From this equation, we see that the surface height plays a similar role to the pressure for ocean currents that are in geostrophic balance, i.e. the velocity will follow contours of constant surface height and the speed is proportional to the gradient in surface height.</p>
+<p><a class="reference internal" href="#fig-mean-ssh"><span class="std std-numref">Fig. 6.13</span></a> shows the mean (time-averaged) surface height, <span class="math notranslate nohighlight">\(\eta\)</span>. The Gulf Stream is visible as a large gradient in the sea surface height in the North Atlantic. The sea level to the south of the Gulf Stream can be about 1m higher than the sea level to the north of the Gulf Stream. The resulting pressure gradient within the ocean is associated with geostrophic current speeds in excess of 1 m/s. The large gradient in surface height in the Southern Ocean is associated with the Antarctic Circumpolar Current - a major current system which flows eastward, circling Antarctica. In between the other continents, the surface height contours form closed ‘loops’. This is the imprint of large ocean ‘gyres’. Notice also that the sea level is significantly higher on the western sides of the ocean basins at mid-latitudes. We will discuss these features in some depth in a few lectures.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./05_globalenvironment"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="l27.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">6.2. </span>Equations of motion on the rotating earth</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="l29.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">6.4. </span>Structure and mean circulation of the atmosphere</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By the QES Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
