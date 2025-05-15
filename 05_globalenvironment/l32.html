@@ -16,22 +16,20 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -39,11 +37,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/admonitions.css?v=1588abde" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -71,7 +68,6 @@
     <link rel="prev" title="6.6. 2-box model for the global heat distribution" href="l31.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -87,8 +83,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -96,6 +103,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -103,8 +111,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -120,8 +128,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -151,17 +158,21 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="My Jupyter Book - Home"/>
-    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="My Jupyter Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My Jupyter Book - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
@@ -352,16 +363,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 
 </div></div>
       
@@ -391,14 +410,16 @@
 <span id="lecture-32"></span><h1><span class="section-number">6.7. </span>Stommel box model for ocean heat transport<a class="headerlink" href="#stommel-box-model-for-ocean-heat-transport" title="Link to this heading">#</a></h1>
 <p>Recall from <a class="reference internal" href="l26.html#fig-heat-transport"><span class="std std-numref">Fig. 6.5</span></a> that the ocean makes a non-trivial contribution to the global heat transport, particularly in the subtropics. Unlike the atmosphere, most of the oceanic heat transport is associated with the mean circulation, rather than eddies. In particular, currents that develop on the western sides of ocean basins make a major contribution to the heat flux. These <em>western boundary current</em> include the Gulf Stream in the North Atlantic and the Kuroshio in the North Pacific.</p>
 <figure class="margin-caption align-default" id="fig-ocean-heat-flux">
-<a class="reference internal image-reference" href="../_images/ocean_heat_flux.png"><img alt="../_images/ocean_heat_flux.png" src="../_images/ocean_heat_flux.png" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="../_images/ocean_heat_flux.png"><img alt="../_images/ocean_heat_flux.png" src="../_images/ocean_heat_flux.png" style="width: 90%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 6.22 </span><span class="caption-text">Mean air-sea heat flux. Data from Yu and Weller, 2007. Positive values indicate heat transfer from the atmosphere to the ocean.</span><a class="headerlink" href="#fig-ocean-heat-flux" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>As warm water flows polewards, it encounters cold air and heat is transferred from the ocean to the atmosphere. <a class="reference internal" href="#fig-ocean-heat-flux"><span class="std std-numref">Fig. 6.22</span></a> shows the annual average net surface heat flux. The western boundary currents are highlighted as regions with large positive heat fluxes, indicating a large amount of heat going from the ocean to the atmosphere. Instantaneous heat fluxes can be much larger. For example, field work conducted in the Gulf Stream during the winter found ocean surface temperatures of 19-20<span class="math notranslate nohighlight">\(^\circ\)</span>C and air temperatures of <span class="math notranslate nohighlight">\(1-2^\circ\)</span>C with snow, sleet, and rain! The estimated net heat flux from the ocean to the atmosphere during this period was about 1000 W/m<span class="math notranslate nohighlight">\(^2\)</span>.</p>
 <figure class="margin-caption align-default" id="fig-marshall-speer">
-<a class="reference internal image-reference" href="../_images/marshall_speer.png"><img alt="../_images/marshall_speer.png" src="../_images/marshall_speer.png" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="../_images/marshall_speer.png"><img alt="../_images/marshall_speer.png" src="../_images/marshall_speer.png" style="width: 90%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 6.23 </span><span class="caption-text">Cartoon of the global meridional overturning circulation.</span><a class="headerlink" href="#fig-marshall-speer" title="Link to this image">#</a></p>
 </figcaption>
@@ -406,7 +427,8 @@
 <p>When the near-surface water cools, it becomes more dense. Eventually the water becomes dense enough to sink into the interior of the ocean, where it returns to lower latitudes and gradually upwells. This circulation is called the <em>Thermohaline Circulation</em>, or THC, because both temperature (thermo) and salt (haline) control the density of seawater<a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
 <p>In this section, we will develop a box model for the Thermohaline Circulation and use it to investigate some important features of the large-scale ocean circulation and heat transport. In one of the practical sessions, we will construct a computer code to solve the box model equations numerically and we will use this to study the time evolution of the system in more detail. In the next two sections we will describe the physical mechanisms underlying the box model to help put it the model in context and to understand the parameter dependence of each of the terms.</p>
 <figure class="margin-caption align-default" id="fig-stommel-box">
-<a class="reference internal image-reference" href="../_images/stommel_box.png"><img alt="../_images/stommel_box.png" src="../_images/stommel_box.png" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="../_images/stommel_box.png"><img alt="../_images/stommel_box.png" src="../_images/stommel_box.png" style="width: 90%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 6.24 </span><span class="caption-text">Sketch of the Stommel box model for ocean heat transport.</span><a class="headerlink" href="#fig-stommel-box" title="Link to this image">#</a></p>
 </figcaption>
@@ -566,8 +588,8 @@ By the QES Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -16,22 +16,20 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -39,11 +37,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/admonitions.css?v=1588abde" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -71,7 +68,6 @@
     <link rel="prev" title="10.2. Solar Power" href="l50.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -87,8 +83,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -96,6 +103,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -103,8 +111,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -120,8 +128,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -151,17 +158,21 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="My Jupyter Book - Home"/>
-    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="My Jupyter Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My Jupyter Book - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
@@ -352,16 +363,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -420,7 +439,8 @@ flywheels and batteries have a relatively short time scales over which they rema
 Hydrogen stored in large salt caverns and water pumped up to power hydroelectric turbines have relatively large total amounts of energy they can store.
 These solutions can store the energy for a long time, rather than discharging on times of days to weeks.</p>
 <figure class="margin-caption align-default" id="fig-storage-1">
-<a class="reference internal image-reference" href="../_images/10_energytransitions.3.1.png"><img alt="../_images/10_energytransitions.3.1.png" src="../_images/10_energytransitions.3.1.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/10_energytransitions.3.1.png"><img alt="../_images/10_energytransitions.3.1.png" src="../_images/10_energytransitions.3.1.png" style="width: 70%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 10.22 </span><span class="caption-text">Available storage technologies, their capacity and discharge time (School of Engineering, RMIT University, 2015).</span><a class="headerlink" href="#fig-storage-1" title="Link to this image">#</a></p>
 </figcaption>
@@ -460,18 +480,21 @@ In practice, the round trip has an efficiency of about 75% in terms of power rec
 but the total capacity of 9 GWhrs illustrates the scale of new development for more storage; at present this would provide 1.8 GW to the UK grid for 4-5 hours.
 There are some new sites for such developments, but this will only be part of the solution given the present power supply of about 40 GW.</p>
 <figure class="margin-caption align-default" id="fig-storage-2">
-<a class="reference internal image-reference" href="../_images/10_energytransitions.3.2.png"><img alt="../_images/10_energytransitions.3.2.png" src="../_images/10_energytransitions.3.2.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/10_energytransitions.3.2.png"><img alt="../_images/10_energytransitions.3.2.png" src="../_images/10_energytransitions.3.2.png" style="width: 70%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 10.23 </span><span class="caption-text">Cartoon schematic of a hydro-electric energy storage facility.</span><a class="headerlink" href="#fig-storage-2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="margin-caption align-default" id="fig-storage-3">
-<a class="reference internal image-reference" href="../_images/10_energytransitions.3.3.png"><img alt="../_images/10_energytransitions.3.3.png" src="../_images/10_energytransitions.3.3.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/10_energytransitions.3.3.png"><img alt="../_images/10_energytransitions.3.3.png" src="../_images/10_energytransitions.3.3.png" style="width: 70%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 10.24 </span><span class="caption-text">Dinorwig hydro-electric power station reservoir.</span><a class="headerlink" href="#fig-storage-3" title="Link to this image">#</a></p>
 <div class="legend">
 <figure class="margin-caption align-default" id="fig-storage-4">
-<a class="reference internal image-reference" href="10_energytransitions/figures/figure4.png"><img alt="10_energytransitions/figures/figure4.png" src="10_energytransitions/figures/figure4.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="10_energytransitions/figures/figure4.png"><img alt="10_energytransitions/figures/figure4.png" src="10_energytransitions/figures/figure4.png" style="width: 70%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 10.25 </span><span class="caption-text">Power over the course of a day for the storage and release of energy from a hydro-pumped storage.</span><a class="headerlink" href="#fig-storage-4" title="Link to this image">#</a></p>
 </figcaption>
@@ -503,7 +526,8 @@ owing to the heating during compression of the air, and the heat and other energ
 In the context of a renewable energy system, such compressed air storage can help buffer the short term intermittency in the supply,
 and the power generated from the cavern may be very substantial, comparable to the pumped hydro-storage solution.</p>
 <figure class="margin-caption align-default" id="fig-storage-5">
-<a class="reference internal image-reference" href="../_images/10_energytransitions.3.4.png"><img alt="../_images/10_energytransitions.3.4.png" src="../_images/10_energytransitions.3.4.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/10_energytransitions.3.4.png"><img alt="../_images/10_energytransitions.3.4.png" src="../_images/10_energytransitions.3.4.png" style="width: 70%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 10.26 </span><span class="caption-text">Schematic of a salt cavern.</span><a class="headerlink" href="#fig-storage-5" title="Link to this image">#</a></p>
 </figcaption>
@@ -540,7 +564,8 @@ If we needed this level of power for 12 days, we would need about 1200 such cave
 <p><a class="reference internal" href="#fig-storage-6"><span class="std std-numref">Fig. 10.27</span></a> illustrates the locations where there are gas storage sites and also where there are salt deposits,
 illustrating that there is plenty of salt, at least in some regions, to allow development of such caverns.</p>
 <figure class="margin-caption align-default" id="fig-storage-6">
-<a class="reference internal image-reference" href="../_images/10_energytransitions.3.5.png"><img alt="../_images/10_energytransitions.3.5.png" src="../_images/10_energytransitions.3.5.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/10_energytransitions.3.5.png"><img alt="../_images/10_energytransitions.3.5.png" src="../_images/10_energytransitions.3.5.png" style="width: 70%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 10.27 </span><span class="caption-text">Gas power, solar, and wind generation and existing and potential underground gas storage facilities in the UK.
 Left shows the existing gas power and underground storage facilities.
@@ -551,7 +576,8 @@ Right shows the geological resources for underground gas storage and current sol
 In order to achieve this, the aquifer needs to have a structural trap of some form the keep the air localised so it can be recovered,
 as in the case of an anticline shown in <a class="reference internal" href="#fig-storage-7"><span class="std std-numref">Fig. 10.28</span></a>.</p>
 <figure class="margin-caption align-default" id="fig-storage-7">
-<a class="reference internal image-reference" href="../_images/10_energytransitions.3.6.png"><img alt="../_images/10_energytransitions.3.6.png" src="../_images/10_energytransitions.3.6.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/10_energytransitions.3.6.png"><img alt="../_images/10_energytransitions.3.6.png" src="../_images/10_energytransitions.3.6.png" style="width: 70%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 10.28 </span><span class="caption-text">An aquifer structure that could be used for air storage.</span><a class="headerlink" href="#fig-storage-7" title="Link to this image">#</a></p>
 </figcaption>
@@ -580,13 +606,15 @@ owing to the narrow pore throats separating the pore spaces.</p></li>
 As a result it is easier for the advancing air to develop channels or fingers through the water rather than displacing the relatively viscous water.
 This leads to the viscous fingers shown in the <a class="reference internal" href="#fig-storage-8-1"><span class="std std-numref">Fig. 10.29</span></a> below (after Beeson-Jones and Woods, 2019 and Lenormand and Zircone, 1989).</p>
 <figure class="margin-caption align-default" id="fig-storage-8-1">
-<a class="reference internal image-reference" href="../_images/10_energytransitions.3.7.png"><img alt="../_images/10_energytransitions.3.7.png" src="../_images/10_energytransitions.3.7.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/10_energytransitions.3.7.png"><img alt="../_images/10_energytransitions.3.7.png" src="../_images/10_energytransitions.3.7.png" style="width: 70%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 10.29 </span><span class="caption-text">Figure structures that can develope at the air-water interface.</span><a class="headerlink" href="#fig-storage-8-1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="margin-caption align-default" id="fig-storage-8-2">
-<a class="reference internal image-reference" href="../_images/10_energytransitions.3.8.png"><img alt="../_images/10_energytransitions.3.8.png" src="../_images/10_energytransitions.3.8.png" style="width: 50%;" /></a>
+<a class="reference internal image-reference" href="../_images/10_energytransitions.3.8.png"><img alt="../_images/10_energytransitions.3.8.png" src="../_images/10_energytransitions.3.8.png" style="width: 50%;" />
+</a>
 </figure>
 <p>In the second case, the capillary pressure jump across the air-water interface dominates the pressure change through the system.
 As the interface tries to advance through the small pore spaces, it needs to deform and the radius of curvature becomes smaller -
@@ -623,13 +651,15 @@ relatively high energy density material.</p>
 <p>The energy density of hydrogen is about <span class="math notranslate nohighlight">\(E_f\)</span> = 34 kWh/kg.
 This is very high compared to many hydrocarbons on a mass basis, as in the chart below, however, the density of hydrogen is very low.</p>
 <figure class="margin-caption align-default" id="fig-storage-9">
-<a class="reference internal image-reference" href="../_images/10_energytransitions.3.9.png"><img alt="../_images/10_energytransitions.3.9.png" src="../_images/10_energytransitions.3.9.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/10_energytransitions.3.9.png"><img alt="../_images/10_energytransitions.3.9.png" src="../_images/10_energytransitions.3.9.png" style="width: 70%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 10.30 </span><span class="caption-text">Volumetric and gravimetric density of various fuel sources.</span><a class="headerlink" href="#fig-storage-9" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="margin-caption align-default" id="fig-storage-10">
-<a class="reference internal image-reference" href="../_images/10_energytransitions.3.10.png"><img alt="../_images/10_energytransitions.3.10.png" src="../_images/10_energytransitions.3.10.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/10_energytransitions.3.10.png"><img alt="../_images/10_energytransitions.3.10.png" src="../_images/10_energytransitions.3.10.png" style="width: 70%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 10.31 </span><span class="caption-text">Density of hydrogen as a function of pressure and temperature.</span><a class="headerlink" href="#fig-storage-10" title="Link to this image">#</a></p>
 </figcaption>
@@ -708,8 +738,7 @@ such storage in the subsurface.</p>
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -771,8 +800,8 @@ By the QES Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

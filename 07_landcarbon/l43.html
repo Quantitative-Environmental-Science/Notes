@@ -16,22 +16,20 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -39,11 +37,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/admonitions.css?v=1588abde" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -71,7 +68,6 @@
     <link rel="prev" title="8.3. The Methane Budget" href="l42.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -87,8 +83,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -96,6 +103,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -103,8 +111,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -120,8 +128,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -151,17 +158,21 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="My Jupyter Book - Home"/>
-    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="My Jupyter Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My Jupyter Book - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
@@ -352,16 +363,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 
 </div></div>
       
@@ -403,7 +422,8 @@ coming out from springs formed from retreating glaciers and found that
 they are releasing a lot of methane – much more than that released by
 permafrost.</p>
 <figure class="margin-caption align-default" id="fig-land-methane-permafrost">
-<a class="reference internal image-reference" href="../_images/07_landcarbon.4.1.png"><img alt="../_images/07_landcarbon.4.1.png" src="../_images/07_landcarbon.4.1.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../_images/07_landcarbon.4.1.png"><img alt="../_images/07_landcarbon.4.1.png" src="../_images/07_landcarbon.4.1.png" style="width: 80%;" />
+</a>
 </figure>
 <p>The other large issue is that we don’t necessarily understand the impact
 of our actions on methane production, and sometimes we do something to
@@ -417,7 +437,8 @@ If we reflood the fields, or raise the water table then in theory the rate
 of oxidation will slow down dramatically. But what will happen to
 methane?</p>
 <figure class="margin-caption align-default" id="fig-land-methane-peat">
-<a class="reference internal image-reference" href="../_images/07_landcarbon.4.2.png"><img alt="../_images/07_landcarbon.4.2.png" src="../_images/07_landcarbon.4.2.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../_images/07_landcarbon.4.2.png"><img alt="../_images/07_landcarbon.4.2.png" src="../_images/07_landcarbon.4.2.png" style="width: 80%;" />
+</a>
 </figure>
 <p>To constrain the depth dependent rate of methane production we need to
 use Fick’s second law. Fick’s first law is useful when concentrations
@@ -444,7 +465,8 @@ wetlands, the rate of methane flux into a static chamber can be higher
 than the rate of methane production in the soil, and in places 10x
 higher (Shoemaker and Schrag, 2010).</p>
 <figure class="margin-caption align-default" id="fig-land-methane-production">
-<a class="reference internal image-reference" href="../_images/07_landcarbon.4.3.png"><img alt="../_images/07_landcarbon.4.3.png" src="../_images/07_landcarbon.4.3.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../_images/07_landcarbon.4.3.png"><img alt="../_images/07_landcarbon.4.3.png" src="../_images/07_landcarbon.4.3.png" style="width: 80%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 8.31 </span><span class="caption-text">Column-integrating rates of methane production, oxidation and respiration for each month. Values are monthly integrated and shown in units of μmol cm<sup>-2</sup> month<sup>-1</sup>.</span><a class="headerlink" href="#fig-land-methane-production" title="Link to this image">#</a></p>
 </figcaption>
@@ -472,7 +494,8 @@ NO<sub>x</sub>. This is shown in the figure below as the ‘VOC’ and ‘NO<sub
 parts of ozone production, with the lines of equal ozone production
 called ‘isopleths’.</p>
 <figure class="margin-caption align-default" id="fig-land-methane-isopleths">
-<a class="reference internal image-reference" href="../_images/07_landcarbon.4.4.png"><img alt="../_images/07_landcarbon.4.4.png" src="../_images/07_landcarbon.4.4.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../_images/07_landcarbon.4.4.png"><img alt="../_images/07_landcarbon.4.4.png" src="../_images/07_landcarbon.4.4.png" style="width: 80%;" />
+</a>
 </figure>
 <p>Based on emissions in the USA, it was thought that the country was in
 the VOC-limited part of this graph. So there was great effort in the
@@ -488,10 +511,12 @@ ozone should focus on NO<sub>x</sub> emission reductions. Indeed, the background
 biogenic VOC concentration is so high that focusing on NO<sub>x</sub> reductions
 makes sense anyway.</p>
 <figure class="margin-caption align-default" id="fig-land-methane-vocs">
-<a class="reference internal image-reference" href="../_images/07_landcarbon.4.5.png"><img alt="../_images/07_landcarbon.4.5.png" src="../_images/07_landcarbon.4.5.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../_images/07_landcarbon.4.5.png"><img alt="../_images/07_landcarbon.4.5.png" src="../_images/07_landcarbon.4.5.png" style="width: 80%;" />
+</a>
 </figure>
 <figure class="margin-caption align-default" id="fig-land-methane-isoprene">
-<a class="reference internal image-reference" href="../_images/07_landcarbon.4.6.png"><img alt="../_images/07_landcarbon.4.6.png" src="../_images/07_landcarbon.4.6.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../_images/07_landcarbon.4.6.png"><img alt="../_images/07_landcarbon.4.6.png" src="../_images/07_landcarbon.4.6.png" style="width: 80%;" />
+</a>
 </figure>
 <p>The final thing to note is that the land surface plays a large role in
 amplifying heat waves and climate change. This is shown in the schematic
@@ -504,7 +529,8 @@ and exacerbates the heat wave. These dry periods also greatly impact the
 storage of carbon in the soil, as oxygen gets into the soil and produces
 CO<sub>2</sub>.</p>
 <figure class="margin-caption align-default" id="fig-land-methane-wet-dry">
-<a class="reference internal image-reference" href="../_images/07_landcarbon.4.7.png"><img alt="../_images/07_landcarbon.4.7.png" src="../_images/07_landcarbon.4.7.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../_images/07_landcarbon.4.7.png"><img alt="../_images/07_landcarbon.4.7.png" src="../_images/07_landcarbon.4.7.png" style="width: 80%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 8.32 </span><span class="caption-text">schematic of the net raditation budget at the land surface. <strong>a)</strong> In areas with high soil moisture, the latent heat flux by evapotranspirtation and transpiration dominates, enhancing cloud formation and a tendency for cooling. <strong>b)</strong> By contrast, if the soil moisture deficit is high, the dry soils raise the sensible heat flux, producing deeper, warmer, drier, low-level atmosphere.
 This process inhibits convection and cloud formation and creates a positive feedback loop.</span><a class="headerlink" href="#fig-land-methane-wet-dry" title="Link to this image">#</a></p>
@@ -514,7 +540,8 @@ This process inhibits convection and cloud formation and creates a positive feed
 consider the role that various types of land surface play in storage of
 carbon, production of methane or other trace gases, and release of these to the atmosphere.</p>
 <figure class="margin-caption align-default" id="id1">
-<a class="reference internal image-reference" href="../_images/07_landcarbon.4.8.png"><img alt="../_images/07_landcarbon.4.8.png" src="../_images/07_landcarbon.4.8.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../_images/07_landcarbon.4.8.png"><img alt="../_images/07_landcarbon.4.8.png" src="../_images/07_landcarbon.4.8.png" style="width: 80%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 8.33 </span><span class="caption-text">The structure and fucntioning of managed and unmanaged excosystems that affect local, regional, and global climate.
 Land surface characteristics such as albedo and emissivity determine the amount of solar and long-wave radiation absorbed by land and reflected or emitted to the atmosphere.
@@ -623,8 +650,8 @@ By the QES Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

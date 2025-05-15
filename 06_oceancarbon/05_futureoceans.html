@@ -16,22 +16,20 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -39,11 +37,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/admonitions.css?v=1588abde" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -71,7 +68,6 @@
     <link rel="prev" title="7.4. The Carbonate Pump" href="04_carbonatepump.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -87,8 +83,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -96,6 +103,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -103,8 +111,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -120,8 +128,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -151,17 +158,21 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="My Jupyter Book - Home"/>
-    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="My Jupyter Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My Jupyter Book - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
@@ -352,16 +363,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -436,7 +455,8 @@
 Provided with average surface temperatures, evaporation rates, it predicts the partitioning of carbon between the deep ocean, the surface ocean and the atmosphere we see in the modern world based on the chemical and biological processes occurring in the ocean.
 However, it is a gross over-simplification of the real ocean, with only three boxes and with all the key processes governed by relatively few key parameters (<a class="reference internal" href="#tab-carbon-3box-labels"><span class="std std-numref">Table 7.1</span></a>) that are independent of the state of the model.</p>
 <figure class="margin-caption align-default" id="fig-carbon-3box-labels">
-<a class="reference internal image-reference" href="../_images/ocean-3box-CO2-bio-calc-labels.png"><img alt="../_images/ocean-3box-CO2-bio-calc-labels.png" src="../_images/ocean-3box-CO2-bio-calc-labels.png" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="../_images/ocean-3box-CO2-bio-calc-labels.png"><img alt="../_images/ocean-3box-CO2-bio-calc-labels.png" src="../_images/ocean-3box-CO2-bio-calc-labels.png" style="width: 90%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.32 </span><span class="caption-text">The model of the ocean carbon cycle we have put together in this section, along with the key <span class="math notranslate nohighlight">\(\tau\)</span> parameters that control its behaviour.</span><a class="headerlink" href="#fig-carbon-3box-labels" title="Link to this image">#</a></p>
 </figcaption>
@@ -535,7 +555,8 @@ For example, we can write:</p>
 <div class="math notranslate nohighlight">
 \[f_{produced} = 0.15 \Omega\]</div>
 <figure class="margin-caption align-default" id="fig-carbon-calc-response">
-<a class="reference internal image-reference" href="../_images/carbon-calcification-response.png"><img alt="../_images/carbon-calcification-response.png" src="../_images/carbon-calcification-response.png" style="width: 50%;" /></a>
+<a class="reference internal image-reference" href="../_images/carbon-calcification-response.png"><img alt="../_images/carbon-calcification-response.png" src="../_images/carbon-calcification-response.png" style="width: 50%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.33 </span><span class="caption-text">The diverse response of CaCO<sub>3</sub> production rates of pelagic marine calcifiers to reductions in surface Ω. Figure from Leung et al. (2022).</span><a class="headerlink" href="#fig-carbon-calc-response" title="Link to this image">#</a></p>
 </figcaption>
@@ -553,7 +574,8 @@ From this, we can calculate the fraction of CaCO<sub>3</sub> produced in the sur
 \[f_{remaining} = e^{k_{diss} t (1 - \Omega)^n}\]</div>
 <p>Where <span class="math notranslate nohighlight">\(t\)</span> is the amount of time for a sinking particle to reach the bottom of the surface layer. For this, we assume a particle sinking velocity of 10 m d<sup>-1</sup>, and use the surface layer thickness of 100 m for the <code class="docutils literal notranslate"><span class="pre">lolat</span></code> box and 200m for the <code class="docutils literal notranslate"><span class="pre">hilat</span></code> box.</p>
 <figure class="margin-caption align-default" id="fig-carbon-dissolution-rate">
-<a class="reference internal image-reference" href="../_images/carbonate-dissolution-rate.png"><img alt="../_images/carbonate-dissolution-rate.png" src="../_images/carbonate-dissolution-rate.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/carbonate-dissolution-rate.png"><img alt="../_images/carbonate-dissolution-rate.png" src="../_images/carbonate-dissolution-rate.png" style="width: 70%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.34 </span><span class="caption-text">The dissolution of CaCO<sub>3</sub> in under-saturated waters.</span><a class="headerlink" href="#fig-carbon-dissolution-rate" title="Link to this image">#</a></p>
 </figcaption>
@@ -578,7 +600,8 @@ e^{k_{diss} t (\Omega_{crit} - \Omega)^n} &amp; \mathrm{for~\Omega &lt; \Omega_{
 0.15 \Omega &amp; \mathrm{for~\Omega &gt; \Omega_{crit}} \\
 \end{cases}\end{split}\]</div>
 <figure class="margin-caption align-default" id="fig-carbon-3box-fcalc">
-<a class="reference internal image-reference" href="../_images/ocean-3box-f_calc.png"><img alt="../_images/ocean-3box-f_calc.png" src="../_images/ocean-3box-f_calc.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/ocean-3box-f_calc.png"><img alt="../_images/ocean-3box-f_calc.png" src="../_images/ocean-3box-f_calc.png" style="width: 70%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.35 </span><span class="caption-text">The dependence of CaCO<sub>3</sub> production <span class="math notranslate nohighlight">\((f_{produced})\)</span>, dissolution <span class="math notranslate nohighlight">\((f_{remaining})\)</span> and export <span class="math notranslate nohighlight">\((f_{calc})\)</span> on the saturation state of the surface ocean. Production increases linearly with saturation, while dissolution increases exponentially when Ω falls below a critical value of 3 (vertical dashed line).</span><a class="headerlink" href="#fig-carbon-3box-fcalc" title="Link to this image">#</a></p>
 </figcaption>
@@ -621,7 +644,8 @@ This causes TA in the <code class="docutils literal notranslate"><span class="pr
 Deep TA is very slightly higher in the new model, which is caused by the larger size of the <code class="docutils literal notranslate"><span class="pre">lolat</span></code> box making it have a greater influence on the steady state value <code class="docutils literal notranslate"><span class="pre">deep</span></code>.
 The steady-state atmospheric pCO<sub>2</sub> is ~415 ppm in both models.</p>
 <figure class="margin-caption align-default" id="fig-carbon-3box-oa-ss">
-<a class="reference internal image-reference" href="../_images/ocean-3box-OA-SS.png"><img alt="../_images/ocean-3box-OA-SS.png" src="../_images/ocean-3box-OA-SS.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../_images/ocean-3box-OA-SS.png"><img alt="../_images/ocean-3box-OA-SS.png" src="../_images/ocean-3box-OA-SS.png" style="width: 80%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.36 </span><span class="caption-text">The modified model compared to the unmodified model evolving to steady, initialised at the steady state conditions of the unmodified model. This shows that the steady state of the new model is very similar to the unmodified model, indicating that the parameterisation of <code class="docutils literal notranslate"><span class="pre">f_CaCO3</span></code> is reasonable.</span><a class="headerlink" href="#fig-carbon-3box-oa-ss" title="Link to this image">#</a></p>
 </figcaption>
@@ -644,7 +668,8 @@ There are two distinct phases in response of models to this perturbation:</p>
 </ol>
 <p>The behaviour of the models diverges in both the rapid and long-term responses.</p>
 <figure class="margin-caption align-default" id="fig-carbon-3box-oa-co2-release">
-<a class="reference internal image-reference" href="../_images/ocean-3box-OA-CO2-release.png"><img alt="../_images/ocean-3box-OA-CO2-release.png" src="../_images/ocean-3box-OA-CO2-release.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../_images/ocean-3box-OA-CO2-release.png"><img alt="../_images/ocean-3box-OA-CO2-release.png" src="../_images/ocean-3box-OA-CO2-release.png" style="width: 80%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.37 </span><span class="caption-text">The response of the modified and unmodified models to a CO<sub>2</sub> release experiment where 8 PgC yr<sup>-1</sup> are emitted during the grey shaded region. The horizontal dashed line in the Omega panel shows the value of <code class="docutils literal notranslate"><span class="pre">Omega_crit</span></code> where dissolution starts reducing the efficiency of CaCO<sub>3</sub> export from the surface ocean.</span><a class="headerlink" href="#fig-carbon-3box-oa-co2-release" title="Link to this image">#</a></p>
 </figcaption>
@@ -680,7 +705,8 @@ This has two main effects (<a class="reference internal" href="#fig-carbon-3box-
 <li><p>The steady-state pCO<sub>2</sub> in the new model is 42 ppm lower than in the original model, because teh overall reduction in calcification in the new model allows more of the released CO<sub>2</sub> to be stored in the deep ocean.</p></li>
 </ol>
 <figure class="margin-caption align-default" id="fig-carbon-3box-oa-co2-comparison">
-<a class="reference internal image-reference" href="../_images/ocean-3box-OA-CO2-comparison.png"><img alt="../_images/ocean-3box-OA-CO2-comparison.png" src="../_images/ocean-3box-OA-CO2-comparison.png" style="width: 60%;" /></a>
+<a class="reference internal image-reference" href="../_images/ocean-3box-OA-CO2-comparison.png"><img alt="../_images/ocean-3box-OA-CO2-comparison.png" src="../_images/ocean-3box-OA-CO2-comparison.png" style="width: 60%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.38 </span><span class="caption-text">The difference betweeen atmosphweric pCO<sub>2</sub> between the modified and original models after a CO<sub>2</sub> release experiment (8 PgC yr<sup>-1</sup> for 200 years in the grey bar).</span><a class="headerlink" href="#fig-carbon-3box-oa-co2-comparison" title="Link to this image">#</a></p>
 </figcaption>
@@ -762,8 +788,7 @@ This could be tested by connecting the particle sinking velocity used above to <
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -841,8 +866,8 @@ By the QES Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

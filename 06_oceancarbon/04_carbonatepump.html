@@ -16,22 +16,20 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -39,11 +37,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/admonitions.css?v=1588abde" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -71,7 +68,6 @@
     <link rel="prev" title="7.3. The Biological Pump" href="03_biopump.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -87,8 +83,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -96,6 +103,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -103,8 +111,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -120,8 +128,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -151,17 +158,21 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="My Jupyter Book - Home"/>
-    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="My Jupyter Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My Jupyter Book - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
@@ -352,16 +363,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -436,7 +455,8 @@ Three groups of marine plankton are responsible the majority of calcification in
 <li><p><strong>Pteropods</strong> are larger-still (0.5-10 mm) multicellular zooplankton who’s name literally translates to ‘wing foot’. Pteropods are gastropods, which (mostly) produce a recognisable calcium carbonate ‘snail shell’ structure, with the soft parts of the body adapted into ‘wing’ that allow them some limited movement through the water.</p></li>
 </ul>
 <figure class="margin-caption align-default" id="fig-carbon-calcifiers">
-<a class="reference internal image-reference" href="../_images/carbon-calcifiers.png"><img alt="../_images/carbon-calcifiers.png" src="../_images/carbon-calcifiers.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/carbon-calcifiers.png"><img alt="../_images/carbon-calcifiers.png" src="../_images/carbon-calcifiers.png" style="width: 100%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.25 </span><span class="caption-text">The three main open-ocean calcifiers. An SEM micrograph of the coccolithophore <em>Emiliania huleyi</em>, and light micrographs of the planktic foraminifera <em>Orbulina universa</em> and a Pteropod. Images from wikimedia commons (<a class="reference external" href="https://commons.wikimedia.org/wiki/File:Emiliania_huxleyi.jpg">coccolithophore</a>, <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Fis01026_(27555118153).jpg">pteropod</a>) and Oscar Branson.</span><a class="headerlink" href="#fig-carbon-calcifiers" title="Link to this image">#</a></p>
 </figcaption>
@@ -456,7 +476,8 @@ The uptake and export of CO<sub>3</sub><sup>2-</sup> directly removes DIC from t
 Removing CO<sub>3</sub><sup>2-</sup> causes this speciation adjust, reducing pH because a HCO<sub>3</sub><sup>-</sup> dissociates to replace it, releasing H<sup>+</sup> into the solution.
 We can re-draw DIC speciation diagram (<a class="reference internal" href="02_solubility.html#fig-carbon-bjerrum"><span class="std std-numref">Fig. 7.10</span></a>) to see how the abundance of CO<sub>3</sub><sup>2-</sup> relates to the concentration of the other species (<a class="reference internal" href="#fig-carbon-bjerrum-co3"><span class="std std-numref">Fig. 7.26</span></a>):</p>
 <figure class="margin-caption align-default" id="fig-carbon-bjerrum-co3">
-<a class="reference internal image-reference" href="../_images/carbon-bjerrum-CO3.png"><img alt="../_images/carbon-bjerrum-CO3.png" src="../_images/carbon-bjerrum-CO3.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/carbon-bjerrum-CO3.png"><img alt="../_images/carbon-bjerrum-CO3.png" src="../_images/carbon-bjerrum-CO3.png" style="width: 70%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.26 </span><span class="caption-text">Change in DIC speciation as a function of CO<sub>3</sub><sup>2-</sup> concentration. This equilbrium is calculated at constant DIC concentration - there is no gas exchange with the atmosphere. If gas exchange were allowed to happen CO<sub>2</sub> would be released to the atmosphere as CO<sub>3</sub><sup>2-</sup> is removed from the surface ocean. This is shown in <a class="reference internal" href="#fig-carbon-calc-co2-release"><span class="std std-numref">Fig. 7.27</span></a>.</span><a class="headerlink" href="#fig-carbon-bjerrum-co3" title="Link to this image">#</a></p>
 </figcaption>
@@ -464,7 +485,8 @@ We can re-draw DIC speciation diagram (<a class="reference internal" href="02_so
 <p>Removing CO<sub>3</sub><sup>2-</sup> from the water causes the fraction of DIC that exists as CO<sub>2</sub> to increase (the equilibrium shifts to the left in <a class="reference internal" href="#fig-carbon-bjerrum-co3"><span class="std std-numref">Fig. 7.26</span></a>), causing CO<sub>2</sub> to be released to the atmosphere.
 Calcification therefore removes more DIC that we would predict based solely on the uptake of CO<sub>3</sub><sup>2-</sup> from the surface ocean, because its effect on DIC speciation make it a <em>source</em> of CO<sub>2</sub> to the atmosphere (<a class="reference internal" href="#fig-carbon-calc-co2-release"><span class="std std-numref">Fig. 7.27</span></a>).</p>
 <figure class="margin-caption align-default" id="fig-carbon-calc-co2-release">
-<a class="reference internal image-reference" href="../_images/carbon-calc-co2-release.png"><img alt="../_images/carbon-calc-co2-release.png" src="../_images/carbon-calc-co2-release.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/carbon-calc-co2-release.png"><img alt="../_images/carbon-calc-co2-release.png" src="../_images/carbon-calc-co2-release.png" style="width: 70%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.27 </span><span class="caption-text">The change in pH and DIC caused by the removal of CO<sub>3</sub><sup>2-</sup> from the surface ocean by calcification when it is equilibrating with an atmosphere at 400 ppm pCO<sub>2</sub>. We can see that DIC is reduced directly by the removal of CO<sub>3</sub><sup>2-</sup>, and indirectly by the resulting shift in DIC speciation (<a class="reference internal" href="#fig-carbon-bjerrum-co3"><span class="std std-numref">Fig. 7.26</span></a>), causing CO<sub>2</sub> to be released to the atmosphere.</span><a class="headerlink" href="#fig-carbon-calc-co2-release" title="Link to this image">#</a></p>
 </figcaption>
@@ -501,7 +523,8 @@ In combination, this means that as a CaCO<sub>3</sub> particle sinks through the
 This causes the mineral to dissolve when it sinks below the depth at which [CO<sub>3</sub><sup>2-</sup>] is lower than <span class="math notranslate nohighlight">\(\frac{K_{sp}}{[Ca^{2+}]}\)</span> (<a class="reference internal" href="#fig-carbon-co3-sat"><span class="std std-numref">Fig. 7.28</span></a>).
 Thus, changes in pressure alone are sufficient to dissolve a large fraction of the CaCO<sub>3</sub> in the deep ocean.</p>
 <figure class="margin-caption align-default" id="fig-carbon-co3-sat">
-<a class="reference internal image-reference" href="../_images/carbon-CO3-sat.png"><img alt="../_images/carbon-CO3-sat.png" src="../_images/carbon-CO3-sat.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/carbon-CO3-sat.png"><img alt="../_images/carbon-CO3-sat.png" src="../_images/carbon-CO3-sat.png" style="width: 70%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.28 </span><span class="caption-text">The concentration of CO<sub>3</sub><sup>2-</sup> in seawater at which the CaCO<sub>3</sub> minerals calcite and aragonite are in equilibrium with seawater across a range of water depths. The shaded regions are supersaturated with respect to each mineral. The horizontal dashed line shows the [CO<sub>3</sub><sup>2-</sup>] for typical deep ocean water. The equilibrium [CO<sub>3</sub><sup>2-</sup>] for each mineral both increase with depth, while [CO<sub>3</sub><sup>2-</sup>] decreases with depth. The mineral will begin to dissolve below where the dashed line intersects with the solid lines. Calculated at 4 °C and salinity of 35.</span><a class="headerlink" href="#fig-carbon-co3-sat" title="Link to this image">#</a></p>
 </figcaption>
@@ -513,7 +536,8 @@ Thus, changes in pressure alone are sufficient to dissolve a large fraction of t
 The uptake of CO<sub>2</sub> by photosynthesis in surface waters raises pH and [CO<sub>3</sub><sup>2-</sup>], and the release of CO<sub>2</sub> by remineralisation in the deep ocean causes pH and [CO<sub>3</sub><sup>2-</sup>] to decrease.
 In combination with the pressure effects on CaCO<sub>3</sub> solubility, this causes CaCO<sub>3</sub> dissolution to occur at shallower depths (<a class="reference internal" href="#fig-carbon-co3-sat-real"><span class="std std-numref">Fig. 7.29</span></a>)}).</p>
 <figure class="margin-caption align-default" id="fig-carbon-co3-sat-real">
-<a class="reference internal image-reference" href="../_images/carbon-CO3-sat-real.png"><img alt="../_images/carbon-CO3-sat-real.png" src="../_images/carbon-CO3-sat-real.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/carbon-CO3-sat-real.png"><img alt="../_images/carbon-CO3-sat-real.png" src="../_images/carbon-CO3-sat-real.png" style="width: 70%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.29 </span><span class="caption-text">Similar to <a class="reference internal" href="#fig-carbon-co3-sat"><span class="std std-numref">Fig. 7.28</span></a>, but showing a real [CO<sub>3</sub><sup>2-</sup>] profile for the Southern Atlantic. The action of the biological pump causes [CO<sub>3</sub><sup>2-</sup>] to be elevated in surface waters, where CO<sub>2</sub> is being removed by photosynthesis, and elevated at depth, where CO<sub>2</sub> is being released by remineralistion.</span><a class="headerlink" href="#fig-carbon-co3-sat-real" title="Link to this image">#</a></p>
 </figcaption>
@@ -557,7 +581,8 @@ This feedback is known as <strong>ballasting</strong>, and the amount of dense C
 This would reduce [CO<sub>3</sub><sup>2-</sup>], and therefore the saturation state (Ω) of the surface ocean (<a class="reference internal" href="#fig-carbon-pco2-ph-omega"><span class="std std-numref">Fig. 7.30</span></a>).
 Reducing the saturation state has the potential to reduce CaCO<sub>3</sub> production, by marine organisms, and enhance CaCO<sub>3</sub> dissolution at shallow depths, thus reducing the strength of the carbonate pump.</p>
 <figure class="margin-caption align-default" id="fig-carbon-pco2-ph-omega">
-<a class="reference internal image-reference" href="../_images/carbon-pCO2-pH.png"><img alt="../_images/carbon-pCO2-pH.png" src="../_images/carbon-pCO2-pH.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/carbon-pCO2-pH.png"><img alt="../_images/carbon-pCO2-pH.png" src="../_images/carbon-pCO2-pH.png" style="width: 70%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.30 </span><span class="caption-text">The impact of ocean acidification on surface ocean <span class="math notranslate nohighlight">\(\Omega\)</span> at 0 and 30 °C. Because of the influence of temperature on solubility and DIC speciation, the high latitudes are much more affected by ocean acidification than the tropics. The polar waters may become undersaturated with respect to aragonite as soon as ~2050.</span><a class="headerlink" href="#fig-carbon-pco2-ph-omega" title="Link to this image">#</a></p>
 </figcaption>
@@ -570,7 +595,8 @@ The interaction between ballasting and ocean acidification is a significant sour
 <section id="modelling-the-carbonate-pump">
 <h2>Modelling the Carbonate Pump<a class="headerlink" href="#modelling-the-carbonate-pump" title="Link to this heading">#</a></h2>
 <figure class="margin-caption align-default" id="fig-carbon-3box">
-<a class="reference internal image-reference" href="../_images/ocean-3box-CO2-bio-calc.png"><img alt="../_images/ocean-3box-CO2-bio-calc.png" src="../_images/ocean-3box-CO2-bio-calc.png" style="width: 60%;" /></a>
+<a class="reference internal image-reference" href="../_images/ocean-3box-CO2-bio-calc.png"><img alt="../_images/ocean-3box-CO2-bio-calc.png" src="../_images/ocean-3box-CO2-bio-calc.png" style="width: 60%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.31 </span><span class="caption-text">To model the carbonate pump, we need to include the production of CaCO<sub>3<sub> by biological life, which takes up DIC and TA in the surface ocean and exports it to the deep ocean.</span><a class="headerlink" href="#fig-carbon-3box" title="Link to this image">#</a></p>
 </figcaption>
@@ -651,8 +677,7 @@ We therefore model the impact of calcification on DIC as:</p>
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -726,8 +751,8 @@ By the QES Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

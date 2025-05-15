@@ -16,22 +16,20 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -39,11 +37,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/admonitions.css?v=1588abde" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -71,7 +68,6 @@
     <link rel="prev" title="4.2. The growth and melting of ice" href="l9.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -87,8 +83,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -96,6 +103,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -103,8 +111,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -120,8 +128,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -151,17 +158,21 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="My Jupyter Book - Home"/>
-    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="My Jupyter Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My Jupyter Book - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
@@ -352,16 +363,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -440,7 +459,8 @@
 <section id="formation-of-ice-on-the-ocean-surface">
 <h2>Formation of ice on the ocean surface<a class="headerlink" href="#formation-of-ice-on-the-ocean-surface" title="Link to this heading">#</a></h2>
 <figure class="margin-caption align-default" id="iceformation">
-<a class="reference internal image-reference" href="../_images/10.IceFormation.png"><img alt="../_images/10.IceFormation.png" src="../_images/10.IceFormation.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/10.IceFormation.png"><img alt="../_images/10.IceFormation.png" src="../_images/10.IceFormation.png" style="width: 70%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 4.12 </span><span class="caption-text">Conditions for the formation of the first ice, when the surface temperature of the ocean <span class="math notranslate nohighlight">\(T_s = T_m\)</span>.</span><a class="headerlink" href="#iceformation" title="Link to this image">#</a></p>
 </figcaption>
@@ -461,7 +481,8 @@ Hence</p>
 <section id="growth-of-sea-ice">
 <h2>Growth of sea ice<a class="headerlink" href="#growth-of-sea-ice" title="Link to this heading">#</a></h2>
 <figure class="margin-caption align-default" id="icegrowth">
-<a class="reference internal image-reference" href="../_images/10.IceGrowth.png"><img alt="../_images/10.IceGrowth.png" src="../_images/10.IceGrowth.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/10.IceGrowth.png"><img alt="../_images/10.IceGrowth.png" src="../_images/10.IceGrowth.png" style="width: 70%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 4.13 </span><span class="caption-text">Simple thermal model for the growth of sea ice.</span><a class="headerlink" href="#icegrowth" title="Link to this image">#</a></p>
 </figcaption>
@@ -487,7 +508,8 @@ we can construct the equation governing the growth of ice:</p>
 <span class="eqno">(4.12)<a class="headerlink" href="#equation-10-steady-state" title="Link to this equation">#</a></span>\[h(t \to \infty) = \frac{k}{\lambda_A}\left[\frac{\lambda_A(T_m-T_A)}{F_o} - 1\right]\]</div>
 <p>Note that for ice <span class="math notranslate nohighlight">\(k \simeq 2\ \mathrm{W~m^{-2}~K^{-1}}\)</span> and <span class="math notranslate nohighlight">\(\lambda_A \simeq 20\ \mathrm{W~m^{-2}~K^{-1}}\)</span> the length scale <span class="math notranslate nohighlight">\(k/\lambda_A \simeq 10\ \mbox{cm}\)</span> and the final steady state thickness is a few metres.</p>
 <figure class="margin-caption align-default" id="icethickness">
-<a class="reference internal image-reference" href="../_images/10.IceThickness.png"><img alt="../_images/10.IceThickness.png" src="../_images/10.IceThickness.png" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="../_images/10.IceThickness.png"><img alt="../_images/10.IceThickness.png" src="../_images/10.IceThickness.png" style="width: 90%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 4.14 </span><span class="caption-text">Ice thickness over time using a radiative balance at the ice surface.</span><a class="headerlink" href="#icethickness" title="Link to this image">#</a></p>
 </figcaption>
@@ -501,7 +523,8 @@ we can construct the equation governing the growth of ice:</p>
 <span class="eqno">(4.13)<a class="headerlink" href="#equation-10-melt-rate" title="Link to this equation">#</a></span>\[\rho L \dv{h}{t} = F_A - F_o\]</div>
 <p>recalling of course that <span class="math notranslate nohighlight">\(F_A = \lambda_A(T_m - T_A) &lt; 0\)</span> since now <span class="math notranslate nohighlight">\(T_A &gt; T_m\)</span>.  Hence, the ice melts from both the top and bottom.</p>
 <figure class="margin-caption align-default" id="icemelting">
-<a class="reference internal image-reference" href="../_images/10.IceMelting.png"><img alt="../_images/10.IceMelting.png" src="../_images/10.IceMelting.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/10.IceMelting.png"><img alt="../_images/10.IceMelting.png" src="../_images/10.IceMelting.png" style="width: 70%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 4.15 </span><span class="caption-text">Schematic temperature structure in melting ice.</span><a class="headerlink" href="#icemelting" title="Link to this image">#</a></p>
 </figcaption>
@@ -511,14 +534,16 @@ we can construct the equation governing the growth of ice:</p>
 <h2>Seasonal cycle<a class="headerlink" href="#seasonal-cycle" title="Link to this heading">#</a></h2>
 <p>Putting all of these pieces together we can begin to understand the seasonal cycle of sea ice.  As the summer radiation wanes, the surface temperature follows the atmospheric temperature with some lag.  Then, as the air temperature plummets the surface temperature finally crosses the freezing point and ice begins to form.  This ice layer grows and thickens, but more slowly as it thickens, and effectively insulates the ocean beneath which always has a surface temperature <span class="math notranslate nohighlight">\(T_m\)</span>.  Finally, as the air temperature warms the ice becomes isothermal at the melting temperature and melts (from the top and the bottom).  The discontinuous jump in surface temperature occurs when the ice disappears, at which point the surface is no longer pinned to the freezing temperature.  The seasonal cycle is sketched schematically in <a class="reference internal" href="#seasonalice"><span class="std std-numref">Fig. 4.16</span></a>.</p>
 <figure class="margin-caption align-default" id="seasonalice">
-<a class="reference internal image-reference" href="../_images/10.SeasonalIce.png"><img alt="../_images/10.SeasonalIce.png" src="../_images/10.SeasonalIce.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/10.SeasonalIce.png"><img alt="../_images/10.SeasonalIce.png" src="../_images/10.SeasonalIce.png" style="width: 70%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 4.16 </span><span class="caption-text">Schematic seasonal cycle of ice surface temperature <span class="math notranslate nohighlight">\(T_s\)</span> and ice thickness <span class="math notranslate nohighlight">\(h\)</span>.</span><a class="headerlink" href="#seasonalice" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>It is worth also mentioning that, while we have concentrated on the thermodynamic growth and melting of sea ice, the thickness distribution of sea ice is a function of both the thermodynamic growth (which accounts for the thin end of the thickness distribution) and advection of ice resulting in ridging and rafting (which accounts for the long, thick tail of the ice thickness distribution).  A representative ice thickness distribution is given in <a class="reference internal" href="#icedistribution"><span class="std std-numref">Fig. 4.17</span></a>.</p>
 <figure class="margin-caption align-default" id="icedistribution">
-<a class="reference internal image-reference" href="../_images/10.IceThicknessDistribution.png"><img alt="../_images/10.IceThicknessDistribution.png" src="../_images/10.IceThicknessDistribution.png" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="../_images/10.IceThicknessDistribution.png"><img alt="../_images/10.IceThicknessDistribution.png" src="../_images/10.IceThicknessDistribution.png" style="width: 90%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 4.17 </span><span class="caption-text">Ice thickness distribution in the Arctic ocean, from Renner <em>et al.</em> Annals. Glac. (2013).</span><a class="headerlink" href="#icedistribution" title="Link to this image">#</a></p>
 </figcaption>
@@ -529,7 +554,8 @@ we can construct the equation governing the growth of ice:</p>
 <p>A significant aspect of the solidification of sea ice in polar waters is that ocean water is salty, not fresh.  This means that ocean waters, with a salt concentration of approximately <span class="math notranslate nohighlight">\(C_o \simeq 0\ \mathrm{wt\%}\)</span>, freeze at a temperature <span class="math notranslate nohighlight">\(T_L \simeq -1.8^\circ\mathrm{C}\)</span>.  The result is fresh water ice (salt does not get incorporated in the ice lattice) and more salty and cold surface waters.</p>
 <p>This thermodynamics of freezing salty ocean water is therefore determined by a binary eutectic phase diagram.  This plots the phase behaviour as a function of temperature <span class="math notranslate nohighlight">\(T\)</span> and the concentration <span class="math notranslate nohighlight">\(C\)</span> of the dominant salt, NaCl (here in weight percent) as shown in <a class="reference internal" href="#phasediagram"><span class="std std-numref">Fig. 4.18</span></a>.  On the phase diagram the liquidus line, <span class="math notranslate nohighlight">\(T_L(C)\)</span> distinguishes the concentration-dependent freezing temperature.  Below the liquidius nearly pure solid ice crystals form, bathed in a cold and salty interstitial brine.  As temperatures fall below the eutectic temperature <span class="math notranslate nohighlight">\(T_E\)</span> both solid ice and salt crystals form.</p>
 <figure class="margin-caption align-default" id="phasediagram">
-<a class="reference internal image-reference" href="../_images/10.IcePhaseDiagram.png"><img alt="../_images/10.IcePhaseDiagram.png" src="../_images/10.IcePhaseDiagram.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/10.IcePhaseDiagram.png"><img alt="../_images/10.IcePhaseDiagram.png" src="../_images/10.IcePhaseDiagram.png" style="width: 70%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 4.18 </span><span class="caption-text">Phase diagram of sea ice as a function of temperature <span class="math notranslate nohighlight">\(T\)</span> and concentration <span class="math notranslate nohighlight">\(C\ (\mathrm{wt\%})\)</span>.  Note theliquidus line <span class="math notranslate nohighlight">\(T_L(C)\)</span> which marks the concentration-dependent freezing point, and the eutectic temperature and concentration, <span class="math notranslate nohighlight">\(T_E,\ C_E\)</span>, which is the temperature below which both ice and salt crystals form.</span><a class="headerlink" href="#phasediagram" title="Link to this image">#</a></p>
 </figcaption>
@@ -593,8 +619,7 @@ we can construct the equation governing the growth of ice:</p>
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -657,8 +682,8 @@ By the QES Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

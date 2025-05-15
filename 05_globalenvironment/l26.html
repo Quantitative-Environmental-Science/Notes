@@ -16,22 +16,20 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -39,11 +37,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/admonitions.css?v=1588abde" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -71,7 +68,6 @@
     <link rel="prev" title="6. Global Environment" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -87,8 +83,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -96,6 +103,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -103,8 +111,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -120,8 +128,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -151,17 +158,21 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="My Jupyter Book - Home"/>
-    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="My Jupyter Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My Jupyter Book - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
@@ -352,16 +363,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 
 </div></div>
       
@@ -392,27 +411,31 @@
 <p>In this section, we will discuss the dynamics (the movement of air and water) in the atmosphere and ocean and the role that this movement plays in the climate system. The atmosphere and ocean store and transport vast amounts of heat and carbon. The movement of air and water helps to maintain habitability of the earth. Understanding these dynamics is critical to predicting the fate of the planet in a changing climate.</p>
 <p>We have discussed fluid motion in other contexts already in the course. Unlike the flows that we have encountered thus far, fluid motion in the ocean and atmosphere is strongly influenced by the rotation of the Earth. As we will see, the influence of the earth’s rotation on the fluid motion has interesting and counter-intuitive effects. Before we look at the equations governing atmosphere and ocean dynamics, we will examine the distribution of heat and carbon in the atmosphere and ocean.</p>
 <figure class="margin-caption align-default" id="fig-heat-distribution">
-<a class="reference internal image-reference" href="../_images/heat_distribution.png"><img alt="../_images/heat_distribution.png" src="../_images/heat_distribution.png" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="../_images/heat_distribution.png"><img alt="../_images/heat_distribution.png" src="../_images/heat_distribution.png" style="width: 90%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 6.1 </span><span class="caption-text">Distribution of incoming and outgoing radiation and their difference (net). From <a class="reference external" href="http://seaos-project.org">seaos-project.org</a></span><a class="headerlink" href="#fig-heat-distribution" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p><a class="reference internal" href="#fig-heat-distribution"><span class="std std-numref">Fig. 6.1</span></a> shows the distribution of the incoming and outgoing radiation as a function of latitude, averaged in time and longitude. The net radiation (incoming minus outgoing) is also shown. The incoming radiation exceeds the outgoing radiation by nearly 100 W/m<span class="math notranslate nohighlight">\(^2\)</span> at the equator, with a similar deficit near the poles. However, movement of air and water in the atmosphere and ocean transport heat from the tropics to the poles, compensating for the imbalance in the net radiation.</p>
 <figure class="margin-caption align-default" id="fig-equilibrium-temperature">
-<a class="reference internal image-reference" href="../_images/equilibrium_temperature.png"><img alt="../_images/equilibrium_temperature.png" src="../_images/equilibrium_temperature.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/equilibrium_temperature.png"><img alt="../_images/equilibrium_temperature.png" src="../_images/equilibrium_temperature.png" style="width: 70%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 6.2 </span><span class="caption-text">Equilibrium surface temperature as a function of sin(latitude) for the Earth and two hypothetical scenarios. From North et al. 1981.</span><a class="headerlink" href="#fig-equilibrium-temperature" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Without any heat transport, the net radiation imbalance would cause the tropics to heat up and the poles to cool down until the earth surface reached a new equilibrium temperature. The hypothetical equilibrium temperature without any heat transport is shown as a function of the sine of latitude in <a class="reference internal" href="#fig-equilibrium-temperature"><span class="std std-numref">Fig. 6.2</span></a>. For comparison, the actual mean Earth temperature is shown as a dotted line. Cambridge sits at about <span class="math notranslate nohighlight">\(\mu=0.79\)</span> where the equilibrium temperature without heat transport would be less than <span class="math notranslate nohighlight">\(-20^\circ\)</span>C! We should be very grateful for atmosphere and ocean dynamics! In the opposite extreme of infinitely fast transport, the earth’s surface would have a uniform temperature which is indicated in the horizontal dashed line.</p>
 <figure class="margin-caption align-default" id="fig-mean-atmospheric-temperature">
-<a class="reference internal image-reference" href="../_images/mean_atmospheric_temperature.png"><img alt="../_images/mean_atmospheric_temperature.png" src="../_images/mean_atmospheric_temperature.png" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="../_images/mean_atmospheric_temperature.png"><img alt="../_images/mean_atmospheric_temperature.png" src="../_images/mean_atmospheric_temperature.png" style="width: 90%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 6.3 </span><span class="caption-text">Mean atmospheric temperature, averaged in longitude and in time. From <a class="reference external" href="http://weathercliamtelab.mit.edu">weathercliamtelab.mit.edu</a></span><a class="headerlink" href="#fig-mean-atmospheric-temperature" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="margin-caption align-default" id="fig-woce-ocean-temperature">
-<a class="reference internal image-reference" href="../_images/WOCE_ocean_temperature.png"><img alt="../_images/WOCE_ocean_temperature.png" src="../_images/WOCE_ocean_temperature.png" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="../_images/WOCE_ocean_temperature.png"><img alt="../_images/WOCE_ocean_temperature.png" src="../_images/WOCE_ocean_temperature.png" style="width: 90%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 6.4 </span><span class="caption-text">North/South section of temperature from the Altantic Ocean in degrees C. From <a class="reference external" href="http://eWOCE.org">eWOCE.org</a></span><a class="headerlink" href="#fig-woce-ocean-temperature" title="Link to this image">#</a></p>
 </figcaption>
@@ -420,7 +443,8 @@
 <p><a class="reference internal" href="#fig-mean-atmospheric-temperature"><span class="std std-numref">Fig. 6.3</span></a> shows the annually-averaged temperature in the atmosphere, averaged in longitude as a function of latitude and height. Similarly, <a class="reference internal" href="#fig-woce-ocean-temperature"><span class="std std-numref">Fig. 6.4</span></a> shows a section of temperature across the North Atlantic as measured from a ship (note that this is not averaged). As we might expect, the mean temperature is highest in the tropics and near the Earth’s surface in both the atmosphere and ocean.</p>
 <p>There are significant gradients in temperature with latitude and height in both the ocean and atmosphere. At the Earth’s surface the cold air and water near the poles is significantly more dense than the corresponding warm air/water in the tropics. We might wonder what maintains this equilibrium; if the air near the poles is colder and denser than the air elsewhere on the earth’s surface, why doesn’t the cold dense air spread out to lower latitudes? As we will see, large-scale horizontal density gradients in the atmosphere and ocean are balanced by currents of air and water associated with the Coriolis acceleration.</p>
 <figure class="margin-caption align-default" id="fig-heat-transport">
-<a class="reference internal image-reference" href="../_images/heat_transport.png"><img alt="../_images/heat_transport.png" src="../_images/heat_transport.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/heat_transport.png"><img alt="../_images/heat_transport.png" src="../_images/heat_transport.png" style="width: 70%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 6.5 </span><span class="caption-text">North/south advective heat flux with atmospheric and oceanic contributions. From Wunsch 2005.</span><a class="headerlink" href="#fig-heat-transport" title="Link to this image">#</a></p>
 </figcaption>
@@ -429,14 +453,16 @@
 <p>The atmosphere transports more heat overall, but the ocean still transports a significant amount of heat, particularly at low latitudes. The two transport mechanisms are coupled - e.g. heat transported by the ocean could be released to the atmosphere which could then provide further poleward heat transport. As we will discuss later, the atmospheric heat transport is largely associated with eddies (e.g. storm systems), while the oceanic heat transport is largely associated with the mean (time-averaged) circulation.</p>
 <p>In addition to its heat transport, the ocean plays a central role in the earth’s climate system by acting as a massive reservoir for heat and carbon. The heat capacity of seawater is about 4000 J/kg/<span class="math notranslate nohighlight">\(^\circ\)</span>C, meaning that it takes about 4000 Joules to heat 1 kg of seawater by 1<span class="math notranslate nohighlight">\(^\circ\)</span>C. By comparison, the heat capacity of dry air is about 1000 J/kg/<span class="math notranslate nohighlight">\(^\circ\)</span>C. The difference in the <em>volumetric</em> heat capacity is much more dramatic since the density of water is about 1000 times larger than the density of air. The mass of the atmosphere is about <span class="math notranslate nohighlight">\(10^4\)</span> kg/m<span class="math notranslate nohighlight">\(^2\)</span>. Therefore, the upper 2.5m of the ocean has the same heat capacity as the entire atmosphere above it. When we consider that the ocean is several kilometers deep, we see that the heat capacity of the ocean vastly exceeds that of the atmosphere.</p>
 <figure class="margin-caption align-default" id="fig-ipcc-heat-change">
-<a class="reference internal image-reference" href="../_images/IPCC_heat_change.png"><img alt="../_images/IPCC_heat_change.png" src="../_images/IPCC_heat_change.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../_images/IPCC_heat_change.png"><img alt="../_images/IPCC_heat_change.png" src="../_images/IPCC_heat_change.png" style="width: 80%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 6.6 </span><span class="caption-text">Change in heat energy contained in various components of the earth system. From Bindoff et al. 2007 and IPCC AR4.</span><a class="headerlink" href="#fig-ipcc-heat-change" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p><a class="reference internal" href="#fig-ipcc-heat-change"><span class="std std-numref">Fig. 6.6</span></a> shows the change in heat energy during two periods. While we are all familiar with the warming trend in the atmosphere over this period, the ocean accounts for the vast majority of the increase in heat. This of course does not imply that the other components of the climate system are not important (e.g. melting of ice sheets contributes to sea level rise and melting Arctic sea ice changes the planet’s albedo).</p>
 <figure class="margin-caption align-default" id="fig-carbon-components">
-<a class="reference internal image-reference" href="../_images/carbon_components.png"><img alt="../_images/carbon_components.png" src="../_images/carbon_components.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../_images/carbon_components.png"><img alt="../_images/carbon_components.png" src="../_images/carbon_components.png" style="width: 80%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 6.7 </span><span class="caption-text">Non-geologic carbon reservoirs (boxes) and fluxes (arrows).</span><a class="headerlink" href="#fig-carbon-components" title="Link to this image">#</a></p>
 </figcaption>
@@ -542,8 +568,8 @@ By the QES Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

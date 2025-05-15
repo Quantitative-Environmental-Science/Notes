@@ -16,22 +16,20 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -39,11 +37,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/admonitions.css?v=1588abde" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -71,7 +68,6 @@
     <link rel="prev" title="3.5. Flood waves" href="l17.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -87,8 +83,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -96,6 +103,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -103,8 +111,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -120,8 +128,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -151,17 +158,21 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="My Jupyter Book - Home"/>
-    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="My Jupyter Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My Jupyter Book - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
@@ -352,16 +363,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -408,7 +427,8 @@
 <p>A river flowing through the landscape may overtop its embankment, as shown in <a class="reference internal" href="#fig-flood"><span class="std std-numref">Fig. 3.23</span></a>.
 The means water flows out of the channel and inundates the surrounding flood plane, and eventually can reach towns and other urban areas.</p>
 <figure class="margin-caption align-default" id="fig-flood">
-<a class="reference internal image-reference" href="../_images/figure18.1.png"><img alt="../_images/figure18.1.png" src="../_images/figure18.1.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/figure18.1.png"><img alt="../_images/figure18.1.png" src="../_images/figure18.1.png" style="width: 100%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 3.23 </span><span class="caption-text">A river overtopping its banks and flowing on to the flood plain.</span><a class="headerlink" href="#fig-flood" title="Link to this image">#</a></p>
 </figcaption>
@@ -416,7 +436,8 @@ The means water flows out of the channel and inundates the surrounding flood pla
 <p>We wish to determine the rate at which water is flowing out of the river.
 The situation is shown in more detail in <a class="reference internal" href="#fig-flood-schematic"><span class="std std-numref">Fig. 3.24</span></a>.</p>
 <figure class="margin-caption align-default" id="fig-flood-schematic">
-<a class="reference internal image-reference" href="../_images/figure18.2.png"><img alt="../_images/figure18.2.png" src="../_images/figure18.2.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/figure18.2.png"><img alt="../_images/figure18.2.png" src="../_images/figure18.2.png" style="width: 100%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 3.24 </span><span class="caption-text">A river overtopping its banks and flowing on to the flood plain.</span><a class="headerlink" href="#fig-flood-schematic" title="Link to this image">#</a></p>
 </figcaption>
@@ -475,7 +496,8 @@ This leads to the result that the flux is given by</p>
 <p>A flood defence barrier needs to withstand the pressure from the flood water.
 This leads to a horizontal force on the barrier which can be calculated from the integral of the hydrostatic pressure on the wall of the barrier.</p>
 <figure class="margin-caption align-default" id="fig-barrier">
-<a class="reference internal image-reference" href="../_images/figure18.3.png"><img alt="../_images/figure18.3.png" src="../_images/figure18.3.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/figure18.3.png"><img alt="../_images/figure18.3.png" src="../_images/figure18.3.png" style="width: 100%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 3.25 </span><span class="caption-text">A flood defence barrier, height <span class="math notranslate nohighlight">\(H\)</span>, holding back water at a height <span class="math notranslate nohighlight">\(h\)</span>.</span><a class="headerlink" href="#fig-barrier" title="Link to this image">#</a></p>
 </figcaption>
@@ -493,7 +515,8 @@ Therefore, the net pressure acting at a point on the barrier as a function of <s
 <p>To prevent the barrier rolling over there needs to be a system to withstand this torque,
 which may include a series of inclined support rods pressing on the top of the barrier from the ground on the non—wet side of the barrier.</p>
 <figure class="margin-caption align-default" id="fig-venice-lagoon">
-<a class="reference internal image-reference" href="../_images/figure18.4.png"><img alt="../_images/figure18.4.png" src="../_images/figure18.4.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/figure18.4.png"><img alt="../_images/figure18.4.png" src="../_images/figure18.4.png" style="width: 100%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 3.26 </span><span class="caption-text">In the Venice lagoon there are some interesting flood barriers which float up to the surface to stop incoming flow as in the figure above from the MODA website.</span><a class="headerlink" href="#fig-venice-lagoon" title="Link to this image">#</a></p>
 </figcaption>
@@ -507,7 +530,8 @@ Cars, logs and other large objects can be swept downstream and lead to blockages
 For example, a static car without any flood water has a weight <span class="math notranslate nohighlight">\(Mg\)</span> balanced by an upward normal force <span class="math notranslate nohighlight">\(N = Mg\)</span>.
 The sliding friction is typically given by a fraction <span class="math notranslate nohighlight">\(\mu\)</span> of this normal force, and so the critical force needed to move a dry car would be <span class="math notranslate nohighlight">\(\mu Mg\)</span>.</p>
 <figure class="margin-caption align-default" id="fig-car-forces">
-<a class="reference internal image-reference" href="../_images/figure18.5.png"><img alt="../_images/figure18.5.png" src="../_images/figure18.5.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/figure18.5.png"><img alt="../_images/figure18.5.png" src="../_images/figure18.5.png" style="width: 100%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 3.27 </span><span class="caption-text">The ability of a car to resist movement.</span><a class="headerlink" href="#fig-car-forces" title="Link to this image">#</a></p>
 </figcaption>
@@ -526,7 +550,8 @@ So, it is easier to move the car owing to the buoyancy from the presence of the 
 \[F = C_D \rho u^2 W h\]</div>
 <p>where the width of the car is <span class="math notranslate nohighlight">\(W\)</span> and the water depth is <span class="math notranslate nohighlight">\(h\)</span> and <span class="math notranslate nohighlight">\(C_D\)</span> is the drag coefficient for the water flow round the car.</p>
 <figure class="margin-caption align-default" id="fig-car-forces-side">
-<a class="reference internal image-reference" href="../_images/figure18.6.png"><img alt="../_images/figure18.6.png" src="../_images/figure18.6.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/figure18.6.png"><img alt="../_images/figure18.6.png" src="../_images/figure18.6.png" style="width: 100%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 3.28 </span><span class="caption-text">Forces exerted on a car in a flood.</span><a class="headerlink" href="#fig-car-forces-side" title="Link to this image">#</a></p>
 </figcaption>
@@ -555,7 +580,8 @@ The time of day that a flood enters a city is key for modelling the flood and th
 <p>A somewhat similar flood process also occurs with groundwater flows in the event that there is an open permeable flow path, perhaps bounded below by a clay layer, as in the figure below.
 However, similar effects occur in limestone formations, but with much of the flow passing through the fracture-related permeability rather than the pore spaces.</p>
 <figure class="margin-caption align-default" id="fig-groundwater-floods">
-<a class="reference internal image-reference" href="../_images/figure18.7.png"><img alt="../_images/figure18.7.png" src="../_images/figure18.7.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/figure18.7.png"><img alt="../_images/figure18.7.png" src="../_images/figure18.7.png" style="width: 100%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 3.29 </span><span class="caption-text">The processes of a groundwater flood.</span><a class="headerlink" href="#fig-groundwater-floods" title="Link to this image">#</a></p>
 </figcaption>
@@ -621,8 +647,7 @@ The flow may then drain into the base of a river. Analogous models for the groun
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -684,8 +709,8 @@ By the QES Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

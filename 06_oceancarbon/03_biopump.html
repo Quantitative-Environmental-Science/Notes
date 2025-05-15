@@ -16,22 +16,20 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -39,11 +37,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/admonitions.css?v=1588abde" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -71,7 +68,6 @@
     <link rel="prev" title="7.2. The Solubility Pump" href="02_solubility.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -87,8 +83,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -96,6 +103,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -103,8 +111,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -120,8 +128,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -151,17 +158,21 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="My Jupyter Book - Home"/>
-    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="My Jupyter Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My Jupyter Book - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
@@ -352,16 +363,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -438,7 +457,8 @@ However, for the purposes of understanding ocean carbon, we’re going to compre
 All organisms produce waste and eventually die, and this organic matter gradually sinks from the surface into the deep ocean.
 This constant rain of dead organisms and faecal matter from the surface ocean is known as <strong>marine snow</strong>, which makes it sound a lot nicer than it is!</p>
 <figure class="margin-caption align-default" id="fig-carbon-plankton">
-<a class="reference internal image-reference" href="../_images/carbon-plankton.jpg"><img alt="../_images/carbon-plankton.jpg" src="../_images/carbon-plankton.jpg" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/carbon-plankton.jpg"><img alt="../_images/carbon-plankton.jpg" src="../_images/carbon-plankton.jpg" style="width: 70%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.14 </span><span class="caption-text">A light micrograph of surface ocean plankton. This is typical of what you’d see down a microscope if you filtered a few litres of seawater. Most of the organisms you see here are zooplankton - micriscopic animals and the larval stages of larger organisms. The phytoplankton are the green- and brown-coloured particles you can see inside the zooplankton which have eaten them. Photo: Annegret Stuhr, GEOMAR.</span><a class="headerlink" href="#fig-carbon-plankton" title="Link to this image">#</a></p>
 </figcaption>
@@ -452,7 +472,8 @@ This constant rain of dead organisms and faecal matter from the surface ocean is
 This simplified reaction implies that photosynthesis only depends upon the presence of CO<sub>2</sub> and light; CO<sub>2</sub> is ubiquitously present in the surface ocean, so this would predict that photosynthesis should be capturing carbon from the atmosphere <em>everywhere</em> that there is light.
 We can see from <a class="reference internal" href="#fig-carbon-chla"><span class="std std-numref">Fig. 7.15</span></a> that this is not the case, with large regions of low productivity in the subtropical gyres, where there is abundant light.</p>
 <figure class="margin-caption align-default" id="fig-carbon-chla">
-<a class="reference internal image-reference" href="../_images/seawifs-chlorophyll.png"><img alt="../_images/seawifs-chlorophyll.png" src="../_images/seawifs-chlorophyll.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/seawifs-chlorophyll.png"><img alt="../_images/seawifs-chlorophyll.png" src="../_images/seawifs-chlorophyll.png" style="width: 100%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.15 </span><span class="caption-text">The annual average concentration of chlorophyll in the surface ocean, as measured by the SeaWiFS satellite. Chlorophyll is the green pigment that phytoplankton use to harvest light energy, and its characteristic absorption spectrum make it possible to determine its concentration, and therefore phytoplankton abundance, from satellite measurements of ocean colour. Image from <a class="reference external" href="https://svs.gsfc.nasa.gov/30801">NASA</a>.</span><a class="headerlink" href="#fig-carbon-chla" title="Link to this image">#</a></p>
 </figcaption>
@@ -469,7 +490,8 @@ Some phytoplankton that live in polar oceans are able to survive the long winter
 A local upwelling of nutrient-rich waters caused by a storm or an eddy can trigger a phytoplankton bloom in the surface ocean (<a class="reference internal" href="#fig-carbon-bloom"><span class="std std-numref">Fig. 7.16</span></a>), as the local residents rapidly multiply to use up the available nutrients.
 This makes patterns of productivity much more ‘patchy’ than the annual average productivity that we see in <a class="reference internal" href="#fig-carbon-chla"><span class="std std-numref">Fig. 7.15</span></a>.</p>
 <figure class="margin-caption align-default" id="fig-carbon-bloom">
-<a class="reference internal image-reference" href="../_images/carbon-phyto-bloom.jpg"><img alt="../_images/carbon-phyto-bloom.jpg" src="../_images/carbon-phyto-bloom.jpg" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/carbon-phyto-bloom.jpg"><img alt="../_images/carbon-phyto-bloom.jpg" src="../_images/carbon-phyto-bloom.jpg" style="width: 70%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.16 </span><span class="caption-text">A bloom of phytoplankton off the East coast of Scotland. Image from <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Phytoplankton_bloom_off_the_coast_of_Scotland.jpg">Envisat via Wikimedia Commons</a>.</span><a class="headerlink" href="#fig-carbon-bloom" title="Link to this image">#</a></p>
 </figcaption>
@@ -483,7 +505,8 @@ This makes patterns of productivity much more ‘patchy’ than the annual avera
 Also notice that the act of photosynthesis consumes some H<sup>+</sup>, which is involved in the process of nutrient assimilation.
 An interesting characteristic of organic matter is that it contains C:N:P in a relatively consistent 106:16:1 ratio, which is known as the <strong>Redfield Ratio</strong> (<a class="reference internal" href="#fig-carbon-redfield"><span class="std std-numref">Fig. 7.17</span></a>).</p>
 <figure class="margin-caption align-default" id="fig-carbon-redfield">
-<a class="reference internal image-reference" href="../_images/carbon-redfield.webp"><img alt="../_images/carbon-redfield.webp" src="../_images/carbon-redfield.webp" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/carbon-redfield.webp"><img alt="../_images/carbon-redfield.webp" src="../_images/carbon-redfield.webp" style="width: 70%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.17 </span><span class="caption-text">The dissolved concentations of N and P in the ocean show a consistent 16:1 slope, corresponding to the concentration of these elements in average organic matter.</span><a class="headerlink" href="#fig-carbon-redfield" title="Link to this image">#</a></p>
 </figcaption>
@@ -499,7 +522,8 @@ Specialised groups of phytoplankton have evolved the ability to reduce dissolved
 <p>A third source of both N and P to the surface ocean is the upwelling of nutrient-rich deep water, which recycles nutrients from the deep ocean back to the surface.
 We’ll discuss why the deep ocean is enriched in nutrients below.</p>
 <figure class="margin-caption align-default" id="fig-carbon-limitation">
-<a class="reference internal image-reference" href="../_images/carbon-nutrient-limitation.webp"><img alt="../_images/carbon-nutrient-limitation.webp" src="../_images/carbon-nutrient-limitation.webp" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="../_images/carbon-nutrient-limitation.webp"><img alt="../_images/carbon-nutrient-limitation.webp" src="../_images/carbon-nutrient-limitation.webp" style="width: 90%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.18 </span><span class="caption-text">The average concentration of elements in phytoplankton cells and dissolved in the ocean. Anything that falls below the dotted line will limit phytoplankton growth. Consequently, elements below this line (e.g. Fe, Mn, Co) are rapidly consumed by phytoplankton, which gives the ma very short residence time in the ocean compared to abundant ions that are not limiting (e.g. Mg, K, S). From <a class="reference external" href="https://doi.org/10.1038/ngeo1765">Moore et al. (2013)</a>.</span><a class="headerlink" href="#fig-carbon-limitation" title="Link to this image">#</a></p>
 </figcaption>
@@ -525,7 +549,8 @@ Here, we’ll only consider the effects of macronutrients on phytoplankton growt
 <li><p><strong>Mixed layer depth</strong>, which determines the depth range over which the phytoplankton are living, and the average amount of light they receive.</p></li>
 </ul>
 <figure class="margin-caption align-default" id="fig-carbon-light">
-<a class="reference internal image-reference" href="../_images/carbon-biopump-light.png"><img alt="../_images/carbon-biopump-light.png" src="../_images/carbon-biopump-light.png" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="../_images/carbon-biopump-light.png"><img alt="../_images/carbon-biopump-light.png" src="../_images/carbon-biopump-light.png" style="width: 90%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.19 </span><span class="caption-text">The change in seasonal light availability with season. The high latitudes receive much less light than the low latitudes, and experience several months of near-complete darkness in the winter. From  Mueller (2016).</span><a class="headerlink" href="#fig-carbon-light" title="Link to this image">#</a></p>
 </figcaption>
@@ -536,7 +561,8 @@ Above this depth, the photosynthesis of the organism exceeds its respiration, an
 <p>Phytoplankton have minimal control over their position in the water column, so are transported throughout the mixed layer by turbulent mixing processes.
 This means that the average amount of light an individual phytoplankton will receive is determine by a combination of the amount of incident light, the attenuation of light in the water, and the depth of the mixed layer.</p>
 <figure class="margin-caption align-default" id="fig-carbon-compensation-depth">
-<a class="reference internal image-reference" href="../_images/carbon-compensation-depth.png"><img alt="../_images/carbon-compensation-depth.png" src="../_images/carbon-compensation-depth.png" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="../_images/carbon-compensation-depth.png"><img alt="../_images/carbon-compensation-depth.png" src="../_images/carbon-compensation-depth.png" style="width: 90%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.20 </span><span class="caption-text">The concept of compensation depth. To grow and reproduce phytoplankton must exist, on average, above the compensation depth in the region where photosynthesis exceeds respiration.</span><a class="headerlink" href="#fig-carbon-compensation-depth" title="Link to this image">#</a></p>
 </figcaption>
@@ -557,7 +583,8 @@ This increases the dissolved concentrations of carbon and nutrients in the deep 
 Broadly speaking, ocean mixing processes try to homogenise the ocean and raise nutrients and carbon to the surface, while the biological pump tries to concentrate nutrients and carbon in the deep ocean.
 The balance between these processes has a big effect on how much CO<sub>2</sub> is in the atmosphere.</p>
 <figure class="margin-caption align-default" id="fig-carbon-biopump">
-<a class="reference internal image-reference" href="../_images/carbon-biopump.webp"><img alt="../_images/carbon-biopump.webp" src="../_images/carbon-biopump.webp" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../_images/carbon-biopump.webp"><img alt="../_images/carbon-biopump.webp" src="../_images/carbon-biopump.webp" style="width: 80%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.21 </span><span class="caption-text">A schematic of the biological pump and solubility pump from <a class="reference external" href="https://doi.org/10.1038/35037696">Chisholm (2000)</a></span><a class="headerlink" href="#fig-carbon-biopump" title="Link to this image">#</a></p>
 </figcaption>
@@ -567,14 +594,16 @@ Only ~20% of the organic matter produced in the surface ocean makes it into the 
 Only about 1% of the organic matter produced at the surface eventually makes it all the way to the sediments at the bottom of the ocean (but note that sediments are not included in our model, where we assume everything that leaves the surface ocean is remineralised into the deep).</p>
 <p>Even though only ~20% of organic matter is exported into the deep ocean, the biological pump is large enough to drive a significant accumulation of nutrients and carbon in the deep ocean, which increases in concentration along the thermohaline circulation path (<a class="reference internal" href="#fig-carbon-circulation"><span class="std std-numref">Fig. 7.22</span></a>).</p>
 <figure class="margin-caption align-default" id="fig-carbon-circulation">
-<a class="reference internal image-reference" href="../_images/carbon-cx-dic-po4-circ.png"><img alt="../_images/carbon-cx-dic-po4-circ.png" src="../_images/carbon-cx-dic-po4-circ.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/carbon-cx-dic-po4-circ.png"><img alt="../_images/carbon-cx-dic-po4-circ.png" src="../_images/carbon-cx-dic-po4-circ.png" style="width: 100%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.22 </span><span class="caption-text">The (salinity-normalised) concentrations of PO<sub>4</sub> and DIC in the ocean interior along the Thermohaline Circulation path (red arrows). Notice how both PO<sub>4</sub> and DIC increase in deep water along the circulation path. This is because they receive a constant supply of nutrients from organic matter falling from the surface and remineralising in the deep water. This acts to concentration nutrients and DIC in the deep ocean, leading to nutrient-rich waters in upwelling zones. From <a class="reference external" href="https://doi.org/10.1515/9781400849079">Sarmiento &amp; Gruber (2006), Chapter 5</a>.</span><a class="headerlink" href="#fig-carbon-circulation" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The influence of the biological pump can be estimated by subtracting measured DIC concentrations in the deep ocean from patterns predicted by <a class="reference internal" href="02_solubility.html#carbon-solubility"><span class="std std-ref">The Solubility Pump</span></a> alone.</p>
 <figure class="margin-caption align-default" id="fig-carbon-csoft">
-<a class="reference internal image-reference" href="../_images/carbon-Csoft.png"><img alt="../_images/carbon-Csoft.png" src="../_images/carbon-Csoft.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/carbon-Csoft.png"><img alt="../_images/carbon-Csoft.png" src="../_images/carbon-Csoft.png" style="width: 100%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.23 </span><span class="caption-text">The contribution of the biological pump to the deep ocean carbon reservoir. <a class="reference external" href="https://doi.org/10.1515/9781400849079">Sarmiento &amp; Gruber (2006), Chapter 5</a>.</span><a class="headerlink" href="#fig-carbon-csoft" title="Link to this image">#</a></p>
 </figcaption>
@@ -599,7 +628,8 @@ This can increase the importance of higher trophic levels in driving organic mat
 <li><p>Parameterise the impact of photosynethsis and remineralisation on ocean carbon.</p></li>
 </ol>
 <figure class="margin-caption align-default" id="fig-carbon-3box">
-<a class="reference internal image-reference" href="../_images/ocean-3box-CO2-bio.png"><img alt="../_images/ocean-3box-CO2-bio.png" src="../_images/ocean-3box-CO2-bio.png" style="width: 60%;" /></a>
+<a class="reference internal image-reference" href="../_images/ocean-3box-CO2-bio.png"><img alt="../_images/ocean-3box-CO2-bio.png" src="../_images/ocean-3box-CO2-bio.png" style="width: 60%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.24 </span><span class="caption-text">To model the solubility pump, we need to include the conservative transport of a nutrient through the ocean boxes to fuel biological productivity. We then need to paramterise the production of organic matter in the surface ocean, which takes up DIC and nutrients and exports them to the deep ocean.</span><a class="headerlink" href="#fig-carbon-3box" title="Link to this image">#</a></p>
 </figcaption>
@@ -699,8 +729,7 @@ To do this, we can write a simplified version of <a class="reference internal" h
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -775,8 +804,8 @@ By the QES Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

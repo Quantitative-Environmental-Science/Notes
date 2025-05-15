@@ -16,22 +16,20 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -39,11 +37,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/admonitions.css?v=1588abde" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -71,7 +68,6 @@
     <link rel="prev" title="6.7. Stommel box model for ocean heat transport" href="l32.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -87,8 +83,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -96,6 +103,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -103,8 +111,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -120,8 +128,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -151,17 +158,21 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="My Jupyter Book - Home"/>
-    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="My Jupyter Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My Jupyter Book - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
@@ -352,16 +363,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 
 </div></div>
       
@@ -391,14 +410,16 @@
 <span id="lecture-33"></span><h1><span class="section-number">6.8. </span>Shallow wind-forced ocean circulation<a class="headerlink" href="#shallow-wind-forced-ocean-circulation" title="Link to this heading">#</a></h1>
 <p>In the previous section we described a box model for the ocean heat transport. A central feature of this model was a representation of the Thermohaline Circulation (THC) which transports warm water poleward near the ocean surface and returns cold water back to low latitudes in the deep ocean. In the next two sections, we will examine the physical processes that help to set the circulation in the near-surface and deep ocean. Understanding the drivers of the circulation is an important step if we want to understand how the system might change in the future (or how it was different in the past).</p>
 <figure class="margin-caption align-default" id="fig-ocean-circulation">
-<a class="reference internal image-reference" href="../_images/ocean-circulation.png"><img alt="../_images/ocean-circulation.png" src="../_images/ocean-circulation.png" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="../_images/ocean-circulation.png"><img alt="../_images/ocean-circulation.png" src="../_images/ocean-circulation.png" style="width: 90%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 6.25 </span><span class="caption-text">Shallow wind-driven circulation (white) and Thermohaline Circulation (black) drawn on a North/South section from the Atlantic Ocean showing temperature in color and contours.</span><a class="headerlink" href="#fig-ocean-circulation" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Conceptually, we can divide the ocean circulation into shallow wind-forced component and the deep Thermohaline Circulation (THC). <a class="reference internal" href="#fig-ocean-circulation"><span class="std std-numref">Fig. 6.25</span></a> sketches these two types of circulation on a temperature section from the Atlantic Ocean as a function of Latitude and depth. In this section we will focus on the shallow wind-forced circulation, and we will discuss the THC in the next section. It is important to note that these two circulation systems are not independent of one another, and despite its name, the Thermohaline Circulation is influenced by wind.</p>
 <figure class="margin-caption align-default" id="fig-lowlevel-wind">
-<a class="reference internal image-reference" href="../_images/lowlevel_wind.png"><img alt="../_images/lowlevel_wind.png" src="../_images/lowlevel_wind.png" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="../_images/lowlevel_wind.png"><img alt="../_images/lowlevel_wind.png" src="../_images/lowlevel_wind.png" style="width: 90%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 6.26 </span><span class="caption-text">Average wind speed for the months of June - August at a height of 10m. Color shows the magnitude and arrows show the direction. From Kallberg et al. 1995.</span><a class="headerlink" href="#fig-lowlevel-wind" title="Link to this image">#</a></p>
 </figcaption>
@@ -427,14 +448,16 @@ f \int_{-h}^0 u dz &amp;= \nu\left.\frac{\partial v}{\partial z}\right|_0 - \nu\
 \int_{-h}^0 u dz &amp;= 0.\end{split}\]</div>
 <p>Remarkably, the depth-integrated velocity in the direction of the wind is zero! Instead, the depth-integrated velocity is directed 90<span class="math notranslate nohighlight">\(^\circ\)</span> to the right of the wind stress in the Northern Hemisphere where <span class="math notranslate nohighlight">\(f&gt;0\)</span>.</p>
 <figure class="margin-caption align-default" id="fig-microplastics">
-<a class="reference internal image-reference" href="../_images/microplastics.png"><img alt="../_images/microplastics.png" src="../_images/microplastics.png" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="../_images/microplastics.png"><img alt="../_images/microplastics.png" src="../_images/microplastics.png" style="width: 90%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 6.27 </span><span class="caption-text">Concentration of microplastics from ship-based surveys. From van Sebille et al.\ 2015.</span><a class="headerlink" href="#fig-microplastics" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>In the subtropics, we can see that the wind patterns will lead to a depth-integrated velocity that <em>converges</em> in the middle of the ocean basin. This converging water carries with it floating material which then accumulates in the middle of the ocean basins. This leads to the ‘garbage patches’ that have been observed in the middle of the ocean basins. <a class="reference internal" href="#fig-microplastics"><span class="std std-numref">Fig. 6.27</span></a> shows an estimate of the concentration of microplastics based on ship surveys.</p>
 <figure class="margin-caption align-default" id="fig-continuity-sketch">
-<a class="reference internal image-reference" href="../_images/continuity_sketch.jpeg"><img alt="../_images/continuity_sketch.jpeg" src="../_images/continuity_sketch.jpeg" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="../_images/continuity_sketch.jpeg"><img alt="../_images/continuity_sketch.jpeg" src="../_images/continuity_sketch.jpeg" style="width: 90%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 6.28 </span><span class="caption-text">Sketch illustrating volume conservation in a square control volume</span><a class="headerlink" href="#fig-continuity-sketch" title="Link to this image">#</a></p>
 </figcaption>
@@ -456,7 +479,8 @@ f \int_{-h}^0 u dz &amp;= \nu\left.\frac{\partial v}{\partial z}\right|_0 - \nu\
 \[w(z=-h)=-\frac{\partial}{\partial y}\left(\frac{\tau^w}{\rho f}\right).\]</div>
 <p>Hence, in the Northern Hemisphere subtropics, where <span class="math notranslate nohighlight">\(\partial \tau^w/\partial y&gt;0\)</span>, we have <span class="math notranslate nohighlight">\(w(z=-h)&lt;0\)</span> as we anticipated.</p>
 <figure class="margin-caption align-default" id="fig-ekman-pumping">
-<a class="reference internal image-reference" href="../_images/ekman_pumping.png"><img alt="../_images/ekman_pumping.png" src="../_images/ekman_pumping.png" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="../_images/ekman_pumping.png"><img alt="../_images/ekman_pumping.png" src="../_images/ekman_pumping.png" style="width: 90%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 6.29 </span><span class="caption-text">Time-averaged vertical velocity in the upper ocean. Red shading indicates downward motion and green indicates upward motion. The contour labels are in meters per year. From Wunsch, 2011.</span><a class="headerlink" href="#fig-ekman-pumping" title="Link to this image">#</a></p>
 </figcaption>
@@ -464,14 +488,16 @@ f \int_{-h}^0 u dz &amp;= \nu\left.\frac{\partial v}{\partial z}\right|_0 - \nu\
 <p>We could extend this analysis for the wind stress vector (without assuming that it is aligned with the <span class="math notranslate nohighlight">\(x\)</span>-axis). <a class="reference internal" href="#fig-ekman-pumping"><span class="std std-numref">Fig. 6.29</span></a> shows the time-averaged vertical velocity in the upper ocean (at a depth of about 100m). Comparing with <a class="reference internal" href="#fig-lowlevel-wind"><span class="std std-numref">Fig. 6.26</span></a>, we generally see <em>downwelling</em> in regions where the wind patterns will give a <em>convergent</em> steady circulation, and <em>upwelling</em> where the wind patterns will give a <em>divergent</em> steady circulation.</p>
 <p>The downwelling regions in the middle of the ocean basins leads to low biological productivity. Away from the coastlines, microalgae (phytoplankton) growing in the upper ocean tend to deplete the surface waters of essential nutrients. When phytoplankton die, they sink and are eventually broken down by bacteria into inorganic material. This re-supplies nutrients to the ocean interior.</p>
 <figure class="margin-caption align-default" id="fig-ewoce-nitrate">
-<a class="reference internal image-reference" href="../_images/ewoce_nitrate.png"><img alt="../_images/ewoce_nitrate.png" src="../_images/ewoce_nitrate.png" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="../_images/ewoce_nitrate.png"><img alt="../_images/ewoce_nitrate.png" src="../_images/ewoce_nitrate.png" style="width: 90%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 6.30 </span><span class="caption-text">Nitrate concentration as a function of latitude and time for the Atlantic Ocean. The downwelling wind-forced ocean circulation is indicated in black arrow.</span><a class="headerlink" href="#fig-ewoce-nitrate" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>In regions where <span class="math notranslate nohighlight">\(d\tau^w/dy&gt;0\)</span>, including the equatorial regions (between the trade winds and the equator) and high latitudes (north of the westerly winds), wind-forced upwelling brings nutrients back to the surface. As a result, these regions are highly productive. On the other hand, when <span class="math notranslate nohighlight">\(d\tau^w/dy&lt;0\)</span>, low nutrient water is pushed down into the ocean interior, and the near-surface nutrient concentrations remain low. As a result, these regions have low biological productivity. We can see the tendency for low nutrient waters to be pushed down into the ocean interior in <a class="reference internal" href="#fig-ewoce-nitrate"><span class="std std-numref">Fig. 6.30</span></a> which shows nitrate (an important nutrient) on a north/south section of the Atlantic.</p>
 <figure class="margin-caption align-default" id="fig-seawifs-chlorophyll">
-<a class="reference internal image-reference" href="../_images/seawifs_chlorophyll.png"><img alt="../_images/seawifs_chlorophyll.png" src="../_images/seawifs_chlorophyll.png" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="../_images/seawifs_chlorophyll.png"><img alt="../_images/seawifs_chlorophyll.png" src="../_images/seawifs_chlorophyll.png" style="width: 90%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 6.31 </span><span class="caption-text">Mean (time-averaged) near-surface chlorophyll concentration inferred from an ocean color satellite.</span><a class="headerlink" href="#fig-seawifs-chlorophyll" title="Link to this image">#</a></p>
 </figcaption>
@@ -493,7 +519,8 @@ f \int_{-h}^0 u dz &amp;= \nu\left.\frac{\partial v}{\partial z}\right|_0 - \nu\
 <div class="math notranslate nohighlight">
 \[H \sim \frac{1}{f}\sqrt{\frac{\tau^w}{\rho}}.\]</div>
 <figure class="margin-caption align-default" id="fig-wind-stress">
-<a class="reference internal image-reference" href="../_images/microplastics.png"><img alt="../_images/microplastics.png" src="../_images/microplastics.png" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="../_images/microplastics.png"><img alt="../_images/microplastics.png" src="../_images/microplastics.png" style="width: 90%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 6.32 </span><span class="caption-text">Mean wind stress magnitude over the surface of the ocean. From Cronin and Tozuka, 2016.</span><a class="headerlink" href="#fig-wind-stress" title="Link to this image">#</a></p>
 </figcaption>
@@ -600,8 +627,8 @@ By the QES Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

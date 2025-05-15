@@ -16,22 +16,20 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -39,11 +37,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/admonitions.css?v=1588abde" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -71,7 +68,6 @@
     <link rel="prev" title="8.2. The Methane Cycle" href="l41.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -87,8 +83,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -96,6 +103,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -103,8 +111,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -120,8 +128,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -151,17 +158,21 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="My Jupyter Book - Home"/>
-    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="My Jupyter Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My Jupyter Book - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
@@ -352,16 +363,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -407,7 +426,8 @@
 This quantification is done largely through two means – one is <strong>top down</strong> inventories of the methane budget and the other is <strong>bottom up</strong> inventories of the methane budget.
 These have multiple overlapping temporal and spatial scales and involve a range of different types of measurements and models (<a class="reference internal" href="#fig-land-methane-spacetime"><span class="std std-numref">Fig. 8.19</span></a>), and when combined allow us to understand the balance between the sources and sinks of methane to the global budget.</p>
 <figure class="margin-caption align-default" id="fig-land-methane-spacetime">
-<a class="reference internal image-reference" href="../_images/07_landcarbon.3.1.jpeg"><img alt="../_images/07_landcarbon.3.1.jpeg" src="../_images/07_landcarbon.3.1.jpeg" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/07_landcarbon.3.1.jpeg"><img alt="../_images/07_landcarbon.3.1.jpeg" src="../_images/07_landcarbon.3.1.jpeg" style="width: 100%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 8.19 </span><span class="caption-text">The spatial and temporal scale of methods used to measure methane.</span><a class="headerlink" href="#fig-land-methane-spacetime" title="Link to this image">#</a></p>
 </figcaption>
@@ -419,7 +439,8 @@ Methane absorbs well in the shortwave infrared (SWIR, <a class="reference intern
 There are now many satellites that measure methane concentrations daily with near global coverage.
 Methane concentrations can also be measured by research aircraft although they don’t have nearly the same coverage as satellites.</p>
 <figure class="margin-caption align-default" id="fig-land-methane-opticaldepth">
-<a class="reference internal image-reference" href="../_images/07_landcarbon.3.2.png"><img alt="../_images/07_landcarbon.3.2.png" src="../_images/07_landcarbon.3.2.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../_images/07_landcarbon.3.2.png"><img alt="../_images/07_landcarbon.3.2.png" src="../_images/07_landcarbon.3.2.png" style="width: 80%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 8.20 </span><span class="caption-text">Atmospheric optical depths of major trace gases in the spectral region 1.5-2.5 μm.
 The calculation is for the US Standard Atmosphere (Anderson et al, 1986) with surface concentrations adjusted to 399 ppm CO<sub>2</sub>, 1.9 ppm methane, 330 ppb N<sub>2</sub>O and 80 ppm CO.
@@ -431,7 +452,8 @@ Figure from Jacob et al., 2016.</span><a class="headerlink" href="#fig-land-meth
 This requires atmospheric chemistry models, and a particular class of model called inverse models (<a class="reference internal" href="#fig-land-methane-measurement"><span class="std std-numref">Fig. 8.21</span></a>).
 Most of the models we have been looking at throughout QES are forward models, which step forward in time, iterating some parameter or variable.</p>
 <figure class="margin-caption align-default" id="fig-land-methane-measurement">
-<a class="reference internal image-reference" href="../_images/07_landcarbon.3.3_4.png"><img alt="../_images/07_landcarbon.3.3_4.png" src="../_images/07_landcarbon.3.3_4.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../_images/07_landcarbon.3.3_4.png"><img alt="../_images/07_landcarbon.3.3_4.png" src="../_images/07_landcarbon.3.3_4.png" style="width: 80%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 8.21 </span><span class="caption-text">Schematic of an forward model.</span><a class="headerlink" href="#fig-land-methane-measurement" title="Link to this image">#</a></p>
 </figcaption>
@@ -442,7 +464,8 @@ For example, a pipe leak (the source) versus the resolution of a satellite (the 
 <p>These top down approaches have allowed for a global methane budget to be calculated (<a class="reference internal" href="#fig-land-methane-budget-td"><span class="std std-numref">Fig. 8.22</span></a>).
 Top down approaches do a pretty good job of balancing the sources and the sinks of methane to the atmosphere, with a small excess in the sources driving the increase observed in the atmosphere.</p>
 <figure class="margin-caption align-default" id="fig-land-methane-budget-td">
-<a class="reference internal image-reference" href="../_images/07_landcarbon.3.5.png"><img alt="../_images/07_landcarbon.3.5.png" src="../_images/07_landcarbon.3.5.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/07_landcarbon.3.5.png"><img alt="../_images/07_landcarbon.3.5.png" src="../_images/07_landcarbon.3.5.png" style="width: 100%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 8.22 </span><span class="caption-text">The global methane budget in 2017, measured using top-down methods.</span><a class="headerlink" href="#fig-land-methane-budget-td" title="Link to this image">#</a></p>
 </figcaption>
@@ -458,7 +481,8 @@ The activity is essentially how much you have of something, and the emission fac
 For example, livestock emissions are from methane produced in the stomach of cows, and are measured at the point source by estimating the methane concentration that the cow breathes out multiplied by the number of cows (the ‘activity’).
 We can consider how bottom up source estimates are measured by considering each of these in turn.</p>
 <figure class="margin-caption align-default" id="fig-land-methane-sources">
-<a class="reference internal image-reference" href="../_images/07_landcarbon.3.6.png"><img alt="../_images/07_landcarbon.3.6.png" src="../_images/07_landcarbon.3.6.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../_images/07_landcarbon.3.6.png"><img alt="../_images/07_landcarbon.3.6.png" src="../_images/07_landcarbon.3.6.png" style="width: 80%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 8.23 </span><span class="caption-text">A summary of ‘bottom-up’ estimates of methane sources.</span><a class="headerlink" href="#fig-land-methane-sources" title="Link to this image">#</a></p>
 </figcaption>
@@ -466,7 +490,8 @@ We can consider how bottom up source estimates are measured by considering each 
 <p>The flux of methane from oil and gas production has been hard to quantify, and much recent work has suggested that pipelines and oil fields are far leakier than was previously thought.
 The main issue is that there are many places along the oil, gas, and coal production path where methane can be leaked to the atmosphere (<a class="reference internal" href="#fig-land-methane-oilgas"><span class="std std-numref">Fig. 8.24</span></a>).</p>
 <figure class="margin-caption align-default" id="fig-land-methane-oilgas">
-<a class="reference internal image-reference" href="../_images/07_landcarbon.3.7.png"><img alt="../_images/07_landcarbon.3.7.png" src="../_images/07_landcarbon.3.7.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/07_landcarbon.3.7.png"><img alt="../_images/07_landcarbon.3.7.png" src="../_images/07_landcarbon.3.7.png" style="width: 100%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 8.24 </span><span class="caption-text">Mechanisms of methane release from hydrocarbon extraction and processing from  Scarpelli et al. (2020).</span><a class="headerlink" href="#fig-land-methane-oilgas" title="Link to this image">#</a></p>
 </figcaption>
@@ -475,7 +500,8 @@ The main issue is that there are many places along the oil, gas, and coal produc
 However landfills continue to emit methane to the atmosphere in large quantities.
 Measuring this can be done with surface instrumentation, from the very small scale (someone walking around with a monitor) to the larger scale (using eddy covariance techniques, or optical plume monitoring), to aircraft measurements with inert tracer gases that are put in the land fill and then traced by aircraft monitoring (<a class="reference internal" href="#fig-land-methane-landfills"><span class="std std-numref">Fig. 8.25</span></a>).</p>
 <figure class="margin-caption align-default" id="fig-land-methane-landfills">
-<a class="reference internal image-reference" href="../_images/07_landcarbon.3.8.png"><img alt="../_images/07_landcarbon.3.8.png" src="../_images/07_landcarbon.3.8.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/07_landcarbon.3.8.png"><img alt="../_images/07_landcarbon.3.8.png" src="../_images/07_landcarbon.3.8.png" style="width: 100%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 8.25 </span><span class="caption-text">The range of areas that can be covered by different monitoring techniques, from Monster et al. (2019).</span><a class="headerlink" href="#fig-land-methane-landfills" title="Link to this image">#</a></p>
 </figcaption>
@@ -507,7 +533,8 @@ Tortuosity gives us a sense of how straight a path is through the soil matrix.
 It is the ratio of the actual flow path length to a straight path length and formulations for the tortuosity include the porosity (<span class="math notranslate nohighlight">\(e\)</span>).
 This is illustrated in <a class="reference internal" href="#fig-land-methane-tortuosity"><span class="std std-numref">Fig. 8.26</span></a>.</p>
 <figure class="margin-caption align-default" id="fig-land-methane-tortuosity">
-<a class="reference internal image-reference" href="../_images/07_landcarbon.3.9.jpeg"><img alt="../_images/07_landcarbon.3.9.jpeg" src="../_images/07_landcarbon.3.9.jpeg" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../_images/07_landcarbon.3.9.jpeg"><img alt="../_images/07_landcarbon.3.9.jpeg" src="../_images/07_landcarbon.3.9.jpeg" style="width: 80%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 8.26 </span><span class="caption-text">Variations in tortuosity <span class="math notranslate nohighlight">\((\chi)\)</span> of a soil matrix.</span><a class="headerlink" href="#fig-land-methane-tortuosity" title="Link to this image">#</a></p>
 </figcaption>
@@ -517,7 +544,8 @@ This is generally a reasonable assumption, as there is very little air movement 
 In this case, diffusive fluxes should account for the total emission from the soil, and should be equal to the net production of the gas in the soil (where net production is total production minus total consumption).
 What we measure in the chamber is the rate of increase in gas concentration with time (<span class="math notranslate nohighlight">\(\dv{C}{t}\)</span>) and then multiply this by the volume/area, to give the flux (<a class="reference internal" href="#fig-land-methane-fluxes"><span class="std std-numref">Fig. 8.27</span></a>)</p>
 <figure class="margin-caption align-default" id="fig-land-methane-fluxes">
-<a class="reference internal image-reference" href="../_images/07_landcarbon.3.10.png"><img alt="../_images/07_landcarbon.3.10.png" src="../_images/07_landcarbon.3.10.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/07_landcarbon.3.10.png"><img alt="../_images/07_landcarbon.3.10.png" src="../_images/07_landcarbon.3.10.png" style="width: 100%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 8.27 </span><span class="caption-text">Measuring methane with flux chambers. Units: <span class="math notranslate nohighlight">\(\dv{C}{t}\)</span> = concentration (kg m<sup>-3</sup>) per time, Volume/area is m<sup>3</sup> m<sup>-2</sup>, overall the flux is kg m<sup>-2</sup> time<sup>-1</sup>.</span><a class="headerlink" href="#fig-land-methane-fluxes" title="Link to this image">#</a></p>
 </figcaption>
@@ -535,7 +563,8 @@ Two approaches derive estimates of OH<sup>-</sup> quantity in the atmosphere:</p
 <p>Having gone through the various methods that are used to quantify methane emissions, we can compare the overall budget for methane sources and sinks calculated through bottom up (<a class="reference internal" href="#fig-land-methane-budget-bu"><span class="std std-numref">Fig. 8.28</span></a>) approaches versus those calculated through top down (<a class="reference internal" href="#fig-land-methane-budget-td"><span class="std std-numref">Fig. 8.22</span></a>) approaches.
 This comparison shows us that bottom up approaches suggest a far larger source of methane to the atmosphere, greatly out of balance with the sinks of methane from the atmosphere.</p>
 <figure class="margin-caption align-default" id="fig-land-methane-budget-bu">
-<a class="reference internal image-reference" href="../_images/07_landcarbon.3.11.png"><img alt="../_images/07_landcarbon.3.11.png" src="../_images/07_landcarbon.3.11.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/07_landcarbon.3.11.png"><img alt="../_images/07_landcarbon.3.11.png" src="../_images/07_landcarbon.3.11.png" style="width: 100%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 8.28 </span><span class="caption-text">A comparison of the global methane budget estimated from bottom-up and top-down measurements.</span><a class="headerlink" href="#fig-land-methane-budget-bu" title="Link to this image">#</a></p>
 </figcaption>
@@ -554,7 +583,8 @@ This comparison shows us that bottom up approaches suggest a far larger source o
 <li><p>Large discrepancy between top down and bottom estimates for freshwaters and natural geological sources (“other natural sources”)</p></li>
 </ul>
 <figure class="margin-caption align-default" id="fig-land-methane-emissions">
-<a class="reference internal image-reference" href="../_images/07_landcarbon.3.12.png"><img alt="../_images/07_landcarbon.3.12.png" src="../_images/07_landcarbon.3.12.png" style="width: 60%;" /></a>
+<a class="reference internal image-reference" href="../_images/07_landcarbon.3.12.png"><img alt="../_images/07_landcarbon.3.12.png" src="../_images/07_landcarbon.3.12.png" style="width: 60%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 8.29 </span><span class="caption-text">A summary of methane emissions from different environments,</span><a class="headerlink" href="#fig-land-methane-emissions" title="Link to this image">#</a></p>
 </figcaption>
@@ -565,7 +595,8 @@ More recent work suggests that most of the increase is due to agriculture and wa
 Worryingly, the concentration of methane in the atmosphere has started to tick up again, since 2019, believed to be due to increased emissions from wetlands in the tropics, which are increasing their methane production under higher temperatures.
 This may set off a positive feedback loop, where warming temperatures drive enhanced microbial activity, which causes increased methane emissions, which causes warming temperatures.</p>
 <figure class="margin-caption align-default" id="fig-land-methane-map">
-<a class="reference internal image-reference" href="../_images/07_landcarbon.3.13.png"><img alt="../_images/07_landcarbon.3.13.png" src="../_images/07_landcarbon.3.13.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/07_landcarbon.3.13.png"><img alt="../_images/07_landcarbon.3.13.png" src="../_images/07_landcarbon.3.13.png" style="width: 100%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 8.30 </span><span class="caption-text">A comparison of top-down (TD) and bottom-up (BU) methane flux measurements. Bars represent the difference between 2000-2006 emissions and 2017 emissions from wetlands (in green), fossil fuels (in brown), agriculture (in blue), biomass burning (in red) and ‘other’ (in pink). When the bar is positive, it means the emissions were greater in 2017 than they were in 2000-2006. In each case the top down estimate is given on the left and the bottom up estimate is given on the right.
 From Saunois et al., 2020.</span><a class="headerlink" href="#fig-land-methane-map" title="Link to this image">#</a></p>
@@ -631,8 +662,7 @@ From Saunois et al., 2020.</span><a class="headerlink" href="#fig-land-methane-m
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -694,8 +724,8 @@ By the QES Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

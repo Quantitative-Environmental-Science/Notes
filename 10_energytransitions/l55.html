@@ -16,22 +16,20 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -39,11 +37,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/admonitions.css?v=1588abde" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -68,7 +65,6 @@
     <link rel="prev" title="10.6. Heat pumps" href="l54.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -84,8 +80,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -93,6 +100,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -100,8 +108,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -117,8 +125,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -148,17 +155,21 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="My Jupyter Book - Home"/>
-    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="My Jupyter Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My Jupyter Book - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
@@ -349,16 +360,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 
 </div></div>
       
@@ -391,27 +410,33 @@
 <p>We infer that the electric car emits about 1/5-1/6 of the CO2 emissions of the emissions of a petrol car given the present carbon intensity of electricity.</p>
 <p>We should also note the energy cost of making the battery in the car. Estimates suggest this is in the range of 3-15 tonnes CO2 for an 80 kW hr battery. Using the above numbers, we see that if a petrol car drives 10000 miles a year it emits 2.5 tonnes CO2 and an electric car will emit (indirectly) 0.5 tonnes CO2. Cars may run for 10-15 years, and so</p>
 <figure class="margin-caption align-default" id="fig-minerals-1">
-<a class="reference internal image-reference" href="../_images/10_energytransitions.7.1.png"><img alt="../_images/10_energytransitions.7.1.png" src="../_images/10_energytransitions.7.1.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../_images/10_energytransitions.7.1.png"><img alt="../_images/10_energytransitions.7.1.png" src="../_images/10_energytransitions.7.1.png" style="width: 80%;" />
+</a>
 </figure>
 <p>The above graph, from the US Gov’t, suggests that electric cars have a much lower carbon footprint over their lifetime, consistent with the above example estimates – but each car will have slightly different energy use.</p>
 <p>Since transport represents about ¼-1/3 of the present energy use in the UK, reducing the consumption by a factor of 3 will reduce overall demand significantly, in a similar way to the use of heat pumps for heating. As a result overall energy demand will reduce with the energy transition.</p>
 <p>The development of batteries, wind turbines and electrolysers will require the extraction of a large mass of critical minerals, copper, manganese, nickel, lithium and cobalt.</p>
 <figure class="margin-caption align-default" id="fig-minerals-2">
-<a class="reference internal image-reference" href="../_images/10_energytransitions.7.2.png"><img alt="../_images/10_energytransitions.7.2.png" src="../_images/10_energytransitions.7.2.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../_images/10_energytransitions.7.2.png"><img alt="../_images/10_energytransitions.7.2.png" src="../_images/10_energytransitions.7.2.png" style="width: 80%;" />
+</a>
 </figure>
 <figure class="margin-caption align-default" id="fig-minerals-3">
-<a class="reference internal image-reference" href="../_images/10_energytransitions.7.3.png"><img alt="../_images/10_energytransitions.7.3.png" src="../_images/10_energytransitions.7.3.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../_images/10_energytransitions.7.3.png"><img alt="../_images/10_energytransitions.7.3.png" src="../_images/10_energytransitions.7.3.png" style="width: 80%;" />
+</a>
 </figure>
 <p>This growing demand for minerals is leading to prospecting for new deposits. One important deposit of metals are in the deep sea, where there are polymetallic nodules. These are about 10cm in size, and host to copper, nickel, cobalt and manganese. There are technologies being developed and trialled to extract these nodules from the seabed. In the Clarion Clipperton zone of the pacific, the sea is about 4km deep, so this is a very complex task which will involve robot tractors.</p>
 <figure class="margin-caption align-default" id="fig-minerals-4">
-<a class="reference internal image-reference" href="../_images/10_energytransitions.7.4.png"><img alt="../_images/10_energytransitions.7.4.png" src="../_images/10_energytransitions.7.4.png" style="width: 60%;" /></a>
+<a class="reference internal image-reference" href="../_images/10_energytransitions.7.4.png"><img alt="../_images/10_energytransitions.7.4.png" src="../_images/10_energytransitions.7.4.png" style="width: 60%;" />
+</a>
 </figure>
 <figure class="margin-caption align-default" id="fig-minerals-5">
-<a class="reference internal image-reference" href="../_images/10_energytransitions.7.5.png"><img alt="../_images/10_energytransitions.7.5.png" src="../_images/10_energytransitions.7.5.png" style="width: 50%;" /></a>
+<a class="reference internal image-reference" href="../_images/10_energytransitions.7.5.png"><img alt="../_images/10_energytransitions.7.5.png" src="../_images/10_energytransitions.7.5.png" style="width: 50%;" />
+</a>
 </figure>
 <p>One concern is that on extracting the nodules, the sediment will be suspended over a large part of the sea bed, impacting the sea floor ecosystem. Sediment may be discharged from the mining collection vessel and then sink through the ocean, leading to some complex settling patterns.</p>
 <figure class="margin-caption align-default" id="fig-minerals-6">
-<a class="reference internal image-reference" href="../_images/10_energytransitions.7.6.png"><img alt="../_images/10_energytransitions.7.6.png" src="../_images/10_energytransitions.7.6.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../_images/10_energytransitions.7.6.png"><img alt="../_images/10_energytransitions.7.6.png" src="../_images/10_energytransitions.7.6.png" style="width: 80%;" />
+</a>
 </figure>
 <p>However, eventually the sediment carried by the ambient currents as it sinks through the water. With fall speed v, current speed u, and water depth H, this leads to a lateral transport of about L = Hu/v. With H = 1000m, u = 0.1 m/s and v = 0.01-0.001 m/s, this leads to lateral transport by up to 10-100km before the sediment settles back to the sea bed.</p>
 </section>
@@ -505,8 +530,8 @@ By the QES Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

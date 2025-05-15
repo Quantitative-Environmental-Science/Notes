@@ -16,22 +16,20 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -39,11 +37,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/admonitions.css?v=1588abde" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -71,7 +68,6 @@
     <link rel="prev" title="7.1. How much carbon is in the ocean?" href="01_3box.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -87,8 +83,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -96,6 +103,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -103,8 +111,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -120,8 +128,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -151,17 +158,21 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="My Jupyter Book - Home"/>
-    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="My Jupyter Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My Jupyter Book - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
@@ -352,16 +363,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -450,7 +469,8 @@ We’ll now look at how CO<sub>2</sub> and DIC are related.</p>
 <p>The solubility constant for CO<sub>2</sub>, <span class="math notranslate nohighlight">\(K_0\)</span>, depends strongly on temperature, and weakly on salinity (<a class="reference internal" href="#fig-carbon-k0"><span class="std std-numref">Fig. 7.7</span></a>).
 This means that more gas will dissolve into colder, fresher water than warmer, saltier water.</p>
 <figure class="margin-caption align-default" id="fig-carbon-k0">
-<a class="reference internal image-reference" href="../_images/carbon-K0.png"><img alt="../_images/carbon-K0.png" src="../_images/carbon-K0.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/carbon-K0.png"><img alt="../_images/carbon-K0.png" src="../_images/carbon-K0.png" style="width: 70%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.7 </span><span class="caption-text">Change in <span class="math notranslate nohighlight">\(K_0\)</span> with temperature and salinity.</span><a class="headerlink" href="#fig-carbon-k0" title="Link to this image">#</a></p>
 </figcaption>
@@ -458,7 +478,8 @@ This means that more gas will dissolve into colder, fresher water than warmer, s
 <!-- The change in CO<sub>2</sub> solubility interacts with Thermohaline Circulation (THC) to elevate carbon concentrations in the deep ocean. -->
 <p>As surface currents move from the equator towards the poles (e.g. along Western boundary currents like the Gulf Stream), the water loses heat to the atmosphere and cools down (<a class="reference internal" href="#fig-carbon-oceanheat"><span class="std std-numref">Fig. 7.8</span></a>).</p>
 <figure class="margin-caption align-default" id="fig-carbon-oceanheat">
-<a class="reference internal image-reference" href="../_images/ocean-heat-flux.png"><img alt="../_images/ocean-heat-flux.png" src="../_images/ocean-heat-flux.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/ocean-heat-flux.png"><img alt="../_images/ocean-heat-flux.png" src="../_images/ocean-heat-flux.png" style="width: 100%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.8 </span><span class="caption-text">Heat loss and absorption by the ocean. The ocean loses heat as warmer water moves to high latitudes, and gains heat as cool deep water rises to the surface in upwelling zones. Black arrows indicate major surface currents.</span><a class="headerlink" href="#fig-carbon-oceanheat" title="Link to this image">#</a></p>
 </figcaption>
@@ -470,7 +491,8 @@ The downwelling of cold, CO<sub>2</sub>-rich water therefore removes carbon from
 Consequently, upwelling zones bring CO<sub>2</sub>-rich water to the surface, which is released to the atmosphere (<a class="reference internal" href="#fig-carbon-ocean-atmos"><span class="std std-numref">Fig. 7.9</span></a>) as the water warms and <span class="math notranslate nohighlight">\(K_0\)</span> decreases (<a class="reference internal" href="#fig-carbon-k0"><span class="std std-numref">Fig. 7.7</span></a>).</p>
 <p>This cycle, driven by the interaction of ocean circulation and changes in <span class="math notranslate nohighlight">\(K_0\)</span>, is known as the <strong>solubility pump</strong>.</p>
 <figure class="margin-caption align-default" id="fig-carbon-ocean-atmos">
-<a class="reference internal image-reference" href="../_images/carbon-ocean-atmos.png"><img alt="../_images/carbon-ocean-atmos.png" src="../_images/carbon-ocean-atmos.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/carbon-ocean-atmos.png"><img alt="../_images/carbon-ocean-atmos.png" src="../_images/carbon-ocean-atmos.png" style="width: 100%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.9 </span><span class="caption-text">The difference between surface ocean and atmospheric pCO<sub>2</sub>. Notice that the ocean tends to take up CO<sub>2</sub> along the path or poleward surface currents (blue colours; e.g. North Atlantic), and release CO<sub>2</sub> in upwelling zones where carbon-rich water is brought to the surface and heated up (red colours; e.g. at the equator and in the North Pacific). The main patterns of uptake and release are similar to the patterns of water cooling and heating in <a class="reference internal" href="#fig-carbon-oceanheat"><span class="std std-numref">Fig. 7.8</span></a>.  These patterns can be explained by the solubility pump, but the magnitude of the difference is much larger than predicted by Henry’s Law alone.</span><a class="headerlink" href="#fig-carbon-ocean-atmos" title="Link to this image">#</a></p>
 </figcaption>
@@ -519,7 +541,8 @@ However, for our purposes, the CO<sub>2</sub><sup></em></sup> approximation is a
 From Eq <a class="reference internal" href="#equation-eq-carbon-dissociation">(7.6)</a> we see that DIC speciation will depend on the concentration of each of the DIC species and <strong>H<sup>+</sup></strong> in the water.
 The concentration of H<sup>+</sup> is described by the pH of the water (pH = -log<sub>10</sub>[H<sup>+</sup>]), which tells us that the concentration of the DIC species in seawater is a function of pH (<a class="reference internal" href="#fig-carbon-bjerrum"><span class="std std-numref">Fig. 7.10</span></a>).</p>
 <figure class="margin-caption align-default" id="fig-carbon-bjerrum">
-<a class="reference internal image-reference" href="../_images/carbon-bjerrum.png"><img alt="../_images/carbon-bjerrum.png" src="../_images/carbon-bjerrum.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/carbon-bjerrum.png"><img alt="../_images/carbon-bjerrum.png" src="../_images/carbon-bjerrum.png" style="width: 70%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.10 </span><span class="caption-text">The concentration of DIC species in seawater as a function of pH. The vertical blue bar shows the typical pH range in surface ocean water, and vertical dashed lines show the locations of the equilibrium constants that define the dissociation of DIC in seawater.</span><a class="headerlink" href="#fig-carbon-bjerrum" title="Link to this image">#</a></p>
 </figcaption>
@@ -616,7 +639,8 @@ The new equilibrium state at higher pCO<sub>2</sub> has a reduced pH, which alte
 Because more of the DIC pool exists as CO<sub>2</sub>*, the capacity for DIC to store additional carbon over the prediction of Henry’s Law is reduced at higher pCO<sub>2</sub>.</p>
 <p>These mechanisms combine to drive a non-linear relationship between pCO<sub>2</sub> and DIC, as we can see in <a class="reference internal" href="#fig-carbon-pco2-dic"><span class="std std-numref">Fig. 7.11</span></a>.</p>
 <figure class="margin-caption align-default" id="fig-carbon-pco2-dic">
-<a class="reference internal image-reference" href="../_images/carbon-pCO2-DIC.png"><img alt="../_images/carbon-pCO2-DIC.png" src="../_images/carbon-pCO2-DIC.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../_images/carbon-pCO2-DIC.png"><img alt="../_images/carbon-pCO2-DIC.png" src="../_images/carbon-pCO2-DIC.png" style="width: 80%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.11 </span><span class="caption-text">The change in DIC concentration and speciation (top), pH (bottom) and the relative change in DIC compared to [CO<sub>2</sub>] (middle) in warm and cold water as pCO<sub>2</sub> increases. Because CO<sub>2</sub> reacts with water, much more DIC is stored in seawater than we would expect based on Henry’s Law, driving a much greater increase in dissolved carbon as pCO<sub>2</sub> increases. However, because the equilibrium state of the DIC system changes as pCO<sub>2</sub> increases, the size of this amplifying effect decreases at high pCO<sub>2</sub>. This leads to the non-linear relationship between pCO<sub>2</sub> and DIC observed here. The difference between high and low temperature water is driven by differences in the underlying speciation constants. Vertical lines show representative pre-industrial and modern pCO<sub>2</sub> values, highlighting the drop in surface ocean pH that has already occurred in the last ~200 years.</span><a class="headerlink" href="#fig-carbon-pco2-dic" title="Link to this image">#</a></p>
 </figcaption>
@@ -652,7 +676,8 @@ This becomes particularly important when considering the impact of <a class="ref
 <li><p>Track the concentration of DIC.</p></li>
 </ol>
 <figure class="margin-caption align-default" id="fig-carbon-3box">
-<a class="reference internal image-reference" href="../_images/ocean-3box-CO2.png"><img alt="../_images/ocean-3box-CO2.png" src="../_images/ocean-3box-CO2.png" style="width: 60%;" /></a>
+<a class="reference internal image-reference" href="../_images/ocean-3box-CO2.png"><img alt="../_images/ocean-3box-CO2.png" src="../_images/ocean-3box-CO2.png" style="width: 60%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.12 </span><span class="caption-text">To model the solubility pump, we need to include the exchange of CO<sub>2</sub> between the ocean and atmosphere, the conservative transport of DIC through the ocean interior, and the speciation of DIC in the surface ocean.</span><a class="headerlink" href="#fig-carbon-3box" title="Link to this image">#</a></p>
 </figcaption>
@@ -706,7 +731,8 @@ For our purposes, it is sufficient to know that TA is approximately defined as:<
 </ul>
 <p>In practicals, you will use a <a class="reference external" href="https://github.com/oscarbranson/cbsyst">python package</a> to calculate DIC speciation.</p>
 <figure class="margin-caption align-default" id="fig-carbon-dic-ta">
-<a class="reference internal image-reference" href="../_images/carbon-DIC-TA.png"><img alt="../_images/carbon-DIC-TA.png" src="../_images/carbon-DIC-TA.png" style="width: 60%;" /></a>
+<a class="reference internal image-reference" href="../_images/carbon-DIC-TA.png"><img alt="../_images/carbon-DIC-TA.png" src="../_images/carbon-DIC-TA.png" style="width: 60%;" />
+</a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.13 </span><span class="caption-text">DIC and TA can be combined to calculated pCO<sub>2</sub> and [CO<sub>2</sub>] at a given temperature, salinity and pressure.</span><a class="headerlink" href="#fig-carbon-dic-ta" title="Link to this image">#</a></p>
 </figcaption>
@@ -820,8 +846,7 @@ $$ -->
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -895,8 +920,8 @@ By the QES Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
