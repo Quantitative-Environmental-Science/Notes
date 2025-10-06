@@ -29,6 +29,17 @@ How water flows through the Earth.
 :::
 
 :::{grid-item-card}
+:link: 03_rivers/intro
+:link-type: doc
+:class-header: bg-light
+
+Surface Water 🏞
+^^^
+
+How water flows on the surface.
+:::
+
+:::{grid-item-card}
 :link: 02_cryosphere/intro
 :link-type: doc
 :class-header: bg-light
@@ -37,17 +48,6 @@ Cryosphere 🧊
 ^^^
 
 How ice forms, moves and melts.
-:::
-
-:::{grid-item-card}
-:link: 03_rivers/intro
-:link-type: doc
-:class-header: bg-light
-
-Rivers and Flooding 🏞
-^^^
-
-How water flows on the surface.
 :::
 
 :::{grid-item-card}
