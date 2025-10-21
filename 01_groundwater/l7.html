@@ -58,12 +58,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams", "[tex]/mhchem", "[tex]/color"]}, "tex": {"packages": ["base", "physics", "ams", "mhchem", "color"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '01_groundwater/l7';</script>
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2.5. Groundwater Chemistry" href="l8.html" />
     <link rel="prev" title="2.3. How we measure and understand water movement" href="l6.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -186,6 +185,7 @@
 <li class="toctree-l2"><a class="reference internal" href="l5.html">2.2. Why water moves beneath the surface</a></li>
 <li class="toctree-l2"><a class="reference internal" href="l6.html">2.3. How we measure and understand water movement</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.4. Groundwater challenges and sustainable groundwater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l8.html">2.5. Groundwater Chemistry</a></li>
 </ul>
 </details></li>
 </ul>
@@ -313,7 +313,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -329,6 +331,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saline-intrusion">Saline Intrusion</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -344,58 +354,31 @@ document.write(`
 <p>We have discussed the importance of groundwater systems, how groundwater moves (and why it can move uphill), and how we can test for and figure out the key aspects that influence groundwater flow, which includes pumping tests.
 Together these give us a good sense of how to calculate groundwater velocity and the energy required to move groundwater.
 There are several environmental challenges that face Earth’s groundwater systems, not least of which is the fact that we are removing groundwater faster than it can <a class="reference internal" href="../reference/glossary.html#term-Recharge"><span class="xref std std-term">recharge</span></a>.
-We can see this in global maps of groundwater depletion (<a class="reference internal" href="#groundwater-depletion"><span class="std std-numref">Fig. 2.22</span></a>).
+We can see this in global maps of groundwater depletion (<a class="reference internal" href="#groundwater-depletion"><span class="std std-numref">Fig. 2.23</span></a>).
 Groundwater depletion refers to the permanent loss of groundwater stored in subsurface aquifers.</p>
 <figure class="margin-caption align-default" id="groundwater-depletion">
 <img alt="../_images/figure7.1.png" src="../_images/figure7.1.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.22 </span><span class="caption-text">A global map of groundwater depletion - peaks show areas where groundwater is most depleted.</span><a class="headerlink" href="#groundwater-depletion" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.23 </span><span class="caption-text">A global map of groundwater depletion - peaks show areas where groundwater is most depleted.</span><a class="headerlink" href="#groundwater-depletion" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>We can link the areas where groundwater is particularly depleted to areas where the groundwater footprint is particularly large relative to the size of the aquifer from which it is drawing water (<a class="reference internal" href="#groundwater-footprint"><span class="std std-numref">Fig. 2.23</span></a>).</p>
+<p>We can link the areas where groundwater is particularly depleted to areas where the groundwater footprint is particularly large relative to the size of the aquifer from which it is drawing water (<a class="reference internal" href="#groundwater-footprint"><span class="std std-numref">Fig. 2.24</span></a>).</p>
 <figure class="margin-caption align-default" id="groundwater-footprint">
 <img alt="../_images/figure7.2.jpg" src="../_images/figure7.2.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.23 </span><span class="caption-text">Groundwater depletion is most severe where the ‘groundwater footprint’ is much larger than the underlying aquifer area.</span><a class="headerlink" href="#groundwater-footprint" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.24 </span><span class="caption-text">Groundwater depletion is most severe where the ‘groundwater footprint’ is much larger than the underlying aquifer area.</span><a class="headerlink" href="#groundwater-footprint" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Another major challenge in groundwater systems is the transport of contaminants, that is something (potentially toxic) is released into the subsurface and travels with the groundwater, appearing in the water supply at some point later in time (depending on the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a> of the aquifer, and the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a> difference driving the flow).
-In some respects we have learned the tools you would need to determine how long before a contaminant released into the groundwater would be seen at some point downstream.
-You could figure out the lines of equipotential, and the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a>, and then calculate the flow velocity, and this would yield time (with some knowledge of the distance travelled).</p>
-<p>However, like most things, it is more complicated than this.
-The contaminant is not just subject to advection with the flow of the groundwater, but also diffusion (the process by which things move from high concentration to low concentration) and possibly chemical reaction with the porous media.
-This leads to an entirely different class of equations and models known as advective diffusive transport models.
-We wont go through the mathematics of these models but the standard formula is:</p>
-<aside class="units margin sidebar">
-<p class="sidebar-title">Units!</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-C &amp;= \mathrm{amount~m^{-3}} \\
-D &amp;= \mathrm{m^2~s^{-1}} \\
-v &amp;= \mathrm{m~s^{-1}} \\
-R &amp;= \mathrm{amount~m^{-3}~s^{-1}} \\
-\end{split}\]</div>
-</aside>
-<div class="math notranslate nohighlight" id="equation-advection">
-<span class="eqno">(2.16)<a class="headerlink" href="#equation-advection" title="Link to this equation">#</a></span>\[D \frac{\delta^2 C}{\delta x^2} - v \frac{\delta C}{\delta x} = R \left( \frac{\delta C}{\delta t} \right)\]</div>
-<p>Where <span class="math notranslate nohighlight">\(C\)</span> is a contaminant, and I am curious how its concentration changes with time <span class="math notranslate nohighlight">\(\left( \frac{\delta C}{\delta t} \right)\)</span> and with distance <span class="math notranslate nohighlight">\(\left( \frac{\delta C}{\delta x} \right)\)</span>.
-Because there are changes with time and with difference, we need to use a partial differential equation.
-In the partial differential equation above, <span class="math notranslate nohighlight">\(D\)</span> is the diffusion coefficient for the contaminant in water, <span class="math notranslate nohighlight">\(v\)</span> is the flow velocity <span class="math notranslate nohighlight">\(\left( \frac{-K}{\rho} \dv{h}{x} \right)\)</span> (can you figure out why this is the flow velocity from Darcy’s Law?), and <span class="math notranslate nohighlight">\(R\)</span> represents the chemical reactions that change the concentration with time.
-In the lecture we’ll talk through each of these terms, and how diffusion can be molecular diffusion or mechanical dispersion, and the types of chemical reactions that change the concentration of common contaminants.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>To explore the contamination of groundwater we are going to tell the story of arsenic poisoning in Bangladesh, why there are such high levels of arsenic in the groundwater and the various mechanisms that can help remedy this situation.
-This is just a specific example of an acute groundwater contamination problem and the way the community and scientists are trying to help remedy it.
-The details of this case study will be in the lecture slides.</p>
-</div>
+<section id="saline-intrusion">
+<h2>Saline Intrusion<a class="headerlink" href="#saline-intrusion" title="Link to this heading">#</a></h2>
 <p>Another major challenge in freshwater aquifers is the incursion of saline groundwater into the freshwater aquifer.  Groundwater above the terrestrial (land) surface is <span class="xref std std-term">recharged</span> from rain, and is largely ‘fresh water’ and could be suitable for drinking.
 Groundwater beneath the ocean is salt water, and unless you undertake some serious desalination activities, is not suitable for drinking.
-At some point between the fresh subsurface groundwater and the salt subsurface groundwater, there is a mixing point where there is a <strong>freshwater-saltwater interface</strong> (<a class="reference internal" href="#fresh-salt-interface"><span class="std std-numref">Fig. 2.24</span></a> ).</p>
+At some point between the fresh subsurface groundwater and the salt subsurface groundwater, there is a mixing point where there is a <strong>freshwater-saltwater interface</strong> (<a class="reference internal" href="#fresh-salt-interface"><span class="std std-numref">Fig. 2.25</span></a> ).</p>
 <figure class="margin-caption align-default" id="fresh-salt-interface">
 <a class="reference internal image-reference" href="../_images/figure7.3.png"><img alt="../_images/figure7.3.png" src="../_images/figure7.3.png" style="width: 60%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.24 </span><span class="caption-text">An example of a freshwater-saltwater interface.</span><a class="headerlink" href="#fresh-salt-interface" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.25 </span><span class="caption-text">An example of a freshwater-saltwater interface.</span><a class="headerlink" href="#fresh-salt-interface" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Like all groundwater systems, the flow of groundwater goes from high <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a> to low <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a>.
@@ -406,14 +389,15 @@ Thus the freshwater-saltwater interface changes daily.</p>
 One, sealevel is rising, due to the melting of ice and the thermal expansion of the ocean water.
 This increases the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a> on the salt-groundwater, pushing it inland.
 Second, we have a large groundwater footprint and the fresh-groundwater near the coast are having water removed for agriculture and drinking and all the other things we said we need groundwater for in <a class="reference internal" href="l4.html#lecture-4"><span class="std std-ref">Lecture 4</span></a>.
-This decreases the pressure in the coastal aquifers and drives more salt-groundwater inland (<a class="reference internal" href="#saltwater-incursion"><span class="std std-numref">Fig. 2.25</span></a>).</p>
+This decreases the pressure in the coastal aquifers and drives more salt-groundwater inland (<a class="reference internal" href="#saltwater-incursion"><span class="std std-numref">Fig. 2.26</span></a>).</p>
 <figure class="margin-caption align-default" id="saltwater-incursion">
 <img alt="../_images/figure7.4.png" src="../_images/figure7.4.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.25 </span><span class="caption-text">Seawater can <a class="reference internal" href="../reference/glossary.html#term-Recharge"><span class="xref std std-term">recharge</span></a> an aquifer and contaminate it with salt water if we extract too much water near the coast. This problem will be exacerbated by sealevel rise, which will increase the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a> on the saline side.</span><a class="headerlink" href="#saltwater-incursion" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.26 </span><span class="caption-text">Seawater can <a class="reference internal" href="../reference/glossary.html#term-Recharge"><span class="xref std std-term">recharge</span></a> an aquifer and contaminate it with salt water if we extract too much water near the coast. This problem will be exacerbated by sealevel rise, which will increase the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a> on the saline side.</span><a class="headerlink" href="#saltwater-incursion" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>We will finish the module with a consideration of sustainable groundwater resources and what does sustainable groundwater mean, practically, for all of us!</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -455,12 +439,36 @@ This decreases the pressure in the coastal aquifers and drives more salt-groundw
         <p class="prev-next-title"><span class="section-number">2.3. </span>How we measure and understand water movement</p>
       </div>
     </a>
+    <a class="right-next"
+       href="l8.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2.5. </span>Groundwater Chemistry</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saline-intrusion">Saline Intrusion</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
