@@ -7,7 +7,7 @@ raw/
 .idea/
 
 # OSX
-.DS_Store
+**/.DS_Store
 
 # Build files
 ._*.md
