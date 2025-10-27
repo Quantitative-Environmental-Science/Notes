@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Reservoirs &#8212; My Jupyter Book</title>
+    <title>3.4. Reservoirs &#8212; My Jupyter Book</title>
   
   
   
@@ -64,6 +64,8 @@
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3.5. Flood waves" href="l17.html" />
+    <link rel="prev" title="3.3. River flows" href="l15.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -126,8 +128,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -175,20 +175,29 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../00_intro/intro.html">1. Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../00_intro/l1.html">1.1. Course Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../00_intro/l2.html">1.2. Where does the energy come from on Earth?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../00_intro/l3.html">1.3. The Carbon Cycle</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../01_groundwater/intro.html">2. Groundwater</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01_groundwater/intro.html">2. Surface Waters I: Groundwater</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l4.html">2.1. Groundwater Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l5.html">2.2. Why water moves beneath the surface</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l6.html">2.3. How we measure and understand water movement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l7.html">2.4. Groundwater challenges and sustainable groundwater</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l8.html">2.5. Groundwater Chemistry</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l9.html">2.6. Pollution in Rivers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">3. Surface Waters II: Rivers</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="l13.html">3.1. Catchment and drainage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l14.html">3.2. Drainage models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l15.html">3.3. River flows</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.4. Reservoirs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l17.html">3.5. Flood waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l18.html">3.6. Flooding in urban environments</a></li>
 </ul>
 </details></li>
 </ul>
@@ -357,19 +366,19 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="reservoirs">
-<span id="lecture-16"></span><h1>Reservoirs<a class="headerlink" href="#reservoirs" title="Link to this heading">#</a></h1>
+<span id="lecture-16"></span><h1><span class="section-number">3.4. </span>Reservoirs<a class="headerlink" href="#reservoirs" title="Link to this heading">#</a></h1>
 <section id="formulation-of-the-reservoir-problem">
 <h2>Formulation of the reservoir problem<a class="headerlink" href="#formulation-of-the-reservoir-problem" title="Link to this heading">#</a></h2>
 <p>In order to arrest the flow of water from the surface run-off into the river and help mitigate flooding, sometimes reservoirs are built upstream.
 These lead to accumulation of the surface run-off in the upstream section of the river,
 and acts as a capacitor in the river system that limits the magnitude of the flow which reaches regions further downstream.</p>
 <p>In order to model the effect of a reservoir, we consider a reservoir of
-area <span class="math notranslate nohighlight">\(A(h)\)</span> when it is filled to height <span class="math notranslate nohighlight">\(h\)</span>; a schematic of this is shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">reservoir_schematic</span></code>.</p>
+area <span class="math notranslate nohighlight">\(A(h)\)</span> when it is filled to height <span class="math notranslate nohighlight">\(h\)</span>; a schematic of this is shown in <a class="reference internal" href="#reservoir-schematic"><span class="std std-numref">Fig. 3.18</span></a>.</p>
 <figure class="margin-caption align-default" id="reservoir-schematic">
 <a class="reference internal image-reference" href="../_images/figure16.1.png"><img alt="../_images/figure16.1.png" src="../_images/figure16.1.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-text">Schematic diagram showing an idealised reservoir.
+<p><span class="caption-number">Fig. 3.18 </span><span class="caption-text">Schematic diagram showing an idealised reservoir.
 The water is filled up to a height <span class="math notranslate nohighlight">\(h\)</span> and discharges out of the gate of area <span class="math notranslate nohighlight">\(A_0\)</span> at the bottom with a flux <span class="math notranslate nohighlight">\(Q_o\)</span>.</span><a class="headerlink" href="#reservoir-schematic" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
@@ -385,13 +394,13 @@ By considering the force of gravity acting on the fluid, we can deduce that the 
 \[Q_o = uA_0 = A_0 \sqrt{2gh}\]</div>
 <p>So, if we assume the upstream waters flow into the reservoir at a rate <span class="math notranslate nohighlight">\(Q_{in}\)</span>, then the overall change in the volume of water held in the reservoir with respect to time will be given by</p>
 <div class="math notranslate nohighlight" id="equation-reservoir-eq">
-<span class="eqno">()<a class="headerlink" href="#equation-reservoir-eq" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+<span class="eqno">(3.14)<a class="headerlink" href="#equation-reservoir-eq" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
     \dv{V}{t} = &amp;\ Q_{in} - A_0 \sqrt{2gh} \\
     = &amp;\ A(h) \dv{h}{t} 
 \end{align}\end{split}\]</div>
 <p>At steady-state, we may deduce that, since the volume of water will not change with time, the equilibrium water height in the reservoir is given by</p>
 <div class="math notranslate nohighlight" id="equation-eq-height">
-<span class="eqno">()<a class="headerlink" href="#equation-eq-height" title="Link to this equation">#</a></span>\[h_{eq} = \frac{Q_{in}^2}{A_0^2} \frac{1}{2g}\]</div>
+<span class="eqno">(3.15)<a class="headerlink" href="#equation-eq-height" title="Link to this equation">#</a></span>\[h_{eq} = \frac{Q_{in}^2}{A_0^2} \frac{1}{2g}\]</div>
 <p>With this equilibrium solution in mind, we can now go on to search for a time-dependent solution for <span class="math notranslate nohighlight">\(h\)</span>.</p>
 </section>
 <section id="time-dependent-solutions-for-reservoir-filling">
@@ -406,24 +415,24 @@ and will give us a solution that we can analyse the behaviour of, independently 
 such that when <span class="math notranslate nohighlight">\(y = 1\)</span>, <span class="math notranslate nohighlight">\(h = h_{eq}\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[y(t) = \frac{h}{h_{eq}} \quad \tau = \frac{Q_o}{\alpha h_e^3} t\]</div>
-<p>We then rearrange the expression of the time dependence of the volume given in equation <a class="reference internal" href="#equation-reservoir-eq">()</a> by dividing through by a factor of <span class="math notranslate nohighlight">\(Q_{in}\)</span>,
+<p>We then rearrange the expression of the time dependence of the volume given in equation <a class="reference internal" href="#equation-reservoir-eq">(3.14)</a> by dividing through by a factor of <span class="math notranslate nohighlight">\(Q_{in}\)</span>,
 which makes the expression dimensionless:</p>
 <div class="math notranslate nohighlight" id="equation-res-dimensionless">
-<span class="eqno">()<a class="headerlink" href="#equation-res-dimensionless" title="Link to this equation">#</a></span>\[\frac{\alpha h^2}{Q_{in}} \dv{h}{t} = 1 - \frac{A_0}{Q_{in}} \sqrt{2gh}\]</div>
-<p>Substituting the expression for <span class="math notranslate nohighlight">\(y\)</span> into <a class="reference internal" href="#equation-res-dimensionless">()</a>, it follows that</p>
+<span class="eqno">(3.16)<a class="headerlink" href="#equation-res-dimensionless" title="Link to this equation">#</a></span>\[\frac{\alpha h^2}{Q_{in}} \dv{h}{t} = 1 - \frac{A_0}{Q_{in}} \sqrt{2gh}\]</div>
+<p>Substituting the expression for <span class="math notranslate nohighlight">\(y\)</span> into <a class="reference internal" href="#equation-res-dimensionless">(3.16)</a>, it follows that</p>
 <div class="math notranslate nohighlight">
 \[\frac{\alpha (h_{eq} y)^2}{Q_{in}} h_{eq} \dv{y}{t} = 1 - \frac{A_0}{Q_{in}} \sqrt{2gh_{eq}y}\]</div>
-<p>and if we recall the expression for the equilibrium height given in <a class="reference internal" href="#equation-eq-height">()</a>,
+<p>and if we recall the expression for the equilibrium height given in <a class="reference internal" href="#equation-eq-height">(3.15)</a>,
 we can see that the coefficient of <span class="math notranslate nohighlight">\(\sqrt{y}\)</span> on the right hand side is equal to <span class="math notranslate nohighlight">\(1\)</span>.
 So doing some tidying up, we arrive at the expression</p>
 <div class="math notranslate nohighlight" id="equation-space-dimensionless">
-<span class="eqno">()<a class="headerlink" href="#equation-space-dimensionless" title="Link to this equation">#</a></span>\[\frac{\alpha h_{eq}^3}{Q_{in}} y^2 \dv{y}{t} = 1 - y^\frac{1}{2}\]</div>
+<span class="eqno">(3.17)<a class="headerlink" href="#equation-space-dimensionless" title="Link to this equation">#</a></span>\[\frac{\alpha h_{eq}^3}{Q_{in}} y^2 \dv{y}{t} = 1 - y^\frac{1}{2}\]</div>
 <p>So we now have our equation in a dimensionless form, with a dimensionless “space” coordinate.
 Our time coordinate, <span class="math notranslate nohighlight">\(t\)</span>, however, still has units of time.
 We therefore want to make a substitution for <span class="math notranslate nohighlight">\(t\)</span> that will replace it with some dimensionless time coordinate <span class="math notranslate nohighlight">\(\tau\)</span>.
 Therefore we make the substitution</p>
 <div class="math notranslate nohighlight" id="equation-t-subst">
-<span class="eqno">()<a class="headerlink" href="#equation-t-subst" title="Link to this equation">#</a></span>\[\tau = t \frac{Q_{in}}{\alpha h_{eq}^3}\]</div>
+<span class="eqno">(3.18)<a class="headerlink" href="#equation-t-subst" title="Link to this equation">#</a></span>\[\tau = t \frac{Q_{in}}{\alpha h_{eq}^3}\]</div>
 <div class="dropdown admonition">
 <p class="admonition-title">Rationale</p>
 <p>This substitution for <span class="math notranslate nohighlight">\(t\)</span> may seem slightly out of the blue.
@@ -431,7 +440,7 @@ The rationale that one might employ to see that this substitution makes sense wh
 <ul class="simple">
 <li><p>We wish to find a dimensionless coordinate for time.</p></li>
 <li><p>The rest of our equation is already dimensionless, including the space coordinate <span class="math notranslate nohighlight">\(y\)</span>.</p></li>
-<li><p>Therefore, given that the left hand side of <a class="reference internal" href="#equation-space-dimensionless">()</a> is <span class="math notranslate nohighlight">\(\dv{y}{t}\)</span> times some constant,
+<li><p>Therefore, given that the left hand side of <a class="reference internal" href="#equation-space-dimensionless">(3.17)</a> is <span class="math notranslate nohighlight">\(\dv{y}{t}\)</span> times some constant,
 then that constant pre-multiplying that derivative must have units of time if the quantity is dimensionless over all.</p></li>
 <li><p>So the reciprocal of that coefficient, multiplied by <span class="math notranslate nohighlight">\(t\)</span>, is at least candidate for our substitution.</p></li>
 <li><p>What makes it better than any other combination of constants with the units <span class="math notranslate nohighlight">\(\mathrm{s^{-1}}\)</span>?</p>
@@ -442,10 +451,10 @@ so it has at least got to be worth a try.</p></li>
 </li>
 </ul>
 </div>
-<p>and we will also note that therefore <span class="math notranslate nohighlight">\(T = \frac{\alpha h_{eq}^3}{Q_{in}}\)</span> constitutes some characteristic filling timed for our reservoir.
-Substituting <a class="reference internal" href="#equation-t-subst">()</a> into <a class="reference internal" href="#equation-space-dimensionless">()</a> we get</p>
+<p>and we will also note that therefore <span class="math notranslate nohighlight">\(T = \frac{\alpha h_{eq}^3}{Q_{in}}\)</span> constitutes some characteristic filling time for our reservoir.
+Substituting <a class="reference internal" href="#equation-t-subst">(3.18)</a> into <a class="reference internal" href="#equation-space-dimensionless">(3.17)</a> we get</p>
 <div class="math notranslate nohighlight" id="equation-fully-dimensionless">
-<span class="eqno">()<a class="headerlink" href="#equation-fully-dimensionless" title="Link to this equation">#</a></span>\[y^2 \dv{y}{\tau} = 1 - y^\frac{1}{2}\]</div>
+<span class="eqno">(3.19)<a class="headerlink" href="#equation-fully-dimensionless" title="Link to this equation">#</a></span>\[y^2 \dv{y}{\tau} = 1 - y^\frac{1}{2}\]</div>
 <p>This equation can be solved but the algebra becomes involved (use the
 substitution <span class="math notranslate nohighlight">\(y = (1-s)^2\)</span> ), so we can instead solve the equation numerically,
 which gives a solution of the form below.</p>
@@ -453,27 +462,27 @@ which gives a solution of the form below.</p>
 <a class="reference internal image-reference" href="../_images/figure16.2.png"><img alt="../_images/figure16.2.png" src="../_images/figure16.2.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-text">Sketch of the recharge behaviour of a reservoir.</span><a class="headerlink" href="#reservoir-refilling" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 3.19 </span><span class="caption-text">Sketch of the recharge behaviour of a reservoir.</span><a class="headerlink" href="#reservoir-refilling" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Since <span class="math notranslate nohighlight">\(y\)</span> takes some time to reach equilibrium, the outflow to the river
 of the full flow from the rain is reduced (until the reservoir fills
 up).</p>
 <p>We can combine this model for a reservoir with the earlier model for the surface run-off to illustrate the effect of the reservoir in buffering the surface run off.
-An example of this is shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">reservoir_response</span></code>.
+An example of this is shown in <a class="reference internal" href="#reservoir-response"><span class="std std-numref">Fig. 3.20</span></a>.
 We combine the model of a rainstorm which leads to an increasing run-off until the rain stops,
 and then a decaying run-off, as some surface water drains into the ground and the remainder flows into the reservoir.</p>
 <figure class="margin-caption align-default" id="reservoir-response">
 <a class="reference internal image-reference" href="../_images/figure16.3.png"><img alt="../_images/figure16.3.png" src="../_images/figure16.3.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-text">The response of a reservoirs depth, and outflow as a function of the input flow from surface runoff.</span><a class="headerlink" href="#reservoir-response" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 3.20 </span><span class="caption-text">The response of a reservoir’s depth, and outflow as a function of the input flow from surface runoff.</span><a class="headerlink" href="#reservoir-response" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="problems-with-reservoirs-sediment">
 <h2>Problems with reservoirs: sediment<a class="headerlink" href="#problems-with-reservoirs-sediment" title="Link to this heading">#</a></h2>
-<p>Rivers globally has a very high sediment load; as such, when a dam is built blocking a river,
+<p>Rivers globally have a very high sediment load; as such, when a dam is built blocking a river,
 that sediment accumulates in the reservoir.
 This has two major effects:</p>
 <ol class="arabic simple">
@@ -485,7 +494,7 @@ This has two major effects:</p>
 </li>
 <li><p>The accumulation of sediment in the reservoir can also reduce the reservoir capacity, by filling up the bottom.</p>
 <ul class="simple">
-<li><p>This also has an impairs the function of hydroelectric generators, which are often incorporated into reservoir design.
+<li><p>This also impairs the function of hydroelectric generators, which are often incorporated into reservoir design.
 The sediment flux can even break the turbines all together.</p></li>
 </ul>
 </li>
@@ -495,7 +504,7 @@ The sediment flux can even break the turbines all together.</p></li>
 <p>To remove sediment from a reservoir without dredging it, one option is to resuspend the sediment in the flow of water out of the reservoir.
 In order to resuspend sediment on the bed, the shear force due to the water flowing over it must overcome the weight of the sediment particle.</p>
 <p>We therefore relate the shear force, <span class="math notranslate nohighlight">\(F_s\)</span>, to the particle diameter, <span class="math notranslate nohighlight">\(d_s\)</span>, and densities of the water and sediment, <span class="math notranslate nohighlight">\(\rho_s\)</span> and <span class="math notranslate nohighlight">\(\rho_w\)</span> respectively,
-given us the <strong>Shields criterion</strong> for resuspension</p>
+giving us the <strong>Shields criterion</strong> for resuspension</p>
 <div class="math notranslate nohighlight">
 \[F_s  \gt 0.06 (\rho_s - \rho_w) g d_s\]</div>
 <p>where <span class="math notranslate nohighlight">\(0.06\)</span> is an empirical factor, and <span class="math notranslate nohighlight">\(F_s\)</span> is given by</p>
@@ -537,6 +546,24 @@ Therefore, we need fast flows to resuspend sediment.</p>
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="l15.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3.3. </span>River flows</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="l17.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3.5. </span>Flood waves</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               

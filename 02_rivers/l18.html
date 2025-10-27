@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Flooding &#8212; My Jupyter Book</title>
+    <title>3.6. Flooding in urban environments &#8212; My Jupyter Book</title>
   
   
   
@@ -64,6 +64,7 @@
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="3.5. Flood waves" href="l17.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -126,8 +127,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -175,20 +174,29 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../00_intro/intro.html">1. Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../00_intro/l1.html">1.1. Course Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../00_intro/l2.html">1.2. Where does the energy come from on Earth?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../00_intro/l3.html">1.3. The Carbon Cycle</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../01_groundwater/intro.html">2. Groundwater</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01_groundwater/intro.html">2. Surface Waters I: Groundwater</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l4.html">2.1. Groundwater Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l5.html">2.2. Why water moves beneath the surface</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l6.html">2.3. How we measure and understand water movement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l7.html">2.4. Groundwater challenges and sustainable groundwater</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l8.html">2.5. Groundwater Chemistry</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l9.html">2.6. Pollution in Rivers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">3. Surface Waters II: Rivers</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="l13.html">3.1. Catchment and drainage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l14.html">3.2. Drainage models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l15.html">3.3. River flows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l16.html">3.4. Reservoirs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l17.html">3.5. Flood waves</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.6. Flooding in urban environments</a></li>
 </ul>
 </details></li>
 </ul>
@@ -329,7 +337,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Flooding</h1>
+    <h1>Flooding in urban environments</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -339,8 +347,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overtopping-the-bank">Overtopping the bank</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flood-defense-barriers">Flood defense barriers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objects-carried-by-a-flood">Objects carried by a flood</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flooding-through-a-city">Flooding through a city</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groundwater-floods">Groundwater floods</a></li>
@@ -355,108 +361,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="flooding">
-<span id="lecture-18"></span><h1>Flooding<a class="headerlink" href="#flooding" title="Link to this heading">#</a></h1>
-<section id="overtopping-the-bank">
-<h2>Overtopping the bank<a class="headerlink" href="#overtopping-the-bank" title="Link to this heading">#</a></h2>
-<p>A river flowing through the landscape may overtop its embankment, as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:flood</span></code>.
-The means water flows out of the channel and inundates the surrounding flood plane, and eventually can reach towns and other urban areas.</p>
-<figure class="margin-caption align-default" id="fig-flood">
-<a class="reference internal image-reference" href="../_images/figure18.1.png"><img alt="../_images/figure18.1.png" src="../_images/figure18.1.png" style="width: 100%;" />
-</a>
-<figcaption>
-<p><span class="caption-text">A river overtopping its banks and flowing on to the flood plain.</span><a class="headerlink" href="#fig-flood" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>We wish to determine the rate at which water is flowing out of the river.
-The situation is shown in more detail in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:flood_schematic</span></code>.</p>
-<figure class="margin-caption align-default" id="fig-flood-schematic">
-<a class="reference internal image-reference" href="../_images/figure18.2.png"><img alt="../_images/figure18.2.png" src="../_images/figure18.2.png" style="width: 100%;" />
-</a>
-<figcaption>
-<p><span class="caption-text">A river overtopping its banks and flowing on to the flood plain.</span><a class="headerlink" href="#fig-flood-schematic" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>The flow rate of the water moving over the embankment depends on the velocity of the water flow and the height over the top of the bank, <span class="math notranslate nohighlight">\(b\)</span>.
-If the speed of the water is <span class="math notranslate nohighlight">\(\sim \sqrt{gb}\)</span> (as discussed in <code class="xref std std-numref docutils literal notranslate"><span class="pre">lecture_15</span></code>) then the flow rate per unit length along the embankment goes as</p>
-<div class="math notranslate nohighlight">
-\[Q \sim \beta b \sqrt{g b}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\beta\)</span> is a geometric factor of <span class="math notranslate nohighlight">\(\frac{2}{3\sqrt{3}}\)</span> in the idealised case.
-With the flux over the bank established, we can turn our attention to the flow down the slope, further away from the levee.</p>
-<p>Balancing the flows in and out of a control volume in the flow, as we have previously, we get a differential equation describing the rate of change of the thickness of the flow, <span class="math notranslate nohighlight">\(h\)</span>:</p>
-<div class="math notranslate nohighlight" id="equation-flux-balance-overtopping">
-<span class="eqno">()<a class="headerlink" href="#equation-flux-balance-overtopping" title="Link to this equation">#</a></span>\[\pdv{h}{t} = -\pdv{Q}{x} + I\]</div>
-<p>where <span class="math notranslate nohighlight">\(I\)</span> is an infiltration term.
-With rapid flow from the river, the flow is turbulent in the flooding zone, and the speed of the flooding water is given by</p>
-<div class="math notranslate nohighlight" id="equation-eq-flow-speed">
-<span class="eqno">()<a class="headerlink" href="#equation-eq-flow-speed" title="Link to this equation">#</a></span>\[u = \sqrt{\frac{gh \sin{\theta}}{C_D}}\]</div>
-<p>and we can substitute into <a class="reference internal" href="#equation-flux-balance-overtopping">()</a> using <span class="math notranslate nohighlight">\(\pdv{Q}{x} = \pdv{(uh)}{x}\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[\pdv{h}{t} + \frac{3}{2} \sqrt{\frac{g \sin(\theta)}{C_D}} h^\frac{1}{2} \pdv{h}{x} - I = 0\]</div>
-<p>So taking the steady state condition, <span class="math notranslate nohighlight">\(\pdv{h}{t} = 0\)</span> and integrating we get</p>
-<div class="math notranslate nohighlight">
-\[h(x)^\frac{3}{2} - h(0)^\frac{3}{2} = - \sqrt{\frac{C_D}{g \sin(\theta)}} I x\]</div>
-<p>and so we can see that <span class="math notranslate nohighlight">\(h(x) \rightarrow 0\)</span> when <span class="math notranslate nohighlight">\(x \rightarrow \sqrt{\frac{C_D}{g \sin(\theta)}} \frac{h(0)^\frac{3}{2}}{I}\)</span>.
-<span class="math notranslate nohighlight">\(I\)</span> is small when the ground is waterlogged, and so <span class="math notranslate nohighlight">\(x\)</span> gets large, which holds with our general intuition about flooding.</p>
-<p>With this model we can then assess how long the flood plain next to a river will take to fill up with water.
-If there is a secondary defence before the flood reaches the town along the river, as in the sketch, this flood plain provides a buffer to protect the town.</p>
-<div class="dropdown admonition">
-<p class="admonition-title">Non-examinable: derivation of <span class="math notranslate nohighlight">\(\beta\)</span></p>
-<p>If waters flood from a river, over the embankment,
-the flow rate of the water moving over the embankment depends on the height of the water in the centre of the river compared to the height at the embankment.
-If the water level decreases by an amount <span class="math notranslate nohighlight">\(h\)</span>, the flow speed over the embankment is <span class="math notranslate nohighlight">\(\sqrt{(gh)}\)</span> and if the depth of the water is <span class="math notranslate nohighlight">\(b\)</span> at the embankment, the total flux is</p>
-<div class="math notranslate nohighlight">
-\[Q = b(g h)^{1/2}\]</div>
-<p>per unit length along the embankment.
-The height of the embankment below the height of the free surface of the river in the centre of the river above the river bed, <span class="math notranslate nohighlight">\(H\)</span>, can be written as <span class="math notranslate nohighlight">\(H-(b+h)\)</span>.
-At the crest of the embankment, the height above the base of the river is a maximum, and so if <span class="math notranslate nohighlight">\(y\)</span> is the coordinate normal to the river, then</p>
-<div class="math notranslate nohighlight" id="equation-eq-embankment">
-<span class="eqno">()<a class="headerlink" href="#equation-eq-embankment" title="Link to this equation">#</a></span>\[\dv{h}{y} + \dv{b}{y} = 0\]</div>
-<p>If we differentiate the expression for the flux <span class="math notranslate nohighlight">\(Q\)</span> above with respect to <span class="math notranslate nohighlight">\(y\)</span>, then the answer should be zero (as the flux is constant in space)
-and using Eq. <a class="reference internal" href="#equation-eq-embankment">()</a> we then find that</p>
-<div class="math notranslate nohighlight">
-\[2h = b\]</div>
-<p>and so</p>
-<div class="math notranslate nohighlight">
-\[3 h = (H_r - H_e)\]</div>
-<p>Where <span class="math notranslate nohighlight">\(H_r\)</span> and <span class="math notranslate nohighlight">\(H_e\)</span> are the heights of the water surface in the centre of the river and the top of the embankment above the base of the river.
-This leads to the result that the flux is given by</p>
-<div class="math notranslate nohighlight">
-\[Q = \frac{2}{3 \sqrt{3}} g^{1/2} (H_r - H_e) ^{3/2}\]</div>
-<p>Where we can see we have approximated <span class="math notranslate nohighlight">\((H_r - H_e) \sim b\)</span> in the formula we used in the lectures.</p>
-</div>
-</section>
-<section id="flood-defense-barriers">
-<h2>Flood defense barriers<a class="headerlink" href="#flood-defense-barriers" title="Link to this heading">#</a></h2>
-<p>A flood defence barrier needs to withstand the pressure from the flood water.
-This leads to a horizontal force on the barrier which can be calculated from the integral of the hydrostatic pressure on the wall of the barrier.</p>
-<figure class="margin-caption align-default" id="fig-barrier">
-<a class="reference internal image-reference" href="../_images/figure18.3.png"><img alt="../_images/figure18.3.png" src="../_images/figure18.3.png" style="width: 100%;" />
-</a>
-<figcaption>
-<p><span class="caption-text">A flood defence barrier, height <span class="math notranslate nohighlight">\(H\)</span>, holding back water at a height <span class="math notranslate nohighlight">\(h\)</span>.</span><a class="headerlink" href="#fig-barrier" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Since the atmospheric pressure acts on both sides of the barrier, we can ignore it.
-Therefore, the net pressure acting at a point on the barrier as a function of <span class="math notranslate nohighlight">\(z\)</span> is</p>
-<div class="math notranslate nohighlight">
-\[P(z) = \rho g (h-z)\]</div>
-<p>and the total force acting will be</p>
-<div class="math notranslate nohighlight">
-\[F = \int_0^h P(z) dz = \frac{\rho g h}{2}\]</div>
-<p>A torque will also act on the barrier, which will be of the form</p>
-<div class="math notranslate nohighlight">
-\[F = \int_0^h z P(z) dz\]</div>
-<p>To prevent the barrier rolling over there needs to be a system to withstand this torque,
-which may include a series of inclined support rods pressing on the top of the barrier from the ground on the non—wet side of the barrier.</p>
-<figure class="margin-caption align-default" id="fig-venice-lagoon">
-<a class="reference internal image-reference" href="../_images/figure18.4.png"><img alt="../_images/figure18.4.png" src="../_images/figure18.4.png" style="width: 100%;" />
-</a>
-<figcaption>
-<p><span class="caption-text">In the Venice lagoon there are some interesting flood barriers which float up to the surface to stop incoming flow as in the figure above from the MODA website.</span><a class="headerlink" href="#fig-venice-lagoon" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-</section>
+  <p><br><div style="page-break-before:always;"></div></p>
+<section class="tex2jax_ignore mathjax_ignore" id="flooding-in-urban-environments">
+<span id="lecture-18"></span><h1><span class="section-number">3.6. </span>Flooding in urban environments<a class="headerlink" href="#flooding-in-urban-environments" title="Link to this heading">#</a></h1>
 <section id="objects-carried-by-a-flood">
 <h2>Objects carried by a flood<a class="headerlink" href="#objects-carried-by-a-flood" title="Link to this heading">#</a></h2>
 <p>A particular challenge in a city environment for a flood relates to the transport of debris by a flood.
@@ -468,7 +375,7 @@ The sliding friction is typically given by a fraction <span class="math notransl
 <a class="reference internal image-reference" href="../_images/figure18.5.png"><img alt="../_images/figure18.5.png" src="../_images/figure18.5.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-text">The ability of a car to resist movement.</span><a class="headerlink" href="#fig-car-forces" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 3.27 </span><span class="caption-text">The ability of a car to resist movement.</span><a class="headerlink" href="#fig-car-forces" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>In a flood, if the car is submerged to a depth <span class="math notranslate nohighlight">\(h\)</span>, and the car is waterproof then, modelling the car as a cuboid with a basal area <span class="math notranslate nohighlight">\(A\)</span>,
@@ -488,13 +395,13 @@ So, it is easier to move the car owing to the buoyancy from the presence of the 
 <a class="reference internal image-reference" href="../_images/figure18.6.png"><img alt="../_images/figure18.6.png" src="../_images/figure18.6.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-text">Forces exerted on a car in a flood.</span><a class="headerlink" href="#fig-car-forces-side" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 3.28 </span><span class="caption-text">Forces exerted on a car in a flood.</span><a class="headerlink" href="#fig-car-forces-side" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>This leads to the result that the water speed required to move the car depends on the depth of the water according to the relation</p>
 <div class="math notranslate nohighlight">
 \[C_D \rho u^2 W H = \mu (M g - \rho g h A)\]</div>
-<p>Since <span class="math notranslate nohighlight">\(M = AH \rho_c\)</span> where <span class="math notranslate nohighlight">\(\rho_c\)</span> is the density of the car and <span class="math notranslate nohighlight">\(H\)</span> and height of the car
+<p>Since <span class="math notranslate nohighlight">\(M = AH \rho_c\)</span> where <span class="math notranslate nohighlight">\(\rho_c\)</span> is the density of the car and <span class="math notranslate nohighlight">\(H\)</span> and the height of the car
 (the bulk density, which is about <span class="math notranslate nohighlight">\(0.4-0.5 \mathrm{kg~m^3}\)</span>)
 then with <span class="math notranslate nohighlight">\(\mu = 0.2\)</span>, <span class="math notranslate nohighlight">\(h = 0.5 \mathrm{m}\)</span>, <span class="math notranslate nohighlight">\(A=3 \ \mathrm{m^2}\)</span> and <span class="math notranslate nohighlight">\(H = 1 \ \mathrm{m}\)</span>, we find the critical <span class="math notranslate nohighlight">\(u\)</span> has value of about <span class="math notranslate nohighlight">\(1-2 \ \mathrm{m~s^{-1}}\)</span>.</p>
 <p>If <span class="math notranslate nohighlight">\(h\)</span> increases towards <span class="math notranslate nohighlight">\(0.5 \mathrm{m}\)</span>, then the buoyancy force is much greater, and the car is on the edge of floating off,
@@ -518,7 +425,7 @@ However, similar effects occur in limestone formations, but with much of the flo
 <a class="reference internal image-reference" href="../_images/figure18.7.png"><img alt="../_images/figure18.7.png" src="../_images/figure18.7.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-text">The processes of a groundwater flood.</span><a class="headerlink" href="#fig-groundwater-floods" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 3.29 </span><span class="caption-text">The processes of a groundwater flood.</span><a class="headerlink" href="#fig-groundwater-floods" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The flow running below ground typically has a velocity which depends on the permeability of the formation (e.g. soil) and the slope of the catchment.
@@ -557,6 +464,15 @@ The flow may then drain into the base of a river. Analogous models for the groun
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="l17.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3.5. </span>Flood waves</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
@@ -573,8 +489,6 @@ The flow may then drain into the base of a river. Analogous models for the groun
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overtopping-the-bank">Overtopping the bank</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flood-defense-barriers">Flood defense barriers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objects-carried-by-a-flood">Objects carried by a flood</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flooding-through-a-city">Flooding through a city</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groundwater-floods">Groundwater floods</a></li>
