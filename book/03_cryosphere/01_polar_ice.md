@@ -1,5 +1,3 @@
-<br><div style="page-break-before:always;"></div>
-
 (lecture_8)=
 # Ice in the polar regions
 

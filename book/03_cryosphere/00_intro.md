@@ -12,6 +12,3 @@ viscous flow of ice, directly contributes to current sea level rise.
 In these lectures we will construct simple models of these components of
 the cyrosphere in order to answer questions about the rate at which ice
 forms and melts, and the underlying dynamics of glacial flows.
-
-```{tableofcontents}
-```

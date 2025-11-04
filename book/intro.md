@@ -26,7 +26,7 @@ How water flows on the surface.
 :::
 
 :::{grid-item-card}
-:link: 03_cryosphere/intro
+:link: 03_cryosphere/00_intro
 Cryosphere 🧊
 ^^^
 How ice forms, moves and melts.

@@ -24,13 +24,9 @@ project:
     - file: 02_rivers/00_intro.md
       children:
         - pattern: 02_rivers/0[!0]*.md
-    # - file: 03_cryosphere/intro.md
-    #   children:
-    #     - file: 03_cryosphere/l8.md
-    #     - file: 03_cryosphere/l9.md
-    #     - file: 03_cryosphere/l10.md
-    #     - file: 03_cryosphere/l11.md
-    #     - file: 03_cryosphere/l12.md
+    - file: 03_cryosphere/00_intro.md
+      children:
+        - pattern: 03_cryosphere/0[!0]*.md
     # - file: 04_atmosphere/intro
     #   children:
     #   - file: 04_atmosphere/l19
