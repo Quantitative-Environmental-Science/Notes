@@ -21,14 +21,9 @@ project:
     - file: 01_groundwater/00_intro.md
       children:
         - pattern: 01_groundwater/0[!0]*.md
-    # - file: 02_rivers/intro.md
-    #   children:
-    #     - file: 02_rivers/l13.md
-    #     - file: 02_rivers/l14.md
-    #     - file: 02_rivers/l15.md
-    #     - file: 02_rivers/l16.md
-    #     - file: 02_rivers/l17.md
-    #     - file: 02_rivers/l18.md
+    - file: 02_rivers/00_intro.md
+      children:
+        - pattern: 02_rivers/0[!0]*.md
     # - file: 03_cryosphere/intro.md
     #   children:
     #     - file: 03_cryosphere/l8.md

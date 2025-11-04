@@ -19,7 +19,7 @@ How water flows through the Earth.
 :::
 
 :::{grid-item-card}
-:link: 02_rivers/intro
+:link: 02_rivers/00_intro
 Rivers 🏞
 ^^^
 How water flows on the surface.
