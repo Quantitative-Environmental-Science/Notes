@@ -5,7 +5,7 @@ Select an item from the menu on the left or the grid below to get started.
 ::::{grid} 1 1 2 3
 
 :::{grid-item-card}
-:link: 00_intro/intro
+:link: 00_intro/00_intro
 Course Overview 🧭
 ^^^
 The global context of Environmental Sciences
