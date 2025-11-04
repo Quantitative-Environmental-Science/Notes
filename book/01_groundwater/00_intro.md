@@ -7,6 +7,3 @@ In the meantime, we are left to tap freshwater resources and 30% of the freshwat
 Groundwater refers to the water stored in soils and rocks beneath the surface.
 Groundwater has a long **{term}`residence time`** in the subsurface.
 In these lectures we will cover the importance of groundwater, and how and why water moves through rock in the subsurface.
-
-```{tableofcontents}
-```

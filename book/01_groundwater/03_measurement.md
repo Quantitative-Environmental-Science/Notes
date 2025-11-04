@@ -1,5 +1,3 @@
-<br><div style="page-break-before:always;"></div>
-
 (lecture_6)=
 # How we measure and understand water movement
 

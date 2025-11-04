@@ -1,5 +1,3 @@
-<br><div style="page-break-before:always;"></div>
-
 (lecture_8)=
 # Pollution in Rivers
 
@@ -19,7 +17,7 @@ Nutrients refer largely to nitrate and phosphate,
 which are key macronutrients that are needed for photosynthesis.
 Nitrogen (in the form of ammonium or nitrate) is used in amino acids and proteins
 while phosphorus is used for DNA and cell walls and lipids.
-To get plants to grow you need a source of CO<sub>2</sub>,
+To get plants to grow you need a source of CO{sub}`2`,
 water, light, nitrogen and phosphorus.
 This is why nitrogen and phosphorus are often added to soils in the form of
 fertilizers to maximize plant growth.

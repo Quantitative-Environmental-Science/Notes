@@ -17,17 +17,10 @@ project:
     - file: intro.md
     - file: 00_intro/00_intro.md
       children:
-        - file: 00_intro/01_overview.md
-        - file: 00_intro/02_energy.md
-        - file: 00_intro/03_carbon.md
-    # - file: 01_groundwater/intro.md
-    #   children:
-    #     - file: 01_groundwater/l4.md
-    #     - file: 01_groundwater/l5.md
-    #     - file: 01_groundwater/l6.md
-    #     - file: 01_groundwater/l7.md
-    #     - file: 01_groundwater/l8.md
-    #     - file: 01_groundwater/l9.md
+        - pattern: 00_intro/0[!0]*.md
+    - file: 01_groundwater/00_intro.md
+      children:
+        - pattern: 01_groundwater/0[!0]*.md
     # - file: 02_rivers/intro.md
     #   children:
     #     - file: 02_rivers/l13.md
