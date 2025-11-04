@@ -1,0 +1,592 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Heat pumps &#8212; My Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/admonitions.css?v=1588abde" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams", "[tex]/mhchem", "[tex]/color"]}, "tex": {"packages": ["base", "physics", "ams", "mhchem", "color"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '10_energytransitions/l54';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="My Jupyter Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My Jupyter Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../00_intro/intro.html">1. Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l1.html">1.1. Course Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l2.html">1.2. Where does the energy come from on Earth?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l3.html">1.3. The Carbon Cycle</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01_groundwater/intro.html">2. Surface Waters I: Groundwater</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l4.html">2.1. Groundwater Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l5.html">2.2. Why water moves beneath the surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l6.html">2.3. How we measure and understand water movement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l7.html">2.4. Groundwater challenges and sustainable groundwater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l8.html">2.5. Groundwater Chemistry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l9.html">2.6. Pollution in Rivers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02_rivers/intro.html">3. Surface Waters II: Rivers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l13.html">3.1. Catchment and drainage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l14.html">3.2. Drainage models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l15.html">3.3. River flows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l16.html">3.4. Reservoirs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l17.html">3.5. Flood waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l18.html">3.6. Flooding in urban environments</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03_cryosphere/intro.html">4. Cryosphere</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l8.html">4.1. Ice in the polar regions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l9.html">4.2. The growth and melting of ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l10.html">4.3. The extent of sea ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l11.html">4.4. Ice sheets and the flow of glacial ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l12.html">4.5. Floating ice shelves and the flow of glacial ice</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/10_energytransitions/l54.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Heat pumps</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="heat-pumps">
+<span id="lecture-54"></span><h1>Heat pumps<a class="headerlink" href="#heat-pumps" title="Link to this heading">#</a></h1>
+<p>Although the measures of control and of upgrading insulation discussed in the previous lecture are very important in reducing the demand for heating,
+there is still a need to decarbonise heating and this can be achieved by replacement of gas with heat pumps.
+Heat pumps are machines which take heat from a source, then raise the temperature of that heat, and supply the heat to a sink.</p>
+<figure class="margin-caption align-default" id="fig-heat-pumps-1">
+<a class="reference internal image-reference" href="../_images/10_energytransitions.6.1.png"><img alt="../_images/10_energytransitions.6.1.png" src="../_images/10_energytransitions.6.1.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Schematic of a heat pump.</span><a class="headerlink" href="#fig-heat-pumps-1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In order to model the performance of a heat pump we can draw on the ideal Carnot cycle in thermodynamics,
+which provides a reference for the relationship between the heat supply from a heat pump to the work done and the heat supplied to the heat pump.</p>
+<p>The figure of the thermodynamic cycle illustrates the operation of a heat pump in which there are four phases:</p>
+<ol class="arabic simple">
+<li><p>A compression phase (C-B) which raises the temperature of the working fluid from the cold side to the hot side of the pump.</p></li>
+<li><p>A compression phase at constant (high) temperature during which the heat is transferred from the heat pump (B-A).</p></li>
+<li><p>An adiabatic expansion phase, during which the working fluid cools down as it moves back to the cold side of the heat pump (A-D).</p></li>
+<li><p>An expansion phase at constant (cold) temperature (D-C) when the heat is supplied to the heat pump from the heat source
+(which has a temperature higher than this cold side of the heat pump).</p></li>
+</ol>
+<p>In this way, heat is transferred from the cold source to the hot sink by changing the temperature of the working fluid so that
+(a) it is below the cold source temperature when it takes up the heat from the source and so that
+(b) it is above the hot sink temperature when it supplies heat to the heat sink.
+The change in temperature is achieved through the adiabatic expansion and compression,
+and this requires a net amount of work to be done in moving the working fluid round the heat pump. This work is powered by supplying electricity to the heat pump motor.</p>
+<p>The coefficient of performance of the heat pump is given by the ratio of the heat transferred to the hot sink, compared to the work done in achieving this.
+We now go through the calculation for working out the work done and the heat transfer in an ideal heat pump cycle.</p>
+<figure class="margin-caption align-default" id="fig-heat-pumps-2">
+<a class="reference internal image-reference" href="../_images/10_energytransitions.6.2.png"><img alt="../_images/10_energytransitions.6.2.png" src="../_images/10_energytransitions.6.2.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Idealised Carnot cycle.</span><a class="headerlink" href="#fig-heat-pumps-2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We can model each of the 4 phases of the cycle using the 1st law of thermodynamics</p>
+<div class="math notranslate nohighlight">
+\[\dd{Q} = \dd{U} + \dd{W}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\dd{Q}\)</span> is the heat added to the system, <span class="math notranslate nohighlight">\(\dd{U}\)</span> is the change in internal energy, and <span class="math notranslate nohighlight">\(\dd{W}\)</span> is the work done.
+The work done normally has the form</p>
+<div class="math notranslate nohighlight">
+\[\dd{U} = P \dd{V}\]</div>
+<p>On the parts of the cycle DC and BA, heat is supplied to the working fluid (DC) or heat is removed from the working fluid (BA),
+but the temperature of the working fluid remains constant on these two parts of the cycle, and so <span class="math notranslate nohighlight">\(\dd{U} = 0\)</span> and we have</p>
+<div class="math notranslate nohighlight">
+\[P \dd{V} = \dd{Q}\]</div>
+<p>The ideal gas law has the form</p>
+<div class="math notranslate nohighlight">
+\[P = \frac{RT}{V}\]</div>
+<p>And so it follows that</p>
+<div class="math notranslate nohighlight">
+\[RT \frac{\dd{V}}{V} = \dd{Q}\]</div>
+<p>Integrating along BA we have that the change in the properties of the working fluid moving through the heat pump are given by</p>
+<div class="math notranslate nohighlight">
+\[R T_{\mathrm{hot}} \log(\frac{V_b}{V_a}) = Q_\mathrm{out}\]</div>
+<p>where <span class="math notranslate nohighlight">\(T_\mathrm{hot}\)</span> is the temperature of the hot side of the heat pump and <span class="math notranslate nohighlight">\(Q_\mathrm{hot}\)</span> is the heat flux provided by the heat pump.
+Similarly, on the cold side of the heat pump, where the working fluid is cold , <span class="math notranslate nohighlight">\(T_\mathrm{cold}\)</span>, and takes in heat <span class="math notranslate nohighlight">\(Q_\mathrm{in}\)</span> from the low temperature heat source</p>
+<div class="math notranslate nohighlight">
+\[R T_\mathrm{cold} \log(\frac{V_c}{V_d}) = Q_\mathrm{in}\]</div>
+<p>On CB we have adiabatic compression, which raises the temperature of the working fluid, and so</p>
+<div class="math notranslate nohighlight">
+\[PV^\gamma = \mathrm{const.}\]</div>
+<p>We combine this with the gas law <span class="math notranslate nohighlight">\(PV=RT\)</span> to find a relation between <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(V\)</span>, which is</p>
+<div class="math notranslate nohighlight">
+\[TV^{\gamma - 1} = \mathrm{const.}\]</div>
+<p>This means that on AD</p>
+<div class="math notranslate nohighlight">
+\[T_a V_a^{\gamma - 1} = T_d V_d^{\gamma - 1}\]</div>
+<p>and on CB</p>
+<div class="math notranslate nohighlight">
+\[T_c V_c^{\gamma - 1} = T_b V_b^{\gamma - 1}\]</div>
+<p>Since the temperature is constant on BA,</p>
+<div class="math notranslate nohighlight">
+\[T_a = T_b = T_\mathrm{hot}\]</div>
+<p>Similarly the temperature is constant on CD,  so</p>
+<div class="math notranslate nohighlight">
+\[T_c = T_d = T_\mathrm{cold}\]</div>
+<p>it follows that</p>
+<div class="math notranslate nohighlight">
+\[\frac{V_c}{V_d} = \frac{V_b}{V_a}\]</div>
+<p>And so substituting into eqns (6) and (7), we find that</p>
+<div class="math notranslate nohighlight">
+\[\frac{Q_\mathrm{in}}{Q_\mathrm{out}} = \frac{T_\mathrm{cold}}{T_\mathrm{hot}}\]</div>
+<p>Finally, energy conservation around the whole ideal cycle requires that</p>
+<div class="math notranslate nohighlight">
+\[W + Q_\mathrm{in} = Q_\mathrm{out}\]</div>
+<p>Hence the coefficient of performance, <span class="math notranslate nohighlight">\(\mathrm{CoP}\)</span>, is</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{CoP} = \frac{Q_\mathrm{out}}{W} = \frac{1}{1 - \frac{Q_\mathrm{in}}{Q_\mathrm{out}}}\]</div>
+<div class="math notranslate nohighlight">
+\[\mathrm{CoP} = \frac{1}{1 - \frac{T_\mathrm{cold}}{T_\mathrm{hot}}}\]</div>
+<p>As an example, if <span class="math notranslate nohighlight">\(T_\mathrm{cold} = 283 / \mathrm{K}\)</span> and <span class="math notranslate nohighlight">\(T_\mathrm{hot} = 313 / \mathrm{K}\)</span>, and substituting into eqns (6) and (7),  we find that</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{CoP} = \frac{1}{1 - \frac{283}{313}} \approx 10.5\]</div>
+<p>Non-ideal behaviour of a real heat pump leads to a less efficient system, and typically the CoP is about 3-5 when temperatures are raised from 0-10 C to about 30-40 C.
+The smaller the temperature increase, the less the work that is needed and hence the higher the CoP.</p>
+<figure class="margin-caption align-default" id="fig-heat-pumps-3">
+<a class="reference internal image-reference" href="../_images/10_energytransitions.6.3.png"><img alt="../_images/10_energytransitions.6.3.png" src="../_images/10_energytransitions.6.3.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Typical performance data for an air source heat pump</span><a class="headerlink" href="#fig-heat-pumps-3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>One key issue with a heat pump is that we need a heat source.
+There are air source heat pumps which cool the air and if a volume flux <span class="math notranslate nohighlight">\(Q\)</span> of air is cooled by <span class="math notranslate nohighlight">\(\Delta T\)</span>, the heat supply to the heat pump is</p>
+<div class="math notranslate nohighlight">
+\[Q_\mathrm{in} = \rho C Q \Delta T\]</div>
+<p>For <span class="math notranslate nohighlight">\(C\)</span> = 1000 J/kg/K, <span class="math notranslate nohighlight">\(Q\)</span> = 1m<sup>3&lt;\sup&gt;/s, <span class="math notranslate nohighlight">\(\Delta T\)</span> = 10, the $Q_\mathrm{in} is about 10 kW.</p>
+<p>Ground source heat pumps draw in heat from the ground around a vertical (or horizontal) loop.
+These supply about 5kW per bore hole, which may be of order 100m deep.
+Since the heat is supplied to the well through thermal conduction from the ground, the ground around the well gradually cools down as seen in the figure below.
+Data suggest cooling of about 3K in 5 years.
+Long term, these need recharging in the summer.</p>
+<figure class="margin-caption align-default" id="fig-heat-pumps-4">
+<a class="reference internal image-reference" href="../_images/10_energytransitions.6.4.png"><img alt="../_images/10_energytransitions.6.4.png" src="../_images/10_energytransitions.6.4.png" style="width: 50%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Schematic of a bore hole used to supply energy to a heat pump.</span><a class="headerlink" href="#fig-heat-pumps-4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="margin-caption align-default" id="fig-heat-pumps-5">
+<a class="reference internal image-reference" href="../_images/10_energytransitions.6.5.png"><img alt="../_images/10_energytransitions.6.5.png" src="../_images/10_energytransitions.6.5.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">An example showing where boreholes could be located in St. John’s college.
+This example shows 120 boreholes on the backs but to meet the college heating demand would require about 800 boreholes.</span><a class="headerlink" href="#fig-heat-pumps-5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>With an array of heat pumps, the recovery temperature falls off more quickly since the cooling of each bore hole begins to interfere with the cooling around the next bore hole.
+For example St Johns needs about 8MW heating on the main college site.
+With 10 kW boreholes, this requires about 800  – <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:heat_pumps:5</span></code> above shows 120 boreholes.</p>
+<p>Finally there are water source heat pumps, which draw heat from a lake or river.
+Given the density of water is 1000 times that of air, and specific heat of water is about 4000 J/kg/K, a flow of about 1.2 l/s cooled by 1 K will supply about 5 kW of heat.
+The Cam may supply about 10 MW provided the river is not too cold.</p>
+<p>The other key issue for heat pump is that there is a need for additional electricity to power the heat pumps.
+With heat pumps having a CoP of say 3, then the present demand for energy associated with heating will be reduced from 1/0.85 per unit of heating,
+assuming a gas boiler has an efficiency of 85% in terms of generating heat by burning gas,to 1/3 units of electricity per unit of heat demand.
+This is a reduction of over a factor of 3.
+Note that the carbon emissions of electricity are presently about 200 g/kW hr (national average carbon intensity of electricity from the national grid),
+while the carbon emissions of burning gas are also about 200 g/kWh (including the inefficiency of the boiler).
+So a heat pump reduces carbon emissions by about 2/3 today.
+As electricity becomes more  decarbonised this reduction will increase.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./10_energytransitions"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By the QES Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

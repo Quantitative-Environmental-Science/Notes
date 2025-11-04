@@ -1,0 +1,667 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The Methane Budget &#8212; My Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/admonitions.css?v=1588abde" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams", "[tex]/mhchem", "[tex]/color"]}, "tex": {"packages": ["base", "physics", "ams", "mhchem", "color"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '07_landcarbon/l42';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="My Jupyter Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My Jupyter Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../00_intro/intro.html">1. Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l1.html">1.1. Course Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l2.html">1.2. Where does the energy come from on Earth?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l3.html">1.3. The Carbon Cycle</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01_groundwater/intro.html">2. Surface Waters I: Groundwater</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l4.html">2.1. Groundwater Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l5.html">2.2. Why water moves beneath the surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l6.html">2.3. How we measure and understand water movement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l7.html">2.4. Groundwater challenges and sustainable groundwater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l8.html">2.5. Groundwater Chemistry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l9.html">2.6. Pollution in Rivers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02_rivers/intro.html">3. Surface Waters II: Rivers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l13.html">3.1. Catchment and drainage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l14.html">3.2. Drainage models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l15.html">3.3. River flows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l16.html">3.4. Reservoirs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l17.html">3.5. Flood waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l18.html">3.6. Flooding in urban environments</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03_cryosphere/intro.html">4. Cryosphere</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l8.html">4.1. Ice in the polar regions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l9.html">4.2. The growth and melting of ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l10.html">4.3. The extent of sea ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l11.html">4.4. Ice sheets and the flow of glacial ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l12.html">4.5. Floating ice shelves and the flow of glacial ice</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/07_landcarbon/l42.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>The Methane Budget</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-down-inventories">Top-Down Inventories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bottom-up-inventories">Bottom-Up Inventories</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-fluxes">Measuring Fluxes</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="the-methane-budget">
+<span id="lecture-42"></span><h1>The Methane Budget<a class="headerlink" href="#the-methane-budget" title="Link to this heading">#</a></h1>
+<p>To understand why there was a pause in the increase in methane concentrations in the atmosphere from 2000-2006, we need to better understand the balance of the sources and sinks of methane to the atmosphere from the land surface.
+This quantification is done largely through two means – one is <strong>top down</strong> inventories of the methane budget and the other is <strong>bottom up</strong> inventories of the methane budget.
+These have multiple overlapping temporal and spatial scales and involve a range of different types of measurements and models (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:land:methane:spacetime</span></code>), and when combined allow us to understand the balance between the sources and sinks of methane to the global budget.</p>
+<figure class="margin-caption align-default" id="fig-land-methane-spacetime">
+<a class="reference internal image-reference" href="../_images/07_landcarbon.3.1.jpeg"><img alt="../_images/07_landcarbon.3.1.jpeg" src="../_images/07_landcarbon.3.1.jpeg" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">The spatial and temporal scale of methods used to measure methane.</span><a class="headerlink" href="#fig-land-methane-spacetime" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="top-down-inventories">
+<h2>Top-Down Inventories<a class="headerlink" href="#top-down-inventories" title="Link to this heading">#</a></h2>
+<p>Top-down estimates of methane emissions combine atmospheric observations with inverse models, which are used to estimate where the emissions have derived.
+Methane absorbs well in the shortwave infrared (SWIR, <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:land:methane:opticaldepth</span></code>).
+There are now many satellites that measure methane concentrations daily with near global coverage.
+Methane concentrations can also be measured by research aircraft although they don’t have nearly the same coverage as satellites.</p>
+<figure class="margin-caption align-default" id="fig-land-methane-opticaldepth">
+<a class="reference internal image-reference" href="../_images/07_landcarbon.3.2.png"><img alt="../_images/07_landcarbon.3.2.png" src="../_images/07_landcarbon.3.2.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Atmospheric optical depths of major trace gases in the spectral region 1.5-2.5 μm.
+The calculation is for the US Standard Atmosphere (Anderson et al, 1986) with surface concentrations adjusted to 399 ppm CO<sub>2</sub>, 1.9 ppm methane, 330 ppb N<sub>2</sub>O and 80 ppm CO.
+The line-by-line data are smoothed with a spectral resolution of 0.1nm (full width at half maximum).
+Figure from Jacob et al., 2016.</span><a class="headerlink" href="#fig-land-methane-opticaldepth" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Knowing the methane concentration is half the battle, the other half is figuring out where it came from.
+This requires atmospheric chemistry models, and a particular class of model called inverse models (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:land:methane:measurement</span></code>).
+Most of the models we have been looking at throughout QES are forward models, which step forward in time, iterating some parameter or variable.</p>
+<figure class="margin-caption align-default" id="fig-land-methane-measurement">
+<a class="reference internal image-reference" href="../_images/07_landcarbon.3.3_4.png"><img alt="../_images/07_landcarbon.3.3_4.png" src="../_images/07_landcarbon.3.3_4.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Schematic of an forward model.</span><a class="headerlink" href="#fig-land-methane-measurement" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Inverse models start with the measurement and then run the model backwards to figure out where the source is (and then they can attribute it to what generated the source).
+The issue becomes that the lengthscale for the observations is often very different to the lengthscale for the source.
+For example, a pipe leak (the source) versus the resolution of a satellite (the observation) or reverse in the case of a wildfire (the source), versus a research flight (the observation).</p>
+<p>These top down approaches have allowed for a global methane budget to be calculated (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:land:methane:budget:TD</span></code>).
+Top down approaches do a pretty good job of balancing the sources and the sinks of methane to the atmosphere, with a small excess in the sources driving the increase observed in the atmosphere.</p>
+<figure class="margin-caption align-default" id="fig-land-methane-budget-td">
+<a class="reference internal image-reference" href="../_images/07_landcarbon.3.5.png"><img alt="../_images/07_landcarbon.3.5.png" src="../_images/07_landcarbon.3.5.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">The global methane budget in 2017, measured using top-down methods.</span><a class="headerlink" href="#fig-land-methane-budget-td" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="bottom-up-inventories">
+<h2>Bottom-Up Inventories<a class="headerlink" href="#bottom-up-inventories" title="Link to this heading">#</a></h2>
+<p>The other way to approach the methane budget is through the use of bottom up techniques.
+<strong>Bottom up techniques</strong> are based on emission inventories, biogeochemical models of methane emissions related to different environments, and direct measures of photochemical oxidation of methane in the atmosphere (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:land:methane:sources</span></code>).
+Bottom up techniques are data-heavy, but feed into the satellite measurements of methane emissions.
+Bottom up techniques involve multiplying the activity by the emission factor.
+The activity is essentially how much you have of something, and the emission factor is how much methane that something emits per unit time.
+For example, livestock emissions are from methane produced in the stomach of cows, and are measured at the point source by estimating the methane concentration that the cow breathes out multiplied by the number of cows (the ‘activity’).
+We can consider how bottom up source estimates are measured by considering each of these in turn.</p>
+<figure class="margin-caption align-default" id="fig-land-methane-sources">
+<a class="reference internal image-reference" href="../_images/07_landcarbon.3.6.png"><img alt="../_images/07_landcarbon.3.6.png" src="../_images/07_landcarbon.3.6.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">A summary of ‘bottom-up’ estimates of methane sources.</span><a class="headerlink" href="#fig-land-methane-sources" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The flux of methane from oil and gas production has been hard to quantify, and much recent work has suggested that pipelines and oil fields are far leakier than was previously thought.
+The main issue is that there are many places along the oil, gas, and coal production path where methane can be leaked to the atmosphere (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:land:methane:oilgas</span></code>).</p>
+<figure class="margin-caption align-default" id="fig-land-methane-oilgas">
+<a class="reference internal image-reference" href="../_images/07_landcarbon.3.7.png"><img alt="../_images/07_landcarbon.3.7.png" src="../_images/07_landcarbon.3.7.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Mechanisms of methane release from hydrocarbon extraction and processing from  Scarpelli et al. (2020).</span><a class="headerlink" href="#fig-land-methane-oilgas" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Landfills are another major source of methane, and recently the use of gas produced in landfills as an energy source has become more common and mainstream.
+However landfills continue to emit methane to the atmosphere in large quantities.
+Measuring this can be done with surface instrumentation, from the very small scale (someone walking around with a monitor) to the larger scale (using eddy covariance techniques, or optical plume monitoring), to aircraft measurements with inert tracer gases that are put in the land fill and then traced by aircraft monitoring (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:land:methane:landfills</span></code>).</p>
+<figure class="margin-caption align-default" id="fig-land-methane-landfills">
+<a class="reference internal image-reference" href="../_images/07_landcarbon.3.8.png"><img alt="../_images/07_landcarbon.3.8.png" src="../_images/07_landcarbon.3.8.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">The range of areas that can be covered by different monitoring techniques, from Monster et al. (2019).</span><a class="headerlink" href="#fig-land-methane-landfills" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Finally, for landfills, and more broadly soils including wetlands and rice paddies, a very common technique is to use a <strong>flux chamber</strong>, where the concentration of the gas coming off the soil is measured as it fills the chamber, allowing you to determine the amount of methane produced by an area over a known time period.</p>
+<section id="measuring-fluxes">
+<h3>Measuring Fluxes<a class="headerlink" href="#measuring-fluxes" title="Link to this heading">#</a></h3>
+<p>Recall that the overall flux of a compound of interest is the flux related to <strong>advection</strong> and the flux related to <strong>diffusion</strong>.
+The flux related to advection is calculated knowing the velocity of a fluid (air, water) and the concentration of the element/compound of interest in that fluid.</p>
+<div class="math notranslate nohighlight">
+\[F_a = v C\]</div>
+<p>Where <span class="math notranslate nohighlight">\(F\)</span> is the flux, <span class="math notranslate nohighlight">\(v\)</span> is the velocity of the fluid (m s<sup>-1</sup>) and <span class="math notranslate nohighlight">\(C\)</span> is the concentration of that element or compound in the fluid (kg m<sup>-3</sup>).
+This gives units of Flux of kg m<sup>-2</sup> s<sup>-1</sup> – or an amount (kg) per unit area (m<sup>-2</sup>) per unit of time.
+The advective flux is what moves a plume of methane from point A to point B, or moves the concentration of a contaminant, say a toxic metal, down a river from point X to point Y.</p>
+<p>In addition to advection, there is a flux related to diffusion, which we have seen earlier this term in Global Environment, and was encountered in Michaelmas term as well.
+At its essence, diffusion refers to the ‘random walks’, or the random movement of particles due to kinetic energy, and results in the net movement of the diffusing substance from a higher to a lower concentration.</p>
+<p>Mathematically the diffusive flux is given by:</p>
+<div class="math notranslate nohighlight">
+\[F_d = -D \dv{C}{x}\]</div>
+<p>Where <span class="math notranslate nohighlight">\(D\)</span> is the diffusion coefficient, which is a property of the compound of interest (e.g. methane in soil) as well as of the media through which it is moving (the soil, and how porous it is, and what the shape and connectivity of those pores are).
+<span class="math notranslate nohighlight">\(D\)</span> has units of m2 s<sup>-1</sup>, and  <span class="math notranslate nohighlight">\(\dv{C}{x}\)</span> is the gradient of the gas concentration in the soil.
+By convention, the diffusive flux is negative because depth is positive going down into the soil.</p>
+<p>The diffusion coefficient takes into account the soil tortuosity and porosity, and is often calculated as</p>
+<div class="math notranslate nohighlight">
+\[D = D_0^{\tau^2(f(e))}\]</div>
+<p>where <span class="math notranslate nohighlight">\(D_0\)</span> is the diffusion of gas in air (m<sup>2</sup> s<sup>-1</sup>), <span class="math notranslate nohighlight">\(e\)</span> is the soil air-filled porosity (m<sup>3</sup> air/m<sup>3</sup> soil),
+and <span class="math notranslate nohighlight">\(\tau\)</span> is the tortuosity of the soil.
+Tortuosity gives us a sense of how straight a path is through the soil matrix.
+It is the ratio of the actual flow path length to a straight path length and formulations for the tortuosity include the porosity (<span class="math notranslate nohighlight">\(e\)</span>).
+This is illustrated in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:land:methane:tortuosity</span></code>.</p>
+<figure class="margin-caption align-default" id="fig-land-methane-tortuosity">
+<a class="reference internal image-reference" href="../_images/07_landcarbon.3.9.jpeg"><img alt="../_images/07_landcarbon.3.9.jpeg" src="../_images/07_landcarbon.3.9.jpeg" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Variations in tortuosity <span class="math notranslate nohighlight">\((\chi)\)</span> of a soil matrix.</span><a class="headerlink" href="#fig-land-methane-tortuosity" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In the case of the chamber measurements, we often assume that the advective flux in the soil is zero, and we measure the diffusion of gas into the chamber.
+This is generally a reasonable assumption, as there is very little air movement within soil!
+In this case, diffusive fluxes should account for the total emission from the soil, and should be equal to the net production of the gas in the soil (where net production is total production minus total consumption).
+What we measure in the chamber is the rate of increase in gas concentration with time (<span class="math notranslate nohighlight">\(\dv{C}{t}\)</span>) and then multiply this by the volume/area, to give the flux (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:land:methane:fluxes</span></code>)</p>
+<figure class="margin-caption align-default" id="fig-land-methane-fluxes">
+<a class="reference internal image-reference" href="../_images/07_landcarbon.3.10.png"><img alt="../_images/07_landcarbon.3.10.png" src="../_images/07_landcarbon.3.10.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Measuring methane with flux chambers. Units: <span class="math notranslate nohighlight">\(\dv{C}{t}\)</span> = concentration (kg m<sup>-3</sup>) per time, Volume/area is m<sup>3</sup> m<sup>-2</sup>, overall the flux is kg m<sup>-2</sup> time<sup>-1</sup>.</span><a class="headerlink" href="#fig-land-methane-fluxes" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The other way to calculate the flux out of soils is to measure the concentration gradient itself, and estimate the porosity (and tortuosity) to calculate the flux from within the soil.</p>
+<p>When we put all of this together we get overall estimates and maps of sources of methane to the atmosphere, and these can be attributed to various regions of the world where that methane is coming from (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:land:methane:map</span></code>).</p>
+<p>We can also use measurements and models to try to understand the amount of OH<sup>-</sup> radical in the atmosphere, which is the dominant sink for methane (~90%).
+Reaction rates of methane oxidation are strongly linked to local changes in OH<sup>-</sup> concentration.
+Two approaches derive estimates of OH<sup>-</sup> quantity in the atmosphere:</p>
+<ol class="arabic simple">
+<li><p>Chemistry climate models that includes hundreds chemical reactions between numerous species</p></li>
+<li><p>Methyl-chloroform (MCF) observations. Methyl chloroform is an anthropogenic pollutant that reacts with OH with a lifetime of 5 years. There have been no sources of MCF since it was banned in 1996.</p></li>
+</ol>
+<p>Both approaches derive a 10-15% uncertainty on global OH<sup>-</sup> mean concentrations.</p>
+<p>Having gone through the various methods that are used to quantify methane emissions, we can compare the overall budget for methane sources and sinks calculated through bottom up (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:land:methane:budget:BU</span></code>) approaches versus those calculated through top down (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:land:methane:budget:TD</span></code>) approaches.
+This comparison shows us that bottom up approaches suggest a far larger source of methane to the atmosphere, greatly out of balance with the sinks of methane from the atmosphere.</p>
+<figure class="margin-caption align-default" id="fig-land-methane-budget-bu">
+<a class="reference internal image-reference" href="../_images/07_landcarbon.3.11.png"><img alt="../_images/07_landcarbon.3.11.png" src="../_images/07_landcarbon.3.11.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">A comparison of the global methane budget estimated from bottom-up and top-down measurements.</span><a class="headerlink" href="#fig-land-methane-budget-bu" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In summary:</p>
+<ul class="simple">
+<li><p>Global emissions:</p>
+<ul>
+<li><p>576 TgCH4/yr [550-594] for Top Down</p></li>
+<li><p>737 TgCH4/yr [594-881] for Bottom Up</p></li>
+</ul>
+</li>
+<li><p>Top down and bottom up estimates generally agree for agricultural emissions</p></li>
+<li><p>Estimated fossil fuel emissions are lower for top down than for bottom up</p></li>
+<li><p>Estimated wetland emissions are higher for top down than for bottom up</p></li>
+<li><p>Large discrepancy between top down and bottom estimates for freshwaters and natural geological sources (“other natural sources”)</p></li>
+</ul>
+<figure class="margin-caption align-default" id="fig-land-methane-emissions">
+<a class="reference internal image-reference" href="../_images/07_landcarbon.3.12.png"><img alt="../_images/07_landcarbon.3.12.png" src="../_images/07_landcarbon.3.12.png" style="width: 60%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">A summary of methane emissions from different environments,</span><a class="headerlink" href="#fig-land-methane-emissions" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Finally, We can return to the question of what caused the pause in the increase in methane emissions between 2000-2006 by looking in detail at these emissions inventories and parsing them out globally.</p>
+<p>When we compare 2000-2006 to 2017 (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:land:methane:map</span></code>), we see that there has been a massive increase in emissions from agriculture and waste as well as fossil fuels.
+More recent work suggests that most of the increase is due to agriculture and waste.
+Worryingly, the concentration of methane in the atmosphere has started to tick up again, since 2019, believed to be due to increased emissions from wetlands in the tropics, which are increasing their methane production under higher temperatures.
+This may set off a positive feedback loop, where warming temperatures drive enhanced microbial activity, which causes increased methane emissions, which causes warming temperatures.</p>
+<figure class="margin-caption align-default" id="fig-land-methane-map">
+<a class="reference internal image-reference" href="../_images/07_landcarbon.3.13.png"><img alt="../_images/07_landcarbon.3.13.png" src="../_images/07_landcarbon.3.13.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">A comparison of top-down (TD) and bottom-up (BU) methane flux measurements. Bars represent the difference between 2000-2006 emissions and 2017 emissions from wetlands (in green), fossil fuels (in brown), agriculture (in blue), biomass burning (in red) and ‘other’ (in pink). When the bar is positive, it means the emissions were greater in 2017 than they were in 2000-2006. In each case the top down estimate is given on the left and the bottom up estimate is given on the right.
+From Saunois et al., 2020.</span><a class="headerlink" href="#fig-land-methane-map" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>When we summarise what we have learned about the methane cycle we see that the land surface is the largest emitter of methane, and that methane comes from a variety of sources, each of which has its own response to anthropogenic climate change. Unlike carbon dioxide, which is relatively ‘simple’ methane has natural sources and sinks that are themselves significant (~40%) and also are responding to warming temperatures. The methane budget is very difficult to quantify, and different techniques indicate different magnitudes of sources. And yet, due to its short lifetime, it is, and will remain to be, an easy target for emission reductions.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./07_landcarbon"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-down-inventories">Top-Down Inventories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bottom-up-inventories">Bottom-Up Inventories</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-fluxes">Measuring Fluxes</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By the QES Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

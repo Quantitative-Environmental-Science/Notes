@@ -1,0 +1,712 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Air pollution and climate – direct effects &#8212; My Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/admonitions.css?v=1588abde" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams", "[tex]/mhchem", "[tex]/color"]}, "tex": {"packages": ["base", "physics", "ams", "mhchem", "color"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '04_atmosphere/spare/l24';</script>
+    <link rel="icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="My Jupyter Book - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="My Jupyter Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../00_intro/intro.html">1. Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../00_intro/l1.html">1.1. Course Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../00_intro/l2.html">1.2. Where does the energy come from on Earth?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../00_intro/l3.html">1.3. The Carbon Cycle</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../01_groundwater/intro.html">2. Surface Waters I: Groundwater</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../01_groundwater/l4.html">2.1. Groundwater Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_groundwater/l5.html">2.2. Why water moves beneath the surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_groundwater/l6.html">2.3. How we measure and understand water movement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_groundwater/l7.html">2.4. Groundwater challenges and sustainable groundwater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_groundwater/l8.html">2.5. Groundwater Chemistry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_groundwater/l9.html">2.6. Pollution in Rivers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../02_rivers/intro.html">3. Surface Waters II: Rivers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../02_rivers/l13.html">3.1. Catchment and drainage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_rivers/l14.html">3.2. Drainage models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_rivers/l15.html">3.3. River flows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_rivers/l16.html">3.4. Reservoirs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_rivers/l17.html">3.5. Flood waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../02_rivers/l18.html">3.6. Flooding in urban environments</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_cryosphere/intro.html">4. Cryosphere</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../03_cryosphere/l8.html">4.1. Ice in the polar regions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_cryosphere/l9.html">4.2. The growth and melting of ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_cryosphere/l10.html">4.3. The extent of sea ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_cryosphere/l11.html">4.4. Ice sheets and the flow of glacial ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_cryosphere/l12.html">4.5. Floating ice shelves and the flow of glacial ice</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/04_atmosphere/spare/l24.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Air pollution and climate – direct effects</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-effects-on-climate">Direct effects on climate</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aerosol-radiation-interactions-scattering-vs-absorption">Aerosol-radiation interactions (scattering vs. absorption)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aerosol-optical-depth-aod">Aerosol optical depth (AOD)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visibility">Visibility</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#health">Health</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#health-methodologies">Health methodologies</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#epidemiology">Epidemiology</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#case-control-studies">Case-control studies</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#cohort-studies">Cohort studies</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toxicology">Toxicology</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="air-pollution-and-climate-direct-effects">
+<span id="lecture-23"></span><h1>Air pollution and climate – direct effects<a class="headerlink" href="#air-pollution-and-climate-direct-effects" title="Link to this heading">#</a></h1>
+<p class="rubric">Health, visibility, direct effects on climate</p>
+<blockquote class="highlights">
+<div><p>Aims:</p>
+<ol class="arabic simple">
+<li><p>To describe the main impacts of aerosols on human health and the relevant aerosol characteristics (composition and size).</p></li>
+<li><p>To describe the main methods used to assess human health impacts (epidemiology vs. toxicology).</p></li>
+<li><p>To describe how aerosols impacts visibility.</p></li>
+<li><p>To describe the direct effect of aerosols on climate (absorption vs. scattering of radiation).</p></li>
+</ol>
+<p>Key Points:</p>
+<ul class="simple">
+<li><p>Aerosols can scatter and absorb radiation directly. Most aerosol species scatter solar radiation (net negative forcing).</p></li>
+<li><p>Aerosols impact visibility.</p></li>
+<li><p>Aerosols or particulate matter are a main contributor to air pollution.</p></li>
+<li><p>The main impacts on health are pulmonary and cardiovascular diseases.</p></li>
+<li><p>Aerosol composition as well as size are important for health impacts.</p></li>
+<li><p>Health impacts are determined through a combination of epidemiology and toxicology studies.</p></li>
+</ul>
+</div></blockquote>
+<section id="direct-effects-on-climate">
+<h2>Direct effects on climate<a class="headerlink" href="#direct-effects-on-climate" title="Link to this heading">#</a></h2>
+<section id="aerosol-radiation-interactions-scattering-vs-absorption">
+<h3>Aerosol-radiation interactions (scattering vs. absorption)<a class="headerlink" href="#aerosol-radiation-interactions-scattering-vs-absorption" title="Link to this heading">#</a></h3>
+<p><strong>Aerosol-radiation interactions</strong> (also known as <strong>aerosol direct effects</strong>) refers to the scattering of solar radiation and absorption of solar and terrestrial radiation due to the presence of aerosol particles in the atmosphere.
+In general, radiative forcing due to aerosol-radiation interactions is proportional to the amount of aerosol particles in the atmosphere and their ability to extinguish radiation, which in turn is a function of particle size and wavelength.</p>
+<p>The schematic on the left of <code class="xref std std-numref docutils literal notranslate"><span class="pre">scattering_absorption</span></code> shows that the scattering of shortwave radiation reduces the amount of solar energy that reaches the surface, leading to a cooling of the atmosphere and surface, expressed as a net negative forcing at the TOA.
+The schematic on the right of <code class="xref std std-numref docutils literal notranslate"><span class="pre">scattering_absorption</span></code> shows that an absorbing aerosol (e.g., black carbon) leads to a warming of the atmosphere because less solar energy reaches the surface and the TOA, resulting in a net positive forcing at the TOA.
+Note that the warmed atmosphere re-emits some of the absorbed radiation at longer wavelengths, some of which reaches the surface and partially offsets the decrease in surface temperatures.</p>
+<figure class="margin-caption align-default" id="scattering-absorption">
+<a class="reference internal image-reference" href="../../_images/figure24.4.png"><img alt="../../_images/figure24.4.png" src="../../_images/figure24.4.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Radiative influence of scattering (left panel) and absorbing aerosol particles (right panel).</span><a class="headerlink" href="#scattering-absorption" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The scattering and absorption properties of different aerosol types depend on particle size (i.e., larger particles absorb more and scatter less), shape, chemical composition and mixing state.
+For most aerosol types, the scattering of solar radiation dominates the absorption of solar radiation, resulting in a net negative solar forcing.
+The major exception is <strong>Black Carbon</strong> (soot) which strongly absorbs solar radiation resulting in a positive forcing. Larger-sized aerosol particles (e.g., mineral dust) tend to strongly absorb terrestrial (longwave) radiation, which can result in a positive forcing.</p>
+<p><code class="xref std std-numref docutils literal notranslate"><span class="pre">tab:aerosol_forcing</span></code> shows the net global mean forcing from aerosol-radiation interactions for different aerosol types and the forcing from all aerosol types combined, which is negative as most aerosol particles present in the atmosphere tend to be efficient scatters.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="tab-aerosol-forcing">
+<caption><span class="caption-text">Net global mean forcing from aerosol-radiation interactions for different aerosol types and the forcing from all aerosol types combined. Table from Boucher (2012).</span><a class="headerlink" href="#tab-aerosol-forcing" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Aerosol type</p></th>
+<th class="head"><p>Net radiative forcing (<span class="math notranslate nohighlight">\(\mathbf{W \ m^{-2}}\)</span>)</p></th>
+<th class="head"><p>Uncertainty range (<span class="math notranslate nohighlight">\(\mathbf{W \ m^{-2}}\)</span>)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Fossil fuel sulphates</p></td>
+<td><p>-0.40</p></td>
+<td><p>-0.60 to -0.20</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fossil fuel + biofuel black carbon</p></td>
+<td><p>+0.40</p></td>
+<td><p>+0.05 to +0.60</p></td>
+</tr>
+<tr class="row-even"><td><p>Fossil fuel + biofuel organic aerosols</p></td>
+<td><p>-0.12</p></td>
+<td><p>-0.40 to 0.10</p></td>
+</tr>
+<tr class="row-odd"><td><p>Biomass burning</p></td>
+<td><p>+0.00</p></td>
+<td><p>-0.20 to +0.20</p></td>
+</tr>
+<tr class="row-even"><td><p>Desert dust</p></td>
+<td><p>-0.10</p></td>
+<td><p>-0.30 to +0.10</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>All aerosol</strong></p></td>
+<td><p><strong>-0.35</strong></p></td>
+<td><p><strong>-0.85 to +0.15</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Consider the case of scattering by a spherical particle of radius r, for which the scattering, absorption and extinction efficiency can be prescribed on the basis of theory, as a function of a <strong>dimensionless particle size parameter</strong>, <span class="math notranslate nohighlight">\(\chi\)</span>, defined as:</p>
+<div class="math notranslate nohighlight">
+\[\chi = \frac{2\pi r}{\lambda}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\lambda\)</span> is the wavelength of the radiation. In general, the scattering of radiation is largest when <span class="math notranslate nohighlight">\(\chi\)</span> is around 1 (i.e. Mie scattering regime), which in the visible part of the electromagnetic spectrum is the case for those particles with radii comparable to the wavelength of visible light (ca. 400-750 nm, <code class="xref std std-numref docutils literal notranslate"><span class="pre">scattering_regime</span></code>). Note that most anthropogenic aerosol particles are efficient at scattering solar radiation because they are in the so-called accumulation-mode size range (0.1-1 µm particle diameter).</p>
+</section>
+<section id="aerosol-optical-depth-aod">
+<h3>Aerosol optical depth (AOD)<a class="headerlink" href="#aerosol-optical-depth-aod" title="Link to this heading">#</a></h3>
+<p>The <strong>aerosol optical depth</strong>, <strong>(AOD)</strong> is a useful quantity to aggregate the radiative effects of different aerosol species into one quantity.
+AOD describes the vertically integrated amount of solar radiation that is extinguished due to absorption and scattering by aerosol particles.
+The degree of extinction of radiation travelling a distance <span class="math notranslate nohighlight">\(\dd{s}\)</span> through the atmosphere depends on the amount of matter (i.e., gas molecules, aerosol particles, and cloud hydrometeors (otherwise known as rain and snow)) in the light path, <span class="math notranslate nohighlight">\(s\)</span>, and the wavelength <span class="math notranslate nohighlight">\(\lambda\)</span>.
+Beer’s law quantifies the change in radiation intensity at a certain wavelength due to extinction <span class="math notranslate nohighlight">\(\dd{I_\lambda}\)</span>, as follows:</p>
+<div class="math notranslate nohighlight" id="equation-beer-law">
+<span class="eqno">()<a class="headerlink" href="#equation-beer-law" title="Link to this equation">#</a></span>\[\dv{I_\lambda}{s} = - k_{\lambda, \mathrm{ext}} I_\lambda\]</div>
+<p>Where <span class="math notranslate nohighlight">\(I_\lambda\)</span> is the wavelength-dependent intensity of radiation (in <span class="math notranslate nohighlight">\(\mathrm{W \ m^{-2}}\)</span>) and <span class="math notranslate nohighlight">\(k_{\lambda, \mathrm{ext}} = k_{\lambda, \mathrm{abs}} + k_{\lambda, \mathrm{scat}}\)</span> denotes the wavelength-dependent extinction coefficient (in <span class="math notranslate nohighlight">\(\mathrm{m^{-1}}\)</span>), which is the sum of the absorption and scattering coefficients.
+For cloud-free conditions and neglecting the extinction by gases, the wavelength-dependent extinction coefficient can be obtained by integrating over the extinction efficiency times the distribution of the cross-sectional area of the aerosol population, which is <span class="math notranslate nohighlight">\(r^2 n_N(r)\)</span> where <span class="math notranslate nohighlight">\(n_N(r)\)</span> is the aerosol number size distribution:</p>
+<div class="math notranslate nohighlight" id="equation-extinction-int">
+<span class="eqno">()<a class="headerlink" href="#equation-extinction-int" title="Link to this equation">#</a></span>\[k_{\lambda, \mathrm{ext}} = \int_0^\infty \pi r^2 n_N(r) Q_{\lambda, \mathrm{ext}}(r) \dd{r}\]</div>
+<p>where <span class="math notranslate nohighlight">\(Q_{\lambda, \mathrm{ext}}\)</span> is the wavelength-dependent extinction efficiency for particles with radii between <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(r + \dd{r}\)</span>.</p>
+<p>We can simplify Equation <a class="reference internal" href="#equation-beer-law">()</a> further by considering monochromatic light only, thus removing the dependence on <span class="math notranslate nohighlight">\(\lambda\)</span>.
+After integrating, we obtain net extinction (due to the presence of aerosol particles) of a light beam travelling downwards in the vertical from TOA to a height <span class="math notranslate nohighlight">\(z\)</span>, where the light path, <span class="math notranslate nohighlight">\(s\)</span>, has been replaced with altitude, <span class="math notranslate nohighlight">\(z\)</span>, because we are working in the vertical, as follows:</p>
+<div class="math notranslate nohighlight">
+\[\frac{I(z)}{I_0} = \exp(- \int_z^{\mathrm{TOA}} k_\mathrm{ext} \dd{z}) = e^{-\tau}\]</div>
+<p>where <span class="math notranslate nohighlight">\(I_0\)</span> is the incident radiation (at TOA), and is <span class="math notranslate nohighlight">\(\tau\)</span> is the AOD (due to the presence of aerosol particles only).</p>
+</section>
+</section>
+<section id="visibility">
+<h2>Visibility<a class="headerlink" href="#visibility" title="Link to this heading">#</a></h2>
+<p>Air pollution can create a white or brown haze that affects how far we can see.
+It also affects how well we are able to see the colours, forms, and textures of natural and historic landscapes.</p>
+<p>Fog and haze are both weather phenomena that obstruction vision.</p>
+<p><strong>Haze</strong> is caused when sunlight encounters aerosols in the air.
+The particles scatter and absorb light.
+The more particles in the air, the more scattering and absorption of light to reduce the clarity and colours of what you see.
+Some types of particles scatter more light, especially when it is humid.
+In high humidity conditions particles can adsorb water and grow in size (hygroscopic growth).
+Haze is mostly caused by air pollution from human activity including industry, power generation, transportation, and agriculture.
+Natural haze is caused by dust, and wildfires.</p>
+<p><strong>Fog</strong> is mainly composed of water and reduces visibility below <span class="math notranslate nohighlight">\(1 \ \mathrm{km}\)</span> by definition.
+If the visibility is above 1 km then the phenomenon is called <strong>mist</strong>.
+<strong>Haze</strong> is made of both dry and liquid particles suspended in the air and the visibility typically ranges between <span class="math notranslate nohighlight">\(2-5 \ \mathrm{km}\)</span>.</p>
+<figure class="margin-caption align-default" id="beijing-haze">
+<a class="reference internal image-reference" href="../../_images/figure3.png"><img alt="../../_images/figure3.png" src="../../_images/figure3.png" style="width: 70%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Beijing on a bad day (on the left) and on a good day (on the right).</span><a class="headerlink" href="#beijing-haze" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="health">
+<h2>Health<a class="headerlink" href="#health" title="Link to this heading">#</a></h2>
+<p>Air pollution is a major cause of premature death and disease and is the single largest environmental health risk in Europe.
+Besides their effects on climate, aerosol particles are one of the main components of polluted air.
+The main focus at the beginning of the scientific investigation of air pollution (in the 2nd half of the last century) was on gaseous components such as ozone and nitrogen oxides.
+However, it is increasingly becoming clear that aerosol particles are the main health-relevant component in polluted air, contributing to many diseases.</p>
+<p>Epidemiological studies have shown since decades that increased aerosol concentrations lead to increases in a wide range of respiratory and cardio-vascular diseases and mortality (<code class="xref std std-numref docutils literal notranslate"><span class="pre">Figure</span> <span class="pre">{number}</span></code>).</p>
+<figure class="margin-caption align-default" id="particle-mortality">
+<a class="reference internal image-reference" href="../../_images/figure1.jpg"><img alt="../../_images/figure1.jpg" src="../../_images/figure1.jpg" style="width: 60%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Correlation of increased particles mass and relative increase in mortality in six US cities (Dockery et al., 1993).</span><a class="headerlink" href="#particle-mortality" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Health effects of aerosol particles are highly size dependant as not all particle sizes are penetrating equally deep into the lung.
+The smallest particles, below ca. <span class="math notranslate nohighlight">\(100 \ \mathrm{nm}\)</span> are mainly deposited in the lung due to diffusional processes and are thus deposited in the lowest lung region which has the largest surface area.
+Particles larger than about <span class="math notranslate nohighlight">\(10 \ \mathrm{\mu m}\)</span> are retained in the upper airways.</p>
+<p>Epidemiological studies usually refer to PM mass concentrations, but some health effects may relate to specific constituents such as bioaerosols, polycyclic aromatic compounds, and transition metals.</p>
+<p>Both short- and long-term exposure to air pollution can lead to a wide range of diseases, including stroke, chronic obstructive pulmonary disease, trachea, bronchus and lung cancers, aggravated asthma, and lower respiratory infections.
+The World Health Organization (WHO) provides evidence of links between exposure to air pollution and type 2 diabetes, obesity, systemic inflammation, Alzheimer’s disease and dementia.
+The International Agency for Research on Cancer has classified air pollution, in particular PM2.5, as a leading cause of cancer.
+A recent <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6904854/">global review</a> found that <strong>chronic exposure can affect every organ in the body</strong>, complicating and exacerbating existing health conditions</p>
+<figure class="margin-caption align-default" id="pollution-impacts">
+<img alt="../../_images/figure24.2.png" src="../../_images/figure24.2.png" />
+<figcaption>
+<p><span class="caption-text">Particulate matter with a diameter of 2.5 µm or less (PM2.5), particulate matter with a diameter of 10 µm or less (PM10), ozone (O3), nitrogen dioxide (NO2), benzo[a]pyrene (BaP) and sulphur dioxide (SO2)
+<strong>Source:</strong>  EEA, “<a class="reference external" href="https://www.eea.europa.eu/publications/healthy-environment-healthy-lives">Healthy environment, healthy lives</a> ,” 2019.</span><a class="headerlink" href="#pollution-impacts" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The EEA estimates that, in 2019, approximately 307,000 premature deaths were attributable to PM2.5 in the 27 EU Member States.
+Nitrogen dioxide (<span class="math notranslate nohighlight">\(\mathrm{NO_2}\)</span>) was linked to 40,400 premature deaths, and ground-level ozone was linked to 16,800 premature deaths.</p>
+<section id="health-methodologies">
+<h3>Health methodologies<a class="headerlink" href="#health-methodologies" title="Link to this heading">#</a></h3>
+<p>Understanding the mechanisms by which hazardous substances can cause harm to human health is a key aspect of environmental and health research.
+Two key complementary areas of study are epidemiology and toxicology.</p>
+<section id="epidemiology">
+<h4>Epidemiology<a class="headerlink" href="#epidemiology" title="Link to this heading">#</a></h4>
+<p>Epidemiology is the study and analysis of the distribution (who, when, and where), patterns and determinants of health and disease conditions in defined population.</p>
+<section id="case-control-studies">
+<h5>Case-control studies<a class="headerlink" href="#case-control-studies" title="Link to this heading">#</a></h5>
+<p>Case-control studies select subjects based on their disease status.
+It is a retrospective study. A group of individuals that are disease positive (the “case” group) is compared with a group of disease negative individuals (the “control” group)
+The control group should ideally come from the same population that gave rise to the cases.
+The case-control study looks back through time at potential exposures that both groups (cases and controls) may have encountered.</p>
+<p>Case-control studies are usually faster and more cost-effective than cohort studies but are sensitive to bias (such as recall bias and selection bias)
+The main challenge is to identify the appropriate control group; the distribution of exposure among the control group should be representative of the distribution in the population that gave rise to the cases
+This can be achieved by drawing a random sample from the original population at risk
+This has as a consequence that the control group can contain people with the disease under study when the disease has a high attack rate in a population.</p>
+</section>
+<section id="cohort-studies">
+<h5>Cohort studies<a class="headerlink" href="#cohort-studies" title="Link to this heading">#</a></h5>
+<p>Cohort studies select subjects based on their exposure status.
+The study subjects should be at risk of the outcome under investigation at the beginning of the cohort study; this usually means that they should be disease free when the cohort study starts
+The cohort is followed through time to assess their later outcome status.
+An example of a cohort study would be the investigation of a cohort of smokers and non-smokers over time to estimate the incidence of lung cancer.</p>
+<p>Prospective studies have many benefits over case control studies.
+Temporality can be established in a prospective study, and confounders are more easily controlled for.
+However, they are more costly, and there is a greater chance of losing subjects to follow-up based on the long time period over which the cohort is followed.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p><strong>“Correlation does not imply causation”</strong> is a common theme for much of the epidemiological literature.
+For epidemiologists, the key is in the term inference.
+Correlation, or at least association between two variables, is a necessary but not sufficient criterion for the inference that one variable causes the other.
+Epidemiologists use gathered data and a broad range of biomedical and psychosocial theories in an iterative way to generate or expand theory, to test hypotheses, and to make educated, informed assertions about which relationships are causal, and about exactly how they are causal.</p>
+<p>A causal link can only be established if there is enough mechanistic understanding.</p>
+</div>
+</section>
+</section>
+<section id="toxicology">
+<h4>Toxicology<a class="headerlink" href="#toxicology" title="Link to this heading">#</a></h4>
+<p>One way to gain mechanistic understanding is through toxicology.</p>
+<p>Toxicity experiments may be conducted <em>in vivo</em>, <em>in vitro</em>, or <em>in silico</em>.</p>
+<p>An <em>in vitro</em> (Latin: “in the glass”) test is a study that is performed outside a living organism (i.e, glass, Petri dishes).
+The test usually involves the use of isolated tissues, organs or cells.
+In contrast, an <em>in vivo</em> (Latin: “in the living”) test is a study that is performed in living organisms (i.e, rat, rabbit).
+Computer modelling (<em>in silico</em>) is an alternative testing method; for example using computer models of chemicals and proteins, structure-activity relationships can be determined, and chemical structures that are likely to bind to, and interfere with, proteins with essential functions, can be identified.</p>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./04_atmosphere/spare"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#direct-effects-on-climate">Direct effects on climate</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aerosol-radiation-interactions-scattering-vs-absorption">Aerosol-radiation interactions (scattering vs. absorption)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aerosol-optical-depth-aod">Aerosol optical depth (AOD)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visibility">Visibility</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#health">Health</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#health-methodologies">Health methodologies</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#epidemiology">Epidemiology</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#case-control-studies">Case-control studies</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#cohort-studies">Cohort studies</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#toxicology">Toxicology</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By the QES Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

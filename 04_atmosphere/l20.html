@@ -1,0 +1,674 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Air pollution &#8212; My Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/admonitions.css?v=1588abde" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams", "[tex]/mhchem", "[tex]/color"]}, "tex": {"packages": ["base", "physics", "ams", "mhchem", "color"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '04_atmosphere/l20';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="My Jupyter Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My Jupyter Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../00_intro/intro.html">1. Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l1.html">1.1. Course Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l2.html">1.2. Where does the energy come from on Earth?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l3.html">1.3. The Carbon Cycle</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01_groundwater/intro.html">2. Surface Waters I: Groundwater</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l4.html">2.1. Groundwater Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l5.html">2.2. Why water moves beneath the surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l6.html">2.3. How we measure and understand water movement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l7.html">2.4. Groundwater challenges and sustainable groundwater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l8.html">2.5. Groundwater Chemistry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l9.html">2.6. Pollution in Rivers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02_rivers/intro.html">3. Surface Waters II: Rivers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l13.html">3.1. Catchment and drainage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l14.html">3.2. Drainage models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l15.html">3.3. River flows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l16.html">3.4. Reservoirs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l17.html">3.5. Flood waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l18.html">3.6. Flooding in urban environments</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03_cryosphere/intro.html">4. Cryosphere</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l8.html">4.1. Ice in the polar regions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l9.html">4.2. The growth and melting of ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l10.html">4.3. The extent of sea ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l11.html">4.4. Ice sheets and the flow of glacial ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l12.html">4.5. Floating ice shelves and the flow of glacial ice</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/04_atmosphere/l20.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Air pollution</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-air-pollution">What is air pollution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources-of-mathrm-no-2">Sources of <span class="math notranslate nohighlight">\(\mathrm{NO_2}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#photodissociation">Photodissociation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculation-of-photolysis-frequency-j">Calculation of photolysis frequency <span class="math notranslate nohighlight">\(J\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changes-in-mathrm-no-2-over-time">Changes in <span class="math notranslate nohighlight">\(\mathrm{NO_2}\)</span> over time.</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="air-pollution">
+<span id="lecture-20"></span><h1>Air pollution<a class="headerlink" href="#air-pollution" title="Link to this heading">#</a></h1>
+<p class="rubric">Sources, sinks and trends</p>
+<blockquote class="highlights">
+<div><p>Aims:</p>
+<ol class="arabic simple">
+<li><p>To survey the main constituents of air pollution around the world and over time.</p></li>
+<li><p>To outline the main sources and sinks of different air pollutants, focusing on <span class="math notranslate nohighlight">\(\mathrm{NO_2}\)</span> and particulate matter.</p></li>
+<li><p>To review historic trends of air pollutants and how they are measured.</p></li>
+<li><p>To apply the Beer-Lambert law to determine the abundance of air pollutants using remote measurement techniques.</p></li>
+</ol>
+<p>Key Points:</p>
+<ul class="simple">
+<li><p>Air pollution is not a new phenomenon and work to legislate air pollution can be traced back to the middle ages.</p></li>
+<li><p>The main air pollutants are oxidising gases (<span class="math notranslate nohighlight">\(\mathrm{NO_2}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{O_3}\)</span>) and particulate matter.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathrm{NO_2}\)</span> is only produced naturally from lightning, it’s main source is the internal combustion engine.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathrm{NO_2}\)</span> has a weak chemical-bond which allows low energy photons from the sun to break it apart.</p></li>
+<li><p>Since the industrial revolution the amount of <span class="math notranslate nohighlight">\(\mathrm{NO_2}\)</span> has increased dramatically and disproportionately.</p></li>
+<li><p>COVID lockdowns showed that <span class="math notranslate nohighlight">\(\mathrm{NO_2}\)</span> can be controlled very quickly.</p></li>
+</ul>
+</div></blockquote>
+<section id="what-is-air-pollution">
+<h2>What is air pollution<a class="headerlink" href="#what-is-air-pollution" title="Link to this heading">#</a></h2>
+<p>Air pollution is a phrase used to describe the presence of contaminants in the air that are harmful for life, to buildings or to climate.</p>
+<p>There are lots of different air pollutants. Most are present at trace levels (c.f. the majority of the atmosphere is made up of <span class="math notranslate nohighlight">\(\mathrm{N_2}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{O_2}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{Ar}\)</span>, and <span class="math notranslate nohighlight">\(\mathrm{H_2O}\)</span>).
+These pollutants can come from a range of different sources including, man-made (anthropogenic) and natural – or biogenic.</p>
+<figure class="margin-caption align-default" id="air-pollutants">
+<a class="reference internal image-reference" href="../_images/figure20.1.png"><img alt="../_images/figure20.1.png" src="../_images/figure20.1.png" style="width: 60%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">A list many important air pollutants.</span><a class="headerlink" href="#air-pollutants" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="sources-of-mathrm-no-2">
+<h2>Sources of <span class="math notranslate nohighlight">\(\mathrm{NO_2}\)</span><a class="headerlink" href="#sources-of-mathrm-no-2" title="Link to this heading">#</a></h2>
+<p>The oxides of nitrogen (<span class="math notranslate nohighlight">\(\mathrm{NO}_x = \mathrm{NO} + \mathrm{NO_2}\)</span>) play a dominant role in the chemistry of the troposphere, as we will find in the following sections.
+They arise from a combination of natural and anthropogenic sources.
+<em>Road transport</em> is an important and rapidly growing <span class="math notranslate nohighlight">\(\mathrm{NO_x}\)</span> source.
+Most lightning is associated with deep convection and the largest sources are in the tropics.
+Only lightning and aircraft are non-surface sources.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="no2-sources">
+<caption><span class="caption-text">Sources (and ranges of uncertainty) of atmospheric <span class="math notranslate nohighlight">\(\mathrm{NO_2}\)</span>.</span><a class="headerlink" href="#no2-sources" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Sources</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\mathrm{TgNO_2 \ yr^{-1}}\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Fossil fuel combustion</p></td>
+<td><p><span class="math notranslate nohighlight">\(20 \ (14-28)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Release from soils</p></td>
+<td><p><span class="math notranslate nohighlight">\(20 \ (4-40)\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Biomass burning</p></td>
+<td><p><span class="math notranslate nohighlight">\(12 \ (2-24)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Lightning discharges</p></td>
+<td><p><span class="math notranslate nohighlight">\(8 \ (2-20)\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\mathrm{NH_3}\)</span> oxidation</p></td>
+<td><p><span class="math notranslate nohighlight">\(3 \ (0-10)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Ocean surface</p></td>
+<td><p><span class="math notranslate nohighlight">\(&lt;1\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Aviation</p></td>
+<td><p><span class="math notranslate nohighlight">\(0.5\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Injection from the stratosphere</p></td>
+<td><p><span class="math notranslate nohighlight">\(0.1 \ (0.6\)</span> total <span class="math notranslate nohighlight">\(\mathrm{NO_y})\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Total sources</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathbf{64 \ (25 - 112)}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table" id="no2-sinks">
+<caption><span class="caption-text">Sinks (and ranges of uncertainty) of atmospheric <span class="math notranslate nohighlight">\(\mathrm{NO_2}\)</span>.</span><a class="headerlink" href="#no2-sinks" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Sinks</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\mathrm{TgNO_2 \ yr^{-1}}\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Wet decomposition of nitrate (land)</p></td>
+<td><p><span class="math notranslate nohighlight">\(18 \ (8-30)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Wet deposition of nitrate (ocean)</p></td>
+<td><p><span class="math notranslate nohighlight">\(8 \ (4-12)\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Dry deposition of <span class="math notranslate nohighlight">\(\mathrm{NO_x}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(16 \ (12-22)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Total sinks</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathbf{43 \ (24 - 64)}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><span class="math notranslate nohighlight">\(\mathrm{NO_2}\)</span> absorbs strongly in the UV and visible part of the solar spectrum.
+This has two important consequences.</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\mathrm{NO_2}\)</span> undergoes photolysis (photodissociation) rapidly.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathrm{NO_2}\)</span> can be observed easily from space.</p></li>
+</ol>
+<p>Making use of point 2 above, the figure below shows maps of the distribution of <span class="math notranslate nohighlight">\(\mathrm{NO_2}\)</span>.</p>
+<figure class="margin-caption align-default" id="no2-satellite">
+<img alt="../_images/figure20.3.jpg" src="../_images/figure20.3.jpg" />
+<figcaption>
+<p><span class="caption-text">Measurements from the Copernicus Sentinel-5P satellite mission between April and September 2018.
+Credit ESA and KNMI.</span><a class="headerlink" href="#no2-satellite" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="photodissociation">
+<h2>Photodissociation<a class="headerlink" href="#photodissociation" title="Link to this heading">#</a></h2>
+<p>The photo-reaction:
+<span class="math notranslate nohighlight">\(\mathrm{AB} + \mathrm{h v} = \mathrm{A + B}\)</span></p>
+<p>Has an associated <em>rate constant</em> (or photolysis frequency) <span class="math notranslate nohighlight">\(J_\mathrm{AB} \ / \ \mathrm{s^{-1}}\)</span> and a <em>rate of reaction</em> <span class="math notranslate nohighlight">\(R_J \ / \ \mathrm{molecules \ cm^{-3} \ s^{-1}}\)</span>, where <span class="math notranslate nohighlight">\(R_J = J_\mathrm{AB} \times \mathrm{[AB]}\)</span></p>
+<p>The rates of change of the molecules are:</p>
+<div class="math notranslate nohighlight" id="equation-rxn-rate">
+<span class="eqno">()<a class="headerlink" href="#equation-rxn-rate" title="Link to this equation">#</a></span>\[\dv{\mathrm{[AB]}}{t} = - \dv{\mathrm{[A]}}{t} = - \dv{\mathrm{[B]}}{t} = - J_\mathrm{AB}\mathrm{[AB]} \]</div>
+<section id="calculation-of-photolysis-frequency-j">
+<h3>Calculation of photolysis frequency <span class="math notranslate nohighlight">\(J\)</span><a class="headerlink" href="#calculation-of-photolysis-frequency-j" title="Link to this heading">#</a></h3>
+<p>The photolysis frequency <span class="math notranslate nohighlight">\(J_i\)</span> of constituent <span class="math notranslate nohighlight">\(i\)</span> is defines as:</p>
+<div class="math notranslate nohighlight" id="equation-photolysis-freq">
+<span class="eqno">()<a class="headerlink" href="#equation-photolysis-freq" title="Link to this equation">#</a></span>\[J_i = \int_{\lambda=0}^{\infty} I_\lambda \sigma_{\lambda, i} \phi_{\lambda, i} \dd{\lambda}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\sigma_{\lambda, i}\)</span> is the wavelength dependent absorption cross-section <span class="math notranslate nohighlight">\((\mathrm{cm^2})\)</span>, <span class="math notranslate nohighlight">\(\phi_{\lambda, i}\)</span> is the wavelength dependent quantum yield (efficiency), and <span class="math notranslate nohighlight">\(I_\lambda\)</span> is the photon intensity at wavelength <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+<p>To calculate the photon intensity with the atmosphere at altitude <span class="math notranslate nohighlight">\(z\)</span>, it is necessary to compute the transmission of the atmosphere at that wavelength.
+To do this we use the <em>Beer Lambert Law</em>:</p>
+<div class="math notranslate nohighlight" id="equation-bl-law">
+<span class="eqno">()<a class="headerlink" href="#equation-bl-law" title="Link to this equation">#</a></span>\[I_{\lambda, z} = I_{\lambda, \infty} e^{-D_\lambda}\]</div>
+<p>where <span class="math notranslate nohighlight">\(I_{\lambda, \infty}\)</span> is the photon intensity at the top of the atmosphere, and <span class="math notranslate nohighlight">\(D_\lambda\)</span> is the atmospheric <em>optical depth</em>, defined as:</p>
+<div class="math notranslate nohighlight" id="equation-opt-depth">
+<span class="eqno">()<a class="headerlink" href="#equation-opt-depth" title="Link to this equation">#</a></span>\[D_\lambda = \sum_i \sigma_{\lambda, i} N_i\]</div>
+<p>where the summation is over all <span class="math notranslate nohighlight">\(i\)</span> absorbing species, <span class="math notranslate nohighlight">\(\sigma_{\lambda, i}\)</span> is the cross-section <span class="math notranslate nohighlight">\((\mathrm{cm^2})\)</span>, and <span class="math notranslate nohighlight">\(N_i\)</span> the total number of molecules of absorbing species <span class="math notranslate nohighlight">\(i\)</span> between <span class="math notranslate nohighlight">\(z\)</span> and the top of the atmosphere (<span class="math notranslate nohighlight">\(\mathrm{cm^{-2}}\)</span>).</p>
+<p>To an excellent approximation we need only to consider <span class="math notranslate nohighlight">\(\mathrm{O_2}\)</span> and <span class="math notranslate nohighlight">\(\mathrm{O_3}\)</span> when calculating the <span class="math notranslate nohighlight">\(D_\lambda\)</span></p>
+<p>In each case <span class="math notranslate nohighlight">\(N\)</span> is defined as:</p>
+<div class="math notranslate nohighlight" id="equation-absorbing-species">
+<span class="eqno">()<a class="headerlink" href="#equation-absorbing-species" title="Link to this equation">#</a></span>\[N = \int_z^\infty \mathrm{[n]}_z \dd{z}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathrm{[n]}_z\)</span> is the concentration of <span class="math notranslate nohighlight">\(\mathrm{O_2}\)</span> or <span class="math notranslate nohighlight">\(\mathrm{O_3}\)</span> at altitude <span class="math notranslate nohighlight">\(z\)</span>.</p>
+<p>Calculation of <span class="math notranslate nohighlight">\(N_\mathrm{O_2}\)</span> is straightforward as <span class="math notranslate nohighlight">\(\mathrm{O_2}\)</span> is uniformly mixed in the atmosphere.</p>
+<p>The major factors determining fluxes of radiation in the visible and UV wavelengths in the atmosphere are absorptions by <span class="math notranslate nohighlight">\(\mathrm{O_2}\)</span> and <span class="math notranslate nohighlight">\(\mathrm{O_3}\)</span>.
+Other factors include Rayleigh scattering, and in the troposphere, the presence of clouds which can act to increase or reduce photolysis rates, and the Earth’s albedo.</p>
+<p><code class="xref std std-numref docutils literal notranslate"><span class="pre">Figure</span> <span class="pre">{number}</span></code> shows the regions of the spectrum where the bands of <span class="math notranslate nohighlight">\(\mathrm{O_2}\)</span> and <span class="math notranslate nohighlight">\(\mathrm{O_3}\)</span> which absorb in the Earth’s atmosphere are located (<span class="math notranslate nohighlight">\(\mathrm{O_3}\)</span> has an additional weakly absorbing band at visible wavelengths – the Chappuis band).</p>
+<p>A detailed knowledge of the absorption properties of the atmosphere is required for a full understanding or for accurate modelling of atmospheric photochemistry.
+However, there are a number of wavelengths which are of particular significance for understanding some of the basic principles.
+Firstly, <span class="math notranslate nohighlight">\(\lambda = 242 \mathrm{nm}\)</span> is the longest wavelength (i.e. the lowest energy) at which photons can dissociate <span class="math notranslate nohighlight">\(\mathrm{O_2}\)</span> thereby producing <span class="math notranslate nohighlight">\(\mathrm{O_3}\)</span> <em>directly</em> from <span class="math notranslate nohighlight">\(\mathrm{O_2}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{O_2} + h \nu \rightarrow \mathrm{O} + \mathrm{O}\]</div>
+<div class="math notranslate nohighlight">
+\[\mathrm{O} + \mathrm{O_2} + \mathrm{M} \rightarrow \mathrm{O_3} + \mathrm{M^*}\]</div>
+<p>Secondly <span class="math notranslate nohighlight">\(\lambda = \sim 400 \ \mathrm{nm}\)</span> is the longest wavelength at which <span class="math notranslate nohighlight">\(\mathrm{NO_2}\)</span> can be photolysed (<span class="math notranslate nohighlight">\(\mathrm{NO_2}\)</span> does absorb at longer wavelengths, but the <em>quantum yield</em> for dissociation falls rapidly to zero).
+The fate of the ground state <span class="math notranslate nohighlight">\(\mathrm{O}\)</span> atom formed is to recombine with <span class="math notranslate nohighlight">\(\mathrm{O_2}\)</span> thereby <em>indirectly</em> forming <span class="math notranslate nohighlight">\(\mathrm{O_3}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{NO_2} + h \nu \rightarrow \mathrm{NO} + \mathrm{O}\]</div>
+<div class="math notranslate nohighlight">
+\[\mathrm{O} + \mathrm{O_2} + \mathrm{M} \rightarrow \mathrm{O_3} + \mathrm{M}\]</div>
+<p>Also, <span class="math notranslate nohighlight">\(\lambda = \sim 310 \ \mathrm{nm}\)</span> is also highly significant as it is the longest wavelength at which <span class="math notranslate nohighlight">\(\mathrm{O_3}\)</span> can be photolysed to form excited atomic oxygen <span class="math notranslate nohighlight">\(\mathrm{O(^1D)}\)</span>, leading to the production of <span class="math notranslate nohighlight">\(\mathrm{OH}\)</span></p>
+</section>
+<section id="changes-in-mathrm-no-2-over-time">
+<h3>Changes in <span class="math notranslate nohighlight">\(\mathrm{NO_2}\)</span> over time.<a class="headerlink" href="#changes-in-mathrm-no-2-over-time" title="Link to this heading">#</a></h3>
+<figure class="margin-caption align-default" id="xo2-changes">
+<img alt="../_images/figure20.4.png" src="../_images/figure20.4.png" />
+<figcaption>
+<p><span class="caption-text">Modelled changes in <span class="math notranslate nohighlight">\(\mathrm{NO_2}\)</span> and <span class="math notranslate nohighlight">\(\mathrm{SO_2}\)</span> from 1850 to 2014 highlight the rise (and decline) of these pollutants across the globe (and Europe).</span><a class="headerlink" href="#xo2-changes" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="margin-caption align-default" id="cam-map">
+<a class="reference internal image-reference" href="../_images/figure20.5.png"><img alt="../_images/figure20.5.png" src="../_images/figure20.5.png" style="width: 50%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">A map of cambridge with monitoring stations shown.</span><a class="headerlink" href="#cam-map" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="margin-caption align-default" id="lockdown-no2">
+<a class="reference internal image-reference" href="../_images/figure20.6.png"><img alt="../_images/figure20.6.png" src="../_images/figure20.6.png" style="width: 50%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">The impacts of the COVID lockdowns on <span class="math notranslate nohighlight">\(\mathrm{NO_2}\)</span> levels across Cambridge at the locations shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">cam_map</span></code>.
+The clearest signal of change is at Regent Street and Parker Street, where levels dropped to unprecedentedly low levels.</span><a class="headerlink" href="#lockdown-no2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./04_atmosphere"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-air-pollution">What is air pollution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources-of-mathrm-no-2">Sources of <span class="math notranslate nohighlight">\(\mathrm{NO_2}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#photodissociation">Photodissociation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculation-of-photolysis-frequency-j">Calculation of photolysis frequency <span class="math notranslate nohighlight">\(J\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changes-in-mathrm-no-2-over-time">Changes in <span class="math notranslate nohighlight">\(\mathrm{NO_2}\)</span> over time.</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By the QES Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

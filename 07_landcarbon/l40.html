@@ -1,0 +1,694 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Plants, Soils and Eddies &#8212; My Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/admonitions.css?v=1588abde" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams", "[tex]/mhchem", "[tex]/color"]}, "tex": {"packages": ["base", "physics", "ams", "mhchem", "color"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '07_landcarbon/l40';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="My Jupyter Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My Jupyter Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../00_intro/intro.html">1. Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l1.html">1.1. Course Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l2.html">1.2. Where does the energy come from on Earth?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l3.html">1.3. The Carbon Cycle</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01_groundwater/intro.html">2. Surface Waters I: Groundwater</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l4.html">2.1. Groundwater Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l5.html">2.2. Why water moves beneath the surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l6.html">2.3. How we measure and understand water movement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l7.html">2.4. Groundwater challenges and sustainable groundwater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l8.html">2.5. Groundwater Chemistry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l9.html">2.6. Pollution in Rivers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02_rivers/intro.html">3. Surface Waters II: Rivers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l13.html">3.1. Catchment and drainage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l14.html">3.2. Drainage models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l15.html">3.3. River flows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l16.html">3.4. Reservoirs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l17.html">3.5. Flood waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l18.html">3.6. Flooding in urban environments</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03_cryosphere/intro.html">4. Cryosphere</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l8.html">4.1. Ice in the polar regions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l9.html">4.2. The growth and melting of ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l10.html">4.3. The extent of sea ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l11.html">4.4. Ice sheets and the flow of glacial ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l12.html">4.5. Floating ice shelves and the flow of glacial ice</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/07_landcarbon/l40.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Plants, Soils and Eddies</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#daisyworld">Daisyworld</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soils">Soils</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eddy-covariance">Eddy Covariance</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="plants-soils-and-eddies">
+<span id="lecture-40"></span><h1>Plants, Soils and Eddies<a class="headerlink" href="#plants-soils-and-eddies" title="Link to this heading">#</a></h1>
+<p>We have touched on the importance of plants, vegetation, the land surface and soils, several times throughout the year.</p>
+<ul class="simple">
+<li><p>The land surface stores carbon from days, to years, to millennia</p></li>
+<li><p>Plants exert a biophysical control of evapotranspiration. Stomates (openings in plant leaves) control the interchange of water and <span class="math notranslate nohighlight">\(\mathrm{CO_2}\)</span> between the atmosphere and the plant.
+Think back to the groundwater lectures at the start of the year and the water balance equation.</p></li>
+<li><p>Momentum transfer - Plants create “friction” for the atmospheric flow near the surface.
+Plants create turbulent motions that enhance vertical mixing of heat and water vapor near the surface.</p></li>
+<li><p>Soil moisture availability - Plants have roots that determine the amount of water available for evapotranspiration. Soils more broadly control infiltration and thus influence the amount of flooding.</p></li>
+<li><p>Insulation - Plants that shade the surface and protect it from intense solar radiation and strong evaporation.</p></li>
+</ul>
+<p>Plants also play a role in environmental temperature regulation.
+This was first conceptualised in a paper in 1983 by Watson and Lovelock, where they introduced the concept of Daisyworld.
+Daisyworld is a simple planetary model used to explore the effects of coupling between life and its environment.
+It is a nice analogue to how plant life grows and influences the environment around it.
+Daisyworld was, and is, controversial because it implies that planetary self-regulation can emerge from a series of realistic feedbacks without the need for organisms to adapt or change.
+Evolutionary biologists don’t really like it as a result.
+The paper is named “Biological homeostasis of the global environment: the parable of Daisyworld”.</p>
+<section id="daisyworld">
+<h2>Daisyworld<a class="headerlink" href="#daisyworld" title="Link to this heading">#</a></h2>
+<p>In this paper, Watson and Lovelock imagine a planet that is covered in two types of daisies, white daisies and black daisies, and land that has no daisies (gray soil).
+The daisies growth depends only on temperature, that is the assumption is that the soil has enough nutrients and everything else to support growth of the daisies.
+The further simplifying assumption is that there are no greenhouse gases, therefore the temperature of the planet is determined by solar luminosity and albedo, and albedo is impacted by whether the planet is covered in white daisies or black daisies.</p>
+<figure class="margin-caption align-default" id="fig-land-daisyworld">
+<a class="reference internal image-reference" href="../_images/07_landcarbon.1.1.png"><img alt="../_images/07_landcarbon.1.1.png" src="../_images/07_landcarbon.1.1.png" style="width: 70%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">A schematic of ‘DaisyWorld’.</span><a class="headerlink" href="#fig-land-daisyworld" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If we consider the equation of population growth to describe the daisy fields:</p>
+<div class="math notranslate nohighlight" id="equation-eq-land-daisyworld">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-land-daisyworld" title="Link to this equation">#</a></span>\[\pdv{\alpha}{t} = \alpha(p - \alpha) \beta(x) - \alpha \gamma(x) \]</div>
+<p>Where <span class="math notranslate nohighlight">\(\alpha\)</span> is the fractional coverage of the ground by a species, <span class="math notranslate nohighlight">\(p\)</span> is the fraction of total habitable bare ground, and <span class="math notranslate nohighlight">\(\beta\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span> are the birth and death rates of the species, which depend on an environmental parameter <span class="math notranslate nohighlight">\(x\)</span>.
+By convention <span class="math notranslate nohighlight">\(p=1\)</span> most of the time, but can be changed to represent there being some land that can’t be colonised by the daisies, e.g. ocean.</p>
+<p>We can amend these equations for Daisyworld, for the ground covered by white daisies (<span class="math notranslate nohighlight">\(\alpha_w\)</span>) and the ground covered by black daisies (<span class="math notranslate nohighlight">\(\alpha_b\)</span>)</p>
+<div class="math notranslate nohighlight" id="equation-eq-land-daisyworld-1">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-land-daisyworld-1" title="Link to this equation">#</a></span>\[\begin{split}\pdv{\alpha_w}{t} &amp;= \alpha_w(\alpha_g \beta(T_w) - \gamma) \\
+\pdv{\alpha_b}{t} &amp;= \alpha_b(\alpha_g \beta(T_b) - \gamma) \\\end{split}\]</div>
+<p>Here <span class="math notranslate nohighlight">\(a_g\)</span> is the amount of available bare ground (<span class="math notranslate nohighlight">\(\alpha_g = p - \alpha_b - \alpha_w\)</span>) and <span class="math notranslate nohighlight">\(T_w\)</span> and <span class="math notranslate nohighlight">\(T_b\)</span> are the local temperatures felt by each daisy type (white and black, respectively).
+The death rate - <span class="math notranslate nohighlight">\(\gamma\)</span> - is kept fixed, and the functional form for <span class="math notranslate nohighlight">\(\beta\)</span> (the growth rate) is:</p>
+<div class="math notranslate nohighlight" id="equation-eq-land-daisyworld-2">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-land-daisyworld-2" title="Link to this equation">#</a></span>\[\begin{split}\beta(T) = \begin{cases}
+1 - k (T - T_{opt})^2 &amp; |T - T_{opt}| &lt; k^{-0.5} \\
+0 &amp; \text{otherwise}
+\end{cases}\end{split}\]</div>
+<p>Many people who have modelled Daisyworld have played around with <span class="math notranslate nohighlight">\(k\)</span>, the width of the parabola, but in general people have settled on a <span class="math notranslate nohighlight">\(k\)</span> value so that the growth is bracketed between 5 and 40 °C.</p>
+<p>The impact of the daisies on albedo is simple, white daisies have a fixed albedo (<span class="math notranslate nohighlight">\(A\)</span>) of 1 and reflect back all incoming light, while black daisies have an albedo of 0 and absorb all incoming light.
+Ground with no daisies is conventionally set to 0.5.
+Therefore the mean planetary albedo (<span class="math notranslate nohighlight">\(A\)</span>) is:</p>
+<div class="math notranslate nohighlight" id="equation-eq-land-daisyworld-3">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-land-daisyworld-3" title="Link to this equation">#</a></span>\[A = \alpha_w A_w + \alpha_b A_b + \alpha_g A_g\]</div>
+<p>The local temperatures that the daisies or bare ground feels, <span class="math notranslate nohighlight">\(T_w\)</span> and <span class="math notranslate nohighlight">\(T_b\)</span>, which determines their growth rate, assumes linear diffusion of heat, and are given by</p>
+<div class="math notranslate nohighlight" id="equation-eq-land-daisyworld-4">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-land-daisyworld-4" title="Link to this equation">#</a></span>\[\begin{split}T_w^4 = q (A - A_w) + T^4 \\
+T_b^4 = q (A - A_b) + T^4 \\
+T_g^4 = q (A - A_g) + T^4 \\\end{split}\]</div>
+<p>Where <span class="math notranslate nohighlight">\(T\)</span> is the planetary temperature and <span class="math notranslate nohighlight">\(q\)</span> is a heat transfer coefficient.
+Finally the planet stays in thermal balance, as given by the 0D energy balance equation:</p>
+<div class="math notranslate nohighlight" id="equation-eq-land-daisyworld-5">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-land-daisyworld-5" title="Link to this equation">#</a></span>\[S_o(1-A) = k_B T^4\]</div>
+<p>Where <span class="math notranslate nohighlight">\(S_o\)</span> is the average solar energy incident on the surface of Daisyworld and <span class="math notranslate nohighlight">\(k_B\)</span> is the Stefan Boltzmann constant (5.67 x 10<sup>-8</sup> W m<sup>-2</sup> K<sup>-4</sup>).
+The assumed value for <span class="math notranslate nohighlight">\(q\)</span> in the original paper is 2.06 x 10<sup>9</sup> K<sup>4</sup>.</p>
+<p>These equations make a system of multiple, non-linear feedback loops and the analytical solution is not simple.
+In the original paper, Watson and Lovelock solved the steady state solution, and many authors since have found analytical solutions to these equations.
+What is tested is a slowly rising solar constant, representing increased solar luminosity which drives increased temperature on Daisyworld.
+What happens then is that initially when the solar constant is still low, the black daisies grow preferentially to the white daisies, but as the solar constant gets stronger, the white daisies take over and grow relative to the black daisies.
+Eventually we reach temperatures that are too high and the white daisies all die too.</p>
+<figure class="margin-caption align-default" id="fig-land-daisyworld-feedbacks">
+<a class="reference internal image-reference" href="../_images/07_landcarbon.1.2.png"><img alt="../_images/07_landcarbon.1.2.png" src="../_images/07_landcarbon.1.2.png" style="width: 90%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Non-linear loops in ‘DaisyWorld’. Time is on the x-axis, but we can take time to be the stepped increase in solar luminosity.</span><a class="headerlink" href="#fig-land-daisyworld-feedbacks" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>What arises from these models is the fact that the presence of the daisies keeps the temperature of the planet equable at intermediate solar luminosity.
+This is the primary finding of Daisyworld, that the land surface, and particularly the types of plants on the surface, can evolve to adjust to help keep the global average surface temperature regulated.
+That is the parable of Daisyworld and allows us to motivate understanding what is on Earth’s land surface and the role that it plays in Earth’s climate and carbon system.</p>
+<p>In addition to the plants on the surface, <strong>soils</strong> play a key role in Earth’s climate system.
+While the vegetation on land stores more carbon than the surface ocean, most (~80%) of this is in soils.
+As you may remember from the groundwater and flooding modules, soil type also controls infiltration and therefore plays a key role in our understanding of flooding and surface run off.</p>
+</section>
+<section id="soils">
+<h2>Soils<a class="headerlink" href="#soils" title="Link to this heading">#</a></h2>
+<p>What are soils?
+Formally the definition is solid earth material that has been altered by physical, chemical and biological processes so that it can support rooted plant life.
+A mixture of organic matter, minerals, gases, liquids, and organisms that together support life.</p>
+<p>Most people think of soils as the breakdown of plant material from above, and this does add to soils.
+However the majority of the soil, in terms of many of the key attributes like hydraulic conductivity and chemical content, is from the breakdown of rock material from below.
+The soil is a balance between the production from the erosion of the bedrock underneath and the erosion of the soil downslope.</p>
+<figure class="margin-caption align-default" id="fig-land-soil-formation">
+<a class="reference internal image-reference" href="../_images/07_landcarbon.1.3.png"><img alt="../_images/07_landcarbon.1.3.png" src="../_images/07_landcarbon.1.3.png" style="width: 70%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">A schematic of the formation of soil, which is a balance between the production from the erosion of the bedrock underneath and the erosion of the soil downslope.</span><a class="headerlink" href="#fig-land-soil-formation" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The types of soil that are formed depend on many environmental factors, including Climate, Organisms, Parent Material, Topography and the amount of time the soil has to develop.</p>
+<ul class="simple">
+<li><p>Climate is key because it determines temperature and precipitation and the breakdown of the bedrock happens far more when there is more rain.</p></li>
+<li><p>The types of organisms also play a key role in the types of soils that develop – plants produce organic acids, and roots act to break apart the bedrock, they also help to stabilise soil profiles from run off and erosion.
+Indeed, rewilding is being used as flood mitigation measure in parts of the UK.</p></li>
+<li><p>The parent material is also key as different rocks breakdown differently, some breakdown completely and others breakdown partially and leave behind reactive particles.</p>
+<ul>
+<li><p>Key to both of these are the metals available for life as well as the pH of the soil.  Unlike the ocean, the pH in soils can range from 3.5 to 10, which impacts the redox mobility of various metals and therefore the microbial life that can be present.
+For example many key nutrients for plant life are pH sensitive.
+At neutral pH, only half the iron in soil is ‘bioavailable’, at low pH aluminium is at high concentrations and can be toxic, at high pH, calcium</p></li>
+</ul>
+</li>
+<li><p>Topography is also key, as well as which direction the soil is facing, as it helps determine how thick the soil will be.
+Soils on hillslopes tend to be around 1 meter thick, while soils on flat surfaces can grow very thick.</p></li>
+</ul>
+<figure class="margin-caption align-default" id="fig-land-soil-nutrients">
+<a class="reference internal image-reference" href="../_images/07_landcarbon.1.4.png"><img alt="../_images/07_landcarbon.1.4.png" src="../_images/07_landcarbon.1.4.png" style="width: 40%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">The availability of nutrients in soil as a function of pH.</span><a class="headerlink" href="#fig-land-soil-nutrients" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Soils end up representing the combined impact of additions to the ground surface, chemical reactions within the soil, vertical transfer and things that are removed, either eliminated through biology or chemistry or eroded away.
+They grow through the addition of organic matter (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:land:soil:nutrients</span></code>) and the weathering of rock (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:land:soil:weathering</span></code>).</p>
+<figure class="margin-caption align-default" id="fig-land-soil-weathering">
+<a class="reference internal image-reference" href="../_images/07_landcarbon.1.5.jpeg"><img alt="../_images/07_landcarbon.1.5.jpeg" src="../_images/07_landcarbon.1.5.jpeg" style="width: 60%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Weathering processes that form soil.</span><a class="headerlink" href="#fig-land-soil-weathering" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="margin-caption align-default" id="fig-land-soil-horizons">
+<a class="reference internal image-reference" href="../_images/07_landcarbon.1.6.jpeg"><img alt="../_images/07_landcarbon.1.6.jpeg" src="../_images/07_landcarbon.1.6.jpeg" style="width: 70%;" />
+</a>
+<figcaption>
+<p><span class="caption-text"><strong>Soil Horizons.</strong>
+Over time, soil layers differentiate into distinct ‘horizons’ which can be considered zones of chemical action.</span><a class="headerlink" href="#fig-land-soil-horizons" title="Link to this image">#</a></p>
+<div class="legend">
+<ul class="simple">
+<li><p>Chemical reactions and formation of secondary minerals (clays).</p></li>
+<li><p>Leaching by infiltrating water</p></li>
+<li><p>Deposition and accumulation of material leached from higher levels in the soil</p></li>
+</ul>
+</div>
+</figcaption>
+</figure>
+<p>If we link this back to the climate models we have been studying (and building) throughout this term, we can see that ultimately for a full climate model, we would need proper representation of the flow of mass, momentum, energy, and trace gases (e.g., water vapor, CO<sub>2</sub>) between the surface and the atmosphere – soils and plants on the surface moderate this exchange.
+This has led to an entire class of models known as Surface, Vegetation, Atmospheric Transfer Models (SVAT).</p>
+<p>Ultimately these models need to be parameterised by understanding exactly what controls soil moisture release, how much gas is coming off a forest or another ecosystem to feed into broader global climate models.
+This comes back to measurements you can make in the field.
+Throughout these lectures we will return to how measurements are actually made that help us understand what we put into global climate models.</p>
+<p>In the case of understanding what is being released by plants and soils, one of the most common tools is to use a tower and use the Eddy Covariance technique to determine the gas or heat or moisture flux.</p>
+</section>
+<section id="eddy-covariance">
+<h2>Eddy Covariance<a class="headerlink" href="#eddy-covariance" title="Link to this heading">#</a></h2>
+<figure class="margin-caption align-default" id="fig-land-soil-airflow">
+<a class="reference internal image-reference" href="../_images/07_landcarbon.1.7.png"><img alt="../_images/07_landcarbon.1.7.png" src="../_images/07_landcarbon.1.7.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">The movement of air through ecosystems.</span><a class="headerlink" href="#fig-land-soil-airflow" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>As we learned in the Global Environment lectures, air and water on our rotating planet are moved in turbulent eddies, which are like circular movements of fluid that serve to disperse and diffuse air particles and things in those air particles.
+These eddies have vertical and horizontal components.</p>
+<ul class="simple">
+<li><p>If we consider the vertical component, we see below that Eddy 1 moves parcel of air <span class="math notranslate nohighlight">\(c_1\)</span> down with a speed <span class="math notranslate nohighlight">\(w_1\)</span> while Eddy 2 moves parcel of air <span class="math notranslate nohighlight">\(c_2\)</span> up with speed <span class="math notranslate nohighlight">\(w_2\)</span>.</p></li>
+<li><p>Each parcel of air has a concentration of some gas, a temperature, a water vapour content, if we know these and the speed <span class="math notranslate nohighlight">\(w_x\)</span> then we know the flux.</p></li>
+</ul>
+<figure class="margin-caption align-default" id="fig-land-soil-eddycov">
+<a class="reference internal image-reference" href="../_images/07_landcarbon.1.8.png"><img alt="../_images/07_landcarbon.1.8.png" src="../_images/07_landcarbon.1.8.png" style="width: 90%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">A schematic of Eddy Covariance.</span><a class="headerlink" href="#fig-land-soil-eddycov" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>When we have turbulent flow, the vertical flux is equal to the mean product of <strong>air density</strong> (<span class="math notranslate nohighlight">\(\rho_a\)</span>), <strong>vertical wind speed</strong> (<span class="math notranslate nohighlight">\(w\)</span>) and the <strong>mixing ratio</strong> of the gas of interest (<span class="math notranslate nohighlight">\(s\)</span>).</p>
+<div class="math notranslate nohighlight">
+\[F = \overline{\rho_a w s}\]</div>
+<p>We consider this graphically below (<code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:land:soil:airmovement</span></code>).
+Properties in turbulent air parcels will fluctuate up and down because of wind gusts and movement of air.
+So we can consider both the average of a property below and the fluctuation above and below that mean.</p>
+<figure class="margin-caption align-default" id="fig-land-soil-airmovement">
+<a class="reference internal image-reference" href="../_images/07_landcarbon.1.9.png"><img alt="../_images/07_landcarbon.1.9.png" src="../_images/07_landcarbon.1.9.png" style="width: 90%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">The fluctuation of air around a mean driven by eddies.</span><a class="headerlink" href="#fig-land-soil-airmovement" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We can use a technique called Reynolds decomposition to break the density, velocity and property of interest into the mean and the fluctuation around the mean.</p>
+<div class="math notranslate nohighlight" id="equation-eq-land-eddy-reynolds">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-land-eddy-reynolds" title="Link to this equation">#</a></span>\[F = \overline{(\bar{\rho_a} + \rho_a') (\bar{w} + w') (\bar{s} + s')}\]</div>
+<p>If we multiply this out and remove the terms with a single prime (because the average deviation around an average is zero, and make the assumption that there isn’t much variation in the density of air, and that there is no divergence or convergence in the flow, then the flux becomes</p>
+<div class="math notranslate nohighlight" id="equation-eq-land-eddy-f">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-land-eddy-f" title="Link to this equation">#</a></span>\[F = \overline{(\bar{\rho_a} w' s')}\]</div>
+<p>This means at any given instant, you can multiply velocity of air being moved upwards or downwards at a speed of m s<sup>-1</sup>, by the fluctuation of the entity about its mean.
+If you average these you will get the net flux from the ecosystem.
+This gives you <em>g of entity transferred vertically, per square meter of surface area per second</em>.</p>
+<p>Using this to get the carbon flux or the methane flux is relatively straightforward, you can make near instantaneous measurements of methane or <span class="math notranslate nohighlight">\(\mathrm{CO_2}\)</span> while also measuring the velocity of air and the average density of air.
+You can also use this to get the Latent Heat emitted from the surface, as well as the Sensible Heat (remember from Michaelmas that these are two of the key ways that the Earth re-radiates heat.
+In the equation below we derive the sensible heat flux by multiplying the average air density with the instantaneous velocity and temperature and convert it to energy units with the specific heat capacity of water.</p>
+<div class="math notranslate nohighlight">
+\[Q H = \bar{\rho_a} C_p \bar{w'} \bar{T'}\]</div>
+<p>The advantages of Eddy Covariance are</p>
+<ul class="simple">
+<li><p>Averages small-scale variability of fluxes over a surface area that increases with measurement height</p></li>
+<li><p>Measurements are continuous and in high temporal resolution</p></li>
+<li><p>Fluxes are determined without disturbing the surface being monitored</p></li>
+<li><p>Great tool to look at ecosystem physiology</p></li>
+</ul>
+<p>The disadvantages are</p>
+<ul class="simple">
+<li><p>Need turbulence!</p></li>
+<li><p>Gap filling issues</p></li>
+<li><p>Relatively Expensive</p></li>
+<li><p>Stationarity issues</p></li>
+<li><p>The eddy covariance method is most accurate when the atmospheric conditions (wind, temperature, humidity, <span class="math notranslate nohighlight">\(\mathrm{CO_2}\)</span>) are steady, the underlying vegetation is homogeneous and it is situated on flat terrain for an extended distance upwind.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./07_landcarbon"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#daisyworld">Daisyworld</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soils">Soils</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eddy-covariance">Eddy Covariance</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By the QES Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

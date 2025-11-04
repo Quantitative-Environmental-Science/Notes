@@ -1,0 +1,690 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>2.4. Groundwater challenges and sustainable groundwater &#8212; My Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/admonitions.css?v=1588abde" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams", "[tex]/mhchem", "[tex]/color"]}, "tex": {"packages": ["base", "physics", "ams", "mhchem", "color"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01_groundwater/l7';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2.5. Groundwater Chemistry" href="l8.html" />
+    <link rel="prev" title="2.3. How we measure and understand water movement" href="l6.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="My Jupyter Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My Jupyter Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../00_intro/intro.html">1. Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l1.html">1.1. Course Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l2.html">1.2. Where does the energy come from on Earth?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l3.html">1.3. The Carbon Cycle</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">2. Surface Waters I: Groundwater</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="l4.html">2.1. Groundwater Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l5.html">2.2. Why water moves beneath the surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l6.html">2.3. How we measure and understand water movement</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.4. Groundwater challenges and sustainable groundwater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l8.html">2.5. Groundwater Chemistry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l9.html">2.6. Pollution in Rivers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02_rivers/intro.html">3. Surface Waters II: Rivers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l13.html">3.1. Catchment and drainage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l14.html">3.2. Drainage models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l15.html">3.3. River flows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l16.html">3.4. Reservoirs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l17.html">3.5. Flood waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l18.html">3.6. Flooding in urban environments</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03_cryosphere/intro.html">4. Cryosphere</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l8.html">4.1. Ice in the polar regions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l9.html">4.2. The growth and melting of ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l10.html">4.3. The extent of sea ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l11.html">4.4. Ice sheets and the flow of glacial ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l12.html">4.5. Floating ice shelves and the flow of glacial ice</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/01_groundwater/l7.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Groundwater challenges and sustainable groundwater</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-volumes-and-dispersion">Control Volumes and Dispersion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-peclet-number">The Peclet Number</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contaminant-plume-modeling">Contaminant Plume Modeling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contaminant-transport-models">Contaminant Transport Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saline-intrusion">Saline Intrusion</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><br><div style="page-break-before:always;"></div></p>
+<section class="tex2jax_ignore mathjax_ignore" id="groundwater-challenges-and-sustainable-groundwater">
+<span id="lecture-7"></span><h1><span class="section-number">2.4. </span>Groundwater challenges and sustainable groundwater<a class="headerlink" href="#groundwater-challenges-and-sustainable-groundwater" title="Link to this heading">#</a></h1>
+<p>We have discussed the importance of groundwater systems, how groundwater moves (and why it can move uphill), and how we can test for and figure out the key aspects that influence groundwater flow, which includes pumping tests.
+Together these give us a good sense of how to calculate groundwater velocity and the energy required to move groundwater.
+There are several environmental challenges that face Earth’s groundwater systems, not least of which is the fact that we are removing groundwater faster than it can <a class="reference internal" href="../reference/glossary.html#term-Recharge"><span class="xref std std-term">recharge</span></a>.
+We can see this in global maps of groundwater depletion (<a class="reference internal" href="#groundwater-depletion"><span class="std std-numref">Fig. 2.23</span></a>).
+Groundwater depletion refers to the permanent loss of groundwater stored in subsurface aquifers.</p>
+<figure class="margin-caption align-default" id="groundwater-depletion">
+<img alt="../_images/figure7.1.png" src="../_images/figure7.1.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2.23 </span><span class="caption-text">A global map of groundwater depletion - peaks show areas where groundwater is most depleted.</span><a class="headerlink" href="#groundwater-depletion" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We can link the areas where groundwater is particularly depleted to areas where the groundwater footprint is particularly large relative to the size of the aquifer from which it is drawing water (<a class="reference internal" href="#groundwater-footprint"><span class="std std-numref">Fig. 2.24</span></a>).</p>
+<figure class="margin-caption align-default" id="groundwater-footprint">
+<img alt="../_images/figure7.2.jpg" src="../_images/figure7.2.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 2.24 </span><span class="caption-text">Groundwater depletion is most severe where the ‘groundwater footprint’ is much larger than the underlying aquifer area.</span><a class="headerlink" href="#groundwater-footprint" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Another major challenge in groundwater systems is the transport of contaminants, that is something (potentially toxic) is released into the subsurface and travels with the groundwater, appearing in the water supply at some point later in time (depending on the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a> of the aquifer, and the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a> difference driving the flow).
+In some respects we have learned the tools you would need to determine how long before a contaminant released into the groundwater would be seen at some point downstream.
+You could figure out the lines of equipotential, and the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a>, and then calculate the flow velocity, and this would yield time (with some knowledge of the distance travelled).</p>
+<section id="control-volumes-and-dispersion">
+<h2>Control Volumes and Dispersion<a class="headerlink" href="#control-volumes-and-dispersion" title="Link to this heading">#</a></h2>
+<p>One way to think about this is using the ‘control volume’ and thinking that flow
+through advection moves the control volume along the X axis but flow through
+dispersion (molecular diffusion and mechanical or hydrodynamic dispersion) also
+moves the flow along in the Y and Z direction (<a class="reference internal" href="#control-volume"><span class="std std-numref">Fig. 2.26</span></a>).</p>
+<div class="dropdown admonition">
+<p class="admonition-title">A brief primer on diffusion</p>
+<p><strong>Diffusion</strong> is the spontaneous movement of particles from regions of high
+concentration to regions of low concentration.
+At the molecular level,
+this occurs due to random thermal motion of molecules.
+In groundwater,
+contaminants diffuse through pore water even in the absence of flow.</p>
+<p>Diffusion is governed by <strong>Fick’s First Law</strong>,
+which states that the diffusive flux is proportional to the concentration
+gradient:</p>
+<div class="math notranslate nohighlight">
+\[J = -D \frac{\partial C}{\partial x}\]</div>
+<p>where <span class="math notranslate nohighlight">\(J\)</span> is the diffusive flux, <span class="math notranslate nohighlight">\(D\)</span> is the diffusion coefficient,
+and <span class="math notranslate nohighlight">\(\frac{\partial C}{\partial x}\)</span> is the concentration gradient.
+The negative sign indicates that diffusion occurs down the concentration gradient
+(from high to low concentration).</p>
+<figure class="align-default" id="diffusion-timeseries">
+<a class="reference internal image-reference" href="../_images/figure7.12.png"><img alt="../_images/figure7.12.png" src="../_images/figure7.12.png" style="width: 90%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.25 </span><span class="caption-text">Time series showing the spreading of dye through diffusion at four successive
+time steps, illustrating how concentration gradients diminish over time.</span><a class="headerlink" href="#diffusion-timeseries" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<figure class="margin-caption align-default" id="control-volume">
+<a class="reference internal image-reference" href="../_images/figure7.5.png"><img alt="../_images/figure7.5.png" src="../_images/figure7.5.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.26 </span><span class="caption-text">A diagram showing how advection moves the control volume along the X axis while
+dispersion causes movement in the Y and Z directions.</span><a class="headerlink" href="#control-volume" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In beadpacks in the Institute for Energy and Environmental Flows you can see the
+stretching along the flowpath of an injection of dye (<a class="reference internal" href="#beadpack-dye"><span class="std std-numref">Fig. 2.27</span></a>).</p>
+<figure class="margin-caption align-default" id="beadpack-dye">
+<a class="reference internal image-reference" href="../_images/figure7.6.png"><img alt="../_images/figure7.6.png" src="../_images/figure7.6.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.27 </span><span class="caption-text">Dye injection in a beadpack showing stretching along the flowpath.</span><a class="headerlink" href="#beadpack-dye" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="the-peclet-number">
+<h2>The Peclet Number<a class="headerlink" href="#the-peclet-number" title="Link to this heading">#</a></h2>
+<p>Determining the relative importance of advection versus dispersion
+(so the growing shape of the contaminant plume during subsurface transport) is
+often done using the dimensionless <strong>Peclet Number</strong> (<a class="reference internal" href="#peclet-number"><span class="std std-numref">Fig. 2.28</span></a>).</p>
+<figure class="margin-caption align-default" id="peclet-number">
+<a class="reference internal image-reference" href="../_images/figure7.7.png"><img alt="../_images/figure7.7.png" src="../_images/figure7.7.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.28 </span><span class="caption-text">The Peclet Number characterizes the relative importance of advection and
+dispersion in contaminant transport.</span><a class="headerlink" href="#peclet-number" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="margin-caption align-default" id="dispersion-peclet">
+<a class="reference internal image-reference" href="../_images/figure7.8.png"><img alt="../_images/figure7.8.png" src="../_images/figure7.8.png" style="width: 70%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.29 </span><span class="caption-text">Normalized dispersion coefficient plotted against Péclet number.</span><a class="headerlink" href="#dispersion-peclet" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="contaminant-plume-modeling">
+<h2>Contaminant Plume Modeling<a class="headerlink" href="#contaminant-plume-modeling" title="Link to this heading">#</a></h2>
+<p>If we assume that the contaminant spreads out in all directions as it moves along
+the flow of the groundwater,
+then we can track the shape of the contaminant plume away from the point source.
+Here the relative movement in the X direction versus the Y and Z direction is a
+function of the magnitude of the movement due to molecular diffusion versus that
+due to advective velocity and mechanical dispersion.
+With a series of simplifying assumptions (isotropic media, flow in the x direction
+etc.) we can use a gaussian model to track plume movement over time
+(<a class="reference internal" href="#plume-diagram"><span class="std std-numref">Fig. 2.30</span></a>).</p>
+<figure class="margin-caption align-default" id="plume-diagram">
+<a class="reference internal image-reference" href="../_images/figure7.9.png"><img alt="../_images/figure7.9.png" src="../_images/figure7.9.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.30 </span><span class="caption-text">Diagram showing the development of a contaminant plume in groundwater,
+tracking movement in three dimensions over time.</span><a class="headerlink" href="#plume-diagram" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This is similar to the maths behind following a plume of smoke in the atmosphere
+(<a class="reference internal" href="#smoke-plume"><span class="std std-numref">Fig. 2.31</span></a>, <a class="reference internal" href="#plume-model"><span class="std std-numref">Fig. 2.32</span></a>).</p>
+<figure class="margin-caption align-default" id="smoke-plume">
+<a class="reference internal image-reference" href="../_images/figure7.10.png"><img alt="../_images/figure7.10.png" src="../_images/figure7.10.png" style="width: 70%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.31 </span><span class="caption-text">A smoke plume in the atmosphere showing similar dispersion patterns.</span><a class="headerlink" href="#smoke-plume" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="margin-caption align-default" id="plume-model">
+<a class="reference internal image-reference" href="../_images/figure7.11.png"><img alt="../_images/figure7.11.png" src="../_images/figure7.11.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.32 </span><span class="caption-text">Plume model diagram illustrating the mathematical framework for tracking
+dispersion.</span><a class="headerlink" href="#plume-model" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="contaminant-transport-models">
+<h2>Contaminant Transport Models<a class="headerlink" href="#contaminant-transport-models" title="Link to this heading">#</a></h2>
+<p>However, like most things, it is more complicated than this.
+The contaminant is not just subject to advection with the flow of the groundwater, but also diffusion (the process by which things move from high concentration to low concentration) and possibly chemical reaction with the porous media.
+This leads to an entirely different class of equations and models known as advective diffusive transport models.
+We wont go through the mathematics of these models but the standard formula is:</p>
+<aside class="units margin sidebar">
+<p class="sidebar-title">Units!</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+C &amp;= \mathrm{amount~m^{-3}} \\
+D &amp;= \mathrm{m^2~s^{-1}} \\
+v &amp;= \mathrm{m~s^{-1}} \\
+R &amp;= \mathrm{amount~m^{-3}~s^{-1}} \\
+\end{split}\]</div>
+</aside>
+<div class="math notranslate nohighlight" id="equation-advection">
+<span class="eqno">(2.16)<a class="headerlink" href="#equation-advection" title="Link to this equation">#</a></span>\[D \frac{\delta^2 C}{\delta x^2} - v \frac{\delta C}{\delta x} = R \left( \frac{\delta C}{\delta t} \right)\]</div>
+<p>Where <span class="math notranslate nohighlight">\(C\)</span> is a contaminant, and I am curious how its concentration changes with time <span class="math notranslate nohighlight">\(\left( \frac{\delta C}{\delta t} \right)\)</span> and with distance <span class="math notranslate nohighlight">\(\left( \frac{\delta C}{\delta x} \right)\)</span>.
+Because there are changes with time and with difference, we need to use a partial differential equation.
+In the partial differential equation above, <span class="math notranslate nohighlight">\(D\)</span> is the diffusion coefficient for the contaminant in water, <span class="math notranslate nohighlight">\(v\)</span> is the flow velocity <span class="math notranslate nohighlight">\(\left( \frac{-K}{\rho} \dv{h}{x} \right)\)</span> (can you figure out why this is the flow velocity from Darcy’s Law?), and <span class="math notranslate nohighlight">\(R\)</span> represents the chemical reactions that change the concentration with time.
+In the lecture we’ll talk through each of these terms, and how diffusion can be molecular diffusion or mechanical dispersion, and the types of chemical reactions that change the concentration of common contaminants.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To explore the contamination of groundwater we are going to tell the story of arsenic poisoning in Bangladesh, why there are such high levels of arsenic in the groundwater and the various mechanisms that can help remedy this situation.
+This is just a specific example of an acute groundwater contamination problem and the way the community and scientists are trying to help remedy it.
+The details of this case study will be in the lecture slides.</p>
+</div>
+</section>
+<section id="saline-intrusion">
+<h2>Saline Intrusion<a class="headerlink" href="#saline-intrusion" title="Link to this heading">#</a></h2>
+<p>Another major challenge in freshwater aquifers is the incursion of saline groundwater into the freshwater aquifer.  Groundwater above the terrestrial (land) surface is <span class="xref std std-term">recharged</span> from rain, and is largely ‘fresh water’ and could be suitable for drinking.
+Groundwater beneath the ocean is salt water, and unless you undertake some serious desalination activities, is not suitable for drinking.
+At some point between the fresh subsurface groundwater and the salt subsurface groundwater, there is a mixing point where there is a <strong>freshwater-saltwater interface</strong> (<a class="reference internal" href="#fresh-salt-interface"><span class="std std-numref">Fig. 2.33</span></a> ).</p>
+<figure class="margin-caption align-default" id="fresh-salt-interface">
+<a class="reference internal image-reference" href="../_images/figure7.3.png"><img alt="../_images/figure7.3.png" src="../_images/figure7.3.png" style="width: 60%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.33 </span><span class="caption-text">An example of a freshwater-saltwater interface.</span><a class="headerlink" href="#fresh-salt-interface" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Like all groundwater systems, the flow of groundwater goes from high <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a> to low <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a>.
+Every day – indeed twice a day – the tides move the envelope of seawater such that there is greater <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a> on the salt groundwater, pushing it further inland.
+When the tides move the envelope of water away from the coast, the freshwater will move back towards the ocean.
+Thus the freshwater-saltwater interface changes daily.</p>
+<p>On top of this diurnal cycle, there are two larger scale things happening.
+One, sealevel is rising, due to the melting of ice and the thermal expansion of the ocean water.
+This increases the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a> on the salt-groundwater, pushing it inland.
+Second, we have a large groundwater footprint and the fresh-groundwater near the coast are having water removed for agriculture and drinking and all the other things we said we need groundwater for in <a class="reference internal" href="l4.html#lecture-4"><span class="std std-ref">Lecture 4</span></a>.
+This decreases the pressure in the coastal aquifers and drives more salt-groundwater inland (<a class="reference internal" href="#saltwater-incursion"><span class="std std-numref">Fig. 2.34</span></a>).</p>
+<figure class="margin-caption align-default" id="saltwater-incursion">
+<img alt="../_images/figure7.4.png" src="../_images/figure7.4.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2.34 </span><span class="caption-text">Seawater can <a class="reference internal" href="../reference/glossary.html#term-Recharge"><span class="xref std std-term">recharge</span></a> an aquifer and contaminate it with salt water if we extract too much water near the coast. This problem will be exacerbated by sealevel rise, which will increase the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a> on the saline side.</span><a class="headerlink" href="#saltwater-incursion" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We will finish the module with a consideration of sustainable groundwater resources and what does sustainable groundwater mean, practically, for all of us!</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./01_groundwater"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="l6.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">2.3. </span>How we measure and understand water movement</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="l8.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2.5. </span>Groundwater Chemistry</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-volumes-and-dispersion">Control Volumes and Dispersion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-peclet-number">The Peclet Number</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contaminant-plume-modeling">Contaminant Plume Modeling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contaminant-transport-models">Contaminant Transport Models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saline-intrusion">Saline Intrusion</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By the QES Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

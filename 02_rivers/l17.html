@@ -1,0 +1,695 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>3.5. Flood waves &#8212; My Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/admonitions.css?v=1588abde" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams", "[tex]/mhchem", "[tex]/color"]}, "tex": {"packages": ["base", "physics", "ams", "mhchem", "color"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '02_rivers/l17';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3.6. Flooding in urban environments" href="l18.html" />
+    <link rel="prev" title="3.4. Reservoirs" href="l16.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="My Jupyter Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My Jupyter Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../00_intro/intro.html">1. Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l1.html">1.1. Course Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l2.html">1.2. Where does the energy come from on Earth?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l3.html">1.3. The Carbon Cycle</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01_groundwater/intro.html">2. Surface Waters I: Groundwater</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l4.html">2.1. Groundwater Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l5.html">2.2. Why water moves beneath the surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l6.html">2.3. How we measure and understand water movement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l7.html">2.4. Groundwater challenges and sustainable groundwater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l8.html">2.5. Groundwater Chemistry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l9.html">2.6. Pollution in Rivers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">3. Surface Waters II: Rivers</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="l13.html">3.1. Catchment and drainage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l14.html">3.2. Drainage models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l15.html">3.3. River flows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l16.html">3.4. Reservoirs</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.5. Flood waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l18.html">3.6. Flooding in urban environments</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03_cryosphere/intro.html">4. Cryosphere</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l8.html">4.1. Ice in the polar regions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l9.html">4.2. The growth and melting of ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l10.html">4.3. The extent of sea ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l11.html">4.4. Ice sheets and the flow of glacial ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l12.html">4.5. Floating ice shelves and the flow of glacial ice</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/02_rivers/l17.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Flood waves</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overtopping-the-bank">Overtopping the bank</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flood-defense-barriers">Flood defense barriers</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><br><div style="page-break-before:always;"></div></p>
+<section class="tex2jax_ignore mathjax_ignore" id="flood-waves">
+<span id="lecture-17"></span><h1><span class="section-number">3.5. </span>Flood waves<a class="headerlink" href="#flood-waves" title="Link to this heading">#</a></h1>
+<p>We now turn our attention to the propagation of flood waves down a river.
+This is important to predict since it is useful to know the time of arrival of a flood many tens of kilometers downstream in order to provide warning to residents and try to mitigate the impacts,
+but also for planning flood prevention systems for example.</p>
+<p>We consider a storm that adds an impulse of water to a river of volume <span class="math notranslate nohighlight">\(V\)</span>, moving down a river of area <span class="math notranslate nohighlight">\(A\)</span>, at a speed <span class="math notranslate nohighlight">\(u\)</span>.
+This gives a flux of water downstream <span class="math notranslate nohighlight">\(Q=uA\)</span>.
+This situation is shown in <a class="reference internal" href="#flood-schematic"><span class="std std-numref">Fig. 3.21</span></a>.</p>
+<figure class="margin-caption align-default" id="flood-schematic">
+<a class="reference internal image-reference" href="../_images/figure17.1.png"><img alt="../_images/figure17.1.png" src="../_images/figure17.1.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.21 </span><span class="caption-text">Schematic showing an impulse of water from a storm moving downstream.</span><a class="headerlink" href="#flood-schematic" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If we take the width of the river to be <span class="math notranslate nohighlight">\(W(h)\)</span>, then we can relate the change in water volume across a small distance <span class="math notranslate nohighlight">\(\delta x\)</span> to the flux in and out</p>
+<div class="math notranslate nohighlight" id="equation-flood-flow-relation">
+<span class="eqno">(3.20)<a class="headerlink" href="#equation-flood-flow-relation" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+    W(h) \delta h \delta x = &amp;\ Q(x) - Q(x + \delta x) \delta t \\
+    W(h) \frac{\delta h}{\delta t} = &amp;\ - \frac{\delta Q}{\delta x} \\
+    W(h) \pdv{h}{t} = &amp;\ - \pdv{Q}{x}
+\end{align}\end{split}\]</div>
+<p>If we then choose, for the sake of this derivation, a triangular river geometry like that in <a class="reference internal" href="l15.html#lecture-15"><span class="std std-numref">Section 3.3</span></a>
+where <span class="math notranslate nohighlight">\(A(h) = \alpha h^2\)</span> and <span class="math notranslate nohighlight">\(W(h) = \beta h\)</span>.
+We recall from <a class="reference internal" href="l15.html#lecture-15"><span class="std std-numref">Section 3.3</span></a> that for a triangular river, <span class="math notranslate nohighlight">\(Q = k h^\frac{5}{2}\)</span>.
+we can substitute this into <a class="reference internal" href="#equation-flood-flow-relation">(3.20)</a> by first evaluating <span class="math notranslate nohighlight">\(\pdv{Q}{x}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\pdv{Q}{x} = \pdv{Q}{h} \pdv{h}{x} = \frac{5}{2} k h^\frac{3}{2} \pdv{h}{x}\]</div>
+<p>and with that result now substituting into <a class="reference internal" href="#equation-flood-flow-relation">(3.20)</a></p>
+<div class="math notranslate nohighlight" id="equation-flood-wave-eq">
+<span class="eqno">(3.21)<a class="headerlink" href="#equation-flood-wave-eq" title="Link to this equation">#</a></span>\[\begin{split}\begin{align}
+    \beta h \pdv{h}{t} + \frac{5}{2} k h^\frac{3}{2} \pdv{h}{x} = &amp;\ 0 \\
+    \pdv{h}{t} + \frac{5k}{2 \beta} h^\frac{1}{2} \pdv{h}{x} = &amp;\ 0
+\end{align}\end{split}\]</div>
+<p>This is analogous to the advection equation we derived in <a class="reference internal" href="l14.html#lecture-14"><span class="std std-numref">Section 3.2</span></a>,
+except this time the characteristic speed <span class="math notranslate nohighlight">\(u\)</span> has been replaced with an expression for the speed that is dependent on the height; <span class="math notranslate nohighlight">\(\frac{5k}{2 \beta} h^\frac{1}{2}\)</span>.
+Therefore, we expect there is a solution for lines of constant height moving down the channel with speed that depends on their depth.
+Conceptually, this should look like the diagram shown in <a class="reference internal" href="#flood-profile"><span class="std std-numref">Fig. 3.22</span></a>.
+We are implicitly ignoring the curving over of wave tops that is a familiar feature of breaking waves.
+This is a very complicated phenomena to model, and doesn’t serve our purposes here to model.
+We assume that any over-steepened wave instantly breaks, as shown in the lower panel of <a class="reference internal" href="#flood-profile"><span class="std std-numref">Fig. 3.22</span></a>.</p>
+<figure class="margin-caption align-default" id="flood-profile">
+<a class="reference internal image-reference" href="../_images/figure17.2.png"><img alt="../_images/figure17.2.png" src="../_images/figure17.2.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.22 </span><span class="caption-text">Top: Sketch of the shape of the flood wave nose inferred from the form of the differential equation governing the system.
+Bottom: Sketch of the shape of the floodwave nose assuming that any over-steepened waves instantly break.
+The flood wave gets longer and thinner.</span><a class="headerlink" href="#flood-profile" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We now use the same approach we applied to the advection equation solution in <a class="reference internal" href="l14.html#lecture-14"><span class="std std-numref">Section 3.2</span></a> and try a solution of the form:</p>
+<div class="math notranslate nohighlight">
+\[h(x,t) = Z(x - \frac{5k}{2 \beta} h^\frac{1}{2} t, \tau)\]</div>
+<p>i.e. a coordinate change, so that we are now in the frame of reference of the wave (<span class="math notranslate nohighlight">\(\eta\)</span> moves at the speed of a line of constant height <span class="math notranslate nohighlight">\(h\)</span>)</p>
+<div class="math notranslate nohighlight">
+\[\eta = x - \frac{5k}{2 \beta} h^\frac{1}{2} t \mathrm{,} \quad \tau=t\]</div>
+<p>So then calculating our new derivatives:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+    \pdv{h}{x} = &amp;\ \pdv{Z}{\eta} \pdv{\eta}{x} + \pdv{Z}{\tau} \pdv{\tau}{x} \\
+    = &amp;\ \pdv{Z}{\eta}
+\end{align}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+    \pdv{h}{t} = &amp;\ \pdv{Z}{\eta} \pdv{\eta}{t} + \pdv{Z}{\tau} \pdv{\tau}{t} \\
+    = &amp;\ \pdv{Z}{\eta} \left(- \frac{5k}{2 \beta} h^\frac{1}{2} \right) + \pdv{Z}{\tau}
+\end{align}\end{split}\]</div>
+<p>Substituting all of this into <a class="reference internal" href="#equation-flood-wave-eq">(3.21)</a> gives us</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\pdv{Z}{\eta} \left(- \frac{5k}{2 \beta} h^\frac{1}{2} \right) + \pdv{Z}{\tau} + \frac{5k}{2 \beta} h^\frac{1}{2} \pdv{Z}{\eta} = 0 \\
+\implies \pdv{Z}{\tau} = 0\end{split}\]</div>
+<p>Which means that <span class="math notranslate nohighlight">\(Z\)</span> is constant (i.e. depth is constant) provided we move along a line on which <span class="math notranslate nohighlight">\(\eta\)</span> is constant.
+So examining one possible solution, for which <span class="math notranslate nohighlight">\(\eta = 0\)</span>, we get</p>
+<div class="math notranslate nohighlight">
+\[x = \frac{5k}{2 \beta} h^\frac{1}{2} t \quad \quad h = \mathrm{const.}\]</div>
+<p>Rearranging this then gets us to</p>
+<div class="math notranslate nohighlight" id="equation-h-eq">
+<span class="eqno">(3.22)<a class="headerlink" href="#equation-h-eq" title="Link to this equation">#</a></span>\[h = \left( \frac{2 \beta}{5k} \right)^2 \frac{x^2}{t^2}\]</div>
+<p>Using this solution for the long time depth of the current, we can estimate the nose location and depth
+(see <a class="reference internal" href="#flood-profile"><span class="std std-numref">Fig. 3.22</span></a> for a reminder of what this looks like).</p>
+<p>Applying the conservation of fluid, we first work out the volume in the flow and this leads to an expression for the position of the nose:</p>
+<div class="math notranslate nohighlight" id="equation-volume-int">
+<span class="eqno">(3.23)<a class="headerlink" href="#equation-volume-int" title="Link to this equation">#</a></span>\[V = \int_0^{x_N} A(h(x,t)) \dd{x}\]</div>
+<p>where <span class="math notranslate nohighlight">\(x_N\)</span> is the position of the flood wave nose.
+We note that</p>
+<div class="math notranslate nohighlight" id="equation-area-int">
+<span class="eqno">(3.24)<a class="headerlink" href="#equation-area-int" title="Link to this equation">#</a></span>\[A = \int_0^{h} W(h') \dd{h'} = \frac{1}{2} \beta h^2\]</div>
+<p>and substituting <a class="reference internal" href="#equation-h-eq">(3.22)</a> and <a class="reference internal" href="#equation-area-int">(3.24)</a> into <a class="reference internal" href="#equation-volume-int">(3.23)</a> we get</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+    V = &amp;\ \int_0^{x_N} \frac{1}{2} \beta \left(\frac{2 \beta}{5k} \right)^4 \frac{x^4}{t^4} \dd{x} \\
+    = &amp;\ \frac{1}{2} \beta \left(\frac{2 \beta}{5k} \right)^4 \frac{x_N^5}{5 t^4}
+\end{align}\end{split}\]</div>
+<p>We can then rearrange to get the nose position as a function of time:</p>
+<div class="math notranslate nohighlight">
+\[x_N(t) = \left[\frac{2}{\beta} \left( \frac{5k}{2 \beta} \right)^4 5V t^4 \right] ^\frac{1}{5} \propto t^\frac{4}{5}\]</div>
+<p>and using this nose position we can establish the depth of the flow at the nose to be</p>
+<div class="math notranslate nohighlight">
+\[h_N = \left( \frac{2 \beta}{5k} \right)^2 \left( \frac{x_N}{t} \right)^2 \propto t^{-\frac{2}{5}}\]</div>
+<p>which is, interestingly, insensitive to the total volume of water from the storm (<span class="math notranslate nohighlight">\(\propto V^\frac{2}{5}\)</span>).</p>
+<section id="overtopping-the-bank">
+<h2>Overtopping the bank<a class="headerlink" href="#overtopping-the-bank" title="Link to this heading">#</a></h2>
+<p>A river flowing through the landscape may overtop its embankment, as shown in <a class="reference internal" href="#fig-flood"><span class="std std-numref">Fig. 3.23</span></a>.
+This means water flows out of the channel and inundates the surrounding flood plane, and eventually can reach towns and other urban areas.</p>
+<figure class="margin-caption align-default" id="fig-flood">
+<a class="reference internal image-reference" href="../_images/figure18.1.png"><img alt="../_images/figure18.1.png" src="../_images/figure18.1.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.23 </span><span class="caption-text">A river overtopping its banks and flowing on to the flood plain.</span><a class="headerlink" href="#fig-flood" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We wish to determine the rate at which water is flowing out of the river.
+The situation is shown in more detail in <a class="reference internal" href="#fig-flood-schematic"><span class="std std-numref">Fig. 3.24</span></a>.</p>
+<figure class="margin-caption align-default" id="fig-flood-schematic">
+<a class="reference internal image-reference" href="../_images/figure18.2.png"><img alt="../_images/figure18.2.png" src="../_images/figure18.2.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.24 </span><span class="caption-text">A river overtopping its banks and flowing on to the flood plain.</span><a class="headerlink" href="#fig-flood-schematic" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The flow rate of the water moving over the embankment depends on the velocity of the water flow and the height over the top of the bank, <span class="math notranslate nohighlight">\(b\)</span>.
+If the speed of the water is <span class="math notranslate nohighlight">\(\sim \sqrt{gb}\)</span> (as discussed in <a class="reference internal" href="l15.html#lecture-15"><span class="std std-numref">Section 3.3</span></a>) then the flow rate per unit length along the embankment goes as</p>
+<div class="math notranslate nohighlight">
+\[Q \sim \beta b \sqrt{g b}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\beta\)</span> is a geometric factor of <span class="math notranslate nohighlight">\(\frac{2}{3\sqrt{3}}\)</span> in the idealised case.
+With the flux over the bank established, we can turn our attention to the flow down the slope, further away from the levee.</p>
+<p>Balancing the flows in and out of a control volume in the flow, as we have previously, we get a differential equation describing the rate of change of the thickness of the flow, <span class="math notranslate nohighlight">\(h\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-flux-balance-overtopping">
+<span class="eqno">(3.25)<a class="headerlink" href="#equation-flux-balance-overtopping" title="Link to this equation">#</a></span>\[\pdv{h}{t} = -\pdv{Q}{x} + I\]</div>
+<p>where <span class="math notranslate nohighlight">\(I\)</span> is an infiltration term.
+With rapid flow from the river, the flow is turbulent in the flooding zone, and the speed of the flooding water is given by</p>
+<div class="math notranslate nohighlight" id="equation-eq-flow-speed">
+<span class="eqno">(3.26)<a class="headerlink" href="#equation-eq-flow-speed" title="Link to this equation">#</a></span>\[u = \sqrt{\frac{gh \sin{\theta}}{C_D}}\]</div>
+<p>and we can substitute into <a class="reference internal" href="#equation-flux-balance-overtopping">(3.25)</a> using <span class="math notranslate nohighlight">\(\pdv{Q}{x} = \pdv{(uh)}{x}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\pdv{h}{t} + \frac{3}{2} \sqrt{\frac{g \sin(\theta)}{C_D}} h^\frac{1}{2} \pdv{h}{x} - I = 0\]</div>
+<p>So taking the steady state condition, <span class="math notranslate nohighlight">\(\pdv{h}{t} = 0\)</span> and integrating we get</p>
+<div class="math notranslate nohighlight">
+\[h(x)^\frac{3}{2} - h(0)^\frac{3}{2} = - \sqrt{\frac{C_D}{g \sin(\theta)}} I x\]</div>
+<p>and so we can see that <span class="math notranslate nohighlight">\(h(x) \rightarrow 0\)</span> when <span class="math notranslate nohighlight">\(x \rightarrow \sqrt{\frac{C_D}{g \sin(\theta)}} \frac{h(0)^\frac{3}{2}}{I}\)</span>.
+<span class="math notranslate nohighlight">\(I\)</span> is small when the ground is waterlogged, and so <span class="math notranslate nohighlight">\(x\)</span> gets large, which holds with our general intuition about flooding.</p>
+<p>With this model we can then assess how long the flood plain next to a river will take to fill up with water.
+If there is a secondary defence before the flood reaches the town along the river, as in the sketch, this flood plain provides a buffer to protect the town.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Non-examinable: derivation of <span class="math notranslate nohighlight">\(\beta\)</span></p>
+<p>If waters flood from a river, over the embankment,
+the flow rate of the water moving over the embankment depends on the height of the water in the centre of the river compared to the height at the embankment.
+If the water level decreases by an amount <span class="math notranslate nohighlight">\(h\)</span>, the flow speed over the embankment is <span class="math notranslate nohighlight">\(\sqrt{(gh)}\)</span> and if the depth of the water is <span class="math notranslate nohighlight">\(b\)</span> at the embankment, the total flux is</p>
+<div class="math notranslate nohighlight">
+\[Q = b(g h)^{1/2}\]</div>
+<p>per unit length along the embankment.
+The height of the embankment below the height of the free surface of the river in the centre of the river above the river bed, <span class="math notranslate nohighlight">\(H\)</span>, can be written as <span class="math notranslate nohighlight">\(H-(b+h)\)</span>.
+At the crest of the embankment, the height above the base of the river is a maximum, and so if <span class="math notranslate nohighlight">\(y\)</span> is the coordinate normal to the river, then</p>
+<div class="math notranslate nohighlight" id="equation-eq-embankment">
+<span class="eqno">(3.27)<a class="headerlink" href="#equation-eq-embankment" title="Link to this equation">#</a></span>\[\dv{h}{y} + \dv{b}{y} = 0\]</div>
+<p>If we differentiate the expression for the flux <span class="math notranslate nohighlight">\(Q\)</span> above with respect to <span class="math notranslate nohighlight">\(y\)</span>, then the answer should be zero (as the flux is constant in space)
+and using Eq. <a class="reference internal" href="#equation-eq-embankment">(3.27)</a> we then find that</p>
+<div class="math notranslate nohighlight">
+\[2h = b\]</div>
+<p>and so</p>
+<div class="math notranslate nohighlight">
+\[3 h = (H_r - H_e)\]</div>
+<p>Where <span class="math notranslate nohighlight">\(H_r\)</span> and <span class="math notranslate nohighlight">\(H_e\)</span> are the heights of the water surface in the centre of the river and the top of the embankment above the base of the river.
+This leads to the result that the flux is given by</p>
+<div class="math notranslate nohighlight">
+\[Q = \frac{2}{3 \sqrt{3}} g^{1/2} (H_r - H_e) ^{3/2}\]</div>
+<p>Where we can see we have approximated <span class="math notranslate nohighlight">\((H_r - H_e) \sim b\)</span> in the formula we used in the lectures.</p>
+</div>
+</section>
+<section id="flood-defense-barriers">
+<h2>Flood defense barriers<a class="headerlink" href="#flood-defense-barriers" title="Link to this heading">#</a></h2>
+<p>A flood defence barrier needs to withstand the pressure from the flood water.
+This leads to a horizontal force on the barrier which can be calculated from the integral of the hydrostatic pressure on the wall of the barrier.</p>
+<figure class="margin-caption align-default" id="fig-barrier">
+<a class="reference internal image-reference" href="../_images/figure18.3.png"><img alt="../_images/figure18.3.png" src="../_images/figure18.3.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.25 </span><span class="caption-text">A flood defence barrier, height <span class="math notranslate nohighlight">\(H\)</span>, holding back water at a height <span class="math notranslate nohighlight">\(h\)</span>.</span><a class="headerlink" href="#fig-barrier" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Since the atmospheric pressure acts on both sides of the barrier, we can ignore it.
+Therefore, the net pressure acting at a point on the barrier as a function of <span class="math notranslate nohighlight">\(z\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[P(z) = \rho g (h-z)\]</div>
+<p>and the total force acting will be</p>
+<div class="math notranslate nohighlight">
+\[F = \int_0^h P(z) dz = \frac{\rho g h}{2}\]</div>
+<p>A torque will also act on the barrier, which will be of the form</p>
+<div class="math notranslate nohighlight">
+\[F = \int_0^h z P(z) dz\]</div>
+<p>To prevent the barrier rolling over there needs to be a system to withstand this torque,
+which may include a series of inclined support rods pressing on the top of the barrier from the ground on the non—wet side of the barrier.</p>
+<figure class="margin-caption align-default" id="fig-venice-lagoon">
+<a class="reference internal image-reference" href="../_images/figure18.4.png"><img alt="../_images/figure18.4.png" src="../_images/figure18.4.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.26 </span><span class="caption-text">In the Venice lagoon there are some interesting flood barriers which float up to the surface to stop incoming flow as in the figure above from the MODA website.</span><a class="headerlink" href="#fig-venice-lagoon" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./02_rivers"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="l16.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3.4. </span>Reservoirs</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="l18.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3.6. </span>Flooding in urban environments</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overtopping-the-bank">Overtopping the bank</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flood-defense-barriers">Flood defense barriers</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By the QES Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,882 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Aerosols &#8212; My Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/admonitions.css?v=1588abde" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams", "[tex]/mhchem", "[tex]/color"]}, "tex": {"packages": ["base", "physics", "ams", "mhchem", "color"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '04_atmosphere/l22';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="My Jupyter Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My Jupyter Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../00_intro/intro.html">1. Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l1.html">1.1. Course Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l2.html">1.2. Where does the energy come from on Earth?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l3.html">1.3. The Carbon Cycle</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01_groundwater/intro.html">2. Surface Waters I: Groundwater</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l4.html">2.1. Groundwater Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l5.html">2.2. Why water moves beneath the surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l6.html">2.3. How we measure and understand water movement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l7.html">2.4. Groundwater challenges and sustainable groundwater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l8.html">2.5. Groundwater Chemistry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l9.html">2.6. Pollution in Rivers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02_rivers/intro.html">3. Surface Waters II: Rivers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l13.html">3.1. Catchment and drainage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l14.html">3.2. Drainage models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l15.html">3.3. River flows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l16.html">3.4. Reservoirs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l17.html">3.5. Flood waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l18.html">3.6. Flooding in urban environments</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03_cryosphere/intro.html">4. Cryosphere</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l8.html">4.1. Ice in the polar regions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l9.html">4.2. The growth and melting of ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l10.html">4.3. The extent of sea ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l11.html">4.4. Ice sheets and the flow of glacial ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l12.html">4.5. Floating ice shelves and the flow of glacial ice</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/04_atmosphere/l22.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Aerosols</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-atmospheric-particles">Introduction to atmospheric particles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#size-distribution-of-atmospheric-aerosols">Size distribution of atmospheric aerosols</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formation-processes-and-sources">Formation processes and sources</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formation-processes-and-processes-affecting-size-distribution">Formation processes and processes affecting size distribution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-sources">Particle sources</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#natural-sources">Natural sources</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#primary-sources">Primary sources</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#secondary-sources">Secondary sources</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#anthropogenic-sources">Anthropogenic sources</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Primary sources</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Secondary sources</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#removal-processes">Removal Processes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dry-deposition">Dry Deposition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wet-deposition">Wet Deposition</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aerosol-chemical-composition">Aerosol Chemical Composition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heterogeneous-reactions-in-the-atmosphere">Heterogeneous reactions in the atmosphere</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rates-of-heterogeneous-reactions-and-resistance-model-of-gas-uptake">Rates of heterogeneous reactions and resistance model of gas uptake</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="aerosols">
+<span id="lecture-22"></span><h1>Aerosols<a class="headerlink" href="#aerosols" title="Link to this heading">#</a></h1>
+<p class="rubric">Formation, growth, composition, and removal processes</p>
+<blockquote class="highlights">
+<div><p>Key Points:</p>
+<ul class="simple">
+<li><p>The atmosphere contains numerous aerosol particles covering a size range of <span class="math notranslate nohighlight">\(1-2 \ \mathrm{nm}\)</span> up to <span class="math notranslate nohighlight">\(\gt 100 \ \mathrm{\mu m}\)</span> diameter and containing a variety of chemical constituents. Particle distribution is divided into a nucleation, an Aitken, an accumulation, and a coarse mode.</p></li>
+<li><p>Primary particles are directly emitted into the atmosphere. Secondary particles are formed in the atmosphere from gaseous precursors through nucleation.</p></li>
+<li><p>Primary sources of particles and their gaseous precursors can be natural or anthropogenic.</p></li>
+<li><p>Particles are removed from the atmosphere through dry and wet deposition.</p></li>
+<li><p>Aerosol chemical composition varies widely depending on the sources and location. Main components are nitrate, sulphate, chloride, ammonium, sodium, potassium, calcium, and organic material.</p></li>
+<li><p>Heterogeneous reactions occur on the surface or in the condensed phase of aerosol particles. This leads to the chemical conversion of trace gases and their removal. The rate of this process is usually expressed in terms of the uptake coefficient, <span class="math notranslate nohighlight">\(\gamma\)</span>, defined in terms of kinetic theory of gases.</p></li>
+</ul>
+</div></blockquote>
+<section id="introduction-to-atmospheric-particles">
+<span id="atmosphere-particles-intro"></span><h2>Introduction to atmospheric particles<a class="headerlink" href="#introduction-to-atmospheric-particles" title="Link to this heading">#</a></h2>
+<p>The atmosphere also contains a wide variety of microscopic particulate material, known as the atmospheric aerosol or particulate matter (PM).
+The aerosol plays an important role in both the physics and chemistry of the atmosphere.</p>
+<p>Atmospheric aerosol particles may be liquid, solid or multiphase.
+In the stratosphere the aerosol consists predominantly of sulphuric acid droplets formed by oxidation of sulphur gases (<span class="math notranslate nohighlight">\(\mathrm{SO_2}\)</span> and <span class="math notranslate nohighlight">\(\mathrm{OCS}\)</span> (carbonyl sulfide)).
+In the troposphere the aerosol is much more complex.</p>
+<p>Aerosol particles are absorbing and/or scattering short wave radiation and are therefore directly influencing the radiative balance of the atmosphere.
+The intensity of light scattering or absorption is strongly dependent on the size and chemical composition of particles.</p>
+<p>Aerosols are also involved in the formation of clouds - the water droplets that comprise clouds always condense on certain pre-existing aerosols called cloud condensation nuclei.
+Particle size and chemical composition are key parameters, which determine whether an aerosol particle is an efficient nucleus for cloud droplet formation.
+These aerosol particle-cloud interactions lead to a complex feedback system influencing the hydrological cycle.</p>
+<p>Both processes, light absorption/scattering and could formation, are not very well understood on a global level and are one on the main uncertainties associated with studies predicting the future climate.
+The uncertainty is mainly due to the large variability in the physical and chemical properties of aerosol particles, as well as their temporal and spatial distributions.</p>
+<p>Aerosols also provide a sink for traces gases.
+The reactions of gaseous compounds at the surface or within the condensed phase of aerosol particles are called heterogeneous reactions.</p>
+<p>Particles are involved in health impacts caused by air pollution.
+Aerosol particles <span class="math notranslate nohighlight">\(\lt 10 \ \mathrm{\mu m}\)</span>, which penetrate into the lung (larger particles are deposited in the nose and mouth), have been shown to correlate with increasing rates of respiratory and cardio-vascular diseases in epidemiological studies.
+The particle properties causing these health effects are not well understood, but particle size and the chemical composition (e.g., transition metals, oxidizing organic components) are likely responsible for the observed particle toxicity.</p>
+</section>
+<section id="size-distribution-of-atmospheric-aerosols">
+<span id="section-label"></span><h2>Size distribution of atmospheric aerosols<a class="headerlink" href="#size-distribution-of-atmospheric-aerosols" title="Link to this heading">#</a></h2>
+<p>The size of atmospheric particles ranges from <span class="math notranslate nohighlight">\(\lt 1-2 \ \mathrm{nm}\)</span> to <span class="math notranslate nohighlight">\(\gt 100 \ \mathrm{\mu m}\)</span> diameter.
+A typical distribution as a function of size is shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">aerosol_sizes</span></code>.
+The distribution is usually divided into the nucleation mode (<span class="math notranslate nohighlight">\(\lt 10 \ \mathrm{nm}\)</span>), the Aitken mode (<span class="math notranslate nohighlight">\(\gt 100 \ \mathrm{nm}\)</span>), the accumulation mode (from <span class="math notranslate nohighlight">\(100 \ \mathrm{nm}\)</span> to <span class="math notranslate nohighlight">\(1-2 \ \mathrm{\mu m}\)</span>, and the coarse mode (<span class="math notranslate nohighlight">\(\gt 1-2 \ \mathrm{\mu m}\)</span>).</p>
+<p>The maximum in the particle concentration generally lies in the nucleation mode size range when particles are measured in number per unit volume of air.
+The nucleation mode particles, although numerous, contribute very little to the aerosol mass.</p>
+<p>The maximum in surface area, which is the important parameter for light scattering and for many heterogeneous reaction rates, usually lies in the so-called ‘accumulation’ mode.
+The maximum in volume/mass of particles per unit volume of air lies in the accumulation/coarse fraction.</p>
+<p>The total particle number concentration varies greatly in the troposphere with <span class="math notranslate nohighlight">\(\lt 20 \ \mathrm{cm}^{-3}\)</span> for the polar regions and <span class="math notranslate nohighlight">\(\gt 10^5 \ \mathrm{cm}^{-3}\)</span> for an urban aerosol.
+The total number concentration decreases strongly with altitude and at altitudes of <span class="math notranslate nohighlight">\(3-5 \ \mathrm{km}\)</span> typical concentration of about <span class="math notranslate nohighlight">\(100 \ \mathrm{particles} \, \mathrm{cm^{-3}}\)</span> are found.</p>
+<figure class="margin-caption align-default" id="aerosol-sizes">
+<a class="reference internal image-reference" href="../_images/figure22.1.jpg"><img alt="../_images/figure22.1.jpg" src="../_images/figure22.1.jpg" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Typical size distribution of the tropospheric aerosol.</span><a class="headerlink" href="#aerosol-sizes" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="formation-processes-and-sources">
+<h2>Formation processes and sources<a class="headerlink" href="#formation-processes-and-sources" title="Link to this heading">#</a></h2>
+<section id="formation-processes-and-processes-affecting-size-distribution">
+<h3>Formation processes and processes affecting size distribution<a class="headerlink" href="#formation-processes-and-processes-affecting-size-distribution" title="Link to this heading">#</a></h3>
+<p>Formation processes of aerosols are highly variable in time and space, which is one of the main reasons why the influence and interactions of particles with other parts of the climate system are so difficult to account for in atmospheric chemistry and climate models.</p>
+<p>Particles in the coarse mode are usually produced mechanically by weathering and wind erosion processes or through bubble bursting over the ocean. Direct anthropogenic emissions contribute to coarse mode particles through traffic and industrial processes.</p>
+<p>In the smallest size fraction (nucleation mode), particle formation arises via homogeneous nucleation,
+which is the formation of new particles through gas-to-particle conversion processes.
+Particle nucleation is frequently observed over land mainly in remote areas but also over the ocean.
+Chemical compounds forming the initial clusters of atmospheric nucleation particles are not well characterized
+but water and sulphuric acid, ammonium, amines, and highly oxygenated organic molecules (HOMs) are most likely important in forming the initial nucleation clusters.
+Organic compounds are thought to condense onto the initial <span class="math notranslate nohighlight">\(\mathrm{H_2O}\)</span> - <span class="math notranslate nohighlight">\(\mathrm{H_2SO_4}\)</span> clusters,
+i.e., being responsible for the initial growth of the clusters into stable particles of a few <span class="math notranslate nohighlight">\(\mathrm{nm}\)</span> in size (see <code class="xref std std-numref docutils literal notranslate"><span class="pre">size_evolution</span></code>).</p>
+<figure class="margin-caption align-default" id="size-evolution">
+<img alt="../_images/figure22.2.png" src="../_images/figure22.2.png" />
+<figcaption>
+<p><span class="caption-text">Typical evolution of particle size distribution after a particle nucleation event (Beijing 2—7 October 2013).
+White dashed curve represents the mean diameter.
+From Guo et al 2014, Lee et al 2019.</span><a class="headerlink" href="#size-evolution" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The high initial number concentration of particles with <span class="math notranslate nohighlight">\(d &lt; 10 \ \mathrm{nm}\)</span> are rapidly reduced through coagulation,
+resulting in aerosol lifetimes of the order of minutes for these smallest particles.
+The nucleation mode particles, although numerous, contribute very little to the aerosol surface or mass.</p>
+<p>The coagulation rate of particles with size 1 and 2 is given by</p>
+<div class="math notranslate nohighlight">
+\[    \dv{N_{1,2}}{t} = -K_{1,2} N_1 N_2\]</div>
+<div class="math notranslate nohighlight">
+\[    K_{1,2} = \pi(d_1 + d_2)(D_1 + D_2)\]</div>
+<p>where <span class="math notranslate nohighlight">\(K_{1,2}\)</span> is the coagulation coefficient, <span class="math notranslate nohighlight">\(D\)</span> is the diffusion constant, and <span class="math notranslate nohighlight">\(d\)</span> is the particle diameter.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="coagulation-coefs">
+<caption><span class="caption-text">Coagulation coefficients for particles of different sizes (<span class="math notranslate nohighlight">\(K_{1,2} \times 10^{-10} \ \mathrm{cm}^3 \ \mathrm{s}^{-1}\)</span>) under standard conditions.</span><a class="headerlink" href="#coagulation-coefs" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 28.0%" />
+<col style="width: 18.0%" />
+<col style="width: 18.0%" />
+<col style="width: 18.0%" />
+<col style="width: 18.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head stub"><p><span class="math notranslate nohighlight">\(d_1 \ (\mathrm{\mu m})\)</span> \ <span class="math notranslate nohighlight">\(d_2 \ (\mathrm{\mu m})\)</span></p></th>
+<th class="head"><p>0.01</p></th>
+<th class="head"><p>0.1</p></th>
+<th class="head"><p>1.0</p></th>
+<th class="head"><p>10.0</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><th class="stub"><p>0.01</p></th>
+<td><p>67</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>0.1</p></th>
+<td><p>180</p></td>
+<td><p>8.6</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>1.0</p></th>
+<td><p>1700</p></td>
+<td><p>24</p></td>
+<td><p>3.5</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>10.0</p></th>
+<td><p>16000</p></td>
+<td><p>220</p></td>
+<td><p>10.3</p></td>
+<td><p>3.0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Particles in the accumulation mode typically arise from either: i) the condensation of low volatility vapours onto existing smaller particles, or ii) from coagulation of particles.
+Chemical modification (heterogeneous reactions) following condensation of semi-volatile components from the gas phase onto existing particles is another process increasing the mass of accumulation mode particles.
+The main removal process is incorporation into cloud droplets and subsequent wet deposition.</p>
+</section>
+<section id="particle-sources">
+<h3>Particle sources<a class="headerlink" href="#particle-sources" title="Link to this heading">#</a></h3>
+<p>Atmospheric aerosols may originate from either naturally occurring or anthropogenic processes.
+Further classification within each category into primary and secondary sources may also be made.
+Aerosols directly emitted into the atmosphere constitute primary sources while secondary sources arise from the gas-to-particle conversion of gaseous precursor compounds
+such as <span class="math notranslate nohighlight">\(\mathrm{NO}_x\)</span>, <span class="math notranslate nohighlight">\(\mathrm{SO_2}\)</span> and volatile organic compounds (VOCs).</p>
+<section id="natural-sources">
+<h4>Natural sources<a class="headerlink" href="#natural-sources" title="Link to this heading">#</a></h4>
+<section id="primary-sources">
+<h5>Primary sources<a class="headerlink" href="#primary-sources" title="Link to this heading">#</a></h5>
+<ul class="simple">
+<li><p><strong>Sea Salt</strong> Sea salt aerosol results from the bursting of bubbles, formed by wave and wind-action at the ocean surface.
+Sea salt aerosol mainly consists of <span class="math notranslate nohighlight">\(\mathrm{NaCl}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{KCl}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{CaSO_4}\)</span>, and <span class="math notranslate nohighlight">\(\mathrm{Na_2SO_4}\)</span>.
+Soluble and insoluble organic compounds may also be important components.</p></li>
+<li><p><strong>Mineral Dust</strong> Wind-blown mineral dust (generated in physical and chemical weathering processes of rock and soil)
+from desert and semi-arid regions is an important source of tropospheric aerosols.
+Atmospheric size distributions of mineral dust particles range up to several hundred <span class="math notranslate nohighlight">\(\mathrm{\mu m}\)</span>.
+The principal elemental constituents of mineral dust are oxides and carbonates of <span class="math notranslate nohighlight">\(\mathrm{Si}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{Al}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{Ca}\)</span>, and <span class="math notranslate nohighlight">\(\mathrm{Fe}\)</span>.</p></li>
+<li><p><strong>Primary Organic Aerosols/Biological Debris.</strong> Continental sources mainly arise from vegetation (plant waxes and fragments, pollen, spores, fungi, and decaying material),
+while marine sources consist of organic surfactants formed via bubble bursting.
+These particles are predominantly in the coarse mode.</p></li>
+<li><p><strong>Volcanic Emissions.</strong> Volcanic activity and particle emissions occurs on a sporadic basis.
+These emissions are composed of ash (principally <span class="math notranslate nohighlight">\(\mathrm{SiO_2}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{Al_2O_3}\)</span>, and <span class="math notranslate nohighlight">\(\mathrm{Fe_2O_3}\)</span>),
+gases (<span class="math notranslate nohighlight">\(\mathrm{SO_2}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{H2_S}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{CO_2}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{HCl}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{HF}\)</span>), and water vapour.
+<span class="math notranslate nohighlight">\(\mathrm{SO_2}\)</span> emissions may contribute significantly to particle emissions of volcanic eruptions through oxidation reactions in the atmosphere leading ultimately to sulphuric acid.</p></li>
+</ul>
+</section>
+<section id="secondary-sources">
+<h5>Secondary sources<a class="headerlink" href="#secondary-sources" title="Link to this heading">#</a></h5>
+<p>Secondary natural aerosols may be formed from a number of natural precursor gas sources, containing sulphur, nitrogen and hydrocarbons. A main natural source is the release of gaseous dimethyl sulphide (DMS) from the oceans. DMS is formed from the biological activity of phytoplankton and eventually forms aerosol sulphate via the photo-oxidation to methanesulfonic acid and <span class="math notranslate nohighlight">\(\mathrm{SO_2}\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathrm{CH_3SCH_3 + OH} &amp; \ \mathrm{\longrightarrow \ CH_3SCH_2 + H_2O} \\
+\mathrm{CH_3SCH_2} &amp; \ \mathrm{\xrightarrow{+O_2, NO} \ CH_3SCH_2O} \\
+\mathrm{CH_3SCH_3O} &amp; \ \mathrm{\longrightarrow \ CH_3S + HCHO} \\
+\mathrm{CH_3S + O_2} &amp; \ \mathrm{\longrightarrow \ CH_3SO_2} \\
+\mathrm{CH_3SO_2} &amp; \ \mathrm{\longrightarrow \ CH_3 + SO_2} \\
+\mathrm{SO_2} &amp; \ \mathrm{\rightarrow \rightarrow \rightarrow \ H_2SO_4\ (particle \ phase)}\end{split}\]</div>
+<p>The formation of nitrate aerosols from nitrogen precursor gases has two main natural sources: i) <span class="math notranslate nohighlight">\(\mathrm{NO_X}\)</span> from lightning and soils, and ii) <span class="math notranslate nohighlight">\(\mathrm{N_2O}\)</span> from bacterial activity in soils and the oceans.
+Secondary organic aerosols (SOA) are formed by oxidation products of VOCs.</p>
+</section>
+</section>
+<section id="anthropogenic-sources">
+<h4>Anthropogenic sources<a class="headerlink" href="#anthropogenic-sources" title="Link to this heading">#</a></h4>
+<section id="id1">
+<h5>Primary sources<a class="headerlink" href="#id1" title="Link to this heading">#</a></h5>
+<ul class="simple">
+<li><p><strong>Biomass Burning.</strong> Natural wild fires and anthropogenic fires (e.g., for agricultural clearing) are commonly termed as biomass burning.
+Release of biomass burning products into the atmosphere occurs mainly in the tropics during the dry seasons.</p></li>
+<li><p><strong>Industrial Processes.</strong> Aerosol emissions from industrial processes have a diverse number of sources.</p></li>
+<li><p><strong>Soot.</strong> Soot is a ubiquitous component of the atmospheric aerosol.
+As a result of it being chemically relatively inert and having poor hygroscopic properties, it may be used as an anthropogenic tracer.
+Soot aerosols are generated in incomplete combustion processes and consist mainly of an organic fraction and an inorganic graphite-like carbon fraction
+(also called black carbon or elemental carbon).</p></li>
+</ul>
+</section>
+<section id="id2">
+<h5>Secondary sources<a class="headerlink" href="#id2" title="Link to this heading">#</a></h5>
+<ul>
+<li><p><strong>Sulphate and Nitrate.</strong> <span class="math notranslate nohighlight">\(\mathrm{SO_4^{2—}}\)</span> and <span class="math notranslate nohighlight">\(\mathrm{NO_3^—}\)</span> are major components of tropospheric aerosol.
+They are formed from gaseous precursors (<span class="math notranslate nohighlight">\(\mathrm{SO_2, \ NO_2}\)</span>) through oxidation reactions mainly with OH in the gas phase or condensed phase leading to <span class="math notranslate nohighlight">\(\mathrm{H_2SO_4}\)</span> and <span class="math notranslate nohighlight">\(\mathrm{HNO_3}\)</span>, respectively.
+Oxidation of <span class="math notranslate nohighlight">\(\mathrm{SO_2}\)</span> always results in the formation of aerosol mass, due to the very low <span class="math notranslate nohighlight">\(\mathrm{H_2SO_4}\)</span> vapour pressure,
+and is in contrast to <span class="math notranslate nohighlight">\(\mathrm{HNO_3}\)</span> which is distributed between the gas and aerosol phases.
+The largest source of <span class="math notranslate nohighlight">\(\mathrm{SO_2}\)</span> and <span class="math notranslate nohighlight">\(\mathrm{NO_x}\)</span> are fossil fuel combustion processes.
+Over continental surfaces where gaseous ammonia is present, <span class="math notranslate nohighlight">\(\mathrm{H_2SO_4}\)</span> forms <span class="math notranslate nohighlight">\(\mathrm{NH_4HSO_4}\)</span> and <span class="math notranslate nohighlight">\(\mathrm{(NH_4)_2SO_4}\)</span>.
+In the presence of <span class="math notranslate nohighlight">\(\mathrm{NH_3}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{HNO_3}\)</span> (one of the major <span class="math notranslate nohighlight">\(\mathrm{NO_x}\)</span> reservoir compounds) forms <span class="math notranslate nohighlight">\(\mathrm{NH_4NO_3}\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\\ 
+\mathrm{NH_4NO_{3~(s)} \longrightarrow NH_{3~(g)} + HNO_{3~(g)}}\end{split}\]</div>
+<p>Ammonia plays an important role in the neutralisation of acid species (<span class="math notranslate nohighlight">\(\mathrm{HNO_3,\ H_2SO_4}\)</span>), as it is the most common atmospheric alkaline gas.
+Major natural and anthropogenic sources respectively include:</p>
+<ul class="simple">
+<li><p>soils and organic decomposition</p></li>
+<li><p>fertilisers and animal farming</p></li>
+<li><p>catalysed vehicles.</p></li>
+</ul>
+</li>
+<li><p><strong>Secondary Organic Aerosol.</strong> Fossil fuel consumption and biomass burning, caused by human activities, are the main sources of anthropogenic VOCs that can lead to SOA.
+On a global scale, biogenic emissions from terrestrial plants and marine algae are dominant.
+SOA are formed by oxidation products of VOCs (in this context called ‘aerosol precursors’) in the atmosphere and thus contrast in their formation process compared to primary particles.
+These oxidation reactions are mainly initiated by reactions with ozone, <span class="math notranslate nohighlight">\(\mathrm{OH}\)</span>, and <span class="math notranslate nohighlight">\(\mathrm{NO_3}\)</span> radicals.
+The ability of a VOC to form SOA depends on the volatility of its oxidation products, the concentration, and the reactivity of the VOC in the atmosphere.</p></li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+<section id="removal-processes">
+<h2>Removal Processes<a class="headerlink" href="#removal-processes" title="Link to this heading">#</a></h2>
+<section id="dry-deposition">
+<h3>Dry Deposition<a class="headerlink" href="#dry-deposition" title="Link to this heading">#</a></h3>
+<p>Removal at the Earth’s oceanic and terrestrial surfaces (water, soil and vegetation) in the absence of precipitation is termed ‘dry deposition’.
+The rate of this process is controlled by transport through the atmospheric boundary layer and by reaction or adsorption at the surface
+(i.e., depending on chemical/physical properties of the surface and the deposited particle or gas).
+If surface removal is efficient a gradient in concentration in the surface layers results.</p>
+<aside class="units margin sidebar">
+<p class="sidebar-title">Units!</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+F &amp;= \mathrm{molecules~cm^{-2}~s^{-1}} \\
+c &amp;= \mathrm{molecules~cm^{-3}} \\
+v_g &amp;= \mathrm{cm~s^{-1}} \\
+\end{split}\]</div>
+</aside>
+<p>The flux of a trace gas to the surface, <span class="math notranslate nohighlight">\(F\)</span>, and its concentration <span class="math notranslate nohighlight">\(c\)</span>, as measured at the same height above the surface, are related by the deposition velocity, <span class="math notranslate nohighlight">\(v_g\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[F = v_g \times c\]</div>
+<p>The lifetime of a trace gas with respect to deposition is related to the deposition velocity and the height, <span class="math notranslate nohighlight">\(h\)</span>, to which the trace gas is mixed by the equation:</p>
+<div class="math notranslate nohighlight">
+\[\tau = \frac{h}{v_g}\]</div>
+<p>For trace gases which are removed efficiently at the surface, e g. <span class="math notranslate nohighlight">\(\mathrm{SO_2,~HNO_3,~O_3}\)</span> (land surfaces only),
+values of <span class="math notranslate nohighlight">\(v_g\)</span> are typically of the order of <span class="math notranslate nohighlight">\(\mathrm{1~ cm~ s^{-1}}\)</span>.
+<span class="math notranslate nohighlight">\(\mathrm{SO_2}\)</span> emitted from surface sources is mainly contained in a well-mixed boundary layer of height <span class="math notranslate nohighlight">\(\mathrm{\sim 1~km}\)</span>.
+Its mean deposition velocity for North West Europe is <span class="math notranslate nohighlight">\(\mathrm{\sim 0.8~cm~ s^{-1}}\)</span>, therefore the mean lifetime with respect to dry deposition is approximately 1.4 days.</p>
+<p>Ozone has a similar deposition velocity over land, but has an approximately uniform concentration and can be considered well mixed up to the tropopause at <span class="math notranslate nohighlight">\(\mathrm{12 \ km}\)</span> altitude.
+The lifetime of tropospheric ozone with respect to deposition is therefore much longer, approximately 17 days.</p>
+<p>Aerosol particles are also removed by dry deposition.
+Their deposition velocity is strongly dependent of the particle size.
+Particles below about <span class="math notranslate nohighlight">\(\mathrm{50 \ nm}\)</span> diameter behave like gases with respect to dry deposition and are efficiently removed due to Brownian diffusion.
+Particles in the range of <span class="math notranslate nohighlight">\(\mathrm{2 - 20 \ \mu m}\)</span> are mostly deposited due to inertial impaction
+and very large particles <span class="math notranslate nohighlight">\(\mathrm{&gt; 20~\mu m}\)</span> are removed due to gravitational settling (sedimentation).
+As a result, the deposition velocity for airborne particles shows a minimum of <span class="math notranslate nohighlight">\(\mathrm{0.01~cm~s^{-1}}\)</span> for the particles of <span class="math notranslate nohighlight">\(\mathrm{\sim 500~nm}\)</span> (<span class="math notranslate nohighlight">\(\mathrm{0.5~\mu m}\)</span> – <code class="xref std std-numref docutils literal notranslate"><span class="pre">surface_deposition</span></code>).
+Thus, aerosols in the range <span class="math notranslate nohighlight">\(\mathrm{100 – 2000~nm}\)</span> have the longest atmospheric lifetime and are termed the ‘accumulation mode’.</p>
+<figure class="margin-caption align-default" id="surface-deposition">
+<img alt="../_images/figure22.3.png" src="../_images/figure22.3.png" />
+<figcaption>
+<p><span class="caption-text">a) Schematic illustration of surface deposition; b) size dependant deposition velocity of aerosol particles.</span><a class="headerlink" href="#surface-deposition" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="wet-deposition">
+<h3>Wet Deposition<a class="headerlink" href="#wet-deposition" title="Link to this heading">#</a></h3>
+<p>Wet deposition describes removal in the precipitation elements, cloud, rain, and snow.
+The process involves the incorporation of gases and particles into cloud droplets that then grow and eventually rain or snow out.
+This ‘rain out’ process is also known as ‘in-cloud scavenging’.
+Soluble gases enter the droplets by absorption that may be followed by chemical reaction.
+Aerosol particles may be incorporated into cloud drops by acting as condensation nuclei,
+around which the aqueous or ice particles grow and by coagulation with existing droplets.</p>
+<p>The solubility is described in terms of the Henry’s law constant <span class="math notranslate nohighlight">\(H_X~\mathrm{(M~atm^{—1}})\)</span>
+which for species <span class="math notranslate nohighlight">\(X\)</span> the vapour pressure in the gas phase <span class="math notranslate nohighlight">\(P_X\)</span> is related to the liquid phase concentration <span class="math notranslate nohighlight">\(\mathrm{[X]}_{liquid}\)</span> by:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{[X]}_{liquid} = P_X \times H_X\]</div>
+<p>Values of <span class="math notranslate nohighlight">\(H_X\)</span> cover a large range (<span class="math notranslate nohighlight">\( &lt; 0.1 - 105 \mathrm{M \ atm^{—1}}\)</span>).</p>
+<p>A second mechanism involves the uptake into falling precipitation, termed ‘wash out’, or ‘below-cloud scavenging’.
+Removal times by wash out are of the order of a few hours for water-soluble gases in moderate rain.
+Because of the highly variable nature of precipitation events, quantitative estimation of overall wet deposition rates is difficult.
+As an approximation, the rate of wet deposition is taken as <span class="math notranslate nohighlight">\(\mathrm{\lambda [X]}\)</span> where <span class="math notranslate nohighlight">\(\mathrm{[X]}\)</span> is the concentration of the gas or aerosol
+and <span class="math notranslate nohighlight">\(\lambda\)</span> is the washout (scavenging) coefficient, which is proportional to the seasonal or annual mean precipitation amount
+and is typically of the order of <span class="math notranslate nohighlight">\(0.12 - 0.5 \ \mathrm{day^{-1}}\)</span> (a lifetime of 2 to 8 days).</p>
+<p>Most processes involved in wet deposition are reversible,
+e.g., aerosol particles can be incorporated into a cloud droplet, which may evaporate again producing new particles.
+Equally, trace gases absorbed into particles can evaporate from the particle due to changes of the particle bulk composition (e.g., pH) or due to chemical reactions.</p>
+</section>
+</section>
+<section id="aerosol-chemical-composition">
+<h2>Aerosol Chemical Composition<a class="headerlink" href="#aerosol-chemical-composition" title="Link to this heading">#</a></h2>
+<p>The chemical particle composition can be divided into 5 main categories: inorganic salts, metals, organic compounds, elemental (graphite-like) carbon and water.</p>
+<p>Most abundant inorganic salts are <span class="math notranslate nohighlight">\(\mathrm{(NH_4)_2SO_4}\)</span> and <span class="math notranslate nohighlight">\(\mathrm{(NH_4)NO_3}\)</span> and over the ocean or in areas close to oceans also <span class="math notranslate nohighlight">\(\mathrm{NaCl}\)</span>.
+<span class="math notranslate nohighlight">\(\mathrm{(NH_4)_2SO_4}\)</span> and <span class="math notranslate nohighlight">\(\mathrm{(NH_4)NO_3}\)</span> are formed via secondary processes in the atmosphere, whereas <span class="math notranslate nohighlight">\(\mathrm{NaCl}\)</span> is a primary particle component.</p>
+<p>A large number of metals (exclusively from primary sources) is found in aerosol particles;
+however, they are often only a small fraction (&lt;10%) of the total submicron particle mass.
+At larger diameters (i.e., the coarse mode) and especially in arid areas metals may become much more dominant.
+The most abundant metals found in aerosols are <span class="math notranslate nohighlight">\(\mathrm{Al}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{Si}\)</span> (metalloid), <span class="math notranslate nohighlight">\(\mathrm{Mg}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{K}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{Ca}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{Ti}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{V}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{Fe}\)</span>, and <span class="math notranslate nohighlight">\(\mathrm{Zn}\)</span>.
+Metals have been suggested to be important in the negative health effects of particle.</p>
+</section>
+<section id="heterogeneous-reactions-in-the-atmosphere">
+<h2>Heterogeneous reactions in the atmosphere<a class="headerlink" href="#heterogeneous-reactions-in-the-atmosphere" title="Link to this heading">#</a></h2>
+<p>In order to explain chemical change in the atmosphere we have to take into account, heterogeneous reactions occurring in/on the condensed phase.</p>
+<p>Cloud droplets and aerosol particles provide an important medium for chemical reactions in the atmosphere.</p>
+<p>Water soluble substances, e.g., <span class="math notranslate nohighlight">\(\mathrm{SO_2}\)</span>, acids, <span class="math notranslate nohighlight">\(\mathrm{H_2O_2}\)</span>, transfer readily to aqueous airborne particles,
+where they are adsorbed, solvated, and ionised. Hydrolysis in the condensed phase is an important reaction leading e.g., to formation of nitric acid from <span class="math notranslate nohighlight">\(\mathrm{N_2O_5}\)</span>,
+which is a key process for the <span class="math notranslate nohighlight">\(\mathrm{NO_x}\)</span> budget. Acid-base reactions can lead to formation of non-volatile species.</p>
+<p>Reduced substances can be oxidised by liquid phase oxidants, an important example being <span class="math notranslate nohighlight">\(\mathrm{SO_2}\)</span> which is converted to sulphuric acid in cloud droplets.
+Redox reactions involving hydrogen halides and halogen nitrates, which occur on ice particles are important in stratospheric chemistry,
+because they convert reservoir species to reactive forms of halogen which lead to ozone loss.
+Redox reactions may also be important for release of halogens from sea spray aerosols.</p>
+<p>Some examples of important heterogeneous reactions:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}&amp; \mathrm{Hydrolysis} &amp; \mathrm{N_2O_{5 (aq)} + H_2O \rightarrow 2HNO_3} \\
+&amp; \mathrm{Acid-base} &amp; \mathrm{NH_{3~(g)} + HNO_{3~(g)} \rightarrow NH_4NO_{3~(s)}} \\
+&amp; \mathrm{Redox} &amp; \mathrm{SO_{2~(aq)} + H_2O + O_3 \rightarrow 2H^+ + SO_4^{2-} + O_2} \\
+&amp; \mathrm{Redox} &amp; \mathrm{ClONO_2 + HCl_{(aq)} \rightarrow Cl_2 + HNO_{3~(aq)}} \\
+&amp; \mathrm{Redox} &amp; \mathrm{HOBr + Br^-_{(aq)} \rightarrow Br_2 + OH^-_{(aq)}} \\\end{split}\]</div>
+<section id="rates-of-heterogeneous-reactions-and-resistance-model-of-gas-uptake">
+<h3>Rates of heterogeneous reactions and resistance model of gas uptake<a class="headerlink" href="#rates-of-heterogeneous-reactions-and-resistance-model-of-gas-uptake" title="Link to this heading">#</a></h3>
+<p>Heterogeneous chemistry in the atmosphere involves a series of processes, including diffusion, accommodation (sticking), and evaporation from the surface.
+In the case of liquids, diffusion and dissolution will occur in the condensed phase. Chemical reaction may also happen at the gas-particle interface or in the condensed phase.
+These must be treated together to understand the overall rate of removal from the gas phase, as any one process can act in a rate determining way.
+The processes for liquid particles are represented in <code class="xref std std-numref docutils literal notranslate"><span class="pre">gas_to_liquid</span></code>.</p>
+<figure class="margin-caption align-default" id="gas-to-liquid">
+<img alt="../_images/figure22.4.png" src="../_images/figure22.4.png" />
+<figcaption>
+<p><span class="caption-text">Processes involved in transfer of molecules from the gas to the liquid phase</span><a class="headerlink" href="#gas-to-liquid" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The rate of a heterogeneous process is usually expressed in terms of the uptake coefficient, <span class="math notranslate nohighlight">\(\gamma\)</span>,
+which is defined as the fraction of molecules colliding with the surface that are permanently lost from the gas phase.</p>
+<div class="math notranslate nohighlight">
+\[\gamma = \frac{\text{number of molecules lost from the gas phase per unit time}}{\text{number of molecules colliding with the surface per unit time}}\]</div>
+<p>According to the kinetic theory of gases, the rate of collision of a species <span class="math notranslate nohighlight">\(\mathrm{A}\)</span> at the surface, per unit area, is <span class="math notranslate nohighlight">\(\frac{\mathrm{[A]} c}{4}\)</span>,
+where <span class="math notranslate nohighlight">\(\mathrm{[A]}\)</span> is the concentration (<span class="math notranslate nohighlight">\(\mathrm{molecules~cm^{-3}}\)</span>) of species <span class="math notranslate nohighlight">\(\mathrm{A}\)</span>,
+and <span class="math notranslate nohighlight">\(c\)</span> the mean molecular speed of the gas molecules (<span class="math notranslate nohighlight">\(c = (8 R T/ \pi M)^{1/2}\)</span>).</p>
+<p>The rate of removal of molecules at the surface can be expressed as a first-order process with rate:</p>
+<div class="math notranslate nohighlight">
+\[- \dv{\mathrm{[A]}}{t} = k_{het} \mathrm{[A]}\]</div>
+<p>where the first-order rate constant, <span class="math notranslate nohighlight">\(k_{het}\)</span>, is defined as:</p>
+<div class="math notranslate nohighlight">
+\[k_{het} = \gamma \frac{c}{4} S\]</div>
+<p>where <span class="math notranslate nohighlight">\(S\)</span> is the surface area of the atmospheric particles (N.B. per unit volume of gas, often called
+the surface area density and has units of e.g., <span class="math notranslate nohighlight">\(\mathrm{cm^2~cm^{-3}}\)</span>). As well as providing data on the rate
+of removal of trace gases by aerosol particles, uptake coefficient measurements can be used to
+deduce the mechanisms of the heterogeneous processes.</p>
+<p>A useful approach for dealing with general problems of uptake rate into clouds and aerosols is the resistance model in which each process (gas transport, surface accommodation, solubility, chemical reaction) is expressed as a resistance term.
+Resistances are expressed as the inverse of the dimensionless uptake coefficients.
+The resistances <span class="math notranslate nohighlight">\(1/\gamma_g\)</span> and <span class="math notranslate nohighlight">\(1/\alpha\)</span> represent the resistance due to gas transport and surface accommodation respectively, and <span class="math notranslate nohighlight">\(\gamma_{sol}\)</span> and <span class="math notranslate nohighlight">\(\gamma_{rxn}\)</span> are associated with liquid solubility and chemical reaction respectively.
+On the basis of the model, the overall uptake coefficient is expressed as:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\gamma} = \frac{1}{\gamma_g} + \frac{1}{\alpha} + \frac{1}{\gamma_{sol}} + \frac{1}{\gamma_{rxn}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\gamma\)</span> is the experimentally determined overall net gas uptake coefficient.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./04_atmosphere"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-atmospheric-particles">Introduction to atmospheric particles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#size-distribution-of-atmospheric-aerosols">Size distribution of atmospheric aerosols</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formation-processes-and-sources">Formation processes and sources</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formation-processes-and-processes-affecting-size-distribution">Formation processes and processes affecting size distribution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-sources">Particle sources</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#natural-sources">Natural sources</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#primary-sources">Primary sources</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#secondary-sources">Secondary sources</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#anthropogenic-sources">Anthropogenic sources</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Primary sources</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Secondary sources</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#removal-processes">Removal Processes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dry-deposition">Dry Deposition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wet-deposition">Wet Deposition</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aerosol-chemical-composition">Aerosol Chemical Composition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heterogeneous-reactions-in-the-atmosphere">Heterogeneous reactions in the atmosphere</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rates-of-heterogeneous-reactions-and-resistance-model-of-gas-uptake">Rates of heterogeneous reactions and resistance model of gas uptake</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By the QES Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,531 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Stommel box model for ocean heat transport &#8212; My Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/admonitions.css?v=1588abde" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams", "[tex]/mhchem", "[tex]/color"]}, "tex": {"packages": ["base", "physics", "ams", "mhchem", "color"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '05_globalenvironment/l32';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="My Jupyter Book - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="My Jupyter Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../00_intro/intro.html">1. Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l1.html">1.1. Course Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l2.html">1.2. Where does the energy come from on Earth?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../00_intro/l3.html">1.3. The Carbon Cycle</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01_groundwater/intro.html">2. Surface Waters I: Groundwater</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l4.html">2.1. Groundwater Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l5.html">2.2. Why water moves beneath the surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l6.html">2.3. How we measure and understand water movement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l7.html">2.4. Groundwater challenges and sustainable groundwater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l8.html">2.5. Groundwater Chemistry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_groundwater/l9.html">2.6. Pollution in Rivers</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02_rivers/intro.html">3. Surface Waters II: Rivers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l13.html">3.1. Catchment and drainage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l14.html">3.2. Drainage models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l15.html">3.3. River flows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l16.html">3.4. Reservoirs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l17.html">3.5. Flood waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02_rivers/l18.html">3.6. Flooding in urban environments</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03_cryosphere/intro.html">4. Cryosphere</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l8.html">4.1. Ice in the polar regions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l9.html">4.2. The growth and melting of ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l10.html">4.3. The extent of sea ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l11.html">4.4. Ice sheets and the flow of glacial ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03_cryosphere/l12.html">4.5. Floating ice shelves and the flow of glacial ice</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/05_globalenvironment/l32.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Stommel box model for ocean heat transport</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="stommel-box-model-for-ocean-heat-transport">
+<span id="lecture-32"></span><h1>Stommel box model for ocean heat transport<a class="headerlink" href="#stommel-box-model-for-ocean-heat-transport" title="Link to this heading">#</a></h1>
+<p>Recall from <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:heat_transport</span></code> that the ocean makes a non-trivial contribution to the global heat transport, particularly in the subtropics. Unlike the atmosphere, most of the oceanic heat transport is associated with the mean circulation, rather than eddies. In particular, currents that develop on the western sides of ocean basins make a major contribution to the heat flux. These <em>western boundary current</em> include the Gulf Stream in the North Atlantic and the Kuroshio in the North Pacific.</p>
+<figure class="margin-caption align-default" id="fig-ocean-heat-flux">
+<a class="reference internal image-reference" href="../_images/ocean_heat_flux.png"><img alt="../_images/ocean_heat_flux.png" src="../_images/ocean_heat_flux.png" style="width: 90%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Mean air-sea heat flux. Data from Yu and Weller, 2007. Positive values indicate heat transfer from the atmosphere to the ocean.</span><a class="headerlink" href="#fig-ocean-heat-flux" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>As warm water flows polewards, it encounters cold air and heat is transferred from the ocean to the atmosphere. <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:ocean_heat_flux</span></code> shows the annual average net surface heat flux. The western boundary currents are highlighted as regions with large positive heat fluxes, indicating a large amount of heat going from the ocean to the atmosphere. Instantaneous heat fluxes can be much larger. For example, field work conducted in the Gulf Stream during the winter found ocean surface temperatures of 19-20<span class="math notranslate nohighlight">\(^\circ\)</span>C and air temperatures of <span class="math notranslate nohighlight">\(1-2^\circ\)</span>C with snow, sleet, and rain! The estimated net heat flux from the ocean to the atmosphere during this period was about 1000 W/m<span class="math notranslate nohighlight">\(^2\)</span>.</p>
+<figure class="margin-caption align-default" id="fig-marshall-speer">
+<a class="reference internal image-reference" href="../_images/marshall_speer.png"><img alt="../_images/marshall_speer.png" src="../_images/marshall_speer.png" style="width: 90%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Cartoon of the global meridional overturning circulation.</span><a class="headerlink" href="#fig-marshall-speer" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>When the near-surface water cools, it becomes more dense. Eventually the water becomes dense enough to sink into the interior of the ocean, where it returns to lower latitudes and gradually upwells. This circulation is called the <em>Thermohaline Circulation</em>, or THC, because both temperature (thermo) and salt (haline) control the density of seawater<a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+<p>In this section, we will develop a box model for the Thermohaline Circulation and use it to investigate some important features of the large-scale ocean circulation and heat transport. In one of the practical sessions, we will construct a computer code to solve the box model equations numerically and we will use this to study the time evolution of the system in more detail. In the next two sections we will describe the physical mechanisms underlying the box model to help put it the model in context and to understand the parameter dependence of each of the terms.</p>
+<figure class="margin-caption align-default" id="fig-stommel-box">
+<a class="reference internal image-reference" href="../_images/stommel_box.png"><img alt="../_images/stommel_box.png" src="../_images/stommel_box.png" style="width: 90%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Sketch of the Stommel box model for ocean heat transport.</span><a class="headerlink" href="#fig-stommel-box" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The model that we will use is sketched in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:stommel_box</span></code>. This is often called the `Stommel model’ since it was first proposed by Henry Stommel, a pioneering physical oceanographer at the Woods Hole Oceanographic Institute in Massachusetts, USA. Like the atmosphere box model that we saw in the last section, the Stommel model has two boxes - one for low latitudes (denoted with “l”) and one for high latitudes (denoted wth “h”). Each box represents the mean ocean properties (averaged in longitude and depth) in that region. As before, the high latitude box accounts for the ocean at high latitudes in the northern <em>and</em> southern hemispheres.</p>
+<p>In the ocean, the density of seawater depends on the water temperature, salt content (or salinity), and pressure. The density is a nonlinear function of temperature and salinity, and the equation relating density to temperature, salinity, and pressure is called the <em>equation of state</em>. Since we are considering the depth-averaged water properties, we won’t explicitly consider the pressure dependence. To make the model simpler, we will use a linear approximation to the equation of state in the following form:</p>
+<div class="math notranslate nohighlight" id="equation-eq-linear-eos">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-linear-eos" title="Link to this equation">#</a></span>\[\rho=\rho_0 - \alpha(T-T_0)+\beta(S-S_0),\]</div>
+<p>where <span class="math notranslate nohighlight">\(\rho\)</span> is the density, <span class="math notranslate nohighlight">\(T\)</span> is the temperature, and <span class="math notranslate nohighlight">\(S\)</span> is the salinity, and <span class="math notranslate nohighlight">\(\rho_0\)</span>, <span class="math notranslate nohighlight">\(T_0\)</span>, and <span class="math notranslate nohighlight">\(S_0\)</span> are constant reference values for the density, temperature, and salinity, respectively<a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>. The coefficients in this equation are called the <em>thermal expansion coefficient</em> (<span class="math notranslate nohighlight">\(\alpha\)</span>) and <em>haline contraction coefficient</em> (<span class="math notranslate nohighlight">\(\beta\)</span>).</p>
+<p>The arrows at the top of each box indicate fluxes between the ocean and atmosphere. The salt content in the ocean changes due to evaporation and precipitation. Although the rate of evaporation depends on the temperature of the atmosphere and the ocean (and the wind speed), we will assume that the net freshwater flux is constant and we will denote this by <span class="math notranslate nohighlight">\(E\)</span> (for evaporation). As an extension to the practical project, you could explore the effect of variable evaporation on the model results.</p>
+<p>We will assume that the rate of heat transfer between the ocean and atmosphere is proportional to the difference between the ocean and atmosphere temperature in the high latitude or low latitude box. We will denote the temperate in the atmosphere above the low and high latitude boxes by <span class="math notranslate nohighlight">\(\overline{T_l}\)</span> and <span class="math notranslate nohighlight">\(\overline{T_h}\)</span>. To model the heat exchange between the ocean and atmosphere, we use a ‘relaxation’ term which causes the temperature in the ocean to gradually ‘relax’ towards the temperature in the atmosphere. Specifically, in a model without any exchange between the boxes (<span class="math notranslate nohighlight">\(q=0\)</span>), the temperature in each box would evolve according to</p>
+<div class="math notranslate nohighlight">
+\[\frac{dT_{l,h}}{dt}=\gamma (\overline{T}_{l,h}-T_{l,h}),\]</div>
+<p>where the subscript <span class="math notranslate nohighlight">\(l,h\)</span> indicates that the equation applies for <span class="math notranslate nohighlight">\(T_l\)</span> and <span class="math notranslate nohighlight">\(T_h\)</span>. Solutions to this equation are of the form (see example sheet problem)</p>
+<div class="math notranslate nohighlight" id="equation-eq-stommel-heat-only">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-stommel-heat-only" title="Link to this equation">#</a></span>\[T_{lh}=\overline{T}_{l,h}+(C-\overline{T}_{l,h})e^{-\gamma t},\]</div>
+<p>where <span class="math notranslate nohighlight">\(C\)</span> is the temperature at <span class="math notranslate nohighlight">\(t=0\)</span> (the initial condition). Note that to solve this equation we have assumed that the atmospheric temperature, <span class="math notranslate nohighlight">\(\overline{T}_{l,h}\)</span> is constant. From the form of Eq. <a class="reference internal" href="#equation-eq-stommel-heat-only">()</a>, we see that the temperature in each box decays (or relaxes) exponentially from the initial temperature towards the atmospheric temperature at a rate set by <span class="math notranslate nohighlight">\(\gamma\)</span>.</p>
+<p>The last term that we need to specify is the transfer of water between the two boxes. This flux is intended to represent the Thermohaline Circulation (THC), which as we have said carries warm water from low to high latitudes near the surface, while returning at depth. The term <span class="math notranslate nohighlight">\(q\)</span> will denote the strength of this circulation, and when <span class="math notranslate nohighlight">\(q&gt;0\)</span>, the water will move as indicated in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:stommel_box</span></code>. Since the THC involves the water becoming more dense and sinking at high latitudes, we anticipate that the strength of the circulation will be proportional to the density difference between the high and low latitude boxes, i.e.</p>
+<div class="math notranslate nohighlight" id="equation-eq-stommel-q">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-stommel-q" title="Link to this equation">#</a></span>\[q=k(\rho_h-\rho_l)=k(\alpha \Delta T - \beta \Delta S),\]</div>
+<p>where <span class="math notranslate nohighlight">\(k\)</span> is a constant of proportionality, and we have used the linear equation of state to relate the difference in density to differences in temperature and salinity with <span class="math notranslate nohighlight">\(\Delta T=T_l-T_h\)</span> and <span class="math notranslate nohighlight">\(\Delta S=S_l-S_h\)</span> denoting the temperature and salinity differences between the low and high latitude boxes. Note from the form of Eq. <a class="reference internal" href="#equation-eq-stommel-q">()</a> that <span class="math notranslate nohighlight">\(q=0\)</span> when <span class="math notranslate nohighlight">\(\rho_l=\rho_h\)</span>. The circulation is non-zero when there are differences in temperature and/or salinity between low and high latitudes. Which of these factors is more important will depend on the climate state, and we will have the opportunity to explore this in the practical.</p>
+<p>The heat flux carried out of a box is proportional to the product of the circulation strength (<span class="math notranslate nohighlight">\(q\)</span>) and the temperature of the outgoing box. Similarly, the salt flux is proportional to the product of <span class="math notranslate nohighlight">\(q\)</span> and the salinity of the outgoing box. This formulation requires knowledge of the direction of the flow, and hence our model will only be valid for <span class="math notranslate nohighlight">\(q&gt;0\)</span> (the expected direction of the THC).</p>
+<p>Putting this together, the equations for the Stommel model can be written:</p>
+<div class="math notranslate nohighlight" id="equation-eq-stommel-model">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-stommel-model" title="Link to this equation">#</a></span>\[\begin{split}\frac{dT_h}{dt} &amp;= q \Delta T + \gamma(\overline{T}_h - T_h),\\
+\frac{dT_l}{dt} &amp;= -q \Delta T + \gamma(\overline{T}_l - T_l),\\
+\frac{dS_h}{dt} &amp;= q \Delta S - E,\\
+\frac{dS_l}{dt} &amp;= -q \Delta S + E,\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Delta T=T_l-T_h\)</span>, <span class="math notranslate nohighlight">\(\Delta S=S_l-S_h\)</span>, and <span class="math notranslate nohighlight">\(q=k(\alpha \Delta T - \beta \Delta S)\)</span> as defined above.</p>
+<p>In the practical project, we will solve the equations for the Stommel model numerically. Here, we will look for steady state solutions in the limit when the ocean rapidly relaxes towards the atmospheric temperature. Specifically, let’s consider the limit when <span class="math notranslate nohighlight">\(\gamma^{-1}\ll q^{-1}\)</span> (or equivalanetly <span class="math notranslate nohighlight">\(\gamma\gg q\)</span>). In this limit, the ocean temperature will remain close to the atmospheric temperature, or <span class="math notranslate nohighlight">\(T_l\simeq \overline{T}_l\)</span> and <span class="math notranslate nohighlight">\(T_h \simeq \overline{T}_h\)</span>. If we further assume that <span class="math notranslate nohighlight">\(\overline{T}_l\)</span>, <span class="math notranslate nohighlight">\(\overline{T}_h\)</span>, and <span class="math notranslate nohighlight">\(E\)</span> are all constant, then we can subtract the last two equations in the Stommel model to give</p>
+<div class="math notranslate nohighlight">
+\[\frac{d\Delta S}{dt}=-2q\Delta S + 2E.\]</div>
+<p>Taking the time derivative of Eq. <a class="reference internal" href="#equation-eq-stommel-q">()</a> with <span class="math notranslate nohighlight">\(d\Delta T/dt=0\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[\frac{dq}{dt}=-k\beta \frac{d\Delta S}{dt}.\]</div>
+<p>Combining these two equations, we find that</p>
+<div class="math notranslate nohighlight" id="equation-eq-stommel-dqdt-intermediate">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-stommel-dqdt-intermediate" title="Link to this equation">#</a></span>\[\frac{dq}{dt}=2k\beta q\Delta S - 2k\beta E.\]</div>
+<p>We can write this as a single equation for <span class="math notranslate nohighlight">\(q\)</span> by re-arranging Eq. <a class="reference internal" href="#equation-eq-stommel-q">()</a>:</p>
+<div class="math notranslate nohighlight" id="equation-eq-stommel-delta-s">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-stommel-delta-s" title="Link to this equation">#</a></span>\[\Delta S = \frac{\alpha k \overline{\Delta T} - q}{k\beta},\]</div>
+<p>where <span class="math notranslate nohighlight">\(\overline{\Delta T}=\overline{T}_l-\overline{T}_h\)</span>, <span class="math notranslate nohighlight">\(\Delta T = \overline{\Delta T}\)</span> from the assumption of <span class="math notranslate nohighlight">\(\gamma^{-1}\ll q^{-1}\)</span>. Using Eq. <a class="reference internal" href="#equation-eq-stommel-delta-s">()</a> in Eq. <a class="reference internal" href="#equation-eq-stommel-dqdt-intermediate">()</a> gives</p>
+<div class="math notranslate nohighlight" id="equation-eq-stommel-dqdt">
+<span class="eqno">()<a class="headerlink" href="#equation-eq-stommel-dqdt" title="Link to this equation">#</a></span>\[\frac{dq}{dt}=-2q^2 + 2\alpha kq\overline{\Delta T} - 2k\beta E.\]</div>
+<p>Steady state solutions satisfy a quadratic equation where the right hand side of Eq. <a class="reference internal" href="#equation-eq-stommel-dqdt">()</a> is zero. Solutions to this quadratic equation are</p>
+<div class="math notranslate nohighlight">
+\[q=\frac{\alpha k \overline{\Delta T}}{2} \pm \sqrt{\left(\frac{\alpha k \overline{\Delta T}}{2}\right)^2 - k\beta E}.\]</div>
+<p>An interesting feature of the Stommel model is that it has multiple equilibria. In fact, another pair of equilibria emerge if we allow <span class="math notranslate nohighlight">\(q&lt;0\)</span>. It turns out that two of these equilibria are stable, meaning that if the system is given a small perturbation to the equilibrium value (say <span class="math notranslate nohighlight">\(q=q_e+\epsilon\)</span> where <span class="math notranslate nohighlight">\(\epsilon\)</span> is small), then the solution will return to the equilibrium value <span class="math notranslate nohighlight">\(q=q_e\)</span>. This is a very important result for our understanding of the climate system. It implies that the climate system can `switch’ between multiple states. This feature has been used to explain rapid climate variability during the Pleistocene. This has also led to concern that climate change could push the climate system to new state where the Thermohaline Circulation shuts down and the Earth is sent into a new ice age.</p>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id3" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Alternatively, the circulation is sometimes referred to as the <em>Meridional Overturning Circulation</em>, or MOC, because the circulation takes place in the <em>meridional</em> direction - that is in the direction of the meridians or north/south.</p>
+</aside>
+<aside class="footnote brackets" id="id4" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>The appoximation in Eq. <a class="reference internal" href="#equation-eq-linear-eos">()</a> is equivalent to expanding the full nonlinear equation of state in a multi-variate Taylor series and keeping just the first two (constant + linear) terms.</p>
+</aside>
+</aside>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./05_globalenvironment"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By the QES Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
