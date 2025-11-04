@@ -12,7 +12,7 @@ The global context of Environmental Sciences
 :::
 
 :::{grid-item-card}
-:link: 01_groundwater/intro
+:link: 01_groundwater/00_intro
 Groundwater 🌧
 ^^^
 How water flows through the Earth.
