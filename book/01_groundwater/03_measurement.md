@@ -4,7 +4,7 @@
 
 A concept that derives from the idea of a distribution of {term}`hydraulic head` is the distribution of a piezometric or potentiometric surface across a groundwater catchment.
 This is the level to which the {term}`water table` would rise (or fall) if it were not confined in the subsurface ({numref}`potentiometric_surface`).
-In an {term}`unconfined aquifer`, this is just the {term}`water table` – or where the water is found.
+In an {term}`unconfined aquifer`, this is just the {term}`water table` - or where the water is found.
 In the case of a {term}`confined aquifer`, we can think of this having a {term}`water table` that represents the total potential energy within the {term}`confined aquifer`.
 More intuitively, if we were to drill a well into the {term}`aquifer`, the water level would rise to this level (which differs from the actual {term}`water table` itself).
 This is called the **potentiometric surface** (or **piezometric surface**) and is given by the red dashed line below.
@@ -88,7 +88,7 @@ To continue this calculation we have to make a few assumptions:
 3. We will keep $Q$ constant (the flow is steady).
 This keeps other things (like the size of the cone) constant as well.
 
-If we consider a cylinder of the aquifer of radius $r$, and height $b$ around the well, then if we apply Darcy’s Law, the rate of flow out of the well (and into the well from the groundwater) – $Q$ – is given by
+If we consider a cylinder of the aquifer of radius $r$, and height $b$ around the well, then if we apply Darcy’s Law, the rate of flow out of the well (and into the well from the groundwater) - $Q$ - is given by
 
 ```{margin} Units!
 :class: units
@@ -184,7 +184,7 @@ figclass: margin-caption
 
 Building on what we have discussed about hydraulic head in groundwater, we can consider the Navier-Stokes equations, which are partial differential equations that govern the motion of incompressible fluids. These equations constitute the basic equations for fluid mechanics. They are grounded in the concepts of conservation of mass, conservation of momentum, and conservation of energy.
 
-Conservation of mass means that mass in a control volume (basically a bit of the subsurface fluid – see {numref}`extension_control_volume`) cannot be created or destroyed.
+Conservation of mass means that mass in a control volume (basically a bit of the subsurface fluid - see {numref}`extension_control_volume`) cannot be created or destroyed.
 Conservation of momentum means that momentum is not created or destroyed, and changes only because of forces acting on the control volume.
 Conservation of energy derives from the first law of thermodynamics: work and heat added to the system will result in an increase in the total energy of the system.
 

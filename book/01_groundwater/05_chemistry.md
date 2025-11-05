@@ -3,9 +3,9 @@
 # Groundwater Chemistry
 
 A key point from the groundwater lectures is the connection between groundwater
-and surface water – that groundwater levels reflect changes in surface water.
-In the lecture we showed data for a hydrograph – that is the level of water in
-a river – and the underlying {term}`water table`.
+and surface water - that groundwater levels reflect changes in surface water.
+In the lecture we showed data for a hydrograph - that is the level of water in
+a river - and the underlying {term}`water table`.
 There is a small delay, but the {term}`water table` follows changes in the flow
 of the local river.
 
@@ -124,7 +124,7 @@ How does the chemistry of groundwater change over distance?
 5. **Development of Anoxic Conditions**
 
    The longer groundwater is out of contact with the atmosphere,
-   the more likely it is to become anoxic – and lose its oxygen.
+   the more likely it is to become anoxic - and lose its oxygen.
    Remember that redox reactions are the ones that involve the exchange of
    electrons.
    In the subsurface there are many things that use up oxygen (respiration,
@@ -154,7 +154,7 @@ dispersion, with possible chemical reactions within the box.
 ```
 
 If we consider a control volume in the groundwater where we have flow of a
-contaminant (or molecule or element – here we will call it a 'solute', meaning
+contaminant (or molecule or element - here we will call it a 'solute', meaning
 a component dissolved in groundwater) through that volume, we can apply mass
 conservation to this box.
 Solute can move into the box or out of the box, and chemical reactions can

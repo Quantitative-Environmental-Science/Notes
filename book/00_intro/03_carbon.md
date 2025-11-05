@@ -52,7 +52,7 @@ For example:
 - Physical reactions that remove gas, like the dissolution of carbon dioxide into the ocean that scales with wind speed, will each remove more carbon dioxide when they happen.
 - Indirectly, increased carbon in the atmosphere increases temperature, and this can accelerate things like photosynthesis and other temperature-dependent reactions.
 
-What this means practically is that at long enough timescales, most systems will trend towards steady state –
+What this means practically is that at long enough timescales, most systems will trend towards steady state -
 that is if there is a change in the inputs, the outputs will adjust to match the inputs.
 
 ```{figure} ./figures/figure3.2.png

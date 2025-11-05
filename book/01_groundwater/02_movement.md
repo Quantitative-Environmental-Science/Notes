@@ -25,10 +25,10 @@ $$
 ```
 
 Here the pipe (length $l$ and cross-sectional area $A$) was put at various angles to the horizontal
-(determined by $\Delta h$ – or the height difference between one end of the pipe to the other end of the pipe)
+(determined by $\Delta h$ - or the height difference between one end of the pipe to the other end of the pipe)
 and the flow rate, $Q$, was measured (in units of volume-per-time).
 
-Specifically, we will call $\frac{\Delta h}{\Delta l}$ – that is the change in height over a distance along the pipe - the **{term}`hydraulic gradient`**.
+Specifically, we will call $\frac{\Delta h}{\Delta l}$ - that is the change in height over a distance along the pipe - the **{term}`hydraulic gradient`**.
 
 ```{figure} ./figures/figure5.2.jpeg
 ---
@@ -69,7 +69,7 @@ Note that often you will see $q$ rather than $Q$ used where $q$ is {term}`specif
 q = \frac{Q}{A}
 ```
 
-Let's learn more about this **{term}`hydraulic conductivity`** – $K$.
+Let's learn more about this **{term}`hydraulic conductivity`** - $K$.
 We can derive that the units are length-per-time, or often $\mathrm{m \ s^{-1}}$.
 Studies of actual groundwater systems have shown that it can range over 12 orders of magnitude in various materials below the subsurface ({numref}`fluxes`).
 
@@ -105,7 +105,7 @@ $$
 K = Cd^2 \frac{\rho g}{\mu}
 ```
 
-Here, $Cd^2$ is a property of the medium – where $d$ is the diameter of the grains, and $C$ is a constant of proportionality,
+Here, $Cd^2$ is a property of the medium - where $d$ is the diameter of the grains, and $C$ is a constant of proportionality,
 which covers grain packing, how round the grains are, how much cement is around.
 Meanwhile, $\frac{\rho g}{\mu}$ is a property of the fluid,
 with $\rho g$ being the specific weight of the fluid ($9800 \ \mathrm{N \ m^3}$) in the case of water
@@ -114,7 +114,7 @@ and $\mu$ being the dynamic viscosity of the fluid ($1.386 \times 10^{-3} \ \mat
 While {term}`hydraulic conductivity` is a function of the medium and the fluid (imagine trying to put honey through a groundwater system!), 
 in reality, as for most groundwaters the specific weight and dynamic viscosity vary little,
 what is important is the soil/rock/subsurface (medium) through which you are trying to push groundwater.
-Mathematically, we call this $k$ – and it is known as **{term}`permeability`**.
+Mathematically, we call this $k$ - and it is known as **{term}`permeability`**.
 
 ```{margin} Units!
 :class: units

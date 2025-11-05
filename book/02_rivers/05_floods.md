@@ -303,7 +303,7 @@ F = \int_0^h z P(z) dz
 ```
 
 To prevent the barrier rolling over there needs to be a system to withstand this torque,
-which may include a series of inclined support rods pressing on the top of the barrier from the ground on the non—wet side of the barrier.
+which may include a series of inclined support rods pressing on the top of the barrier from the ground on the non-wet side of the barrier.
 
 
 

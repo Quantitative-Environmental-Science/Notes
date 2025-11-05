@@ -1,9 +1,9 @@
 (lecture_22)=
 # Aerosols
-```{rubric} Formation, growth, composition, and removal processes
-```
 
-```{highlights}
+Formation, growth, composition, and removal processes
+
+```{tip} Key Concepts
 Aims:
 1.	To describe the basic characteristics of atmospheric particulate matter such as size distribution and chemical composition, and their formation processes, sources, and removal processes.
 2.	Outline the kinetic processes determining heterogeneous reaction rates.
@@ -102,7 +102,7 @@ i.e., being responsible for the initial growth of the clusters into stable parti
 name: size_evolution
 figclass: margin-caption
 ---
-Typical evolution of particle size distribution after a particle nucleation event (Beijing 2—7 October 2013).
+Typical evolution of particle size distribution after a particle nucleation event (Beijing 2-7 October 2013).
 White dashed curve represents the mean diameter.
 From Guo et al 2014, Lee et al 2019.
 ```
@@ -211,7 +211,7 @@ Soot aerosols are generated in incomplete combustion processes and consist mainl
 
 ##### Secondary sources
 
-- **Sulphate and Nitrate.** $\mathrm{SO_4^{2—}}$ and $\mathrm{NO_3^—}$ are major components of tropospheric aerosol.
+- **Sulphate and Nitrate.** $\mathrm{SO_4^{2-}}$ and $\mathrm{NO_3^-}$ are major components of tropospheric aerosol.
 They are formed from gaseous precursors ($\mathrm{SO_2, \ NO_2}$) through oxidation reactions mainly with OH in the gas phase or condensed phase leading to $\mathrm{H_2SO_4}$ and $\mathrm{HNO_3}$, respectively.
 
 Oxidation of $\mathrm{SO_2}$ always results in the formation of aerosol mass, due to the very low vapour pressure of $\mathrm{H_2SO_4}$.
@@ -282,8 +282,8 @@ Their deposition velocity is strongly dependent of the particle size.
 Particles below about $\mathrm{50 \ nm}$ diameter behave like gases with respect to dry deposition and are efficiently removed due to Brownian diffusion. 
 Particles in the range of $\mathrm{2 - 20 \ \mu m}$ are mostly deposited due to inertial impaction 
 and very large particles $\mathrm{> 20~\mu m}$ are removed due to gravitational settling (sedimentation). 
-As a result, the deposition velocity for airborne particles shows a minimum of $\mathrm{0.01~cm~s^{-1}}$ for the particles of $\mathrm{\sim 500~nm}$ ($\mathrm{0.5~\mu m}$ – {numref}`surface_deposition`).
-Thus, aerosols in the range $\mathrm{100 – 2000~nm}$ have the longest atmospheric lifetime and are termed the ‘accumulation mode’. 
+As a result, the deposition velocity for airborne particles shows a minimum of $\mathrm{0.01~cm~s^{-1}}$ for the particles of $\mathrm{\sim 500~nm}$ ($\mathrm{0.5~\mu m}$ - {numref}`surface_deposition`).
+Thus, aerosols in the range $\mathrm{100 - 2000~nm}$ have the longest atmospheric lifetime and are termed the ‘accumulation mode’. 
 
 ```{figure} ./figures/figure22.3.png
 ---
@@ -302,14 +302,14 @@ Soluble gases enter the droplets by absorption that may be followed by chemical 
 Aerosol particles may be incorporated into cloud drops by acting as condensation nuclei,
 around which the aqueous or ice particles grow and by coagulation with existing droplets.
 
-The solubility is described in terms of the Henry’s law constant $H_X~\mathrm{(M~atm^{—1}})$
+The solubility is described in terms of the Henry’s law constant $H_X~\mathrm{(M~atm^{-1}})$
 which for species $X$ the vapour pressure in the gas phase $P_X$ is related to the liquid phase concentration $\mathrm{[X]}_{liquid}$ by:
 
 ```{math}
 \mathrm{[X]}_{liquid} = P_X \times H_X
 ```
 
-Values of $H_X$ cover a large range ($ < 0.1 - $\mathrm{10^{5}}$ \mathrm{M \ atm^{—1}}$).
+Values of $H_X$ cover a large range ($ < 0.1 - $\mathrm{10^{5}}$ \mathrm{M \ atm^{-1}}$).
 
 A second mechanism involves the uptake into falling precipitation, termed 'wash out', or 'below-cloud scavenging'.
 Removal times by wash out are of the order of a few hours for water-soluble gases in moderate rain.

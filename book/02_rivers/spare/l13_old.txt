@@ -104,7 +104,7 @@ Left, a stretch of the Missouri river during normal flow. Right, the same stretc
 
 To set the scene for modelling runoff, it is important to assess the volume flux involved in different types of rain event.
 Light rain may lead to $0.1 \ \mathrm{mm \ hour^{-1}}$; moderate rain $1 \ \mathrm{mm \ hour^{-1}}$ and heavy rain may be $10 \ \mathrm{mm \ hour^{-1}}$.
-If a river has a catchment area of $100 \times 100 \ \mathrm{km}$, corresponding to $1010 \ \mathrm{m}^2$ then the volume of rain which falls in 1 hour may range from $107 – 109 \ \mathrm{m}^3$.
+If a river has a catchment area of $100 \times 100 \ \mathrm{km}$, corresponding to $1010 \ \mathrm{m}^2$ then the volume of rain which falls in 1 hour may range from $107 - 109 \ \mathrm{m}^3$.
 The surface run-off and some of the drainage fraction of this volume will flow into the river.
 If the rain fall were to flow directly into the river, it would require a flow rate capacity of about $3 \times 10^3 - 3 \times 10^5 \ \mathrm{m^3s^{-1}}$.
 A large river may have a width of $1000 \ \mathrm{m}$ and depth of $10 \ \mathrm{m}$, and so the smaller flux could be carried down the river at a speed of about $0.3 \ \mathrm{m s^{-1}}$ but the larger rainfall event would require a flow rate of $30 \ \mathrm{m s^{-1}}$ if the rain directly entered the river.
@@ -193,7 +193,7 @@ If $W$ increases in one zone, the run-off into the river from this zone will inc
 
 ```{math}
 :label: flow_sum
-\frac{dW}{dt} = R – kW – I - T
+\frac{dW}{dt} = R - kW - I - T
 ```
 
 where $R$ is the rainfall rate and $kW$ is the run-off rate which we assume is linear in the value of $W$, the surface water storage in this zone.
@@ -279,7 +279,7 @@ and then
 
 ```{math}
 :label: not_raining
-W(t) = W(T) e^{-k(t-T)} – I \frac{\left(1 – e^{-k(t-T)}\right)}{k} \mathsf{\; after \; the \; rain \; stops, \;} t>T
+W(t) = W(T) e^{-k(t-T)} - I \frac{\left(1 - e^{-k(t-T)}\right)}{k} \mathsf{\; after \; the \; rain \; stops, \;} t>T
 ```
 
 In some cases there may be a capillary entry pressure for the surface water to drain into the soil/clay below the surface and this is usually given in terms of the interfacial tension, $\sigma$ , and the size of the pore throats, $r$

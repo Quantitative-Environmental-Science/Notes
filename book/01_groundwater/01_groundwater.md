@@ -86,9 +86,9 @@ figclass: margin-caption
 ## Aquifers
 
 As we consider groundwater systems, we can first think about the key vocabulary we use to describe them (we did this above with {term}`infiltration`, and runoff, and {term}`water table`).
-**{term}`Aquifer`** comes from two Latin words for water (aqua) and bear (ferre) – and literally means water-bearing formation.
+**{term}`Aquifer`** comes from two Latin words for water (aqua) and bear (ferre) - and literally means water-bearing formation.
 It is the part of the ground below the {term}`water table` where groundwater can not only exist, but there is enough space between the solid bits for groundwater to move.
-This is in contrast to an **{term}`aquitard`**, which restricts (or retards – slows) water flow,
+This is in contrast to an **{term}`aquitard`**, which restricts (or retards - slows) water flow,
 and at the extreme and **{term}`aquiclude`** stops (or precludes) water flow all together.
 
 Within aquifers we talk about **{term}`confined aquifers<confined aquifer>`** and **{term}`unconfined aquifers<unconfined aquifer>`**.
@@ -108,7 +108,7 @@ In the schematic in {numref}`aquifer`, 'confining units' are aquitards, and the 
 It should be clear that the {term}`residence time` of water in a {term}`confined aquifer` is much longer than it is in an {term}`unconfined aquifer`.
 Furthermore, if we think about a toxic chemical spill at the surface, an {term}`unconfined aquifer` will get more of the toxin leaking into it as it isn't protected, where a {term}`confined aquifer` often is protected from surface chemicals through the aquitard, or confining unit.
 
-Sometimes – even often - the pressure in a {term}`confined aquifer` is greater than that at the surface.
+Sometimes - even often - the pressure in a {term}`confined aquifer` is greater than that at the surface.
 This is in part because of gas in the water that exsolves, and chemical reactions that take place and generate gas.
 The gas can't escape because of the confining units, therefore, when a well is drilled into the high-pressure aquifer, the water moves from high pressure (depth) to low pressure (surface).
 This is called an **{term}`artisan well`**.

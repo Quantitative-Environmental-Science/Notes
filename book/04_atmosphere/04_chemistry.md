@@ -2,14 +2,13 @@
 
 # The chemistry of pollutants
 
-```{rubric} Oxidation, phase-transitions, steady-state burdens
-```
+Oxidation, phase-transitions, steady-state burdens
 
 The chemistry of pollutants: we will review the mechanism of loss of pollutants in the atmosphere. 
 This occurs there four main routes: gas-phase oxidation, heterogeneous uptake, photolysis and gas-to-aerosol partitioning.
 We will calculate how these different processes impact the lifetime of a pollutant and calculate the steady state burden of $\mathrm{NO_2}$.
 
-```{highlights}
+```{tip} Key Concepts
 Aims:
 1. To describe the rates of changes of pollutants in the atmosphere through different processes.
 2. To calculate the steady state burden of a pollutant in the atmosphere.

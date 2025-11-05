@@ -2,10 +2,9 @@
 
 # Air pollution and climate
 
-```{rubric} Cloud formation, aerosol-cloud interactions
-```
+Cloud formation, aerosol-cloud interactions
 
-```{highlights}
+```{tip} Key Concepts
 Aims:
 
 1. To describe the direct effect of aerosols on climate (absorption vs. scattering of radiation).
@@ -143,7 +142,7 @@ When discussing cloud droplet formation, the **saturation ratio ($S$)** and **su
 A parcel of air which is saturated with respect to water defines the concept of **relative humidity ($\mathrm{RH}$)**, since relative humidity is defined as the mass mixing ratio $\omega$ of a parcel at a particular temperature and pressure, compared to its saturation mixing ratio value at the same temperature and pressure:
 
 ```{math}
-:label: relative_humidity
+:label: eq:relative_humidity
 \mathrm{RH} = \frac{\omega}{\omega_s(\rho, T)} \approx \frac{e}{e_s}
 ```
 
@@ -217,7 +216,7 @@ width: 80%
 ---
 Schematic of the saturation vapour pressure for (a) pure water, and (b) an ideal solution.
 The white disks denote water molecules, and the black disks dissolved molecules.
-The reduction in vapour pressure from (a) to (b) corresponds to there being fewer sites from where water molecules can escape through the air–water interface.
+The reduction in vapour pressure from (a) to (b) corresponds to there being fewer sites from where water molecules can escape through the air-water interface.
 Figure from Lohmann et al. [2016].
 ```
 
@@ -283,7 +282,7 @@ $S_c$ of a specific Koehler curve is the minimum saturation ratio that is requir
 Theoretically, it could grow even larger, but the growth rate becomes slower the larger the droplet, and more efficient growth mechanisms such as growth by **collision-coalescence** (a.k.a. accretion) with other droplets will take over.
 If the droplet has grown to $r > r_c$, it is called an **activated droplet**.
 All droplets that have a critical saturation ratio $S_c < S_{max}$ can thus be activated, where $S_{max}$ is the **maximum** **supersaturation** reached in the cloud.
-$S_{max}$ is itself a function of updraft velocity – in clouds with faster updrafts (such as storm clouds) $S_{max}$ is higher, meaning smaller particles can be activated and more droplets are formed overall.
+$S_{max}$ is itself a function of updraft velocity - in clouds with faster updrafts (such as storm clouds) $S_{max}$ is higher, meaning smaller particles can be activated and more droplets are formed overall.
 In the context of cloud formation, the number of activated particles is always small (about $200 \ \mathrm{cm^{-3}}$) compared with the total number of particles in the atmosphere.
 
 Activation of nucleation-mode aerosol particles requires very high supersaturations that do not exist in the atmosphere.

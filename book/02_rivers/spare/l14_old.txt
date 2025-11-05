@@ -145,7 +145,7 @@ If a reservoir has storage volume $V$ then the volume of water $V_w$ in the rese
 
 ```{math}
 :label: reservoir_eqn
-\frac{d V_w}{dt} = kW – \mathrm{Out}
+\frac{d V_w}{dt} = kW - \mathrm{Out}
 ```
 
 where $kW$ is the inflow from the drainage system, channelled into the reservoir, and $\mathrm{Out}$ is the outflow flow from the reservoir to the river.

@@ -1,10 +1,9 @@
 (lecture_19)=
 # An overview of the atmosphere
 
-```{rubric} Structure, composition and radiative processes
-```
+Structure, composition and radiative processes
 
-```{highlights}
+```{tip} Key Concepts
 Aims:
 1. To describe the basic structure of the atmosphere and understand what physical processes lead to the distinct "layers" present in Earth's atmosphere
 2. Recap on the radiative budget of the atmosphere and how different constituents affect the Earth's radiative balance.
@@ -29,7 +28,7 @@ with, in many respects, different photochemical and transport processes dominati
 A very important first question is why this distinction can be made and why it is useful to do so.
 We should also ask why higher altitudes are not considered.
 The answers rest with the _physical structure_ of the atmosphere
-– which is itself a function of both physical processes (gravity, buoyancy effects)
+- which is itself a function of both physical processes (gravity, buoyancy effects)
 and _photochemistry and spectroscopy_ (absorption of visible solar radiation by $\mathrm{O_2}$ and $\mathrm{O_3}$,
 and emission in the infra-red by $\mathrm{CO_2}$).
 This leads to both a physical barrier between the two regions and quite different photochemical environments, these aspects are discussed below.
@@ -111,7 +110,7 @@ Temperature structure of the atmosphere.
 ```
 
 
-### The tropospheric temperature profile – heating from below
+### The tropospheric temperature profile - heating from below
 
 The troposphere is heated largely from below - by solar radiation heating the Earth's surface, heating the nearby air etc.
 The upshot is that this less dense air then has a tendency to rise (by processes equivalent to convection).
@@ -121,11 +120,11 @@ In doing so it performs work on the external environment and if no external heat
 From the First Law of Thermodynamics: $\dd{U} = \dd{q} + \dd{w}$
 
 where $dU$ is the change in internal energy, $dq$ the heat supplied _to_ the system and $dw$ the work done _on_ it.
-If $\dd{q} = 0$ (an adiabatic process i.e. no heat is given off to the environment) and $\dd{w} = –p \dd{V}$ (expansion work, done _by_ the rising gas), we can write
+If $\dd{q} = 0$ (an adiabatic process i.e. no heat is given off to the environment) and $\dd{w} = -p \dd{V}$ (expansion work, done _by_ the rising gas), we can write
 
 ```{math}
 :label: internal_energy_diff
-\dd{U} = – p \dd{V}
+\dd{U} = - p \dd{V}
 ```
 
 From the definition of enthalpy ($H = U + pV$)
@@ -145,38 +144,38 @@ From the hydrostatic equation, the altitude dependence of pressure is given by
 
 ```{math}
 :label: p_as_alt
-\dd{p} = – \rho g \dd{z}
+\dd{p} = - \rho g \dd{z}
 ```
 
 This allows us to write
 
 ```{math}
 :label: enth_as_alt
-\dd{H} = –(V \rho) g \dd{z} = – Mg \dd{z}
+\dd{H} = -(V \rho) g \dd{z} = - Mg \dd{z}
 ```
 
-where $M$ ($\mathrm{kg \ mol^{–1}}$) is the molar mass.
+where $M$ ($\mathrm{kg \ mol^{-1}}$) is the molar mass.
 The definition of the molar heat capacity, $C_p = \dv{H}{T}$ allows us to rewrite the above
 
 ```{math}
 :label: hc@p_as_alt
-C_p \dd{T} = –Mg \dd{z}
+C_p \dd{T} = -Mg \dd{z}
 ```
 
-So, the altitude dependence of temperature is given by $\dv{T}{z} = – M g / Cp$
+So, the altitude dependence of temperature is given by $\dv{T}{z} = - M g / Cp$
 
-Nitrogen and oxygen have very similar heat capacities of about $29 \mathrm{J \ mol^{-1} \ K^{–1}}$ and so using an average molar mass for air of $28.8 \mathrm{g} \ \mathrm{mol^{–1}}$, we get a rate of change of temperature with altitude
+Nitrogen and oxygen have very similar heat capacities of about $29 \mathrm{J \ mol^{-1} \ K^{-1}}$ and so using an average molar mass for air of $28.8 \mathrm{g} \ \mathrm{mol^{-1}}$, we get a rate of change of temperature with altitude
 
 ```{math}
 :label: abd_lapse_rate
 \dv{T}{z} = -9.8 \mathrm{K \ km^{-1}}
 ```
 
-which is termed the _(dry) adiabatic lapse rate_, or $\Gamma_{ad} = 9.8 \ \mathrm{K \ km^{–1}}$.
-In fact latent heat release from condensing water vapour heats the ascending air, leading to an average actual (environmental) lapse rate, $\Gamma_{\mathrm{env}} = 6.5 \ \mathrm{K \ km^{–1}}$.
+which is termed the _(dry) adiabatic lapse rate_, or $\Gamma_{ad} = 9.8 \ \mathrm{K \ km^{-1}}$.
+In fact latent heat release from condensing water vapour heats the ascending air, leading to an average actual (environmental) lapse rate, $\Gamma_{\mathrm{env}} = 6.5 \ \mathrm{K \ km^{-1}}$.
 This drop in temperature with altitude can be seen in {numref}`atmosphere_T`
 
-### The stratospheric temperature profile – heating from above
+### The stratospheric temperature profile - heating from above
 
 By contrast, the stratosphere is heated from above.
 Solar radiation is absorbed by $\mathrm{O_3}$ (and at higher altitudes by $\mathrm{O_2}$).
@@ -212,7 +211,7 @@ Consider an idealised temperature profile ({numref}`unstable_T`) with an _enviro
 As a notional air parcel is displaced upwards from point A, it will cool at the adiabatic lapse rate by an amount $\dd{T}$.
 However, at point B the environmental temperature is _cooler_ by a further amount $\dd{T}$.
 
-The notional air parcel is thus warmer than its surroundings, is less dense, and will thus continue to rise – the air has become convectively unstable.
+The notional air parcel is thus warmer than its surroundings, is less dense, and will thus continue to rise - the air has become convectively unstable.
 Similarly, if the parcel is displaced downwards, the same argument leads to the parcel continuing to descend.
 In the troposphere where this condition is often satisfied, overturning readily occurs leading to rapid vertical transport and short transport times (typically weeks or less).
 If the environmental lapse rate $\Gamma_{\mathrm{env}} \sim \Gamma_{ad}$, the air is said to be _neutrally_ stable.
@@ -231,7 +230,7 @@ As above, upward displacement of the air parcel leads to a cooling of $\Delta T$
 However now the environmental temperature is _higher_ by $\dd{T}$, and so now the displaced parcel is cooler and thus more dense than its surroundings, and thus descends.
 As above, if it displaced downwards, it has a tendency to rise.
 Under these conditions the atmosphere is now stable to vertical displacements.
-These conditions are those found in the stratosphere, in which vertical transport is therefore slow (months – years).
+These conditions are those found in the stratosphere, in which vertical transport is therefore slow (months - years).
 
 ```{figure} figures/figure19.4.png
 ---
@@ -247,7 +246,7 @@ If they can be effectively _scavenged_ when in the troposphere, they are unlikel
 
 ### Radiative properties of gases and particles
 
-In {numref}`lecture_2` we derived a simple energy balance model of the atmosphere.
+In {numref}`intro:energy` we derived a simple energy balance model of the atmosphere.
 In this model we considered that the sun provides incoming short wave length radiation ($\lambda < 500 \ \mathrm{nm}$) and the Earth's surface acts as a source of long-wavelength radiation.
 The difference in the emission of radiation from a black body can be described by Wien's displacement law:
 
@@ -276,7 +275,7 @@ Absorption in the microwave region are typically associated with rotational tran
 To absorb or emit radiation a molecule must possess a changing _electric dipole_.
 Molecules can have changing dipoles in several ways:
 
-**The molecule may have a permanent dipole – as the molecule rotates the dipole changes at the rotational frequency. For example:**
+**The molecule may have a permanent dipole - as the molecule rotates the dipole changes at the rotational frequency. For example:**
 
 1. $\mathrm{O_2}$ or $\mathrm{N_2}$:
 Both are _homonuclear diatomic_ molecules.
@@ -294,7 +293,7 @@ As a result it _does_ have a pure rotational absorption spectrum.
 
 1. $\mathrm{O_2}$ or $\mathrm{N_2}$:
 Both are _homonuclear diatomic_ molecules.
-Because they have no dipoles, as they vibrate they can have no changing dipole – _no_ vibrational spectrum.
+Because they have no dipoles, as they vibrate they can have no changing dipole - _no_ vibrational spectrum.
 
 2. $\mathrm{CO_2}$:
 $\mathrm{CO_2}$ does not have a permanent dipole moment, however as it vibrates, _some_ of the vibrations create vibrating dipoles.
@@ -304,7 +303,7 @@ As a result it _does_ have a vibrational spectrum.
 As $\mathrm{H_2O}$ vibrates, _all_ of the vibrations create vibrating dipoles.
 As a result, like $\mathrm{CO_2}$, it _does_ have a vibrational spectrum.
 
-These gases that can absorb the Earth's outgoing long-wave radiation "trap" it and so distort the simple energy balance model we produced in {numref}`lecture_2`.
+These gases that can absorb the Earth's outgoing long-wave radiation "trap" it and so distort the simple energy balance model we produced in {numref}`intro:energy`.
 
 The abundance of these gases has changed considerably over time.
 

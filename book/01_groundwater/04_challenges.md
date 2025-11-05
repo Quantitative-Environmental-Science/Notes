@@ -207,7 +207,7 @@ An example of a freshwater-saltwater interface.
 ```
 
 Like all groundwater systems, the flow of groundwater goes from high {term}`hydraulic head` to low {term}`hydraulic head`.
-Every day – indeed twice a day – the tides move the envelope of seawater such that there is greater {term}`hydraulic head` on the salt groundwater, pushing it further inland.
+Every day - indeed twice a day - the tides move the envelope of seawater such that there is greater {term}`hydraulic head` on the salt groundwater, pushing it further inland.
 When the tides move the envelope of water away from the coast, the freshwater will move back towards the ocean.
 Thus the freshwater-saltwater interface changes daily.
 

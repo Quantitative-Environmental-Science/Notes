@@ -1,10 +1,9 @@
 (lecture_20)=
 # Air pollution
 
-```{rubric} Sources, sinks and trends
-```
+Sources, sinks and trends
 
-```{highlights}
+```{tip} Key Concepts
 Aims:
 1. To survey the main constituents of air pollution around the world and over time.
 2. To outline the main sources and sinks of different air pollutants, focusing on $\mathrm{NO_2}$ and particulate matter.
@@ -25,7 +24,7 @@ Key Points:
 Air pollution is a phrase used to describe the presence of contaminants in the air that are harmful for life, to buildings or to climate.
 
 There are lots of different air pollutants. Most are present at trace levels (c.f. the majority of the atmosphere is made up of $\mathrm{N_2}$, $\mathrm{O_2}$, $\mathrm{Ar}$, and $\mathrm{H_2O}$).
-These pollutants can come from a range of different sources including, man-made (anthropogenic) and natural – or biogenic.
+These pollutants can come from a range of different sources including, man-made (anthropogenic) and natural - or biogenic.
 
 ```{figure} figures/figure20.1.png
 ---
@@ -144,7 +143,7 @@ Calculation of $N_\mathrm{O_2}$ is straightforward as $\mathrm{O_2}$ is uniforml
 The major factors determining fluxes of radiation in the visible and UV wavelengths in the atmosphere are absorptions by $\mathrm{O_2}$ and $\mathrm{O_3}$.
 Other factors include Rayleigh scattering, and in the troposphere, the presence of clouds which can act to increase or reduce photolysis rates, and the Earth's albedo.
 
-{numref}`Figure {number}<Ox_absorption>` shows the regions of the spectrum where the bands of $\mathrm{O_2}$ and $\mathrm{O_3}$ which absorb in the Earth's atmosphere are located ($\mathrm{O_3}$ has an additional weakly absorbing band at visible wavelengths – the Chappuis band).
+{numref}`Figure {number}<Ox_absorption>` shows the regions of the spectrum where the bands of $\mathrm{O_2}$ and $\mathrm{O_3}$ which absorb in the Earth's atmosphere are located ($\mathrm{O_3}$ has an additional weakly absorbing band at visible wavelengths - the Chappuis band).
 
 A detailed knowledge of the absorption properties of the atmosphere is required for a full understanding or for accurate modelling of atmospheric photochemistry.
 However, there are a number of wavelengths which are of particular significance for understanding some of the basic principles.
