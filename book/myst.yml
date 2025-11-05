@@ -27,9 +27,9 @@ project:
     - file: 03_cryosphere/00_intro.md
       children:
         - pattern: 03_cryosphere/0[!0]*.md
-    - file: 04_atmosphere/00_intro
-      children:
-        - pattern: 04_atmosphere/0[!0]*.md
+    # - file: 04_atmosphere/00_intro
+    #   children:
+    #     - pattern: 04_atmosphere/0[!0]*.md
     # - file: 05_globalenvironment/intro
     #   children:
     #   - file: 05_globalenvironment/l26
