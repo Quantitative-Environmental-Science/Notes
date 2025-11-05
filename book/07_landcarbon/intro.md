@@ -4,13 +4,13 @@ Over the course of the next four lectures we will discuss the role of the land s
 
 <!-- The four lectures are broken down as follows
 
-Lecture 40 – Why do we care about what is on the land? Plants in Earth’s climate system, the formation of soils and soil, vegetation, atmosphere transfer models (SVAT). How these are parameterised using Eddy Covariance techniques.
+Lecture 40 - Why do we care about what is on the land? Plants in Earth’s climate system, the formation of soils and soil, vegetation, atmosphere transfer models (SVAT). How these are parameterised using Eddy Covariance techniques.
 
-Lecture 41 – The Methane Cycle: The importance of Methane in Earth’s climate. What are the key sources and sinks of methane and why is it such a target for climate mitigation measures?
+Lecture 41 - The Methane Cycle: The importance of Methane in Earth’s climate. What are the key sources and sinks of methane and why is it such a target for climate mitigation measures?
 
-Lecture 42 – The Methane Cycle: How are estimates of methane fluxes made and why are different estimates so widely varying? How can we close the gap on the methane budget?
+Lecture 42 - The Methane Cycle: How are estimates of methane fluxes made and why are different estimates so widely varying? How can we close the gap on the methane budget?
 
-Lecture 43 – Other trace gases produced by soils and the role of soil moisture in amplifying climate change and extreme weather events.  -->
+Lecture 43 - Other trace gases produced by soils and the role of soil moisture in amplifying climate change and extreme weather events.  -->
 
 ```{tableofcontents}
 ```
