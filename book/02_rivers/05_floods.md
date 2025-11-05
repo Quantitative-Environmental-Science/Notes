@@ -1,4 +1,4 @@
-(lecture_17)=
+(rivers:floods)=
 # Flood waves
 
 ```{tip} Key Concepts
@@ -37,9 +37,9 @@ If we take the width of the river to be $W(h)$, then we can relate the change in
 \end{align}
 ```
 
-If we then choose, for the sake of this derivation, a triangular river geometry like that in {numref}`lecture_15`
+If we then choose, for the sake of this derivation, a triangular river geometry like that in @rivers:river_flows
 where $A(h) = \alpha h^2$ and $W(h) = \beta h$.
-We recall from {numref}`lecture_15` that for a triangular river, $Q = k h^\frac{5}{2}$.
+We recall from @rivers:river_flows that for a triangular river, $Q = k h^\frac{5}{2}$.
 we can substitute this into {eq}`flood_flow_relation` by first evaluating $\pdv{Q}{x}$:
 
 ```{math}
@@ -56,7 +56,7 @@ and with that result now substituting into {eq}`flood_flow_relation`
 \end{align}
 ```
 
-This is analogous to the advection equation we derived in {numref}`lecture_14`,
+This is analogous to the advection equation we derived in @rivers:drainage,
 except this time the characteristic speed $u$ has been replaced with an expression for the speed that is dependent on the height; $\frac{5k}{2 \beta} h^\frac{1}{2}$.
 Therefore, we expect there is a solution for lines of constant height moving down the channel with speed that depends on their depth.
 Conceptually, this should look like the diagram shown in {numref}`flood_profile`.
@@ -76,7 +76,7 @@ The flood wave gets longer and thinner.
 
 ```
 
-We now use the same approach we applied to the advection equation solution in {numref}`lecture_14` and try a solution of the form:
+We now use the same approach we applied to the advection equation solution in @rivers:drainage and try a solution of the form:
 
 ```{math}
 h(x,t) = Z(x - \frac{5k}{2 \beta} h^\frac{1}{2} t, \tau)
@@ -193,7 +193,7 @@ A river overtopping its banks and flowing on to the flood plain.
 ```
 
 The flow rate of the water moving over the embankment depends on the velocity of the water flow and the height over the top of the bank, $b$.
-If the speed of the water is $\sim \sqrt{gb}$ (as discussed in {numref}`lecture_15`) then the flow rate per unit length along the embankment goes as
+If the speed of the water is $\sim \sqrt{gb}$ (as discussed in @rivers:river_flows) then the flow rate per unit length along the embankment goes as
 
 ```{math}
 Q \sim \beta b \sqrt{g b}

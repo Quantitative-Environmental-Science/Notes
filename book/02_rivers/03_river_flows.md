@@ -1,4 +1,4 @@
-(lecture_15)=
+(rivers:river_flows)=
 # River flows
 
 ```{tip} Key Concepts

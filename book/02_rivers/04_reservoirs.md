@@ -1,4 +1,4 @@
-(lecture_16)=
+(rivers:reservoirs)=
 # Reservoirs
 
 ```{tip} Key Concepts
