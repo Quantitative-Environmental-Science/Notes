@@ -1,6 +1,13 @@
 (lecture_15)=
 # River flows
 
+```{tip} Key Concepts
+- Flow in a river
+- Drag and gravity forces
+- Critical flow rate for flooding
+- Coupled runoff and river flow model
+```
+
 ## Flow in a river
 The previous lecture focussed on flow in the catchment towards a river.
 Some very simplified models for the surface run-off in terms of the rainfall flux were developed to help inform relationships between the rainfall rate and the rate at which this flows into a river.

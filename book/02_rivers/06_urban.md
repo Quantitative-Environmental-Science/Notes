@@ -1,6 +1,12 @@
 (lecture_18)=
 # Flooding in urban environments
 
+```{tip} Key Concepts
+- Objects carried by a flood
+- Flooding through a city
+- Groundwater floods
+```
+
 ## Objects carried by a flood
 
 A particular challenge in a city environment for a flood relates to the transport of debris by a flood.

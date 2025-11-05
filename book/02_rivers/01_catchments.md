@@ -1,6 +1,13 @@
 (lecture_13)=
 # Catchment and drainage
 
+```{tip} Key Concepts
+- Flooding events and their causes
+- Rainfall intensity and frequency
+- Catchment hydrology
+- Runoff generation and river discharge
+```
+
 ## Background
 
 ```{figure} ./figures/figure13.1.png

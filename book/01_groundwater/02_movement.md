@@ -1,6 +1,14 @@
-<!-- (lecture_5)= -->
 (groundwater:movement)=
 # Why water moves beneath the surface
+
+```{tip} Key Concepts
+- Darcy's Law
+- Hydraulic Conductivity
+- Permeability
+- Laminar vs Turbulent Flow
+- Reynolds Number
+- Hydraulic Head and Hydraulic Gradient
+```
 
 Inherent to the idea of a groundwater system is the idea that groundwater moves from a point of {term}`recharge` to a point of {term}`discharge`.
 If the total volume stored is a function of the {term}`porosity`, then we can ask ourselves what controls how groundwater moves from one point to another point?

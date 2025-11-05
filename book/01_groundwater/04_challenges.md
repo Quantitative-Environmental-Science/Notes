@@ -1,6 +1,14 @@
-<!-- (lecture_7)= -->
 (groundwater:challenges)=
 # Groundwater challenges and sustainable groundwater
+
+```{tip} Key Concepts
+- Groundwater Depletion
+- Contaminant Transport
+- Control Volumes
+- Advection vs Dispersion
+- Peclet Number
+- Saline Intrusion
+```
 
 We have discussed the importance of groundwater systems, how groundwater moves (and why it can move uphill), and how we can test for and figure out the key aspects that influence groundwater flow, which includes pumping tests.
 Together these give us a good sense of how to calculate groundwater velocity and the energy required to move groundwater.

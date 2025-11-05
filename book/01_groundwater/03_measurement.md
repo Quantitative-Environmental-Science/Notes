@@ -1,6 +1,12 @@
-<!-- (lecture_6)= -->
 (groundwater:measurement)=
 # How we measure and understand water movement
+
+```{tip} Key Concepts
+- Piezometric/Potentiometric Surface
+- Equipotential Lines and Flow Lines
+- Pumping Tests
+- Thiem Equation
+```
 
 A concept that derives from the idea of a distribution of {term}`hydraulic head` is the distribution of a piezometric or potentiometric surface across a groundwater catchment.
 This is the level to which the {term}`water table` would rise (or fall) if it were not confined in the subsurface ({numref}`potentiometric_surface`).

@@ -1,6 +1,12 @@
 (lecture_16)=
 # Reservoirs
 
+```{tip} Key Concepts
+- Formulation of the reservoir problem
+- Time-dependent solutions for reservoir filling
+- Problems with reservoirs: sediment
+```
+
 ## Formulation of the reservoir problem
 
 In order to arrest the flow of water from the surface run-off into the river and help mitigate flooding, sometimes reservoirs are built upstream.

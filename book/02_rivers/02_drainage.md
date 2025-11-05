@@ -1,6 +1,13 @@
 (lecture_14)=
 # Drainage models
 
+```{tip} Key Concepts
+- 0D and 1D drainage models
+- Advection equation
+- Characteristic diagrams
+- Flow speed and permeability
+```
+
 ## 0D model of drainage
 
 Modelling the drainage of water throughout a catchment area is very complicated.

@@ -1,6 +1,14 @@
-<!-- (lecture_4)= -->
 (groundwater:intro)=
 # Groundwater Systems
+
+```{tip} Key Concepts
+- Water demand and water footprint
+- What is Groundwater?
+- Groundwater residence times
+- Aquifers, aquitards and aquicludes
+- Porosity and permeability
+- The groundwater flow equation
+```
 
 ## Water Demand
 

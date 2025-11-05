@@ -1,6 +1,12 @@
-<!-- (lecture_8)= -->
 (groundwater:pollution)=
 # Pollution in Rivers
+
+```{tip} Key Concepts
+- Sources of river pollution
+- Nutrient cycling and eutrophication
+- Groundwater-surface water interactions
+- Transit time of pollutants
+```
 
 Pollution in rivers has been a growing concern.
 In general, pollution in rivers is from the release of sewage,

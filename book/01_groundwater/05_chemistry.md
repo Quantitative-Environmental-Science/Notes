@@ -1,6 +1,12 @@
-<!-- (lecture_8)= -->
 (groundwater:chemistry)=
 # Groundwater Chemistry
+
+```{tip} Key Concepts
+- Chemical evolution of groundwater
+- Mineral dissolution and precipitation
+- Redox conditions in groundwater
+- Contaminant transport mechanisms
+```
 
 A key point from the groundwater lectures is the connection between groundwater
 and surface water - that groundwater levels reflect changes in surface water.

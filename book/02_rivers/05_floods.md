@@ -1,6 +1,14 @@
 (lecture_17)=
 # Flood waves
 
+```{tip} Key Concepts
+- Propagation of flood waves down a river
+- Derivation of the flood wave equation
+- Solution of the flood wave equation
+- Overtopping of river banks
+- Flood defence barriers
+```
+
 We now turn our attention to the propagation of flood waves down a river.
 This is important to predict since it is useful to know the time of arrival of a flood many tens of kilometers downstream in order to provide warning to residents and try to mitigate the impacts,
 but also for planning flood prevention systems for example.
