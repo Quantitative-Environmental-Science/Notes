@@ -1,4 +1,5 @@
-(lecture_2)=
+<!-- (lecture_2)= -->
+(intro:energy)=
 # Where does the energy come from on Earth?
 
 ```{tip} Key Concepts

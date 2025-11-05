@@ -1,4 +1,5 @@
-(lecture_6)=
+<!-- (lecture_6)= -->
+(groundwater:measurement)=
 # How we measure and understand water movement
 
 A concept that derives from the idea of a distribution of {term}`hydraulic head` is the distribution of a piezometric or potentiometric surface across a groundwater catchment.
@@ -75,7 +76,7 @@ The drawdown of the piezometric (or potentiometric surface) results from the red
 ---
 name: conical_drawdown
 figclass: margin-caption
-width: 60%
+width: 80%
 ---
 The change with radius down the borehole follows a piezometric surface .
 ```
@@ -183,13 +184,13 @@ figclass: margin-caption
 
 Building on what we have discussed about hydraulic head in groundwater, we can consider the Navier-Stokes equations, which are partial differential equations that govern the motion of incompressible fluids. These equations constitute the basic equations for fluid mechanics. They are grounded in the concepts of conservation of mass, conservation of momentum, and conservation of energy.
 
-Conservation of mass means that mass in a control volume (basically a bit of the subsurface fluid – see {numref}`control_volume`) cannot be created or destroyed.
+Conservation of mass means that mass in a control volume (basically a bit of the subsurface fluid – see {numref}`extension_control_volume`) cannot be created or destroyed.
 Conservation of momentum means that momentum is not created or destroyed, and changes only because of forces acting on the control volume.
 Conservation of energy derives from the first law of thermodynamics: work and heat added to the system will result in an increase in the total energy of the system.
 
 ```{figure} ./figures/figure6.9.png
 ---
-name: control_volume
+name: extension_control_volume
 width: 70%
 ---
 A control volume showing the forces and momentum fluxes used in deriving the Navier-Stokes equations from conservation of momentum.

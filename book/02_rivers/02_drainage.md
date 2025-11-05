@@ -153,7 +153,7 @@ A more detailed surface drainage model showing the fractal nature of drainage ne
 Extending our model from 0D into 1D, adding a spatial dependence,
 we are going to need to assess the dominant controls on the fluid dynamics.
 The speed of the flow down the slope may be given in terms of the permeable flow
-relation; D'Arcy's law, which we discussed in {numref}`lecture_5`.
+relation; D'Arcy's law, which we discussed in @groundwater:movement.
 Flow through crops, wooded land or other surfaces provide the effective porous media
 with an effective permeability, $k$.
 
@@ -328,20 +328,21 @@ showing lines of $\eta = \mathrm{constant}$ on the $x$ - $t$ plane.
 ```
 
 There are two regions for the solution:
-  - Region 1. The set of points where $x = L$ and $t \lt \frac{L}{u}$,
-    for which lines $\eta = \mathrm{constant}$ start on the x-axis at time = 0
-    (e.g. the line starting at $x_0$).
-    For each of these lines, the time at which they reach the distance $x = L$ is
-    $t = \frac{(L-x_0)}{u}$;
-    i.e. the time for the line of constant $\eta$ starting at $x=x_0$ at $t=0$ to reach
-    the line $x = L$.
-    Therefore the value of $W$ (and hence $S$) at time $t$ and at $x = L$ is
-    $W=(R-I)t$.
-  - Region 2. The other region corresponds to the points $x=L$ and $t \gt \frac{L}{u}$.
-    In this region the lines of constant $\eta$ which reach $x = L$ for
-    $t \gt \frac{L}{u}$ start at $x = 0$ at a time $t_0 \gt 0$.
-    Hence, the time to reach the line $x = L$ is $\frac{L}{u}$,
-    and so at $x = L$, $W = (R-I) \frac{L}{u}$ for $t \gt \frac{L}{u}$.
+
+- Region 1. The set of points where $x = L$ and $t \lt \frac{L}{u}$,
+  for which lines $\eta = \mathrm{constant}$ start on the x-axis at time = 0
+  (e.g. the line starting at $x_0$).
+  For each of these lines, the time at which they reach the distance $x = L$ is
+  $t = \frac{(L-x_0)}{u}$;
+  i.e. the time for the line of constant $\eta$ starting at $x=x_0$ at $t=0$ to reach
+  the line $x = L$.
+  Therefore the value of $W$ (and hence $S$) at time $t$ and at $x = L$ is
+  $W=(R-I)t$.
+- Region 2. The other region corresponds to the points $x=L$ and $t \gt \frac{L}{u}$.
+  In this region the lines of constant $\eta$ which reach $x = L$ for
+  $t \gt \frac{L}{u}$ start at $x = 0$ at a time $t_0 \gt 0$.
+  Hence, the time to reach the line $x = L$ is $\frac{L}{u}$,
+  and so at $x = L$, $W = (R-I) \frac{L}{u}$ for $t \gt \frac{L}{u}$.
 
 As a result, the flux at $x = L$ is given by
 

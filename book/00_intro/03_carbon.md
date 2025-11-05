@@ -1,4 +1,4 @@
-(lecture_3)=
+(intro:carbon)=
 # The Carbon Cycle 
 
 ```{tip} Key Concepts
@@ -72,10 +72,12 @@ We can write a simple equation that allows us to model how the concentration of 
 ```{aside} Units!
 :class: units
 $$
+\begin{align}
 n &= \mathrm{concentration} \\
-t &= \mathrm{time} \\
-a &= \mathrm{concentration~time^{-1}} \\
+t &= \mathrm{time}\\
+a &= \mathrm{concentration~time^{-1}}\\
 k &= \mathrm{time^{-1}}
+\end{align}
 $$
 ```
 

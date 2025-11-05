@@ -1,4 +1,5 @@
-(lecture_7)=
+<!-- (lecture_7)= -->
+(groundwater:challenges)=
 # Groundwater challenges and sustainable groundwater
 
 We have discussed the importance of groundwater systems, how groundwater moves (and why it can move uphill), and how we can test for and figure out the key aspects that influence groundwater flow, which includes pumping tests.
@@ -60,7 +61,7 @@ The negative sign indicates that diffusion occurs down the concentration gradien
 ```{figure} ./figures/figure7.12.png
 ---
 name: diffusion_timeseries
-width: 90%
+width: 30%
 ---
 Time series showing the spreading of dye through diffusion at four successive
 time steps, illustrating how concentration gradients diminish over time.
@@ -142,7 +143,7 @@ This is similar to the maths behind following a plume of smoke in the atmosphere
 ---
 name: smoke_plume
 figclass: margin-caption
-width: 70%
+width: 90%
 ---
 A smoke plume in the atmosphere showing similar dispersion patterns.
 ```
@@ -213,7 +214,7 @@ Thus the freshwater-saltwater interface changes daily.
 On top of this diurnal cycle, there are two larger scale things happening.
 One, sealevel is rising, due to the melting of ice and the thermal expansion of the ocean water.
 This increases the {term}`hydraulic head` on the salt-groundwater, pushing it inland.
-Second, we have a large groundwater footprint and the fresh-groundwater near the coast are having water removed for agriculture and drinking and all the other things we said we need groundwater for in [Lecture 4](#lecture_4).
+Second, we have a large groundwater footprint and the fresh-groundwater near the coast are having water removed for agriculture and drinking (and all the other things we said we need groundwater for in @groundwater:intro).
 This decreases the pressure in the coastal aquifers and drives more salt-groundwater inland ({numref}`saltwater_incursion`).
 
 ```{figure} ./figures/figure7.4.png

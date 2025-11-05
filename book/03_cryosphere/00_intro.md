@@ -1,3 +1,4 @@
+(sec:cryosphere)=
 # Cryosphere
 
 In these lectures we are going to discuss the growth and retreat of sea

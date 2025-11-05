@@ -1,4 +1,5 @@
-(lecture_8)=
+<!-- (lecture_8)= -->
+(groundwater:chemistry)=
 # Groundwater Chemistry
 
 A key point from the groundwater lectures is the connection between groundwater
@@ -178,6 +179,7 @@ we expect the contaminant to have moved 5 meters away.
 ---
 name: advection_diagram
 figclass: margin-caption
+width: 50%
 ---
 The effect of advection on contaminant movement over time from t0 to t2,
 showing the displacement of the solute plume with the groundwater flow.
@@ -197,6 +199,7 @@ This is the effect of diffusion and hydrodynamic dispersion.
 ---
 name: dispersion_diagram
 figclass: margin-caption
+width: 60%
 ---
 Illustration of dispersion processes showing how a contaminant plume spreads
 due to molecular diffusion and mechanical dispersion.

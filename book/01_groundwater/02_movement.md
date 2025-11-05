@@ -1,4 +1,5 @@
-(lecture_5)=
+<!-- (lecture_5)= -->
+(groundwater:movement)=
 # Why water moves beneath the surface
 
 Inherent to the idea of a groundwater system is the idea that groundwater moves from a point of {term}`recharge` to a point of {term}`discharge`.

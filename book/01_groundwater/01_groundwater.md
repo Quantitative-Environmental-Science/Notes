@@ -1,4 +1,5 @@
-(lecture_4)=
+<!-- (lecture_4)= -->
+(groundwater:intro)=
 # Groundwater Systems
 
 ## Water Demand
@@ -31,7 +32,7 @@ The distribution of water on earth. Left, all water. Middle, fresh water. Right,
 
 Roughly 30% of Earth's fresh water is in groundwater ({numref}`water_location`), with most of the rest tied up in glaciers.
 How does water get into the ground? If we consider the mass balance of the hydrological cycle.
-Rain falls down on the ground, and approximately 30% of it returns to the atmosphere via evaporation, 30% returns to the atmosphere via transpiration, and 30% runs off the land through streams and rivers (which you'll learn more about in {ref}`Lectures 13-18<lecture_13>`).
+Rain falls down on the ground, and approximately 30% of it returns to the atmosphere via evaporation, 30% returns to the atmosphere via transpiration, and 30% runs off the land through streams and rivers (which you'll learn more about in {ref}`sec:rivers`).
 The balance of these processes will clearly differ all over the planet depending on vegetation cover, temperature, climate, and soil type (among many other things).
 But approximately ~10% seeps into the ground through a process called **{term}`infiltration`**, or **{term}`percolation`** ({numref}`gw_cycle`).
 This {term}`infiltration` supplies water to the point beneath the surface where the pore space (the space between the grains of soil or rock) is full of water,
@@ -54,7 +55,7 @@ What drives groundwater to flow from {term}`recharge` to {term}`discharge`, and 
 
 ## Residence Times
 
-Similar to {ref}`Lecture 3<lecture_3>`, we can consider a groundwater system as a reservoir (or box) and think about the supply of water to that box as the {term}`recharge` and the removal of water from that box as the {term}`discharge` and ask ourselves *what is the {term}`residence time` of water in groundwater* ({numref}`residence_times`)?
+Similar to {ref}`intro:carbon`, we can consider a groundwater system as a reservoir (or box) and think about the supply of water to that box as the {term}`recharge` and the removal of water from that box as the {term}`discharge` and ask ourselves *what is the {term}`residence time` of water in groundwater* ({numref}`residence_times`)?
 What we find is that the {term}`residence time` is very long (although a very large range!).
 There is a small flux in terms of {term}`recharge` and {term}`discharge`, and a large volume, and the calculated {term}`residence time` is thousands of years!
 

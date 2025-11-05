@@ -1,4 +1,4 @@
-(atmos:intro)=
+(sec:atmosphere)=
 # Air Pollution and Atmospheric Chemistry
 
 In this part of the course we will consider the characterstics of atmosphere, air pollution, and their interactions with climate. It begins with an overview of the atmosphere’s structure, temperature variations, and the roles of ozone and radiatively active gases. Air pollution is then explored, focusing on key pollutants like nitrogen dioxide (NO₂) and particulate matter (PM), their sources, and historical trends. The course delves into the atmospheric chemistry of pollutants, explaining their removal through processes like gas-phase oxidation and photolysis, and calculating pollutant lifetimes. Aerosols, including their formation, composition, and role in heterogeneous reactions, are examined next. Finally, the relationship between air pollution and climate is explored, particularly how aerosols influence cloud formation, cloud properties, and climate through mechanisms like the Koehler theory.

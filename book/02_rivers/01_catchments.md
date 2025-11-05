@@ -121,7 +121,6 @@ An example of the Missouri and Mississippi river watersheds in the US is shown i
 {numref}`us_river_basins`.
 
 ```{figure} ./figures/figure13.7.png
-
 ---
 name: us_river_basins
 figclass: margin-caption

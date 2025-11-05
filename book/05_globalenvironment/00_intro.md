@@ -1,4 +1,4 @@
-(global_environment)=
+(sec:global_environment)=
 # Global Environment
 
 The goal thus far was to understand the flow of water and air in various forms and various contexts, and how pollutants are traced over the surface.

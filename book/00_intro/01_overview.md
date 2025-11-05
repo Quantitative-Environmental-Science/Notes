@@ -1,4 +1,5 @@
-(lecture_1)=
+<!-- (lecture_1)= -->
+(intro:overview)=
 # Course Overview
 
 The course will begin with an overview of how the surface of the planet functions, with introductory lectures on the global carbon cycle, and the source of energy on the planet.

@@ -24,18 +24,18 @@ project:
     - file: 02_rivers/00_intro.md
       children:
         - pattern: 02_rivers/0[!0]*.md
-    - file: 03_cryosphere/00_intro.md
-      children:
-        - pattern: 03_cryosphere/0[!0]*.md
-    - file: 04_atmosphere/00_intro
-      children:
-        - pattern: 04_atmosphere/0[!0]*.md
-    - file: 05_globalenvironment/00_intro.md
-      children:
-        - pattern: 05_globalenvironment/0[!0]*.md
-    - file: 06_oceancarbon/00_intro
-      children:
-        - pattern: 06_oceancarbon/0[!0]*.md
+    # - file: 03_cryosphere/00_intro.md
+    #   children:
+    #     - pattern: 03_cryosphere/0[!0]*.md
+    # - file: 04_atmosphere/00_intro
+    #   children:
+    #     - pattern: 04_atmosphere/0[!0]*.md
+    # - file: 05_globalenvironment/00_intro.md
+    #   children:
+    #     - pattern: 05_globalenvironment/0[!0]*.md
+    # - file: 06_oceancarbon/00_intro
+    #   children:
+    #     - pattern: 06_oceancarbon/0[!0]*.md
     # - file: 07_landcarbon/intro
     #   children:
     #   - file: 07_landcarbon/l40
