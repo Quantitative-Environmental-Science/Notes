@@ -27,27 +27,15 @@ project:
     - file: 03_cryosphere/00_intro.md
       children:
         - pattern: 03_cryosphere/0[!0]*.md
-    # - file: 04_atmosphere/00_intro
-    #   children:
-    #     - pattern: 04_atmosphere/0[!0]*.md
-    # - file: 05_globalenvironment/intro
-    #   children:
-    #   - file: 05_globalenvironment/l26
-    #   - file: 05_globalenvironment/l27
-    #   - file: 05_globalenvironment/l28
-    #   - file: 05_globalenvironment/l29
-    #   - file: 05_globalenvironment/l30
-    #   - file: 05_globalenvironment/l31
-    #   - file: 05_globalenvironment/l32
-    #   - file: 05_globalenvironment/l33
-    #   - file: 05_globalenvironment/l34
-    # - file: 06_oceancarbon/00_intro
-    #   children:
-    #   - file: 06_oceancarbon/01_3box
-    #   - file: 06_oceancarbon/02_solubility
-    #   - file: 06_oceancarbon/03_biopump
-    #   - file: 06_oceancarbon/04_carbonatepump
-    #   - file: 06_oceancarbon/05_futureoceans
+    - file: 04_atmosphere/00_intro
+      children:
+        - pattern: 04_atmosphere/0[!0]*.md
+    - file: 05_globalenvironment/00_intro.md
+      children:
+        - pattern: 05_globalenvironment/0[!0]*.md
+    - file: 06_oceancarbon/00_intro
+      children:
+        - pattern: 06_oceancarbon/0[!0]*.md
     # - file: 07_landcarbon/intro
     #   children:
     #   - file: 07_landcarbon/l40
@@ -73,7 +61,8 @@ project:
 site:
   template: book-theme
   options:
-    favicon: favicon.png
-    logo: logo.png
-    style: _static/admonitions.css
-    folders: true
+    favicon: favicon.png  # QES icon
+    logo: logo.png  # QES logo
+    style: _static/admonitions.css  # styling of 'Units' sidebar
+    folders: true  # use sub-folders in urls
+    theme: light   # Set default theme to light mode
