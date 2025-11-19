@@ -50,7 +50,7 @@ Cryosphere 🧊
 How ice forms, moves and melts.
 :::
 
-<!-- :::{grid-item-card}
+:::{grid-item-card}
 :link: 04_atmosphere/intro
 :link-type: doc
 :class-header: bg-light
@@ -59,7 +59,7 @@ Atmosphere 💨
 ^^^
 
 Movement, pollution and aerosols.
-::: -->
+:::
 
 <!-- :::{grid-item-card}
 :link: 05_globalenvironment/intro

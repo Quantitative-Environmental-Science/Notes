@@ -31,13 +31,13 @@ chapters:
   - file: 03_cryosphere/l10
   - file: 03_cryosphere/l11
   - file: 03_cryosphere/l12
-# - file: 04_atmosphere/intro
-#   sections:
-#   - file: 04_atmosphere/l19
-#   - file: 04_atmosphere/l20
-#   - file: 04_atmosphere/l21
-#   - file: 04_atmosphere/l22
-#   - file: 04_atmosphere/l23
+- file: 04_atmosphere/intro
+  sections:
+  - file: 04_atmosphere/l19
+  - file: 04_atmosphere/l20
+  - file: 04_atmosphere/l21
+  - file: 04_atmosphere/l22
+  - file: 04_atmosphere/l23
 # - file: 05_globalenvironment/intro
 #   sections:
 #   - file: 05_globalenvironment/l26
