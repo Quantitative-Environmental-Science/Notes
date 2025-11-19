@@ -498,7 +498,7 @@ The nucleation mode particles, although numerous, contribute very little to the 
 \[    \dv{N_{1,2}}{t} = -K_{1,2} N_1 N_2\]</div>
 <div class="math notranslate nohighlight">
 \[    K_{1,2} = \pi(d_1 + d_2)(D_1 + D_2)\]</div>
-<p>where <span class="math notranslate nohighlight">\(K_{1,2}\)</span> is the coagulation coefficient, <span class="math notranslate nohighlight">\(D\)</span> is the diffusion constant, and <span class="math notranslate nohighlight">\(d\)</span> is the particle diameter.</p>
+<p>where <span class="math notranslate nohighlight">\(K_{1,2}\)</span> is the coagulation coefficient for particles sized 1 and 2, <span class="math notranslate nohighlight">\(N_{1}\)</span> and <span class="math notranslate nohighlight">\(N_{2}\)</span> represents the number densities (think concentration) of particles with sizes 1 and 2, <span class="math notranslate nohighlight">\(D\)</span> is the diffusion constant, and <span class="math notranslate nohighlight">\(d\)</span> is the particle diameter.</p>
 <div class="pst-scrollable-table-container"><table class="table" id="coagulation-coefs">
 <caption><span class="caption-number">Table 5.4 </span><span class="caption-text">Coagulation coefficients for particles of different sizes (<span class="math notranslate nohighlight">\(K_{1,2} \times 10^{-10} \ \mathrm{cm}^3 \ \mathrm{s}^{-1}\)</span>) under standard conditions.</span><a class="headerlink" href="#coagulation-coefs" title="Link to this table">#</a></caption>
 <colgroup>
@@ -577,9 +577,9 @@ gases (<span class="math notranslate nohighlight">\(\mathrm{SO_2}\)</span>, <spa
 </section>
 <section id="secondary-sources">
 <h5>Secondary sources<a class="headerlink" href="#secondary-sources" title="Link to this heading">#</a></h5>
-<p>Secondary natural aerosols may be formed from a number of natural precursor gas sources, containing sulphur, nitrogen and hydrocarbons. A main natural source is the release of gaseous dimethyl sulphide (DMS) from the oceans. DMS is formed from the biological activity of phytoplankton and eventually forms aerosol sulphate via the photo-oxidation to methanesulfonic acid and <span class="math notranslate nohighlight">\(\mathrm{SO_2}\)</span>.</p>
-<p>The formation of nitrate aerosols from nitrogen precursor gases has two main natural sources: i) <span class="math notranslate nohighlight">\(\mathrm{NO_X}\)</span> from lightning and soils, and ii) <span class="math notranslate nohighlight">\(\mathrm{N_2O}\)</span> from bacterial activity in soils and the oceans. Nitrate aerosol is of increasing concern globally owing to a phase out of coal combustion and so reducing levels of sulfate in aerosols.</p>
-<p>Secondary organic aerosols (SOA) are formed by oxidation products of VOCs.</p>
+<p>Secondary natural aerosols may be formed from a number of natural precursor gas sources, containing sulphur, nitrogen and hydrocarbons. An important natural aerosol source is from the release of gaseous dimethyl sulphide (DMS) from the oceans. DMS is formed from the biological activity of phytoplankton and eventually forms aerosol sulphate via the photo-oxidation to methanesulfonic acid and <span class="math notranslate nohighlight">\(\mathrm{SO_2}\)</span>.</p>
+<p>The formation of nitrate aerosols from nitrogen precursor gases has two main natural sources: i) <span class="math notranslate nohighlight">\(\mathrm{NO_X}\)</span> from lightning and soils, and ii) <span class="math notranslate nohighlight">\(\mathrm{N_2O}\)</span> from bacterial activity in soils and the oceans. Nitrate aerosol is of increasing concern globally owing to a phase out of coal combustion and so reducing levels of sulfate in aerosols. This removal of anthropogenic sulfur means that nitrate is making up a dominant component of aerosol acidity.</p>
+<p>Secondary organic aerosols (SOA) are formed from the oxidation products of VOCs. The mechanisms of these reactions are incredibly complex involving 100s of species and individual reactions. SOA remains a grand challenge in the field of aerosol science.</p>
 </section>
 </section>
 <section id="anthropogenic-sources">
@@ -604,15 +604,16 @@ They are formed from gaseous precursors (<span class="math notranslate nohighlig
 </ul>
 <p>Oxidation of <span class="math notranslate nohighlight">\(\mathrm{SO_2}\)</span> always results in the formation of aerosol mass, due to the very low vapour pressure of <span class="math notranslate nohighlight">\(\mathrm{H_2SO_4}\)</span>.
 This is in contrast to <span class="math notranslate nohighlight">\(\mathrm{HNO_3}\)</span>, which is distributed between the gas and aerosol phases.</p>
-<p>The largest source of <span class="math notranslate nohighlight">\(\mathrm{SO_2}\)</span> and <span class="math notranslate nohighlight">\(\mathrm{NO_x}\)</span> are fossil fuel combustion processes (see lecture 20).
+<p>The largest source of <span class="math notranslate nohighlight">\(\mathrm{SO_2}\)</span> and <span class="math notranslate nohighlight">\(\mathrm{NO_x}\)</span> are fossil fuel combustion processes.
 Over continental surfaces where gaseous ammonia is present, <span class="math notranslate nohighlight">\(\mathrm{H_2SO_4}\)</span> forms <span class="math notranslate nohighlight">\(\mathrm{NH_4HSO_4}\)</span> and <span class="math notranslate nohighlight">\(\mathrm{(NH_4)_2SO_4}\)</span>.
 In the presence of <span class="math notranslate nohighlight">\(\mathrm{NH_3}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{HNO_3}\)</span> (one of the major <span class="math notranslate nohighlight">\(\mathrm{NO_x}\)</span> reservoir compounds) forms <span class="math notranslate nohighlight">\(\mathrm{NH_4NO_3}\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\\ 
 \mathrm{NH_4NO_{3~(s)} \leftrightarrow NH_{3~(g)} + HNO_{3~(g)}}\end{split}\]</div>
-<p>Ammonia plays an important role in the neutralisation of acid species (<span class="math notranslate nohighlight">\(\mathrm{HNO_3,\ H_2SO_4}\)</span>), as it is the most common atmospheric alkaline gas.
-Major natural and anthropogenic sources respectively include:</p>
 <ul class="simple">
+<li><p><strong>Ammonia.</strong>
+Ammonia plays an important role in the neutralisation of acid species (<span class="math notranslate nohighlight">\(\mathrm{HNO_3,\ H_2SO_4}\)</span>), as it is the most common atmospheric alkaline gas.
+Major natural and anthropogenic sources respectively include:</p></li>
 <li><p>soils and organic decomposition</p></li>
 <li><p>fertilisers and animal farming</p></li>
 <li><p>catalysed vehicles.</p></li>
@@ -643,20 +644,19 @@ c &amp;= \mathrm{molecules~cm^{-3}} \\
 v_g &amp;= \mathrm{cm~s^{-1}} \\
 \end{split}\]</div>
 </aside>
-<p>The flux of a trace gas to the surface, <span class="math notranslate nohighlight">\(F\)</span>, and its concentration <span class="math notranslate nohighlight">\([c]\)</span>, as measured at the same height above the surface, are related by the deposition velocity, <span class="math notranslate nohighlight">\(v_g\)</span>:</p>
+<p>The flux of species to the surface, <span class="math notranslate nohighlight">\(F\)</span>, and its concentration <span class="math notranslate nohighlight">\([c]\)</span>, measured at the same height above the surface, are related by the deposition velocity, <span class="math notranslate nohighlight">\(v_g\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[F = v_g \times [c]\]</div>
-<p>The lifetime of a trace gas with respect to deposition is related to the deposition velocity and the height, <span class="math notranslate nohighlight">\(h\)</span>, to which the trace gas is mixed by the equation:</p>
+<p>The lifetime of a trace gas with respect to deposition is related to the deposition velocity and the height, <span class="math notranslate nohighlight">\(h\)</span>, to which the species is mixed by the equation:</p>
 <div class="math notranslate nohighlight">
 \[\tau = \frac{h}{v_g}\]</div>
-<p>For trace gases which are removed efficiently at the surface, e g. <span class="math notranslate nohighlight">\(\mathrm{SO_2,~HNO_3,~O_3}\)</span> (land surfaces only),
+<p>For species that are removed efficiently at the surface, e g. <span class="math notranslate nohighlight">\(\mathrm{SO_2,~HNO_3,~O_3}\)</span> (land surfaces only),
 values of <span class="math notranslate nohighlight">\(v_g\)</span> are typically on the order of <span class="math notranslate nohighlight">\(\mathrm{1~ cm~ s^{-1}}\)</span>.</p>
 <p><span class="math notranslate nohighlight">\(\mathrm{SO_2}\)</span> emitted from surface sources is mainly contained in a well-mixed boundary layer of height <span class="math notranslate nohighlight">\(\mathrm{\sim 1~km}\)</span>.
 Its mean deposition velocity for North West Europe is <span class="math notranslate nohighlight">\(\mathrm{\sim 0.8~cm~ s^{-1}}\)</span>, therefore the mean lifetime with respect to dry deposition is approximately 1.4 days.</p>
 <p>Ozone has a similar deposition velocity over land, but has an approximately uniform concentration and can be considered well mixed up to the tropopause at <span class="math notranslate nohighlight">\(\mathrm{12 \ km}\)</span> altitude.
 The lifetime of tropospheric ozone with respect to deposition is therefore much longer, approximately 17 days.</p>
-<p>Aerosol particles are also removed by dry deposition.
-Their deposition velocity is strongly dependent of the particle size.</p>
+<p>The removal of aerosol particles by deposition is strongly dependent on the particle size.</p>
 <p>Particles below about <span class="math notranslate nohighlight">\(\mathrm{50 \ nm}\)</span> diameter behave like gases with respect to dry deposition and are efficiently removed due to Brownian diffusion.
 Particles in the range of <span class="math notranslate nohighlight">\(\mathrm{2 - 20 \ \mu m}\)</span> are mostly deposited due to inertial impaction
 and very large particles <span class="math notranslate nohighlight">\(\mathrm{&gt; 20~\mu m}\)</span> are removed due to gravitational settling (sedimentation).
@@ -674,7 +674,7 @@ Thus, aerosols in the range <span class="math notranslate nohighlight">\(\mathrm
 <p>Wet deposition describes removal in the precipitation elements, cloud, rain, and snow.
 The process involves the incorporation of gases and particles into cloud droplets that then grow and eventually rain or snow out.
 This ‘rain out’ process is also known as ‘in-cloud scavenging’.
-Soluble gases enter the droplets by absorption that may be followed by chemical reaction.
+Soluble gases enter the cloud liquid water droplets by absorption following Henry’s law. They may then undergo chemical reactions in the droplets.
 Aerosol particles may be incorporated into cloud drops by acting as condensation nuclei,
 around which the aqueous or ice particles grow and by coagulation with existing droplets.</p>
 <p>The solubility is described in terms of the Henry’s law constant <span class="math notranslate nohighlight">\(H_X~\mathrm{(M~atm^{—1}})\)</span>
@@ -689,8 +689,8 @@ As an approximation, the rate of wet deposition is taken as <span class="math no
 and <span class="math notranslate nohighlight">\(\lambda\)</span> is the washout (scavenging) coefficient, which is proportional to the seasonal or annual mean precipitation amount
 and is typically of the order of <span class="math notranslate nohighlight">\(0.12 - 0.5 \ \mathrm{day^{-1}}\)</span> (a lifetime of 2 to 8 days).</p>
 <p>Most processes involved in wet deposition are reversible,
-e.g., aerosol particles can be incorporated into a cloud droplet, which may evaporate again producing new particles.
-Equally, trace gases absorbed into particles can evaporate from the particle due to changes of the particle bulk composition (e.g., pH) or due to chemical reactions.</p>
+e.g., aerosol particles can be incorporated into a cloud droplet, which may evaporate again yielding back those particles.
+Equally, trace gases absorbed into particles can evaporate out from the particle due to changes of the particle bulk composition (e.g., pH) or due to chemical reactions.</p>
 </section>
 </section>
 <section id="aerosol-chemical-composition">
@@ -702,7 +702,7 @@ Equally, trace gases absorbed into particles can evaporate from the particle due
 however, they are often only a small fraction (&lt;10%) of the total submicron particle mass.
 At larger diameters (i.e., the coarse mode) and especially in arid areas metals may become much more dominant.
 The most abundant metals found in aerosols are <span class="math notranslate nohighlight">\(\mathrm{Al}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{Si}\)</span> (metalloid), <span class="math notranslate nohighlight">\(\mathrm{Mg}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{K}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{Ca}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{Ti}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{V}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{Fe}\)</span>, and <span class="math notranslate nohighlight">\(\mathrm{Zn}\)</span>.
-Metals have been suggested to be important in the negative health effects of particle.</p>
+Metals have been suggested to be important in the negative health effects of particulate pollution. A lack of routine observations makes it challenging to know what types of particles are the most harmful.</p>
 </section>
 <section id="heterogeneous-reactions-in-the-atmosphere">
 <h2>Heterogeneous reactions in the atmosphere<a class="headerlink" href="#heterogeneous-reactions-in-the-atmosphere" title="Link to this heading">#</a></h2>
