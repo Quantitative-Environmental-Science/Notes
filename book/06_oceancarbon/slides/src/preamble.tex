@@ -1,3 +1,5 @@
+\documentclass[aspectratio=169]{beamer}
+% \documentclass[aspectratio=169, handout]{beamer}
 
 %---------------------------
 %       Beamer Cheat Sheet
@@ -36,13 +38,11 @@
 %---------------------------
 %       Set Fonts
 %---------------------------
+\usepackage[T1]{fontenc}
 \usepackage{helvet}
 \renewcommand{\familydefault}{\sfdefault}
-
-% \usepackage{fontspec}
-% \setmainfont{Arial}  
-
-\usepackage{sansmathfonts}
+\usepackage{sansmath}
+\sansmath
 \usepackage{upgreek}
 
 \setbeamerfont{frametitle}{series=\bfseries, size=\Large}
@@ -52,16 +52,17 @@
 %---------------------------
 %       Math font packages
 %---------------------------
-\usepackage{dsfont, amsmath, amsthm, mathtools}
-\usepackage{bbm, bm}
-\usepackage[T1]{fontenc}
+% \usepackage{dsfont, amsmath, amsthm, mathtools}
+\usepackage{amsmath, mathtools}
+% \usepackage{bbm, bm}
+\usepackage{bm}
 \usepackage[version=3]{mhchem}
 
 %---------------------------
 %       Figure packages
 %---------------------------
 \usepackage{graphicx}
-\graphicspath{{../../figures}}
+\graphicspath{{../../figures/}}
 
 \usepackage{epstopdf}
 \usepackage{color}
