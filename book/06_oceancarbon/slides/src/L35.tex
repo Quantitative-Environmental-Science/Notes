@@ -103,13 +103,17 @@
 \begin{frame}{Ocean \& Atmosphere}
 
     \centering
-    \includegraphics<1>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{carbon-1box.png}
-
-    \only<1>{
-        \manualtext{71\% of Earth SA}{0.34\linewidth}{-0.22\textheight}
-        \manualtext{3.7 km deep}{0.34\linewidth}{-0.27\textheight}
-        \manualtext{$1.4 \times 10^{21}~kg$}{0.34\linewidth}{-0.32\textheight}
-    }
+    \begin{tikzpicture}
+        \node[inner sep=0] (img) {
+            \includegraphics[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{carbon-1box.png}
+        };
+        \node[anchor=south east, align=right, font=\normalsize] at (
+            [xshift=-0.4cm, yshift=0.6cm]img.south east) {
+            71\% of Earth SA \\
+            3.7 km deep \\
+            $1.4 \times 10^{21}~\mathrm{kg}$
+        };
+    \end{tikzpicture}
 
 \end{frame}
 
