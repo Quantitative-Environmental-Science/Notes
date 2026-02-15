@@ -72,7 +72,7 @@ Global Environment 🌍
 Fluids on a rotating planet
 :::
 
-<!-- :::{grid-item-card}
+:::{grid-item-card}
 :link: 06_oceancarbon/00_intro
 :link-type: doc
 :class-header: bg-light
@@ -81,7 +81,7 @@ Ocean Carbon 🌊
 ^^^
 
 How carbon moves around the ocean
-::: -->
+:::
 
 <!-- :::{grid-item-card}
 :link: 07_landcarbon/intro
