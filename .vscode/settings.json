@@ -6,6 +6,8 @@
         "**/*.blg": true,
         "**/*.fls": true,
         "**/*.out": true,
+        "**/*.nav": true,
+        "**/*.snm": true,
         "**/*.run.xml": true,
         "**/*.synctex.gz": true,
         "**/*latexmk": true
