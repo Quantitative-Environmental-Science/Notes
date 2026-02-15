@@ -1,3 +1,4 @@
+%!TEX root = L35.tex
 \input{preamble.tex}
 
 \title{Ocean Carbon}
@@ -6,11 +7,18 @@
 \begin{document}
 
 \begin{frame}{How much carbon is in the ocean?}
-    \textbf{Oscar Branson} \\ 
-    \bigskip
-    \href{mailto:ob266@cam.ac.uk}{ob266@cam.ac.uk} \\
-    Earth Sciences \\
-    Office M25
+    \begin{columns}
+        \begin{column}{0.3\linewidth}
+            \textbf{Oscar Branson} \\ 
+            \bigskip
+            \href{mailto:ob266@cam.ac.uk}{ob266@cam.ac.uk} \\
+            Earth Sciences \\
+            Office M25
+        \end{column}
+        \begin{column}{0.7\linewidth}
+            \includegraphics[width=\linewidth, totalheight=0.8\textheight, keepaspectratio]{pacific.jpg}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}{Next five lectures...}
@@ -18,7 +26,8 @@
 \textbf{Lectures}: Carbon in the ocean and the processes affecting it.
 
 \begin{itemize}
-    \item Concepts, turning concepts into equations. 
+    \item Concepts, turning concepts into equations.
+    \item \href{https://quantitative-environmental-science.github.io/Notes/06_oceancarbon/00_intro.html}{Online lecture notes!}
     \item Maths note: these equations will get too complex to solve analytically, we will be algebra \textsuperscript{LIGHT}.
 \end{itemize}
 
@@ -33,28 +42,57 @@
 
 \end{frame}
 
+\begin{frame}{Lab Report}
+    \begin{itemize}
+        \item \textbf{25\%} of QES Mark
+        \item 5x Short answer questions (L2-L6), worth 10\% each.
+        \begin{itemize}
+            \item 1 Figure
+            \item 250 words
+            \item \textbf{Do these as you go!}
+        \end{itemize}
+        \item 1x Long answer question (choice of 2, released after L6), worth 50\%.
+        \item Up to 4 Figures
+        \item 1500 words
+        \item Due \textbf{Sunday 12th April}
+        \begin{itemize}
+            \item Single, well-formatted document with all answers to short (suggest 1 page each) and long question.
+            \item Six colab notebooks.
+            \item Detailed instructions and marking guide are on Moodle.
+        \end{itemize} 
+    \end{itemize}
+\end{frame}
+
+
 \section{Measurement}
+
+\begin{frame}{How much carbon is in the ocean?}
+    \begin{center}
+        \includegraphics[width=\linewidth, totalheight=0.8\textheight, keepaspectratio]{pacific.jpg}    
+    \end{center}
+    
+\end{frame}
 
 \begin{frame}{Measuring Ocean Carbon}
     \centering
 
-    \includegraphics<1>[width=\linewidth, totalheight=0.7\textheight, keepaspectratio]{carbon-GLODAP-map.jpg}
-    \only<1>{
+    \includegraphics<1|handout:1>[width=\linewidth, totalheight=0.7\textheight, keepaspectratio]{carbon-GLODAP-map.jpg}
+    \only<1|handout:1>{
         \manualtext{\textbf{GLODAP}}{0.48\linewidth}{-0.3\textheight}
         \manualtext{1085 Cruises}{0.48\linewidth}{-0.35\textheight}
         \manualtext{1.4M samples}{0.48\linewidth}{-0.4\textheight}
         \slidereference{https://www.digitalearthviewer-glodap.geomar.de/}
     }    
 
-    \includegraphics<2>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{carbon-VINDTA.jpg}
+    \includegraphics<2|handout:0>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{carbon-VINDTA.jpg}
 
-    \includegraphics<3->[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{carbon-cx-dic.png}
-    \only<3->{
+    \includegraphics<3-|handout:2>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{carbon-cx-dic.png}
+    \only<3-|handout:2>{
         \manualtext{\rotatebox{90}{$\mathrm{\upmu mol~kg^{-1}}$}}{0.52\linewidth}{-0.6}
         \slidereference{Sarmiento \& Gruber (2006)}
     }
 
-    \only<4>{
+    \only<4|handout:2>{
         \manualtextright{Average $\sim 2255~ \mathrm{\upmu mol~kg^{-1}}$}{0.5\linewidth}{-0.45\textheight}
     }
 
@@ -65,13 +103,17 @@
 \begin{frame}{Ocean \& Atmosphere}
 
     \centering
-    \includegraphics<1>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{carbon-1box.png}
-
-    \only<1>{
-        \manualtext{71\% of Earth SA}{0.34\linewidth}{-0.22\textheight}
-        \manualtext{3.7 km deep}{0.34\linewidth}{-0.27\textheight}
-        \manualtext{$1.4 \times 10^{21}~kg$}{0.34\linewidth}{-0.32\textheight}
-    }
+    \begin{tikzpicture}
+        \node[inner sep=0] (img) {
+            \includegraphics[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{carbon-1box.png}
+        };
+        \node[anchor=south east, align=right, font=\normalsize] at (
+            [xshift=-0.4cm, yshift=0.6cm]img.south east) {
+            71\% of Earth SA \\
+            3.7 km deep \\
+            $1.4 \times 10^{21}~\mathrm{kg}$
+        };
+    \end{tikzpicture}
 
 \end{frame}
 
@@ -94,7 +136,7 @@
     \small \emph{(square brackets denote concentration in $\mu mol~kg^{-1}$)}
 
     \only<2>{
-        \manualpic{carbon-janco2.png}{width=4cm}{5.5cm}{-1.5cm}
+        \manualpic{carbon-janco2-2026.png}{width=4cm}{5.5cm}{-1.5cm}
     }
 
 \end{frame}
@@ -103,22 +145,22 @@
 
 \begin{frame}{Equilibrium?}
     \centering
-    \includegraphics<1>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{carbon-1box.png}
+    \includegraphics<1|handout:0>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{carbon-1box.png}
 
-    \includegraphics<2>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{carbon-cx-dic.png}
-    \only<2>{
+    \includegraphics<2|handout:0>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{carbon-cx-dic.png}
+    \only<2|handout:0>{
         \manualtext{\rotatebox{90}{$\mathrm{\upmu mol~kg^{-1}}$}}{0.52\linewidth}{-0.6}
         \slidereference{Sarmiento \& Gruber (2006)}
     }
 
-    \includegraphics<3>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{carbon-ocean-atmos.png}
-    \only<3>{
+    \includegraphics<3|handout:1>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{carbon-ocean-atmos.png}
+    \only<3|handout:1>{
         \slidereference{Sarmiento \& Gruber (2006)}
     }
 
 \end{frame}
 
-\begin{frame}{Disequilibrium?}
+\begin{frame}{\underline{Dis}equilibrium?}
     The atmosphere is not in equilibrium with the \textbf{average} ocean.
 
     \begin{itemize}
@@ -134,17 +176,17 @@
 \begin{frame}{Ocean Structure}
     \centering
     
-    \includegraphics<1>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{carbon-cx-dic.png}
-    \only<1>{
+    \includegraphics<1|handout:1>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{carbon-cx-dic.png}
+    \only<1|handout:1>{
         \manualtext{\rotatebox{90}{$\mathrm{\upmu mol~kg^{-1}}$}}{0.52\linewidth}{-0.6}
         \slidereference{Sarmiento \& Gruber (2006)}
     }
 
-    \includegraphics<2>[width=\linewidth, totalheight=0.8\textheight, keepaspectratio]{carbon-components.png}
+    \includegraphics<2|handout:2>[width=\linewidth, totalheight=0.8\textheight, keepaspectratio]{carbon-components.png}
 
-    \includegraphics<3>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{ocean-circulation.png}
+    \includegraphics<3|handout:3>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{ocean-circulation.png}
 
-    \includegraphics<4>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{marshall-speer.png}
+    \includegraphics<4|handout:4>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{marshall-speer.png}
 
 
 \end{frame}
@@ -154,15 +196,15 @@
 \begin{frame}{Modelling Ocean Carbon}
     \centering
 
-    \only<1>{
-        In \textbf{Practicals 13-16} you will be making a model of carbon in the ocean. \\
+    \only<1|handout:1>{
+        In \textbf{Practicals L4-6} you will be making a model of carbon in the ocean. \\
         ~ \\
         \Large \textbf{How should we approach this?}
     }
 
-    \includegraphics<2>[width=0.8\linewidth, totalheight=0.75\textheight, keepaspectratio]{stommel_box.png}
+    \includegraphics<2|handout:2>[width=0.8\linewidth, totalheight=0.75\textheight, keepaspectratio]{stommel_box.png}
 
-    \includegraphics<3>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{ocean-circulation.png}
+    \includegraphics<3|handout:0>[width=\linewidth, totalheight=0.75\textheight, keepaspectratio]{ocean-circulation.png}
 
 \end{frame}
 
@@ -178,8 +220,8 @@
         \begin{column}{0.6\linewidth}
             \includegraphics[width=\linewidth, totalheight=0.8\textheight, keepaspectratio]{ocean-3box.png}
         \end{column}   
-        \begin{column}{0.3\linewidth}
-            You will begin building this model in Practical 13.
+        \begin{column}{0.33\linewidth}
+            You will start building this model in Practical L4.
         \end{column} 
     \end{columns}
     
