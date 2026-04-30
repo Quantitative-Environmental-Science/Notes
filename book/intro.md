@@ -105,7 +105,7 @@ Polar Case Study 🐧
 Land-ocean-atmosphere-ice interactions
 ::: -->
 
-<!-- :::{grid-item-card}
+:::{grid-item-card}
 :link: 10_energytransitions/intro
 :link-type: doc
 :class-header: bg-light
@@ -114,7 +114,7 @@ Energy Transitions 🏭
 ^^^
 
 Towards a sustainable future
-::: -->
+:::
 
 <!-- :::{grid-item-card}
 :link: 09_globalclimate/intro

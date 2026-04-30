@@ -66,15 +66,15 @@ chapters:
 #   sections:
 #   - file: 08_polarcasestudy/l44
 #   - file: 08_polarcasestudy/l45
-# - file: 10_energytransitions/intro
-#   sections:
-#   - file: 10_energytransitions/l49
-#   - file: 10_energytransitions/l50
-#   - file: 10_energytransitions/l51
-#   - file: 10_energytransitions/l52
-#   - file: 10_energytransitions/l53
-#   - file: 10_energytransitions/l54
-#   - file: 10_energytransitions/l55
+- file: 10_energytransitions/intro
+  sections:
+  - file: 10_energytransitions/l49
+  - file: 10_energytransitions/l50
+  - file: 10_energytransitions/l51
+  - file: 10_energytransitions/l52
+  - file: 10_energytransitions/l53
+  - file: 10_energytransitions/l54
+  - file: 10_energytransitions/l55
 
 
 # - file: reference/glossary
