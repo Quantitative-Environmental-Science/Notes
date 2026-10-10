@@ -17,3 +17,6 @@ raw/
 
 # ignore PDF build directory
 **/pdf/*
+
+## venv
+.venv/*
