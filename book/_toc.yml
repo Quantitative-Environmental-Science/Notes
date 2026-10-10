@@ -7,7 +7,7 @@ chapters:
   sections:
   - file: 00_intro/l1
   - file: 00_intro/l2
-  - file: 00_intro/l3
+  # - file: 00_intro/l3
 - file: 01_groundwater/intro
   sections:
   - file: 01_groundwater/l4
