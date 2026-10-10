@@ -178,7 +178,7 @@
         <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="intro.html">1. Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="l1.html">1.1. Course Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="l2.html">1.2. Where does the energy come from on Earth?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l2.html">1.2. Energy and Carbon on the Planet</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../01_groundwater/intro.html">2. Surface Waters I: Groundwater</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -428,7 +428,7 @@ We can calculate this by knowing the amount in the reservoir (total number of mo
 This gives us a rough idea of how long carbon might stick around in any one reservoir.</p>
 <p>Box models like the ones shown schematically in <code class="xref std std-numref docutils literal notranslate"><span class="pre">carbon_cycle</span></code> for the carbon cycle above will come up many times throughout this course, and this week’s supervision sheet will cover the mathematics behind box models.
 At its most basic, if we think about the quantity of something in a reservoir, in this case the amount of carbon in one of our carbon cycle reservoirs, then if the rate at which it is being added (amount-per-time) equals the rate at which it is being taken away (amount-per-time), the concentration in the reservoir won’t change.
-We call this steady state.
+We call this <strong><span class="xref std std-term">Steady State</span></strong>..
 If the amount being put in is larger than the amount being taken out, then the concentration will rise and if the amount being taken out is larger than the amount being put in, then the concentration will fall.</p>
 <p>In the real world, the rate that carbon is removed from a reservoir is proportional to the amount that is in that reservoir.
 We can think about this practically if we consider real processes.
@@ -441,7 +441,7 @@ For example:</p>
 <li><p>Physical reactions that remove gas, like the dissolution of carbon dioxide into the ocean that scales with wind speed, will each remove more carbon dioxide when they happen.</p></li>
 <li><p>Indirectly, increased carbon in the atmosphere increases temperature, and this can accelerate things like photosynthesis and other temperature-dependent reactions.</p></li>
 </ul>
-<p>What this means practically is that at long enough timescales, most systems will trend towards steady state –
+<p>What this means practically is that at long enough timescales, most systems will trend towards steady state, where the inputs and outpus are balanced –
 that is if there is a change in the inputs, the outputs will adjust to match the inputs.</p>
 <figure class="margin-caption align-default" id="box-model">
 <a class="reference internal image-reference" href="../_images/figure3.2.png"><img alt="../_images/figure3.2.png" src="../_images/figure3.2.png" style="width: 50%;" />
@@ -465,14 +465,14 @@ k &amp;= \mathrm{time^{-1}}
 </aside>
 <div class="math notranslate nohighlight" id="equation-box-eqn">
 <span class="eqno">()<a class="headerlink" href="#equation-box-eqn" title="Link to this equation">#</a></span>\[\dv{n}{t} = a - k n\]</div>
-<p>In the lecture we will cover different ways to deal with this sort of equation, and you will get the opportunity to work on these in the supervision sheet.
+<p>In your supervision you will cover how we solve this type of differential equation, and you will get the opportunity to work on these in the supervision sheet.
 The solution for <span class="math notranslate nohighlight">\(n\)</span> as a function of time is:</p>
 <div class="math notranslate nohighlight" id="equation-box-soln">
 <span class="eqno">()<a class="headerlink" href="#equation-box-soln" title="Link to this equation">#</a></span>\[n(t) = \frac{a}{k} - \left[ \frac{a}{k} - n_{o} \right] e^{-kt}\]</div>
 <p>We can think about the functional form that this equation takes.
 At long timescales, the second term drops out and the amount of <span class="math notranslate nohighlight">\(n\)</span> in the box becomes <span class="math notranslate nohighlight">\(\frac{a}{k}\)</span>.
-However, when you perturb the system (increase the input, <span class="math notranslate nohighlight">\(a\)</span>, or change the rate constant for the removal, <span class="math notranslate nohighlight">\(k\)</span>) the system approaches a new concentration, <span class="math notranslate nohighlight">\(\frac{a}{k}\)</span>.</p>
-<p>We can consider this in terms of carbon dioxide (<code class="xref std std-numref docutils literal notranslate"><span class="pre">co2_atm</span></code>) and methane (<code class="xref std std-numref docutils literal notranslate"><span class="pre">ch4_atm</span></code>) in the atmosphere.</p>
+However, when you perturb the system (increase or decrease the input, <span class="math notranslate nohighlight">\(a\)</span>, or change the rate constant for the removal, <span class="math notranslate nohighlight">\(k\)</span>) the system approaches a new concentration, <span class="math notranslate nohighlight">\(\frac{a}{k}\)</span>.</p>
+<p>Consider the application of this sort of a model for the atmosphere (the reservoir) and for carbon dioxide (<code class="xref std std-numref docutils literal notranslate"><span class="pre">co2_atm</span></code>) and methane (<code class="xref std std-numref docutils literal notranslate"><span class="pre">ch4_atm</span></code>).</p>
 <figure class="margin-caption align-default" id="co2-atm">
 <img alt="../_images/figure3.3.png" src="../_images/figure3.3.png" />
 <figcaption>
@@ -487,10 +487,11 @@ Inset, a map of Antarctica showing the locations where ice cores were taken.</sp
 Inset, pie chart showing the contribution to the atmospheric methane flux of various sources.</span><a class="headerlink" href="#ch4-atm" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
+<p>In each case there are sources of carbon dioxide (<code class="xref std std-numref docutils literal notranslate"><span class="pre">co2_atm</span></code>) and methane (<code class="xref std std-numref docutils literal notranslate"><span class="pre">ch4_atm</span></code>) that are exceeding the sinks, and the concentration is increasing. If the sources were to decrease, what would happen to the concentrations? They would decrease, and how quickly they would decrease would depend on the residence time of these elements in the atmosphere (which relates to how much is there and the rate of addition and removal).</p>
 <p>Where will you see this elsewhere in the course?
 Box models and the mathematics behind box models will come up again and again throughout the course!
 It is a good idea to spend time with your supervisors to make sure you are comfortable with the functional form of the equation that describes the time evolution of something in a box.
-In this lecture it was carbon, but later this term it will refer to the storage of water in a groundwater aquifer,</p>
+In this lecture it was carbon, but later this week it will refer to the storage of water in a groundwater aquifer,</p>
 <!-- ({ref}`Lecture 5<lecture_5>`), -->
 <p>the mass balance of ice sheets,</p>
 <!-- ({ref}`Lectures 8-12<lecture_8>`), -->
