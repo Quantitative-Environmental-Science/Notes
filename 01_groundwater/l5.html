@@ -64,7 +64,7 @@
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.3. How we measure and understand water movement" href="l6.html" />
+    <link rel="next" title="2.4. How we measure and understand water movement" href="l6.html" />
     <link rel="prev" title="2.1. Groundwater Systems" href="l4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -184,10 +184,11 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">2. Surface Waters I: Groundwater</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="l4.html">2.1. Groundwater Systems</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.2. Why water moves beneath the surface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="l6.html">2.3. How we measure and understand water movement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="l7.html">2.4. Groundwater challenges and sustainable groundwater</a></li>
-<li class="toctree-l2"><a class="reference internal" href="l8.html">2.5. Groundwater Chemistry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="l9.html">2.6. Pollution in Rivers</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="l6.html">2.4. How we measure and understand water movement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l7.html">2.5. Groundwater challenges and sustainable groundwater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l8.html">2.6. Groundwater Chemistry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l9.html">2.7. Pollution in Rivers</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../02_rivers/intro.html">3. Surface Waters II: Rivers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -377,7 +378,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -393,6 +396,16 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">2.2. Why water moves beneath the surface</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-4">2.3. Why water moves beneath the surface</a></li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -405,71 +418,48 @@ document.write(`
   <p><br><div style="page-break-before:always;"></div></p>
 <section class="tex2jax_ignore mathjax_ignore" id="why-water-moves-beneath-the-surface">
 <span id="lecture-5"></span><h1><span class="section-number">2.2. </span>Why water moves beneath the surface<a class="headerlink" href="#why-water-moves-beneath-the-surface" title="Link to this heading">#</a></h1>
-<p>Inherent to the idea of a groundwater system is the idea that groundwater moves from a point of <a class="reference internal" href="../reference/glossary.html#term-Recharge"><span class="xref std std-term">recharge</span></a> to a point of <a class="reference internal" href="../reference/glossary.html#term-Discharge"><span class="xref std std-term">discharge</span></a>.
-If the total volume stored is a function of the <a class="reference internal" href="../reference/glossary.html#term-Porosity"><span class="xref std std-term">porosity</span></a>, then we can ask ourselves what controls how groundwater moves from one point to another point?</p>
-<p>This was first explored in the 1850s by <strong>Henri D’Arcy</strong>, a French civil engineer, who set up a pipe filled with sand and played around with how fast water moved through the pipe.</p>
-<figure class="margin-caption align-default" id="darcy-pipe">
-<a class="reference internal image-reference" href="../_images/figure5.1.png"><img alt="../_images/figure5.1.png" src="../_images/figure5.1.png" style="width: 70%;" />
-</a>
+<p>In the last lecture we learned all about the various names for places that hold groundwater in the subsurface. This schematic summarises some of those key points and we will revisit it again. It gives a more clear view of <strong><a class="reference internal" href="../reference/glossary.html#term-Confined-Aquifer"><span class="xref std std-term">confined aquifers</span></a></strong> and <strong><a class="reference internal" href="../reference/glossary.html#term-Unconfined-Aquifer"><span class="xref std std-term">unconfined aquifers</span></a></strong>.</p>
+<p>A <a class="reference internal" href="../reference/glossary.html#term-Confined-Aquifer"><span class="xref std std-term">confined aquifer</span></a> has confining layer which stops or slows (confines) the water in the groundwater system.
+An <a class="reference internal" href="../reference/glossary.html#term-Unconfined-Aquifer"><span class="xref std std-term">unconfined aquifer</span></a> has the ground surface as the upper bound.</p>
+<figure class="margin-caption align-default" id="aquifer">
+<img alt="../_images/figure4.6.jpeg" src="../_images/figure4.6.jpeg" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.7 </span><span class="caption-text">A schematic of the original experiment by Henri D’Arcy.</span><a class="headerlink" href="#darcy-pipe" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.9 </span><span class="caption-text">Schematic figure showing the anatomy of different kinds of aquifer.</span><a class="headerlink" href="#aquifer" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<aside class="units margin sidebar">
-<p class="sidebar-title">Units!</p>
+<p>In the schematic in <a class="reference internal" href="#aquifer"><span class="std std-numref">Fig. 2.9</span></a>, ‘confining units’ are aquitards, and the unconfined and <a class="reference internal" href="../reference/glossary.html#term-Confined-Aquifer"><span class="xref std std-term">confined aquifers</span></a> are labelled.
+It should be clear that the <a class="reference internal" href="../reference/glossary.html#term-Residence-Time"><span class="xref std std-term">residence time</span></a> of water in a <a class="reference internal" href="../reference/glossary.html#term-Confined-Aquifer"><span class="xref std std-term">confined aquifer</span></a> is much longer than it is in an <a class="reference internal" href="../reference/glossary.html#term-Unconfined-Aquifer"><span class="xref std std-term">unconfined aquifer</span></a>.
+Furthermore, if we think about a toxic chemical spill at the surface, an <a class="reference internal" href="../reference/glossary.html#term-Unconfined-Aquifer"><span class="xref std std-term">unconfined aquifer</span></a> will get more of the toxin leaking into it as it isn’t protected, where a <a class="reference internal" href="../reference/glossary.html#term-Confined-Aquifer"><span class="xref std std-term">confined aquifer</span></a> often is protected from surface chemicals through the aquitard, or confining unit.</p>
+<p>Sometimes – even often - the pressure in a <a class="reference internal" href="../reference/glossary.html#term-Confined-Aquifer"><span class="xref std std-term">confined aquifer</span></a> is greater than that at the surface.
+This is in part because of gas in the water that exsolves, and chemical reactions that take place and generate gas.
+The gas can’t escape because of the confining units, therefore, when a well is drilled into the high-pressure aquifer, the water moves from high pressure (depth) to low pressure (surface).
+This is called an <strong><a class="reference internal" href="../reference/glossary.html#term-Artesian-Well"><span class="xref std std-term">artesian well</span></a></strong>. This is shown on the figure as well.</p>
+<p>The key goal of today’s lecture is to apply Darcy’s law from the lab to the environment and understand what a hydraulic gradient or conductivity is in the field.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="lecture-4">
+<span id="id1"></span><h1><span class="section-number">2.3. </span>Why water moves beneath the surface<a class="headerlink" href="#lecture-4" title="Link to this heading">#</a></h1>
+<p>In the last lecture we derived Darcy’s Law based on experiments done in the 1800’s.</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-l, h &amp;= \mathrm{m} \\
-Q &amp;= \mathrm{m^3~s^{-1}} \\
-\end{split}\]</div>
-</aside>
-<p>Here the pipe (length <span class="math notranslate nohighlight">\(l\)</span> and cross-sectional area <span class="math notranslate nohighlight">\(A\)</span>) was put at various angles to the horizontal
-(determined by <span class="math notranslate nohighlight">\(\Delta h\)</span> – or the height difference between one end of the pipe to the other end of the pipe)
-and the flow rate, <span class="math notranslate nohighlight">\(Q\)</span>, was measured (in units of volume-per-time).</p>
-<p>Specifically, we will call <span class="math notranslate nohighlight">\(\frac{\Delta h}{\Delta l}\)</span> – that is the change in height over a distance along the pipe - the <strong><a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Gradient"><span class="xref std std-term">hydraulic gradient</span></a></strong>.</p>
-<figure class="margin-caption align-default" id="hyd-grad">
-<img alt="../_images/figure5.2.jpeg" src="../_images/figure5.2.jpeg" />
-<figcaption>
-<p><span class="caption-number">Fig. 2.8 </span><span class="caption-text">Plot of Flow Rate <span class="math notranslate nohighlight">\((Q)\)</span> against <span class="math notranslate nohighlight">\(-\dv{h}{l}\)</span>. The gradient gives <span class="math notranslate nohighlight">\(K\)</span>, the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a>.</span><a class="headerlink" href="#hyd-grad" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>What Darcy found was that <span class="math notranslate nohighlight">\(Q\)</span> is proportional to <span class="math notranslate nohighlight">\(\Delta h\)</span> and inversely proportional to <span class="math notranslate nohighlight">\(l\)</span>.
-That is the steeper the pipe is held, the larger the volumetric flow rate, and the longer the pipe is the lower the volumetric flow rate.
-He also found that <span class="math notranslate nohighlight">\(Q\)</span> is proportional to <span class="math notranslate nohighlight">\(A\)</span>, that is the larger the pipe, the larger the flow rate.
-When he filled the pipe with different material, he found that the slope (in a plot of <span class="math notranslate nohighlight">\(Q\)</span> versus <span class="math notranslate nohighlight">\(\frac{\Delta h}{\Delta l}\)</span>, <a class="reference internal" href="#hyd-grad"><span class="std std-numref">Fig. 2.8</span></a>) changed.
-He called this slope <span class="math notranslate nohighlight">\(K\)</span> and called it <strong><a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a></strong>.</p>
-<p>Therefore, <span class="math notranslate nohighlight">\(Q \propto - A \frac{\Delta h}{\Delta l}\)</span>, which we can turn into an equation using <span class="math notranslate nohighlight">\(K\)</span>:  <span class="math notranslate nohighlight">\(Q = - K A \frac{\Delta h}{\Delta l}\)</span>.
-Or more generally:</p>
-<aside class="units margin sidebar">
-<p class="sidebar-title">Units!</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-K &amp;= \mathrm{m~s^{-1}} \\
-A &amp;= \mathrm{m^2} \\
-q &amp;= \mathrm{m~s^{-1}} \\
-\end{split}\]</div>
-</aside>
-<div class="math notranslate nohighlight" id="equation-darcys-law">
-<span class="eqno">(2.3)<a class="headerlink" href="#equation-darcys-law" title="Link to this equation">#</a></span>\[Q = -KA \dv{h}{l}\]</div>
-<p>which is known as <strong>Darcy’s law</strong>.
-Note that often you will see <span class="math notranslate nohighlight">\(q\)</span> rather than <span class="math notranslate nohighlight">\(Q\)</span> used where <span class="math notranslate nohighlight">\(q\)</span> is <a class="reference internal" href="../reference/glossary.html#term-Specific-Discharge"><span class="xref std std-term">specific discharge</span></a>, or ‘Darcy velocity’ and is the flow rate (<span class="math notranslate nohighlight">\(Q\)</span>) divided by the area (<span class="math notranslate nohighlight">\(A\)</span>):</p>
+\[Q = -KA \dv{h}{l}\]</div>
+<p>Where <span class="math notranslate nohighlight">\(Q\)</span> is the volumetric flow rate, <span class="math notranslate nohighlight">\(K\)</span> is the hydraulic conductivity, <span class="math notranslate nohighlight">\(A\)</span> is the cross-sectional area, and <span class="math notranslate nohighlight">\(\dv{h}{l}\)</span> is the hydraulic gradient.</p>
+<p>Note that often you will see <span class="math notranslate nohighlight">\(q\)</span> rather than <span class="math notranslate nohighlight">\(Q\)</span> used where <span class="math notranslate nohighlight">\(q\)</span> is <a class="reference internal" href="../reference/glossary.html#term-Specific-Discharge"><span class="xref std std-term">specific discharge</span></a>, or ‘Darcy velocity’ and is the flow rate (<span class="math notranslate nohighlight">\(Q\)</span>) divided by the area (<span class="math notranslate nohighlight">\(A\)</span>):</p>
 <div class="math notranslate nohighlight" id="equation-darcys-vel">
 <span class="eqno">(2.4)<a class="headerlink" href="#equation-darcys-vel" title="Link to this equation">#</a></span>\[q = \frac{Q}{A}\]</div>
 <p>Let’s learn more about this <strong><a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a></strong> – <span class="math notranslate nohighlight">\(K\)</span>.
 We can derive that the units are length-per-time, or often <span class="math notranslate nohighlight">\(\mathrm{m \ s^{-1}}\)</span>.
-Studies of actual groundwater systems have shown that it can range over 12 orders of magnitude in various materials below the subsurface (<a class="reference internal" href="#fluxes"><span class="std std-numref">Fig. 2.9</span></a>).</p>
+Studies of actual groundwater systems have shown that it can range over 12 orders of magnitude in various materials below the surface (<a class="reference internal" href="#fluxes"><span class="std std-numref">Fig. 2.10</span></a>).</p>
 <figure class="margin-caption align-default" id="fluxes">
 <img alt="../_images/figure5.3.jpg" src="../_images/figure5.3.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.9 </span><span class="caption-text">Comparing <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a> values from (A) Freeze and Cherry (1979) and
-(B) calibrayted regional scale hydrogeologic models.
+<p><span class="caption-number">Fig. 2.10 </span><span class="caption-text">Comparing <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a> values from (A) Freeze and Cherry (1979) and
+(B) calibrated regional scale hydrogeologic models.
 Each open square is an optimised or mean value from a part of a model domain that is larger than <span class="math notranslate nohighlight">\(5 \ \mathrm{km}\)</span> horizontally.
-Values are grouped into hydrolithogic categories that are typical for regioonal-scale modeling
+Values are grouped into hydrolithogic categories that are typical for regional-scale modelling
 (i.e. fine grained, unconsolidated).
-The geometric meanis shown as a red square with <span class="math notranslate nohighlight">\(1\sigma\)</span> standard deviation for each hydrolithogic category is also shown.</span><a class="headerlink" href="#fluxes" title="Link to this image">#</a></p>
+The geometric mean is shown as a red square with <span class="math notranslate nohighlight">\(1\sigma\)</span> standard deviation for each hydrolithogic category.</span><a class="headerlink" href="#fluxes" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>In general, <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a> is a function of both the medium (what groundwater flows through)
+<p><a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">Hydraulic conductivity</span></a> is a function of both the medium (what groundwater flows through)
 and the fluid that is going through the medium (usually water, in the case of groundwater).
 <span class="math notranslate nohighlight">\(K\)</span> is:</p>
 <aside class="units margin sidebar">
@@ -487,10 +477,9 @@ g &amp;= \mathrm{m~s^{-2}} \\
 <p>Here, <span class="math notranslate nohighlight">\(Cd^2\)</span> is a property of the medium – where <span class="math notranslate nohighlight">\(d\)</span> is the diameter of the grains, and <span class="math notranslate nohighlight">\(C\)</span> is a constant of proportionality,
 which covers grain packing, how round the grains are, how much cement is around.
 Meanwhile, <span class="math notranslate nohighlight">\(\frac{\rho g}{\mu}\)</span> is a property of the fluid,
-with <span class="math notranslate nohighlight">\(\rho g\)</span> being the specific weight of the fluid (<span class="math notranslate nohighlight">\(9800 \ \mathrm{N \ m^3}\)</span>) in the case of water
-and <span class="math notranslate nohighlight">\(\mu\)</span> being the dynamic viscosity of the fluid (<span class="math notranslate nohighlight">\(1.386 \times 10^{-3} \ \mathrm{N \ s \ m^{-2}}\)</span> for water).</p>
-<p>While <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a> is a function of the medium and the fluid (imagine trying to put honey through a groundwater system!),
-in reality, as for most groundwaters the specific weight and dynamic viscosity vary little,
+with <span class="math notranslate nohighlight">\(\rho g\)</span> being the specific weight of the fluid (<span class="math notranslate nohighlight">\(9800 \ \mathrm{N \ m^{-3}}\)</span>) in the case of water
+and <span class="math notranslate nohighlight">\(\mu\)</span> being the dynamic viscosity of the fluid (<span class="math notranslate nohighlight">\(1.386 \times 10^{-3} \ \mathrm{N \ s \ m^{-2}}\)</span> for cool groundwater).</p>
+<p>While <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a> is a function of the medium and the fluid (imagine trying to put honey through a groundwater system!), in reality, as for most groundwaters the specific weight and dynamic viscosity vary little,
 what is important is the soil/rock/subsurface (medium) through which you are trying to push groundwater.
 Mathematically, we call this <span class="math notranslate nohighlight">\(k\)</span> – and it is known as <strong><a class="reference internal" href="../reference/glossary.html#term-Permeability"><span class="xref std std-term">permeability</span></a></strong>.</p>
 <aside class="units margin sidebar">
@@ -505,27 +494,27 @@ k &amp;= \mathrm{m^2} \\
 <p>We can see that we can relate <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a> (units <span class="math notranslate nohighlight">\(\mathrm{m \ s^{-1}}\)</span>) to <a class="reference internal" href="../reference/glossary.html#term-Permeability"><span class="xref std std-term">permeability</span></a> (units <span class="math notranslate nohighlight">\(\mathrm{m^2}\)</span>) quite easily, if we assume that the fluid flowing through the groundwater is water.
 This is usually a safe assumption (even really salty brines in groundwater systems have a specific weight and dynamic viscosity that means they behave more or less as water).
 If you read around a bit you will also find that a unit for <a class="reference internal" href="../reference/glossary.html#term-Permeability"><span class="xref std std-term">Permeability</span></a> of a ‘Darcy’ is sometimes used (but not often).</p>
-<p><a class="reference internal" href="#fluxes"><span class="std std-numref">Fig. 2.9</span></a> shows a comparison of <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a> from experiments, versus those from hydrology models.
+<p><a class="reference internal" href="#fluxes"><span class="std std-numref">Fig. 2.10</span></a> shows a comparison of <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a> from experiments, versus those from hydrology models.
 This gives you a sense of the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a> associated with different types of material that we find on the surface of the planet.
-<a class="reference internal" href="#global-perm"><span class="std std-numref">Fig. 2.10</span></a> shows a map of the global distribution of <a class="reference internal" href="../reference/glossary.html#term-Permeability"><span class="xref std std-term">permeability</span></a> which often relates to the underlying rock type.
+<a class="reference internal" href="#global-perm"><span class="std std-numref">Fig. 2.11</span></a> shows a map of the global distribution of <a class="reference internal" href="../reference/glossary.html#term-Permeability"><span class="xref std std-term">permeability</span></a> which often relates to the underlying rock type.
 In the lecture we will introduce the concept of <strong><a class="reference internal" href="../reference/glossary.html#term-Transmissivity"><span class="xref std std-term">Transmissivity</span></a></strong>, which is the <a class="reference internal" href="../reference/glossary.html#term-Permeability"><span class="xref std std-term">permeability</span></a> over a particular depth of the aquifer.</p>
 <figure class="margin-caption align-default" id="global-perm">
 <img alt="../_images/figure5.4.png" src="../_images/figure5.4.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.10 </span><span class="caption-text">The global distribution of <a class="reference internal" href="../reference/glossary.html#term-Permeability"><span class="xref std std-term">permeability</span></a> in <span class="math notranslate nohighlight">\(\log(k \ / \ \mathrm{m^2})\)</span>.
+<p><span class="caption-number">Fig. 2.11 </span><span class="caption-text">The global distribution of <a class="reference internal" href="../reference/glossary.html#term-Permeability"><span class="xref std std-term">permeability</span></a> in <span class="math notranslate nohighlight">\(\log(k \ / \ \mathrm{m^2})\)</span>.
 The regional scale <a class="reference internal" href="../reference/glossary.html#term-Permeability"><span class="xref std std-term">permeability</span></a> will be much lower in the regions north of the dashed continuous permafrost line.
-Smaller continous permafrost areas in mountainous terrain are not shown.</span><a class="headerlink" href="#global-perm" title="Link to this image">#</a></p>
+Smaller continuous permafrost areas in mountainous terrain are not shown.</span><a class="headerlink" href="#global-perm" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Darcy’s Law provides us with a nice study of what controls the rate that water flows through porous media.
 But like all laws it rests on a few assumptions.
 We need to understand these assumptions before we take the flow through the pipe and translate it to the flow through an actual groundwater system.
-One of the big assumptions is that flow is <strong>laminar</strong>, and not <strong>turbulent</strong>.</p>
+One of the main assumptions is that flow is <strong>laminar</strong>, and not <strong>turbulent</strong>.</p>
 <figure class="margin-caption align-default" id="turb-laminar">
 <a class="reference internal image-reference" href="../_images/figure5.5.png"><img alt="../_images/figure5.5.png" src="../_images/figure5.5.png" style="width: 60%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.11 </span><span class="caption-text">Cartoon of the difference between turbulent and laminar flow.</span><a class="headerlink" href="#turb-laminar" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.12 </span><span class="caption-text">Cartoon of the difference between turbulent and laminar flow.</span><a class="headerlink" href="#turb-laminar" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Laminar means that water is moving in the same direction, like a line, while turbulence occurs when there are deviations from this linearity of movement.</p>
@@ -536,7 +525,7 @@ Turbulence causes pressure loss and thus changes the flow rate.</p>
 <a class="reference internal image-reference" href="../_images/figure5.6.png"><img alt="../_images/figure5.6.png" src="../_images/figure5.6.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.12 </span><span class="caption-text">Plot of flow against <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Gradient"><span class="xref std std-term">hydraulic gradient</span></a> showing the branching of the flow regime.
+<p><span class="caption-number">Fig. 2.13 </span><span class="caption-text">Plot of flow against <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Gradient"><span class="xref std std-term">hydraulic gradient</span></a> showing the branching of the flow regime.
 The lower branch represents the turbulent regime, where pressure is lost.</span><a class="headerlink" href="#q-vs-dh-dl" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
@@ -545,24 +534,24 @@ The lower branch represents the turbulent regime, where pressure is lost.</span>
 <p class="sidebar-title">Units!</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\Re &amp;= \mathrm{unitless} \\
+\mathrm{Re} &amp;= \mathrm{unitless} \\
 \end{split}\]</div>
 </aside>
 <div class="math notranslate nohighlight" id="equation-reynolds-num">
-<span class="eqno">(2.7)<a class="headerlink" href="#equation-reynolds-num" title="Link to this equation">#</a></span>\[\Re = \frac{\rho v d}{\mu}\]</div>
-<p>Where <span class="math notranslate nohighlight">\(r\)</span> is the density of the fluid, <span class="math notranslate nohighlight">\(v\)</span> is the velocity of the fluid, <span class="math notranslate nohighlight">\(d\)</span> is a length term, typically the grain size, and <span class="math notranslate nohighlight">\(\mu\)</span> is the dynamic viscosity of the fluid.
-If <span class="math notranslate nohighlight">\(\mathrm{Re} &lt; 10\)</span> then the flow is laminar, while is <span class="math notranslate nohighlight">\(\mathrm{Re} &gt; 10\)</span> then it is turbulent.
+<span class="eqno">(2.7)<a class="headerlink" href="#equation-reynolds-num" title="Link to this equation">#</a></span>\[\mathrm{Re} = \frac{\rho v d}{\mu}\]</div>
+<p>Where <span class="math notranslate nohighlight">\(\rho\)</span> is the density of the fluid, <span class="math notranslate nohighlight">\(v\)</span> is the velocity of the fluid, <span class="math notranslate nohighlight">\(d\)</span> is a length term, typically the grain size, and <span class="math notranslate nohighlight">\(\mu\)</span> is the dynamic viscosity of the fluid.
+If <span class="math notranslate nohighlight">\(\mathrm{Re} &lt; 10\)</span> then the flow is laminar, while if <span class="math notranslate nohighlight">\(\mathrm{Re} &gt; 10\)</span> then it is turbulent.
 Lucky for us, most groundwater systems fall in the category of laminar flow.</p>
 <figure class="margin-caption align-default" id="grain-sizes">
 <a class="reference internal image-reference" href="../_images/figure5.7.png"><img alt="../_images/figure5.7.png" src="../_images/figure5.7.png" style="width: 70%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.13 </span><span class="caption-text">Cartoon showing of different <a class="reference internal" href="../reference/glossary.html#term-Porosity"><span class="xref std std-term">porosity</span></a> materials.</span><a class="headerlink" href="#grain-sizes" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.14 </span><span class="caption-text">Cartoon showing different <a class="reference internal" href="../reference/glossary.html#term-Porosity"><span class="xref std std-term">porosity</span></a> materials.</span><a class="headerlink" href="#grain-sizes" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Remember that the grains in the porous media, more generally, provide frictional resistance to the flow.
 Thus, the velocity of groundwater will be near zero at the interface between the flowing groundwater and the grains, and will be fastest in the middle between the grains.
-This just means that fundamental properties of the rock/soil/sand have a massive impact on the overall operation of the groundwater system!</p>
+Fundamental properties of the rock/soil/sand have a massive impact on the overall operation of the groundwater system.</p>
 <p>Let’s return to groundwater flow.
 What comes out of Darcy’s law is that the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Gradient"><span class="xref std std-term">hydraulic gradient</span></a>, that is <span class="math notranslate nohighlight">\(\frac{\Delta h}{\Delta l}\)</span> drives the flow of water through the pipe, or in case of the real world, the groundwater system.
 The porous medium (the grains of sand, or sides of the minerals in the rock) resist the flow, providing frictional resistance to the movement of water.
@@ -572,20 +561,21 @@ The average groundwater velocity <span class="math notranslate nohighlight">\((v
 <figure class="margin-caption align-default" id="hydraulic-head">
 <img alt="../_images/figure5.8.png" src="../_images/figure5.8.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.14 </span><span class="caption-text">Schematic showing the calculation of <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a>.</span><a class="headerlink" href="#hydraulic-head" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.15 </span><span class="caption-text">Schematic showing the calculation of <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a>.</span><a class="headerlink" href="#hydraulic-head" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>If we think about a groundwater system, where there are two wells, the pressure of the water at a particular depth in the well is a function of both the pressure exerted by the water above it, and the gravitational pull.
-Together these are called the <strong><a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a></strong>.
-The change in the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a> (<span class="math notranslate nohighlight">\(\dd{h}\)</span> or <span class="math notranslate nohighlight">\(\Delta h\)</span>) over a fixed distance (<span class="math notranslate nohighlight">\(\dd{l}\)</span>, or <span class="math notranslate nohighlight">\(\Delta{l}\)</span>) is the <strong><a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Gradient"><span class="xref std std-term">hydraulic gradient</span></a></strong>.
+<p>If we think about a groundwater system, where there are two wells, the pressure of the water at a particular depth in the well is a function of both the pressure exerted by the water above it, and the gravitational pull on that water (e.g. how high up above sea level is that point?).
+Water in a groundwater system has a <strong><a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a></strong>, which is the total mechanical energy per unit weight of water at a point, expressed as a height (a length, usually in metres). Hydraulic head comprises the pressure head (effectively the weight pushing down at that point), the elevation head (effectively how high that point is above sea level) and the kinetic head (the energy inherent to the water itself). The kinetic head is much smaller, so we ignore it.</p>
+<p>The change in the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a> (<span class="math notranslate nohighlight">\(\dd{h}\)</span> or <span class="math notranslate nohighlight">\(\Delta h\)</span>) over a fixed distance (<span class="math notranslate nohighlight">\(\dd{l}\)</span>, or <span class="math notranslate nohighlight">\(\Delta{l}\)</span>) is the <strong><a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Gradient"><span class="xref std std-term">hydraulic gradient</span></a></strong>.
 This is what drives the water to flow through the porous media (in this case, the rock).</p>
-<p>In the lecture we will go through several conceptual models where water flows from high pressure to low pressure, or low pressure to high pressure (canonically flowing ‘up’ or flowing ‘down’) because it is following the gradient of total change in <strong><a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a></strong>.
+<p>Conceptually, water flows from high <strong><a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a></strong> to low hydraulic head, following the hydraulic gradient.
+Because head combines both pressure and elevation, this does not always mean flowing from high pressure to low pressure, or downhill: water can flow towards higher pressure (e.g. downwards in a recharge area) or upwards against gravity (e.g. in an artesian well), as long as the total head decreases along the flow path.
 This means there is a loss of head along the flow-path in a groundwater system.
 This loss of head amounts to a loss of mechanical energy from the system.
 But remember, energy must be conserved, it cannot be either created or destroyed.
-This energy is lost through frictional resistance of the porous media.
+This energy is conserved through frictional resistance of the porous media.
 Here, the loss of energy is lost as heat, as the water squeezes through the rock matrix.
-The high specific heat capacity of water, however, means that we can’t always measure a change in temperature associated with this conservation of energy!</p>
+The high specific heat capacity of water, however, means that we can’t always measure a change in temperature associated with this conservation of energy.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -632,7 +622,7 @@ The high specific heat capacity of water, however, means that we can’t always 
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.3. </span>How we measure and understand water movement</p>
+        <p class="prev-next-title"><span class="section-number">2.4. </span>How we measure and understand water movement</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -642,6 +632,23 @@ The high specific heat capacity of water, however, means that we can’t always 
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">2.2. Why water moves beneath the surface</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-4">2.3. Why water moves beneath the surface</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>

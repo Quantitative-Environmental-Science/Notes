@@ -184,10 +184,11 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">2. Surface Waters I: Groundwater</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.1. Groundwater Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="l5.html">2.2. Why water moves beneath the surface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="l6.html">2.3. How we measure and understand water movement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="l7.html">2.4. Groundwater challenges and sustainable groundwater</a></li>
-<li class="toctree-l2"><a class="reference internal" href="l8.html">2.5. Groundwater Chemistry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="l9.html">2.6. Pollution in Rivers</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="l6.html">2.4. How we measure and understand water movement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l7.html">2.5. Groundwater challenges and sustainable groundwater</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l8.html">2.6. Groundwater Chemistry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l9.html">2.7. Pollution in Rivers</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../02_rivers/intro.html">3. Surface Waters II: Rivers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -404,7 +405,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groundwater">Groundwater</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#residence-times">Residence Times</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aquifers">Aquifers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#porosity"><span class="xref std std-term">Porosity</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#porosity">Porosity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groundwater-continuity-equation">Groundwater Continuity Equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-water-moves">Why Water Moves</a></li>
 </ul>
             </nav>
         </div>
@@ -421,12 +424,12 @@ document.write(`
 <span id="lecture-4"></span><h1><span class="section-number">2.1. </span>Groundwater Systems<a class="headerlink" href="#groundwater-systems" title="Link to this heading">#</a></h1>
 <section id="water-demand">
 <h2>Water Demand<a class="headerlink" href="#water-demand" title="Link to this heading">#</a></h2>
-<p>The UK has a high demand for water, on the order of <span class="math notranslate nohighlight">\(200 \ \mathrm{l}\)</span> per day, per person.
-Of this, about 33% is used for toilets, and another 33% is showers, dishwashers and drinking (the bit that needs to be potable).
-Certain parts of the UK are under severe water stress.</p>
+<p>The UK has a high demand for water, on the order of <span class="math notranslate nohighlight">\(150 \ \mathrm{l}\)</span> per day, per person.
+Of this, about 33% is used for toilets, and another 33% is showers, dishwashers and drinking (the bit that needs to be potable, or clean).
+Certain parts of the UK are under severe water stress, particularly in the south east, where rainfall is the lowest and population density is the highest.</p>
 <p>But in addition to turning on the tap and using water for our regular ‘domestic’ life, many of the everyday products that we use all the time have a large <strong><a class="reference internal" href="../reference/glossary.html#term-Water-Footprint"><span class="xref std std-term">water footprint</span></a></strong>.
 A <a class="reference internal" href="../reference/glossary.html#term-Water-Footprint"><span class="xref std std-term">water footprint</span></a> refers to the total amount of water that it takes to make something.
-You can see the <a class="reference internal" href="../reference/glossary.html#term-Water-Footprint"><span class="xref std std-term">water footprint</span></a> of some common foods in <a class="reference internal" href="#water-footprint"><span class="std std-numref">Fig. 2.1</span></a>, and in the lecture we will go through in detail the <a class="reference internal" href="../reference/glossary.html#term-Water-Footprint"><span class="xref std std-term">water footprint</span></a> to make one cup of coffee.</p>
+You can see the <a class="reference internal" href="../reference/glossary.html#term-Water-Footprint"><span class="xref std std-term">water footprint</span></a> of some common foods in <a class="reference internal" href="#water-footprint"><span class="std std-numref">Fig. 2.1</span></a>, and in the lecture we will step through the <a class="reference internal" href="../reference/glossary.html#term-Water-Footprint"><span class="xref std std-term">water footprint</span></a> to make one cup of coffee.</p>
 <figure class="margin-caption align-default" id="water-footprint">
 <img alt="../_images/figure4.1.jpeg" src="../_images/figure4.1.jpeg" />
 <figcaption>
@@ -443,12 +446,12 @@ You can see the <a class="reference internal" href="../reference/glossary.html#t
 </figcaption>
 </figure>
 <p>Roughly 30% of Earth’s fresh water is in groundwater (<a class="reference internal" href="#water-location"><span class="std std-numref">Fig. 2.2</span></a>), with most of the rest tied up in glaciers.
-How does water get into the ground? If we consider the mass balance of the hydrological cycle.
-Rain falls down on the ground, and approximately 30% of it returns to the atmosphere via evaporation, 30% returns to the atmosphere via transpiration, and 30% runs off the land through streams and rivers (which you’ll learn more about in <a class="reference internal" href="../02_rivers/l13.html#lecture-13"><span class="std std-ref">Lectures 13-18</span></a>).
+How does water get into the ground?
+Rain falls down on the ground, and approximately 30% of it returns to the atmosphere via evaporation, 30% returns to the atmosphere via transpiration (these are lumped together often as evapotranspiration), and 30% runs off the land through streams and rivers (which you’ll learn more about in the <a class="reference internal" href="../02_rivers/intro.html#surface-waters"><span class="std std-ref">Surface Water</span></a>) section.
 The balance of these processes will clearly differ all over the planet depending on vegetation cover, temperature, climate, and soil type (among many other things).
-But approximately ~10% seeps into the ground through a process called <strong><a class="reference internal" href="../reference/glossary.html#term-Infiltration"><span class="xref std std-term">infiltration</span></a></strong>, or <strong><a class="reference internal" href="../reference/glossary.html#term-Percolation"><span class="xref std std-term">percolation</span></a></strong> (<a class="reference internal" href="#gw-cycle"><span class="std std-numref">Fig. 2.3</span></a>).
+But approximately 10% seeps into the ground through a process called <strong><a class="reference internal" href="../reference/glossary.html#term-Infiltration"><span class="xref std std-term">infiltration</span></a></strong>, or <strong><a class="reference internal" href="../reference/glossary.html#term-Percolation"><span class="xref std std-term">percolation</span></a></strong> (<a class="reference internal" href="#gw-cycle"><span class="std std-numref">Fig. 2.3</span></a>).
 This <a class="reference internal" href="../reference/glossary.html#term-Infiltration"><span class="xref std std-term">infiltration</span></a> supplies water to the point beneath the surface where the pore space (the space between the grains of soil or rock) is full of water,
-or saturated, this is often called the <strong><a class="reference internal" href="../reference/glossary.html#term-Water-Table"><span class="xref std std-term">water table</span></a></strong>.
+or saturated, this is called the <strong><a class="reference internal" href="../reference/glossary.html#term-Water-Table"><span class="xref std std-term">water table</span></a></strong>.
 This process of <a class="reference internal" href="../reference/glossary.html#term-Infiltration"><span class="xref std std-term">infiltration</span></a> of rainwater into groundwater is broadly termed <strong><a class="reference internal" href="../reference/glossary.html#term-Recharge"><span class="xref std std-term">recharge</span></a></strong>.
 <a class="reference internal" href="../reference/glossary.html#term-Recharge"><span class="xref std std-term">Recharge</span></a> is simply, precipitation minus runoff and evapotranspiration.</p>
 <figure class="margin-caption align-default" id="gw-cycle">
@@ -460,13 +463,13 @@ This process of <a class="reference internal" href="../reference/glossary.html#t
 </figure>
 <p>Within groundwater systems, <strong><a class="reference internal" href="../reference/glossary.html#term-Recharge"><span class="xref std std-term">recharge</span></a></strong> brings water in, and <strong><a class="reference internal" href="../reference/glossary.html#term-Discharge"><span class="xref std std-term">discharge</span></a></strong> refers to where water is leaking out of the groundwater system.
 This can be into a body of water (stream, river, lake), or into the ocean (called submarine groundwater <a class="reference internal" href="../reference/glossary.html#term-Discharge"><span class="xref std std-term">discharge</span></a>), or directly onto land (groundwater sapping).
-What drives groundwater to flow from <a class="reference internal" href="../reference/glossary.html#term-Recharge"><span class="xref std std-term">recharge</span></a> to <a class="reference internal" href="../reference/glossary.html#term-Discharge"><span class="xref std std-term">discharge</span></a>, and how it may evolve along this flow path, will be discussed over the course of today and the next three lectures.</p>
+What drives groundwater to flow from <a class="reference internal" href="../reference/glossary.html#term-Recharge"><span class="xref std std-term">recharge</span></a> to <a class="reference internal" href="../reference/glossary.html#term-Discharge"><span class="xref std std-term">discharge</span></a>, and how it may evolve along this flow path?</p>
 </section>
 <section id="residence-times">
 <h2>Residence Times<a class="headerlink" href="#residence-times" title="Link to this heading">#</a></h2>
-<p>Similar to <a class="reference internal" href="../00_intro/l3.html#lecture-3"><span class="std std-ref">Lecture 3</span></a>, we can consider a groundwater system as a reservoir (or box) and think about the supply of water to that box as the <a class="reference internal" href="../reference/glossary.html#term-Recharge"><span class="xref std std-term">recharge</span></a> and the removal of water from that box as the <a class="reference internal" href="../reference/glossary.html#term-Discharge"><span class="xref std std-term">discharge</span></a> and ask ourselves <em>what is the <a class="reference internal" href="../reference/glossary.html#term-Residence-Time"><span class="xref std std-term">residence time</span></a> of water in groundwater</em> (<a class="reference internal" href="#id1"><span class="std std-numref">Fig. 2.4</span></a>)?
+<p>Similar to <a class="reference internal" href="../00_intro/l2.html#lecture-2"><span class="std std-ref">Lecture 2</span></a>, we can consider a groundwater system as a reservoir (or box) and think about the supply of water to that box as the <a class="reference internal" href="../reference/glossary.html#term-Recharge"><span class="xref std std-term">recharge</span></a> and the removal of water from that box as the <a class="reference internal" href="../reference/glossary.html#term-Discharge"><span class="xref std std-term">discharge</span></a> and ask ourselves <em>what is the <a class="reference internal" href="../reference/glossary.html#term-Residence-Time"><span class="xref std std-term">residence time</span></a> of water in groundwater</em> (<a class="reference internal" href="#id1"><span class="std std-numref">Fig. 2.4</span></a>)?
 What we find is that the <a class="reference internal" href="../reference/glossary.html#term-Residence-Time"><span class="xref std std-term">residence time</span></a> is very long (although a very large range!).
-There is a small flux in terms of <a class="reference internal" href="../reference/glossary.html#term-Recharge"><span class="xref std std-term">recharge</span></a> and <a class="reference internal" href="../reference/glossary.html#term-Discharge"><span class="xref std std-term">discharge</span></a>, and a large volume, and the calculated <a class="reference internal" href="../reference/glossary.html#term-Residence-Time"><span class="xref std std-term">residence time</span></a> is thousands of years!</p>
+There is a small flux in terms of <a class="reference internal" href="../reference/glossary.html#term-Recharge"><span class="xref std std-term">recharge</span></a> and <a class="reference internal" href="../reference/glossary.html#term-Discharge"><span class="xref std std-term">discharge</span></a>, and a large volume, and the calculated <a class="reference internal" href="../reference/glossary.html#term-Residence-Time"><span class="xref std std-term">residence time</span></a> can be thousands, to hundreds of thousands to millions of years.</p>
 <figure class="margin-caption align-default" id="id1">
 <a class="reference internal image-reference" href="../_images/figure4.4.jpeg"><img alt="../_images/figure4.4.jpeg" src="../_images/figure4.4.jpeg" style="width: 70%;" />
 </a>
@@ -475,13 +478,15 @@ There is a small flux in terms of <a class="reference internal" href="../referen
 </figcaption>
 </figure>
 <p>We can verify this by measuring, or dating, the chemistry of groundwater.
-When groundwater was last in contact with the atmosphere, for example it acquires a certain chemical signature, that can decay as it flows through the ground.
-Some examples of these were given in the lecture.
-It was through this chemical dating of groundwater that some scientists in Canada discovered that some groundwater has been buried and isolated from the atmosphere for billions of years,
+When groundwater was last in contact with the atmosphere, for example it acquires a certain chemical signature, that can decay as it flows through the ground.</p>
+<p>It was through this chemical dating of groundwater that some scientists in Canada discovered that some groundwater has been buried and isolated from the atmosphere for billions of years,
 and that there is a vast amount of deep salty groundwater below the fresh surface groundwater that we are interested in for drinking, agriculture and all the other things for which we need water.</p>
-<p>This table, which was not in the lecture, gives a nice overview of where water is all over the surface and approximately how much time it spends in any one of those reservoirs.</p>
+<p>The table below shows the typical residence times for different types of groundwater systems. Please keep in mind that these residence times vary greatly for different environmental systems.</p>
 <figure class="margin-caption align-default" id="water-balance">
 <img alt="../_images/figure4.5.png" src="../_images/figure4.5.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2.5 </span><span class="caption-text">This table, which was not in the lecture, gives a nice overview of where water is all over the surface and approximately how much time it spends in any one of those reservoirs.</span><a class="headerlink" href="#water-balance" title="Link to this image">#</a></p>
+</figcaption>
 </figure>
 </section>
 <section id="aquifers">
@@ -489,33 +494,15 @@ and that there is a vast amount of deep salty groundwater below the fresh surfac
 <p>As we consider groundwater systems, we can first think about the key vocabulary we use to describe them (we did this above with <a class="reference internal" href="../reference/glossary.html#term-Infiltration"><span class="xref std std-term">infiltration</span></a>, and runoff, and <a class="reference internal" href="../reference/glossary.html#term-Water-Table"><span class="xref std std-term">water table</span></a>).
 <strong><a class="reference internal" href="../reference/glossary.html#term-Aquifer"><span class="xref std std-term">Aquifer</span></a></strong> comes from two Latin words for water (aqua) and bear (ferre) – and literally means water-bearing formation.
 It is the part of the ground below the <a class="reference internal" href="../reference/glossary.html#term-Water-Table"><span class="xref std std-term">water table</span></a> where groundwater can not only exist, but there is enough space between the solid bits for groundwater to move.
-This is in contrast to an <strong><a class="reference internal" href="../reference/glossary.html#term-Aquitard"><span class="xref std std-term">aquitard</span></a></strong>, which restricts (or retards – slows) water flow,
-and at the extreme and <strong><a class="reference internal" href="../reference/glossary.html#term-Aquiclude"><span class="xref std std-term">aquiclude</span></a></strong> stops (or precludes) water flow all together.</p>
-<p>Within aquifers we talk about <strong><a class="reference internal" href="../reference/glossary.html#term-Confined-Aquifer"><span class="xref std std-term">confined aquifers</span></a></strong> and <strong><a class="reference internal" href="../reference/glossary.html#term-Unconfined-Aquifer"><span class="xref std std-term">unconfined aquifers</span></a></strong>.
-Some schematics of these are in in <a class="reference internal" href="#aquifer"><span class="std std-numref">Fig. 2.5</span></a>, and were shown in the lecture.
-A <a class="reference internal" href="../reference/glossary.html#term-Confined-Aquifer"><span class="xref std std-term">confined aquifer</span></a> has an aquitard (or <a class="reference internal" href="../reference/glossary.html#term-Aquiclude"><span class="xref std std-term">aquiclude</span></a>) which stops or slows (confines) the water in the groundwater system.
-An <a class="reference internal" href="../reference/glossary.html#term-Unconfined-Aquifer"><span class="xref std std-term">unconfined aquifer</span></a> has the ground surface as the upper bound.</p>
-<figure class="margin-caption align-default" id="aquifer">
-<img alt="../_images/figure4.6.jpeg" src="../_images/figure4.6.jpeg" />
-<figcaption>
-<p><span class="caption-number">Fig. 2.5 </span><span class="caption-text">Schematic figure showing the anatomy of different kinds of aquifer.</span><a class="headerlink" href="#aquifer" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>In the schematic in <a class="reference internal" href="#aquifer"><span class="std std-numref">Fig. 2.5</span></a>, ‘confining units’ are aquitards, and the unconfined and <a class="reference internal" href="../reference/glossary.html#term-Confined-Aquifer"><span class="xref std std-term">confined aquifers</span></a> are labelled.
-It should be clear that the <a class="reference internal" href="../reference/glossary.html#term-Residence-Time"><span class="xref std std-term">residence time</span></a> of water in a <a class="reference internal" href="../reference/glossary.html#term-Confined-Aquifer"><span class="xref std std-term">confined aquifer</span></a> is much longer than it is in an <a class="reference internal" href="../reference/glossary.html#term-Unconfined-Aquifer"><span class="xref std std-term">unconfined aquifer</span></a>.
-Furthermore, if we think about a toxic chemical spill at the surface, an <a class="reference internal" href="../reference/glossary.html#term-Unconfined-Aquifer"><span class="xref std std-term">unconfined aquifer</span></a> will get more of the toxin leaking into it as it isn’t protected, where a <a class="reference internal" href="../reference/glossary.html#term-Confined-Aquifer"><span class="xref std std-term">confined aquifer</span></a> often is protected from surface chemicals through the aquitard, or confining unit.</p>
-<p>Sometimes – even often - the pressure in a <a class="reference internal" href="../reference/glossary.html#term-Confined-Aquifer"><span class="xref std std-term">confined aquifer</span></a> is greater than that at the surface.
-This is in part because of gas in the water that exsolves, and chemical reactions that take place and generate gas.
-The gas can’t escape because of the confining units, therefore, when a well is drilled into the high-pressure aquifer, the water moves from high pressure (depth) to low pressure (surface).
-This is called an <strong><a class="reference internal" href="../reference/glossary.html#term-Artisan-Well"><span class="xref std std-term">artisan well</span></a></strong>.</p>
+This is in contrast to an <strong><a class="reference internal" href="../reference/glossary.html#term-Aquitard"><span class="xref std std-term">aquitard</span></a></strong>, which restricts (or retards – slows) water flow, which we often call a <strong>confining layer</strong></p>
 </section>
 <section id="porosity">
-<h2><a class="reference internal" href="../reference/glossary.html#term-Porosity"><span class="xref std std-term">Porosity</span></a><a class="headerlink" href="#porosity" title="Link to this heading">#</a></h2>
+<h2>Porosity<a class="headerlink" href="#porosity" title="Link to this heading">#</a></h2>
 <p>In general the water storage ability in an aquifer is controlled by the <strong><a class="reference internal" href="../reference/glossary.html#term-Porosity"><span class="xref std std-term">porosity</span></a></strong>.
 Porosity is the space between the grains of sand or particles of rock where water can exist.
 We measure <a class="reference internal" href="../reference/glossary.html#term-Porosity"><span class="xref std std-term">porosity</span></a> by assessing the total volume of sediment and then the total volume of voids.
 This is done assuming a density of the material.</p>
-<p>There are four things that control the <a class="reference internal" href="../reference/glossary.html#term-Porosity"><span class="xref std std-term">porosity</span></a> of a system where groundwater moves</p>
+<p>We didn’t talk about this in the lecture, but for additional knowledge, there are four things that control the <a class="reference internal" href="../reference/glossary.html#term-Porosity"><span class="xref std std-term">porosity</span></a> of a system where groundwater moves</p>
 <ol class="arabic simple">
 <li><p>Grain shape and packing</p></li>
 <li><p>Grain-size distribution</p></li>
@@ -532,16 +519,20 @@ This is done assuming a density of the material.</p>
 <p>In general, <a class="reference internal" href="../reference/glossary.html#term-Porosity"><span class="xref std std-term">porosity</span></a> ranges from 10 to 60% in most places where groundwater might be found.
 Perfectly uniform spheres with cubic packing have a <a class="reference internal" href="../reference/glossary.html#term-Porosity"><span class="xref std std-term">porosity</span></a> of ~48%.
 Most materials are less than that, you can get bigger than that if there are fractures or large void spaces in the rock.</p>
-<p>We can think about the groundwater system more broadly in a similar way to how we did in the last lecture for the carbon cycle. This reiterates the importance of mass balance.
-The inputs of water to the system come from precipitation (<span class="math notranslate nohighlight">\(P\)</span>) as well as groundwater that moves laterally in from another part of the region (<span class="math notranslate nohighlight">\(G_{in}\)</span> more on this in the next lecture!).
+</section>
+<section id="groundwater-continuity-equation">
+<h2>Groundwater Continuity Equation<a class="headerlink" href="#groundwater-continuity-equation" title="Link to this heading">#</a></h2>
+<p>We can derive the groundwater continuity equation, which will track the amount of groundwater in a particular area (<span class="math notranslate nohighlight">\(S\)</span>) more broadly in a similar way to how we did in the last lecture.
+This reiterates the importance of mass balance, that is the storage of groundwater in a particular area (<span class="math notranslate nohighlight">\(S\)</span>) is a function of the inputs of groundwater to that area and the outputs of groundwater from that area.
+In the case of groundwater, the inputs of water to the system come from precipitation (<span class="math notranslate nohighlight">\(P\)</span>) as well as groundwater that moves laterally in from another part of the region (<span class="math notranslate nohighlight">\(G_{in}\)</span> more on this in the next lecture!).
 The outputs are from evapotranspiration (<span class="math notranslate nohighlight">\(E_{tp}\)</span>), runoff (<span class="math notranslate nohighlight">\(R\)</span>) on the surface, and runoff through the ground (<span class="math notranslate nohighlight">\(G_{out}\)</span>).
-If we consider the amount that is stored in the groundwater for a particular area (<span class="math notranslate nohighlight">\(S\)</span>), we get a mass balance equation similar to that used for the carbon cycle in the previous lecture.</p>
+If we consider the amount that is stored in the groundwater for a particular area - often a watershed - (<span class="math notranslate nohighlight">\(S\)</span>), we get a mass balance equation similar to that used for the carbon cycle in the previous lecture.</p>
 <aside class="units margin sidebar">
 <p class="sidebar-title">Units!</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 S &amp;= \mathrm{m} \\
-t &amp;= \mathrm{s^{-1}} \\
+t &amp;= \mathrm{s} \\
 P, G, E, R &amp;= \mathrm{m~s^{-1}} \\
 \end{split}\]</div>
 </aside>
@@ -553,6 +544,56 @@ Always remember that we often assume steady state, which means that the amount i
 Therefore</p>
 <div class="math notranslate nohighlight" id="equation-gw-ss">
 <span class="eqno">(2.2)<a class="headerlink" href="#equation-gw-ss" title="Link to this equation">#</a></span>\[(P + G_{in}) = (E_{tp} + R + G_{out})\]</div>
+</section>
+<section id="why-water-moves">
+<h2>Why Water Moves<a class="headerlink" href="#why-water-moves" title="Link to this heading">#</a></h2>
+<p>Inherent to the idea of a groundwater system is the idea that groundwater moves from a point of <a class="reference internal" href="../reference/glossary.html#term-Recharge"><span class="xref std std-term">recharge</span></a> to a point of <a class="reference internal" href="../reference/glossary.html#term-Discharge"><span class="xref std std-term">discharge</span></a>.
+If the total volume stored is a function of the <a class="reference internal" href="../reference/glossary.html#term-Porosity"><span class="xref std std-term">porosity</span></a>, then we can ask ourselves what controls how groundwater moves from one point to another point?</p>
+<p>This was first explored in the 1850s by <strong>Henry Darcy</strong>, a French civil engineer, who set up a pipe filled with sand and played around with how fast water moved through the pipe.</p>
+<figure class="margin-caption align-default" id="darcy-pipe">
+<a class="reference internal image-reference" href="../_images/figure5.1.png"><img alt="../_images/figure5.1.png" src="../_images/figure5.1.png" style="width: 70%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.7 </span><span class="caption-text">A schematic of the original experiment by Henry Darcy.</span><a class="headerlink" href="#darcy-pipe" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<aside class="units margin sidebar">
+<p class="sidebar-title">Units!</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+l, h &amp;= \mathrm{m} \\
+Q &amp;= \mathrm{m^3~s^{-1}} \\
+\end{split}\]</div>
+</aside>
+<p>Here the pipe (length <span class="math notranslate nohighlight">\(l\)</span> and cross-sectional area <span class="math notranslate nohighlight">\(A\)</span>) was put at various angles to the horizontal
+(determined by <span class="math notranslate nohighlight">\(\Delta h\)</span> – or the height difference between one end of the pipe to the other end of the pipe)
+and the flow rate, <span class="math notranslate nohighlight">\(Q\)</span>, was measured (in units of volume-per-time).</p>
+<p>Specifically, we will call <span class="math notranslate nohighlight">\(\frac{\Delta h}{\Delta l}\)</span> – that is the change in height over a distance along the pipe - the <strong><a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Gradient"><span class="xref std std-term">hydraulic gradient</span></a></strong>.</p>
+<figure class="margin-caption align-default" id="hyd-grad">
+<img alt="../_images/figure5.2.jpeg" src="../_images/figure5.2.jpeg" />
+<figcaption>
+<p><span class="caption-number">Fig. 2.8 </span><span class="caption-text">Plot of Flow Rate <span class="math notranslate nohighlight">\((Q)\)</span> against <span class="math notranslate nohighlight">\(-\dv{h}{l}\)</span>. The gradient gives <span class="math notranslate nohighlight">\(KA\)</span>, the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a> multiplied by the pipe area.</span><a class="headerlink" href="#hyd-grad" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>What Darcy found was that <span class="math notranslate nohighlight">\(Q\)</span> is proportional to <span class="math notranslate nohighlight">\(\Delta h\)</span> and inversely proportional to <span class="math notranslate nohighlight">\(l\)</span>.
+That is the greater the drop between the start and end of the pipe (i.e. steepness, for a pipe of fixed length), the larger the volumetric flow rate, and the longer the pipe is the lower the volumetric flow rate.
+He also found that <span class="math notranslate nohighlight">\(Q\)</span> is proportional to <span class="math notranslate nohighlight">\(A\)</span>, that is the larger the pipe, the larger the flow rate.
+When he filled the pipe with different material, he found that the slope (in a plot of <span class="math notranslate nohighlight">\(Q\)</span> versus <span class="math notranslate nohighlight">\(\frac{\Delta h}{\Delta l}\)</span>, <a class="reference internal" href="#hyd-grad"><span class="std std-numref">Fig. 2.8</span></a>) changed.
+He called this slope <span class="math notranslate nohighlight">\(K\)</span> and called it <strong><a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a></strong>.</p>
+<p>Therefore, <span class="math notranslate nohighlight">\(Q \propto - A \frac{\Delta h}{\Delta l}\)</span>, which we can turn into an equation using <span class="math notranslate nohighlight">\(K\)</span>:  <span class="math notranslate nohighlight">\(Q = - K A \frac{\Delta h}{\Delta l}\)</span>.
+Or more generally:</p>
+<aside class="units margin sidebar">
+<p class="sidebar-title">Units!</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+K &amp;= \mathrm{m~s^{-1}} \\
+A &amp;= \mathrm{m^2} \\
+Q &amp;= \mathrm{m~s^{-1}} \\
+\end{split}\]</div>
+</aside>
+<div class="math notranslate nohighlight" id="equation-darcys-law">
+<span class="eqno">(2.3)<a class="headerlink" href="#equation-darcys-law" title="Link to this equation">#</a></span>\[Q = -KA \dv{h}{l}\]</div>
+<p>which is known as <strong>Darcy’s law</strong>.</p>
 </section>
 </section>
 
@@ -624,7 +665,9 @@ Therefore</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groundwater">Groundwater</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#residence-times">Residence Times</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aquifers">Aquifers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#porosity"><span class="xref std std-term">Porosity</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#porosity">Porosity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groundwater-continuity-equation">Groundwater Continuity Equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-water-moves">Why Water Moves</a></li>
 </ul>
   </nav></div>
 
