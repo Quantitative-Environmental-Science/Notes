@@ -15,7 +15,7 @@ Aquifer
 Aquitard
     A rock with low values of {term}`hydraulic conductivity`, but that still allows some flow of groundwater through it.
 
-Artisan Well
+Artesian Well
     A well that flows without pumping
     because the hydraulic head in the {term}`confined aquifer<Confined Aquifer>` that feeds it is greater than that at ground level.
 
