@@ -60,12 +60,12 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams", "[tex]/mhchem", "[tex]/color"]}, "tex": {"packages": ["base", "physics", "ams", "mhchem", "color"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '02_rivers/l17';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '02_rivers/rivers_5';</script>
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.6. Flooding in urban environments" href="l18.html" />
-    <link rel="prev" title="3.4. Reservoirs" href="l16.html" />
+    <link rel="next" title="3.6. Flooding in urban environments" href="rivers_6.html" />
+    <link rel="prev" title="3.4. Reservoirs" href="rivers_4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -190,12 +190,12 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">3. Surface Waters II: Rivers</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="l13.html">3.1. Catchment and drainage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="l14.html">3.2. Drainage models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="l15.html">3.3. River flows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="l16.html">3.4. Reservoirs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rivers_1.html">3.1. Catchment and drainage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rivers_2.html">3.2. Drainage models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rivers_3.html">3.3. River flows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rivers_4.html">3.4. Reservoirs</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">3.5. Flood waves</a></li>
-<li class="toctree-l2"><a class="reference internal" href="l18.html">3.6. Flooding in urban environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rivers_6.html">3.6. Flooding in urban environments</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../03_cryosphere/intro.html">4. Cryosphere</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -305,7 +305,7 @@
       
       
       
-      <li><a href="../_sources/02_rivers/l17.md" target="_blank"
+      <li><a href="../_sources/02_rivers/rivers_5.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -414,7 +414,7 @@ document.write(`
                   
   <p><br><div style="page-break-before:always;"></div></p>
 <section class="tex2jax_ignore mathjax_ignore" id="flood-waves">
-<span id="lecture-17"></span><h1><span class="section-number">3.5. </span>Flood waves<a class="headerlink" href="#flood-waves" title="Link to this heading">#</a></h1>
+<span id="rivers-5"></span><h1><span class="section-number">3.5. </span>Flood waves<a class="headerlink" href="#flood-waves" title="Link to this heading">#</a></h1>
 <p>We now turn our attention to the propagation of flood waves down a river.
 This is important to predict since it is useful to know the time of arrival of a flood many tens of kilometers downstream in order to provide warning to residents and try to mitigate the impacts,
 but also for planning flood prevention systems for example.</p>
@@ -435,9 +435,9 @@ This situation is shown in <a class="reference internal" href="#flood-schematic"
     W(h) \frac{\delta h}{\delta t} = &amp;\ - \frac{\delta Q}{\delta x} \\
     W(h) \pdv{h}{t} = &amp;\ - \pdv{Q}{x}
 \end{align}\end{split}\]</div>
-<p>If we then choose, for the sake of this derivation, a triangular river geometry like that in <a class="reference internal" href="l15.html#lecture-15"><span class="std std-numref">Section 3.3</span></a>
+<p>If we then choose, for the sake of this derivation, a triangular river geometry like that in <code class="xref std std-numref docutils literal notranslate"><span class="pre">lecture_15</span></code>
 where <span class="math notranslate nohighlight">\(A(h) = \alpha h^2\)</span> and <span class="math notranslate nohighlight">\(W(h) = \beta h\)</span>.
-We recall from <a class="reference internal" href="l15.html#lecture-15"><span class="std std-numref">Section 3.3</span></a> that for a triangular river, <span class="math notranslate nohighlight">\(Q = k h^\frac{5}{2}\)</span>.
+We recall from <code class="xref std std-numref docutils literal notranslate"><span class="pre">lecture_15</span></code> that for a triangular river, <span class="math notranslate nohighlight">\(Q = k h^\frac{5}{2}\)</span>.
 we can substitute this into <a class="reference internal" href="#equation-flood-flow-relation">(3.20)</a> by first evaluating <span class="math notranslate nohighlight">\(\pdv{Q}{x}\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\pdv{Q}{x} = \pdv{Q}{h} \pdv{h}{x} = \frac{5}{2} k h^\frac{3}{2} \pdv{h}{x}\]</div>
@@ -447,7 +447,7 @@ we can substitute this into <a class="reference internal" href="#equation-flood-
     \beta h \pdv{h}{t} + \frac{5}{2} k h^\frac{3}{2} \pdv{h}{x} = &amp;\ 0 \\
     \pdv{h}{t} + \frac{5k}{2 \beta} h^\frac{1}{2} \pdv{h}{x} = &amp;\ 0
 \end{align}\end{split}\]</div>
-<p>This is analogous to the advection equation we derived in <a class="reference internal" href="l14.html#lecture-14"><span class="std std-numref">Section 3.2</span></a>,
+<p>This is analogous to the advection equation we derived in <code class="xref std std-numref docutils literal notranslate"><span class="pre">lecture_14</span></code>,
 except this time the characteristic speed <span class="math notranslate nohighlight">\(u\)</span> has been replaced with an expression for the speed that is dependent on the height; <span class="math notranslate nohighlight">\(\frac{5k}{2 \beta} h^\frac{1}{2}\)</span>.
 Therefore, we expect there is a solution for lines of constant height moving down the channel with speed that depends on their depth.
 Conceptually, this should look like the diagram shown in <a class="reference internal" href="#flood-profile"><span class="std std-numref">Fig. 3.22</span></a>.
@@ -463,7 +463,7 @@ Bottom: Sketch of the shape of the floodwave nose assuming that any over-steepen
 The flood wave gets longer and thinner.</span><a class="headerlink" href="#flood-profile" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>We now use the same approach we applied to the advection equation solution in <a class="reference internal" href="l14.html#lecture-14"><span class="std std-numref">Section 3.2</span></a> and try a solution of the form:</p>
+<p>We now use the same approach we applied to the advection equation solution in <code class="xref std std-numref docutils literal notranslate"><span class="pre">lecture_14</span></code> and try a solution of the form:</p>
 <div class="math notranslate nohighlight">
 \[h(x,t) = Z(x - \frac{5k}{2 \beta} h^\frac{1}{2} t, \tau)\]</div>
 <p>i.e. a coordinate change, so that we are now in the frame of reference of the wave (<span class="math notranslate nohighlight">\(\eta\)</span> moves at the speed of a line of constant height <span class="math notranslate nohighlight">\(h\)</span>)</p>
@@ -534,7 +534,7 @@ The situation is shown in more detail in <a class="reference internal" href="#fi
 </figcaption>
 </figure>
 <p>The flow rate of the water moving over the embankment depends on the velocity of the water flow and the height over the top of the bank, <span class="math notranslate nohighlight">\(b\)</span>.
-If the speed of the water is <span class="math notranslate nohighlight">\(\sim \sqrt{gb}\)</span> (as discussed in <a class="reference internal" href="l15.html#lecture-15"><span class="std std-numref">Section 3.3</span></a>) then the flow rate per unit length along the embankment goes as</p>
+If the speed of the water is <span class="math notranslate nohighlight">\(\sim \sqrt{gb}\)</span> (as discussed in <code class="xref std std-numref docutils literal notranslate"><span class="pre">lecture_15</span></code>) then the flow rate per unit length along the embankment goes as</p>
 <div class="math notranslate nohighlight">
 \[Q \sim \beta b \sqrt{g b}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\beta\)</span> is a geometric factor of <span class="math notranslate nohighlight">\(\frac{2}{3\sqrt{3}}\)</span> in the idealised case.
@@ -646,7 +646,7 @@ which may include a series of inclined support rods pressing on the top of the b
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="l16.html"
+       href="rivers_4.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
@@ -655,7 +655,7 @@ which may include a series of inclined support rods pressing on the top of the b
       </div>
     </a>
     <a class="right-next"
-       href="l18.html"
+       href="rivers_6.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
