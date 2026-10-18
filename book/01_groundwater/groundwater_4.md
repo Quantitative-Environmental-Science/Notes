@@ -55,7 +55,6 @@ Time series showing the spreading of dye through diffusion at four successive
 time steps, illustrating how concentration gradients diminish over time.
 ```
 
-
 ```{figure} ./figures/figure7.5.png
 ---
 name: control_volume
@@ -180,7 +179,6 @@ This is just a specific example of an acute groundwater contamination problem an
 The details of this case study will be in the lecture slides.
 ```
 
-
 ## How does Groundwater Chemistry Evolve?
 
 To explore this, we consider the case of arsenic poisoning in groundwater wells
@@ -238,6 +236,7 @@ How does the chemistry of groundwater change over distance?
    ---
    name: vadose_zone_plant
    figclass: margin-caption
+   width: 70%
    ---
    Schematic of the vadose zone showing plant roots, soil layers,
    and the processes affecting infiltrating water.
@@ -247,6 +246,7 @@ How does the chemistry of groundwater change over distance?
    ---
    name: vadose_geochemistry
    figclass: margin-caption
+   width: 70%
    ---
    Geochemical processes in the vadose zone, including organic matter leaching,
    ion exchange, and mineral weathering.
@@ -263,6 +263,7 @@ How does the chemistry of groundwater change over distance?
    ---
    name: groundwater_ions
    figclass: margin-caption
+   width: 60%
    ---
    Common ions found in groundwater, including major cations (Ca<sup>2+</sup>,
    Mg<sup>2+</sup>, Na<sup>+</sup>, K<sup>+</sup>) and anions
@@ -287,6 +288,7 @@ How does the chemistry of groundwater change over distance?
    ---
    name: tds_depth
    figclass: margin-caption
+   width: 70%
    ---
    Schematic summary of the distribution of Total Dissolved Solids (TDS) with
    depth in groundwater, showing increasing salinity with depth and residence
@@ -320,6 +322,7 @@ and how it is likely to travel and disperse through the groundwater system.
 ---
 name: control_volume_transport
 figclass: margin-caption
+width: 60%
 ---
 A control volume in groundwater showing solute transport by advection and
 dispersion, with possible chemical reactions within the box.
@@ -351,6 +354,7 @@ we expect the contaminant to have moved 5 meters away.
 ---
 name: advection_diagram
 figclass: margin-caption
+width: 60%
 ---
 The effect of advection on contaminant movement over time from t0 to t2,
 showing the displacement of the solute plume with the groundwater flow.
@@ -370,6 +374,7 @@ This is the effect of diffusion and hydrodynamic dispersion.
 ---
 name: dispersion_diagram
 figclass: margin-caption
+width: 60%
 ---
 Illustration of dispersion processes showing how a contaminant plume spreads
 due to molecular diffusion and mechanical dispersion.
@@ -402,6 +407,7 @@ dispersion.
   ---
   name: mechanical_dispersion
   figclass: margin-caption
+  width: 60%
   ---
   Modelling of the mechanical dispersion in porous media,
   showing variations in flow paths through the pore structure.
@@ -492,7 +498,6 @@ Diffusion can be molecular diffusion or mechanical dispersion, and the types of
 chemical reactions that change the concentration vary depending on the
 contaminant and the geochemical environment.
 
-
 ```{admonition} Extension: Navier-Stokes Equations (Non-Examinable)
 :class: note
 
@@ -504,12 +509,10 @@ Conservation of energy derives from the first law of thermodynamics: work and he
 
 ```{figure} ./figures/figure6.9.png
 ---
-name: control_volume
+name: navier-stokes
 width: 70%
 ---
 A control volume showing the forces and momentum fluxes used in deriving the Navier-Stokes equations from conservation of momentum.
 
 By understanding the forces on the control volume, we can derive partial differential equations that explain how fluids move through the control volume. The derivation of the Navier-Stokes equations is something we consider in QCES.
 ```
-
-
