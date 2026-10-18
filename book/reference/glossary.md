@@ -91,4 +91,60 @@ Water Footprint
 Water Table
     The upper surface of groundwater, or the level below which an {term}`aquifer` is permamently saturated with water.
 
+Ablation
+    The loss of ice or snow from a glacier or ice sheet, by melting, sublimation or the calving of icebergs.
+
+Accumulation
+    The addition of mass to a glacier or ice sheet, mainly by snowfall.
+
+Albedo
+    The fraction of incoming solar radiation that a surface reflects, from 0 (perfectly absorbing) to 1 (perfectly reflecting).
+    Snow and sea ice have an albedo of roughly 0.8, compared to less than 0.1 for open ocean.
+
+Brine Rejection
+    The expulsion of salt from growing sea ice, which makes the surrounding seawater colder, saltier and denser.
+    It is an important driver of the global overturning circulation.
+
+Buttressing
+    The resistance to flow that an {term}`ice shelf` exerts on the grounded ice upstream of it,
+    when the shelf is held back by contact with fjord walls, islands or other pinning points.
+
+Eutectic
+    The lowest temperature at which a mixture can remain liquid, and the composition at which this happens.
+    For salt (NaCl) and water the eutectic is about $-21\ ^\circ\mathrm{C}$ at about 23 wt% salt; below it, both ice and salt crystals form.
+
+Grounding Line
+    The boundary at which ice flowing from a grounded ice sheet or glacier begins to float, becoming an {term}`ice shelf`.
+
+Ice Divide
+    The line of highest elevation on an ice sheet, from which ice flows away in opposite directions.
+
+Ice Shelf
+    A thick, floating platform of ice formed where a grounded ice sheet or glacier flows out onto the ocean.
+
+Ice-Albedo Feedback
+    A positive feedback in which a reduction in ice cover lowers the {term}`albedo`, so that more solar radiation is absorbed,
+    causing further warming and further loss of ice.
+
+Latent Heat
+    The energy absorbed or released when a material changes phase at constant temperature,
+    e.g. $334\ \mathrm{kJ~kg^{-1}}$ to melt ice.
+
+Liquidus
+    The line on a phase diagram giving the temperature at which a liquid of a given composition begins to freeze.
+
+Marine Ice Sheet Instability
+    The potential for runaway retreat of the {term}`grounding line` of an ice sheet that rests on a bed that deepens inland (a retrograde slope).
+
+Snow Line
+    The elevation on a glacier or ice sheet above which there is net {term}`accumulation` of snow over a year, and below which there is net {term}`ablation`.
+    Also called the equilibrium line.
+
+Stefan Number
+    The ratio of the {term}`latent heat` released on solidification to the sensible heat associated with a temperature change $\Delta T$,
+    $\mathcal{S} = L / c_p \Delta T$. When $\mathcal{S} \gg 1$ the growth of a solid is limited by how quickly the latent heat can be removed.
+
+Thermal Diffusivity
+    A measure of how quickly temperature changes spread through a material, $\kappa = k / \rho c_p$, in $\mathrm{m^2~s^{-1}}$.
+
 ```
