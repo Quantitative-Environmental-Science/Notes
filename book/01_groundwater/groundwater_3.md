@@ -1,6 +1,6 @@
 <br><div style="page-break-before:always;"></div>
 
-(lecture_5)=
+(groundwater_3)=
 # How we measure and understand water movement
 
 A concept that derives from the idea of a distribution of {term}`hydraulic head` is the distribution of a piezometric or potentiometric surface across a groundwater catchment.
@@ -38,7 +38,7 @@ What we can say about the overall direction of groundwater flow is that it is al
 
 ## Saline Intrusion
 
-An example of where there can be changes in hydraulic head leading to changes in groundwater flow is near wells, where abstraction locally lowers the hydraulic head in the well and drives groundwater in the opposite direction. This is a particular problem near the coast, where freshwater aquifers can have incursion of saline groundwater into the freshwater aquifer.  Groundwater above the terrestrial (land) surface is {term}`recharged` from rain, and is largely ‘fresh water’ and could be suitable for drinking.
+An example of where there can be changes in hydraulic head leading to changes in groundwater flow is near wells, where abstraction locally lowers the hydraulic head in the well and drives groundwater in the opposite direction. This is a particular problem near the coast, where freshwater aquifers can have incursion of saline groundwater into the freshwater aquifer.  Groundwater above the terrestrial (land) surface is recharged from rain, and is largely ‘fresh water’ and could be suitable for drinking.
 Groundwater beneath the ocean is salt water, and unless you undertake some serious desalination activities, is not suitable for drinking.
 At some point between the fresh subsurface groundwater and the salt subsurface groundwater, there is a mixing point where there is a **freshwater-saltwater interface** ({numref}`fresh_salt_interface` ).
 
@@ -216,23 +216,3 @@ figclass: margin-caption
 ---
 {term}`Hydraulic conductivity` can vary a lot with geology!
 ```
-
-```{admonition} Extension: Navier-Stokes Equations (Non-Examinable)
-:class: note
-
-Building on what we have discussed about hydraulic head in groundwater, we can consider the Navier-Stokes equations, which are partial differential equations that govern the motion of incompressible fluids. These equations constitute the basic equations for fluid mechanics. They are grounded in the concepts of conservation of mass, conservation of momentum, and conservation of energy.
-
-Conservation of mass means that mass in a control volume (basically a bit of the subsurface fluid – see {numref}`control_volume`) cannot be created or destroyed.
-Conservation of momentum means that momentum is not created or destroyed, and changes only because of forces acting on the control volume.
-Conservation of energy derives from the first law of thermodynamics: work and heat added to the system will result in an increase in the total energy of the system.
-
-```{figure} ./figures/figure6.9.png
----
-name: control_volume
-width: 70%
----
-A control volume showing the forces and momentum fluxes used in deriving the Navier-Stokes equations from conservation of momentum.
-
-By understanding the forces on the control volume, we can derive partial differential equations that explain how fluids move through the control volume. The derivation of the Navier-Stokes equations is something we consider in QCES.
-```
-
