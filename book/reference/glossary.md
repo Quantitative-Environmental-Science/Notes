@@ -9,8 +9,7 @@ Aquiclude
     a rock with very low {term}`hydraulic conductivity` that acts as an impermeable barrier to groundwater flow.
 
 Aquifer
-    A body of permerable rock that is capable of storing significant quantities of water,
-    underlain by impermeable material.
+    A body of permeable rock or sediment that can store and transmit significant quantities of water.
      
 Aquitard
     A rock with low values of {term}`hydraulic conductivity`, but that still allows some flow of groundwater through it.
@@ -21,6 +20,9 @@ Artesian Well
 
 Confined Aquifer
     An {term}`aquifer` that is sealed by impermeable rock above and below.
+
+Eutrophication
+    The process by which a body of water becomes enriched in dissolved nutrients (such as phosphates) that stimulate the growth of aquatic plant life, usually resulting in the depletion of dissolved oxygen.
 
 DIC
     **D**issolved **I**norganic **C**arbon - the sum of $CO_2$, $H_2CO_3$, $HCO_3^-$ and $CO_3^{2-}$ in water. 
