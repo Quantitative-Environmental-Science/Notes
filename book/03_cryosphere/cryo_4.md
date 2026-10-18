@@ -1,6 +1,6 @@
 <br><div style="page-break-before:always;"></div>
 
-(lecture_11)=
+(cryo_4)=
 # Ice sheets and the flow of glacial ice
 
 Glaciers and ice sheets form where snow accumulates persistently over time and compacts to form ice.  When the ice is sufficiently thick, the solid ice may flow under its own weight, deforming as a viscous fluid or sliding at the base of the glacier where it contacts the ground or bedrock.   Glaciers tend to form at high elevations where it is cold, and snow accumulated in the winter months can persist through the melt season.  Their topography is generally determined by the topography (mountains) on which they form.  

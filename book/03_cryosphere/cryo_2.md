@@ -1,6 +1,6 @@
 <br><div style="page-break-before:always;"></div>
 
-(lecture_9)=
+(cryo_2)=
 # The growth and melting of ice
 
 The formation of ice in the polar regions is a process central to many ecosystems, to the livelihoods of indigenous and northern communities and, at the largest scales, to the radiative balance at high latitudes.  The extent of the region in the Northern Hemisphere which experiences significant freezing is shown in the map of the mean number of non-frozen days in {numref}`9.freezingdays`.
