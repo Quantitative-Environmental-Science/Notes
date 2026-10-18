@@ -1,4 +1,4 @@
-(lecture_33)=
+(globenv_8)=
 # Shallow wind-forced ocean circulation
 
 In the previous section we described a box model for the ocean heat transport. A central feature of this model was a representation of the Thermohaline Circulation (THC) which transports warm water poleward near the ocean surface and returns cold water back to low latitudes in the deep ocean. In the next two sections, we will examine the physical processes that help to set the circulation in the near-surface and deep ocean. Understanding the drivers of the circulation is an important step if we want to understand how the system might change in the future (or how it was different in the past).

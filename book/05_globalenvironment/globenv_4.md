@@ -1,4 +1,4 @@
-(lecture_29)=
+(globenv_4)=
 # Structure and mean circulation of the atmosphere
 
 In the next three lectures, we will discuss the mean (time and longitudinally-averaged) structure of the atmosphere as a function of height and latitude. We will discuss the implications for this structure on the mean wind in geostrophic balance. We will also discuss the processes that lead to poleward heat transport and will introduce a few simple models to estimate the global heat distribution that results from a balance between net radiation and transport processes.

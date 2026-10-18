@@ -1,4 +1,4 @@
-(lecture_26)=
+(globenv_1)=
 # Introduction
 
 In this section, we will discuss the dynamics (the movement of air and water) in the atmosphere and ocean and the role that this movement plays in the climate system. The atmosphere and ocean store and transport vast amounts of heat and carbon. The movement of air and water helps to maintain habitability of the earth. Understanding these dynamics is critical to predicting the fate of the planet in a changing climate.

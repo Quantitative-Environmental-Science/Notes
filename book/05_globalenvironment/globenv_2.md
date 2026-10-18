@@ -1,4 +1,4 @@
-(lecture_27)=
+(globenv_2)=
 # Equations of motion on the rotating earth
 
 The Earth's rotation is an important factor in the large-scale dynamics of the atmosphere and ocean. In this section, we will start to examine the influence of the Earth's rotation on the equations for fluid motion. To start, let's consider the acceleration of a point mass in a rotating reference frame.

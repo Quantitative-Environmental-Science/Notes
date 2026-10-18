@@ -1,4 +1,4 @@
-(lecture_32)=
+(globenv_7)=
 # Stommel box model for ocean heat transport
 
 Recall from {numref}`fig:heat_transport` that the ocean makes a non-trivial contribution to the global heat transport, particularly in the subtropics. Unlike the atmosphere, most of the oceanic heat transport is associated with the mean circulation, rather than eddies. In particular, currents that develop on the western sides of ocean basins make a major contribution to the heat flux. These _western boundary current_ include the Gulf Stream in the North Atlantic and the Kuroshio in the North Pacific.
