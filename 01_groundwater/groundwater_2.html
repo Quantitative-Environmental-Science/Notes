@@ -60,12 +60,12 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams", "[tex]/mhchem", "[tex]/color"]}, "tex": {"packages": ["base", "physics", "ams", "mhchem", "color"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '01_groundwater/l5';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01_groundwater/groundwater_2';</script>
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.4. How we measure and understand water movement" href="l6.html" />
-    <link rel="prev" title="2.1. Groundwater Systems" href="l4.html" />
+    <link rel="next" title="2.3. How we measure and understand water movement" href="groundwater_3.html" />
+    <link rel="prev" title="2.1. Groundwater Systems" href="groundwater_1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -182,13 +182,11 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">2. Surface Waters I: Groundwater</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="l4.html">2.1. Groundwater Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundwater_1.html">2.1. Groundwater Systems</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.2. Why water moves beneath the surface</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="l6.html">2.4. How we measure and understand water movement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="l7.html">2.5. Groundwater challenges and sustainable groundwater</a></li>
-<li class="toctree-l2"><a class="reference internal" href="l8.html">2.6. Groundwater Chemistry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="l9.html">2.7. Pollution in Rivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundwater_3.html">2.3. How we measure and understand water movement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundwater_4.html">2.4. Groundwater Chemistry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundwater_5.html">2.5. Pollution in Rivers</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../02_rivers/intro.html">3. Surface Waters II: Rivers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -307,7 +305,7 @@
       
       
       
-      <li><a href="../_sources/01_groundwater/l5.md" target="_blank"
+      <li><a href="../_sources/01_groundwater/groundwater_2.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -378,9 +376,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -396,16 +392,6 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">2.2. Why water moves beneath the surface</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-4">2.3. Why water moves beneath the surface</a></li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -417,17 +403,32 @@ document.write(`
                   
   <p><br><div style="page-break-before:always;"></div></p>
 <section class="tex2jax_ignore mathjax_ignore" id="why-water-moves-beneath-the-surface">
-<span id="lecture-5"></span><h1><span class="section-number">2.2. </span>Why water moves beneath the surface<a class="headerlink" href="#why-water-moves-beneath-the-surface" title="Link to this heading">#</a></h1>
-<p>In the last lecture we learned all about the various names for places that hold groundwater in the subsurface. This schematic summarises some of those key points and we will revisit it again. It gives a more clear view of <strong><a class="reference internal" href="../reference/glossary.html#term-Confined-Aquifer"><span class="xref std std-term">confined aquifers</span></a></strong> and <strong><a class="reference internal" href="../reference/glossary.html#term-Unconfined-Aquifer"><span class="xref std std-term">unconfined aquifers</span></a></strong>.</p>
+<span id="groundwater-2"></span><h1><span class="section-number">2.2. </span>Why water moves beneath the surface<a class="headerlink" href="#why-water-moves-beneath-the-surface" title="Link to this heading">#</a></h1>
+<p>In the last lecture we derived the groundwater continuity equation, which described the balance of the sources and sinks of water within a groundwater system or watershed. This equation is the bases for  global maps of groundwater depletion (<a class="reference internal" href="#groundwater-depletion"><span class="std std-numref">Fig. 2.9</span></a>).
+Groundwater depletion refers to the permanent loss of groundwater stored in subsurface aquifers because abstraction exceeds recharge.</p>
+<figure class="margin-caption align-default" id="groundwater-depletion">
+<img alt="../_images/figure7.1.png" src="../_images/figure7.1.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2.9 </span><span class="caption-text">A global map of groundwater depletion - peaks show areas where groundwater is most depleted.</span><a class="headerlink" href="#groundwater-depletion" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We can link the areas where groundwater is particularly depleted to areas where the groundwater footprint is particularly large relative to the size of the aquifer from which it is drawing water (<a class="reference internal" href="#groundwater-footprint"><span class="std std-numref">Fig. 2.10</span></a>).</p>
+<figure class="margin-caption align-default" id="groundwater-footprint">
+<img alt="../_images/figure7.2.jpg" src="../_images/figure7.2.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 2.10 </span><span class="caption-text">Groundwater depletion is most severe where the ‘groundwater footprint’ is much larger than the underlying aquifer area.</span><a class="headerlink" href="#groundwater-footprint" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In the last lecture we also learned all about the various names for places that hold groundwater in the subsurface. This schematic summarises some of those key points and we will revisit it again. It gives a more clear view of <strong><a class="reference internal" href="../reference/glossary.html#term-Confined-Aquifer"><span class="xref std std-term">confined aquifers</span></a></strong> and <strong><a class="reference internal" href="../reference/glossary.html#term-Unconfined-Aquifer"><span class="xref std std-term">unconfined aquifers</span></a></strong>.</p>
 <p>A <a class="reference internal" href="../reference/glossary.html#term-Confined-Aquifer"><span class="xref std std-term">confined aquifer</span></a> has confining layer which stops or slows (confines) the water in the groundwater system.
 An <a class="reference internal" href="../reference/glossary.html#term-Unconfined-Aquifer"><span class="xref std std-term">unconfined aquifer</span></a> has the ground surface as the upper bound.</p>
 <figure class="margin-caption align-default" id="aquifer">
 <img alt="../_images/figure4.6.jpeg" src="../_images/figure4.6.jpeg" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.9 </span><span class="caption-text">Schematic figure showing the anatomy of different kinds of aquifer.</span><a class="headerlink" href="#aquifer" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.11 </span><span class="caption-text">Schematic figure showing the anatomy of different kinds of aquifer.</span><a class="headerlink" href="#aquifer" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>In the schematic in <a class="reference internal" href="#aquifer"><span class="std std-numref">Fig. 2.9</span></a>, ‘confining units’ are aquitards, and the unconfined and <a class="reference internal" href="../reference/glossary.html#term-Confined-Aquifer"><span class="xref std std-term">confined aquifers</span></a> are labelled.
+<p>In the schematic in <a class="reference internal" href="#aquifer"><span class="std std-numref">Fig. 2.11</span></a>, ‘confining units’ are aquitards, and the unconfined and <a class="reference internal" href="../reference/glossary.html#term-Confined-Aquifer"><span class="xref std std-term">confined aquifers</span></a> are labelled.
 It should be clear that the <a class="reference internal" href="../reference/glossary.html#term-Residence-Time"><span class="xref std std-term">residence time</span></a> of water in a <a class="reference internal" href="../reference/glossary.html#term-Confined-Aquifer"><span class="xref std std-term">confined aquifer</span></a> is much longer than it is in an <a class="reference internal" href="../reference/glossary.html#term-Unconfined-Aquifer"><span class="xref std std-term">unconfined aquifer</span></a>.
 Furthermore, if we think about a toxic chemical spill at the surface, an <a class="reference internal" href="../reference/glossary.html#term-Unconfined-Aquifer"><span class="xref std std-term">unconfined aquifer</span></a> will get more of the toxin leaking into it as it isn’t protected, where a <a class="reference internal" href="../reference/glossary.html#term-Confined-Aquifer"><span class="xref std std-term">confined aquifer</span></a> often is protected from surface chemicals through the aquitard, or confining unit.</p>
 <p>Sometimes – even often - the pressure in a <a class="reference internal" href="../reference/glossary.html#term-Confined-Aquifer"><span class="xref std std-term">confined aquifer</span></a> is greater than that at the surface.
@@ -435,9 +436,6 @@ This is in part because of gas in the water that exsolves, and chemical reaction
 The gas can’t escape because of the confining units, therefore, when a well is drilled into the high-pressure aquifer, the water moves from high pressure (depth) to low pressure (surface).
 This is called an <strong><a class="reference internal" href="../reference/glossary.html#term-Artesian-Well"><span class="xref std std-term">artesian well</span></a></strong>. This is shown on the figure as well.</p>
 <p>The key goal of today’s lecture is to apply Darcy’s law from the lab to the environment and understand what a hydraulic gradient or conductivity is in the field.</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="lecture-4">
-<span id="id1"></span><h1><span class="section-number">2.3. </span>Why water moves beneath the surface<a class="headerlink" href="#lecture-4" title="Link to this heading">#</a></h1>
 <p>In the last lecture we derived Darcy’s Law based on experiments done in the 1800’s.</p>
 <div class="math notranslate nohighlight">
 \[Q = -KA \dv{h}{l}\]</div>
@@ -447,11 +445,11 @@ This is called an <strong><a class="reference internal" href="../reference/gloss
 <span class="eqno">(2.4)<a class="headerlink" href="#equation-darcys-vel" title="Link to this equation">#</a></span>\[q = \frac{Q}{A}\]</div>
 <p>Let’s learn more about this <strong><a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a></strong> – <span class="math notranslate nohighlight">\(K\)</span>.
 We can derive that the units are length-per-time, or often <span class="math notranslate nohighlight">\(\mathrm{m \ s^{-1}}\)</span>.
-Studies of actual groundwater systems have shown that it can range over 12 orders of magnitude in various materials below the surface (<a class="reference internal" href="#fluxes"><span class="std std-numref">Fig. 2.10</span></a>).</p>
+Studies of actual groundwater systems have shown that it can range over 12 orders of magnitude in various materials below the surface (<a class="reference internal" href="#fluxes"><span class="std std-numref">Fig. 2.12</span></a>).</p>
 <figure class="margin-caption align-default" id="fluxes">
 <img alt="../_images/figure5.3.jpg" src="../_images/figure5.3.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.10 </span><span class="caption-text">Comparing <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a> values from (A) Freeze and Cherry (1979) and
+<p><span class="caption-number">Fig. 2.12 </span><span class="caption-text">Comparing <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a> values from (A) Freeze and Cherry (1979) and
 (B) calibrated regional scale hydrogeologic models.
 Each open square is an optimised or mean value from a part of a model domain that is larger than <span class="math notranslate nohighlight">\(5 \ \mathrm{km}\)</span> horizontally.
 Values are grouped into hydrolithogic categories that are typical for regional-scale modelling
@@ -494,14 +492,14 @@ k &amp;= \mathrm{m^2} \\
 <p>We can see that we can relate <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a> (units <span class="math notranslate nohighlight">\(\mathrm{m \ s^{-1}}\)</span>) to <a class="reference internal" href="../reference/glossary.html#term-Permeability"><span class="xref std std-term">permeability</span></a> (units <span class="math notranslate nohighlight">\(\mathrm{m^2}\)</span>) quite easily, if we assume that the fluid flowing through the groundwater is water.
 This is usually a safe assumption (even really salty brines in groundwater systems have a specific weight and dynamic viscosity that means they behave more or less as water).
 If you read around a bit you will also find that a unit for <a class="reference internal" href="../reference/glossary.html#term-Permeability"><span class="xref std std-term">Permeability</span></a> of a ‘Darcy’ is sometimes used (but not often).</p>
-<p><a class="reference internal" href="#fluxes"><span class="std std-numref">Fig. 2.10</span></a> shows a comparison of <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a> from experiments, versus those from hydrology models.
+<p><a class="reference internal" href="#fluxes"><span class="std std-numref">Fig. 2.12</span></a> shows a comparison of <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a> from experiments, versus those from hydrology models.
 This gives you a sense of the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a> associated with different types of material that we find on the surface of the planet.
-<a class="reference internal" href="#global-perm"><span class="std std-numref">Fig. 2.11</span></a> shows a map of the global distribution of <a class="reference internal" href="../reference/glossary.html#term-Permeability"><span class="xref std std-term">permeability</span></a> which often relates to the underlying rock type.
+<a class="reference internal" href="#global-perm"><span class="std std-numref">Fig. 2.13</span></a> shows a map of the global distribution of <a class="reference internal" href="../reference/glossary.html#term-Permeability"><span class="xref std std-term">permeability</span></a> which often relates to the underlying rock type.
 In the lecture we will introduce the concept of <strong><a class="reference internal" href="../reference/glossary.html#term-Transmissivity"><span class="xref std std-term">Transmissivity</span></a></strong>, which is the <a class="reference internal" href="../reference/glossary.html#term-Permeability"><span class="xref std std-term">permeability</span></a> over a particular depth of the aquifer.</p>
 <figure class="margin-caption align-default" id="global-perm">
 <img alt="../_images/figure5.4.png" src="../_images/figure5.4.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.11 </span><span class="caption-text">The global distribution of <a class="reference internal" href="../reference/glossary.html#term-Permeability"><span class="xref std std-term">permeability</span></a> in <span class="math notranslate nohighlight">\(\log(k \ / \ \mathrm{m^2})\)</span>.
+<p><span class="caption-number">Fig. 2.13 </span><span class="caption-text">The global distribution of <a class="reference internal" href="../reference/glossary.html#term-Permeability"><span class="xref std std-term">permeability</span></a> in <span class="math notranslate nohighlight">\(\log(k \ / \ \mathrm{m^2})\)</span>.
 The regional scale <a class="reference internal" href="../reference/glossary.html#term-Permeability"><span class="xref std std-term">permeability</span></a> will be much lower in the regions north of the dashed continuous permafrost line.
 Smaller continuous permafrost areas in mountainous terrain are not shown.</span><a class="headerlink" href="#global-perm" title="Link to this image">#</a></p>
 </figcaption>
@@ -514,7 +512,7 @@ One of the main assumptions is that flow is <strong>laminar</strong>, and not <s
 <a class="reference internal image-reference" href="../_images/figure5.5.png"><img alt="../_images/figure5.5.png" src="../_images/figure5.5.png" style="width: 60%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.12 </span><span class="caption-text">Cartoon of the difference between turbulent and laminar flow.</span><a class="headerlink" href="#turb-laminar" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.14 </span><span class="caption-text">Cartoon of the difference between turbulent and laminar flow.</span><a class="headerlink" href="#turb-laminar" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Laminar means that water is moving in the same direction, like a line, while turbulence occurs when there are deviations from this linearity of movement.</p>
@@ -525,7 +523,7 @@ Turbulence causes pressure loss and thus changes the flow rate.</p>
 <a class="reference internal image-reference" href="../_images/figure5.6.png"><img alt="../_images/figure5.6.png" src="../_images/figure5.6.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.13 </span><span class="caption-text">Plot of flow against <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Gradient"><span class="xref std std-term">hydraulic gradient</span></a> showing the branching of the flow regime.
+<p><span class="caption-number">Fig. 2.15 </span><span class="caption-text">Plot of flow against <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Gradient"><span class="xref std std-term">hydraulic gradient</span></a> showing the branching of the flow regime.
 The lower branch represents the turbulent regime, where pressure is lost.</span><a class="headerlink" href="#q-vs-dh-dl" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
@@ -546,7 +544,7 @@ Lucky for us, most groundwater systems fall in the category of laminar flow.</p>
 <a class="reference internal image-reference" href="../_images/figure5.7.png"><img alt="../_images/figure5.7.png" src="../_images/figure5.7.png" style="width: 70%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.14 </span><span class="caption-text">Cartoon showing different <a class="reference internal" href="../reference/glossary.html#term-Porosity"><span class="xref std std-term">porosity</span></a> materials.</span><a class="headerlink" href="#grain-sizes" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.16 </span><span class="caption-text">Cartoon showing different <a class="reference internal" href="../reference/glossary.html#term-Porosity"><span class="xref std std-term">porosity</span></a> materials.</span><a class="headerlink" href="#grain-sizes" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Remember that the grains in the porous media, more generally, provide frictional resistance to the flow.
@@ -561,7 +559,7 @@ The average groundwater velocity <span class="math notranslate nohighlight">\((v
 <figure class="margin-caption align-default" id="hydraulic-head">
 <img alt="../_images/figure5.8.png" src="../_images/figure5.8.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.15 </span><span class="caption-text">Schematic showing the calculation of <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a>.</span><a class="headerlink" href="#hydraulic-head" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.17 </span><span class="caption-text">Schematic showing the calculation of <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a>.</span><a class="headerlink" href="#hydraulic-head" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>If we think about a groundwater system, where there are two wells, the pressure of the water at a particular depth in the well is a function of both the pressure exerted by the water above it, and the gravitational pull on that water (e.g. how high up above sea level is that point?).
@@ -569,7 +567,7 @@ Water in a groundwater system has a <strong><a class="reference internal" href="
 <p>The change in the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a> (<span class="math notranslate nohighlight">\(\dd{h}\)</span> or <span class="math notranslate nohighlight">\(\Delta h\)</span>) over a fixed distance (<span class="math notranslate nohighlight">\(\dd{l}\)</span>, or <span class="math notranslate nohighlight">\(\Delta{l}\)</span>) is the <strong><a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Gradient"><span class="xref std std-term">hydraulic gradient</span></a></strong>.
 This is what drives the water to flow through the porous media (in this case, the rock).</p>
 <p>Conceptually, water flows from high <strong><a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a></strong> to low hydraulic head, following the hydraulic gradient.
-Because head combines both pressure and elevation, this does not always mean flowing from high pressure to low pressure, or downhill: water can flow towards higher pressure (e.g. downwards in a recharge area) or upwards against gravity (e.g. in an artesian well), as long as the total head decreases along the flow path.
+Because head combines both pressure head and elevation head, this does not always mean flowing from high pressure to low pressure, or downhill: water can flow towards higher pressure head (e.g. downwards in a recharge area) or upwards against gravity (e.g. in an artesian well), as long as the total hydraulic head decreases along the flow path.
 This means there is a loss of head along the flow-path in a groundwater system.
 This loss of head amounts to a loss of mechanical energy from the system.
 But remember, energy must be conserved, it cannot be either created or destroyed.
@@ -609,7 +607,7 @@ The high specific heat capacity of water, however, means that we can’t always 
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="l4.html"
+       href="groundwater_1.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
@@ -618,11 +616,11 @@ The high specific heat capacity of water, however, means that we can’t always 
       </div>
     </a>
     <a class="right-next"
-       href="l6.html"
+       href="groundwater_3.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.4. </span>How we measure and understand water movement</p>
+        <p class="prev-next-title"><span class="section-number">2.3. </span>How we measure and understand water movement</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -632,23 +630,6 @@ The high specific heat capacity of water, however, means that we can’t always 
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">2.2. Why water moves beneath the surface</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-4">2.3. Why water moves beneath the surface</a></li>
-</ul>
-
-  </nav></div>
-
-</div></div>
               
             
           </div>

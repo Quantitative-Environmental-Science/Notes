@@ -1,9 +1,31 @@
 <br><div style="page-break-before:always;"></div>
 
-(lecture_5)=
+(groundwater_2)=
 # Why water moves beneath the surface
 
-In the last lecture we learned all about the various names for places that hold groundwater in the subsurface. This schematic summarises some of those key points and we will revisit it again. It gives a more clear view of **{term}`confined aquifers<confined aquifer>`** and **{term}`unconfined aquifers<unconfined aquifer>`**.
+In the last lecture we derived the groundwater continuity equation, which described the balance of the sources and sinks of water within a groundwater system or watershed. This equation is the bases for  global maps of groundwater depletion ({numref}`groundwater_depletion`).
+Groundwater depletion refers to the permanent loss of groundwater stored in subsurface aquifers because abstraction exceeds recharge.
+
+```{figure} ./figures/figure7.1.png
+---
+name: groundwater_depletion
+figclass: margin-caption
+---
+A global map of groundwater depletion - peaks show areas where groundwater is most depleted. 
+```
+
+We can link the areas where groundwater is particularly depleted to areas where the groundwater footprint is particularly large relative to the size of the aquifer from which it is drawing water ({numref}`groundwater_footprint`).
+
+```{figure} ./figures/figure7.2.jpg
+---
+name: groundwater_footprint
+figclass: margin-caption
+---
+Groundwater depletion is most severe where the 'groundwater footprint' is much larger than the underlying aquifer area.
+```
+
+
+In the last lecture we also learned all about the various names for places that hold groundwater in the subsurface. This schematic summarises some of those key points and we will revisit it again. It gives a more clear view of **{term}`confined aquifers<confined aquifer>`** and **{term}`unconfined aquifers<unconfined aquifer>`**.
 
 A {term}`confined aquifer` has confining layer which stops or slows (confines) the water in the groundwater system.
 An {term}`unconfined aquifer` has the ground surface as the upper bound.
@@ -26,9 +48,6 @@ The gas can't escape because of the confining units, therefore, when a well is d
 This is called an **{term}`artesian well`**. This is shown on the figure as well.
 
 The key goal of today's lecture is to apply Darcy's law from the lab to the environment and understand what a hydraulic gradient or conductivity is in the field.
-
-(lecture_4)=
-# Why water moves beneath the surface
 
 In the last lecture we derived Darcy's Law based on experiments done in the 1800's.
 
@@ -207,7 +226,7 @@ The change in the {term}`hydraulic head` ($\dd{h}$ or $\Delta h$) over a fixed d
 This is what drives the water to flow through the porous media (in this case, the rock).
 
 Conceptually, water flows from high **{term}`hydraulic head`** to low hydraulic head, following the hydraulic gradient.
-Because head combines both pressure and elevation, this does not always mean flowing from high pressure to low pressure, or downhill: water can flow towards higher pressure (e.g. downwards in a recharge area) or upwards against gravity (e.g. in an artesian well), as long as the total head decreases along the flow path.
+Because head combines both pressure head and elevation head, this does not always mean flowing from high pressure to low pressure, or downhill: water can flow towards higher pressure head (e.g. downwards in a recharge area) or upwards against gravity (e.g. in an artesian well), as long as the total hydraulic head decreases along the flow path.
 This means there is a loss of head along the flow-path in a groundwater system.
 This loss of head amounts to a loss of mechanical energy from the system.
 But remember, energy must be conserved, it cannot be either created or destroyed.

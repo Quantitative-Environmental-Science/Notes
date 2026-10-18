@@ -1,6 +1,6 @@
 <br><div style="page-break-before:always;"></div>
 
-(lecture_6)=
+(groundwater_3)=
 # How we measure and understand water movement
 
 A concept that derives from the idea of a distribution of {term}`hydraulic head` is the distribution of a piezometric or potentiometric surface across a groundwater catchment.
@@ -24,7 +24,7 @@ This allows us to create a map like {numref}`equipotential_lines` showing where 
 What is clear from this sort of a figure is that groundwater doesn’t always move in a straight line.
 We can do a simple calculation for the amount of time it would take groundwater to move 100 meters from a {term}`recharge` area to a {term}`discharge` area (e.g. a stream) but in reality, we can see the flow lines/paths aren’t linear.
 Furthermore, to calculate things like the flow velocity in a groundwater system, we need to know aspects of the system like the {term}`permeability` or {term}`hydraulic conductivity` very well.
-How are these things determined? 
+
 
 ```{figure} ./figures/figure6.2.png
 ---
@@ -32,10 +32,47 @@ name: equipotential_lines
 figclass: margin-caption
 width: 80%
 ---
-The structure of an aquifer and the potentiometric surface. Notice how differences between the {term}`water table` and potentiometric surface relate to sub-surface structure.
+The structure of an aquifer. Note how the flow lines go perpendicular to the lines of equal hydraulic head, meaning in places the water flows uphill. 
+```
+What we can say about the overall direction of groundwater flow is that it is always going from high hydraulic head to low hydraulic head, and typically this is mimicking the overland topography - there are exceptions to this but in general high hydraulic head exists at higher overall topographic elevations and lower hydraulic head at lower topographic elevations. Whether rivers or streams are gaining or losing water depends on the local changes in hydraulic head near to the stream/river. 
+
+## Saline Intrusion
+
+An example of where there can be changes in hydraulic head leading to changes in groundwater flow is near wells, where abstraction locally lowers the hydraulic head in the well and drives groundwater in the opposite direction. This is a particular problem near the coast, where freshwater aquifers can have incursion of saline groundwater into the freshwater aquifer.  Groundwater above the terrestrial (land) surface is recharged from rain, and is largely ‘fresh water’ and could be suitable for drinking.
+Groundwater beneath the ocean is salt water, and unless you undertake some serious desalination activities, is not suitable for drinking.
+At some point between the fresh subsurface groundwater and the salt subsurface groundwater, there is a mixing point where there is a **freshwater-saltwater interface** ({numref}`fresh_salt_interface` ).
+
+```{figure} ./figures/figure7.3.png
+---
+name: fresh_salt_interface
+figclass: margin-caption
+width: 60%
+---
+An example of a freshwater-saltwater interface.
 ```
 
-One way that we can determine the {term}`hydraulic conductivity` and other key properties of a groundwater system is to perform a **pumping test** ({numref}`pumping_test`).
+Like all groundwater systems, the flow of groundwater goes from high {term}`hydraulic head` to low {term}`hydraulic head`.
+Every day – indeed twice a day – the tides move the envelope of seawater such that there is greater {term}`hydraulic head` on the salt groundwater, pushing it further inland.
+When the tides move the envelope of water away from the coast, the freshwater will move back towards the ocean.
+Thus the freshwater-saltwater interface changes daily.
+
+On top of this diurnal cycle, there are two larger scale things happening.
+One, sealevel is rising, due to the melting of ice and the thermal expansion of the ocean water.
+This increases the {term}`hydraulic head` on the salt-groundwater, pushing it inland.
+Second, we have a large groundwater footprint and the fresh-groundwater near the coast are having water removed for agriculture and drinking and all the other things we said we need groundwater for in [Lecture 3](lecture_3).
+This decreases the pressure in the coastal aquifers and drives more salt-groundwater inland ({numref}`saltwater_incursion`).
+
+```{figure} ./figures/figure7.4.png
+---
+name: saltwater_incursion
+figclass: margin-caption
+---
+Seawater can {term}`recharge` an aquifer and contaminate it with salt water if we extract too much water near the coast. This problem will be exacerbated by sealevel rise, which will increase the {term}`hydraulic head` on the saline side.
+```
+
+## Determining Hydraulic Conductivity
+
+We can determine hydraulic conductivity by using tracer tests - that is with two wells we can see how quickly a tracer gets from one well to the other well, giving us average groundwater velocity, which we can use with an estimate of the porosity to get the {term}`specific discharge` or Darcy velocity. Once we know that and the {term}`hydraulic gradient`, we can calculate {term}`hydraulic conductivity`. Another way that we can determine the {term}`hydraulic conductivity` and other key properties of a groundwater system is to perform a **pumping test** ({numref}`pumping_test`).
 During a pumping test we remove water from one well and monitor the drawdown of water from a second well that is some (known) distance from the first well. 
 
 ```{figure} ./figures/figure6.34.png
@@ -179,23 +216,3 @@ figclass: margin-caption
 ---
 {term}`Hydraulic conductivity` can vary a lot with geology!
 ```
-
-```{admonition} Extension: Navier-Stokes Equations (Non-Examinable)
-:class: note
-
-Building on what we have discussed about hydraulic head in groundwater, we can consider the Navier-Stokes equations, which are partial differential equations that govern the motion of incompressible fluids. These equations constitute the basic equations for fluid mechanics. They are grounded in the concepts of conservation of mass, conservation of momentum, and conservation of energy.
-
-Conservation of mass means that mass in a control volume (basically a bit of the subsurface fluid – see {numref}`control_volume`) cannot be created or destroyed.
-Conservation of momentum means that momentum is not created or destroyed, and changes only because of forces acting on the control volume.
-Conservation of energy derives from the first law of thermodynamics: work and heat added to the system will result in an increase in the total energy of the system.
-
-```{figure} ./figures/figure6.9.png
----
-name: control_volume
-width: 70%
----
-A control volume showing the forces and momentum fluxes used in deriving the Navier-Stokes equations from conservation of momentum.
-
-By understanding the forces on the control volume, we can derive partial differential equations that explain how fluids move through the control volume. The derivation of the Navier-Stokes equations is something we consider in QCES.
-```
-

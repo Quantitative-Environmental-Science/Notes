@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2.4. How we measure and understand water movement &#8212; My Jupyter Book</title>
+    <title>2.3. How we measure and understand water movement &#8212; My Jupyter Book</title>
   
   
   
@@ -60,12 +60,12 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"loader": {"load": ["[tex]/physics", "[tex]/ams", "[tex]/mhchem", "[tex]/color"]}, "tex": {"packages": ["base", "physics", "ams", "mhchem", "color"]}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '01_groundwater/l6';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01_groundwater/groundwater_3';</script>
     <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.5. Groundwater challenges and sustainable groundwater" href="l7.html" />
-    <link rel="prev" title="2.2. Why water moves beneath the surface" href="l5.html" />
+    <link rel="next" title="2.4. Groundwater Chemistry" href="groundwater_4.html" />
+    <link rel="prev" title="2.2. Why water moves beneath the surface" href="groundwater_2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -182,13 +182,11 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">2. Surface Waters I: Groundwater</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="l4.html">2.1. Groundwater Systems</a></li>
-<li class="toctree-l2"><a class="reference internal" href="l5.html">2.2. Why water moves beneath the surface</a></li>
-
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.4. How we measure and understand water movement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="l7.html">2.5. Groundwater challenges and sustainable groundwater</a></li>
-<li class="toctree-l2"><a class="reference internal" href="l8.html">2.6. Groundwater Chemistry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="l9.html">2.7. Pollution in Rivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundwater_1.html">2.1. Groundwater Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundwater_2.html">2.2. Why water moves beneath the surface</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.3. How we measure and understand water movement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundwater_4.html">2.4. Groundwater Chemistry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="groundwater_5.html">2.5. Pollution in Rivers</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../02_rivers/intro.html">3. Surface Waters II: Rivers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -307,7 +305,7 @@
       
       
       
-      <li><a href="../_sources/01_groundwater/l6.md" target="_blank"
+      <li><a href="../_sources/01_groundwater/groundwater_3.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -378,7 +376,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -394,6 +394,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saline-intrusion">Saline Intrusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determining-hydraulic-conductivity">Determining Hydraulic Conductivity</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -405,9 +414,9 @@ document.write(`
                   
   <p><br><div style="page-break-before:always;"></div></p>
 <section class="tex2jax_ignore mathjax_ignore" id="how-we-measure-and-understand-water-movement">
-<span id="lecture-6"></span><h1><span class="section-number">2.4. </span>How we measure and understand water movement<a class="headerlink" href="#how-we-measure-and-understand-water-movement" title="Link to this heading">#</a></h1>
+<span id="groundwater-3"></span><h1><span class="section-number">2.3. </span>How we measure and understand water movement<a class="headerlink" href="#how-we-measure-and-understand-water-movement" title="Link to this heading">#</a></h1>
 <p>A concept that derives from the idea of a distribution of <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a> is the distribution of a piezometric or potentiometric surface across a groundwater catchment.
-This is the level to which the <a class="reference internal" href="../reference/glossary.html#term-Water-Table"><span class="xref std std-term">water table</span></a> would rise (or fall) if it were not confined in the subsurface (<a class="reference internal" href="#potentiometric-surface"><span class="std std-numref">Fig. 2.16</span></a>).
+This is the level to which the <a class="reference internal" href="../reference/glossary.html#term-Water-Table"><span class="xref std std-term">water table</span></a> would rise (or fall) if it were not confined in the subsurface (<a class="reference internal" href="#potentiometric-surface"><span class="std std-numref">Fig. 2.18</span></a>).
 In an <a class="reference internal" href="../reference/glossary.html#term-Unconfined-Aquifer"><span class="xref std std-term">unconfined aquifer</span></a>, this is just the <a class="reference internal" href="../reference/glossary.html#term-Water-Table"><span class="xref std std-term">water table</span></a> – or where the water is found.
 In the case of a <a class="reference internal" href="../reference/glossary.html#term-Confined-Aquifer"><span class="xref std std-term">confined aquifer</span></a>, we can think of this having a <a class="reference internal" href="../reference/glossary.html#term-Water-Table"><span class="xref std std-term">water table</span></a> that represents the total potential energy within the <a class="reference internal" href="../reference/glossary.html#term-Confined-Aquifer"><span class="xref std std-term">confined aquifer</span></a>.
 More intuitively, if we were to drill a well into the <a class="reference internal" href="../reference/glossary.html#term-Aquifer"><span class="xref std std-term">aquifer</span></a>, the water level would rise to this level (which differs from the actual <a class="reference internal" href="../reference/glossary.html#term-Water-Table"><span class="xref std std-term">water table</span></a> itself).
@@ -416,39 +425,69 @@ Sometimes this is above the actual surface and indicates that if you drilled a w
 <figure class="margin-caption align-default" id="potentiometric-surface">
 <img alt="../_images/figure6.1.png" src="../_images/figure6.1.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.16 </span><span class="caption-text">The structure of an <a class="reference internal" href="../reference/glossary.html#term-Aquifer"><span class="xref std std-term">aquifer</span></a> and the potentiometric surface. Notice how differences between the <a class="reference internal" href="../reference/glossary.html#term-Water-Table"><span class="xref std std-term">water table</span></a> and potentiometric surface relate to sub-surface structure.</span><a class="headerlink" href="#potentiometric-surface" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.18 </span><span class="caption-text">The structure of an <a class="reference internal" href="../reference/glossary.html#term-Aquifer"><span class="xref std std-term">aquifer</span></a> and the potentiometric surface. Notice how differences between the <a class="reference internal" href="../reference/glossary.html#term-Water-Table"><span class="xref std std-term">water table</span></a> and potentiometric surface relate to sub-surface structure.</span><a class="headerlink" href="#potentiometric-surface" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>We can think of lines of equal pressure in a groundwater system, which are known as <strong>equipotential lines</strong>, and use this to draw flow lines, which will flow perpendicular to the pressure lines.
-This allows us to create a map like <a class="reference internal" href="#equipotential-lines"><span class="std std-numref">Fig. 2.17</span></a> showing where and how groundwater will move.
+This allows us to create a map like <a class="reference internal" href="#equipotential-lines"><span class="std std-numref">Fig. 2.19</span></a> showing where and how groundwater will move.
 What is clear from this sort of a figure is that groundwater doesn’t always move in a straight line.
 We can do a simple calculation for the amount of time it would take groundwater to move 100 meters from a <a class="reference internal" href="../reference/glossary.html#term-Recharge"><span class="xref std std-term">recharge</span></a> area to a <a class="reference internal" href="../reference/glossary.html#term-Discharge"><span class="xref std std-term">discharge</span></a> area (e.g. a stream) but in reality, we can see the flow lines/paths aren’t linear.
-Furthermore, to calculate things like the flow velocity in a groundwater system, we need to know aspects of the system like the <a class="reference internal" href="../reference/glossary.html#term-Permeability"><span class="xref std std-term">permeability</span></a> or <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a> very well.
-How are these things determined?</p>
+Furthermore, to calculate things like the flow velocity in a groundwater system, we need to know aspects of the system like the <a class="reference internal" href="../reference/glossary.html#term-Permeability"><span class="xref std std-term">permeability</span></a> or <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a> very well.</p>
 <figure class="margin-caption align-default" id="equipotential-lines">
 <a class="reference internal image-reference" href="../_images/figure6.2.png"><img alt="../_images/figure6.2.png" src="../_images/figure6.2.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.17 </span><span class="caption-text">The structure of an aquifer and the potentiometric surface. Notice how differences between the <a class="reference internal" href="../reference/glossary.html#term-Water-Table"><span class="xref std std-term">water table</span></a> and potentiometric surface relate to sub-surface structure.</span><a class="headerlink" href="#equipotential-lines" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.19 </span><span class="caption-text">The structure of an aquifer. Note how the flow lines go perpendicular to the lines of equal hydraulic head, meaning in places the water flows uphill.</span><a class="headerlink" href="#equipotential-lines" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>One way that we can determine the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a> and other key properties of a groundwater system is to perform a <strong>pumping test</strong> (<a class="reference internal" href="#pumping-test"><span class="std std-numref">Fig. 2.18</span></a>).
+<p>What we can say about the overall direction of groundwater flow is that it is always going from high hydraulic head to low hydraulic head, and typically this is mimicking the overland topography - there are exceptions to this but in general high hydraulic head exists at higher overall topographic elevations and lower hydraulic head at lower topographic elevations. Whether rivers or streams are gaining or losing water depends on the local changes in hydraulic head near to the stream/river.</p>
+<section id="saline-intrusion">
+<h2>Saline Intrusion<a class="headerlink" href="#saline-intrusion" title="Link to this heading">#</a></h2>
+<p>An example of where there can be changes in hydraulic head leading to changes in groundwater flow is near wells, where abstraction locally lowers the hydraulic head in the well and drives groundwater in the opposite direction. This is a particular problem near the coast, where freshwater aquifers can have incursion of saline groundwater into the freshwater aquifer.  Groundwater above the terrestrial (land) surface is recharged from rain, and is largely ‘fresh water’ and could be suitable for drinking.
+Groundwater beneath the ocean is salt water, and unless you undertake some serious desalination activities, is not suitable for drinking.
+At some point between the fresh subsurface groundwater and the salt subsurface groundwater, there is a mixing point where there is a <strong>freshwater-saltwater interface</strong> (<a class="reference internal" href="#fresh-salt-interface"><span class="std std-numref">Fig. 2.20</span></a> ).</p>
+<figure class="margin-caption align-default" id="fresh-salt-interface">
+<a class="reference internal image-reference" href="../_images/figure7.3.png"><img alt="../_images/figure7.3.png" src="../_images/figure7.3.png" style="width: 60%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.20 </span><span class="caption-text">An example of a freshwater-saltwater interface.</span><a class="headerlink" href="#fresh-salt-interface" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Like all groundwater systems, the flow of groundwater goes from high <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a> to low <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a>.
+Every day – indeed twice a day – the tides move the envelope of seawater such that there is greater <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a> on the salt groundwater, pushing it further inland.
+When the tides move the envelope of water away from the coast, the freshwater will move back towards the ocean.
+Thus the freshwater-saltwater interface changes daily.</p>
+<p>On top of this diurnal cycle, there are two larger scale things happening.
+One, sealevel is rising, due to the melting of ice and the thermal expansion of the ocean water.
+This increases the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a> on the salt-groundwater, pushing it inland.
+Second, we have a large groundwater footprint and the fresh-groundwater near the coast are having water removed for agriculture and drinking and all the other things we said we need groundwater for in <a class="reference internal" href="../00_intro/l3.html#lecture-3"><span class="std std-ref">Lecture 3</span></a>.
+This decreases the pressure in the coastal aquifers and drives more salt-groundwater inland (<a class="reference internal" href="#saltwater-incursion"><span class="std std-numref">Fig. 2.21</span></a>).</p>
+<figure class="margin-caption align-default" id="saltwater-incursion">
+<img alt="../_images/figure7.4.png" src="../_images/figure7.4.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2.21 </span><span class="caption-text">Seawater can <a class="reference internal" href="../reference/glossary.html#term-Recharge"><span class="xref std std-term">recharge</span></a> an aquifer and contaminate it with salt water if we extract too much water near the coast. This problem will be exacerbated by sealevel rise, which will increase the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a> on the saline side.</span><a class="headerlink" href="#saltwater-incursion" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="determining-hydraulic-conductivity">
+<h2>Determining Hydraulic Conductivity<a class="headerlink" href="#determining-hydraulic-conductivity" title="Link to this heading">#</a></h2>
+<p>We can determine hydraulic conductivity by using tracer tests - that is with two wells we can see how quickly a tracer gets from one well to the other well, giving us average groundwater velocity, which we can use with an estimate of the porosity to get the <a class="reference internal" href="../reference/glossary.html#term-Specific-Discharge"><span class="xref std std-term">specific discharge</span></a> or Darcy velocity. Once we know that and the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Gradient"><span class="xref std std-term">hydraulic gradient</span></a>, we can calculate <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a>. Another way that we can determine the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a> and other key properties of a groundwater system is to perform a <strong>pumping test</strong> (<a class="reference internal" href="#pumping-test"><span class="std std-numref">Fig. 2.22</span></a>).
 During a pumping test we remove water from one well and monitor the drawdown of water from a second well that is some (known) distance from the first well.</p>
 <figure class="margin-caption align-default" id="pumping-test">
 <img alt="../_images/figure6.34.png" src="../_images/figure6.34.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.18 </span><span class="caption-text">A schematic of a pumping test for an <a class="reference internal" href="../reference/glossary.html#term-Unconfined-Aquifer"><span class="xref std std-term">unconfined aquifer</span></a> (left) and an idealised drawdown curve for this test (right). Images from <a class="reference external" href="https://www.gov.nl.ca/ecc/files/waterres-regulations-appforms-aquifer-testing-final.pdf">here</a>.</span><a class="headerlink" href="#pumping-test" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.22 </span><span class="caption-text">A schematic of a pumping test for an <a class="reference internal" href="../reference/glossary.html#term-Unconfined-Aquifer"><span class="xref std std-term">unconfined aquifer</span></a> (left) and an idealised drawdown curve for this test (right). Images from <a class="reference external" href="https://www.gov.nl.ca/ecc/files/waterres-regulations-appforms-aquifer-testing-final.pdf">here</a>.</span><a class="headerlink" href="#pumping-test" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Let’s consider this idealised case where we are performing a pumping test in an aquifer.
 We can define several geometric parameters associated with our pumping test.
 For example, our flow rate will be <span class="math notranslate nohighlight">\(Q\)</span>, the thickness/height of our aquifer is <span class="math notranslate nohighlight">\(b\)</span>, and the height of water is <span class="math notranslate nohighlight">\(h\)</span>.
-A schematic of this is shown below in <a class="reference internal" href="#aquifer-geometry"><span class="std std-numref">Fig. 2.19</span></a>.</p>
+A schematic of this is shown below in <a class="reference internal" href="#aquifer-geometry"><span class="std std-numref">Fig. 2.23</span></a>.</p>
 <figure class="margin-caption align-default" id="aquifer-geometry">
 <a class="reference internal image-reference" href="../_images/figure6.5.png"><img alt="../_images/figure6.5.png" src="../_images/figure6.5.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.19 </span><span class="caption-text">The geometry of an idealised confined aquifer in a pumping test.</span><a class="headerlink" href="#aquifer-geometry" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.23 </span><span class="caption-text">The geometry of an idealised confined aquifer in a pumping test.</span><a class="headerlink" href="#aquifer-geometry" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <aside class="units margin sidebar">
@@ -461,13 +500,13 @@ Q &amp;= \mathrm{m^3~s^{-1}} \\
 </aside>
 <p>In an idealised sense, the drawdown will be conical in shape, and we can think about the evolution of that cone (with time) in terms of the change in the radius versus the change in the height to the side of the cone <span class="math notranslate nohighlight">\(\left( \dv{r}{h} \right)\)</span>.
 This is the slope of the piezometric surface at radius <span class="math notranslate nohighlight">\(r\)</span> from the centre of the pumping well.
-A schematic of this is given in <a class="reference internal" href="#conical-drawdown"><span class="std std-numref">Fig. 2.20</span></a>.
+A schematic of this is given in <a class="reference internal" href="#conical-drawdown"><span class="std std-numref">Fig. 2.24</span></a>.
 The drawdown of the piezometric (or potentiometric surface) results from the reduction of pressure in the aquifer due to pumping).</p>
 <figure class="margin-caption align-default" id="conical-drawdown">
 <a class="reference internal image-reference" href="../_images/figure6.6.png"><img alt="../_images/figure6.6.png" src="../_images/figure6.6.png" style="width: 60%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.20 </span><span class="caption-text">The change with radius down the borehole follows a piezometric surface .</span><a class="headerlink" href="#conical-drawdown" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.24 </span><span class="caption-text">The change with radius down the borehole follows a piezometric surface .</span><a class="headerlink" href="#conical-drawdown" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>To continue this calculation we have to make a few assumptions:</p>
@@ -514,38 +553,22 @@ We can rearrange Eq. <a class="reference internal" href="#equation-gw-thiem">(2.
 <span class="eqno">(2.15)<a class="headerlink" href="#equation-gw-thiem-perm" title="Link to this equation">#</a></span>\[K = \frac{Q}{2 \pi b (h_2 - h_1)} \ln{\frac{r_2}{r_1}}\]</div>
 <p>One of the major assumptions in a test like this is that we are at steady state, and the cone shape and size isn’t changing with time (adding in a time dependence would change the maths quite a bit).
 This isn’t strictly true as the longer we pump a groundwater system, the more the cone will widen and deepen.
-However, at some point you do reach a point where the rate of change is really very small over time, and we can assume a ‘quasi’ steady state (<a class="reference internal" href="#quasi-steady-state"><span class="std std-numref">Fig. 2.21</span></a>).</p>
+However, at some point you do reach a point where the rate of change is really very small over time, and we can assume a ‘quasi’ steady state (<a class="reference internal" href="#quasi-steady-state"><span class="std std-numref">Fig. 2.25</span></a>).</p>
 <figure class="margin-caption align-default" id="quasi-steady-state">
 <img alt="../_images/figure6.7.png" src="../_images/figure6.7.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.21 </span><span class="caption-text">The geometry of an idealised unconfined aquifer in a pumping test.</span><a class="headerlink" href="#quasi-steady-state" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.25 </span><span class="caption-text">The geometry of an idealised unconfined aquifer in a pumping test.</span><a class="headerlink" href="#quasi-steady-state" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>We can think of lots of ways this will be different if the geometry of the subsurface means our assumptions don’t hold.
-But it is also different when there are very different hydraulic conductivities involved (<a class="reference internal" href="#variable-conductivity"><span class="std std-numref">Fig. 2.22</span></a>)!</p>
+But it is also different when there are very different hydraulic conductivities involved (<a class="reference internal" href="#variable-conductivity"><span class="std std-numref">Fig. 2.26</span></a>)!</p>
 <figure class="margin-caption align-default" id="variable-conductivity">
 <img alt="../_images/figure6.8.jpg" src="../_images/figure6.8.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.22 </span><span class="caption-text"><a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">Hydraulic conductivity</span></a> can vary a lot with geology!</span><a class="headerlink" href="#variable-conductivity" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.26 </span><span class="caption-text"><a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">Hydraulic conductivity</span></a> can vary a lot with geology!</span><a class="headerlink" href="#variable-conductivity" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<div class="note admonition">
-<p class="admonition-title">Extension: Navier-Stokes Equations (Non-Examinable)</p>
-<p>Building on what we have discussed about hydraulic head in groundwater, we can consider the Navier-Stokes equations, which are partial differential equations that govern the motion of incompressible fluids. These equations constitute the basic equations for fluid mechanics. They are grounded in the concepts of conservation of mass, conservation of momentum, and conservation of energy.</p>
-<p>Conservation of mass means that mass in a control volume (basically a bit of the subsurface fluid – see <a class="reference internal" href="l7.html#control-volume"><span class="std std-numref">Fig. 2.27</span></a>) cannot be created or destroyed.
-Conservation of momentum means that momentum is not created or destroyed, and changes only because of forces acting on the control volume.
-Conservation of energy derives from the first law of thermodynamics: work and heat added to the system will result in an increase in the total energy of the system.</p>
-<figure class="align-default" id="control-volume">
-<a class="reference internal image-reference" href="../_images/figure6.9.png"><img alt="../_images/figure6.9.png" src="../_images/figure6.9.png" style="width: 70%;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Fig. 2.23 </span><span class="caption-text">A control volume showing the forces and momentum fluxes used in deriving the Navier-Stokes equations from conservation of momentum.</span><a class="headerlink" href="#control-volume" title="Link to this image">#</a></p>
-<div class="legend">
-<p>By understanding the forces on the control volume, we can derive partial differential equations that explain how fluids move through the control volume. The derivation of the Navier-Stokes equations is something we consider in QCES.</p>
-</div>
-</figcaption>
-</figure>
-</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -579,7 +602,7 @@ Conservation of energy derives from the first law of thermodynamics: work and he
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="l5.html"
+       href="groundwater_2.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
@@ -588,11 +611,11 @@ Conservation of energy derives from the first law of thermodynamics: work and he
       </div>
     </a>
     <a class="right-next"
-       href="l7.html"
+       href="groundwater_4.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.5. </span>Groundwater challenges and sustainable groundwater</p>
+        <p class="prev-next-title"><span class="section-number">2.4. </span>Groundwater Chemistry</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -602,6 +625,22 @@ Conservation of energy derives from the first law of thermodynamics: work and he
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saline-intrusion">Saline Intrusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determining-hydraulic-conductivity">Determining Hydraulic Conductivity</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
