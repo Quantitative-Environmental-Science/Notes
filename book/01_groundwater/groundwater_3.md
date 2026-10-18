@@ -8,7 +8,7 @@ This is the level to which water would rise in a well that taps the aquifer ({nu
 In an {term}`unconfined aquifer`, this is just the {term}`water table` – or where the water is found.
 In the case of a {term}`confined aquifer`, we can think of this having a {term}`water table` that represents the total potential energy within the {term}`confined aquifer`.
 More intuitively, if we were to drill a well into the {term}`aquifer`, the water level would rise to this level (which differs from the actual {term}`water table` itself).
-This is called the **potentiometric surface** (or **piezometric surface**) and is given by the red dashed line in {numref}`potentiometric_surface`.
+This is called the **{term}`potentiometric surface`** (or **{term}`piezometric surface`**) and is given by the red dashed line in {numref}`potentiometric_surface`.
 Sometimes this is above the actual surface and indicates that if you drilled a well into that {term}`aquifer`, the water level would come up above the surface.
 
 ```{figure} ./figures/figure6.1.png
@@ -19,7 +19,7 @@ figclass: margin-caption
 The structure of an {term}`aquifer` and the potentiometric surface. Notice how differences between the {term}`water table` and potentiometric surface relate to sub-surface structure.
 ```
 
-We can draw lines of equal {term}`hydraulic head` in a groundwater system, which are known as **equipotential lines**, and use these to draw flow lines, which (in an isotropic aquifer) cross the equipotential lines at right angles.
+We can draw lines of equal {term}`hydraulic head` in a groundwater system, which are known as **{term}`equipotential lines<equipotential line>`**, and use these to draw flow lines, which (in an isotropic aquifer) cross the equipotential lines at right angles.
 This allows us to create a map like {numref}`equipotential_lines` showing where and how groundwater will move.
 What is clear from this sort of a figure is that groundwater doesn’t always move in a straight line.
 We can do a simple calculation for the amount of time it would take groundwater to move 100 meters from a {term}`recharge` area to a {term}`discharge` area (e.g. a stream) but in reality, we can see the flow lines/paths aren’t linear.
@@ -38,7 +38,7 @@ What we can say about the overall direction of groundwater flow is that it is al
 
 ## Saline Intrusion
 
-An example of where there can be changes in hydraulic head leading to changes in groundwater flow is near wells, where abstraction locally lowers the hydraulic head around the well and draws groundwater towards it, sometimes reversing the natural direction of flow. This is a particular problem near the coast, where saline groundwater can be drawn into freshwater aquifers.
+An example of where there can be changes in hydraulic head leading to changes in groundwater flow is near wells, where {term}`abstraction` locally lowers the hydraulic head around the well and draws groundwater towards it, sometimes reversing the natural direction of flow. This is a particular problem near the coast, where saline groundwater can be drawn into freshwater aquifers, a process known as {term}`saline intrusion`.
 Groundwater beneath the land surface is recharged from rain, and is largely 'fresh water' and could be suitable for drinking.
 Groundwater beneath the ocean is salt water, and unless you undertake some serious desalination activities, is not suitable for drinking.
 Between the fresh subsurface groundwater and the salt subsurface groundwater, there is a mixing zone known as the **freshwater-saltwater interface** ({numref}`fresh_salt_interface`).
@@ -73,8 +73,8 @@ Seawater can {term}`recharge` an aquifer and contaminate it with salt water if w
 
 ## Determining Hydraulic Conductivity
 
-We can determine hydraulic conductivity by using tracer tests - that is with two wells we can see how quickly a tracer gets from one well to the other well, giving us average groundwater velocity, which we can use with an estimate of the porosity to get the {term}`specific discharge` or Darcy velocity. Once we know that and the {term}`hydraulic gradient`, we can calculate {term}`hydraulic conductivity`. Another way that we can determine the {term}`hydraulic conductivity` and other key properties of a groundwater system is to perform a **pumping test** ({numref}`pumping_test`).
-During a pumping test we remove water from one well and monitor the drawdown of water from a second well that is some (known) distance from the first well. 
+We can determine hydraulic conductivity by using tracer tests - that is with two wells we can see how quickly a tracer gets from one well to the other well, giving us average groundwater velocity, which we can use with an estimate of the porosity to get the {term}`specific discharge` or Darcy velocity. Once we know that and the {term}`hydraulic gradient`, we can calculate {term}`hydraulic conductivity`. Another way that we can determine the {term}`hydraulic conductivity` and other key properties of a groundwater system is to perform a **{term}`pumping test`** ({numref}`pumping_test`).
+During a pumping test we remove water from one well and monitor the {term}`drawdown` of water from a second well that is some (known) distance from the first well. 
 
 ```{figure} ./figures/figure6.34.png
 ---
@@ -106,7 +106,7 @@ Q &= \mathrm{m^3~s^{-1}} \\
 $$
 ```
 
-In an idealised sense, the drawdown will be conical in shape, and we can describe that cone in terms of the change in height of its side with radius $\left( \dv{h}{r} \right)$.
+In an idealised sense, the drawdown will be conical in shape (a {term}`cone of depression`), and we can describe that cone in terms of the change in height of its side with radius $\left( \dv{h}{r} \right)$.
 This is the slope of the piezometric surface at radius $r$ from the centre of the pumping well.
 A schematic of this is given in {numref}`conical_drawdown`.
 The drawdown of the piezometric (or potentiometric) surface results from the reduction of pressure in the aquifer due to pumping.

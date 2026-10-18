@@ -33,7 +33,7 @@ The distribution of water on earth. Left, all water. Middle, fresh water. Right,
 
 Roughly 30% of Earth's fresh water is in groundwater ({numref}`water_location`), with most of the rest tied up in glaciers.
 How does water get into the ground?
-Rain falls down on the ground, and approximately 30% of it returns to the atmosphere via evaporation, 30% returns to the atmosphere via transpiration (these are lumped together often as evapotranspiration), and 30% runs off the land through streams and rivers (which you'll learn more about in the {ref}`Surface Water<surface_waters>` section).
+Rain falls down on the ground, and approximately 30% of it returns to the atmosphere via evaporation, 30% returns to the atmosphere via transpiration (these are lumped together often as {term}`evapotranspiration`), and 30% runs off the land through streams and rivers (which you'll learn more about in the {ref}`Surface Water<surface_waters>` section).
 The balance of these processes will clearly differ all over the planet depending on vegetation cover, temperature, climate, and soil type (among many other things).
 But approximately 10% seeps into the ground through a process called **{term}`infiltration`**, or **{term}`percolation`** ({numref}`gw_cycle`).
 This {term}`infiltration` supplies water to the level beneath the surface below which the pore space (the space between the grains of soil or rock) is full of water,
@@ -91,7 +91,7 @@ This table, which was not in the lecture, gives a nice overview of where water i
 As we consider groundwater systems, we can first think about the key vocabulary we use to describe them (we did this above with {term}`infiltration`, and runoff, and {term}`water table`).
 **{term}`Aquifer`** comes from two Latin words for water (aqua) and bear (ferre) – and literally means water-bearing formation.
 It is the part of the ground below the {term}`water table` where groundwater can not only exist, but there is enough space between the solid bits for groundwater to move.
-This is in contrast to an **{term}`aquitard`**, which restricts (or retards – slows) water flow, which we often call a **confining layer**.
+This is in contrast to an **{term}`aquitard`**, which restricts (or retards – slows) water flow, which we often call a **{term}`confining layer`**.
 
 ## Porosity
 
@@ -161,7 +161,7 @@ $$
 
 Of these things, only $P$ and $R$ (precipitation and runoff) are routinely measured.
 The others are hard to measure over a whole catchment, so we usually estimate them with a model.
-We often assume steady state, which means that the amount in the groundwater ($S$) is not changing with time (it is always worth asking whether this is a reasonable assumption!).
+We often assume {term}`steady state`, which means that the amount in the groundwater ($S$) is not changing with time (it is always worth asking whether this is a reasonable assumption!).
 In that case $\dv{S}{t} = 0$ and
 
 ```{math}
@@ -233,4 +233,4 @@ $$
 Q = -KA \dv{h}{l}
 ```
 
-which is known as **Darcy's law**.
+which is known as **{term}`Darcy's law`**.
