@@ -38,7 +38,7 @@ What we can say about the overall direction of groundwater flow is that it is al
 
 ## Saline Intrusion
 
-An example of where there can be changes in hydraulic head leading to changes in groundwater flow is near wells, where abstraction locally lowers the hydraulic head in the well and drives groundwater in the opposite direction. This is a particular problem near the coast, where freshwater aquifers can have incursion of saline groundwater into the freshwater aquifer.  Groundwater above the terrestrial (land) surface is {term}`recharged` from rain, and is largely ‘fresh water’ and could be suitable for drinking.
+An example of where there can be changes in hydraulic head leading to changes in groundwater flow is near wells, where abstraction locally lowers the hydraulic head in the well and drives groundwater in the opposite direction. This is a particular problem near the coast, where freshwater aquifers can have incursion of saline groundwater into the freshwater aquifer.  Groundwater above the terrestrial (land) surface is recharged from rain, and is largely ‘fresh water’ and could be suitable for drinking.
 Groundwater beneath the ocean is salt water, and unless you undertake some serious desalination activities, is not suitable for drinking.
 At some point between the fresh subsurface groundwater and the salt subsurface groundwater, there is a mixing point where there is a **freshwater-saltwater interface** ({numref}`fresh_salt_interface` ).
 
