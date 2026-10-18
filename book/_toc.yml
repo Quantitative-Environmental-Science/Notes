@@ -17,12 +17,12 @@ chapters:
   - file: 01_groundwater/groundwater_5 # Pollution in Rivers
 - file: 02_rivers/intro
   sections:
-  - file: 02_rivers/l13
-  - file: 02_rivers/l14
-  - file: 02_rivers/l15
-  - file: 02_rivers/l16
-  - file: 02_rivers/l17
-  - file: 02_rivers/l18
+  - file: 02_rivers/rivers_1
+  - file: 02_rivers/rivers_2
+  - file: 02_rivers/rivers_3
+  - file: 02_rivers/rivers_4
+  - file: 02_rivers/rivers_5
+  - file: 02_rivers/rivers_6
 - file: 03_cryosphere/intro
   sections:
   - file: 03_cryosphere/cryo_1

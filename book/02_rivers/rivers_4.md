@@ -1,4 +1,4 @@
-(lecture_16)=
+(rivers_4)=
 # Reservoirs
 
 ## Formulation of the reservoir problem
