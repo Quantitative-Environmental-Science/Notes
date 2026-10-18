@@ -1,4 +1,4 @@
-(lecture_28)=
+(globenv_3)=
 # Scales of motion in the atmosphere and ocean
 
 As we can see from the definition of the Rossby number, $\mbox{Ro}\equiv U/(fL)$, small-scale motions in the atmosphere and ocean tend to be relatively unaffected by the Earth's rotation since we might expect that $\mbox{Ro}\gg 1$ when $L$ is small. When $\mbox{Ro}\simeq 1$, the two terms on the LHS of Eq. {eq}`eq:traditional_accel` will be comparable in magnitude. This happens when the characteristic lengthscale is $L=U/f$. Motions with characteristic lengthscales larger than $U/f$ will be strongly affected by the Earth's rotation, while motions with on scales smaller than $U/f$ will be relatively unaffected by the Earth's rotation.

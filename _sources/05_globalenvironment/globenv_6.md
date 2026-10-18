@@ -1,4 +1,4 @@
-(lecture_31)=
+(globenv_6)=
 # 2-box model for the global heat distribution
 
 In the previous section, we proposed a model for heat transport in the atmosphere using a one-dimensional diffusion equation. Another approach is to model the average temperature of tropical and polar regions using a _box model_. This approach is particularly useful when studying climates where relatively little is known about the dynamics (e.g. paleoclimate or exoplanets). During the practical projects this term, we will be developing a climate model based on box models for the atmosphere and ocean, including both heat and carbon. This lecture also serves as an introduction to the first practical project.

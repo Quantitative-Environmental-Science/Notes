@@ -1,4 +1,4 @@
-(lecture_34)=
+(globenv_9)=
 # Thermohaline Circulation
 
 In the previous section, we examined the shallow circulation that develops in the upper $\sim 100$m of ocean in response to wind forcing. In this section, we will examine the deep _Thermohaline Circulation_ that develops in response to wind forcing and surface heating/cooling and evaporation/precipitation.

@@ -1,4 +1,4 @@
-(lecture_22)=
+(atmos_4)=
 # Aerosols
 ```{rubric} Formation, growth, composition, and removal processes
 ```
