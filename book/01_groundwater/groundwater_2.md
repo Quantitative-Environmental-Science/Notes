@@ -3,7 +3,7 @@
 (groundwater_2)=
 # Why water moves beneath the surface
 
-In the last lecture we derived the groundwater continuity equation, which described the balance of the sources and sinks of water within a groundwater system or watershed. This equation is the bases for  global maps of groundwater depletion ({numref}`groundwater_depletion`).
+In the last lecture we derived the groundwater continuity equation, which described the balance of the sources and sinks of water within a groundwater system or watershed. This equation is the basis for global maps of groundwater depletion ({numref}`groundwater_depletion`).
 Groundwater depletion refers to the permanent loss of groundwater stored in subsurface aquifers because abstraction exceeds recharge.
 
 ```{figure} ./figures/figure7.1.png
@@ -27,8 +27,8 @@ Groundwater depletion is most severe where the 'groundwater footprint' is much l
 
 In the last lecture we also learned all about the various names for places that hold groundwater in the subsurface. This schematic summarises some of those key points and we will revisit it again. It gives a more clear view of **{term}`confined aquifers<confined aquifer>`** and **{term}`unconfined aquifers<unconfined aquifer>`**.
 
-A {term}`confined aquifer` has confining layer which stops or slows (confines) the water in the groundwater system.
-An {term}`unconfined aquifer` has the ground surface as the upper bound.
+A {term}`confined aquifer` has a confining layer above it which stops or slows (confines) the water in the groundwater system.
+An {term}`unconfined aquifer` has no confining layer above it, so its upper boundary is the {term}`water table`.
 
 ```{figure} ./figures/figure4.6.jpeg
 ---
@@ -40,7 +40,7 @@ Schematic figure showing the anatomy of different kinds of aquifer.
 
 In the schematic in {numref}`aquifer`, 'confining units' are aquitards, and the unconfined and {term}`confined aquifers<confined aquifer>` are labelled.
 It should be clear that the {term}`residence time` of water in a {term}`confined aquifer` is much longer than it is in an {term}`unconfined aquifer`.
-Furthermore, if we think about a toxic chemical spill at the surface, an {term}`unconfined aquifer` will get more of the toxin leaking into it as it isn't protected, where a {term}`confined aquifer` often is protected from surface chemicals through the aquitard, or confining unit.
+Furthermore, if we think about a toxic chemical spill at the surface, an {term}`unconfined aquifer` will get more of the toxin leaking into it as it isn't protected, whereas a {term}`confined aquifer` often is protected from surface chemicals through the aquitard, or confining unit.
 
 Sometimes – even often - the pressure in a {term}`confined aquifer` is greater than that at the surface.
 This is in part because of gas in the water that exsolves, and chemical reactions that take place and generate gas.
@@ -49,7 +49,7 @@ This is called an **{term}`artesian well`**. This is shown on the figure as well
 
 The key goal of today's lecture is to apply Darcy's law from the lab to the environment and understand what a hydraulic gradient or conductivity is in the field.
 
-In the last lecture we derived Darcy's Law based on experiments done in the 1800's.
+In the last lecture we derived Darcy's Law based on experiments done in the 1850s.
 
 ```{math}
 Q = -KA \dv{h}{l}
@@ -76,9 +76,9 @@ figclass: margin-caption
 Comparing {term}`hydraulic conductivity` values from (A) Freeze and Cherry (1979) and
 (B) calibrated regional scale hydrogeologic models.
 Each open square is an optimised or mean value from a part of a model domain that is larger than $5 \ \mathrm{km}$ horizontally.
-Values are grouped into hydrolithogic categories that are typical for regional-scale modelling
-(i.e. fine grained, unconsolidated).
-The geometric mean is shown as a red square with $1\sigma$ standard deviation for each hydrolithogic category.
+Values are grouped into hydrolithologic categories that are typical for regional-scale modelling
+(e.g. fine grained, unconsolidated).
+The geometric mean is shown as a red square with $1\sigma$ standard deviation for each hydrolithologic category.
 ```
 
 {term}`Hydraulic conductivity` is a function of both the medium (what groundwater flows through)
@@ -88,7 +88,9 @@ $K$ is:
 ```{margin} Units!
 :class: units
 $$
+K &= \mathrm{m~s^{-1}} \\
 C &= \mathrm{unitless} \\
+d &= \mathrm{m} \\
 \rho &= \mathrm{kg~m^{-3}} \\
 g &= \mathrm{m~s^{-2}} \\
 \mu &= \mathrm{N~s~m^{-2}} = \mathrm{Pa~s} = \mathrm{kg~m^{-1}~s^{-1}}\\
@@ -108,7 +110,7 @@ and $\mu$ being the dynamic viscosity of the fluid ($1.386 \times 10^{-3} \ \mat
 
 While {term}`hydraulic conductivity` is a function of the medium and the fluid (imagine trying to put honey through a groundwater system!), in reality, as for most groundwaters the specific weight and dynamic viscosity vary little,
 what is important is the soil/rock/subsurface (medium) through which you are trying to push groundwater.
-Mathematically, we call this $k$ – and it is known as **{term}`permeability`**.
+Mathematically, we denote this $k$ – and it is known as **{term}`permeability`**.
 
 ```{margin} Units!
 :class: units
@@ -122,14 +124,21 @@ $$
 k = Cd^2
 ```
 
-We can see that we can relate {term}`hydraulic conductivity` (units $\mathrm{m \ s^{-1}}$) to {term}`permeability` (units $\mathrm{m^2}$) quite easily, if we assume that the fluid flowing through the groundwater is water.
-This is usually a safe assumption (even really salty brines in groundwater systems have a specific weight and dynamic viscosity that means they behave more or less as water).
-If you read around a bit you will also find that a unit for {term}`Permeability` of a ‘Darcy’ is sometimes used (but not often).
+We can relate {term}`hydraulic conductivity` (units $\mathrm{m \ s^{-1}}$) to {term}`permeability` (units $\mathrm{m^2}$) by combining Eqs. {eq}`hyd_conductivity` and {eq}`permeability`:
 
-{numref}`fluxes` shows a comparison of {term}`hydraulic conductivity` from experiments, versus those from hydrology models.
-This gives you a sense of the {term}`hydraulic conductivity` associated with different types of material that we find on the surface of the planet.
+```{math}
+:label: K_from_k
+K = k \frac{\rho g}{\mu}
+```
+
+If we assume that the fluid flowing through the groundwater is water, $\frac{\rho g}{\mu}$ is effectively a constant.
+This is usually a safe assumption (even really salty brines in groundwater systems have a specific weight and dynamic viscosity that means they behave more or less as water).
+If you read around a bit you will also find a unit of {term}`permeability` called the 'darcy', which is widely used in the oil and gas industry.
+
+{numref}`fluxes` compares {term}`hydraulic conductivity` values from a classic compilation of measurements with those from calibrated regional hydrology models.
+This gives you a sense of the {term}`hydraulic conductivity` associated with different types of material that we find beneath the surface of the planet.
 {numref}`global_perm` shows a map of the global distribution of {term}`permeability` which often relates to the underlying rock type.
-In the lecture we will introduce the concept of **{term}`Transmissivity`**, which is the {term}`permeability` over a particular depth of the aquifer.
+In the lecture we will introduce the concept of **{term}`Transmissivity`** ($T$), which is the {term}`hydraulic conductivity` multiplied by the saturated thickness of the aquifer ($b$): $T = Kb$.
 
 ```{figure} ./figures/figure5.4.png
 ---
@@ -144,7 +153,7 @@ Smaller continuous permafrost areas in mountainous terrain are not shown.
 Darcy's Law provides us with a nice study of what controls the rate that water flows through porous media.
 But like all laws it rests on a few assumptions.
 We need to understand these assumptions before we take the flow through the pipe and translate it to the flow through an actual groundwater system.
-One of the main assumptions is that flow is **laminar**, and not **turbulent**.
+One of the main assumptions is that flow is **laminar**, and not **turbulent** ({numref}`turb_laminar`).
 
 ```{figure} ./figures/figure5.5.png
 ---
@@ -157,14 +166,14 @@ Cartoon of the difference between turbulent and laminar flow.
 
 Laminar means that water is moving in the same direction, like a line, while turbulence occurs when there are deviations from this linearity of movement.
 
-What was seen was that the nice linear relationship inherent to Darcy's law broke down at high {term}`hydraulic gradient`s, such that $Q$ no longer scaled linearly with {term}`hydraulic gradient`.
+What was seen was that the nice linear relationship inherent to Darcy's law broke down at high {term}`hydraulic gradient`s, such that $Q$ no longer scaled linearly with {term}`hydraulic gradient` ({numref}`Q_vs_hyd_grad`).
 
 This is because turbulence has begun in the flow through the porous medium.
 Turbulence causes pressure loss and thus changes the flow rate.
 
 ```{figure} ./figures/figure5.6.png
 ---
-name: Q_vs_dh/dl
+name: Q_vs_hyd_grad
 figclass: margin-caption
 width: 50%
 ---
@@ -178,6 +187,8 @@ We know if we are in a laminar versus a turbulent flow regime by calculating the
 :class: units
 $$
 \mathrm{Re} &= \mathrm{unitless} \\
+v &= \mathrm{m~s^{-1}} \\
+d &= \mathrm{m} \\
 $$
 ```
 
@@ -187,8 +198,9 @@ $$
 ```
 
 Where $\rho$ is the density of the fluid, $v$ is the velocity of the fluid, $d$ is a length term, typically the grain size, and $\mu$ is the dynamic viscosity of the fluid.
-If $\mathrm{Re} < 10$ then the flow is laminar, while if $\mathrm{Re} > 10$ then it is turbulent.
-Lucky for us, most groundwater systems fall in the category of laminar flow.
+Darcy's law holds when $\mathrm{Re}$ is less than about 1–10.
+Above this the relationship between $Q$ and the {term}`hydraulic gradient` becomes non-linear, at first because of inertial effects in the pores, and at higher $\mathrm{Re}$ (around 100 and above) because the flow becomes fully turbulent.
+Lucky for us, most groundwater systems have very low $\mathrm{Re}$ and fall in the laminar, linear (Darcy) regime.
 
 ```{figure} ./figures/figure5.7.png
 ---
@@ -199,15 +211,15 @@ width: 70%
 Cartoon showing different {term}`porosity` materials.
 ```
 
-Remember that the grains in the porous media, more generally, provide frictional resistance to the flow.
+Remember that the grains in the porous media, more generally, provide frictional resistance to the flow ({numref}`grain_sizes`).
 Thus, the velocity of groundwater will be near zero at the interface between the flowing groundwater and the grains, and will be fastest in the middle between the grains.
 Fundamental properties of the rock/soil/sand have a massive impact on the overall operation of the groundwater system.
 
 Let's return to groundwater flow.
 What comes out of Darcy's law is that the {term}`hydraulic gradient`, that is $\frac{\Delta h}{\Delta l}$ drives the flow of water through the pipe, or in case of the real world, the groundwater system.
 The porous medium (the grains of sand, or sides of the minerals in the rock) resist the flow, providing frictional resistance to the movement of water.
-The average groundwater velocity is given by $v = \frac{q}{n}$ where $q$ is the {term}`specific discharge` ($\frac{Q}{A}$) and $n$ is the average {term}`porosity`.
-The average groundwater velocity $(v)$ is always greater than the {term}`specific discharge` (remember that {term}`porosity` is a percentage of void space in the rock!).
+The average groundwater velocity is given by $v = \frac{q}{n_e}$ where $q$ is the {term}`specific discharge` ($\frac{Q}{A}$) and $n_e$ is the effective {term}`porosity` (the fraction of the rock made up of connected pores that water can flow through).
+The average groundwater velocity $(v)$ is always greater than the {term}`specific discharge`, because water can only flow through the pores, which are only a fraction ($n_e < 1$) of the cross-sectional area.
 
 We can now think about how this might look in the real world.
 
@@ -229,7 +241,6 @@ Conceptually, water flows from high **{term}`hydraulic head`** to low hydraulic 
 Because head combines both pressure head and elevation head, this does not always mean flowing from high pressure to low pressure, or downhill: water can flow towards higher pressure head (e.g. downwards in a recharge area) or upwards against gravity (e.g. in an artesian well), as long as the total hydraulic head decreases along the flow path.
 This means there is a loss of head along the flow-path in a groundwater system.
 This loss of head amounts to a loss of mechanical energy from the system.
-But remember, energy must be conserved, it cannot be either created or destroyed.
-This energy is conserved through frictional resistance of the porous media.
-Here, the loss of energy is lost as heat, as the water squeezes through the rock matrix.
+But remember, energy must be conserved; it cannot be either created or destroyed.
+The mechanical energy is dissipated as heat by friction, as the water squeezes through the rock matrix.
 The high specific heat capacity of water, however, means that we can't always measure a change in temperature associated with this conservation of energy.

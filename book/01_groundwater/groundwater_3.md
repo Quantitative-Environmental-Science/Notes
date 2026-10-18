@@ -4,11 +4,11 @@
 # How we measure and understand water movement
 
 A concept that derives from the idea of a distribution of {term}`hydraulic head` is the distribution of a piezometric or potentiometric surface across a groundwater catchment.
-This is the level to which the {term}`water table` would rise (or fall) if it were not confined in the subsurface ({numref}`potentiometric_surface`).
+This is the level to which water would rise in a well that taps the aquifer ({numref}`potentiometric_surface`).
 In an {term}`unconfined aquifer`, this is just the {term}`water table` – or where the water is found.
 In the case of a {term}`confined aquifer`, we can think of this having a {term}`water table` that represents the total potential energy within the {term}`confined aquifer`.
 More intuitively, if we were to drill a well into the {term}`aquifer`, the water level would rise to this level (which differs from the actual {term}`water table` itself).
-This is called the **potentiometric surface** (or **piezometric surface**) and is given by the red dashed line below.
+This is called the **potentiometric surface** (or **piezometric surface**) and is given by the red dashed line in {numref}`potentiometric_surface`.
 Sometimes this is above the actual surface and indicates that if you drilled a well into that {term}`aquifer`, the water level would come up above the surface.
 
 ```{figure} ./figures/figure6.1.png
@@ -19,7 +19,7 @@ figclass: margin-caption
 The structure of an {term}`aquifer` and the potentiometric surface. Notice how differences between the {term}`water table` and potentiometric surface relate to sub-surface structure.
 ```
 
-We can think of lines of equal pressure in a groundwater system, which are known as **equipotential lines**, and use this to draw flow lines, which will flow perpendicular to the pressure lines.
+We can draw lines of equal {term}`hydraulic head` in a groundwater system, which are known as **equipotential lines**, and use these to draw flow lines, which (in an isotropic aquifer) cross the equipotential lines at right angles.
 This allows us to create a map like {numref}`equipotential_lines` showing where and how groundwater will move.
 What is clear from this sort of a figure is that groundwater doesn’t always move in a straight line.
 We can do a simple calculation for the amount of time it would take groundwater to move 100 meters from a {term}`recharge` area to a {term}`discharge` area (e.g. a stream) but in reality, we can see the flow lines/paths aren’t linear.
@@ -38,9 +38,10 @@ What we can say about the overall direction of groundwater flow is that it is al
 
 ## Saline Intrusion
 
-An example of where there can be changes in hydraulic head leading to changes in groundwater flow is near wells, where abstraction locally lowers the hydraulic head in the well and drives groundwater in the opposite direction. This is a particular problem near the coast, where freshwater aquifers can have incursion of saline groundwater into the freshwater aquifer.  Groundwater above the terrestrial (land) surface is recharged from rain, and is largely ‘fresh water’ and could be suitable for drinking.
+An example of where there can be changes in hydraulic head leading to changes in groundwater flow is near wells, where abstraction locally lowers the hydraulic head around the well and draws groundwater towards it, sometimes reversing the natural direction of flow. This is a particular problem near the coast, where saline groundwater can be drawn into freshwater aquifers.
+Groundwater beneath the land surface is recharged from rain, and is largely 'fresh water' and could be suitable for drinking.
 Groundwater beneath the ocean is salt water, and unless you undertake some serious desalination activities, is not suitable for drinking.
-At some point between the fresh subsurface groundwater and the salt subsurface groundwater, there is a mixing point where there is a **freshwater-saltwater interface** ({numref}`fresh_salt_interface` ).
+Between the fresh subsurface groundwater and the salt subsurface groundwater, there is a mixing zone known as the **freshwater-saltwater interface** ({numref}`fresh_salt_interface`).
 
 ```{figure} ./figures/figure7.3.png
 ---
@@ -54,13 +55,13 @@ An example of a freshwater-saltwater interface.
 Like all groundwater systems, the flow of groundwater goes from high {term}`hydraulic head` to low {term}`hydraulic head`.
 Every day – indeed twice a day – the tides move the envelope of seawater such that there is greater {term}`hydraulic head` on the salt groundwater, pushing it further inland.
 When the tides move the envelope of water away from the coast, the freshwater will move back towards the ocean.
-Thus the freshwater-saltwater interface changes daily.
+Thus the freshwater-saltwater interface moves back and forth with the tides.
 
-On top of this diurnal cycle, there are two larger scale things happening.
-One, sealevel is rising, due to the melting of ice and the thermal expansion of the ocean water.
+On top of this tidal cycle, there are two larger scale things happening.
+First, sea level is rising, due to the melting of ice and the thermal expansion of the ocean water.
 This increases the {term}`hydraulic head` on the salt-groundwater, pushing it inland.
-Second, we have a large groundwater footprint and the fresh-groundwater near the coast are having water removed for agriculture and drinking and all the other things we said we need groundwater for in [Lecture 3](lecture_3).
-This decreases the pressure in the coastal aquifers and drives more salt-groundwater inland ({numref}`saltwater_incursion`).
+Second, we have a large groundwater footprint, and water is being removed from coastal freshwater aquifers for agriculture and drinking and all the other things we said we need groundwater for in {ref}`Groundwater Systems<groundwater_1>`.
+This lowers the {term}`hydraulic head` in the coastal aquifers and drives more salt-groundwater inland ({numref}`saltwater_incursion`).
 
 ```{figure} ./figures/figure7.4.png
 ---
@@ -80,12 +81,12 @@ During a pumping test we remove water from one well and monitor the drawdown of 
 name: pumping_test
 figclass: margin-caption
 ---
-A schematic of a pumping test for an {term}`unconfined aquifer` (left) and an idealised drawdown curve for this test (right). Images from [here](https://www.gov.nl.ca/ecc/files/waterres-regulations-appforms-aquifer-testing-final.pdf).
+A schematic of a pumping test for an {term}`unconfined aquifer` (left) and an idealised drawdown curve for this test (right). Images from the [Government of Newfoundland and Labrador guidelines for aquifer testing](https://www.gov.nl.ca/ecc/files/waterres-regulations-appforms-aquifer-testing-final.pdf).
 ```
 
-Let’s consider this idealised case where we are performing a pumping test in an aquifer.
+Let’s consider the idealised case where we are performing a pumping test in a *confined* aquifer (the maths for an {term}`unconfined aquifer` is slightly different, because the saturated thickness changes as the {term}`water table` is drawn down).
 We can define several geometric parameters associated with our pumping test.
-For example, our flow rate will be $Q$, the thickness/height of our aquifer is $b$, and the height of water is $h$.
+For example, our pumping rate will be $Q$, the thickness of our aquifer is $b$, and the {term}`hydraulic head` (the height of the piezometric surface above the base of the aquifer) is $h$.
 A schematic of this is shown below in {numref}`aquifer_geometry`.
 
 ```{figure} ./figures/figure6.5.png
@@ -105,10 +106,10 @@ Q &= \mathrm{m^3~s^{-1}} \\
 $$
 ```
 
-In an idealised sense, the drawdown will be conical in shape, and we can think about the evolution of that cone (with time) in terms of the change in the radius versus the change in the height to the side of the cone $\left( \dv{r}{h} \right)$.
+In an idealised sense, the drawdown will be conical in shape, and we can describe that cone in terms of the change in height of its side with radius $\left( \dv{h}{r} \right)$.
 This is the slope of the piezometric surface at radius $r$ from the centre of the pumping well.
 A schematic of this is given in {numref}`conical_drawdown`.
-The drawdown of the piezometric (or potentiometric surface) results from the reduction of pressure in the aquifer due to pumping).
+The drawdown of the piezometric (or potentiometric) surface results from the reduction of pressure in the aquifer due to pumping.
 
 ```{figure} ./figures/figure6.6.png
 ---
@@ -116,15 +117,14 @@ name: conical_drawdown
 figclass: margin-caption
 width: 60%
 ---
-The change with radius down the borehole follows a piezometric surface .
+The cone of depression around a pumping well, measured in two observation wells at distances $r_1$ and $r_2$ from the pumping well, where the heads are $h_1$ and $h_2$.
 ```
 
 To continue this calculation we have to make a few assumptions:
 
-1. The aquifer is homogenous and isotropic (the same in all directions)
+1. The aquifer is homogeneous (the same everywhere) and isotropic (the same in all directions)
 2. The well penetrates the whole of the {term}`confined aquifer`, so the flow is horizontal
-3. We will keep $Q$ constant (the flow is steady).
-This keeps other things (like the size of the cone) constant as well.
+3. We pump at a constant rate $Q$, and the cone of depression has stopped changing (the flow is at steady state).
 
 If we consider a cylinder of the aquifer of radius $r$, and height $b$ around the well, then if we apply Darcy’s Law, the rate of flow out of the well (and into the well from the groundwater) – $Q$ – is given by
 
@@ -141,6 +141,7 @@ Q = A K \dv{h}{r}
 ```
 
 Where $A$ is $2 \pi rb$.
+Notice there is no minus sign, unlike in Darcy's law (Eq. {eq}`darcys_law`): here we take $Q$ as positive for flow *towards* the well, which is in the direction of decreasing $r$, while $h$ increases with $r$.
 This means all together:
 
 ```{math}
@@ -186,8 +187,8 @@ Q = 2 \pi b K \frac{h_o - h_w}{\ln{\frac{r_o}{r_w}}}
 Here $h_o$ is the height from the aquifer to the surface before any pumping and $r_o$ is the radius before any pumping, so $h_w$ and $r$ just track the evolution of the height and radius of the cone as the pumping test evolves.
 It follows that if $Q$ is fixed, and $b$ and $K$ don’t change, there should be a linear relationship between $h$ and $\ln{r}$.
 
-In most cases we are using a certain pumping rate ($Q$) and then measuring the response of the cone, and we want to understand the {term}`hydraulic conductivity` of the system (or the {term}`permeability`).
-We can rearrange Eq. {eq}`gw_Thiem` to solve for {term}`permeability`:
+In most cases we are using a certain pumping rate ($Q$) and then measuring the response of the cone, and we want to understand the {term}`hydraulic conductivity` of the system (and from it, the {term}`permeability`).
+We can rearrange Eq. {eq}`gw_Thiem` to solve for {term}`hydraulic conductivity`:
 
 ```{math}
 :label: gw_Thiem_perm
@@ -203,7 +204,7 @@ However, at some point you do reach a point where the rate of change is really v
 name: quasi_steady_state
 figclass: margin-caption
 ---
-The geometry of an idealised unconfined aquifer in a pumping test.
+The geometry of an idealised unconfined aquifer in a pumping test, showing the drawdown curve and its slope $\dv{h}{r}$, the well radius $r_w$, the head at the well $h_w$, and the undisturbed head $h_o$.
 ```
 
 We can think of lots of ways this will be different if the geometry of the subsurface means our assumptions don’t hold.
