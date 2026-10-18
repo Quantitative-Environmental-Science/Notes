@@ -1,6 +1,6 @@
 <br><div style="page-break-before:always;"></div>
 
-(lecture_6)=
+(groundwater_4)=
 # Groundwater Chemistry
 
 A key point from the groundwater lectures is the connection between groundwater

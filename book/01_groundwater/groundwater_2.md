@@ -1,6 +1,6 @@
 <br><div style="page-break-before:always;"></div>
 
-(lecture_4)=
+(groundwater_2)=
 # Why water moves beneath the surface
 
 In the last lecture we derived the groundwater continuity equation, which described the balance of the sources and sinks of water within a groundwater system or watershed. This equation is the bases for  global maps of groundwater depletion ({numref}`groundwater_depletion`).

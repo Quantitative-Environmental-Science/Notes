@@ -10,12 +10,11 @@ chapters:
   # - file: 00_intro/l3
 - file: 01_groundwater/intro
   sections:
-  - file: 01_groundwater/l4  # Groundwater Systems
-  - file: 01_groundwater/l5  # Why water moves beneath the surface
-  - file: 01_groundwater/l6  # How we measure and understand water movement
-  # - file: 01_groundwater/l7  # Groundwater challenges and sustainable groundwater
-  - file: 01_groundwater/l8  # Groundwater Chemistry
-  - file: 01_groundwater/l9  # Pollution in Rivers
+  - file: 01_groundwater/groundwater_1  # Groundwater Systems
+  - file: 01_groundwater/groundwater_2  # Why water moves beneath the surface
+  - file: 01_groundwater/groundwater_3  # How we measure and understand water movement
+  - file: 01_groundwater/groundwater_4 # Groundwater Chemistry
+  - file: 01_groundwater/groundwater_5 # Pollution in Rivers
 - file: 02_rivers/intro
   sections:
   - file: 02_rivers/l13

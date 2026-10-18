@@ -1,6 +1,6 @@
 <br><div style="page-break-before:always;"></div>
 
-(lecture_5)=
+(groundwater_3)=
 # How we measure and understand water movement
 
 A concept that derives from the idea of a distribution of {term}`hydraulic head` is the distribution of a piezometric or potentiometric surface across a groundwater catchment.
