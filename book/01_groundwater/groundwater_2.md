@@ -3,8 +3,8 @@
 (groundwater_2)=
 # Why water moves beneath the surface
 
-In the last lecture we derived the groundwater continuity equation, which described the balance of the sources and sinks of water within a groundwater system or watershed. This equation is the basis for global maps of groundwater depletion ({numref}`groundwater_depletion`).
-Groundwater depletion refers to the permanent loss of groundwater stored in subsurface aquifers because abstraction exceeds recharge.
+In the last lecture we derived the groundwater continuity equation, which described the balance of the sources and sinks of water within a groundwater system or watershed. This equation is the basis for global maps of {term}`groundwater depletion` ({numref}`groundwater_depletion`).
+Groundwater depletion refers to the long-term loss of groundwater stored in subsurface aquifers because {term}`abstraction` exceeds {term}`recharge`.
 
 ```{figure} ./figures/figure7.1.png
 ---
@@ -57,7 +57,7 @@ Q = -KA \dv{h}{l}
 
 Where $Q$ is the volumetric flow rate, $K$ is the hydraulic conductivity, $A$ is the cross-sectional area, and $\dv{h}{l}$ is the hydraulic gradient.
 
-Note that often you will see $q$ rather than $Q$ used where $q$ is {term}`specific discharge`, or 'Darcy velocity' and is the flow rate ($Q$) divided by the area ($A$):
+Note that often you will see $q$ rather than $Q$ used where $q$ is {term}`specific discharge`, or {term}`Darcy velocity`, and is the flow rate ($Q$) divided by the area ($A$):
 
 ```{math}
 :label: darcys_vel
@@ -153,7 +153,7 @@ Smaller continuous permafrost areas in mountainous terrain are not shown.
 Darcy's Law provides us with a nice study of what controls the rate that water flows through porous media.
 But like all laws it rests on a few assumptions.
 We need to understand these assumptions before we take the flow through the pipe and translate it to the flow through an actual groundwater system.
-One of the main assumptions is that flow is **laminar**, and not **turbulent** ({numref}`turb_laminar`).
+One of the main assumptions is that flow is **{term}`laminar<laminar flow>`**, and not **{term}`turbulent<turbulent flow>`** ({numref}`turb_laminar`).
 
 ```{figure} ./figures/figure5.5.png
 ---
@@ -181,7 +181,7 @@ Plot of flow against {term}`hydraulic gradient` showing the branching of the flo
 The lower branch represents the turbulent regime, where pressure is lost.
 ```
 
-We know if we are in a laminar versus a turbulent flow regime by calculating the **Reynolds Number**.
+We know if we are in a laminar versus a turbulent flow regime by calculating the **{term}`Reynolds Number`**.
 
 ```{margin} Units!
 :class: units
@@ -218,7 +218,7 @@ Fundamental properties of the rock/soil/sand have a massive impact on the overal
 Let's return to groundwater flow.
 What comes out of Darcy's law is that the {term}`hydraulic gradient`, that is $\frac{\Delta h}{\Delta l}$ drives the flow of water through the pipe, or in case of the real world, the groundwater system.
 The porous medium (the grains of sand, or sides of the minerals in the rock) resist the flow, providing frictional resistance to the movement of water.
-The average groundwater velocity is given by $v = \frac{q}{n_e}$ where $q$ is the {term}`specific discharge` ($\frac{Q}{A}$) and $n_e$ is the effective {term}`porosity` (the fraction of the rock made up of connected pores that water can flow through).
+The average groundwater velocity, or {term}`average linear velocity`, is given by $v = \frac{q}{n_e}$ where $q$ is the {term}`specific discharge` ($\frac{Q}{A}$) and $n_e$ is the effective {term}`porosity` (the fraction of the rock made up of connected pores that water can flow through).
 The average groundwater velocity $(v)$ is always greater than the {term}`specific discharge`, because water can only flow through the pores, which are only a fraction ($n_e < 1$) of the cross-sectional area.
 
 We can now think about how this might look in the real world.
@@ -233,7 +233,7 @@ Schematic showing the calculation of {term}`hydraulic head`.
 
 If we think about a groundwater system with two wells ({numref}`hydraulic_head`), the level that water rises to in each well tells us the **{term}`hydraulic head`** at the bottom of that well.
 Hydraulic head is the total mechanical energy per unit weight of water at a point, expressed as a height (in metres) above a reference level, or datum, often sea level.
-It is the sum of the elevation head ($z$, the height of the point above the datum) and the pressure head ($\frac{P}{\rho g}$, the height of the column of water that the pressure at that point would support):
+It is the sum of the {term}`elevation head` ($z$, the height of the point above the datum) and the {term}`pressure head` ($\frac{P}{\rho g}$, the height of the column of water that the pressure at that point would support):
 
 ```{margin} Units!
 :class: units
