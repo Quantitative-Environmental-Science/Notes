@@ -184,11 +184,19 @@ Which we can rearrange to make something called the **Thiem equation**:
 Q = 2 \pi b K \frac{h_o - h_w}{\ln{\frac{r_o}{r_w}}}
 ```
 
-Here $h_o$ is the height from the aquifer to the surface before any pumping and $r_o$ is the radius before any pumping, so $h_w$ and $r$ just track the evolution of the height and radius of the cone as the pumping test evolves.
+```{figure} ./figures/figure6.7.png
+---
+name: thiem_geometry
+figclass: margin-caption
+---
+The geometry of an idealised unconfined aquifer in a pumping test, showing the drawdown curve and its slope $\dv{h}{r}$, the well radius $r_w$, the head at the well $h_w$, and the undisturbed head $h_o$.
+```
+
+Here $r_w$ is the radius of the well and $h_w$ is the head in the well, while $r_o$ is the radius of influence of the pumping (the distance beyond which there is no drawdown) and $h_o$ is the undisturbed head ({numref}`thiem_geometry`).
 It follows that if $Q$ is fixed, and $b$ and $K$ don’t change, there should be a linear relationship between $h$ and $\ln{r}$.
 
 In most cases we are using a certain pumping rate ($Q$) and then measuring the response of the cone, and we want to understand the {term}`hydraulic conductivity` of the system (and from it, the {term}`permeability`).
-We can rearrange Eq. {eq}`gw_Thiem` to solve for {term}`hydraulic conductivity`:
+The same result holds between any two radii, so in practice we measure the heads $h_1$ and $h_2$ in two observation wells at distances $r_1$ and $r_2$ from the pumping well ({numref}`conical_drawdown`), and rearrange Eq. {eq}`gw_Thiem` to solve for {term}`hydraulic conductivity`:
 
 ```{math}
 :label: gw_Thiem_perm
@@ -197,15 +205,7 @@ K = \frac{Q}{2 \pi b (h_2 - h_1)} \ln{\frac{r_2}{r_1}}
 
 One of the major assumptions in a test like this is that we are at steady state, and the cone shape and size isn’t changing with time (adding in a time dependence would change the maths quite a bit).
 This isn’t strictly true as the longer we pump a groundwater system, the more the cone will widen and deepen.
-However, at some point you do reach a point where the rate of change is really very small over time, and we can assume a ‘quasi’ steady state ({numref}`quasi_steady_state`).
-
-```{figure} ./figures/figure6.7.png
----
-name: quasi_steady_state
-figclass: margin-caption
----
-The geometry of an idealised unconfined aquifer in a pumping test, showing the drawdown curve and its slope $\dv{h}{r}$, the well radius $r_w$, the head at the well $h_w$, and the undisturbed head $h_o$.
-```
+However, at some point you do reach a point where the rate of change is really very small over time, and we can assume a ‘quasi’ steady state.
 
 We can think of lots of ways this will be different if the geometry of the subsurface means our assumptions don’t hold.
 But it is also different when there are very different hydraulic conductivities involved ({numref}`variable_conductivity`)!

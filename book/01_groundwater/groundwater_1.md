@@ -198,6 +198,8 @@ Here the pipe (length $l$ and cross-sectional area $A$) was put at various angle
 and the flow rate, $Q$, was measured (in units of volume-per-time).
 
 Specifically, we will call $\frac{\Delta h}{\Delta l}$ – that is the change in height over a distance along the pipe - the **{term}`hydraulic gradient`**.
+In this set-up both ends of the pipe are open to the atmosphere, so $\Delta h$ is just the difference in elevation.
+In the next lecture we will see that, more generally, $h$ is the {term}`hydraulic head`, which also includes the pressure of the water.
 
 ```{figure} ./figures/figure5.2.jpeg
 ---

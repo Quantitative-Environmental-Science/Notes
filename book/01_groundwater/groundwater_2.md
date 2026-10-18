@@ -42,9 +42,9 @@ In the schematic in {numref}`aquifer`, 'confining units' are aquitards, and the 
 It should be clear that the {term}`residence time` of water in a {term}`confined aquifer` is much longer than it is in an {term}`unconfined aquifer`.
 Furthermore, if we think about a toxic chemical spill at the surface, an {term}`unconfined aquifer` will get more of the toxin leaking into it as it isn't protected, whereas a {term}`confined aquifer` often is protected from surface chemicals through the aquitard, or confining unit.
 
-Sometimes – even often - the pressure in a {term}`confined aquifer` is greater than that at the surface.
-This is in part because of gas in the water that exsolves, and chemical reactions that take place and generate gas.
-The gas can't escape because of the confining units, therefore, when a well is drilled into the high-pressure aquifer, the water moves from high pressure (depth) to low pressure (surface).
+Sometimes the {term}`hydraulic head` in a {term}`confined aquifer` is higher than the top of the aquifer, and can even be higher than the ground surface.
+This is because the aquifer is recharged where it is exposed at a higher elevation, and the confining layer stops the water escaping upwards, so the water in the aquifer is under pressure.
+When a well is drilled into the aquifer, water rises up the well to the level of the potentiometric surface; if this is above the ground surface, the well flows without pumping.
 This is called an **{term}`artesian well`**. This is shown on the figure as well.
 
 The key goal of today's lecture is to apply Darcy's law from the lab to the environment and understand what a hydraulic gradient or conductivity is in the field.
@@ -231,8 +231,24 @@ figclass: margin-caption
 Schematic showing the calculation of {term}`hydraulic head`.
 ```
 
-If we think about a groundwater system, where there are two wells, the pressure of the water at a particular depth in the well is a function of both the pressure exerted by the water above it, and the gravitational pull on that water (e.g. how high up above sea level is that point?).
-Water in a groundwater system has a **{term}`hydraulic head`**, which is the total mechanical energy per unit weight of water at a point, expressed as a height (a length, usually in metres). Hydraulic head comprises the pressure head (effectively the weight pushing down at that point), the elevation head (effectively how high that point is above sea level) and the kinetic head (the energy inherent to the water itself). The kinetic head is much smaller, so we ignore it.
+If we think about a groundwater system with two wells ({numref}`hydraulic_head`), the level that water rises to in each well tells us the **{term}`hydraulic head`** at the bottom of that well.
+Hydraulic head is the total mechanical energy per unit weight of water at a point, expressed as a height (in metres) above a reference level, or datum, often sea level.
+It is the sum of the elevation head ($z$, the height of the point above the datum) and the pressure head ($\frac{P}{\rho g}$, the height of the column of water that the pressure at that point would support):
+
+```{margin} Units!
+:class: units
+$$
+h, z &= \mathrm{m} \\
+P &= \mathrm{Pa} = \mathrm{kg~m^{-1}~s^{-2}} \\
+$$
+```
+
+```{math}
+:label: hydraulic_head_eq
+h = z + \frac{P}{\rho g}
+```
+
+Strictly there is also a velocity head ($\frac{v^2}{2g}$), from the kinetic energy of the moving water, but groundwater moves so slowly that we ignore it.
 
 The change in the {term}`hydraulic head` ($\dd{h}$ or $\Delta h$) over a fixed distance ($\dd{l}$, or $\Delta{l}$) is the **{term}`hydraulic gradient`**.
 This is what drives the water to flow through the porous media (in this case, the rock).
