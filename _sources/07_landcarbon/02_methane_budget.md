@@ -1,4 +1,4 @@
-(lecture_42)=
+(land:methane:budget)=
 # The Methane Budget
 
 To understand why there was a pause in the increase in methane concentrations in the atmosphere from 2000-2006, we need to better understand the balance of the sources and sinks of methane to the atmosphere from the land surface.

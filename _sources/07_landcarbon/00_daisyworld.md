@@ -1,4 +1,4 @@
-(lecture_40)=
+(land:daisyworld)=
 # Plants, Soils and Eddies
 
 We have touched on the importance of plants, vegetation, the land surface and soils, several times throughout the year.
