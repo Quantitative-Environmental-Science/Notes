@@ -32,11 +32,11 @@ chapters:
   - file: 03_cryosphere/cryo_5
 - file: 04_atmosphere/intro
   sections:
-  - file: 04_atmosphere/l19
-  - file: 04_atmosphere/l20
-  - file: 04_atmosphere/l21
-  - file: 04_atmosphere/l22
-  - file: 04_atmosphere/l23
+  - file: 04_atmosphere/atmos_1
+  - file: 04_atmosphere/atmos_2
+  - file: 04_atmosphere/atmos_3
+  - file: 04_atmosphere/atmos_4
+  - file: 04_atmosphere/atmos_5
 - file: 05_globalenvironment/intro
   sections:
   - file: 05_globalenvironment/l26

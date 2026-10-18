@@ -1,4 +1,4 @@
-(lecture_19)=
+(atmos_1)=
 # An overview of the atmosphere
 
 ```{rubric} Structure, composition and radiative processes
