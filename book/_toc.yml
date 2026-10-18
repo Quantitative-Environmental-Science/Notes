@@ -61,10 +61,10 @@ chapters:
 #   - file: 08_polarcasestudy/l45
 - file: 07_landcarbon/intro
   sections:
-  - file: 07_landcarbon/l40
-  - file: 07_landcarbon/l41
-  - file: 07_landcarbon/l42
-  - file: 07_landcarbon/l43
+  - file: 07_landcarbon/00_daisyworld
+  - file: 07_landcarbon/01_methane_cycle
+  - file: 07_landcarbon/02_methane_budget
+  - file: 07_landcarbon/03_methane_sources
 - file: 10_energytransitions/intro
   sections:
   - file: 10_energytransitions/l49
