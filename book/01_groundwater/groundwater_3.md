@@ -71,56 +71,104 @@ figclass: margin-caption
 Seawater can {term}`recharge` an aquifer and contaminate it with salt water if we extract too much water near the coast. This problem will be exacerbated by sealevel rise, which will increase the {term}`hydraulic head` on the saline side.
 ```
 
-## Applying Groundwater Principles: Water table height between two rivers.
+## Applying Groundwater Principles: Water Table Between Two Rivers
 
-Let’s picture an unconfined aquifer lies between two rivers a distance $L$ apart, on a flat, horizontal impermeable base.
+Let’s picture an {term}`unconfined aquifer` lying between two rivers a distance $L$ apart, on a flat, horizontal, impermeable base.
 
-The first thing we can do is draw a sketch of the problem. 
-
-- $x$ runs from $0$ (river 1) to $L$ (river 2).
-- $h(x)$ is the water-table height above the base, so it is also the saturated thickness.
-- $K$ is the hydraulic conductivity (m/day), uniform in space.
-- $W$ is the recharge rate (m/day), a volume per unit ground area per unit time.
-- Boundary conditions: $h(0)=h_1$ and $h(L)=h_2$.
-- Flow is steady and one-dimensional in $x$, per unit width in $y$.
+The first thing we can do is draw a sketch of the problem ({numref}`groundwater_divide`).
 
 ```{figure} ./figures/figure7.4.2.png
 ---
 name: groundwater_divide
 figclass: margin-caption
 ---
-A sketch of the water table height between two rivers.
+A sketch of the {term}`water table` height between two rivers.
 ```
 
-Real flow in an unconfined aquifer is two-dimensional, and the water table is a free surface whose position is part of the answer. When the water table is gently sloping ($L \gg h$), Dupuit’s two simplifications are reasonable:
-    1. Flow is essentially horizontal, so equipotentials are nearly vertical.
-    2. The hydraulic gradient is the same at every depth in a vertical section.
-
-The Darcy flux (m/day) is
-
-```{math}
-q = -K\,\frac{dh}{dx}
+```{margin} Units!
+:class: units
+$$
+x, L, h &= \mathrm{m} \\
+K, W, q &= \mathrm{m~s^{-1}} \\
+q_w &= \mathrm{m^2~s^{-1}} \\
+$$
 ```
 
-Multiplying by the thickness $h$ gives the discharge per unit width of aquifer (m²/day):
+- $x$ runs from $0$ (river 1) to $L$ (river 2).
+- $h(x)$ is the {term}`water table` height above the base, so it is also the saturated thickness.
+- $K$ is the {term}`hydraulic conductivity`, uniform in space.
+- $W$ is the {term}`recharge` rate, a volume per unit ground area per unit time.
+- Boundary conditions: $h(0)=h_1$ and $h(L)=h_2$.
+- Flow is steady and one-dimensional in $x$, per unit width in $y$.
+
+Real flow in an {term}`unconfined aquifer` is two-dimensional (in the $x$–$z$ plane), and the {term}`water table` is a free surface whose position is part of the answer.
+When the {term}`water table` is gently sloping ($L \gg h$), Dupuit’s two simplifications are reasonable:
+
+1. Flow is essentially horizontal, so equipotentials are nearly vertical.
+2. The {term}`hydraulic gradient` is the same at every depth in a vertical section.
+
+The {term}`specific discharge` ($q = Q/A$) then comes straight from {term}`Darcy's law` (Eq. {eq}`darcys_law`):
 
 ```{math}
-q'(x) = -K\,h\,\frac{dh}{dx}
+:label: dupuit_flux
+q = -K \dv{h}{x}
 ```
 
-$q'$ is positive in the $+x$ direction, and the minus sign means flow runs down the head gradient.
-If we apply conservation of mass, and turn the non-linear differential equation into a linear one, integrate twice and solve for the constants, we get this solution (note these steps were done in the lecture)
+Multiplying by the thickness $h$ gives the discharge per unit width of aquifer:
 
 ```{math}
+:label: dupuit_discharge
+q_w = -K h \dv{h}{x}
+```
+
+$q_w$ is positive in the $+x$ direction, and the minus sign means flow runs down the head gradient.
+
+At steady state, conservation of mass says that any change in $q_w$ along a slice of aquifer must be supplied by {term}`recharge` falling on that slice:
+
+```{math}
+:label: dupuit_mass_balance
+\dv{q_w}{x} = W
+```
+
+Eq. {eq}`dupuit_discharge` is non-linear because of the $h \dv{h}{x}$ term.
+The trick is to notice that, by the chain rule, $h \dv{h}{x} = \frac{1}{2} \dv{(h^2)}{x}$, so if we work with $h^2$ instead of $h$ the equation becomes linear.
+Substituting this into Eq. {eq}`dupuit_mass_balance`:
+
+```{math}
+:label: dupuit_ode
+\frac{\mathrm{d}^2 (h^2)}{\mathrm{d}x^2} = -\frac{2W}{K}
+```
+
+Integrating twice gives
+
+```{math}
+h^2 = -\frac{W}{K} x^2 + c_1 x + c_2
+```
+
+and applying the boundary conditions $h(0)=h_1$ and $h(L)=h_2$ fixes $c_2 = h_1^2$ and $c_1 = \frac{h_2^2 - h_1^2}{L} + \frac{WL}{K}$, so that
+
+```{math}
+:label: dupuit_solution
 h^2 = h_1^2 + \left(h_2^2 - h_1^2\right)\frac{x}{L} + \frac{W}{K}\,x\,(L-x)
 ```
 
 The structure is worth noticing:
 
-- The first two terms are a straight line in $h^2$ joining $h_1^2$ to $h_2^2$. This is the no-recharge ($W=0$) solution.
-- The last term is a parabola that is zero at both ends and peaks at $x = L/2$. This is the extra mound that recharge creates and gives us (for values of $h_1$ and $h_2$ and $L$ in a particular environment) the overall dimensions and shape of the water table. 
+- The first two terms are a straight line in $h^2$ joining $h_1^2$ to $h_2^2$. This is the no-{term}`recharge` ($W=0$) solution.
+- The last term is a parabola that is zero at both ends and peaks at $x = L/2$. This is the extra mound that {term}`recharge` creates and gives us (for values of $h_1$ and $h_2$ and $L$ in a particular environment) the overall dimensions and shape of the {term}`water table`.
 
-We can use this to determine where the groundwater divide is. At the divide the flow changes direction, so $q'=0$, which means $\dfrac{dh}{dx}=0$ and hence $\dfrac{d(h^2)}{dx}=0$.
+We can use this to determine where the groundwater divide is.
+At the divide the flow changes direction, so $q_w=0$, which means $\dv{h}{x}=0$ and hence $\dv{(h^2)}{x}=0$.
+Differentiating Eq. {eq}`dupuit_solution` and setting it to zero gives the position of the divide, $x_d$:
+
+```{math}
+:label: dupuit_divide
+x_d = \frac{L}{2} - \frac{K\left(h_1^2 - h_2^2\right)}{2WL}
+```
+
+If the two rivers are at the same level ($h_1 = h_2$), the divide sits exactly halfway between them.
+Otherwise it is pushed towards the higher river (if $h_1 > h_2$, then $x_d < L/2$), so more than half of the {term}`recharge` drains to the lower river.
+If $x_d$ falls outside $0 \le x \le L$ (weak {term}`recharge`, or a large difference in river level), there is no divide at all: water flows across the whole aquifer towards the lower river.
 
 ## Determining Hydraulic Conductivity
 
