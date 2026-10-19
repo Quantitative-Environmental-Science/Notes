@@ -71,6 +71,57 @@ figclass: margin-caption
 Seawater can {term}`recharge` an aquifer and contaminate it with salt water if we extract too much water near the coast. This problem will be exacerbated by sealevel rise, which will increase the {term}`hydraulic head` on the saline side.
 ```
 
+## Applying Groundwater Principles: Water table height between two rivers.
+
+Let’s picture an unconfined aquifer lies between two rivers a distance $L$ apart, on a flat, horizontal impermeable base.
+
+The first thing we can do is draw a sketch of the problem. 
+
+- $x$ runs from $0$ (river 1) to $L$ (river 2).
+- $h(x)$ is the water-table height above the base, so it is also the saturated thickness.
+- $K$ is the hydraulic conductivity (m/day), uniform in space.
+- $W$ is the recharge rate (m/day), a volume per unit ground area per unit time.
+- Boundary conditions: $h(0)=h_1$ and $h(L)=h_2$.
+- Flow is steady and one-dimensional in $x$, per unit width in $y$.
+
+```{figure} ./figures/figure7.4.2.png
+---
+name: groundwater_divide
+figclass: margin-caption
+---
+A sketch of the water table height between two rivers.
+```
+
+Real flow in an unconfined aquifer is two-dimensional, and the water table is a free surface whose position is part of the answer. When the water table is gently sloping ($L \gg h$), Dupuit’s two simplifications are reasonable:
+    1. Flow is essentially horizontal, so equipotentials are nearly vertical.
+    2. The hydraulic gradient is the same at every depth in a vertical section.
+
+The Darcy flux (m/day) is
+
+```{math}
+q = -K\,\frac{dh}{dx}
+```
+
+Multiplying by the thickness $h$ gives the discharge per unit width of aquifer (m²/day):
+
+```{math}
+q'(x) = -K\,h\,\frac{dh}{dx}
+```
+
+$q'$ is positive in the $+x$ direction, and the minus sign means flow runs down the head gradient.
+If we apply conservation of mass, and turn the non-linear differential equation into a linear one, integrate twice and solve for the constants, we get this solution (note these steps were done in the lecture)
+
+```{math}
+h^2 = h_1^2 + \left(h_2^2 - h_1^2\right)\frac{x}{L} + \frac{W}{K}\,x\,(L-x)
+```
+
+The structure is worth noticing:
+
+- The first two terms are a straight line in $h^2$ joining $h_1^2$ to $h_2^2$. This is the no-recharge ($W=0$) solution.
+- The last term is a parabola that is zero at both ends and peaks at $x = L/2$. This is the extra mound that recharge creates and gives us (for values of $h_1$ and $h_2$ and $L$ in a particular environment) the overall dimensions and shape of the water table. 
+
+We can use this to determine where the groundwater divide is. At the divide the flow changes direction, so $q'=0$, which means $\dfrac{dh}{dx}=0$ and hence $\dfrac{d(h^2)}{dx}=0$.
+
 ## Determining Hydraulic Conductivity
 
 We can determine hydraulic conductivity by using tracer tests - that is with two wells we can see how quickly a tracer gets from one well to the other well, giving us average groundwater velocity, which we can use with an estimate of the porosity to get the {term}`specific discharge` or Darcy velocity. Once we know that and the {term}`hydraulic gradient`, we can calculate {term}`hydraulic conductivity`. Another way that we can determine the {term}`hydraulic conductivity` and other key properties of a groundwater system is to perform a **{term}`pumping test`** ({numref}`pumping_test`).
