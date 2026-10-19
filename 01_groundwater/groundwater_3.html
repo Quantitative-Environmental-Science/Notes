@@ -251,6 +251,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../10_energytransitions/l55.html">9.7. Cars and Minerals</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/glossary.html">10. Glossary</a></li>
 </ul>
 
     </div>
@@ -400,6 +401,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saline-intrusion">Saline Intrusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-groundwater-principles-water-table-between-two-rivers">Applying Groundwater Principles: Water Table Between Two Rivers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determining-hydraulic-conductivity">Determining Hydraulic Conductivity</a></li>
 </ul>
             </nav>
@@ -416,11 +418,11 @@ document.write(`
 <section class="tex2jax_ignore mathjax_ignore" id="how-we-measure-and-understand-water-movement">
 <span id="groundwater-3"></span><h1><span class="section-number">2.3. </span>How we measure and understand water movement<a class="headerlink" href="#how-we-measure-and-understand-water-movement" title="Link to this heading">#</a></h1>
 <p>A concept that derives from the idea of a distribution of <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a> is the distribution of a piezometric or potentiometric surface across a groundwater catchment.
-This is the level to which the <a class="reference internal" href="../reference/glossary.html#term-Water-Table"><span class="xref std std-term">water table</span></a> would rise (or fall) if it were not confined in the subsurface (<a class="reference internal" href="#potentiometric-surface"><span class="std std-numref">Fig. 2.18</span></a>).
+This is the level to which water would rise in a well that taps the aquifer (<a class="reference internal" href="#potentiometric-surface"><span class="std std-numref">Fig. 2.18</span></a>).
 In an <a class="reference internal" href="../reference/glossary.html#term-Unconfined-Aquifer"><span class="xref std std-term">unconfined aquifer</span></a>, this is just the <a class="reference internal" href="../reference/glossary.html#term-Water-Table"><span class="xref std std-term">water table</span></a> – or where the water is found.
 In the case of a <a class="reference internal" href="../reference/glossary.html#term-Confined-Aquifer"><span class="xref std std-term">confined aquifer</span></a>, we can think of this having a <a class="reference internal" href="../reference/glossary.html#term-Water-Table"><span class="xref std std-term">water table</span></a> that represents the total potential energy within the <a class="reference internal" href="../reference/glossary.html#term-Confined-Aquifer"><span class="xref std std-term">confined aquifer</span></a>.
 More intuitively, if we were to drill a well into the <a class="reference internal" href="../reference/glossary.html#term-Aquifer"><span class="xref std std-term">aquifer</span></a>, the water level would rise to this level (which differs from the actual <a class="reference internal" href="../reference/glossary.html#term-Water-Table"><span class="xref std std-term">water table</span></a> itself).
-This is called the <strong>potentiometric surface</strong> (or <strong>piezometric surface</strong>) and is given by the red dashed line below.
+This is called the <strong><a class="reference internal" href="../reference/glossary.html#term-Potentiometric-Surface"><span class="xref std std-term">potentiometric surface</span></a></strong> (or <strong><a class="reference internal" href="../reference/glossary.html#term-Piezometric-Surface"><span class="xref std std-term">piezometric surface</span></a></strong>) and is given by the red dashed line in <a class="reference internal" href="#potentiometric-surface"><span class="std std-numref">Fig. 2.18</span></a>.
 Sometimes this is above the actual surface and indicates that if you drilled a well into that <a class="reference internal" href="../reference/glossary.html#term-Aquifer"><span class="xref std std-term">aquifer</span></a>, the water level would come up above the surface.</p>
 <figure class="margin-caption align-default" id="potentiometric-surface">
 <img alt="../_images/figure6.1.png" src="../_images/figure6.1.png" />
@@ -428,7 +430,7 @@ Sometimes this is above the actual surface and indicates that if you drilled a w
 <p><span class="caption-number">Fig. 2.18 </span><span class="caption-text">The structure of an <a class="reference internal" href="../reference/glossary.html#term-Aquifer"><span class="xref std std-term">aquifer</span></a> and the potentiometric surface. Notice how differences between the <a class="reference internal" href="../reference/glossary.html#term-Water-Table"><span class="xref std std-term">water table</span></a> and potentiometric surface relate to sub-surface structure.</span><a class="headerlink" href="#potentiometric-surface" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>We can think of lines of equal pressure in a groundwater system, which are known as <strong>equipotential lines</strong>, and use this to draw flow lines, which will flow perpendicular to the pressure lines.
+<p>We can draw lines of equal <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a> in a groundwater system, which are known as <strong><a class="reference internal" href="../reference/glossary.html#term-Equipotential-Line"><span class="xref std std-term">equipotential lines</span></a></strong>, and use these to draw flow lines, which (in an isotropic aquifer) cross the equipotential lines at right angles.
 This allows us to create a map like <a class="reference internal" href="#equipotential-lines"><span class="std std-numref">Fig. 2.19</span></a> showing where and how groundwater will move.
 What is clear from this sort of a figure is that groundwater doesn’t always move in a straight line.
 We can do a simple calculation for the amount of time it would take groundwater to move 100 meters from a <a class="reference internal" href="../reference/glossary.html#term-Recharge"><span class="xref std std-term">recharge</span></a> area to a <a class="reference internal" href="../reference/glossary.html#term-Discharge"><span class="xref std std-term">discharge</span></a> area (e.g. a stream) but in reality, we can see the flow lines/paths aren’t linear.
@@ -443,9 +445,10 @@ Furthermore, to calculate things like the flow velocity in a groundwater system,
 <p>What we can say about the overall direction of groundwater flow is that it is always going from high hydraulic head to low hydraulic head, and typically this is mimicking the overland topography - there are exceptions to this but in general high hydraulic head exists at higher overall topographic elevations and lower hydraulic head at lower topographic elevations. Whether rivers or streams are gaining or losing water depends on the local changes in hydraulic head near to the stream/river.</p>
 <section id="saline-intrusion">
 <h2>Saline Intrusion<a class="headerlink" href="#saline-intrusion" title="Link to this heading">#</a></h2>
-<p>An example of where there can be changes in hydraulic head leading to changes in groundwater flow is near wells, where abstraction locally lowers the hydraulic head in the well and drives groundwater in the opposite direction. This is a particular problem near the coast, where freshwater aquifers can have incursion of saline groundwater into the freshwater aquifer.  Groundwater above the terrestrial (land) surface is recharged from rain, and is largely ‘fresh water’ and could be suitable for drinking.
+<p>An example of where there can be changes in hydraulic head leading to changes in groundwater flow is near wells, where <a class="reference internal" href="../reference/glossary.html#term-Abstraction"><span class="xref std std-term">abstraction</span></a> locally lowers the hydraulic head around the well and draws groundwater towards it, sometimes reversing the natural direction of flow. This is a particular problem near the coast, where saline groundwater can be drawn into freshwater aquifers, a process known as <a class="reference internal" href="../reference/glossary.html#term-Saline-Intrusion"><span class="xref std std-term">saline intrusion</span></a>.
+Groundwater beneath the land surface is recharged from rain, and is largely ‘fresh water’ and could be suitable for drinking.
 Groundwater beneath the ocean is salt water, and unless you undertake some serious desalination activities, is not suitable for drinking.
-At some point between the fresh subsurface groundwater and the salt subsurface groundwater, there is a mixing point where there is a <strong>freshwater-saltwater interface</strong> (<a class="reference internal" href="#fresh-salt-interface"><span class="std std-numref">Fig. 2.20</span></a> ).</p>
+Between the fresh subsurface groundwater and the salt subsurface groundwater, there is a mixing zone known as the <strong>freshwater-saltwater interface</strong> (<a class="reference internal" href="#fresh-salt-interface"><span class="std std-numref">Fig. 2.20</span></a>).</p>
 <figure class="margin-caption align-default" id="fresh-salt-interface">
 <a class="reference internal image-reference" href="../_images/figure7.3.png"><img alt="../_images/figure7.3.png" src="../_images/figure7.3.png" style="width: 60%;" />
 </a>
@@ -456,12 +459,12 @@ At some point between the fresh subsurface groundwater and the salt subsurface g
 <p>Like all groundwater systems, the flow of groundwater goes from high <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a> to low <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a>.
 Every day – indeed twice a day – the tides move the envelope of seawater such that there is greater <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a> on the salt groundwater, pushing it further inland.
 When the tides move the envelope of water away from the coast, the freshwater will move back towards the ocean.
-Thus the freshwater-saltwater interface changes daily.</p>
-<p>On top of this diurnal cycle, there are two larger scale things happening.
-One, sealevel is rising, due to the melting of ice and the thermal expansion of the ocean water.
+Thus the freshwater-saltwater interface moves back and forth with the tides.</p>
+<p>On top of this tidal cycle, there are two larger scale things happening.
+First, sea level is rising, due to the melting of ice and the thermal expansion of the ocean water.
 This increases the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a> on the salt-groundwater, pushing it inland.
-Second, we have a large groundwater footprint and the fresh-groundwater near the coast are having water removed for agriculture and drinking and all the other things we said we need groundwater for in <a class="reference internal" href="../00_intro/l3.html#lecture-3"><span class="std std-ref">Lecture 3</span></a>.
-This decreases the pressure in the coastal aquifers and drives more salt-groundwater inland (<a class="reference internal" href="#saltwater-incursion"><span class="std std-numref">Fig. 2.21</span></a>).</p>
+Second, we have a large groundwater footprint, and water is being removed from coastal freshwater aquifers for agriculture and drinking and all the other things we said we need groundwater for in <a class="reference internal" href="groundwater_1.html#groundwater-1"><span class="std std-ref">Groundwater Systems</span></a>.
+This lowers the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a> in the coastal aquifers and drives more salt-groundwater inland (<a class="reference internal" href="#saltwater-incursion"><span class="std std-numref">Fig. 2.21</span></a>).</p>
 <figure class="margin-caption align-default" id="saltwater-incursion">
 <img alt="../_images/figure7.4.png" src="../_images/figure7.4.png" />
 <figcaption>
@@ -469,25 +472,93 @@ This decreases the pressure in the coastal aquifers and drives more salt-groundw
 </figcaption>
 </figure>
 </section>
+<section id="applying-groundwater-principles-water-table-between-two-rivers">
+<h2>Applying Groundwater Principles: Water Table Between Two Rivers<a class="headerlink" href="#applying-groundwater-principles-water-table-between-two-rivers" title="Link to this heading">#</a></h2>
+<p>Let’s picture an <a class="reference internal" href="../reference/glossary.html#term-Unconfined-Aquifer"><span class="xref std std-term">unconfined aquifer</span></a> lying between two rivers a distance <span class="math notranslate nohighlight">\(L\)</span> apart, on a flat, horizontal, impermeable base.</p>
+<p>The first thing we can do is draw a sketch of the problem (<a class="reference internal" href="#groundwater-divide"><span class="std std-numref">Fig. 2.22</span></a>).</p>
+<figure class="margin-caption align-default" id="groundwater-divide">
+<img alt="../_images/figure7.4.2.png" src="../_images/figure7.4.2.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2.22 </span><span class="caption-text">A sketch of the <a class="reference internal" href="../reference/glossary.html#term-Water-Table"><span class="xref std std-term">water table</span></a> height between two rivers.</span><a class="headerlink" href="#groundwater-divide" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<aside class="units margin sidebar">
+<p class="sidebar-title">Units!</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+x, L, h &amp;= \mathrm{m} \\
+K, W, q &amp;= \mathrm{m~s^{-1}} \\
+q_w &amp;= \mathrm{m^2~s^{-1}} \\
+\end{split}\]</div>
+</aside>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x\)</span> runs from <span class="math notranslate nohighlight">\(0\)</span> (river 1) to <span class="math notranslate nohighlight">\(L\)</span> (river 2).</p></li>
+<li><p><span class="math notranslate nohighlight">\(h(x)\)</span> is the <a class="reference internal" href="../reference/glossary.html#term-Water-Table"><span class="xref std std-term">water table</span></a> height above the base, so it is also the saturated thickness.</p></li>
+<li><p><span class="math notranslate nohighlight">\(K\)</span> is the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a>, uniform in space.</p></li>
+<li><p><span class="math notranslate nohighlight">\(W\)</span> is the <a class="reference internal" href="../reference/glossary.html#term-Recharge"><span class="xref std std-term">recharge</span></a> rate, a volume per unit ground area per unit time.</p></li>
+<li><p>Boundary conditions: <span class="math notranslate nohighlight">\(h(0)=h_1\)</span> and <span class="math notranslate nohighlight">\(h(L)=h_2\)</span>.</p></li>
+<li><p>Flow is steady and one-dimensional in <span class="math notranslate nohighlight">\(x\)</span>, per unit width in <span class="math notranslate nohighlight">\(y\)</span>.</p></li>
+</ul>
+<p>Real flow in an <a class="reference internal" href="../reference/glossary.html#term-Unconfined-Aquifer"><span class="xref std std-term">unconfined aquifer</span></a> is two-dimensional (in the <span class="math notranslate nohighlight">\(x\)</span>–<span class="math notranslate nohighlight">\(z\)</span> plane), and the <a class="reference internal" href="../reference/glossary.html#term-Water-Table"><span class="xref std std-term">water table</span></a> is a free surface whose position is part of the answer.
+When the <a class="reference internal" href="../reference/glossary.html#term-Water-Table"><span class="xref std std-term">water table</span></a> is gently sloping (<span class="math notranslate nohighlight">\(L \gg h\)</span>), Dupuit’s two simplifications are reasonable:</p>
+<ol class="arabic simple">
+<li><p>Flow is essentially horizontal, so equipotentials are nearly vertical.</p></li>
+<li><p>The <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Gradient"><span class="xref std std-term">hydraulic gradient</span></a> is the same at every depth in a vertical section.</p></li>
+</ol>
+<p>The <a class="reference internal" href="../reference/glossary.html#term-Specific-Discharge"><span class="xref std std-term">specific discharge</span></a> (<span class="math notranslate nohighlight">\(q = Q/A\)</span>) then comes straight from <a class="reference internal" href="../reference/glossary.html#term-Darcy-s-Law"><span class="xref std std-term">Darcy’s law</span></a> (Eq. <a class="reference internal" href="groundwater_1.html#equation-darcys-law">(2.4)</a>):</p>
+<div class="math notranslate nohighlight" id="equation-dupuit-flux">
+<span class="eqno">(2.11)<a class="headerlink" href="#equation-dupuit-flux" title="Link to this equation">#</a></span>\[q = -K \dv{h}{x}\]</div>
+<p>Multiplying by the thickness <span class="math notranslate nohighlight">\(h\)</span> gives the discharge per unit width of aquifer:</p>
+<div class="math notranslate nohighlight" id="equation-dupuit-discharge">
+<span class="eqno">(2.12)<a class="headerlink" href="#equation-dupuit-discharge" title="Link to this equation">#</a></span>\[q_w = -K h \dv{h}{x}\]</div>
+<p><span class="math notranslate nohighlight">\(q_w\)</span> is positive in the <span class="math notranslate nohighlight">\(+x\)</span> direction, and the minus sign means flow runs down the head gradient.</p>
+<p>At steady state, conservation of mass says that any change in <span class="math notranslate nohighlight">\(q_w\)</span> along a slice of aquifer must be supplied by <a class="reference internal" href="../reference/glossary.html#term-Recharge"><span class="xref std std-term">recharge</span></a> falling on that slice:</p>
+<div class="math notranslate nohighlight" id="equation-dupuit-mass-balance">
+<span class="eqno">(2.13)<a class="headerlink" href="#equation-dupuit-mass-balance" title="Link to this equation">#</a></span>\[\dv{q_w}{x} = W\]</div>
+<p>Eq. <a class="reference internal" href="#equation-dupuit-discharge">(2.12)</a> is non-linear because of the <span class="math notranslate nohighlight">\(h \dv{h}{x}\)</span> term.
+The trick is to notice that, by the chain rule, <span class="math notranslate nohighlight">\(h \dv{h}{x} = \frac{1}{2} \dv{(h^2)}{x}\)</span>, so if we work with <span class="math notranslate nohighlight">\(h^2\)</span> instead of <span class="math notranslate nohighlight">\(h\)</span> the equation becomes linear.
+Substituting this into Eq. <a class="reference internal" href="#equation-dupuit-mass-balance">(2.13)</a>:</p>
+<div class="math notranslate nohighlight" id="equation-dupuit-ode">
+<span class="eqno">(2.14)<a class="headerlink" href="#equation-dupuit-ode" title="Link to this equation">#</a></span>\[\frac{\mathrm{d}^2 (h^2)}{\mathrm{d}x^2} = -\frac{2W}{K}\]</div>
+<p>Integrating twice gives</p>
+<div class="math notranslate nohighlight">
+\[h^2 = -\frac{W}{K} x^2 + c_1 x + c_2\]</div>
+<p>and applying the boundary conditions <span class="math notranslate nohighlight">\(h(0)=h_1\)</span> and <span class="math notranslate nohighlight">\(h(L)=h_2\)</span> fixes <span class="math notranslate nohighlight">\(c_2 = h_1^2\)</span> and <span class="math notranslate nohighlight">\(c_1 = \frac{h_2^2 - h_1^2}{L} + \frac{WL}{K}\)</span>, so that</p>
+<div class="math notranslate nohighlight" id="equation-dupuit-solution">
+<span class="eqno">(2.15)<a class="headerlink" href="#equation-dupuit-solution" title="Link to this equation">#</a></span>\[h^2 = h_1^2 + \left(h_2^2 - h_1^2\right)\frac{x}{L} + \frac{W}{K}\,x\,(L-x)\]</div>
+<p>The structure is worth noticing:</p>
+<ul class="simple">
+<li><p>The first two terms are a straight line in <span class="math notranslate nohighlight">\(h^2\)</span> joining <span class="math notranslate nohighlight">\(h_1^2\)</span> to <span class="math notranslate nohighlight">\(h_2^2\)</span>. This is the no-<a class="reference internal" href="../reference/glossary.html#term-Recharge"><span class="xref std std-term">recharge</span></a> (<span class="math notranslate nohighlight">\(W=0\)</span>) solution.</p></li>
+<li><p>The last term is a parabola that is zero at both ends and peaks at <span class="math notranslate nohighlight">\(x = L/2\)</span>. This is the extra mound that <a class="reference internal" href="../reference/glossary.html#term-Recharge"><span class="xref std std-term">recharge</span></a> creates and gives us (for values of <span class="math notranslate nohighlight">\(h_1\)</span> and <span class="math notranslate nohighlight">\(h_2\)</span> and <span class="math notranslate nohighlight">\(L\)</span> in a particular environment) the overall dimensions and shape of the <a class="reference internal" href="../reference/glossary.html#term-Water-Table"><span class="xref std std-term">water table</span></a>.</p></li>
+</ul>
+<p>We can use this to determine where the groundwater divide is.
+At the divide the flow changes direction, so <span class="math notranslate nohighlight">\(q_w=0\)</span>, which means <span class="math notranslate nohighlight">\(\dv{h}{x}=0\)</span> and hence <span class="math notranslate nohighlight">\(\dv{(h^2)}{x}=0\)</span>.
+Differentiating Eq. <a class="reference internal" href="#equation-dupuit-solution">(2.15)</a> and setting it to zero gives the position of the divide, <span class="math notranslate nohighlight">\(x_d\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-dupuit-divide">
+<span class="eqno">(2.16)<a class="headerlink" href="#equation-dupuit-divide" title="Link to this equation">#</a></span>\[x_d = \frac{L}{2} - \frac{K\left(h_1^2 - h_2^2\right)}{2WL}\]</div>
+<p>If the two rivers are at the same level (<span class="math notranslate nohighlight">\(h_1 = h_2\)</span>), the divide sits exactly halfway between them.
+Otherwise it is pushed towards the higher river (if <span class="math notranslate nohighlight">\(h_1 &gt; h_2\)</span>, then <span class="math notranslate nohighlight">\(x_d &lt; L/2\)</span>), so more than half of the <a class="reference internal" href="../reference/glossary.html#term-Recharge"><span class="xref std std-term">recharge</span></a> drains to the lower river.
+If <span class="math notranslate nohighlight">\(x_d\)</span> falls outside <span class="math notranslate nohighlight">\(0 \le x \le L\)</span> (weak <a class="reference internal" href="../reference/glossary.html#term-Recharge"><span class="xref std std-term">recharge</span></a>, or a large difference in river level), there is no divide at all: water flows across the whole aquifer towards the lower river.</p>
+</section>
 <section id="determining-hydraulic-conductivity">
 <h2>Determining Hydraulic Conductivity<a class="headerlink" href="#determining-hydraulic-conductivity" title="Link to this heading">#</a></h2>
-<p>We can determine hydraulic conductivity by using tracer tests - that is with two wells we can see how quickly a tracer gets from one well to the other well, giving us average groundwater velocity, which we can use with an estimate of the porosity to get the <a class="reference internal" href="../reference/glossary.html#term-Specific-Discharge"><span class="xref std std-term">specific discharge</span></a> or Darcy velocity. Once we know that and the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Gradient"><span class="xref std std-term">hydraulic gradient</span></a>, we can calculate <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a>. Another way that we can determine the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a> and other key properties of a groundwater system is to perform a <strong>pumping test</strong> (<a class="reference internal" href="#pumping-test"><span class="std std-numref">Fig. 2.22</span></a>).
-During a pumping test we remove water from one well and monitor the drawdown of water from a second well that is some (known) distance from the first well.</p>
+<p>We can determine hydraulic conductivity by using tracer tests - that is with two wells we can see how quickly a tracer gets from one well to the other well, giving us average groundwater velocity, which we can use with an estimate of the porosity to get the <a class="reference internal" href="../reference/glossary.html#term-Specific-Discharge"><span class="xref std std-term">specific discharge</span></a> or Darcy velocity. Once we know that and the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Gradient"><span class="xref std std-term">hydraulic gradient</span></a>, we can calculate <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a>. Another way that we can determine the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a> and other key properties of a groundwater system is to perform a <strong><a class="reference internal" href="../reference/glossary.html#term-Pumping-Test"><span class="xref std std-term">pumping test</span></a></strong> (<a class="reference internal" href="#pumping-test"><span class="std std-numref">Fig. 2.23</span></a>).
+During a pumping test we remove water from one well and monitor the <a class="reference internal" href="../reference/glossary.html#term-Drawdown"><span class="xref std std-term">drawdown</span></a> of water from a second well that is some (known) distance from the first well.</p>
 <figure class="margin-caption align-default" id="pumping-test">
 <img alt="../_images/figure6.34.png" src="../_images/figure6.34.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.22 </span><span class="caption-text">A schematic of a pumping test for an <a class="reference internal" href="../reference/glossary.html#term-Unconfined-Aquifer"><span class="xref std std-term">unconfined aquifer</span></a> (left) and an idealised drawdown curve for this test (right). Images from <a class="reference external" href="https://www.gov.nl.ca/ecc/files/waterres-regulations-appforms-aquifer-testing-final.pdf">here</a>.</span><a class="headerlink" href="#pumping-test" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.23 </span><span class="caption-text">A schematic of a pumping test for an <a class="reference internal" href="../reference/glossary.html#term-Unconfined-Aquifer"><span class="xref std std-term">unconfined aquifer</span></a> (left) and an idealised drawdown curve for this test (right). Images from the <a class="reference external" href="https://www.gov.nl.ca/ecc/files/waterres-regulations-appforms-aquifer-testing-final.pdf">Government of Newfoundland and Labrador guidelines for aquifer testing</a>.</span><a class="headerlink" href="#pumping-test" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Let’s consider this idealised case where we are performing a pumping test in an aquifer.
+<p>Let’s consider the idealised case where we are performing a pumping test in a <em>confined</em> aquifer (the maths for an <a class="reference internal" href="../reference/glossary.html#term-Unconfined-Aquifer"><span class="xref std std-term">unconfined aquifer</span></a> is slightly different, because the saturated thickness changes as the <a class="reference internal" href="../reference/glossary.html#term-Water-Table"><span class="xref std std-term">water table</span></a> is drawn down).
 We can define several geometric parameters associated with our pumping test.
-For example, our flow rate will be <span class="math notranslate nohighlight">\(Q\)</span>, the thickness/height of our aquifer is <span class="math notranslate nohighlight">\(b\)</span>, and the height of water is <span class="math notranslate nohighlight">\(h\)</span>.
-A schematic of this is shown below in <a class="reference internal" href="#aquifer-geometry"><span class="std std-numref">Fig. 2.23</span></a>.</p>
+For example, our pumping rate will be <span class="math notranslate nohighlight">\(Q\)</span>, the thickness of our aquifer is <span class="math notranslate nohighlight">\(b\)</span>, and the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a> (the height of the piezometric surface above the base of the aquifer) is <span class="math notranslate nohighlight">\(h\)</span>.
+A schematic of this is shown below in <a class="reference internal" href="#aquifer-geometry"><span class="std std-numref">Fig. 2.24</span></a>.</p>
 <figure class="margin-caption align-default" id="aquifer-geometry">
 <a class="reference internal image-reference" href="../_images/figure6.5.png"><img alt="../_images/figure6.5.png" src="../_images/figure6.5.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.23 </span><span class="caption-text">The geometry of an idealised confined aquifer in a pumping test.</span><a class="headerlink" href="#aquifer-geometry" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.24 </span><span class="caption-text">The geometry of an idealised confined aquifer in a pumping test.</span><a class="headerlink" href="#aquifer-geometry" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <aside class="units margin sidebar">
@@ -498,23 +569,22 @@ b, h, r &amp;= \mathrm{m} \\
 Q &amp;= \mathrm{m^3~s^{-1}} \\
 \end{split}\]</div>
 </aside>
-<p>In an idealised sense, the drawdown will be conical in shape, and we can think about the evolution of that cone (with time) in terms of the change in the radius versus the change in the height to the side of the cone <span class="math notranslate nohighlight">\(\left( \dv{r}{h} \right)\)</span>.
+<p>In an idealised sense, the drawdown will be conical in shape (a <a class="reference internal" href="../reference/glossary.html#term-Cone-of-Depression"><span class="xref std std-term">cone of depression</span></a>), and we can describe that cone in terms of the change in height of its side with radius <span class="math notranslate nohighlight">\(\left( \dv{h}{r} \right)\)</span>.
 This is the slope of the piezometric surface at radius <span class="math notranslate nohighlight">\(r\)</span> from the centre of the pumping well.
-A schematic of this is given in <a class="reference internal" href="#conical-drawdown"><span class="std std-numref">Fig. 2.24</span></a>.
-The drawdown of the piezometric (or potentiometric surface) results from the reduction of pressure in the aquifer due to pumping).</p>
+A schematic of this is given in <a class="reference internal" href="#conical-drawdown"><span class="std std-numref">Fig. 2.25</span></a>.
+The drawdown of the piezometric (or potentiometric) surface results from the reduction of pressure in the aquifer due to pumping.</p>
 <figure class="margin-caption align-default" id="conical-drawdown">
 <a class="reference internal image-reference" href="../_images/figure6.6.png"><img alt="../_images/figure6.6.png" src="../_images/figure6.6.png" style="width: 60%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.24 </span><span class="caption-text">The change with radius down the borehole follows a piezometric surface .</span><a class="headerlink" href="#conical-drawdown" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.25 </span><span class="caption-text">The cone of depression around a pumping well, measured in two observation wells at distances <span class="math notranslate nohighlight">\(r_1\)</span> and <span class="math notranslate nohighlight">\(r_2\)</span> from the pumping well, where the heads are <span class="math notranslate nohighlight">\(h_1\)</span> and <span class="math notranslate nohighlight">\(h_2\)</span>.</span><a class="headerlink" href="#conical-drawdown" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>To continue this calculation we have to make a few assumptions:</p>
 <ol class="arabic simple">
-<li><p>The aquifer is homogenous and isotropic (the same in all directions)</p></li>
+<li><p>The aquifer is homogeneous (the same everywhere) and isotropic (the same in all directions)</p></li>
 <li><p>The well penetrates the whole of the <a class="reference internal" href="../reference/glossary.html#term-Confined-Aquifer"><span class="xref std std-term">confined aquifer</span></a>, so the flow is horizontal</p></li>
-<li><p>We will keep <span class="math notranslate nohighlight">\(Q\)</span> constant (the flow is steady).
-This keeps other things (like the size of the cone) constant as well.</p></li>
+<li><p>We pump at a constant rate <span class="math notranslate nohighlight">\(Q\)</span>, and the cone of depression has stopped changing (the flow is at steady state).</p></li>
 </ol>
 <p>If we consider a cylinder of the aquifer of radius <span class="math notranslate nohighlight">\(r\)</span>, and height <span class="math notranslate nohighlight">\(b\)</span> around the well, then if we apply Darcy’s Law, the rate of flow out of the well (and into the well from the groundwater) – <span class="math notranslate nohighlight">\(Q\)</span> – is given by</p>
 <aside class="units margin sidebar">
@@ -525,47 +595,48 @@ K &amp;= \mathrm{m~s^{-1}} \\
 \end{split}\]</div>
 </aside>
 <div class="math notranslate nohighlight" id="equation-gw-flow-1">
-<span class="eqno">(2.8)<a class="headerlink" href="#equation-gw-flow-1" title="Link to this equation">#</a></span>\[Q = A K \dv{h}{r}\]</div>
+<span class="eqno">(2.17)<a class="headerlink" href="#equation-gw-flow-1" title="Link to this equation">#</a></span>\[Q = A K \dv{h}{r}\]</div>
 <p>Where <span class="math notranslate nohighlight">\(A\)</span> is <span class="math notranslate nohighlight">\(2 \pi rb\)</span>.
+Notice there is no minus sign, unlike in Darcy’s law (Eq. <a class="reference internal" href="groundwater_1.html#equation-darcys-law">(2.4)</a>): here we take <span class="math notranslate nohighlight">\(Q\)</span> as positive for flow <em>towards</em> the well, which is in the direction of decreasing <span class="math notranslate nohighlight">\(r\)</span>, while <span class="math notranslate nohighlight">\(h\)</span> increases with <span class="math notranslate nohighlight">\(r\)</span>.
 This means all together:</p>
 <div class="math notranslate nohighlight" id="equation-gw-flow-2">
-<span class="eqno">(2.9)<a class="headerlink" href="#equation-gw-flow-2" title="Link to this equation">#</a></span>\[Q = 2 \pi rb K \dv{h}{r}\]</div>
+<span class="eqno">(2.18)<a class="headerlink" href="#equation-gw-flow-2" title="Link to this equation">#</a></span>\[Q = 2 \pi rb K \dv{h}{r}\]</div>
 <p>We can then separate our variables:</p>
 <div class="math notranslate nohighlight" id="equation-gw-flow-3">
-<span class="eqno">(2.10)<a class="headerlink" href="#equation-gw-flow-3" title="Link to this equation">#</a></span>\[\mathrm{d}h = \frac{Q}{2 \pi b K} \frac{1}{r} \mathrm{d}r\]</div>
+<span class="eqno">(2.19)<a class="headerlink" href="#equation-gw-flow-3" title="Link to this equation">#</a></span>\[\mathrm{d}h = \frac{Q}{2 \pi b K} \frac{1}{r} \mathrm{d}r\]</div>
 <p>And integrate both sides from <span class="math notranslate nohighlight">\(h_w\)</span> to <span class="math notranslate nohighlight">\(h_o\)</span> and <span class="math notranslate nohighlight">\(r_w\)</span> to <span class="math notranslate nohighlight">\(r_o\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-gw-flow-4">
-<span class="eqno">(2.11)<a class="headerlink" href="#equation-gw-flow-4" title="Link to this equation">#</a></span>\[\int_{h_w}^{h_o} \mathrm{d}h = \int_{r_w}^{r_o} \frac{Q}{2 \pi b K} \frac{1}{r} \mathrm{d}r\]</div>
+<span class="eqno">(2.20)<a class="headerlink" href="#equation-gw-flow-4" title="Link to this equation">#</a></span>\[\int_{h_w}^{h_o} \mathrm{d}h = \int_{r_w}^{r_o} \frac{Q}{2 \pi b K} \frac{1}{r} \mathrm{d}r\]</div>
 <p>But because <span class="math notranslate nohighlight">\(\frac{Q}{2 \pi b K}\)</span> is constant, we can bring that out of the integral:</p>
 <div class="math notranslate nohighlight" id="equation-gw-flow-5">
-<span class="eqno">(2.12)<a class="headerlink" href="#equation-gw-flow-5" title="Link to this equation">#</a></span>\[\int_{h_w}^{h_o} \mathrm{d}h = \frac{Q}{2 \pi b K} \int_{r_w}^{r_o} \frac{1}{r} \mathrm{d}r\]</div>
+<span class="eqno">(2.21)<a class="headerlink" href="#equation-gw-flow-5" title="Link to this equation">#</a></span>\[\int_{h_w}^{h_o} \mathrm{d}h = \frac{Q}{2 \pi b K} \int_{r_w}^{r_o} \frac{1}{r} \mathrm{d}r\]</div>
 <p>Which can be solved to give:</p>
 <div class="math notranslate nohighlight" id="equation-gw-flow-solution">
-<span class="eqno">(2.13)<a class="headerlink" href="#equation-gw-flow-solution" title="Link to this equation">#</a></span>\[h_o - h_w = \frac{Q}{2 \pi b K} \ln{\frac{r_o}{r_w}}\]</div>
+<span class="eqno">(2.22)<a class="headerlink" href="#equation-gw-flow-solution" title="Link to this equation">#</a></span>\[h_o - h_w = \frac{Q}{2 \pi b K} \ln{\frac{r_o}{r_w}}\]</div>
 <p>Which we can rearrange to make something called the <strong>Thiem equation</strong>:</p>
 <div class="math notranslate nohighlight" id="equation-gw-thiem">
-<span class="eqno">(2.14)<a class="headerlink" href="#equation-gw-thiem" title="Link to this equation">#</a></span>\[Q = 2 \pi b K \frac{h_o - h_w}{\ln{\frac{r_o}{r_w}}}\]</div>
-<p>Here <span class="math notranslate nohighlight">\(h_o\)</span> is the height from the aquifer to the surface before any pumping and <span class="math notranslate nohighlight">\(r_o\)</span> is the radius before any pumping, so <span class="math notranslate nohighlight">\(h_w\)</span> and <span class="math notranslate nohighlight">\(r\)</span> just track the evolution of the height and radius of the cone as the pumping test evolves.
-It follows that if <span class="math notranslate nohighlight">\(Q\)</span> is fixed, and <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(K\)</span> don’t change, there should be a linear relationship between <span class="math notranslate nohighlight">\(h\)</span> and <span class="math notranslate nohighlight">\(\ln{r}\)</span>.</p>
-<p>In most cases we are using a certain pumping rate (<span class="math notranslate nohighlight">\(Q\)</span>) and then measuring the response of the cone, and we want to understand the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a> of the system (or the <a class="reference internal" href="../reference/glossary.html#term-Permeability"><span class="xref std std-term">permeability</span></a>).
-We can rearrange Eq. <a class="reference internal" href="#equation-gw-thiem">(2.14)</a> to solve for <a class="reference internal" href="../reference/glossary.html#term-Permeability"><span class="xref std std-term">permeability</span></a>:</p>
-<div class="math notranslate nohighlight" id="equation-gw-thiem-perm">
-<span class="eqno">(2.15)<a class="headerlink" href="#equation-gw-thiem-perm" title="Link to this equation">#</a></span>\[K = \frac{Q}{2 \pi b (h_2 - h_1)} \ln{\frac{r_2}{r_1}}\]</div>
-<p>One of the major assumptions in a test like this is that we are at steady state, and the cone shape and size isn’t changing with time (adding in a time dependence would change the maths quite a bit).
-This isn’t strictly true as the longer we pump a groundwater system, the more the cone will widen and deepen.
-However, at some point you do reach a point where the rate of change is really very small over time, and we can assume a ‘quasi’ steady state (<a class="reference internal" href="#quasi-steady-state"><span class="std std-numref">Fig. 2.25</span></a>).</p>
-<figure class="margin-caption align-default" id="quasi-steady-state">
+<span class="eqno">(2.23)<a class="headerlink" href="#equation-gw-thiem" title="Link to this equation">#</a></span>\[Q = 2 \pi b K \frac{h_o - h_w}{\ln{\frac{r_o}{r_w}}}\]</div>
+<figure class="margin-caption align-default" id="thiem-geometry">
 <img alt="../_images/figure6.7.png" src="../_images/figure6.7.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.25 </span><span class="caption-text">The geometry of an idealised unconfined aquifer in a pumping test.</span><a class="headerlink" href="#quasi-steady-state" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.26 </span><span class="caption-text">The geometry of an idealised unconfined aquifer in a pumping test, showing the drawdown curve and its slope <span class="math notranslate nohighlight">\(\dv{h}{r}\)</span>, the well radius <span class="math notranslate nohighlight">\(r_w\)</span>, the head at the well <span class="math notranslate nohighlight">\(h_w\)</span>, and the undisturbed head <span class="math notranslate nohighlight">\(h_o\)</span>.</span><a class="headerlink" href="#thiem-geometry" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
+<p>Here <span class="math notranslate nohighlight">\(r_w\)</span> is the radius of the well and <span class="math notranslate nohighlight">\(h_w\)</span> is the head in the well, while <span class="math notranslate nohighlight">\(r_o\)</span> is the radius of influence of the pumping (the distance beyond which there is no drawdown) and <span class="math notranslate nohighlight">\(h_o\)</span> is the undisturbed head (<a class="reference internal" href="#thiem-geometry"><span class="std std-numref">Fig. 2.26</span></a>).
+It follows that if <span class="math notranslate nohighlight">\(Q\)</span> is fixed, and <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(K\)</span> don’t change, there should be a linear relationship between <span class="math notranslate nohighlight">\(h\)</span> and <span class="math notranslate nohighlight">\(\ln{r}\)</span>.</p>
+<p>In most cases we are using a certain pumping rate (<span class="math notranslate nohighlight">\(Q\)</span>) and then measuring the response of the cone, and we want to understand the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a> of the system (and from it, the <a class="reference internal" href="../reference/glossary.html#term-Permeability"><span class="xref std std-term">permeability</span></a>).
+The same result holds between any two radii, so in practice we measure the heads <span class="math notranslate nohighlight">\(h_1\)</span> and <span class="math notranslate nohighlight">\(h_2\)</span> in two observation wells at distances <span class="math notranslate nohighlight">\(r_1\)</span> and <span class="math notranslate nohighlight">\(r_2\)</span> from the pumping well (<a class="reference internal" href="#conical-drawdown"><span class="std std-numref">Fig. 2.25</span></a>), and rearrange Eq. <a class="reference internal" href="#equation-gw-thiem">(2.23)</a> to solve for <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a>:</p>
+<div class="math notranslate nohighlight" id="equation-gw-thiem-perm">
+<span class="eqno">(2.24)<a class="headerlink" href="#equation-gw-thiem-perm" title="Link to this equation">#</a></span>\[K = \frac{Q}{2 \pi b (h_2 - h_1)} \ln{\frac{r_2}{r_1}}\]</div>
+<p>One of the major assumptions in a test like this is that we are at steady state, and the cone shape and size isn’t changing with time (adding in a time dependence would change the maths quite a bit).
+This isn’t strictly true as the longer we pump a groundwater system, the more the cone will widen and deepen.
+However, at some point you do reach a point where the rate of change is really very small over time, and we can assume a ‘quasi’ steady state.</p>
 <p>We can think of lots of ways this will be different if the geometry of the subsurface means our assumptions don’t hold.
-But it is also different when there are very different hydraulic conductivities involved (<a class="reference internal" href="#variable-conductivity"><span class="std std-numref">Fig. 2.26</span></a>)!</p>
+But it is also different when there are very different hydraulic conductivities involved (<a class="reference internal" href="#variable-conductivity"><span class="std std-numref">Fig. 2.27</span></a>)!</p>
 <figure class="margin-caption align-default" id="variable-conductivity">
 <img alt="../_images/figure6.8.jpg" src="../_images/figure6.8.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.26 </span><span class="caption-text"><a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">Hydraulic conductivity</span></a> can vary a lot with geology!</span><a class="headerlink" href="#variable-conductivity" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.27 </span><span class="caption-text"><a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">Hydraulic conductivity</span></a> can vary a lot with geology!</span><a class="headerlink" href="#variable-conductivity" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -636,6 +707,7 @@ But it is also different when there are very different hydraulic conductivities 
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saline-intrusion">Saline Intrusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-groundwater-principles-water-table-between-two-rivers">Applying Groundwater Principles: Water Table Between Two Rivers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determining-hydraulic-conductivity">Determining Hydraulic Conductivity</a></li>
 </ul>
   </nav></div>
