@@ -14,7 +14,6 @@ We have discussed the importance of groundwater systems, how groundwater moves (
 Together these give us a good sense of how to calculate groundwater velocity and the energy required to move groundwater.
 There are several environmental challenges that face Earth’s groundwater systems, not least of which is the fact that we are removing groundwater faster than it can {term}`recharge`.
 
-
 ```{note}
 To explore the contamination of groundwater we are going to tell the story of arsenic poisoning in Bangladesh, why there are such high levels of arsenic in the groundwater and the various mechanisms that can help remedy this situation.
 This is just a specific example of an acute groundwater contamination problem and the way the community and scientists are trying to help remedy it.
@@ -154,4 +153,15 @@ Increased human waste at the surface is increasing the flux of organic matter
 into the subsurface and creating increasingly anoxic conditions that are
 accelerating the weathering of arsenic.
 
+## Redox Reactions
 
+   ```{figure} ./figures/redox_ladder_E_to_deltaG.png
+   ---
+   name: redox_ladder
+   figclass: margin-caption
+   width: 100%
+   ---
+   The redox ladder showing the relationship between the standard reduction
+   potential (E°) and the Gibbs free energy change (ΔG°) for key
+   redox reactions.
+   ```
