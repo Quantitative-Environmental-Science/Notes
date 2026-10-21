@@ -153,15 +153,38 @@ Increased human waste at the surface is increasing the flux of organic matter
 into the subsurface and creating increasingly anoxic conditions that are
 accelerating the weathering of arsenic.
 
-## Redox Reactions
+## Annoxia, Redox and Arsenic
 
-   ```{figure} ./figures/redox_ladder_E_to_deltaG.png
-   ---
-   name: redox_ladder
-   figclass: margin-caption
-   width: 100%
-   ---
-   The redox ladder showing the relationship between the standard reduction
-   potential (E°) and the Gibbs free energy change (ΔG°) for key
-   redox reactions.
-   ```
+We can remember why groundwater becomes anoxic if we consider the electrode potential associated with redox half reactions.  The electrode potential measures the voltage associated with the movement of electrons relative to a reference cell. Once you know the potential, you can calculate the total electrode potential (DE) by coupling two redox reactions – one that gives up electrons and one that accepts electrons, as shown in {numref}`redox_ladder`.
+
+```{figure} ./figures/redox_ladder_E_to_deltaG.png
+---
+name: redox_ladder
+figclass: margin-caption
+width: 100%
+---
+The redox ladder showing the relationship between the standard reduction
+potential (E°) and the Gibbs free energy change (ΔG°) for key
+redox reactions.
+```
+
+Electrode potential is related to the overall energy of the redox reaction through
+
+```{math}
+\Delta G = -n F \Delta E
+```
+
+Where $n$ is the number of moles of electrons transferred in the redox reaction. Remember that the more negative the $\Delta G$, the more energy for that overall reaction. If you have the conditions you can use the Nernst Equation to calculate the true, insitu $\Delta G$ for a particular reaction.
+
+What we can see is that the most energy is gained by reactions that are coupled to oxygen.  Therefore, provided reactions are not kinetically limited, the reactions involving oxygen will go first. This means in groundwater systems, where there are many electron dense materials (dissolved organic matter, minerals), oxygen will react the fastest and therefore be depleted in the groundwater first.
+
+We can image the change in the chemistry of groundwater using a Pourbaix diagram ({numref}`pH_pe_As`), which shows the acid-base chemistry (pH) against the electron chemistry (pe) to determine which species are stable. As groundwater chemistry evolves you move gradually down on this diagram towards more reducing conditions, and whether you move left or right (more acidic or basic) depends on the minerals that might be dissolving or forming along the flow path.
+
+```{figure} ./figures/pH_pe_As.png
+---
+name: pH_pe_As
+figclass: margin-caption
+width: 100%
+---
+A Pourbaix diagram showing the stability of arsenic species as a function of pH and pe (electron activity). The diagram illustrates how arsenic speciation changes under different redox and pH conditions.
+```
