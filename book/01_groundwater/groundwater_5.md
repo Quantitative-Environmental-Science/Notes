@@ -172,8 +172,11 @@ and with distance $\left( \frac{\partial C}{\partial x} \right)$.
 Because there are changes with time and with distance, we need to use a partial
 differential equation. 
 
-A solution for this is given by the equation below, which tells me the concentration of a contaminant some distance from where it was released as a function of the overall flow velocity and the dispersion. 
+A solution for this is given by the equation below, which shows the concentration of a contaminant some distance from where it was released as a function of the overall flow velocity and the dispersion. 
 
+```{math}
+C(x,y,z,t) = \frac{M}{(4 \pi t)^{3/2} \sqrt{D_x D_y D_z}} \exp{\left[- \left( \frac{(x - v_x t)^2}{4 D_x t} + \frac{y^2}{4 D_y t} + \frac{z^2}{4 D_z t}\right) \right]}
+```
 
 
 ```{admonition} Extension: Navier-Stokes Equations (Non-Examinable)
