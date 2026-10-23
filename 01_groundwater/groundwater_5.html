@@ -407,10 +407,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-advection-diffusion-reaction-equation">The Advection-Diffusion-Reaction Equation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-volumes-and-dispersion">Control Volumes and Dispersion</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-peclet-number">The Peclet Number</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contaminant-plume-modeling">Contaminant Plume Modeling</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contaminant-transport-models">Contaminant Transport Models</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nutrients-and-eutrophication">Nutrients and Eutrophication</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transit-time-and-groundwater">Transit Time and Groundwater</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groundwater-and-surface-water-interactions">Groundwater and Surface Water Interactions</a></li>
@@ -428,12 +426,12 @@ document.write(`
   <p><br><div style="page-break-before:always;"></div></p>
 <section class="tex2jax_ignore mathjax_ignore" id="contaminant-transport-and-pollution-in-rivers">
 <span id="groundwater-5"></span><h1><span class="section-number">2.5. </span>Contaminant Transport and Pollution in Rivers<a class="headerlink" href="#contaminant-transport-and-pollution-in-rivers" title="Link to this heading">#</a></h1>
-<p>Another major challenge in groundwater systems is the transport of contaminants, that is something (potentially toxic) is released into the subsurface and travels with the groundwater, appearing in the water supply at some point later in time (depending on the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a> of the aquifer, and the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a> difference driving the flow).
+<p>Another major challenge in groundwater systems is the transport of contaminants, that is something (potentially toxic) is released into the subsurface and travels with the groundwater, appearing in the water supply or a river at some point later in time (depending on the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a> of the aquifer, and the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Head"><span class="xref std std-term">hydraulic head</span></a> difference driving the flow).
 In some respects we have learned the tools you would need to determine how long before a contaminant released into the groundwater would be seen at some point downstream.
-You could figure out the lines of equipotential, and the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a>, and then calculate the flow velocity, and this would yield time (with some knowledge of the distance travelled).</p>
+You could figure out the lines of equipotential, and the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a>, and then calculate the flow velocity, and this would yield time (with some knowledge of the distance travelled). Here we are going to discuss how the contaminant plume evolves in the groundwater system.</p>
 <section id="contaminant-transport-in-groundwater">
 <h2>Contaminant Transport in Groundwater<a class="headerlink" href="#contaminant-transport-in-groundwater" title="Link to this heading">#</a></h2>
-<p>Having understood a bit about how the chemistry of groundwater evolves along the
+<p>Having understood a bit about how the broader chemistry of groundwater evolves along the
 flow path, we can consider what happens when we add a contaminant to groundwater
 and how it is likely to travel and disperse through the groundwater system.</p>
 <figure class="margin-caption align-default" id="control-volume-transport">
@@ -537,9 +535,7 @@ and chemical reactions on contaminant transport in groundwater.</span><a class="
 <ul class="simple">
 <li><p>When solutes flow through a porous medium they can interact with the solid
 phase.
-In particular they can sorb and desorb, or precipitate into mineral phases.
-The net result is a process called retardation that effectively slows the
-transport of a solute through a porous medium.</p></li>
+In particular they can sorb and desorb, or precipitate into mineral phases, or dissolve into the groundwater from mineral phases.</p></li>
 <li><p>The amount of these chemical reactions and how they impact the overall
 chemical transport depends on the solute, water chemistry, and geochemical
 makeup of the porous medium.</p></li>
@@ -548,19 +544,8 @@ makeup of the porous medium.</p></li>
 <section id="the-advection-diffusion-reaction-equation">
 <h3>The Advection-Diffusion-Reaction Equation<a class="headerlink" href="#the-advection-diffusion-reaction-equation" title="Link to this heading">#</a></h3>
 <p>Having discussed advection, dispersion, and chemical reactions individually,
-we can now consider how they combine in a mathematical framework.
-In previous lectures, we learned the tools needed to determine how long before a
-contaminant released into the groundwater would be seen at some point downstream.
-We could figure out the lines of equipotential and the <a class="reference internal" href="../reference/glossary.html#term-Hydraulic-Conductivity"><span class="xref std std-term">hydraulic conductivity</span></a>, and then calculate the flow velocity, which would yield time
-(with some knowledge of the distance travelled).</p>
-<p>However, like most things, it is more complicated than this.
-The contaminant is not just subject to advection with the flow of the
-groundwater, but also diffusion (the process by which things move from high
-concentration to low concentration) and possibly chemical reaction with the
-porous media.
-This leads to an entirely different class of equations and models known as
-advective-diffusive transport models.
-We will not go through the mathematics of these models in detail, but the
+we can now consider how they combine in a mathematical framework.</p>
+<p>We will not go through the mathematics of these models in detail, but the
 standard formula is:</p>
 <aside class="units margin sidebar">
 <p class="sidebar-title">Units!</p>
@@ -578,19 +563,14 @@ R &amp;= \mathrm{amount~m^{-3}~s^{-1}}
 concentration changes with time <span class="math notranslate nohighlight">\(\left( \frac{\partial C}{\partial t} \right)\)</span>
 and with distance <span class="math notranslate nohighlight">\(\left( \frac{\partial C}{\partial x} \right)\)</span>.
 Because there are changes with time and with distance, we need to use a partial
-differential equation.
-In the partial differential equation above, <span class="math notranslate nohighlight">\(D\)</span> is the diffusion coefficient for
-the contaminant in water, <span class="math notranslate nohighlight">\(v\)</span> is the flow velocity
-<span class="math notranslate nohighlight">\(\left( \frac{-K}{\rho} \dv{h}{x} \right)\)</span> (can you figure out why this is the
-flow velocity from Darcy’s Law?), and <span class="math notranslate nohighlight">\(R\)</span> represents the chemical reactions that
-change the concentration with time.
-Diffusion can be molecular diffusion or mechanical dispersion, and the types of
-chemical reactions that change the concentration vary depending on the
-contaminant and the geochemical environment.</p>
+differential equation.</p>
+<p>A solution for this is given by the equation below, which shows the concentration of a contaminant some distance from where it was released as a function of the overall flow velocity and the dispersion.</p>
+<div class="math notranslate nohighlight">
+\[C(x,y,z,t) = \frac{M}{(4 \pi t)^{3/2} \sqrt{D_x D_y D_z}} \exp{\left[- \left( \frac{(x - v_x t)^2}{4 D_x t} + \frac{y^2}{4 D_y t} + \frac{z^2}{4 D_z t}\right) \right]}\]</div>
 <div class="note admonition">
 <p class="admonition-title">Extension: Navier-Stokes Equations (Non-Examinable)</p>
 <p>Building on what we have discussed about hydraulic head in groundwater, we can consider the Navier-Stokes equations, which are partial differential equations that govern the motion of incompressible fluids. These equations constitute the basic equations for fluid mechanics. They are grounded in the concepts of conservation of mass, conservation of momentum, and conservation of energy.</p>
-<p>Conservation of mass means that mass in a control volume (basically a bit of the subsurface fluid – see <a class="reference internal" href="#control-volume"><span class="std std-numref">Fig. 2.43</span></a>) cannot be created or destroyed.
+<p>Conservation of mass means that mass in a control volume (basically a bit of the subsurface fluid – see <code class="xref std std-numref docutils literal notranslate"><span class="pre">control_volume</span></code>) cannot be created or destroyed.
 Conservation of momentum means that momentum is not created or destroyed, and changes only because of forces acting on the control volume.
 Conservation of energy derives from the first law of thermodynamics: work and heat added to the system will result in an increase in the total energy of the system.</p>
 <figure class="align-default" id="navier-stokes">
@@ -604,68 +584,27 @@ Conservation of energy derives from the first law of thermodynamics: work and he
 </figcaption>
 </figure>
 </div>
-</section>
-</section>
-<section id="control-volumes-and-dispersion">
-<h2>Control Volumes and Dispersion<a class="headerlink" href="#control-volumes-and-dispersion" title="Link to this heading">#</a></h2>
-<p>One way to think about this is using the ‘control volume’ and thinking that flow
-through advection moves the control volume along the X axis but flow through
-dispersion (molecular diffusion and mechanical or hydrodynamic dispersion) also
-moves the flow along in the Y and Z direction (<a class="reference internal" href="#control-volume"><span class="std std-numref">Fig. 2.43</span></a>).</p>
-<div class="dropdown admonition">
-<p class="admonition-title">A brief primer on diffusion</p>
-<p><strong>Diffusion</strong> is the spontaneous movement of particles from regions of high
-concentration to regions of low concentration.
-At the molecular level,
-this occurs due to random thermal motion of molecules.
-In groundwater,
-contaminants diffuse through pore water even in the absence of flow.</p>
-<p>Diffusion is governed by <strong>Fick’s First Law</strong>,
-which states that the diffusive flux is proportional to the concentration
-gradient:</p>
-<div class="math notranslate nohighlight">
-\[J = -D \frac{\partial C}{\partial x}\]</div>
-<p>where <span class="math notranslate nohighlight">\(J\)</span> is the diffusive flux, <span class="math notranslate nohighlight">\(D\)</span> is the diffusion coefficient,
-and <span class="math notranslate nohighlight">\(\frac{\partial C}{\partial x}\)</span> is the concentration gradient.
-The negative sign indicates that diffusion occurs down the concentration gradient
-(from high to low concentration).</p>
-<figure class="align-default" id="diffusion-timeseries">
-<a class="reference internal image-reference" href="../_images/figure7.12.png"><img alt="../_images/figure7.12.png" src="../_images/figure7.12.png" style="width: 90%;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Fig. 2.42 </span><span class="caption-text">Time series showing the spreading of dye through diffusion at four successive
-time steps, illustrating how concentration gradients diminish over time.</span><a class="headerlink" href="#diffusion-timeseries" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-</div>
-<figure class="margin-caption align-default" id="control-volume">
-<a class="reference internal image-reference" href="../_images/figure7.5.png"><img alt="../_images/figure7.5.png" src="../_images/figure7.5.png" style="width: 80%;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Fig. 2.43 </span><span class="caption-text">A diagram showing how advection moves the control volume along the X axis while
-dispersion causes movement in the Y and Z directions.</span><a class="headerlink" href="#control-volume" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
 <p>In beadpacks in the Institute for Energy and Environmental Flows you can see the
-stretching along the flowpath of an injection of dye (<a class="reference internal" href="#beadpack-dye"><span class="std std-numref">Fig. 2.44</span></a>).</p>
+stretching along the flowpath of an injection of dye (<a class="reference internal" href="#beadpack-dye"><span class="std std-numref">Fig. 2.42</span></a>).</p>
 <figure class="margin-caption align-default" id="beadpack-dye">
 <a class="reference internal image-reference" href="../_images/figure7.6.png"><img alt="../_images/figure7.6.png" src="../_images/figure7.6.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.44 </span><span class="caption-text">Dye injection in a beadpack showing stretching along the flowpath.</span><a class="headerlink" href="#beadpack-dye" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.42 </span><span class="caption-text">Dye injection in a beadpack showing stretching along the flowpath.</span><a class="headerlink" href="#beadpack-dye" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
+</section>
 </section>
 <section id="the-peclet-number">
 <h2>The Peclet Number<a class="headerlink" href="#the-peclet-number" title="Link to this heading">#</a></h2>
 <p>Determining the relative importance of advection versus dispersion
 (so the growing shape of the contaminant plume during subsurface transport) is
-often done using the dimensionless <strong>Peclet Number</strong> (<a class="reference internal" href="#peclet-number"><span class="std std-numref">Fig. 2.45</span></a>).</p>
+often done using the dimensionless <strong>Peclet Number</strong> (<a class="reference internal" href="#peclet-number"><span class="std std-numref">Fig. 2.43</span></a>).</p>
 <figure class="margin-caption align-default" id="peclet-number">
 <a class="reference internal image-reference" href="../_images/figure7.7.png"><img alt="../_images/figure7.7.png" src="../_images/figure7.7.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.45 </span><span class="caption-text">The Peclet Number characterizes the relative importance of advection and
+<p><span class="caption-number">Fig. 2.43 </span><span class="caption-text">The Peclet Number characterizes the relative importance of advection and
 dispersion in contaminant transport.</span><a class="headerlink" href="#peclet-number" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
@@ -673,7 +612,7 @@ dispersion in contaminant transport.</span><a class="headerlink" href="#peclet-n
 <a class="reference internal image-reference" href="../_images/figure7.8.png"><img alt="../_images/figure7.8.png" src="../_images/figure7.8.png" style="width: 70%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.46 </span><span class="caption-text">Normalized dispersion coefficient plotted against Péclet number.</span><a class="headerlink" href="#dispersion-peclet" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.44 </span><span class="caption-text">Normalized dispersion coefficient plotted against Péclet number.</span><a class="headerlink" href="#dispersion-peclet" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -687,55 +626,32 @@ function of the magnitude of the movement due to molecular diffusion versus that
 due to advective velocity and mechanical dispersion.
 With a series of simplifying assumptions (isotropic media, flow in the x direction
 etc.) we can use a gaussian model to track plume movement over time
-(<a class="reference internal" href="#plume-diagram"><span class="std std-numref">Fig. 2.47</span></a>).</p>
+(<a class="reference internal" href="#plume-diagram"><span class="std std-numref">Fig. 2.45</span></a>).</p>
 <figure class="margin-caption align-default" id="plume-diagram">
 <a class="reference internal image-reference" href="../_images/figure7.9.png"><img alt="../_images/figure7.9.png" src="../_images/figure7.9.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.47 </span><span class="caption-text">Diagram showing the development of a contaminant plume in groundwater,
+<p><span class="caption-number">Fig. 2.45 </span><span class="caption-text">Diagram showing the development of a contaminant plume in groundwater,
 tracking movement in three dimensions over time.</span><a class="headerlink" href="#plume-diagram" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>This is similar to the maths behind following a plume of smoke in the atmosphere
-(<a class="reference internal" href="#smoke-plume"><span class="std std-numref">Fig. 2.48</span></a>, <a class="reference internal" href="#plume-model"><span class="std std-numref">Fig. 2.49</span></a>).</p>
+(<a class="reference internal" href="#smoke-plume"><span class="std std-numref">Fig. 2.46</span></a>, <a class="reference internal" href="#plume-model"><span class="std std-numref">Fig. 2.47</span></a>).</p>
 <figure class="margin-caption align-default" id="smoke-plume">
 <a class="reference internal image-reference" href="../_images/figure7.10.png"><img alt="../_images/figure7.10.png" src="../_images/figure7.10.png" style="width: 70%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.48 </span><span class="caption-text">A smoke plume in the atmosphere showing similar dispersion patterns.</span><a class="headerlink" href="#smoke-plume" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.46 </span><span class="caption-text">A smoke plume in the atmosphere showing similar dispersion patterns.</span><a class="headerlink" href="#smoke-plume" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="margin-caption align-default" id="plume-model">
 <a class="reference internal image-reference" href="../_images/figure7.11.png"><img alt="../_images/figure7.11.png" src="../_images/figure7.11.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.49 </span><span class="caption-text">Plume model diagram illustrating the mathematical framework for tracking
+<p><span class="caption-number">Fig. 2.47 </span><span class="caption-text">Plume model diagram illustrating the mathematical framework for tracking
 dispersion.</span><a class="headerlink" href="#plume-model" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-</section>
-<section id="contaminant-transport-models">
-<h2>Contaminant Transport Models<a class="headerlink" href="#contaminant-transport-models" title="Link to this heading">#</a></h2>
-<p>However, like most things, it is more complicated than this.
-The contaminant is not just subject to advection with the flow of the groundwater, but also diffusion (the process by which things move from high concentration to low concentration) and possibly chemical reaction with the porous media.
-This leads to an entirely different class of equations and models known as advective diffusive transport models.
-We wont go through the mathematics of these models but the standard formula is:</p>
-<aside class="units margin sidebar">
-<p class="sidebar-title">Units!</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-C &amp;= \mathrm{amount~m^{-3}} \\
-D &amp;= \mathrm{m^2~s^{-1}} \\
-v &amp;= \mathrm{m~s^{-1}} \\
-R &amp;= \mathrm{amount~m^{-3}~s^{-1}} \\
-\end{split}\]</div>
-</aside>
-<div class="math notranslate nohighlight" id="equation-advection">
-<span class="eqno">(2.28)<a class="headerlink" href="#equation-advection" title="Link to this equation">#</a></span>\[D \frac{\delta^2 C}{\delta x^2} - v \frac{\delta C}{\delta x} = R \left( \frac{\delta C}{\delta t} \right)\]</div>
-<p>Where <span class="math notranslate nohighlight">\(C\)</span> is a contaminant, and I am curious how its concentration changes with time <span class="math notranslate nohighlight">\(\left( \frac{\delta C}{\delta t} \right)\)</span> and with distance <span class="math notranslate nohighlight">\(\left( \frac{\delta C}{\delta x} \right)\)</span>.
-Because there are changes with time and with difference, we need to use a partial differential equation.
-In the partial differential equation above, <span class="math notranslate nohighlight">\(D\)</span> is the diffusion coefficient for the contaminant in water, <span class="math notranslate nohighlight">\(v\)</span> is the flow velocity <span class="math notranslate nohighlight">\(\left( \frac{-K}{\rho} \dv{h}{x} \right)\)</span> (can you figure out why this is the flow velocity from Darcy’s Law?), and <span class="math notranslate nohighlight">\(R\)</span> represents the chemical reactions that change the concentration with time.
-In the lecture we’ll talk through each of these terms, and how diffusion can be molecular diffusion or mechanical dispersion, and the types of chemical reactions that change the concentration of common contaminants.</p>
 <p>Pollution in rivers has been a growing concern.
 In general, pollution in rivers is from the release of sewage,
 chemicals and nutrients into the rivers.
@@ -761,12 +677,12 @@ so it is just the cost of the fertilisers that limits the amount that would be
 used to stimulate growth.</p>
 <p>As you add nitrogen and phosphorus run-off from agriculture to rivers you get
 growth of algae in the rivers,
-often measured as the chlorophyll abundance (<a class="reference internal" href="#chlorophyll-growth"><span class="std std-numref">Fig. 2.50</span></a>).</p>
+often measured as the chlorophyll abundance (<a class="reference internal" href="#chlorophyll-growth"><span class="std std-numref">Fig. 2.48</span></a>).</p>
 <figure class="margin-caption align-default" id="chlorophyll-growth">
 <a class="reference internal image-reference" href="../_images/figure9.1.png"><img alt="../_images/figure9.1.png" src="../_images/figure9.1.png" style="width: 70%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.50 </span><span class="caption-text">The addition of nitrate and phosphate leads to exceptional algal growth,
+<p><span class="caption-number">Fig. 2.48 </span><span class="caption-text">The addition of nitrate and phosphate leads to exceptional algal growth,
 shown by chlorophyll abundance.</span><a class="headerlink" href="#chlorophyll-growth" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
@@ -777,7 +693,7 @@ This is <strong><a class="reference internal" href="../reference/glossary.html#t
 <a class="reference internal image-reference" href="../_images/figure9.2.png"><img alt="../_images/figure9.2.png" src="../_images/figure9.2.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.51 </span><span class="caption-text">The process of eutrophication:
+<p><span class="caption-number">Fig. 2.49 </span><span class="caption-text">The process of eutrophication:
 excess nutrients lead to algal blooms,
 which increase respiration and deplete oxygen levels in the water.</span><a class="headerlink" href="#eutrophication-diagram" title="Link to this image">#</a></p>
 </figcaption>
@@ -795,7 +711,7 @@ challenges with eutrophication might be over?</p>
 <h2>Transit Time and Groundwater<a class="headerlink" href="#transit-time-and-groundwater" title="Link to this heading">#</a></h2>
 <p>The transit time simply might be considered:</p>
 <div class="math notranslate nohighlight" id="equation-eq-transit-time">
-<span class="eqno">(2.29)<a class="headerlink" href="#equation-eq-transit-time" title="Link to this equation">#</a></span>\[\text{Time} = \frac{\text{Length to travel}}{\text{velocity of fluid}}\]</div>
+<span class="eqno">(2.28)<a class="headerlink" href="#equation-eq-transit-time" title="Link to this equation">#</a></span>\[\text{Time} = \frac{\text{Length to travel}}{\text{velocity of fluid}}\]</div>
 <p>Where the length might be how far a farm is from the river of interest and the
 velocity could be the rate of flow of a stream or the rate of flow of the
 groundwater derived from Darcy’s Law.
@@ -822,7 +738,7 @@ water system!</p>
 <a class="reference internal image-reference" href="../_images/figure9.3.png"><img alt="../_images/figure9.3.png" src="../_images/figure9.3.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.52 </span><span class="caption-text">Diagram showing the network of interactions between groundwater and surface
+<p><span class="caption-number">Fig. 2.50 </span><span class="caption-text">Diagram showing the network of interactions between groundwater and surface
 water systems.</span><a class="headerlink" href="#groundwater-surface-water" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
@@ -900,10 +816,8 @@ water systems.</span><a class="headerlink" href="#groundwater-surface-water" tit
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-advection-diffusion-reaction-equation">The Advection-Diffusion-Reaction Equation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-volumes-and-dispersion">Control Volumes and Dispersion</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-peclet-number">The Peclet Number</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contaminant-plume-modeling">Contaminant Plume Modeling</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contaminant-transport-models">Contaminant Transport Models</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nutrients-and-eutrophication">Nutrients and Eutrophication</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transit-time-and-groundwater">Transit Time and Groundwater</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groundwater-and-surface-water-interactions">Groundwater and Surface Water Interactions</a></li>
