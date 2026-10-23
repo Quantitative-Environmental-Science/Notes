@@ -9,9 +9,8 @@ Select an item from the menu on the left or the grid below to get started.
 :::{grid-item-card}
 :link: 00_intro/intro
 :link-type: doc
-:class-header: bg-light
 
-Course Overview 🧭
+**Course Overview** 🧭
 ^^^
 
 The global context of Environmental Sciences
@@ -20,9 +19,8 @@ The global context of Environmental Sciences
 :::{grid-item-card}
 :link: 01_groundwater/intro
 :link-type: doc
-:class-header: bg-light
 
-Groundwater 🌧
+**Groundwater** 🌧
 ^^^
 
 How water flows through the Earth.
@@ -31,9 +29,8 @@ How water flows through the Earth.
 :::{grid-item-card}
 :link: 02_rivers/intro
 :link-type: doc
-:class-header: bg-light
 
-Rivers 🏞
+**Rivers** 🏞
 ^^^
 
 How water flows on the surface.
@@ -42,9 +39,8 @@ How water flows on the surface.
 :::{grid-item-card}
 :link: 03_cryosphere/intro
 :link-type: doc
-:class-header: bg-light
 
-Cryosphere 🧊
+**Cryosphere** 🧊
 ^^^
 
 How ice forms, moves and melts.
@@ -53,9 +49,8 @@ How ice forms, moves and melts.
 :::{grid-item-card}
 :link: 04_atmosphere/intro
 :link-type: doc
-:class-header: bg-light
 
-Atmosphere 💨
+**Atmosphere** 💨
 ^^^
 
 Movement, pollution and aerosols.
@@ -64,9 +59,8 @@ Movement, pollution and aerosols.
 :::{grid-item-card}
 :link: 05_globalenvironment/intro
 :link-type: doc
-:class-header: bg-light
 
-Global Environment 🌍
+**Global Environment** 🌍
 ^^^
 
 Fluids on a rotating planet
@@ -75,9 +69,8 @@ Fluids on a rotating planet
 :::{grid-item-card}
 :link: 06_oceancarbon/00_intro
 :link-type: doc
-:class-header: bg-light
 
-Ocean Carbon 🌊
+**Ocean Carbon** 🌊
 ^^^
 
 How carbon moves around the ocean
@@ -86,9 +79,8 @@ How carbon moves around the ocean
 :::{grid-item-card}
 :link: 07_landcarbon/intro
 :link-type: doc
-:class-header: bg-light
 
-Terrestrial Carbon 🌲
+**Terrestrial Carbon** 🌲
 ^^^
 
 Carbon on land
@@ -97,9 +89,8 @@ Carbon on land
 <!-- :::{grid-item-card}
 :link: 08_polarcasestudy/intro
 :link-type: doc
-:class-header: bg-light
 
-Polar Case Study 🐧
+**Polar Case Study** 🐧
 ^^^
 
 Land-ocean-atmosphere-ice interactions
@@ -108,9 +99,8 @@ Land-ocean-atmosphere-ice interactions
 :::{grid-item-card}
 :link: 10_energytransitions/intro
 :link-type: doc
-:class-header: bg-light
 
-Energy Transitions 🏭
+**Energy Transitions** 🏭
 ^^^
 
 Towards a sustainable future
@@ -119,9 +109,8 @@ Towards a sustainable future
 <!-- :::{grid-item-card}
 :link: 09_globalclimate/intro
 :link-type: doc
-:class-header: bg-light
 
-Global Climate 🌍
+**Global Climate** 🌍
 ^^^
 
 Climate change, IPCC and policy
