@@ -6,7 +6,7 @@
 A concept that derives from the idea of a distribution of {term}`hydraulic head` is the distribution of a piezometric or potentiometric surface across a groundwater catchment.
 This is the level to which water would rise in a well that taps the aquifer ({numref}`potentiometric_surface`).
 In an {term}`unconfined aquifer`, this is just the {term}`water table` – or where the water is found.
-In the case of a {term}`confined aquifer`, we can think of this having a {term}`water table` that represents the total potential energy within the {term}`confined aquifer`.
+A {term}`confined aquifer` has no {term}`water table`, because it is full and the water is under pressure; instead we can imagine the level the water would rise to if it were free to do so, which represents the {term}`hydraulic head` within the {term}`confined aquifer`.
 More intuitively, if we were to drill a well into the {term}`aquifer`, the water level would rise to this level (which differs from the actual {term}`water table` itself).
 This is called the **{term}`potentiometric surface`** (or **{term}`piezometric surface`**) and is given by the red dashed line in {numref}`potentiometric_surface`.
 Sometimes this is above the actual surface and indicates that if you drilled a well into that {term}`aquifer`, the water level would come up above the surface.
@@ -22,7 +22,7 @@ The structure of an {term}`aquifer` and the potentiometric surface. Notice how d
 We can draw lines of equal {term}`hydraulic head` in a groundwater system, which are known as **{term}`equipotential lines<equipotential line>`**, and use these to draw flow lines, which (in an isotropic aquifer) cross the equipotential lines at right angles.
 This allows us to create a map like {numref}`equipotential_lines` showing where and how groundwater will move.
 What is clear from this sort of a figure is that groundwater doesn’t always move in a straight line.
-We can do a simple calculation for the amount of time it would take groundwater to move 100 meters from a {term}`recharge` area to a {term}`discharge` area (e.g. a stream) but in reality, we can see the flow lines/paths aren’t linear.
+We can do a simple calculation for the amount of time it would take groundwater to move 100 metres from a {term}`recharge` area to a {term}`discharge` area (e.g. a stream) but in reality, we can see the flow lines/paths aren’t linear.
 Furthermore, to calculate things like the flow velocity in a groundwater system, we need to know aspects of the system like the {term}`permeability` or {term}`hydraulic conductivity` very well.
 
 
@@ -32,7 +32,7 @@ name: equipotential_lines
 figclass: margin-caption
 width: 80%
 ---
-The structure of an aquifer. Note how the flow lines go perpendicular to the lines of equal hydraulic head, meaning in places the water flows uphill. 
+The structure of an aquifer. Flow lines cross the lines of equal hydraulic head at right angles. Water flows from high to low head, not necessarily from high to low elevation, so in discharge areas it flows upwards.
 ```
 What we can say about the overall direction of groundwater flow is that it is always going from high hydraulic head to low hydraulic head, and typically this is mimicking the overland topography - there are exceptions to this but in general high hydraulic head exists at higher overall topographic elevations and lower hydraulic head at lower topographic elevations. Whether rivers or streams are gaining or losing water depends on the local changes in hydraulic head near to the stream/river. 
 
@@ -42,6 +42,8 @@ An example of where there can be changes in hydraulic head leading to changes in
 Groundwater beneath the land surface is recharged from rain, and is largely 'fresh water' and could be suitable for drinking.
 Groundwater beneath the ocean is salt water, and unless you undertake some serious desalination activities, is not suitable for drinking.
 Between the fresh subsurface groundwater and the salt subsurface groundwater, there is a mixing zone known as the **freshwater-saltwater interface** ({numref}`fresh_salt_interface`).
+Because seawater is denser than fresh water (~1025 vs 1000 kg m⁻³), fresh groundwater floats on the saline groundwater beneath it.
+To a first approximation the interface lies about 40 m below sea level for every 1 m the {term}`water table` stands above sea level, so a small drop in the water table from pumping causes a large rise in the interface.
 
 ```{figure} ./figures/figure7.3.png
 ---
@@ -68,7 +70,7 @@ This lowers the {term}`hydraulic head` in the coastal aquifers and drives more s
 name: saltwater_incursion
 figclass: margin-caption
 ---
-Seawater can {term}`recharge` an aquifer and contaminate it with salt water if we extract too much water near the coast. This problem will be exacerbated by sealevel rise, which will increase the {term}`hydraulic head` on the saline side.
+Seawater can {term}`recharge` an aquifer and contaminate it with salt water if we extract too much water near the coast. This problem will be exacerbated by sea-level rise, which will increase the {term}`hydraulic head` on the saline side.
 ```
 
 ## Applying Groundwater Principles: Water Table Between Two Rivers
@@ -173,7 +175,7 @@ If $x_d$ falls outside $0 \le x \le L$ (weak {term}`recharge`, or a large differ
 ## Determining Hydraulic Conductivity
 
 We can determine hydraulic conductivity by using tracer tests - that is with two wells we can see how quickly a tracer gets from one well to the other well, giving us average groundwater velocity, which we can use with an estimate of the porosity to get the {term}`specific discharge` or Darcy velocity. Once we know that and the {term}`hydraulic gradient`, we can calculate {term}`hydraulic conductivity`. Another way that we can determine the {term}`hydraulic conductivity` and other key properties of a groundwater system is to perform a **{term}`pumping test`** ({numref}`pumping_test`).
-During a pumping test we remove water from one well and monitor the {term}`drawdown` of water from a second well that is some (known) distance from the first well. 
+During a pumping test we remove water from one well and monitor the {term}`drawdown` of water in a second well that is some (known) distance from the first well. 
 
 ```{figure} ./figures/figure6.34.png
 ---
@@ -291,7 +293,8 @@ figclass: margin-caption
 The geometry of an idealised unconfined aquifer in a pumping test, showing the drawdown curve and its slope $\dv{h}{r}$, the well radius $r_w$, the head at the well $h_w$, and the undisturbed head $h_o$.
 ```
 
-Here $r_w$ is the radius of the well and $h_w$ is the head in the well, while $r_o$ is the radius of influence of the pumping (the distance beyond which there is no drawdown) and $h_o$ is the undisturbed head ({numref}`thiem_geometry`).
+Here $r_w$ is the radius of the well and $h_w$ is the head in the well, while $r_o$ is the radius of influence of the pumping (the distance beyond which there is no drawdown) and $h_o$ is the undisturbed head.
+{numref}`thiem_geometry` shows the equivalent problem for an {term}`unconfined aquifer`, where the saturated thickness is $h$ rather than the fixed $b$; the same steps then give $Q = \pi K \frac{h_o^2 - h_w^2}{\ln(r_o/r_w)}$.
 It follows that if $Q$ is fixed, and $b$ and $K$ don’t change, there should be a linear relationship between $h$ and $\ln{r}$.
 
 In most cases we are using a certain pumping rate ($Q$) and then measuring the response of the cone, and we want to understand the {term}`hydraulic conductivity` of the system (and from it, the {term}`permeability`).

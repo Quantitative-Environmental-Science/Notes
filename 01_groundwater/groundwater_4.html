@@ -181,7 +181,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../00_intro/l2.html">1.2. Energy and Carbon on the Planet</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">2. Surface Waters I: Groundwater</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">2. Groundwater</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="groundwater_1.html">2.1. Groundwater Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="groundwater_2.html">2.2. Why water moves beneath the surface</a></li>
 <li class="toctree-l2"><a class="reference internal" href="groundwater_3.html">2.3. How we measure and understand water movement</a></li>
@@ -189,7 +189,7 @@
 <li class="toctree-l2"><a class="reference internal" href="groundwater_5.html">2.5. Contaminant Transport and Pollution in Rivers</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../02_rivers/intro.html">3. Surface Waters II: Rivers</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02_rivers/intro.html">3. Rivers and Floods</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../02_rivers/rivers_1.html">3.1. Catchment and drainage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../02_rivers/rivers_2.html">3.2. Drainage models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../02_rivers/rivers_3.html">3.3. River flows</a></li>
@@ -402,7 +402,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-groundwater-chemistry-evolve">How does Groundwater Chemistry Evolve?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chemical-evolution-along-the-flow-path">Chemical Evolution Along the Flow Path</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annoxia-redox-and-arsenic">Annoxia, Redox and Arsenic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anoxia-redox-and-arsenic">Anoxia, Redox and Arsenic</a></li>
 </ul>
             </nav>
         </div>
@@ -418,17 +418,18 @@ document.write(`
 <section class="tex2jax_ignore mathjax_ignore" id="groundwater-chemistry">
 <span id="groundwater-4"></span><h1><span class="section-number">2.4. </span>Groundwater Chemistry<a class="headerlink" href="#groundwater-chemistry" title="Link to this heading">#</a></h1>
 <p>A key point from the groundwater lectures is the connection between groundwater
-and surface water – that groundwater levels reflect changes in surface water.
+and surface water.
 In the lecture we showed data for a hydrograph – that is the level of water in
-a river – and the underlying <a class="reference internal" href="../reference/glossary.html#term-Water-Table"><span class="xref std std-term">water table</span></a>.
-There is a small delay, but the <a class="reference internal" href="../reference/glossary.html#term-Water-Table"><span class="xref std std-term">water table</span></a> follows changes in the flow
-of the local river.</p>
+a river – alongside the underlying <a class="reference internal" href="../reference/glossary.html#term-Water-Table"><span class="xref std std-term">water table</span></a>.
+The two rise and fall together, with a small delay, because both respond to the
+same rainfall and because groundwater discharging into the river (baseflow)
+sustains river flow between storms.</p>
 <p>We have discussed the importance of groundwater systems, how groundwater moves (and why it can move uphill), and how we can test for and figure out the key aspects that influence groundwater flow, which includes pumping tests.
 Together these give us a good sense of how to calculate groundwater velocity and the energy required to move groundwater.
 There are several environmental challenges that face Earth’s groundwater systems, not least of which is the fact that we are removing groundwater faster than it can <a class="reference internal" href="../reference/glossary.html#term-Recharge"><span class="xref std std-term">recharge</span></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>To explore the contamination of groundwater we are going to tell the story of arsenic poisoning in Bangladesh, why there are such high levels of arsenic in the groundwater and the various mechanisms that can help remedy this situation.
+<p>To explore the contamination of groundwater we are going to tell the story of arsenic poisoning in Nepal, why there are such high levels of arsenic in the groundwater and the various mechanisms that can help remedy this situation.
 This is just a specific example of an acute groundwater contamination problem and the way the community and scientists are trying to help remedy it.
 The details of this case study will be in the lecture slides.</p>
 </div>
@@ -436,9 +437,10 @@ The details of this case study will be in the lecture slides.</p>
 <h2>How does Groundwater Chemistry Evolve?<a class="headerlink" href="#how-does-groundwater-chemistry-evolve" title="Link to this heading">#</a></h2>
 <p>To explore this, we consider the case of arsenic poisoning in groundwater wells
 in Nepal.
-There is tremendous elevation change in Nepal, and this leads to temperature
-gradients from the high Himalaya to the low plains, which in turn leads to
-nearly an order-of-magnitude difference in annual rainfall.
+Nepal’s steep topography forces monsoon air upwards (orographic lift), so
+rainfall is very high on the southern slopes, while the rain shadow north of
+the high Himalaya is very dry.
+Annual rainfall varies by more than an order of magnitude across the country.
 In Nepal, groundwater supplies around 50% of the drinking water for the capital,
 Kathmandu, and 90% of the drinking water for the bulk of the population in the
 flood plains (Terai).
@@ -468,12 +470,15 @@ from recharge to discharge zones.</span><a class="headerlink" href="#flow-path-e
 <li><p><strong>Precipitation and Atmospheric Equilibration</strong></p>
 <p>Rain is the major source of water to groundwater systems.
 Rain is in equilibrium with CO<sub>2</sub> in the atmosphere,
-and is slightly acidic (pH ~5.5-6.5).</p>
+and is slightly acidic (pH ≈ 5.6).</p>
 </li>
 <li><p><strong>Infiltration and Vadose Zone Processes</strong></p>
-<p>During <a class="reference internal" href="../reference/glossary.html#term-Infiltration"><span class="xref std std-term">infiltration</span></a>, chemical reactions occur with soil minerals due
-to leaching of organic carbon, and there is evapotranspiration which leads to
-concentration of ions.
+<p>During <a class="reference internal" href="../reference/glossary.html#term-Infiltration"><span class="xref std std-term">infiltration</span></a>, water passes through the soil, where root and
+microbial respiration raise CO<sub>2</sub> to many times atmospheric levels.
+This CO<sub>2</sub> dissolves to form carbonic acid which, together with
+organic acids from decaying organic matter, attacks soil minerals.
+Evapotranspiration removes water but leaves solutes behind, concentrating
+them.
 The water that infiltrates through the vadose zone is therefore slightly
 acidic and with a higher concentration of ions and dissolved organic matter
 (DOM).</p>
@@ -539,16 +544,14 @@ reaction with minerals) but there is no way to make new oxygen.</p>
 </li>
 </ol>
 <p>This evolving chemistry becomes a real problem for arsenic.
-Arsenic-bearing minerals are easily weathered (chemically dissolved) in anoxic
-conditions, and in particular when there is a lot of dissolved organic matter
-which binds to the arsenate ions.
-Increased human waste at the surface is increasing the flux of organic matter
-into the subsurface and creating increasingly anoxic conditions that are
-accelerating the weathering of arsenic.</p>
+In floodplain sediments, arsenic is mostly held sorbed onto iron(III) oxyhydroxide coatings on sediment grains.
+Once groundwater becomes anoxic, microbes use these Fe(III) oxides as an electron acceptor to oxidise organic matter, dissolving them and releasing the sorbed arsenic (<strong>reductive dissolution</strong>).
+Under these reducing conditions arsenic is also present as arsenite (As(III)), which sorbs less strongly than arsenate (As(V)) and so is more mobile.
+The organic carbon that drives this reduction may be natural (buried peat and sedimentary organic matter) or anthropogenic (e.g. ponds, latrines, or surface water drawn down by irrigation pumping); the relative importance of these sources is still debated.</p>
 </section>
-<section id="annoxia-redox-and-arsenic">
-<h2>Annoxia, Redox and Arsenic<a class="headerlink" href="#annoxia-redox-and-arsenic" title="Link to this heading">#</a></h2>
-<p>We can remember why groundwater becomes anoxic if we consider the electrode potential associated with redox half reactions.  The electrode potential measures the voltage associated with the movement of electrons relative to a reference cell. Once you know the potential, you can calculate the total electrode potential (DE) by coupling two redox reactions – one that gives up electrons and one that accepts electrons, as shown in <a class="reference internal" href="#redox-ladder"><span class="std std-numref">Fig. 2.34</span></a>.</p>
+<section id="anoxia-redox-and-arsenic">
+<h2>Anoxia, Redox and Arsenic<a class="headerlink" href="#anoxia-redox-and-arsenic" title="Link to this heading">#</a></h2>
+<p>We can remember why groundwater becomes anoxic if we consider the electrode potential associated with redox half reactions.  The electrode potential measures the voltage associated with the movement of electrons relative to a reference cell. Once you know the potential, you can calculate the total electrode potential (<span class="math notranslate nohighlight">\(\Delta E\)</span>) by coupling two redox reactions – one that gives up electrons and one that accepts electrons, as shown in <a class="reference internal" href="#redox-ladder"><span class="std std-numref">Fig. 2.34</span></a>.</p>
 <figure class="margin-caption align-default" id="redox-ladder">
 <a class="reference internal image-reference" href="../_images/redox_ladder_E_to_deltaG.png"><img alt="../_images/redox_ladder_E_to_deltaG.png" src="../_images/redox_ladder_E_to_deltaG.png" style="width: 100%;" />
 </a>
@@ -561,9 +564,9 @@ redox reactions.</span><a class="headerlink" href="#redox-ladder" title="Link to
 <p>Electrode potential is related to the overall energy of the redox reaction through</p>
 <div class="math notranslate nohighlight">
 \[\Delta G = -n F \Delta E\]</div>
-<p>Where <span class="math notranslate nohighlight">\(n\)</span> is the number of moles of electrons transferred in the redox reaction. Remember that the more negative the <span class="math notranslate nohighlight">\(\Delta G\)</span>, the more energy for that overall reaction. If you have the conditions you can use the Nernst Equation to calculate the true, insitu <span class="math notranslate nohighlight">\(\Delta G\)</span> for a particular reaction.</p>
-<p>What we can see is that the most energy is gained by reactions that are coupled to oxygen.  Therefore, provided reactions are not kinetically limited, the reactions involving oxygen will go first. This means in groundwater systems, where there are many electron dense materials (dissolved organic matter, minerals), oxygen will react the fastest and therefore be depleted in the groundwater first.</p>
-<p>We can image the change in the chemistry of groundwater using a Pourbaix diagram (<a class="reference internal" href="#ph-pe-as"><span class="std std-numref">Fig. 2.35</span></a>), which shows the acid-base chemistry (pH) against the electron chemistry (pe) to determine which species are stable. As groundwater chemistry evolves you move gradually down on this diagram towards more reducing conditions, and whether you move left or right (more acidic or basic) depends on the minerals that might be dissolving or forming along the flow path.</p>
+<p>Where <span class="math notranslate nohighlight">\(n\)</span> is the number of moles of electrons transferred in the redox reaction. Remember that the more negative the <span class="math notranslate nohighlight">\(\Delta G\)</span>, the more energy released by that overall reaction. If you know the conditions you can use the Nernst Equation to calculate the true, in situ <span class="math notranslate nohighlight">\(\Delta G\)</span> for a particular reaction.</p>
+<p>What we can see is that the most energy is gained by reactions that use oxygen as the electron acceptor. Therefore, provided reactions are not kinetically limited, microbes will use oxygen first. This means in groundwater systems, where there are many electron donors (dissolved organic matter, reduced minerals such as pyrite), oxygen is depleted first, followed in turn by nitrate, Mn(IV), Fe(III), sulfate and finally CO<sub>2</sub> as we work down the redox ladder.</p>
+<p>We can visualise the change in the chemistry of groundwater using a Pourbaix diagram (<a class="reference internal" href="#ph-pe-as"><span class="std std-numref">Fig. 2.35</span></a>), which shows the acid-base chemistry (pH) against the electron chemistry (pe) to determine which species are stable. As groundwater chemistry evolves you move gradually down on this diagram towards more reducing conditions, and whether you move left or right (more acidic or basic) depends on the minerals that might be dissolving or forming along the flow path.</p>
 <figure class="margin-caption align-default" id="ph-pe-as">
 <a class="reference internal image-reference" href="../_images/pH_pe_As.png"><img alt="../_images/pH_pe_As.png" src="../_images/pH_pe_As.png" style="width: 100%;" />
 </a>
@@ -640,7 +643,7 @@ redox reactions.</span><a class="headerlink" href="#redox-ladder" title="Link to
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-groundwater-chemistry-evolve">How does Groundwater Chemistry Evolve?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chemical-evolution-along-the-flow-path">Chemical Evolution Along the Flow Path</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annoxia-redox-and-arsenic">Annoxia, Redox and Arsenic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anoxia-redox-and-arsenic">Anoxia, Redox and Arsenic</a></li>
 </ul>
   </nav></div>
 
