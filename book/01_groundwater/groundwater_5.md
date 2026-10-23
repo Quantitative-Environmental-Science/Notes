@@ -172,6 +172,10 @@ and with distance $\left( \frac{\partial C}{\partial x} \right)$.
 Because there are changes with time and with distance, we need to use a partial
 differential equation. 
 
+A solution for this is given by the equation below, which tells me the concentration of a contaminant some distance from where it was released as a function of the overall flow velocity and the dispersion. 
+
+
+
 ```{admonition} Extension: Navier-Stokes Equations (Non-Examinable)
 :class: note
 
@@ -189,53 +193,6 @@ width: 70%
 A control volume showing the forces and momentum fluxes used in deriving the Navier-Stokes equations from conservation of momentum.
 
 By understanding the forces on the control volume, we can derive partial differential equations that explain how fluids move through the control volume. The derivation of the Navier-Stokes equations is something we consider in QCES.
-```
-
-## Control Volumes and Dispersion
-
-One way to think about this is using the 'control volume' and thinking that flow
-through advection moves the control volume along the X axis but flow through
-dispersion (molecular diffusion and mechanical or hydrodynamic dispersion) also
-moves the flow along in the Y and Z direction ({numref}`control_volume`).
-
-```{admonition} A brief primer on diffusion
-:class: dropdown
-
-**Diffusion** is the spontaneous movement of particles from regions of high
-concentration to regions of low concentration.
-At the molecular level,
-this occurs due to random thermal motion of molecules.
-In groundwater,
-contaminants diffuse through pore water even in the absence of flow.
-
-Diffusion is governed by **Fick's First Law**,
-which states that the diffusive flux is proportional to the concentration
-gradient:
-
-$$J = -D \frac{\partial C}{\partial x}$$
-
-where $J$ is the diffusive flux, $D$ is the diffusion coefficient,
-and $\frac{\partial C}{\partial x}$ is the concentration gradient.
-The negative sign indicates that diffusion occurs down the concentration gradient
-(from high to low concentration).
-
-```{figure} ./figures/figure7.12.png
----
-name: diffusion_timeseries
-width: 90%
----
-Time series showing the spreading of dye through diffusion at four successive
-time steps, illustrating how concentration gradients diminish over time.
-```
-
-```{figure} ./figures/figure7.5.png
----
-name: control_volume
-figclass: margin-caption
-width: 80%
----
-A diagram showing how advection moves the control volume along the X axis while
-dispersion causes movement in the Y and Z directions.
 ```
 
 In beadpacks in the Institute for Energy and Environmental Flows you can see the
@@ -318,33 +275,6 @@ width: 80%
 Plume model diagram illustrating the mathematical framework for tracking
 dispersion.
 ```
-
-## Contaminant Transport Models
-
-However, like most things, it is more complicated than this.
-The contaminant is not just subject to advection with the flow of the groundwater, but also diffusion (the process by which things move from high concentration to low concentration) and possibly chemical reaction with the porous media.
-This leads to an entirely different class of equations and models known as advective diffusive transport models.
-We wont go through the mathematics of these models but the standard formula is:
-
-```{margin} Units!
-:class: units
-$$
-C &= \mathrm{amount~m^{-3}} \\
-D &= \mathrm{m^2~s^{-1}} \\
-v &= \mathrm{m~s^{-1}} \\
-R &= \mathrm{amount~m^{-3}~s^{-1}} \\
-$$
-```
-
-```{math}
-:label: advection
-D \frac{\delta^2 C}{\delta x^2} - v \frac{\delta C}{\delta x} = R \left( \frac{\delta C}{\delta t} \right)
-```
-
-Where $C$ is a contaminant, and I am curious how its concentration changes with time $\left( \frac{\delta C}{\delta t} \right)$ and with distance $\left( \frac{\delta C}{\delta x} \right)$.
-Because there are changes with time and with difference, we need to use a partial differential equation.
-In the partial differential equation above, $D$ is the diffusion coefficient for the contaminant in water, $v$ is the flow velocity $\left( \frac{-K}{\rho} \dv{h}{x} \right)$ (can you figure out why this is the flow velocity from Darcy’s Law?), and $R$ represents the chemical reactions that change the concentration with time.
-In the lecture we’ll talk through each of these terms, and how diffusion can be molecular diffusion or mechanical dispersion, and the types of chemical reactions that change the concentration of common contaminants.
 
 
 Pollution in rivers has been a growing concern.
