@@ -3,13 +3,13 @@
 (groundwater_5)=
 # Contaminant Transport and Pollution in Rivers
 
-Another major challenge in groundwater systems is the transport of contaminants, that is something (potentially toxic) is released into the subsurface and travels with the groundwater, appearing in the water supply at some point later in time (depending on the {term}`hydraulic conductivity` of the aquifer, and the {term}`hydraulic head` difference driving the flow).
+Another major challenge in groundwater systems is the transport of contaminants, that is something (potentially toxic) is released into the subsurface and travels with the groundwater, appearing in the water supply or a river at some point later in time (depending on the {term}`hydraulic conductivity` of the aquifer, and the {term}`hydraulic head` difference driving the flow).
 In some respects we have learned the tools you would need to determine how long before a contaminant released into the groundwater would be seen at some point downstream.
-You could figure out the lines of equipotential, and the {term}`hydraulic conductivity`, and then calculate the flow velocity, and this would yield time (with some knowledge of the distance travelled).
+You could figure out the lines of equipotential, and the {term}`hydraulic conductivity`, and then calculate the flow velocity, and this would yield time (with some knowledge of the distance travelled). Here we are going to discuss how the contaminant plume evolves in the groundwater system. 
 
 ## Contaminant Transport in Groundwater
 
-Having understood a bit about how the chemistry of groundwater evolves along the
+Having understood a bit about how the broader chemistry of groundwater evolves along the
 flow path, we can consider what happens when we add a contaminant to groundwater
 and how it is likely to travel and disperse through the groundwater system.
 
@@ -136,9 +136,7 @@ and chemical reactions on contaminant transport in groundwater.
 
 - When solutes flow through a porous medium they can interact with the solid
   phase.
-  In particular they can sorb and desorb, or precipitate into mineral phases.
-  The net result is a process called retardation that effectively slows the
-  transport of a solute through a porous medium.
+  In particular they can sorb and desorb, or precipitate into mineral phases, or dissolve into the groundwater from mineral phases.
 
 - The amount of these chemical reactions and how they impact the overall
   chemical transport depends on the solute, water chemistry, and geochemical
@@ -148,19 +146,8 @@ and chemical reactions on contaminant transport in groundwater.
 
 Having discussed advection, dispersion, and chemical reactions individually,
 we can now consider how they combine in a mathematical framework.
-In previous lectures, we learned the tools needed to determine how long before a
-contaminant released into the groundwater would be seen at some point downstream.
-We could figure out the lines of equipotential and the {term}`hydraulic
-conductivity`, and then calculate the flow velocity, which would yield time
-(with some knowledge of the distance travelled).
 
-However, like most things, it is more complicated than this.
-The contaminant is not just subject to advection with the flow of the
-groundwater, but also diffusion (the process by which things move from high
-concentration to low concentration) and possibly chemical reaction with the
-porous media.
-This leads to an entirely different class of equations and models known as
-advective-diffusive transport models.
+
 We will not go through the mathematics of these models in detail, but the
 standard formula is:
 
@@ -183,15 +170,7 @@ Where $C$ is the contaminant concentration, and we are interested in how its
 concentration changes with time $\left( \frac{\partial C}{\partial t} \right)$
 and with distance $\left( \frac{\partial C}{\partial x} \right)$.
 Because there are changes with time and with distance, we need to use a partial
-differential equation.
-In the partial differential equation above, $D$ is the diffusion coefficient for
-the contaminant in water, $v$ is the flow velocity
-$\left( \frac{-K}{\rho} \dv{h}{x} \right)$ (can you figure out why this is the
-flow velocity from Darcy's Law?), and $R$ represents the chemical reactions that
-change the concentration with time.
-Diffusion can be molecular diffusion or mechanical dispersion, and the types of
-chemical reactions that change the concentration vary depending on the
-contaminant and the geochemical environment.
+differential equation. 
 
 ```{admonition} Extension: Navier-Stokes Equations (Non-Examinable)
 :class: note
