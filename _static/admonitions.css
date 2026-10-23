@@ -3,3 +3,18 @@ aside.units {
     background-color: rgba(191, 226, 239, 0.5);
     border-radius: 5px;
 }
+
+/* sphinx-book-theme floats margin captions after the image, so they start at the
+   figure's bottom edge. Pin them to the top instead. Same breakpoint as the theme,
+   below which captions sit under the image anyway. */
+@media (min-width: 992px), print {
+    figure.margin-caption {
+        position: relative;
+    }
+    figure.margin-caption figcaption {
+        position: absolute;
+        top: 10%;
+        right: -36%;
+        margin: 0;
+    }
+}
