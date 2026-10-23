@@ -1,5 +1,5 @@
 (groundwater)=
-# Surface Waters I: Groundwater
+# Groundwater
 
 In these lectures we are going to discuss how water flows through the ground, how we can understand the flow of this water, including the rate of flow of groundwater, and the importance of groundwater to supplying drinking water to our planet.
 There is a vast shortage of potable water today.

@@ -25,7 +25,7 @@ Groundwater depletion is most severe where the 'groundwater footprint' is much l
 ```
 
 
-In the last lecture we also learned all about the various names for places that hold groundwater in the subsurface. This schematic summarises some of those key points and we will revisit it again. It gives a more clear view of **{term}`confined aquifers<confined aquifer>`** and **{term}`unconfined aquifers<unconfined aquifer>`**.
+In the last lecture we also learned all about the various names for places that hold groundwater in the subsurface. This schematic summarises some of those key points and we will revisit it again. It gives a clearer view of **{term}`confined aquifers<confined aquifer>`** and **{term}`unconfined aquifers<unconfined aquifer>`**.
 
 A {term}`confined aquifer` has a confining layer above it which stops or slows (confines) the water in the groundwater system.
 An {term}`unconfined aquifer` has no confining layer above it, so its upper boundary is the {term}`water table`.
@@ -106,7 +106,7 @@ Here, $Cd^2$ is a property of the medium – where $d$ is the diameter of the gr
 which covers grain packing, how round the grains are, how much cement is around.
 Meanwhile, $\frac{\rho g}{\mu}$ is a property of the fluid,
 with $\rho g$ being the specific weight of the fluid ($9800 \ \mathrm{N \ m^{-3}}$) in the case of water
-and $\mu$ being the dynamic viscosity of the fluid ($1.386 \times 10^{-3} \ \mathrm{N \ s \ m^{-2}}$ for cool groundwater).
+and $\mu$ being the dynamic viscosity of the fluid ($1.31 \times 10^{-3} \ \mathrm{N \ s \ m^{-2}}$ for groundwater at 10 °C).
 
 While {term}`hydraulic conductivity` is a function of the medium and the fluid (imagine trying to put honey through a groundwater system!), in reality, as for most groundwaters the specific weight and dynamic viscosity vary little,
 what is important is the soil/rock/subsurface (medium) through which you are trying to push groundwater.
@@ -132,7 +132,7 @@ K = k \frac{\rho g}{\mu}
 ```
 
 If we assume that the fluid flowing through the groundwater is water, $\frac{\rho g}{\mu}$ is effectively a constant.
-This is usually a safe assumption (even really salty brines in groundwater systems have a specific weight and dynamic viscosity that means they behave more or less as water).
+This is a reasonable approximation for fresh groundwater. Saline brines can be ~20% denser and up to twice as viscous as fresh water, which changes $K$ by tens of percent, and density differences can drive flow on their own (as we will see at the freshwater–saltwater interface).
 If you read around a bit you will also find a unit of {term}`permeability` called the 'darcy', which is widely used in the oil and gas industry.
 
 {numref}`fluxes` compares {term}`hydraulic conductivity` values from a classic compilation of measurements with those from calibrated regional hydrology models.
@@ -168,8 +168,8 @@ Laminar means that water is moving in the same direction, like a line, while tur
 
 What was seen was that the nice linear relationship inherent to Darcy's law broke down at high {term}`hydraulic gradient`s, such that $Q$ no longer scaled linearly with {term}`hydraulic gradient` ({numref}`Q_vs_hyd_grad`).
 
-This is because turbulence has begun in the flow through the porous medium.
-Turbulence causes pressure loss and thus changes the flow rate.
+This is because inertial forces in the pores become important, and at still higher flow rates the flow becomes turbulent.
+Both dissipate extra energy, so each increase in gradient produces a smaller increase in flow.
 
 ```{figure} ./figures/figure5.6.png
 ---

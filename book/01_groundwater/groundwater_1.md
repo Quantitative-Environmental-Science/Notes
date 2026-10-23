@@ -6,7 +6,7 @@
 ## Water Demand
 
 The UK has a high demand for water, on the order of $150 \ \mathrm{l}$ per day, per person.
-Of this, about 33% is used for toilets, and another 33% is showers, dishwashers and drinking (the bit that needs to be potable, or clean).
+Of this, roughly a quarter to a third is used for flushing toilets, and most of the rest for showers, baths, washing machines, dishwashers and taps. All of it is treated to drinking-water (potable) standard, even though only a small fraction is drunk.
 Certain parts of the UK are under severe water stress, particularly in the south east, where rainfall is the lowest and population density is the highest.
 
 But in addition to turning on the tap and using water for our regular 'domestic' life, many of the everyday products that we use all the time have a large **{term}`water footprint`**.
@@ -33,10 +33,11 @@ The distribution of water on earth. Left, all water. Middle, fresh water. Right,
 
 Roughly 30% of Earth's fresh water is in groundwater ({numref}`water_location`), with most of the rest tied up in glaciers.
 How does water get into the ground?
-Rain falls down on the ground, and approximately 30% of it returns to the atmosphere via evaporation, 30% returns to the atmosphere via transpiration (these are lumped together often as {term}`evapotranspiration`), and 30% runs off the land through streams and rivers (which you'll learn more about in the {ref}`Surface Water<surface_waters>` section).
+Rain falls on the ground, and roughly 60% of it returns to the atmosphere via {term}`evapotranspiration` (evaporation from surfaces plus transpiration by plants, of which transpiration is the larger part).
+The rest either runs off the land through streams and rivers (which you'll learn more about in the {ref}`Surface Water<surface_waters>` section) or soaks into the soil by **{term}`infiltration`**.
+Some of the infiltrated water is taken up by plants, but the remainder moves down to the water table by **{term}`percolation`** – on average roughly 10% of precipitation ({numref}`gw_cycle`).
 The balance of these processes will clearly differ all over the planet depending on vegetation cover, temperature, climate, and soil type (among many other things).
-But approximately 10% seeps into the ground through a process called **{term}`infiltration`**, or **{term}`percolation`** ({numref}`gw_cycle`).
-This {term}`infiltration` supplies water to the level beneath the surface below which the pore space (the space between the grains of soil or rock) is full of water,
+This percolating water supplies the level beneath the surface below which the pore space (the space between the grains of soil or rock) is full of water,
 or saturated; the top of this saturated zone is called the **{term}`water table`**.
 This process of {term}`infiltration` of rainwater into groundwater is broadly termed **{term}`recharge`**.
 {term}`Recharge` is simply precipitation minus runoff and evapotranspiration.
@@ -141,7 +142,7 @@ Clays can have higher {term}`porosity` (40–70%) because their platy grains sta
 
 We can derive the groundwater continuity equation, which will track the amount of groundwater in a particular area ($S$) more broadly in a similar way to how we did in the last lecture.
 This reiterates the importance of mass balance, that is the storage of groundwater in a particular area ($S$) is a function of the inputs of groundwater to that area and the outputs of groundwater from that area.
-In the case of groundwater, the inputs of water to the system come from precipitation ($P$) as well as groundwater that moves laterally in from another part of the region ($G_{in}$ more on this in the next lecture!).
+In the case of groundwater, the inputs of water to the system come from precipitation ($P$) as well as groundwater that moves laterally in from another part of the region ($G_{in}$; more on this in the next lecture!).
 The outputs are from evapotranspiration ($E_{tp}$), runoff ($R$) on the surface, and groundwater flowing out of the area ($G_{out}$).
 If we consider the amount that is stored in the groundwater for a particular area - often a watershed - ($S$), we get a mass balance equation similar to that used for the carbon cycle in the previous lecture.
 
@@ -174,7 +175,7 @@ In that case $\dv{S}{t} = 0$ and
 Inherent to the idea of a groundwater system is the idea that groundwater moves from a point of {term}`recharge` to a point of {term}`discharge`.
 If the total volume stored is a function of the {term}`porosity`, then we can ask ourselves what controls how groundwater moves from one point to another point?
 
-This was first explored in the 1850s by **Henry Darcy**, a French civil engineer, who set up a pipe filled with sand and played around with how fast water moved through the pipe ({numref}`darcy_pipe`).
+This was first explored in the 1850s by **Henry Darcy**, a French civil engineer, who passed water through a vertical column of sand and measured how the flow rate depended on the water levels at each end ({numref}`darcy_pipe`).
 
 ```{figure} ./figures/figure5.1.png
 ---
@@ -193,7 +194,7 @@ Q &= \mathrm{m^3~s^{-1}} \\
 $$
 ```
 
-Here the pipe (length $l$ and cross-sectional area $A$) was put at various angles to the horizontal
+We can picture an equivalent set-up: a pipe (length $l$ and cross-sectional area $A$) tilted at various angles to the horizontal
 (determined by $\Delta h$ – or the height difference between one end of the pipe to the other end of the pipe)
 and the flow rate, $Q$, was measured (in units of volume-per-time).
 
